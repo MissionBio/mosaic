@@ -1,0 +1,6 @@
+missionbio.mosaic.protein.Protein.get\_background
+=================================================
+
+.. currentmodule:: missionbio.mosaic.protein
+
+.. automethod:: Protein.get_background

@@ -1,0 +1,6 @@
+missionbio.mosaic.cnv.Cnv.feature\_signature
+============================================
+
+.. currentmodule:: missionbio.mosaic.cnv
+
+.. automethod:: Cnv.feature_signature

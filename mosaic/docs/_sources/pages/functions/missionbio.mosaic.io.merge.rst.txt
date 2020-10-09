@@ -1,0 +1,6 @@
+missionbio.mosaic.io.merge
+==========================
+
+.. currentmodule:: missionbio.mosaic.io
+
+.. autofunction:: merge

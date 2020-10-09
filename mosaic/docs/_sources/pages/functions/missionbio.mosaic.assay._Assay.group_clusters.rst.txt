@@ -1,0 +1,6 @@
+missionbio.mosaic.assay.\_Assay.group\_clusters
+===============================================
+
+.. currentmodule:: missionbio.mosaic.assay
+
+.. automethod:: _Assay.group_clusters

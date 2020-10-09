@@ -1,0 +1,6 @@
+missionbio.mosaic.io.merge\_files
+=================================
+
+.. currentmodule:: missionbio.mosaic.io
+
+.. autofunction:: merge_files
