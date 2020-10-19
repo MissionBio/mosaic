@@ -20,4 +20,4 @@ conda install -c missionbio missionbio.mosaic
 - The easiest way to start is by going through the available [vignettes.](https://github.com/MissionBio/vignettes)
 
 - You can also read through the [documentation](https://missionbio.github.io/mosaic/) to learn
-  about the full extent of it's capabalities.
+  about the full extent of it's capabilities.
