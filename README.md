@@ -12,12 +12,14 @@ and visualization of single-cell data to enable exploratory analysis.
 Mosaic is available for installation through the [missionbio conda channel](https://anaconda.org/missionbio)
 
 ```
-conda install -c missionbio missionbio.mosaic
+conda create --name mosaic --yes
+conda activate mosaic
+conda install -c missionbio -c plotly -c conda-forge missionbio.mosaic
 ```
 
 ### Usage
 
-- The easiest way to start is by going through the available [vignettes.](https://github.com/MissionBio/vignettes)
+- The easiest way to start is by going through the available [vignettes.](https://github.com/MissionBio/mosaic-vignettes)
 
 - You can also read through the [documentation](https://missionbio.github.io/mosaic/) to learn
   about the full extent of it's capabilities.
