@@ -35,8 +35,11 @@
 <h1>missionbio.mosaic.dna.Dna.filter_variants<a class="headerlink" href="#missionbio-mosaic-dna-dna-filter-variants" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.dna.Dna.filter_variants">
-<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">filter_variants</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_dp</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">min_gq</span><span class="o">=</span><span class="default_value">30</span></em>, <em class="sig-param"><span class="n">min_vaf</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">min_prct_cells</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">min_mut_prct_cells</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">min_std</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.filter_variants" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove uninformative variants.</p>
+<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">filter_variants</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_dp</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">min_gq</span><span class="o">=</span><span class="default_value">30</span></em>, <em class="sig-param"><span class="n">min_vaf</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">max_vaf</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">min_prct_cells</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">min_mut_prct_cells</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">min_std</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.filter_variants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find informative variants.</p>
+<p>This method also adds the <cite>NGT_FILTERED</cite> layer to the assay
+which is a copy of the NGT layer but with the NGT for the
+cell-variants not passing the filters set to 3 i.e. missing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -50,8 +53,11 @@ in a given barcode are treated as no calls.</p>
 </dd>
 <dt><strong>min_vaf</strong><span class="classifier">float [0, 100]</span></dt><dd><p>If the VAF of a given variant for a given barcode
 is less than the given value, and the call is
-either ‘1’ or ‘2’, then it is converted to a
-no call.</p>
+‘1’ i.e. HET, then it is converted to a no call.</p>
+</dd>
+<dt><strong>max_vaf</strong><span class="classifier">float [0, 100]</span></dt><dd><p>If the VAF of a given variant for a given barcode
+is greater than the given value, and the call is
+‘1’ i.e. HET, then it is converted to a no call.</p>
 </dd>
 <dt><strong>min_prct_cells</strong><span class="classifier">float [0, 100]</span></dt><dd><p>The minimum percent of total cells in which the variant
 should be called as ‘0’, ‘1’, or ‘2’ after the

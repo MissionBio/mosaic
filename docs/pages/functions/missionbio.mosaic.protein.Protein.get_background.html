@@ -33,53 +33,6 @@
             
   <div class="section" id="missionbio-mosaic-protein-protein-get-background">
 <h1>missionbio.mosaic.protein.Protein.get_background<a class="headerlink" href="#missionbio-mosaic-protein-protein-get-background" title="Permalink to this headline">¶</a></h1>
-<dl class="py method">
-<dt id="missionbio.mosaic.protein.Protein.get_background">
-<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">get_background</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cnv_raw</span></em>, <em class="sig-param"><span class="n">max_dna</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">max_protein</span><span class="o">=</span><span class="default_value">1000</span></em>, <em class="sig-param"><span class="n">completeness</span><span class="o">=</span><span class="default_value">40</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.get_background" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reads to empty droplets.</p>
-<p>This is used for the DSB normalization method.</p>
-<dl class="field-list">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
-<dt><strong>cnv_raw</strong><span class="classifier"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html#missionbio.mosaic.cnv.Cnv" title="missionbio.mosaic.cnv.Cnv"><code class="xref py py-class docutils literal notranslate"><span class="pre">missionbio.mosaic.cnv.Cnv</span></code></a></span></dt><dd><p>This should contain the read distribution
-for all barcodes, not just cells. It is
-required to identify the empty droplets
-based on the DNA data.</p>
-</dd>
-<dt><strong>max_dna</strong><span class="classifier">int</span></dt><dd><p>The maximum number of DNA reads for
-the barcode to be considered in the background.</p>
-</dd>
-<dt><strong>max_protein</strong><span class="classifier">int</span></dt><dd><p>The maximum number of Protein reads for
-the barcode to be considered in the background.</p>
-</dd>
-<dt><strong>completeness</strong><span class="classifier">float [0, 100]</span></dt><dd><p>The maximum completeness for a barcode
-to be considered in the background.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>background_bars</strong><span class="classifier">set</span></dt><dd><p>The barcodes that are considered to
-be empty droplets.</p>
-</dd>
-<dt><strong>background_mean</strong><span class="classifier">pd.Series</span></dt><dd><p>The mean expression for each protein
-from empty droplets.</p>
-</dd>
-<dt><strong>background_std</strong><span class="classifier">pd.Series</span></dt><dd><p>The standard deviation for each protein
-from empty droplets.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt>Exception</dt><dd><p>If the protein object does not contain
-any of the identified empty droplets.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd></dl>
-
 </div>
 
 

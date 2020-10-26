@@ -35,33 +35,57 @@
 <h1>missionbio.mosaic.dna.Dna.heatmap<a class="headerlink" href="#missionbio-mosaic-dna-dna-heatmap" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.dna.Dna.heatmap">
-<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">heatmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.heatmap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set specific colorscales for DNA.</p>
+<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">heatmap</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.heatmap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.heatmap()</span></code></p>
+<p>Set specific colorscales for DNA.</p>
+<p>Heatmap of all barcodes and ids.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>kwargs</strong><span class="classifier">dict</span></dt><dd><p>passed to <a class="reference internal" href="missionbio.mosaic.assay._Assay.heatmap.html#missionbio.mosaic.assay._Assay.heatmap" title="missionbio.mosaic.assay._Assay.heatmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">missionbio.mosaic.assay._Assay.heatmap()</span></code></a>.</p>
+<dt><strong>attribute</strong><span class="classifier">str / np.ndarray</span></dt><dd><p>An attribute with the shape equal to the shape
+of the assay. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to
+retrieve the values constrained by <cite>row+col</cite>.</p>
+</dd>
+<dt><strong>splitby</strong><span class="classifier">str / np.ndarray, default LABEL</span></dt><dd><p>Whether to order the barcodes based on the given
+labels or not. Only applicable when <cite>bars_order</cite>
+is <cite>None</cite>. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to
+retrieve the values constrained by <cite>row</cite>.
+The shape must be equal to <cite>(#cells)</cite>.</p>
+</dd>
+<dt><strong>features</strong><span class="classifier">list</span></dt><dd><p>The ids that are to be shown. This also sets the
+order in which the ids are shown.</p>
+</dd>
+<dt><strong>bars_order</strong><span class="classifier">list</span></dt><dd><p>The barcodes that are to be plotted.
+The order in the plot is the same
+as the order in the list. Passing this
+sets <cite>splitby</cite> to <cite>None</cite>.</p>
+</dd>
+<dt><strong>convolve</strong><span class="classifier">float [0, 100]:</span></dt><dd><p>The percentage of barcodes from the label with
+the fewest barcodes that is used to average
+out the signal. If <cite>0</cite>, then no convolution
+is performed, and if <cite>100</cite>, the mean per
+label is returned. Only applicable when
+<cite>splitby</cite> is not <cite>None</cite>.</p>
+</dd>
+<dt><strong>title</strong><span class="classifier">str</span></dt><dd><p>The title to be added to the plot.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>fig</strong><span class="classifier">plotly.graph_objs.FigureWidget</span></dt><dd></dd>
+<dt>fig: plotly.graph_objects.FigureWidget</dt><dd></dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>TypeError</dt><dd><p>When “layer” is not a part of the given kwargs.</p>
+<dt>ValueError</dt><dd><p>Raised in the following cases.
+When convolve is below 0 or above 100.
+When the number of ids is too large to hierarchically
+cluster the cells and features is not provided.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference internal" href="missionbio.mosaic.assay._Assay.heatmap.html#missionbio.mosaic.assay._Assay.heatmap" title="missionbio.mosaic.assay._Assay.heatmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">missionbio.mosaic.assay._Assay.heatmap()</span></code></a></dt><dd></dd>
-</dl>
-</div>
 </dd></dl>
 
 </div>

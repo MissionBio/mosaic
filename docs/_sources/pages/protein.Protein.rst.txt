@@ -1,0 +1,6 @@
+﻿protein.Protein
+===============
+
+.. currentmodule:: protein
+
+.. autoclass:: Protein

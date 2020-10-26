@@ -14,7 +14,7 @@ missionbio.mosaic.utils
    .. autosummary::
    
       clipped_values
-      get_annotations
+      extend_docs
       get_indexes
       static_fig
    

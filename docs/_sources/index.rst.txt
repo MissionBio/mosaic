@@ -2,11 +2,11 @@
 Mosaic
 ======
 
+A basic tutorial on how to use Mosaic to analyse DNA + Protein data can be found
+`here. <https://github.com/MissionBio/mosaic-vignettes>`__
+
 Loading a sample
 ----------------
-
-When using data from older pipelines, use :func:`missionbio.mosaic.load.convert_files_to_h5`
- to generate an appropriate .h5 file.
 
 Any .h5 file can be loaded as a :class:`missionbio.mosaic.sample.Sample` object using:
 
@@ -24,7 +24,7 @@ Data structure
 --------------
 ::
 
-                 missionbio.sdk.assay.Assay
+                 missionbio.h5.assay.Assay
                    (h5 reader and writer)
                             |
                             |
@@ -40,7 +40,7 @@ Data structure
   
    (Sample-specific functionality, such as normalization)
 
-:class:`missionbio.sdk.assay.Assay` is a module for reading and writing .h5 files.
+:class:`~missionbio.h5.assay.Assay` is a module for reading and writing .h5 files.
 It stores the information of the assay using:
 
    1. metadata (add_metadata / del_metadata):
@@ -66,14 +66,14 @@ It stores the information of the assay using:
        (num barcodes) x (num ids). This is the attribute
        where 'normalized_counts' will be added.
 
-:class:`missionbio.mosaic.assay._Assay` builds on top of the sdk assay to incorporate
+:class:`~missionbio.mosaic.assay._Assay` builds on top of the h5 assay to incorporate
 functionality specific to tertiary analysis. It also provides generic functions for
 visualizing the data.
 
-:class:`missionbio.mosaic.dna.Dna`, :class:`missionbio.mosaic.cnv.Cnv`, and
-:class:`missionbio.mosaic.protein.Protein` are subclasses of the above class.
+:class:`~missionbio.mosaic.dna.Dna`, :class:`~missionbio.mosaic.cnv.Cnv`, and
+:class:`~missionbio.mosaic.protein.Protein` are subclasses of the above class.
 Therefore, they inherit all the plotting and interactive functionality from the
-`_Assay` class. Each one includes methods specific to the assay, such
+:class:`~missionbio.mosaic.assay._Assay` class. Each one includes methods specific to the assay, such
 as normalization and cell type identification.
 
 ::
@@ -86,7 +86,7 @@ as normalization and cell type identification.
                    |-- cnv_raw
                    |-- protein_raw
 
-:class:`missionbio.mosaic.sample.Sample` object contains all three of the above assays
+:class:`~missionbio.mosaic.sample.Sample` object contains all three of the above assays
 along with the raw counts for the same. The raw counts are also stored as the respective
 assay objects.
 
@@ -99,9 +99,9 @@ Interface
    :recursive:
    :toctree: pages
 
-   missionbio.mosaic.io
-   missionbio.mosaic.utils
-   missionbio.mosaic.constants
+   ~missionbio.mosaic.io
+   ~missionbio.mosaic.utils
+   ~missionbio.mosaic.constants
 
 
 .. rubric:: Classes
@@ -111,8 +111,8 @@ Interface
    :toctree: pages
    :template: base.rst
 
-   missionbio.mosaic.assay._Assay
-   missionbio.mosaic.dna.Dna
-   missionbio.mosaic.cnv.Cnv
-   missionbio.mosaic.protein.Protein
-   missionbio.mosaic.sample.Sample
+   ~missionbio.mosaic.assay._Assay
+   ~missionbio.mosaic.dna.Dna
+   ~missionbio.mosaic.cnv.Cnv
+   ~missionbio.mosaic.protein.Protein
+   ~missionbio.mosaic.sample.Sample

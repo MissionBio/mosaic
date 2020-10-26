@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dna.Dna &#8212; mosaic v0.12.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="dna-dna">
+<h1>dna.Dna<a class="headerlink" href="#dna-dna" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="dna.Dna">
+<em class="property">class </em><code class="sig-name descname">Dna</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#dna.Dna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Container for DNA data.</p>
+<p>Inherits most methods from <a class="reference internal" href="missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-class docutils literal notranslate"><span class="pre">missionbio.mosaic.assay._Assay</span></code></a>.
+See that for the documentation on other methods and visualizations.</p>
+<p class="rubric">Algorithms</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_annotations</span></code>()</p></td>
+<td><p>Annotate DNA variants.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_variants</span></code>([min_dp, min_gq, min_vaf, …])</p></td>
+<td><p>Find informative variants.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_variants_consecutive</span></code>([proximity])</p></td>
+<td><p>Remove nearby variants.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_incomplete_barcodes</span></code>([barcode_thresh])</p></td>
+<td><p>Remove cells with missing information.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_relevant_variants</span></code>([…])</p></td>
+<td><p>Variants that vary across clusters.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_clones</span></code>([similarity])</p></td>
+<td><p>Identify clones based on VAF.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code>(features[, layer, group_missing, …])</p></td>
+<td><p>A clustering method available only for DNA.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cluster_cleanup</span></code>(layer[, similarity])</p></td>
+<td><p>Merge similar clusters while ignoring missing data.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">DNA specific visualizations</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_variant_correlation</span></code>()</p></td>
+<td><p>The correlation of variants across all cells.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_coloraxis</span></code>(fig, layer)</p></td>
+<td><p>Sets the colorscale for DNA.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Extended methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_umap</span></code>([jitter])</p></td>
+<td><p>Extends <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.run_umap()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatmap</span></code>(*args, **kwargs)</p></td>
+<td><p>Extends <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.heatmap()</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatterplot</span></code>(*args, **kwargs)</p></td>
+<td><p>Extends <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.scatterplot()</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">mosaic</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.io.html">missionbio.mosaic.io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.utils.html">missionbio.mosaic.utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.constants.html">missionbio.mosaic.constants</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.assay._Assay.html">missionbio.mosaic.assay._Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.dna.Dna.html">missionbio.mosaic.dna.Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.cnv.Cnv.html">missionbio.mosaic.cnv.Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.protein.Protein.html">missionbio.mosaic.protein.Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.sample.Sample.html">missionbio.mosaic.sample.Sample</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Mission Bio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/pages/dna.Dna.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,9 @@
+io
+==
+
+.. autosummary::
+   :toctree: functions
+
+
+   io.OpenWrapper
+   io.open

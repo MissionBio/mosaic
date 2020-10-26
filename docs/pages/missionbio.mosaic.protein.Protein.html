@@ -48,10 +48,13 @@ See that for the documentation on other methods and visualizations.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.protein.Protein.get_background.html#missionbio.mosaic.protein.Protein.get_background" title="missionbio.mosaic.protein.Protein.get_background"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_background</span></code></a>(cnv_raw[, max_dna, …])</p></td>
-<td><p>Reads to empty droplets.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.protein.Protein.get_signal_profile.html#missionbio.mosaic.protein.Protein.get_signal_profile" title="missionbio.mosaic.protein.Protein.get_signal_profile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_signal_profile</span></code></a>(ab[, attribute, bw, …])</p></td>
+<td><p>Identify the peaks and valleys in the antibody signal</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.protein.Protein.normalize_reads.html#missionbio.mosaic.protein.Protein.normalize_reads" title="missionbio.mosaic.protein.Protein.normalize_reads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_reads</span></code></a>([method, jitter, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.protein.Protein.get_scaling_factor.html#missionbio.mosaic.protein.Protein.get_scaling_factor" title="missionbio.mosaic.protein.Protein.get_scaling_factor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_scaling_factor</span></code></a>()</p></td>
+<td><p>Identifies the appropriate scaling factor for oversequenced runs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.protein.Protein.normalize_reads.html#missionbio.mosaic.protein.Protein.normalize_reads" title="missionbio.mosaic.protein.Protein.normalize_reads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">normalize_reads</span></code></a>([method, jitter, scale, …])</p></td>
 <td><p>Normalize read counts.</p></td>
 </tr>
 </tbody>
@@ -68,6 +71,18 @@ See that for the documentation on other methods and visualizations.</p>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.protein.Protein.cells_per_ab.html#missionbio.mosaic.protein.Protein.cells_per_ab" title="missionbio.mosaic.protein.Protein.cells_per_ab"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cells_per_ab</span></code></a>([title])</p></td>
 <td><p>Bar plot of non-zero read cells to antibodies.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Extended methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.protein.Protein.run_umap.html#missionbio.mosaic.protein.Protein.run_umap" title="missionbio.mosaic.protein.Protein.run_umap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_umap</span></code></a>(**kwargs)</p></td>
+<td><p>Extends <a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.run_umap.html#missionbio.mosaic.assay._Assay.run_umap" title="missionbio.mosaic.assay._Assay.run_umap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">missionbio.mosaic.assay._Assay.run_umap()</span></code></a></p></td>
 </tr>
 </tbody>
 </table>

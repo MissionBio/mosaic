@@ -35,14 +35,15 @@
 <h1>missionbio.mosaic.dna.Dna.cluster<a class="headerlink" href="#missionbio-mosaic-dna-dna-cluster" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.dna.Dna.cluster">
-<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">cluster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span><span class="o">=</span><span class="default_value">'pca'</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'dbscan'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.cluster" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">cluster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'dbscan'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.cluster" title="Permalink to this definition">¶</a></dt>
 <dd><p>Identify clusters of cells.</p>
-<p>Modifies the <cite>id</cite> row attribute of the assay.</p>
+<p>Modifies the <cite>label</cite> row attribute of the assay.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>attribute</strong><span class="classifier">str</span></dt><dd><p>The row attribute to use as coordinates,
-with the most likely value being ‘umap’.</p>
+<dt><strong>attribute</strong><span class="classifier">str / np.array</span></dt><dd><p>The attribute to use as coordinates for clustering.
+Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve the values
+constrained by <cite>row</cite>.</p>
 </dd>
 <dt><strong>method</strong><span class="classifier">str</span></dt><dd><p>dbscan, hdbscan, kmeans, or graph-community (Louvain
 on a shared nearest neighbor graph).</p>
@@ -51,22 +52,22 @@ on a shared nearest neighbor graph).</p>
 <dl class="simple">
 <dt>Available parameters for the methods are:</dt><dd><ol class="arabic simple">
 <li><dl class="simple">
-<dt>dbscan: eps (float)</dt><dd><p>A measure of how close the points are.</p>
+<dt>dbscan<span class="classifier">eps (float)</span></dt><dd><p>A measure of how close the points are.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>hdbscan: min_cluster_size (int)</dt><dd><p>The number of cells in a cluster.</p>
+<dt>hdbscan<span class="classifier">min_cluster_size (int)</span></dt><dd><p>The number of cells in a cluster.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>kmeans: n_clusters (int)</dt><dd><p>The number of clusters to be generated.</p>
+<dt>kmeans<span class="classifier">n_clusters (int)</span></dt><dd><p>The number of clusters to be generated.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>graph-community: k (int)</dt><dd><p>The number of nearest neighbors to consider
+<dt>graph-community<span class="classifier">k (int)</span></dt><dd><p>The number of nearest neighbors to consider
 in the shared nearest neighbor graph generation.</p>
 </dd>
 </dl>

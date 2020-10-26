@@ -1,0 +1,6 @@
+io.open
+=======
+
+.. currentmodule:: io
+
+.. autofunction:: open

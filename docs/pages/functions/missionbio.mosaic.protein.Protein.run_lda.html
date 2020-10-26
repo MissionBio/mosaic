@@ -35,18 +35,22 @@
 <h1>missionbio.mosaic.protein.Protein.run_lda<a class="headerlink" href="#missionbio-mosaic-protein-protein-run-lda" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.protein.Protein.run_lda">
-<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">run_lda</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">output_attr</span></em>, <em class="sig-param"><span class="n">cycles</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.run_lda" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">run_lda</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">output_label</span></em>, <em class="sig-param"><span class="n">cycles</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.run_lda" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform LDA on a row attribute using a layer to type clusters.</p>
 <p>The row attribute is dimensionally reduced using UMAP.</p>
-<p>Adds <cite>output_attr</cite> to the row attributes.</p>
+<p>Adds <cite>output_label</cite> to the row attributes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>The layer used for cluster typing.</p>
+<dt><strong>layer</strong><span class="classifier">str / np.array</span></dt><dd><p>The layer used for cluster typing. Uses
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve
+the value constrained by <cite>row+col</cite>.</p>
 </dd>
-<dt><strong>attribute</strong><span class="classifier">str</span></dt><dd><p>The row attribute to be used for UMAP.</p>
+<dt><strong>attribute</strong><span class="classifier">str / np.array</span></dt><dd><p>The row attribute to be used for UMAP. Uses
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve
+the value constrained by <cite>row</cite>.</p>
 </dd>
-<dt><strong>output_attr</strong><span class="classifier">str</span></dt><dd><p>The name of the row attribute where the UMAP output is.</p>
+<dt><strong>output_label</strong><span class="classifier">str</span></dt><dd><p>The name of the row attribute where the UMAP output is.</p>
 </dd>
 <dt><strong>cycles</strong><span class="classifier">int</span></dt><dd><p>The number of rounds of LDA to perform.</p>
 </dd>

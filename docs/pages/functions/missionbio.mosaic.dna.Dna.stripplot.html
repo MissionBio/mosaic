@@ -35,7 +35,7 @@
 <h1>missionbio.mosaic.dna.Dna.stripplot<a class="headerlink" href="#missionbio-mosaic-dna-dna-stripplot" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.dna.Dna.stripplot">
-<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">stripplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">color_layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">labels</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">feature_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.stripplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">stripplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">colorby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">features</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.stripplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Strip plot for all barcodes.</p>
 <p>Generates a strip plot for the given ids (x-axis), and
 shows the layer (y-axis) and color_layer (color) for all barcodes.
@@ -43,13 +43,18 @@ Additional lateral jitter is added to help visualize the distribution.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>The layer to use for the strips.</p>
+<dt><strong>attribute</strong><span class="classifier">str / np.array</span></dt><dd><p>The attribute used to plot the values on the ridgeplot.
+Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve the values.
+constrained by ‘row’.</p>
 </dd>
-<dt><strong>color_layer</strong><span class="classifier">str</span></dt><dd><p>The layer to use to color the plot.</p>
+<dt><strong>colorby</strong><span class="classifier">str / np.array</span></dt><dd><p>The values used to color the stripplot.
+Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve
+the values constrained by ‘row’. It must be the
+same shape as attribute.</p>
 </dd>
-<dt><strong>labels</strong><span class="classifier">bool</span></dt><dd><p>Whether to split the strip by the labels.</p>
-</dd>
-<dt><strong>feature_ids</strong><span class="classifier">list</span></dt><dd><p>The ids to plot.</p>
+<dt><strong>features</strong><span class="classifier">list-like</span></dt><dd><p>In the case that <cite>attribute</cite> is a layer then
+features sets the subset of features to plot.
+Otherwise it sets the name of each feature shown.</p>
 </dd>
 <dt><strong>title</strong><span class="classifier">str</span></dt><dd><p>The title given to the plot after
 the name of the assay.</p>

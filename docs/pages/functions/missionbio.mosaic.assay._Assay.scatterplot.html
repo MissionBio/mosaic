@@ -35,28 +35,67 @@
 <h1>missionbio.mosaic.assay._Assay.scatterplot<a class="headerlink" href="#missionbio-mosaic-assay-assay-scatterplot" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.assay._Assay.scatterplot">
-<code class="sig-prename descclassname">_Assay.</code><code class="sig-name descname">scatterplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">labels</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">feature_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.scatterplot" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">_Assay.</code><code class="sig-name descname">scatterplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">colorby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">features</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.scatterplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scatter plot for all barcodes.</p>
 <p>Requires a 2-D row attribute.</p>
-<p>If <cite>labels</cite> is <cite>False</cite>, <cite>feature_ids</cite> are not given,
-and the <cite>layer</cite> is None, then this plot can be used
+<p>If <cite>colorby</cite> is None, then this plot can be used
 to create custom clusters using the plotly lasso tool.</p>
 <p>Not selecting any cell deselects all clusters, and double
 clicking refocuses all points.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>attribute</strong><span class="classifier">str</span></dt><dd><p>The row attribute to use as coordinates,
-the most likely value is ‘umap’.
-This row attribute must be 2D.</p>
+<dd class="field-odd"><dl>
+<dt><strong>attribute</strong><span class="classifier">str / np.array</span></dt><dd><p>The row attribute to use as coordinates,
+This row attribute must be 2D. Uses <a class="reference internal" href="missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute" title="missionbio.mosaic.assay._Assay.get_attribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code></a>
+to retrieve the values constrained by <cite>row</cite>.
+The shape must be <cite>(#cells, 2)</cite>.</p>
 </dd>
-<dt><strong>labels</strong><span class="classifier">bool</span></dt><dd><p>Whether the plot should be colored
-by the labels that have been set.</p>
+<dt><strong>colorby</strong><span class="classifier">str / np.array</span></dt><dd><p>The values used to color the scatterplot.
+Uses <a class="reference internal" href="missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute" title="missionbio.mosaic.assay._Assay.get_attribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code></a> to retrieve
+the values constrained by <cite>row</cite>.
+The shape must be <cite>(#cells, *)</cite> if 2D, otherwise
+the shape must be <cite>(#cells)</cite>.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>None</dt><dd><p>The scatterplot is not colored and
+highlighting using the lasso tool
+can be used to select subpopulations.</p>
 </dd>
-<dt><strong>feature_ids</strong><span class="classifier">list</span></dt><dd><p>The features to color the plot by.</p>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Any 1D attribute</dt><dd><p>In case ‘label’ is provided then the
+stored paltte is used. If the values
+are strings, then a discrete color map
+is assumed. For numerical values a
+continuous color scale is used.</p>
 </dd>
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>The layer to use for the color when
-the feature is provided.</p>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Any 2D attribute</dt><dd><p>One dimension must match the number of
+cells in the assay.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘density’</dt><dd><p>Colors the plot based on the density of
+the nearby points.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</dd>
+<dt><strong>features</strong><span class="classifier">list-like</span></dt><dd><p>In the case that <cite>colorby</cite> is a layer then
+features sets the subset of features to
+color the plot by.</p>
+<p>In the case that <cite>colorby</cite> is a 2D array
+features sets the title of each scatterplot.
+In this case, the length of <cite>features</cite>
+must match the number of columns in the
+<cite>colorby</cite> 2D array.</p>
 </dd>
 <dt><strong>title</strong><span class="classifier">str</span></dt><dd><p>The title given to the plot after
 the name of the assay.</p>
@@ -70,11 +109,9 @@ the name of the assay.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>Raised in the following cases.
-When the attribute is not present in the assay.
-When both labels and feature_ids are provided as arguments.
-When feature_ids are provided but a corresponding layer
-is not provided.</p>
+<dt>ValueError</dt><dd><p>Raised when the attribute is not present in the assay
+or when length of <cite>features</cite> does not match the second
+dimension of <cite>colorby</cite>.</p>
 </dd>
 </dl>
 </dd>

@@ -35,17 +35,17 @@
 <h1>missionbio.mosaic.assay._Assay.run_umap<a class="headerlink" href="#missionbio-mosaic-assay-assay-run-umap" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.assay._Assay.run_umap">
-<code class="sig-prename descclassname">_Assay.</code><code class="sig-name descname">run_umap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output_attr</span><span class="o">=</span><span class="default_value">'umap'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.run_umap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">_Assay.</code><code class="sig-name descname">run_umap</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">output_label</span><span class="o">=</span><span class="default_value">'umap'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.run_umap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform UMAP on the given data.</p>
-<p>Adds <cite>output_attr</cite> to the row attributes.</p>
+<p>Adds <cite>output_label</cite> to the row attributes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>The layer to be used for UMAP.</p>
+<dt><strong>attribute</strong><span class="classifier">str</span></dt><dd><p>The attribute to be used for UMAP. Uses
+<a href="#id1"><span class="problematic" id="id2">:met:`_Assay.get_attribute`</span></a> to retrieve the values
+constrained by <cite>row</cite>.</p>
 </dd>
-<dt><strong>attribute</strong><span class="classifier">str</span></dt><dd><p>The row attribute to be used for UMAP.</p>
-</dd>
-<dt><strong>output_attr</strong><span class="classifier">str</span></dt><dd><p>The name of the row attribute where the UMAP output is.</p>
+<dt><strong>output_label</strong><span class="classifier">str, default UMAP_LABEL</span></dt><dd><p>The name of the row attribute where the UMAP output is.</p>
 </dd>
 <dt><strong>kwargs</strong><span class="classifier">dictionary</span></dt><dd><p>Passed to UMAP.</p>
 </dd>

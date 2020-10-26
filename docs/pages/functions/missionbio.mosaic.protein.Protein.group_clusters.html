@@ -35,7 +35,7 @@
 <h1>missionbio.mosaic.protein.Protein.group_clusters<a class="headerlink" href="#missionbio-mosaic-protein-protein-group-clusters" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.protein.Protein.group_clusters">
-<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">group_clusters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.group_clusters" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">group_clusters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.group_clusters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Relabel clusters based on expression.</p>
 <p>Takes an assay object and reorders the
 cluster labels so that the clusters are
@@ -48,8 +48,10 @@ to each other.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>The name of the layer from the assay object used
-to hierarchically group the clusters.</p>
+<dt><strong>layer</strong><span class="classifier">str / np.array</span></dt><dd><p>The name of the attribute from the assay object used
+to hierarchically group the clusters. Uses
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve the values
+constrained by <cite>row</cite></p>
 </dd>
 </dl>
 </dd>

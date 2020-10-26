@@ -35,7 +35,7 @@
 <h1>missionbio.mosaic.cnv.Cnv.clustered_barcodes<a class="headerlink" href="#missionbio-mosaic-cnv-cnv-clustered-barcodes" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.cnv.Cnv.clustered_barcodes">
-<code class="sig-prename descclassname">Cnv.</code><code class="sig-name descname">clustered_barcodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feature_ids</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">override</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.clustered_barcodes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Cnv.</code><code class="sig-name descname">clustered_barcodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">orderby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">splitby</span><span class="o">=</span><span class="default_value">'label'</span></em>, <em class="sig-param"><span class="n">override</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.clustered_barcodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hierarchical clustering of barcodes.</p>
 <p>If the layer is not provided, the barcodes are
 returned according to the labels.</p>
@@ -45,10 +45,15 @@ in this layer for each label.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>feature_ids</strong><span class="classifier">list</span></dt><dd><p>A subset of the ids to use for clustering.</p>
+<dt><strong>orderby</strong><span class="classifier">str / np.ndarray</span></dt><dd><p>An attribute with at least one dimension equal
+to the number of barcodes. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code>
+to retrieve the values constrained by <cite>row</cite>.</p>
 </dd>
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>The values from this layer are used for clustering.
-If None, then only ordering on labels is done.</p>
+<dt><strong>splitby</strong><span class="classifier">bool</span></dt><dd><p>Whether to order the barcodes based on the given
+labels or not. Only applicable when labels <cite>orderby</cite>
+is <cite>None</cite>. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to
+retrieve the values constrained by <cite>row</cite>. The shape
+must be equal to <cite>(#cells)</cite></p>
 </dd>
 <dt><strong>override</strong><span class="classifier">bool</span></dt><dd><p>Continue clustering even if the number of <cite>id</cite>
 is greater than 1,000.</p>
@@ -63,7 +68,7 @@ is greater than 1,000.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>When the labels are not set.</p>
+<dt>ValueError</dt><dd><p>When the shape of orderby is not appropriate</p>
 </dd>
 <dt>Exception</dt><dd><p>When the number of <cite>id</cite> in the assay is greater
 than 1,000. This can take a long time

@@ -1,0 +1,6 @@
+﻿utils.get\_indexes
+==================
+
+.. currentmodule:: utils
+
+.. autofunction:: get_indexes

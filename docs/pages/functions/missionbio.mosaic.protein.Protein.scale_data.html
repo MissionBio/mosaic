@@ -35,7 +35,7 @@
 <h1>missionbio.mosaic.protein.Protein.scale_data<a class="headerlink" href="#missionbio-mosaic-protein-protein-scale-data" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.protein.Protein.scale_data">
-<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">scale_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.scale_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">scale_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">output_label</span><span class="o">=</span><span class="default_value">'scaled_counts'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.scale_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Z-score normalization</p>
 <p>Ensures that all <cite>id</cite> have a mean
 of 0 and a standard deviation of 1.</p>
@@ -43,7 +43,10 @@ of 0 and a standard deviation of 1.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>The data to scale.</p>
+<dt><strong>layer</strong><span class="classifier">str / np.array</span></dt><dd><p>The data to scale. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code>
+to retrieve the value constrained by <cite>row+col</cite>.</p>
+</dd>
+<dt><strong>output_label</strong><span class="classifier">str, default SCALED_LABEL</span></dt><dd><p>The name of the output layer.</p>
 </dd>
 </dl>
 </dd>

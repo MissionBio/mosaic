@@ -35,26 +35,21 @@
 <h1>missionbio.mosaic.protein.Protein.feature_scatter<a class="headerlink" href="#missionbio-mosaic-protein-protein-feature-scatter" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.protein.Protein.feature_scatter">
-<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">feature_scatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ids</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">'normalized_counts'</span></em>, <em class="sig-param"><span class="n">labels</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">density</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">''</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.feature_scatter" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">feature_scatter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layer</span></em>, <em class="sig-param"><span class="n">ids</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.feature_scatter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot for given data across 2 ids.</p>
 <p>This is the typical biaxial plot seen in
 protein expression analysis.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>layer</strong><span class="classifier">str / np.array</span></dt><dd><p>The layer to use for the values
+that are plotted on the biaxial plot.
+Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve
+the value constrained by <cite>row+col</cite>.</p>
+</dd>
 <dt><strong>ids</strong><span class="classifier">2-tuple</span></dt><dd><p>The x and y coordinates.</p>
 </dd>
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>The layer to use for the values
-that are plotted on the biaxial plot.</p>
-</dd>
-<dt><strong>labels</strong><span class="classifier">bool</span></dt><dd><p>Whether to color the plot by
-the allotted labels.
-If False, the selection of the barcodes
-to cluster on the plot is possible.</p>
-</dd>
-<dt><strong>density</strong><span class="classifier">bool</span></dt><dd><p>Whether to show the density of the
-points. If False, the selection of the barcodes
-to cluster on the plot is possible.</p>
+<dt><strong>kwargs</strong><span class="classifier">dict</span></dt><dd><p>Passed to <a class="reference internal" href="missionbio.mosaic.assay._Assay.scatterplot.html#missionbio.mosaic.assay._Assay.scatterplot" title="missionbio.mosaic.assay._Assay.scatterplot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">missionbio.mosaic.assay._Assay.scatterplot()</span></code></a></p>
 </dd>
 </dl>
 </dd>

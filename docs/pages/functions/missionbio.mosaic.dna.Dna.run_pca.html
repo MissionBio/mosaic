@@ -35,23 +35,23 @@
 <h1>missionbio.mosaic.dna.Dna.run_pca<a class="headerlink" href="#missionbio-mosaic-dna-dna-run-pca" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.dna.Dna.run_pca">
-<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">run_pca</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">PCA_components</span><span class="o">=</span><span class="default_value">15</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attribute</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">show_plot</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">output_label</span><span class="o">=</span><span class="default_value">'pca'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.run_pca" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">run_pca</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">components</span></em>, <em class="sig-param"><span class="n">output_label</span><span class="o">=</span><span class="default_value">'pca'</span></em>, <em class="sig-param"><span class="n">show_plot</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.run_pca" title="Permalink to this definition">¶</a></dt>
 <dd><p>Principal component analysis</p>
 <p>Adds <cite>output_label</cite> to the row attributes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>PCA_components</strong><span class="classifier">int</span></dt><dd><p>The number of PCA components to reduce to.</p>
+<dt><strong>attribute</strong><span class="classifier">str</span></dt><dd><p>The attribute to be used for PCA. Uses
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve
+the values constrained by <cite>row</cite>.</p>
 </dd>
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>The layer to be used for PCA.</p>
+<dt><strong>components</strong><span class="classifier">int</span></dt><dd><p>The number of PCA components to reduce to.</p>
 </dd>
-<dt><strong>attribute</strong><span class="classifier">str</span></dt><dd><p>The row attribute to be used for PCA.</p>
+<dt><strong>output_label</strong><span class="classifier">str, default PCA_LABEL</span></dt><dd><p>The name of the row attribute to store
+the data in.</p>
 </dd>
 <dt><strong>show_plot</strong><span class="classifier">bool</span></dt><dd><p>Show the plot for the explained variance
 by the PCAs.</p>
-</dd>
-<dt><strong>output_label</strong><span class="classifier">str</span></dt><dd><p>The name of the row attribute to store
-the data in.</p>
 </dd>
 <dt><strong>kwargs</strong><span class="classifier">dict</span></dt><dd><p>Passed to the PCA.</p>
 </dd>

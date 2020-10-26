@@ -106,13 +106,13 @@ any <cite>_Assay</cite> object.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.barcodes.html#missionbio.mosaic.assay._Assay.barcodes" title="missionbio.mosaic.assay._Assay.barcodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">barcodes</span></code></a>([label])</p></td>
 <td><p>Get the list of barcodes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.clustered_barcodes.html#missionbio.mosaic.assay._Assay.clustered_barcodes" title="missionbio.mosaic.assay._Assay.clustered_barcodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clustered_barcodes</span></code></a>([feature_ids, layer, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.clustered_barcodes.html#missionbio.mosaic.assay._Assay.clustered_barcodes" title="missionbio.mosaic.assay._Assay.clustered_barcodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clustered_barcodes</span></code></a>([orderby, splitby, override])</p></td>
 <td><p>Hierarchical clustering of barcodes.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.ids.html#missionbio.mosaic.assay._Assay.ids" title="missionbio.mosaic.assay._Assay.ids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ids</span></code></a>()</p></td>
 <td><p>Get the list of ids.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.clustered_ids.html#missionbio.mosaic.assay._Assay.clustered_ids" title="missionbio.mosaic.assay._Assay.clustered_ids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clustered_ids</span></code></a>(layer[, feature_ids, override])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.clustered_ids.html#missionbio.mosaic.assay._Assay.clustered_ids" title="missionbio.mosaic.assay._Assay.clustered_ids"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clustered_ids</span></code></a>(orderby[, features, override])</p></td>
 <td><p>Hierarchical clustering of ids.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.get_palette.html#missionbio.mosaic.assay._Assay.get_palette" title="missionbio.mosaic.assay._Assay.get_palette"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_palette</span></code></a>()</p></td>
@@ -133,6 +133,9 @@ any <cite>_Assay</cite> object.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.rename_labels.html#missionbio.mosaic.assay._Assay.rename_labels" title="missionbio.mosaic.assay._Assay.rename_labels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_labels</span></code></a>(label_map)</p></td>
 <td><p>Change the name of the labels.</p></td>
 </tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute" title="missionbio.mosaic.assay._Assay.get_attribute"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attribute</span></code></a>(attribute[, features, constraint])</p></td>
+<td><p>Retrieve any attribute in the assay</p></td>
+</tr>
 </tbody>
 </table>
 <p class="rubric">Tertiary analysis methods</p>
@@ -142,22 +145,22 @@ any <cite>_Assay</cite> object.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.scale_data.html#missionbio.mosaic.assay._Assay.scale_data" title="missionbio.mosaic.assay._Assay.scale_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_data</span></code></a>(layer)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.scale_data.html#missionbio.mosaic.assay._Assay.scale_data" title="missionbio.mosaic.assay._Assay.scale_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale_data</span></code></a>(layer[, output_label])</p></td>
 <td><p>Z-score normalization</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.run_pca.html#missionbio.mosaic.assay._Assay.run_pca" title="missionbio.mosaic.assay._Assay.run_pca"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_pca</span></code></a>([PCA_components, layer, attribute, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.run_pca.html#missionbio.mosaic.assay._Assay.run_pca" title="missionbio.mosaic.assay._Assay.run_pca"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_pca</span></code></a>(attribute, components[, …])</p></td>
 <td><p>Principal component analysis</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.run_umap.html#missionbio.mosaic.assay._Assay.run_umap" title="missionbio.mosaic.assay._Assay.run_umap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_umap</span></code></a>([layer, attribute, output_attr])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.run_umap.html#missionbio.mosaic.assay._Assay.run_umap" title="missionbio.mosaic.assay._Assay.run_umap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_umap</span></code></a>(attribute[, output_label])</p></td>
 <td><p>Perform UMAP on the given data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.run_lda.html#missionbio.mosaic.assay._Assay.run_lda" title="missionbio.mosaic.assay._Assay.run_lda"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_lda</span></code></a>(layer, attribute, output_attr[, cycles])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.run_lda.html#missionbio.mosaic.assay._Assay.run_lda" title="missionbio.mosaic.assay._Assay.run_lda"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_lda</span></code></a>(layer, attribute, output_label[, cycles])</p></td>
 <td><p>Perform LDA on a row attribute using a layer to type clusters.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.cluster.html#missionbio.mosaic.assay._Assay.cluster" title="missionbio.mosaic.assay._Assay.cluster"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cluster</span></code></a>([attribute, method])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.cluster.html#missionbio.mosaic.assay._Assay.cluster" title="missionbio.mosaic.assay._Assay.cluster"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cluster</span></code></a>(attribute[, method])</p></td>
 <td><p>Identify clusters of cells.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.group_clusters.html#missionbio.mosaic.assay._Assay.group_clusters" title="missionbio.mosaic.assay._Assay.group_clusters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_clusters</span></code></a>(layer)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.group_clusters.html#missionbio.mosaic.assay._Assay.group_clusters" title="missionbio.mosaic.assay._Assay.group_clusters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_clusters</span></code></a>(attribute)</p></td>
 <td><p>Relabel clusters based on expression.</p></td>
 </tr>
 </tbody>
@@ -169,25 +172,25 @@ any <cite>_Assay</cite> object.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.scatterplot.html#missionbio.mosaic.assay._Assay.scatterplot" title="missionbio.mosaic.assay._Assay.scatterplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatterplot</span></code></a>(attribute[, labels, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.scatterplot.html#missionbio.mosaic.assay._Assay.scatterplot" title="missionbio.mosaic.assay._Assay.scatterplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatterplot</span></code></a>(attribute[, colorby, features, …])</p></td>
 <td><p>Scatter plot for all barcodes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.heatmap.html#missionbio.mosaic.assay._Assay.heatmap" title="missionbio.mosaic.assay._Assay.heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatmap</span></code></a>(layer[, feature_ids, bars_order, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.heatmap.html#missionbio.mosaic.assay._Assay.heatmap" title="missionbio.mosaic.assay._Assay.heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatmap</span></code></a>(attribute[, splitby, features, …])</p></td>
 <td><p>Heatmap of all barcodes and ids.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.violinplot.html#missionbio.mosaic.assay._Assay.violinplot" title="missionbio.mosaic.assay._Assay.violinplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">violinplot</span></code></a>(layer[, labels, feature_ids, title])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.violinplot.html#missionbio.mosaic.assay._Assay.violinplot" title="missionbio.mosaic.assay._Assay.violinplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">violinplot</span></code></a>(attribute[, splitby, features, title])</p></td>
 <td><p>Violin plot for all barcodes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.ridgeplot.html#missionbio.mosaic.assay._Assay.ridgeplot" title="missionbio.mosaic.assay._Assay.ridgeplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ridgeplot</span></code></a>(layer[, labels, feature_ids, title])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.ridgeplot.html#missionbio.mosaic.assay._Assay.ridgeplot" title="missionbio.mosaic.assay._Assay.ridgeplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ridgeplot</span></code></a>(attribute[, splitby, features, title])</p></td>
 <td><p>Ridge plot for all barcodes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.stripplot.html#missionbio.mosaic.assay._Assay.stripplot" title="missionbio.mosaic.assay._Assay.stripplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stripplot</span></code></a>(layer[, color_layer, labels, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.stripplot.html#missionbio.mosaic.assay._Assay.stripplot" title="missionbio.mosaic.assay._Assay.stripplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stripplot</span></code></a>(attribute[, colorby, features, title])</p></td>
 <td><p>Strip plot for all barcodes.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.read_distribution.html#missionbio.mosaic.assay._Assay.read_distribution" title="missionbio.mosaic.assay._Assay.read_distribution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_distribution</span></code></a>([title])</p></td>
 <td><p>Rank-ordered barcodes vs total reads.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.feature_scatter.html#missionbio.mosaic.assay._Assay.feature_scatter" title="missionbio.mosaic.assay._Assay.feature_scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">feature_scatter</span></code></a>(ids[, layer, labels, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.assay._Assay.feature_scatter.html#missionbio.mosaic.assay._Assay.feature_scatter" title="missionbio.mosaic.assay._Assay.feature_scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">feature_scatter</span></code></a>(layer, ids, **kwargs)</p></td>
 <td><p>Plot for given data across 2 ids.</p></td>
 </tr>
 </tbody>
