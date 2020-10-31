@@ -1,5 +1,5 @@
-missionbio.mosaic.sample.Sample
-===============================
+Sample
+======
 
 .. currentmodule:: missionbio.mosaic.sample
 

@@ -1,6 +1,0 @@
-﻿utils.clipped\_values
-=====================
-
-.. currentmodule:: utils
-
-.. autofunction:: clipped_values

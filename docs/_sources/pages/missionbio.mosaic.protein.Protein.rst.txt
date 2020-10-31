@@ -1,5 +1,5 @@
-missionbio.mosaic.protein.Protein
-=================================
+Protein
+=======
 
 .. currentmodule:: missionbio.mosaic.protein
 

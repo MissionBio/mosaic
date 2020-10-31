@@ -1,6 +1,0 @@
-﻿utils.static\_fig
-=================
-
-.. currentmodule:: utils
-
-.. autofunction:: static_fig

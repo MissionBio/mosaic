@@ -1,6 +1,0 @@
-missionbio.mosaic.cnv.Cnv.group\_clusters
-=========================================
-
-.. currentmodule:: missionbio.mosaic.cnv
-
-.. automethod:: Cnv.group_clusters

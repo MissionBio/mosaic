@@ -1,0 +1,8 @@
+:orphan:
+
+Dna.cluster\_cleanup
+====================
+
+.. currentmodule:: missionbio.mosaic.dna
+
+.. automethod:: Dna.cluster_cleanup

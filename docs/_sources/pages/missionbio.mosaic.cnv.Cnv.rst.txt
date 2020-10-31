@@ -1,5 +1,5 @@
-missionbio.mosaic.cnv.Cnv
-=========================
+Cnv
+===
 
 .. currentmodule:: missionbio.mosaic.cnv
 

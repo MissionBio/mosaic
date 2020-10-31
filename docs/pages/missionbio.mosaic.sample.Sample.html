@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>missionbio.mosaic.sample.Sample &#8212; mosaic v0.12.0 documentation</title>
+    <title>Sample &#8212; Mosaic v1.0.0 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,7 +15,7 @@
     <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="missionbio.mosaic.protein.Protein" href="missionbio.mosaic.protein.Protein.html" />
+    <link rel="prev" title="Protein" href="missionbio.mosaic.protein.Protein.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -32,11 +32,11 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="missionbio-mosaic-sample-sample">
-<h1>missionbio.mosaic.sample.Sample<a class="headerlink" href="#missionbio-mosaic-sample-sample" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="sample">
+<h1>Sample<a class="headerlink" href="#sample" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="missionbio.mosaic.sample.Sample">
-<em class="property">class </em><code class="sig-name descname">Sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dna</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cnv</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">protein</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cnv_raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">protein_raw</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.sample.Sample" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">missionbio.mosaic.sample.</code><code class="sig-name descname">Sample</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dna</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cnv</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">protein</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cnv_raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">protein_raw</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.sample.Sample" title="Permalink to this definition">¶</a></dt>
 <dd><p>Container for multiple assays.</p>
 <p>Just like the <a class="reference internal" href="missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-class docutils literal notranslate"><span class="pre">missionbio.mosaic.assay._Assay</span></code></a> object,
 <cite>Sample</cite> can also be filtered using Python’s slice notation.</p>
@@ -68,7 +68,7 @@ and shared using:</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.sample.Sample.reset.html#missionbio.mosaic.sample.Sample.reset" title="missionbio.mosaic.sample.Sample.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>([assay])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.sample.Sample.reset.html#missionbio.mosaic.sample.Sample.reset" title="missionbio.mosaic.sample.Sample.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>([assay])</p></td>
 <td><p>Resets to the original state.</p></td>
 </tr>
 </tbody>
@@ -80,13 +80,13 @@ and shared using:</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.sample.Sample.heatmap.html#missionbio.mosaic.sample.Sample.heatmap" title="missionbio.mosaic.sample.Sample.heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatmap</span></code></a>(clusterby, sortby[, drop, flatten])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.sample.Sample.heatmap.html#missionbio.mosaic.sample.Sample.heatmap" title="missionbio.mosaic.sample.Sample.heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatmap</span></code></a>(clusterby, sortby[, drop, flatten])</p></td>
 <td><p>Multi-assay heatmap.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.sample.Sample.clone_vs_analyte.html#missionbio.mosaic.sample.Sample.clone_vs_analyte" title="missionbio.mosaic.sample.Sample.clone_vs_analyte"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clone_vs_analyte</span></code></a>([analyte, plot_width])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.sample.Sample.clone_vs_analyte.html#missionbio.mosaic.sample.Sample.clone_vs_analyte" title="missionbio.mosaic.sample.Sample.clone_vs_analyte"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clone_vs_analyte</span></code></a>([analyte, plot_width])</p></td>
 <td><p>Set of summary plots to give a run overview.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.sample.Sample.umaps.html#missionbio.mosaic.sample.Sample.umaps" title="missionbio.mosaic.sample.Sample.umaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">umaps</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.sample.Sample.umaps.html#missionbio.mosaic.sample.Sample.umaps" title="missionbio.mosaic.sample.Sample.umaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">umaps</span></code></a>()</p></td>
 <td><p>Plots umap arrays from assay objects.</p></td>
 </tr>
 </tbody>
@@ -98,13 +98,13 @@ and shared using:</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.sample.Sample.assay_scatter.html#missionbio.mosaic.sample.Sample.assay_scatter" title="missionbio.mosaic.sample.Sample.assay_scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assay_scatter</span></code></a>([ax, title, highlight])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.sample.Sample.assay_scatter.html#missionbio.mosaic.sample.Sample.assay_scatter" title="missionbio.mosaic.sample.Sample.assay_scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assay_scatter</span></code></a>([ax, title, highlight])</p></td>
 <td><p>Plots DNA reads vs Protein reads.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="functions/missionbio.mosaic.sample.Sample.raw_heatmaps.html#missionbio.mosaic.sample.Sample.raw_heatmaps" title="missionbio.mosaic.sample.Sample.raw_heatmaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_heatmaps</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.sample.Sample.raw_heatmaps.html#missionbio.mosaic.sample.Sample.raw_heatmaps" title="missionbio.mosaic.sample.Sample.raw_heatmaps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raw_heatmaps</span></code></a>()</p></td>
 <td><p>Protein and DNA read distribution.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="functions/missionbio.mosaic.sample.Sample.read_data.html#missionbio.mosaic.sample.Sample.read_data" title="missionbio.mosaic.sample.Sample.read_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_data</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.sample.Sample.read_data.html#missionbio.mosaic.sample.Sample.read_data" title="missionbio.mosaic.sample.Sample.read_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_data</span></code></a>()</p></td>
 <td><p>Plot read statistics of each barcode.</p></td>
 </tr>
 </tbody>
@@ -120,7 +120,7 @@ and shared using:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">mosaic</a></h1>
+<h1 class="logo"><a href="../index.html">Mosaic</a></h1>
 
 
 
@@ -130,24 +130,26 @@ and shared using:</p>
 
 
 <h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.io.html">missionbio.mosaic.io</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.utils.html">missionbio.mosaic.utils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.constants.html">missionbio.mosaic.constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.constants.html">constants</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Classes</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.assay._Assay.html">missionbio.mosaic.assay._Assay</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.dna.Dna.html">missionbio.mosaic.dna.Dna</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.cnv.Cnv.html">missionbio.mosaic.cnv.Cnv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.protein.Protein.html">missionbio.mosaic.protein.Protein</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">missionbio.mosaic.sample.Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sample</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="missionbio.mosaic.protein.Protein.html" title="previous chapter">missionbio.mosaic.protein.Protein</a></li>
+      <li>Previous: <a href="missionbio.mosaic.protein.Protein.html" title="previous chapter">Protein</a></li>
   </ul></li>
 </ul>
 </div>

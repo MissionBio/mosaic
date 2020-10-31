@@ -1,0 +1,8 @@
+:orphan:
+
+Dna.count
+=========
+
+.. currentmodule:: missionbio.mosaic.dna
+
+.. automethod:: Dna.count

@@ -1,5 +1,5 @@
-missionbio.mosaic.assay.\_Assay
-===============================
+\_Assay
+=======
 
 .. currentmodule:: missionbio.mosaic.assay
 

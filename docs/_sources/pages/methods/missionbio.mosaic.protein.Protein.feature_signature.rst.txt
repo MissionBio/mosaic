@@ -1,0 +1,8 @@
+:orphan:
+
+Protein.feature\_signature
+==========================
+
+.. currentmodule:: missionbio.mosaic.protein
+
+.. automethod:: Protein.feature_signature

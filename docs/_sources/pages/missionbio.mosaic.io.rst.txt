@@ -1,32 +1,23 @@
-missionbio.mosaic.io
-====================
+io
+==
+
+.. currentmodule:: missionbio.mosaic.io
 
 .. automodule:: missionbio.mosaic.io
 
-   
-   
-   
-
-   
-   
-   .. rubric:: Functions
-
-   .. autosummary::
-   
-      load
-      merge
-      merge_files
-      save
-   
-   
-
-   
-   
-   
-
-   
-   
-   
 
 
+
+.. rubric:: Methods
+
+.. autosummary::
+   :toctree: functions
+   :template: function.rst
+
+
+
+  ~load
+  ~merge
+  ~merge_files
+  ~save
 

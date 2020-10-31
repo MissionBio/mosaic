@@ -1,6 +1,0 @@
-missionbio.mosaic.cnv.Cnv.del\_layer
-====================================
-
-.. currentmodule:: missionbio.mosaic.cnv
-
-.. automethod:: Cnv.del_layer

@@ -1,32 +1,23 @@
-missionbio.mosaic.utils
-=======================
+utils
+=====
+
+.. currentmodule:: missionbio.mosaic.utils
 
 .. automodule:: missionbio.mosaic.utils
 
-   
-   
-   
-
-   
-   
-   .. rubric:: Functions
-
-   .. autosummary::
-   
-      clipped_values
-      extend_docs
-      get_indexes
-      static_fig
-   
-   
-
-   
-   
-   
-
-   
-   
-   
 
 
+
+.. rubric:: Methods
+
+.. autosummary::
+   :toctree: functions
+   :template: function.rst
+
+
+
+  ~clipped_values
+  ~extend_docs
+  ~get_indexes
+  ~static_fig
 

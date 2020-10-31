@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dna.scatterplot &#8212; Mosaic v1.0.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="dna-scatterplot">
+<h1>Dna.scatterplot<a class="headerlink" href="#dna-scatterplot" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt id="missionbio.mosaic.dna.Dna.scatterplot">
+<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">scatterplot</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.scatterplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extends <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.scatterplot()</span></code></p>
+<p>Set specific colorscales for DNA.</p>
+<p>Scatter plot for all barcodes.</p>
+<p>Requires a 2-D row attribute.</p>
+<p>If <cite>colorby</cite> is None, then this plot can be used
+to create custom clusters using the plotly lasso tool.</p>
+<p>Not selecting any cell deselects all clusters, and double
+clicking refocuses all points.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>attribute</strong><span class="classifier">str / np.array</span></dt><dd><p>The row attribute to use as coordinates,
+This row attribute must be 2D. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code>
+to retrieve the values constrained by <cite>row</cite>.
+The shape must be <cite>(#cells, 2)</cite>.</p>
+</dd>
+<dt><strong>colorby</strong><span class="classifier">str / np.array</span></dt><dd><p>The values used to color the scatterplot.
+Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve
+the values constrained by <cite>row</cite>.
+The shape must be <cite>(#cells, *)</cite> if 2D, otherwise
+the shape must be <cite>(#cells)</cite>.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><dl class="simple">
+<dt>None</dt><dd><p>The scatterplot is not colored and
+highlighting using the lasso tool
+can be used to select subpopulations.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Any 1D attribute</dt><dd><p>In case ‘label’ is provided then the
+stored paltte is used. If the values
+are strings, then a discrete color map
+is assumed. For numerical values a
+continuous color scale is used.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Any 2D attribute</dt><dd><p>One dimension must match the number of
+cells in the assay.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>‘density’</dt><dd><p>Colors the plot based on the density of
+the nearby points.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</dd>
+<dt><strong>features</strong><span class="classifier">list-like</span></dt><dd><p>In the case that <cite>colorby</cite> is a layer then
+features sets the subset of features to
+color the plot by.</p>
+<p>In the case that <cite>colorby</cite> is a 2D array
+features sets the title of each scatterplot.
+In this case, the length of <cite>features</cite>
+must match the number of columns in the
+<cite>colorby</cite> 2D array.</p>
+</dd>
+<dt><strong>title</strong><span class="classifier">str</span></dt><dd><p>The title given to the plot after
+the name of the assay.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>fig</strong><span class="classifier">plotly.graph_objs.FigureWidget</span></dt><dd></dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>Raised when the attribute is not present in the assay
+or when length of <cite>features</cite> does not match the second
+dimension of <cite>colorby</cite>.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Mosaic</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Mission Bio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/pages/methods/missionbio.mosaic.dna.Dna.scatterplot.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

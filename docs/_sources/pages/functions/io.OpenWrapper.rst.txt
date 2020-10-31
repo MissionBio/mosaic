@@ -1,6 +1,0 @@
-io.OpenWrapper
-==============
-
-.. currentmodule:: io
-
-.. autofunction:: OpenWrapper

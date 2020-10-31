@@ -1,6 +1,0 @@
-missionbio.mosaic.assay.\_Assay.feature\_signature
-==================================================
-
-.. currentmodule:: missionbio.mosaic.assay
-
-.. automethod:: _Assay.feature_signature

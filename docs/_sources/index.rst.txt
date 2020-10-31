@@ -8,7 +8,7 @@ A basic tutorial on how to use Mosaic to analyse DNA + Protein data can be found
 Loading a sample
 ----------------
 
-Any .h5 file can be loaded as a :class:`missionbio.mosaic.sample.Sample` object using:
+Any .h5 file can be loaded as a :class:`~missionbio.mosaic.sample.Sample` object using:
 
     >>> import missionbio.mosaic.io as mio
     >>> sample = mio.load('/path/to/h5')
@@ -40,7 +40,7 @@ Data structure
   
    (Sample-specific functionality, such as normalization)
 
-:class:`~missionbio.h5.assay.Assay` is a module for reading and writing .h5 files.
+:class:`missionbio.h5.assay.Assay` is a module for reading and writing .h5 files.
 It stores the information of the assay using:
 
    1. metadata (add_metadata / del_metadata):
@@ -97,7 +97,9 @@ Interface
 
 .. autosummary::
    :recursive:
+   :caption: Modules
    :toctree: pages
+   :template: module.rst
 
    ~missionbio.mosaic.io
    ~missionbio.mosaic.utils
@@ -108,8 +110,10 @@ Interface
 
 .. autosummary::
    :recursive:
+   :nosignatures:
+   :caption: Classes
    :toctree: pages
-   :template: base.rst
+   :template: class.rst
 
    ~missionbio.mosaic.assay._Assay
    ~missionbio.mosaic.dna.Dna

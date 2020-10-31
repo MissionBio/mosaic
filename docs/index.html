@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mosaic &#8212; mosaic v0.12.0 documentation</title>
+    <title>Mosaic &#8212; Mosaic v1.0.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="missionbio.mosaic.io" href="pages/missionbio.mosaic.io.html" />
+    <link rel="next" title="io" href="pages/missionbio.mosaic.io.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -38,7 +38,7 @@
 <a class="reference external" href="https://github.com/MissionBio/mosaic-vignettes">here.</a></p>
 <div class="section" id="loading-a-sample">
 <h2>Loading a sample<a class="headerlink" href="#loading-a-sample" title="Permalink to this headline">¶</a></h2>
-<p>Any .h5 file can be loaded as a <a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">missionbio.mosaic.sample.Sample</span></code></a> object using:</p>
+<p>Any .h5 file can be loaded as a <a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> object using:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">missionbio.mosaic.io</span> <span class="k">as</span> <span class="nn">mio</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">mio</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/path/to/h5&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span>
@@ -69,7 +69,7 @@
 <span class="p">(</span><span class="n">Sample</span><span class="o">-</span><span class="n">specific</span> <span class="n">functionality</span><span class="p">,</span> <span class="n">such</span> <span class="k">as</span> <span class="n">normalization</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">Assay</span></code> is a module for reading and writing .h5 files.
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">missionbio.h5.assay.Assay</span></code> is a module for reading and writing .h5 files.
 It stores the information of the assay using:</p>
 <blockquote>
 <div><ol class="arabic simple">
@@ -154,19 +154,19 @@ assay objects.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_Assay</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_Assay</span></code></a></p></td>
 <td><p>Abstract class for all assays</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.dna.Dna.html#missionbio.mosaic.dna.Dna" title="missionbio.mosaic.dna.Dna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dna</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.dna.Dna.html#missionbio.mosaic.dna.Dna" title="missionbio.mosaic.dna.Dna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dna</span></code></a></p></td>
 <td><p>Container for DNA data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.cnv.Cnv.html#missionbio.mosaic.cnv.Cnv" title="missionbio.mosaic.cnv.Cnv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cnv</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.cnv.Cnv.html#missionbio.mosaic.cnv.Cnv" title="missionbio.mosaic.cnv.Cnv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cnv</span></code></a></p></td>
 <td><p>Container for CNV data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.protein.Protein.html#missionbio.mosaic.protein.Protein" title="missionbio.mosaic.protein.Protein"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Protein</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.protein.Protein.html#missionbio.mosaic.protein.Protein" title="missionbio.mosaic.protein.Protein"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Protein</span></code></a></p></td>
 <td><p>Container for Protein data</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sample</span></code></a>([name, dna, cnv, protein, cnv_raw, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sample</span></code></a></p></td>
 <td><p>Container for multiple assays.</p></td>
 </tr>
 </tbody>
@@ -181,7 +181,7 @@ assay objects.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="#">mosaic</a></h1>
+<h1 class="logo"><a href="#">Mosaic</a></h1>
 
 
 
@@ -191,24 +191,26 @@ assay objects.</p>
 
 
 <h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Modules</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.io.html">missionbio.mosaic.io</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.utils.html">missionbio.mosaic.utils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.constants.html">missionbio.mosaic.constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.constants.html">constants</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Classes</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.assay._Assay.html">missionbio.mosaic.assay._Assay</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.dna.Dna.html">missionbio.mosaic.dna.Dna</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.cnv.Cnv.html">missionbio.mosaic.cnv.Cnv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.protein.Protein.html">missionbio.mosaic.protein.Protein</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html">missionbio.mosaic.sample.Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html">Sample</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="pages/missionbio.mosaic.io.html" title="next chapter">missionbio.mosaic.io</a></li>
+      <li>Next: <a href="pages/missionbio.mosaic.io.html" title="next chapter">io</a></li>
   </ul></li>
 </ul>
 </div>

@@ -1,5 +1,5 @@
-missionbio.mosaic.dna.Dna
-=========================
+Dna
+===
 
 .. currentmodule:: missionbio.mosaic.dna
 

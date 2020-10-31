@@ -1,0 +1,8 @@
+:orphan:
+
+Dna.feature\_signature
+======================
+
+.. currentmodule:: missionbio.mosaic.dna
+
+.. automethod:: Dna.feature_signature

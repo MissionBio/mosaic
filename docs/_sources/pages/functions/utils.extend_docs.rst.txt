@@ -1,6 +1,0 @@
-﻿utils.extend\_docs
-==================
-
-.. currentmodule:: utils
-
-.. autofunction:: extend_docs
