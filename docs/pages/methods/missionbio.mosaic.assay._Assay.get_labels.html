@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>_Assay.get_labels &#8212; Mosaic v1.0.0 documentation</title>
+    <title>_Assay.get_labels &#8212; Mosaic v1.1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -35,11 +35,21 @@
 <h1>_Assay.get_labels<a class="headerlink" href="#assay-get-labels" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.assay._Assay.get_labels">
-<code class="sig-prename descclassname">_Assay.</code><code class="sig-name descname">get_labels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.get_labels" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">_Assay.</code><code class="sig-name descname">get_labels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">barcodes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.get_labels" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the labels corresponding to the barcodes.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>barcodes</strong><span class="classifier">list-like / None</span></dt><dd><p>The set of barcodes for which the
+labels are to be returned. The order
+of the barcodes is maintained. The
+LABEL row attribute is returned when
+<cite>barcodes</cite> is <cite>None</cite></p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt>np.array</dt><dd><p>The list of labels.</p>
 </dd>
 </dl>

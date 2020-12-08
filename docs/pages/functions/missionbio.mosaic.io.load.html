@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>missionbio.mosaic.io.load &#8212; Mosaic v1.0.0 documentation</title>
+    <title>missionbio.mosaic.io.load &#8212; Mosaic v1.1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -35,7 +35,7 @@
 <h1>missionbio.mosaic.io.load<a class="headerlink" href="#missionbio-mosaic-io-load" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt id="missionbio.mosaic.io.load">
-<code class="sig-prename descclassname">missionbio.mosaic.io.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">update</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.io.load" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">missionbio.mosaic.io.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filepath</span></em>, <em class="sig-param"><span class="n">name</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">update</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">apply_filter</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">whitelist</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.io.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loading the .h5 file with one or more assays.</p>
 <p>This is the preferred way of loading .h5 files.</p>
 <p>It directly returns a <cite>Sample</cite> object, which
@@ -54,6 +54,10 @@ is used.</p>
 </dd>
 <dt><strong>update</strong><span class="classifier">bool</span></dt><dd><p>Whether the file is to be updated
 if the .h5 format is not supported.</p>
+</dd>
+<dt><strong>apply_filter</strong><span class="classifier">True</span></dt><dd><p>Whether to load only the filtered dna variants.</p>
+</dd>
+<dt><strong>whitelist</strong><span class="classifier">list-like</span></dt><dd><p>The specific dna variants to load.</p>
 </dd>
 </dl>
 </dd>

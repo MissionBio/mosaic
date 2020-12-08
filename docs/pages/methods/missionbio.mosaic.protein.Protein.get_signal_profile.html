@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Protein.get_signal_profile &#8212; Mosaic v1.0.0 documentation</title>
+    <title>Protein.get_signal_profile &#8212; Mosaic v1.1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -35,7 +35,7 @@
 <h1>Protein.get_signal_profile<a class="headerlink" href="#protein-get-signal-profile" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.protein.Protein.get_signal_profile">
-<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">get_signal_profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ab</span></em>, <em class="sig-param"><span class="n">attribute</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bw</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">show_plot</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.get_signal_profile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Protein.</code><code class="sig-name descname">get_signal_profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ab</span></em>, <em class="sig-param"><span class="n">attribute</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">features</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">bw</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">show_plot</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.get_signal_profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Identify the peaks and valleys in the antibody signal</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -48,6 +48,9 @@ Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre
 the values constrained by <cite>row+col</cite>. If None,
 then the signal profile is calculated using
 the asinh normalizatioin.</p>
+</dd>
+<dt><strong>features</strong><span class="classifier">list-like</span></dt><dd><p>Passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> if the
+attribute is not <cite>None</cite></p>
 </dd>
 <dt><strong>bw</strong><span class="classifier">float</span></dt><dd><p>The bandwidth used for fitting the kernel
 density on the signal profile.</p>

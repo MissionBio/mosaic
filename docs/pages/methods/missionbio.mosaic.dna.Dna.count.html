@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dna.count &#8212; Mosaic v1.0.0 documentation</title>
+    <title>Dna.count &#8212; Mosaic v1.1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -48,6 +48,9 @@ allocating the groups formed by the genotype.</p>
 <dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>Name of the layer used to count the cell types.
 Expected values are NGT or NGT_FILTERED as obtained
 from the <a class="reference internal" href="missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants" title="missionbio.mosaic.dna.Dna.filter_variants"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dna.filter_variants()</span></code></a> method.</p>
+</dd>
+<dt><strong>group_missing</strong><span class="classifier">bool</span></dt><dd><p>Whether the clusters caused due to missing values
+are merged together under one cluster named ‘Missing’.</p>
 </dd>
 <dt><strong>min_clone_size</strong><span class="classifier">float [0, 100]</span></dt><dd><p>The minimumum proportion of total cells to be present
 in the clone to count it as a separate clone.</p>

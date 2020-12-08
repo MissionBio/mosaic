@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dna.get_annotations &#8212; Mosaic v1.0.0 documentation</title>
+    <title>Dna.get_annotations &#8212; Mosaic v1.1.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -37,19 +37,13 @@
 <dt id="missionbio.mosaic.dna.Dna.get_annotations">
 <code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">get_annotations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.get_annotations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Annotate DNA variants.</p>
-<p>Returns an annotated string array based on the array of input variants (of form chrA-B-C-D), where
+<p>Returns an annotated string array based on the ids of the assay (of form chrA-B-C-D), where
 A,B,C,D represent the chromosome, position, reference, and alternate variant values of an arbitrary length.</p>
 <p>The new strings have a pathological type (PATH, L.PATH, MISS, NONS), and protein or gene added to the beginning
 of the string. This information is pulled from the MB annotation API.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>variants</strong><span class="classifier">string array</span></dt><dd><p>List of variants of form chrA-B-C-D.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
 <dt><strong>variants</strong><span class="classifier">list</span></dt><dd><p>The array of strings with pathogenicity and gene/protein appended to the front.</p>
 </dd>
 </dl>
