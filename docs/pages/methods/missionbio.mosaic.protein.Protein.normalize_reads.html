@@ -41,10 +41,10 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>method</strong><span class="classifier">str</span></dt><dd><p>DSB, CLR, asinh, or NSP which stand for
-Denoised and Scaled by Background,
+<dt><strong>method</strong><span class="classifier">str</span></dt><dd><p>CLR, asinh, or NSP which stand for
 Centered Log Ratio, Inverse Hyperbolic
-normalizations and Ceneted Log Division respectively</p>
+transformation and Noise corrected and Scaled
+Protein counts respectively</p>
 </dd>
 <dt><strong>jitter</strong><span class="classifier">float</span></dt><dd><p>The standard deviation of the jitter to be added
 to the read counts before applying the normalization.
@@ -61,9 +61,6 @@ algorithm tries to estimate it from the read distribution.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><dl class="simple">
-<dt>ValueError</dt><dd><p>When backgroun_mean or backgroun_std are not provided
-and the method of normalization is set to “DSB”.</p>
-</dd>
 <dt>Exception</dt><dd><p>When one of the supported methods is not provided.</p>
 </dd>
 </dl>
