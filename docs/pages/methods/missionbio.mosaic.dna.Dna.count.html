@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dna.count &#8212; Mosaic v1.1.0 documentation</title>
+    <title>Dna.count &#8212; Mosaic v1.2.0 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -35,10 +35,75 @@
 <h1>Dna.count<a class="headerlink" href="#dna-count" title="Permalink to this headline">¶</a></h1>
 <dl class="py method">
 <dt id="missionbio.mosaic.dna.Dna.count">
-<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">'NGT'</span></em>, <em class="sig-param"><span class="n">group_missing</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">min_clone_size</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">ignore_zygosity</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.count" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">layer</span><span class="o">=</span><span class="default_value">'NGT'</span></em>, <em class="sig-param"><span class="n">group_missing</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">min_clone_size</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">ignore_zygosity</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">show_plot</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>A clustering method available only for DNA.</p>
 <p>Labels the cells based on the groups formed by the chosen
-features. The values are stored in the <cite>LABEL</cite> layer</p>
+features. The values are stored in the <cite>LABEL</cite> layer.</p>
+<p>The returned dataframe contains information regarding the
+nature of the subclones. False positive clones can
+be obtained due to Allele Dropout (ADO) events.
+It contains three columns, a score, the parent clones,
+and the sister ADO clones. The indices are the
+subclone names.</p>
+<p>In an ADO event HET goes to WT and HOM for a given
+variant in a subset of the cells. Here, the HET clone is
+called the parent clone, the HOM and WT clones are
+the ADO clones, together called the sister clones.</p>
+<p>The parent and sister clones will be <cite>np.nan</cite> if the
+score is zero. Otherwise it is the name of the clone
+from which the subclone was obtained due to an ADO event.</p>
+<p>The score for each subclone measures the possibility that
+it’s a flase positive subclone obtained due to an ADO
+event. The score is 0 if it unlikely to be a clone due
+to ADO and 1 if it is highly likely to be an ADO clone.</p>
+<dl class="simple">
+<dt>The score takes into account the following metrics.</dt><dd><ol class="arabic simple">
+<li><p>NGT values of the clones</p></li>
+<li><p>Relative proportions of the clones</p></li>
+<li><p>Absolute proportions of the clones (uses min_clone_size as a parameter)</p></li>
+<li><p>Mean GQ of the clones</p></li>
+<li><p>Mean DP of the clones</p></li>
+</ol>
+</dd>
+<dt>The score is calculated using four sub scores.</dt><dd><p><code class="docutils literal notranslate"><span class="pre">score</span> <span class="pre">=</span> <span class="pre">(ss</span> <span class="pre">+</span> <span class="pre">ds</span> <span class="pre">+</span> <span class="pre">gs)</span> <span class="pre">*</span> <span class="pre">ps</span></code></p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><cite>ss - sister score (0 - 0.8)</cite></dt><dd><p>It measures the proportion of the clone
+with resepect to its sister clone. This
+score is closer to 0.8 when the sister clones
+have similar proportions and exactly 0.8 when
+their proportions are within the min_clone_size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>ds - DP score (0 - 0.1)</cite></dt><dd><p>It measures the mean DP of the clone
+with resepect to its parent clone. It is
+closer to 0.1 if the DP of the clone is
+lower than the parents’ DP.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>gs - GQ score (0 - 0.1)</cite></dt><dd><p>It measures the mean GQ of the clone
+with resepect to its parent clone. It is
+closer to 0.1 if the GQ of the clone is
+lowert than the parents’ GQ.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>ps - parent score (0 - 1)</cite></dt><dd><p>It measures the proportion of the clone with
+respect to the parent clone. This score is closer
+to 1 the larger the parent is compared to the
+clone, and closer to 0 the smaller the parent
+compared to the clone.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -56,6 +121,17 @@ are merged together under one cluster named ‘Missing’.</p>
 in the clone to count it as a separate clone.</p>
 </dd>
 <dt><strong>ignore_zygosity</strong><span class="classifier">bool</span></dt><dd><p>Whether HET and HOM are considered the same or not</p>
+</dd>
+<dt><strong>show_plot</strong><span class="classifier">bool</span></dt><dd><p>Whether a plot showing the ADO identification process
+should be shown or not.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>pd.DataFrame / None</dt><dd><p><cite>None</cite> is returned if <cite>ignore_zygosity</cite> is True or
+<cite>group_missing</cite> is False otherwise a pandas dataframe
+is returned.</p>
 </dd>
 </dl>
 </dd>
