@@ -19,7 +19,9 @@ conda install -c missionbio -c plotly -c conda-forge missionbio.mosaic
 
 ### Usage
 
-- The easiest way to start is by going through the available [vignettes.](https://github.com/MissionBio/mosaic-vignettes)
+- The easiest way to start is by going through the available [vignettes.](https://github.com/MissionBio/mosaic-jupyter)
 
 - You can also read through the [documentation](https://missionbio.github.io/mosaic/) to learn
   about the full extent of it's capabilities.
+
+- An [interactive GUI app](https://github.com/MissionBio/mosaic-streamlit) has been designed for major functionalities using Streamlit.
