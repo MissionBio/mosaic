@@ -1,0 +1,8 @@
+:orphan:
+
+Cnv.barplot
+===========
+
+.. currentmodule:: missionbio.mosaic.cnv
+
+.. automethod:: Cnv.barplot

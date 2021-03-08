@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cnv.compute_ploidy &#8212; Mosaic v1.4.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cnv-compute-ploidy">
+<h1>Cnv.compute_ploidy<a class="headerlink" href="#cnv-compute-ploidy" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt id="missionbio.mosaic.cnv.Cnv.compute_ploidy">
+<code class="sig-prename descclassname">Cnv.</code><code class="sig-name descname">compute_ploidy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">diploid_cells</span></em>, <em class="sig-param"><span class="n">normalized_counts</span><span class="o">=</span><span class="default_value">'normalized_counts'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.compute_ploidy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the ploidy of the cells</p>
+<p>This method adds a layer called ‘ploidy’</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>diploid_cells</strong><span class="classifier">list-like</span></dt><dd><p>The barcodes which are known to be diploid.
+All barcodes are normalized to the median
+counts of these barcodes for each amplicon.</p>
+</dd>
+<dt><strong>normalized_counts</strong><span class="classifier">str / np.array, default: <code class="xref py py-attr docutils literal notranslate"><span class="pre">constants.NORMALIZED_READS</span></code></span></dt><dd><p>Name of the layer which is to be used
+for ploidy calculations. A numpy array
+with the same shape as the assay can
+also be passed.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>When the reads have not yet been normalized.
+<a class="reference internal" href="missionbio.mosaic.cnv.Cnv.normalize_reads.html#missionbio.mosaic.cnv.Cnv.normalize_reads" title="missionbio.mosaic.cnv.Cnv.normalize_reads"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Cnv.normalize_reads()</span></code></a> has to be executed
+before computing ploidy.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Mosaic</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Mission Bio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/pages/methods/missionbio.mosaic.cnv.Cnv.compute_ploidy.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

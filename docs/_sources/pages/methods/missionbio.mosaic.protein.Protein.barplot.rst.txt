@@ -1,0 +1,8 @@
+:orphan:
+
+Protein.barplot
+===============
+
+.. currentmodule:: missionbio.mosaic.protein
+
+.. automethod:: Protein.barplot

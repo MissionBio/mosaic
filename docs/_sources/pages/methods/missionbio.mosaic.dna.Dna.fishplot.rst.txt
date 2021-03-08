@@ -1,0 +1,8 @@
+:orphan:
+
+Dna.fishplot
+============
+
+.. currentmodule:: missionbio.mosaic.dna
+
+.. automethod:: Dna.fishplot

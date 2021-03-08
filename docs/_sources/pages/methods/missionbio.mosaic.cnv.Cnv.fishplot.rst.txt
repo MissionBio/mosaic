@@ -1,0 +1,8 @@
+:orphan:
+
+Cnv.fishplot
+============
+
+.. currentmodule:: missionbio.mosaic.cnv
+
+.. automethod:: Cnv.fishplot
