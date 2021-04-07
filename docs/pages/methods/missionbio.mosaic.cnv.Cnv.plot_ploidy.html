@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cnv.plot_ploidy &#8212; Mosaic v1.4.0 documentation</title>
+    <title>Cnv.plot_ploidy &#8212; Mosaic v1.5.0 documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
@@ -36,16 +36,18 @@
 <dt id="missionbio.mosaic.cnv.Cnv.plot_ploidy">
 <code class="sig-prename descclassname">Cnv.</code><code class="sig-name descname">plot_ploidy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cluster</span></em>, <em class="sig-param"><span class="n">features</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.plot_ploidy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plots the ploidy of the cluster</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>cluster</strong><span class="classifier">str</span></dt><dd><p>Barcodes belonging to this label
 will be fetched for the plot.</p>
 </dd>
-<dt><strong>features</strong><span class="classifier">list-like, default: None</span></dt><dd><p>The features which are to be plotted.
+<dt><strong>features</strong><span class="classifier">list-like / {‘genes’} default: None</span></dt><dd><p>The features which are to be plotted.
 If <cite>None</cite>, then all the amplicons are
 plotted. This attribute can be used
 to change the order of the amplicons.</p>
+<p>If ‘genes’, then the amplicons are collapsed
+to their gene level.</p>
 </dd>
 </dl>
 </dd>
