@@ -11,11 +11,7 @@ and visualization of single-cell data to enable exploratory analysis.
 
 Mosaic is available for installation through the [missionbio conda channel](https://anaconda.org/missionbio)
 
-```
-conda create --name mosaic --yes
-conda activate mosaic
-conda install -c missionbio -c plotly -c conda-forge missionbio.mosaic
-```
+Checkout the instructions in the [documentation page](https://missionbio.github.io/mosaic/2_install.html).
 
 ### Usage
 
@@ -23,3 +19,5 @@ conda install -c missionbio -c plotly -c conda-forge missionbio.mosaic
 
 - You can also read through the [documentation](https://missionbio.github.io/mosaic/) to learn
   about the full extent of it's capabilities.
+
+NOTE: Mosaic v1.8.0 vignettes are available [here](https://github.com/MissionBio/mosaic-jupyter)
