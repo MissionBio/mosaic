@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cnv.clustered_barcodes &#8212; Mosaic v1.5.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cnv-clustered-barcodes">
+<h1>Cnv.clustered_barcodes<a class="headerlink" href="#cnv-clustered-barcodes" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt id="missionbio.mosaic.cnv.Cnv.clustered_barcodes">
+<code class="sig-prename descclassname">Cnv.</code><code class="sig-name descname">clustered_barcodes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">orderby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">splitby</span><span class="o">=</span><span class="default_value">'label'</span></em>, <em class="sig-param"><span class="n">override</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.clustered_barcodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hierarchical clustering of barcodes.</p>
+<p>If the layer is not provided, the barcodes are
+returned according to the labels.</p>
+<p>If a layer is provided, then further hierarchical
+clustering is performed based on the values
+in this layer for each label.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>orderby</strong><span class="classifier">str / np.ndarray</span></dt><dd><p>An attribute with at least one dimension equal
+to the number of barcodes. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code>
+to retrieve the values constrained by <cite>row</cite>.</p>
+</dd>
+<dt><strong>splitby</strong><span class="classifier">bool</span></dt><dd><p>Whether to order the barcodes based on the given
+labels or not. Only applicable when labels <cite>orderby</cite>
+is <cite>None</cite>. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to
+retrieve the values constrained by <cite>row</cite>. The shape
+must be equal to <cite>(#cells)</cite></p>
+</dd>
+<dt><strong>override</strong><span class="classifier">bool</span></dt><dd><p>Continue clustering even if the number of <cite>id</cite>
+is greater than 1,000.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd><p>Ordered barcodes</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>When the shape of orderby is not appropriate</p>
+</dd>
+<dt>Exception</dt><dd><p>When the number of <cite>id</cite> in the assay is greater
+than 1,000. This can take a long time
+to process, hence denied.</p>
+</dd>
+<dt>Warning</dt><dd><p>If the number of <cite>id</cite> is greater than 1,000 and
+override is passed.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Mosaic</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Mission Bio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/pages/methods/missionbio.mosaic.cnv.Cnv.clustered_barcodes.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

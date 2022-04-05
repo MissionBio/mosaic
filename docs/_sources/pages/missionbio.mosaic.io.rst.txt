@@ -17,7 +17,6 @@ io
 
 
   ~load
-  ~merge
-  ~merge_files
+  ~load_example_dataset
   ~save
 

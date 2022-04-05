@@ -5,58 +5,348 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dna &#8212; Mosaic v1.5.0 documentation</title>
+    <title>Dna &#8212; Mosaic v2.0.1a0 documentation</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Cnv" href="missionbio.mosaic.cnv.Cnv.html" />
     <link rel="prev" title="_Assay" href="missionbio.mosaic.assay._Assay.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
 
-  </head><body>
-  
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mosaic v2.0.1a0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../1_introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2_install.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../3_getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../4_data_structure.html">
+   Data structure
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/index.html">
+   Code Snippets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/basics.html">
+   Basic usage of mosaic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/cnv.html">
+   Manual CNV analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/filtering.html">
+   Filtering barcodes and ids
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/customizations.html">
+   Plot customizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../examples/multi-sample-analysis.html">
+   Multisample analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="missionbio.mosaic.io.html">
+   io
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missionbio.mosaic.utils.html">
+   utils
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="missionbio.mosaic.constants.html">
+   constants
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="missionbio.mosaic.constants.COLORS.html">
+     missionbio.mosaic.constants.COLORS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="missionbio.mosaic.constants.PCA_LABEL.html">
+     missionbio.mosaic.constants.PCA_LABEL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="missionbio.mosaic.constants.UMAP_LABEL.html">
+     missionbio.mosaic.constants.UMAP_LABEL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="missionbio.mosaic.constants.SCALED_LABEL.html">
+     missionbio.mosaic.constants.SCALED_LABEL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="missionbio.mosaic.constants.LABEL.html">
+     missionbio.mosaic.constants.LABEL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="missionbio.mosaic.constants.READS.html">
+     missionbio.mosaic.constants.READS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="missionbio.mosaic.constants.PALETTE.html">
+     missionbio.mosaic.constants.PALETTE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="missionbio.mosaic.constants.NORMALIZED_READS.html">
+     missionbio.mosaic.constants.NORMALIZED_READS
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Classes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="missionbio.mosaic.assay._Assay.html">
+   _Assay
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Dna
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missionbio.mosaic.cnv.Cnv.html">
+   Cnv
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missionbio.mosaic.protein.Protein.html">
+   Protein
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missionbio.mosaic.sample.Sample.html">
+   Sample
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="missionbio.mosaic.samplegroup.SampleGroup.html">
+   SampleGroup
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
           
 
-          <div class="body" role="main">
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/pages/missionbio.mosaic.dna.Dna.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dna</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
   <div class="section" id="dna">
 <h1>Dna<a class="headerlink" href="#dna" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="missionbio.mosaic.dna.Dna">
-<em class="property">class </em><code class="sig-prename descclassname">missionbio.mosaic.dna.</code><code class="sig-name descname">Dna</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">missionbio.mosaic.dna.</span></code><code class="sig-name descname"><span class="pre">Dna</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna" title="Permalink to this definition">¶</a></dt>
 <dd><p>Container for DNA data.</p>
 <p>Inherits most methods from <a class="reference internal" href="missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-class docutils literal notranslate"><span class="pre">missionbio.mosaic.assay._Assay</span></code></a>.
 See that for the documentation on other methods and visualizations.</p>
 <p class="rubric">Algorithms</p>
-<table class="longtable docutils align-default">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.get_annotations.html#missionbio.mosaic.dna.Dna.get_annotations" title="missionbio.mosaic.dna.Dna.get_annotations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_annotations</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.get_annotations.html#missionbio.mosaic.dna.Dna.get_annotations" title="missionbio.mosaic.dna.Dna.get_annotations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_annotations</span></code></a>([variants])</p></td>
 <td><p>Annotate DNA variants.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants" title="missionbio.mosaic.dna.Dna.filter_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_variants</span></code></a>([min_dp, min_gq, min_vaf, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants" title="missionbio.mosaic.dna.Dna.filter_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_variants</span></code></a>([min_dp, min_gq, vaf_ref, …])</p></td>
 <td><p>Find informative variants.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.filter_variants_consecutive.html#missionbio.mosaic.dna.Dna.filter_variants_consecutive" title="missionbio.mosaic.dna.Dna.filter_variants_consecutive"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_variants_consecutive</span></code></a>([proximity])</p></td>
 <td><p>Remove nearby variants.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.filter_incomplete_barcodes.html#missionbio.mosaic.dna.Dna.filter_incomplete_barcodes" title="missionbio.mosaic.dna.Dna.filter_incomplete_barcodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_incomplete_barcodes</span></code></a>([barcode_thresh])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.filter_barcodes.html#missionbio.mosaic.dna.Dna.filter_barcodes" title="missionbio.mosaic.dna.Dna.filter_barcodes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_barcodes</span></code></a>([completeness])</p></td>
 <td><p>Remove cells with missing information.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.find_relevant_variants.html#missionbio.mosaic.dna.Dna.find_relevant_variants" title="missionbio.mosaic.dna.Dna.find_relevant_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_relevant_variants</span></code></a>([…])</p></td>
@@ -65,16 +355,16 @@ See that for the documentation on other methods and visualizations.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.find_clones.html#missionbio.mosaic.dna.Dna.find_clones" title="missionbio.mosaic.dna.Dna.find_clones"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_clones</span></code></a>([similarity])</p></td>
 <td><p>Identify clones based on VAF.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.count.html#missionbio.mosaic.dna.Dna.count" title="missionbio.mosaic.dna.Dna.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a>(features[, layer, group_missing, …])</p></td>
-<td><p>A clustering method available only for DNA.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.group_by_genotype.html#missionbio.mosaic.dna.Dna.group_by_genotype" title="missionbio.mosaic.dna.Dna.group_by_genotype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">group_by_genotype</span></code></a>(features[, layer, …])</p></td>
+<td><p>Clusters cells into clones based on the provided variants and returns a dataframe of per-clone and per-variant statistics.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.cluster_cleanup.html#missionbio.mosaic.dna.Dna.cluster_cleanup" title="missionbio.mosaic.dna.Dna.cluster_cleanup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cluster_cleanup</span></code></a>(layer[, similarity])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.merge_similar_clusters.html#missionbio.mosaic.dna.Dna.merge_similar_clusters" title="missionbio.mosaic.dna.Dna.merge_similar_clusters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge_similar_clusters</span></code></a>(layer[, similarity])</p></td>
 <td><p>Merge similar clusters while ignoring missing data.</p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">DNA specific visualizations</p>
-<table class="longtable docutils align-default">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
@@ -89,19 +379,22 @@ See that for the documentation on other methods and visualizations.</p>
 </tbody>
 </table>
 <p class="rubric">Extended methods</p>
-<table class="longtable docutils align-default">
+<table class="longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.run_umap.html#missionbio.mosaic.dna.Dna.run_umap" title="missionbio.mosaic.dna.Dna.run_umap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_umap</span></code></a>([jitter])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.run_umap.html#missionbio.mosaic.dna.Dna.run_umap" title="missionbio.mosaic.dna.Dna.run_umap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run_umap</span></code></a>(attribute[, output_label, jitter])</p></td>
 <td><p>Extends <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.run_umap()</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.heatmap.html#missionbio.mosaic.dna.Dna.heatmap" title="missionbio.mosaic.dna.Dna.heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatmap</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.heatmap.html#missionbio.mosaic.dna.Dna.heatmap" title="missionbio.mosaic.dna.Dna.heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatmap</span></code></a>(attribute[, splitby, features, …])</p></td>
 <td><p>Extends <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.heatmap()</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.scatterplot.html#missionbio.mosaic.dna.Dna.scatterplot" title="missionbio.mosaic.dna.Dna.scatterplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatterplot</span></code></a>(*args, **kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.feature_scatter.html#missionbio.mosaic.dna.Dna.feature_scatter" title="missionbio.mosaic.dna.Dna.feature_scatter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">feature_scatter</span></code></a>(layer, ids, **kwargs)</p></td>
+<td><p>Extends <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.feature_scatter()</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.dna.Dna.scatterplot.html#missionbio.mosaic.dna.Dna.scatterplot" title="missionbio.mosaic.dna.Dna.scatterplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scatterplot</span></code></a>(attribute[, colorby, features, …])</p></td>
 <td><p>Extends <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.scatterplot()</span></code></p></td>
 </tr>
 </tbody>
@@ -111,82 +404,44 @@ See that for the documentation on other methods and visualizations.</p>
 </div>
 
 
-          </div>
-          
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="missionbio.mosaic.assay._Assay.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">_Assay</p>
         </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">Mosaic</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Modules</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.io.html">io</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.utils.html">utils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.constants.html">constants</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Classes</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.assay._Assay.html">_Assay</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Dna</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.protein.Protein.html">Protein</a></li>
-<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.sample.Sample.html">Sample</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="missionbio.mosaic.assay._Assay.html" title="previous chapter">_Assay</a></li>
-      <li>Next: <a href="missionbio.mosaic.cnv.Cnv.html" title="next chapter">Cnv</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
+    </a>
+    <a class='right-next' id="next-link" href="missionbio.mosaic.cnv.Cnv.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cnv</p>
     </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
+            
         </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Saurabh Parikh<br/>
+    
+        &copy; Copyright 2021, Mission Bio.<br/>
+  </p>
+</footer>
+</main>
+
+
       </div>
-      <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2020, Mission Bio.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="../_sources/pages/missionbio.mosaic.dna.Dna.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-    
-
-    
   </body>
 </html>

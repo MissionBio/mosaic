@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dna.filter_barcodes &#8212; Mosaic v2.0.1a0 documentation</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=84ace793992934648b4de8eed757e5a2" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<div class="col-12 col-md-3 bd-sidebar site-navigation " id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Mosaic v2.0.1a0 documentation</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../1_introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2_install.html">
+   Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../3_getting_started.html">
+   Getting Started
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../4_data_structure.html">
+   Data structure
+  </a>
+ </li>
+</ul>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../examples/index.html">
+   Code Snippets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../examples/basics.html">
+   Basic usage of mosaic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../examples/cnv.html">
+   Manual CNV analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../examples/filtering.html">
+   Filtering barcodes and ids
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../examples/customizations.html">
+   Plot customizations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../examples/multi-sample-analysis.html">
+   Multisample analysis
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Modules
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../missionbio.mosaic.io.html">
+   io
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../missionbio.mosaic.utils.html">
+   utils
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../missionbio.mosaic.constants.html">
+   constants
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../missionbio.mosaic.constants.COLORS.html">
+     missionbio.mosaic.constants.COLORS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../missionbio.mosaic.constants.PCA_LABEL.html">
+     missionbio.mosaic.constants.PCA_LABEL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../missionbio.mosaic.constants.UMAP_LABEL.html">
+     missionbio.mosaic.constants.UMAP_LABEL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../missionbio.mosaic.constants.SCALED_LABEL.html">
+     missionbio.mosaic.constants.SCALED_LABEL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../missionbio.mosaic.constants.LABEL.html">
+     missionbio.mosaic.constants.LABEL
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../missionbio.mosaic.constants.READS.html">
+     missionbio.mosaic.constants.READS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../missionbio.mosaic.constants.PALETTE.html">
+     missionbio.mosaic.constants.PALETTE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../missionbio.mosaic.constants.NORMALIZED_READS.html">
+     missionbio.mosaic.constants.NORMALIZED_READS
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Classes
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../missionbio.mosaic.assay._Assay.html">
+   _Assay
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">
+   Dna
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">
+   Cnv
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">
+   Protein
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">
+   Sample
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html">
+   SampleGroup
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<!-- This is an invisible pixel that we watch to see if we've scrolled. -->
+<div class="sbt-scroll-pixel-helper"></div>
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            <div class="topbar-left">
+                
+                <label class="nav-toggle-button" for="__navigation">
+                    <div class="visually-hidden">Toggle navigation</div>
+                    <i class="fas fa-bars"></i>
+                </label>
+                
+            </div>
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/pages/methods/missionbio.mosaic.dna.Dna.filter_barcodes.rst.txt"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.rst</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Dna.filter_barcodes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="section" id="dna-filter-barcodes">
+<h1>Dna.filter_barcodes<a class="headerlink" href="#dna-filter-barcodes" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt id="missionbio.mosaic.dna.Dna.filter_barcodes">
+<code class="sig-prename descclassname"><span class="pre">Dna.</span></code><code class="sig-name descname"><span class="pre">filter_barcodes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">completeness</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.filter_barcodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove cells with missing information.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>completeness</strong><span class="classifier">float [0, 100]</span></dt><dd><p>The percentage of variants for a barcode that must
+not have a missing value (NGT ∈ {0, 1, 2}) to
+keep that barcode.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>np.ndarray</dt><dd><p>The list of barcodes with fewer missing variants
+than the threshold.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The NGT_FILTERED layer is used to measure completeness.
+Hence the sample.dna.filter_variants() method must be
+called before filtering barcodes.</p>
+<p>The “completeness” parameter here has a different meaning
+from the completeness parameter in the context of
+[cell calling](<a class="reference external" href="https://support.missionbio.com/hc/en-us/articles/360042381634-Cell-calling">https://support.missionbio.com/hc/en-us/articles/360042381634-Cell-calling</a>)</p>
+</dd></dl>
+
+</div>
+
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Saurabh Parikh<br/>
+    
+        &copy; Copyright 2021, Mission Bio.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

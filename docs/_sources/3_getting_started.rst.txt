@@ -1,0 +1,27 @@
+.. _getting_started:
+
+Getting Started
+===============
+
+Loading a sample
+----------------
+
+Any .h5 file can be loaded as a :class:`~missionbio.mosaic.sample.Sample` object using:
+
+    >>> import missionbio.mosaic.io as mio
+    >>> sample = mio.load('/path/to/h5')
+    >>> sample
+    <missionbio.mosaic.sample.Sample>
+
+Once the analysis is complete, it can be saved using:
+
+    >>> mio.save(sample, '/path/to/save/h5')
+
+|
+
+Tutorials
+---------
+
+The best way to learn Mosaic is through our Jupyter notebook :ref:`all-vignettes`,
+which demonstrate basic tutorials on how to use Mosaic to analyse
+DNA + Protein data.

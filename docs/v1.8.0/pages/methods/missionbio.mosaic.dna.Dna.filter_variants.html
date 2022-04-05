@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dna.filter_variants &#8212; Mosaic v1.5.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="dna-filter-variants">
+<h1>Dna.filter_variants<a class="headerlink" href="#dna-filter-variants" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt id="missionbio.mosaic.dna.Dna.filter_variants">
+<code class="sig-prename descclassname">Dna.</code><code class="sig-name descname">filter_variants</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">min_dp</span><span class="o">=</span><span class="default_value">10</span></em>, <em class="sig-param"><span class="n">min_gq</span><span class="o">=</span><span class="default_value">30</span></em>, <em class="sig-param"><span class="n">min_vaf</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">max_vaf</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">min_prct_cells</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">min_mut_prct_cells</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">min_std</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.filter_variants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find informative variants.</p>
+<p>This method also adds the <cite>NGT_FILTERED</cite> layer to the assay
+which is a copy of the NGT layer but with the NGT for the
+cell-variants not passing the filters set to 3 i.e. missing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>min_dp</strong><span class="classifier">int</span></dt><dd><p>The minimum depth (DP) for the call to be considered.
+Variants with less than this DP in a given
+barcode are treated as no calls.</p>
+</dd>
+<dt><strong>min_gq</strong><span class="classifier">int</span></dt><dd><p>The minimum genotype quality (GQ) for the call to be
+considered. Variants with less than this GQ
+in a given barcode are treated as no calls.</p>
+</dd>
+<dt><strong>min_vaf</strong><span class="classifier">float [0, 100]</span></dt><dd><p>If the VAF of a given variant for a given barcode
+is less than the given value, and the call is
+‘1’ i.e. HET, then it is converted to a no call.</p>
+</dd>
+<dt><strong>max_vaf</strong><span class="classifier">float [0, 100]</span></dt><dd><p>If the VAF of a given variant for a given barcode
+is greater than the given value, and the call is
+‘1’ i.e. HET, then it is converted to a no call.</p>
+</dd>
+<dt><strong>min_prct_cells</strong><span class="classifier">float [0, 100]</span></dt><dd><p>The minimum percent of total cells in which the variant
+should be called as ‘0’, ‘1’, or ‘2’ after the
+filters are applied.</p>
+</dd>
+<dt><strong>min_mut_prct_cells</strong><span class="classifier">float [0, 100]</span></dt><dd><p>The minimum percent of the total cells in which the
+variant should be mutated, i.e., either ‘1’ or ‘2’
+after the filters are applied.</p>
+</dd>
+<dt><strong>min_std</strong><span class="classifier">float [0, 100]</span></dt><dd><p>The standard deviation of the VAF across the cells
+of the variants should be greater than
+this value.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>numpy.ndarray</dt><dd></dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Mosaic</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Mission Bio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/pages/methods/missionbio.mosaic.dna.Dna.filter_variants.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,393 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Manual CNV analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<b>Objective</b>\n",
+    "\n",
+    "This vignette describes how copy number variation (CNV) can<br>\n",
+    "be identified using Mosaic. Data filtering, normalization and<br>\n",
+    "ploidy computation are described."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import missionbio.mosaic as ms\n",
+    "\n",
+    "sample = ms.load_example_dataset('3 cell mix')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "This is an analyzed h5 file. Hence the clones and clusters<br>\n",
+    "are already labeled. It contains three cell lines KG-1,<br>\n",
+    "Tom-1, and Jurkat. It also contains doublets of each pair<br>\n",
+    "as seen in the heatmap.\n",
+    "\n",
+    "For your h5 file, identify the clones using the DNA variants<br>\n",
+    "before proceeding with this vignette."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "fig = sample.dna.heatmap('NGT')\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Filtering amplicons"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "We will only be working with the DNA and CNV assays.\n",
+    "\n",
+    "The CNV object contains 138 amplicons. But not all<br>\n",
+    "of them worked as expected. We will drop amplicons<br>\n",
+    "which worked in less than half the total cells."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# This returns the reads in each cell and amplicon\n",
+    "\n",
+    "reads = sample.cnv.get_attribute('read_counts', constraint='row+col')\n",
+    "reads"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Only amplicons found in more than half the cells are analyzed\n",
+    "# The other amplicons are dropped.\n",
+    "\n",
+    "working_amplicons = (reads.median() > 0).values\n",
+    "sample.cnv = sample.cnv[:, working_amplicons]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# We are now left with 135 amplicons\n",
+    "\n",
+    "sample.cnv.shape"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Normalization and ploidy computation"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Finding the ploidy of the cells can be split into<br>\n",
+    "two distinct calculations.\n",
+    "\n",
+    "* <b>Normalization</b>\n",
+    "\n",
+    "    This step is required to correct for systemic artefacts.<br>\n",
+    "    Cell to cell, and amplicon to amplicon variations are corrected.<br>\n",
+    "    Each cell is normalized to it's total reads and each amplicon<br>\n",
+    "    to its median counts. This is performed using the `normalize_reads`<br>\n",
+    "    method, which adds the `normalized_counts` layer to the CNV object.\n",
+    "\n",
+    "\n",
+    "* <b>Correcting the baseline</b>\n",
+    "\n",
+    "    Not all amplicons show copy loss or copy gain. In the normalization<br>\n",
+    "    step all amplicons in a cell were normalized using the same value<br>\n",
+    "    i.e. the total reads in the cell. This results in slight deviations<br>\n",
+    "    from the true ploidy value of the cell for each amplicon.\n",
+    "    \n",
+    "    To correct for this, a clone which is known to be diploid is identified<br>\n",
+    "    and all the other cells are normalized to the counts of this clone. This<br>\n",
+    "    step is done using the `compute_ploidy` method, and providing it<br>\n",
+    "    with the barcodes known to be diploid. This adds the `ploidy` layer<br>\n",
+    "    to the CNV object."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Reads are normalized to correct for systemic artefacts\n",
+    "\n",
+    "sample.cnv.normalize_reads()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Assuming TOM-1 cells are diploid for all the amplicons,\n",
+    "# we can compute the ploidy of the other cell lines as follows\n",
+    "\n",
+    "sample.cnv.compute_ploidy(diploid_cells=sample.dna.barcodes('TOM-1'))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Visualizations"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The ploidy values are stored in the `ploidy` layer\n",
+    "\n",
+    "These can be visualized using a heatmap\n",
+    "or a ploidy line plot for each clone."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Assign the DNA labels to the CNV object\n",
+    "# We want to ensure the labels are the same\n",
+    "\n",
+    "sample.cnv.set_labels(sample.dna.get_labels())\n",
+    "sample.cnv.set_palette(sample.dna.get_palette())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Heatmap"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Heatmap with the features ordered by the chromosome position\n",
+    "\n",
+    "fig = sample.cnv.heatmap('ploidy', features='positions')\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Heatmap for a subset of the chromosomes\n",
+    "\n",
+    "fig = sample.cnv.heatmap('ploidy', features=['4', '7', '20'])\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Heatmap with the features grouped by the genes\n",
+    "# The first time this runs, it fetches the gene names from ensembl\n",
+    "# The annotation can also be fetched using using sample.cnv.get_gene_names()\n",
+    "\n",
+    "fig = sample.cnv.heatmap('ploidy', features='genes')\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Heatmap for a subset of the genes\n",
+    "\n",
+    "fig = sample.cnv.heatmap('ploidy', features=['EZH2', 'TET2', 'TP53'])\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Line plot"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "As seen in the heatmap, KG-1 has a copy loss for some<br>\n",
+    "of the amplicons in the panel. TOM-1 does not show much<br>\n",
+    "deviation from ploidy 2.\n",
+    "\n",
+    "This can also be visualized by the per amplicon ploidy plot.<br>\n",
+    "This plot is generated for each clone separately."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# KG-1 shows copy loss at two different locations\n",
+    "\n",
+    "fig = sample.cnv.plot_ploidy('KG-1')\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# KG-1 shows copy loss at two different locations\n",
+    "\n",
+    "fig = sample.cnv.plot_ploidy('KG-1')\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Jurkat is diploid for all the amplicons\n",
+    "\n",
+    "fig = sample.cnv.plot_ploidy('Jurkat')\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Since TOM-1 was used to set the baseline,\n",
+    "# it is perfectly diploid for all amplicons\n",
+    "\n",
+    "fig = sample.cnv.plot_ploidy('TOM-1')\n",
+    "fig"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {
+    "height": "calc(100% - 180px)",
+    "left": "10px",
+    "top": "150px",
+    "width": "384px"
+   },
+   "toc_section_display": true,
+   "toc_window_display": true
+  },
+  "varInspector": {
+   "cols": {
+    "lenName": 16,
+    "lenType": 16,
+    "lenVar": 40
+   },
+   "kernels_config": {
+    "python": {
+     "delete_cmd_postfix": "",
+     "delete_cmd_prefix": "del ",
+     "library": "var_list.py",
+     "varRefreshCmd": "print(var_dic_list())"
+    },
+    "r": {
+     "delete_cmd_postfix": ") ",
+     "delete_cmd_prefix": "rm(",
+     "library": "var_list.r",
+     "varRefreshCmd": "cat(var_dic_list()) "
+    }
+   },
+   "types_to_exclude": [
+    "module",
+    "function",
+    "builtin_function_or_method",
+    "instance",
+    "_Feature"
+   ],
+   "window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

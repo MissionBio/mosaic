@@ -1,0 +1,513 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Plot customizations"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<b>Objective</b>\n",
+    "\n",
+    "This vignette contains various snippets of code<br>\n",
+    "that show how plots and data can be customized<br>\n",
+    "to ones requirements.\n",
+    "\n",
+    "The h5 file used in this notebook can be found [here](https://github.com/MissionBio/mosaic-jupyter/tree/master/customizations)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import missionbio.mosaic as ms\n",
+    "\n",
+    "sample = ms.load_example_dataset('3 cell mix')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "All the interactive plotting functions return a [plotly figure](https://plotly.com/python/figure-structure/). In case the layout or the color<br>\n",
+    "scheme is not suitable for your data type, they can be changed before creating the final figure.<br>\n",
+    "\n",
+    "The color for the plots are store either in the individual traces or the layout\n",
+    "attributes of the plotly figure.<br>\n",
+    "\n",
+    "Mosaic also contains a list of colors that can be used to customize the plots."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Plot the first few colors\n",
+    "import seaborn as sns\n",
+    "sns.palplot(ms.COLORS[:21])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Reproducible UMAPs"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "UMAPs rely on an initial randomization. This leads to different projections everytime. To fix this, pass `random_state` to the `run_umap` method"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Pass a random state to fix the umap\n",
+    "\n",
+    "sample.dna.run_umap(attribute='AF', random_state=42)\n",
+    "sample.dna.scatterplot('umap', 'label')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Updating the colors for the DNA plots"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "heading_collapsed": true,
+    "hidden": true
+   },
+   "source": [
+    "#### Heatmap and scatterplot"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# The default color scale for NGT is a monochromatic blue color scheme.\n",
+    "\n",
+    "fig = sample.dna.heatmap('NGT')\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# In case of the DNA heatmap and scatterplot the colors are\n",
+    "# stored in the layout.coloraxis.colorscale attribute.\n",
+    "\n",
+    "# This value must be updated to customize the plot.\n",
+    "\n",
+    "fig.layout.coloraxis.colorscale"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Assuming these are new desired colors\n",
+    "# NGT=0 (WT) - blue\n",
+    "# NGT=1 (HET) - orange\n",
+    "# NGT=2 (HOM) - red\n",
+    "# NGT=3 (missing) - black\n",
+    "\n",
+    "wt_col = ms.COLORS[0]\n",
+    "het_col = ms.COLORS[1]\n",
+    "hom_col = ms.COLORS[2]\n",
+    "miss_col = ms.COLORS[20]\n",
+    "\n",
+    "sns.palplot([wt_col, het_col, hom_col, miss_col])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Update the coloraxis to make a plot with the new colors\n",
+    "\n",
+    "new_colors = [(0 / 4, wt_col), (1 / 4, wt_col),\n",
+    "              (1 / 4, het_col), (2 / 4, het_col),\n",
+    "              (2 / 4, hom_col), (3 / 4, hom_col),\n",
+    "              (3 / 4, miss_col), (4 / 4, miss_col)]\n",
+    "\n",
+    "fig.layout.coloraxis.colorscale = new_colors\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# The same method can be used to update scatterplot which are colored by NGT\n",
+    "\n",
+    "fig = sample.dna.scatterplot('umap', colorby='NGT', features=sample.dna.ids()[:4])\n",
+    "fig.layout.coloraxis.colorscale = new_colors\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "#### Label colors"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "Now the colors in the heatmap conflict with the colors in the labels. To customize those, the palette can be changed"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# This is the current palette\n",
+    "\n",
+    "sample.dna.get_palette()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Update this palette. It is not required to use the built in colors\n",
+    "# Any hexadecimal colors can be passed.\n",
+    "\n",
+    "new_palette = {\n",
+    "    'Jurkat': ms.COLORS[3],\n",
+    "    'KG-1': ms.COLORS[4],\n",
+    "    'Mixed': '#c7c7c7',  # Use hexadecimal colors\n",
+    "    'TOM-1': ms.COLORS[5]\n",
+    "}\n",
+    "\n",
+    "\n",
+    "sample.dna.set_palette(new_palette)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Make the heatmap with the new colors\n",
+    "\n",
+    "fig = sample.dna.heatmap('NGT')\n",
+    "fig.layout.coloraxis.colorscale = new_colors\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### CNV heatmaps"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "heading_collapsed": true,
+    "hidden": true
+   },
+   "source": [
+    "#### Scale the cnv heatmap to an appropriate size"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "Often the cnv heatmaps contain too many genes or amplicons to fit in the default layout.<br>\n",
+    "This is usually not an issue when they are interactive, but when exporting as static images<br>\n",
+    "it hinder the ability to interpret them.\n",
+    "\n",
+    "Mosaic has the option to convert interactive plotly figures to static [matplotlib](https://matplotlib.org/) figures"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Scale the figure width and plot as a static image.\n",
+    "# Double click on the plot to zoom-in and improve the resolution\n",
+    "\n",
+    "import missionbio.mosaic.utils as mutils\n",
+    "\n",
+    "fig = sample.cnv.heatmap('ploidy', features='genes')\n",
+    "fig.layout.width = 1600\n",
+    "mutils.static_fig(fig, figsize=(20, 20))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "heading_collapsed": true,
+    "hidden": true
+   },
+   "source": [
+    "#### Updating the colorscale"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "In case the color scale get skewed to high poidy, a max value can be imposed to generate a more interpretable heatmap\n",
+    "\n",
+    "The colorscale can also be changed as desired. A list of color scales can be found in the [plotly documentation](https://plotly.com/python/builtin-colorscales/)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# The plots can also be smoothed using a moving average with the convolve parameter\n",
+    "\n",
+    "fig = sample.cnv.heatmap('ploidy', features='genes', convolve=3)\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Change the color scale to \"magma\" - other suitable options might be \"viridis\", \"plasma\", \"blues\", \"blues_r\"...\n",
+    "fig.layout.coloraxis.colorscale = 'magma'\n",
+    "\n",
+    "# Update the separating lines to be black\n",
+    "for shape in fig.layout.shapes:\n",
+    "    shape.line.color = '#000000'\n",
+    "\n",
+    "# Set the minimum value to 0 and maximum value of ploidy to 2\n",
+    "fig.layout.coloraxis.cmax = 2\n",
+    "fig.layout.coloraxis.cmin = 0\n",
+    "\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Custom multi assay plot"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "Often the number of amplicons in CNV might take over the sample level heatmap making the plot uninterpretable. Moreover there might be certain non-differentiating variants and protein in the panel. These can be dropped before making the final heatmap."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# This method resets all the assay with all the values before any filter\n",
+    "\n",
+    "sample.reset()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Filter the CNV with amplicons only from the relevant genes\n",
+    "\n",
+    "import numpy as np\n",
+    "\n",
+    "genes = sample.cnv.col_attrs['gene_name'].copy()\n",
+    "relevant_ids = np.isin(genes, ['EZH2', 'TET2'])\n",
+    "\n",
+    "sample.cnv = sample.cnv[:, relevant_ids]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "fig = sample.heatmap(clusterby='dna', sortby='protein', flatten=False)\n",
+    "\n",
+    "# Update the width of the plot [See the section on CNV heatmaps]\n",
+    "fig.layout.width = 1600\n",
+    "\n",
+    "# Change the CNV colorscale [See the section on CNV heatmaps]\n",
+    "fig.data[2].zmax = 2\n",
+    "fig.data[2].zmin = 0\n",
+    "fig.data[2].colorscale = 'magma'\n",
+    "\n",
+    "# Updating the ticktexts to show the gene names instead\n",
+    "fig.layout.xaxis3.ticktext = sample.cnv.col_attrs['gene_name'].copy()\n",
+    "\n",
+    "# Show as a static plot\n",
+    "mutils.static_fig(fig, figsize=(20, 20))"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {
+    "height": "calc(100% - 180px)",
+    "left": "10px",
+    "top": "150px",
+    "width": "384px"
+   },
+   "toc_section_display": true,
+   "toc_window_display": true
+  },
+  "varInspector": {
+   "cols": {
+    "lenName": 16,
+    "lenType": 16,
+    "lenVar": 40
+   },
+   "kernels_config": {
+    "python": {
+     "delete_cmd_postfix": "",
+     "delete_cmd_prefix": "del ",
+     "library": "var_list.py",
+     "varRefreshCmd": "print(var_dic_list())"
+    },
+    "r": {
+     "delete_cmd_postfix": ") ",
+     "delete_cmd_prefix": "rm(",
+     "library": "var_list.r",
+     "varRefreshCmd": "cat(var_dic_list()) "
+    }
+   },
+   "types_to_exclude": [
+    "module",
+    "function",
+    "builtin_function_or_method",
+    "instance",
+    "_Feature"
+   ],
+   "window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

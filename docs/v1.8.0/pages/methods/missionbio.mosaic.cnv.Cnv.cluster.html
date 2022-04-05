@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cnv.cluster &#8212; Mosaic v1.5.0 documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cnv-cluster">
+<h1>Cnv.cluster<a class="headerlink" href="#cnv-cluster" title="Permalink to this headline">¶</a></h1>
+<dl class="py method">
+<dt id="missionbio.mosaic.cnv.Cnv.cluster">
+<code class="sig-prename descclassname">Cnv.</code><code class="sig-name descname">cluster</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">attribute</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'dbscan'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identify clusters of cells.</p>
+<p>Modifies the <cite>label</cite> row attribute of the assay.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl>
+<dt><strong>attribute</strong><span class="classifier">str / np.array</span></dt><dd><p>The attribute to use as coordinates for clustering.
+Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve the values
+constrained by <cite>row</cite>.</p>
+</dd>
+<dt><strong>method</strong><span class="classifier">str</span></dt><dd><p>dbscan, hdbscan, kmeans, or graph-community (Louvain
+on a shared nearest neighbor graph).</p>
+</dd>
+<dt><strong>kwargs</strong><span class="classifier">dictionary</span></dt><dd><p>Passed to the appropriate clustering method.</p>
+<dl class="simple">
+<dt>Available parameters for the methods are:</dt><dd><ol class="arabic simple">
+<li><dl class="simple">
+<dt>dbscan<span class="classifier">eps (float)</span></dt><dd><p>A measure of how close the points are.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>hdbscan<span class="classifier">min_cluster_size (int)</span></dt><dd><p>The number of cells in a cluster.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>kmeans<span class="classifier">n_clusters (int)</span></dt><dd><p>The number of clusters to be generated.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>graph-community<span class="classifier">k (int)</span></dt><dd><p>The number of nearest neighbors to consider
+in the shared nearest neighbor graph generation.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ValueError</dt><dd><p>When the row attribute is not available in the assay.</p>
+</dd>
+<dt>Exception</dt><dd><p>When an unsupported clustering method is provided.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Mosaic</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Mission Bio.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../_sources/pages/methods/missionbio.mosaic.cnv.Cnv.cluster.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

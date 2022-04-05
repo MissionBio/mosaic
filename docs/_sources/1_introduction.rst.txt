@@ -1,0 +1,17 @@
+.. _introduction:
+
+Introduction
+============
+
+This is a set of tools to analyze DNA and protein data obtained from the Mission Bio tapestri instrument. It can be used for both secondary and tertiary analysis. Its core idea is to allow convenient handling and visualization of single-cell data to enable exploratory analysis.
+
+
+Additional resources
+--------------------
+- Please see the `Mission Bio Support Center <https://support.missionbio.com/hc/>`_ to read more about the Tapestri pipeline output and other topics.
+- Additional guides on the data outputted by Tapestri can be found `here <https://support.missionbio.com/hc/en-us/articles/360053187154>`_.
+
+
+Need help?
+----------
+If you have questions, issues, or feature requests for Mosaic, please submit an issue on `GitHub <https://github.com/MissionBio/mosaic/issues>`_. Alternatively, you can `visit this page <https://support.missionbio.com/hc/en-us/articles/360042252374-Need-Technical-Support->`_ to contact Mission Bio directly.

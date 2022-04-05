@@ -1,0 +1,36 @@
+Installation
+=============
+
+Latest version
+--------------
+
+Mosaic is available for installation through the `missionbio conda channel <https://anaconda.org/missionbio>`_.
+
+.. code-block:: bash
+
+  conda create --name mosaic -c missionbio -c plotly -c conda-forge missionbio.mosaic
+
+.. hint::
+
+    If the conda env `mosaic` already exists, remove it using
+
+    .. code-block::
+
+        conda remove --name mosaic --all --yes
+
+
+Older versions
+--------------
+
+Available older versions of mosaic can be found on the `conda channel <https://anaconda.org/missionbio/missionbio.mosaic/files>`_.
+These can be installed by passing the required version number.
+
+.. code-block:: bash
+
+    conda create --name mosaic -c missionbio -c plotly -c conda-forge missionbio.mosaic=1.8.0
+
+Versions tagged with a label besides `main` can be installed by changing the channel name
+
+.. code-block:: bash
+
+    conda create --name mosaic -c missionbio/label/unsupported -c plotly -c conda-forge missionbio.mosaic=1.7.1

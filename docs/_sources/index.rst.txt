@@ -1,94 +1,36 @@
+Welcome
+=======
 
-Mosaic
-======
+.. note::
 
-A basic tutorial on how to use Mosaic to analyse DNA + Protein data can be found
-`here. <https://github.com/MissionBio/mosaic-vignettes>`__
+    Documentation for v1.8.0 can be found `here <https://missionbio.github.io/mosaic/v1.8.0/index.html>`_
 
-Loading a sample
-----------------
+Mosaic is a set of tools to analyze DNA and protein data obtained from the Mission Bio Tapestri instrument.
 
-Any .h5 file can be loaded as a :class:`~missionbio.mosaic.sample.Sample` object using:
+.. toctree::
+    :maxdepth: 2
 
-    >>> import missionbio.mosaic.io as mio
-    >>> sample = mio.load('/path/to/h5')
-    >>> sample
-    <missionbio.mosaic.sample.Sample>
+    1_introduction
+    2_install
+    3_getting_started
+    4_data_structure
 
-Once the analysis is complete, it can be saved using:
+* :ref:`genindex`
 
-    >>> mio.save(sample, '/path/to/save/h5')
+.. _all-vignettes:
 
+Vignettes
+---------
 
-Data structure
---------------
-::
+.. toctree::
+    :maxdepth: 2
 
-                 missionbio.h5.assay.Assay
-                   (h5 reader and writer)
-                            |
-                            |
-              missionbio.mosaic.assay._Assay
-             (basic interactivity and plotting)
-                            |
-                            |
-                ---------------------------
-                |           |             |
-                |           |             |
-                |           |             |
-               Dna         Cnv         Protein
-  
-   (Sample-specific functionality, such as normalization)
-
-:class:`missionbio.h5.assay.Assay` is a module for reading and writing .h5 files.
-It stores the information of the assay using:
-
-   1. metadata (add_metadata / del_metadata):
-       Dictionary containing the metrics of the assay.
-
-   2. row_attrs (add_row_attr / del_row_attr):
-       Dictionary containing 'barcode' as one of
-       the keys. All the values must be of the same
-       length, i.e., match the number of barcodes.
-       This is the attribute where 'label', 'pca',
-       and 'umap' values are added.
-
-   3. col_attrs (add_col_attr / del_col_attr)):
-       Dictionary containing 'ids' as one of
-       the keys. All the values must be of the same
-       length, i.e., match the number of ids.
-       'ids' contains variants for DNA assays
-       and antibodies for Protein assays.
-
-   4. layers (add_layer / del_layer):
-       Dictionary containing 'read_counts' as one of 
-       the metrics. All the values have the shape
-       (num barcodes) x (num ids). This is the attribute
-       where 'normalized_counts' will be added.
-
-:class:`~missionbio.mosaic.assay._Assay` builds on top of the h5 assay to incorporate
-functionality specific to tertiary analysis. It also provides generic functions for
-visualizing the data.
-
-:class:`~missionbio.mosaic.dna.Dna`, :class:`~missionbio.mosaic.cnv.Cnv`, and
-:class:`~missionbio.mosaic.protein.Protein` are subclasses of the above class.
-Therefore, they inherit all the plotting and interactive functionality from the
-:class:`~missionbio.mosaic.assay._Assay` class. Each one includes methods specific to the assay, such
-as normalization and cell type identification.
-
-::
-
-                 Sample
-                   |
-                   |-- dna
-                   |-- cnv
-                   |-- protein
-                   |-- cnv_raw
-                   |-- protein_raw
-
-:class:`~missionbio.mosaic.sample.Sample` object contains all three of the above assays
-along with the raw counts for the same. The raw counts are also stored as the respective
-assay objects.
+    examples/index
+    examples/basics.ipynb
+    examples/cnv.ipynb
+    examples/filtering.ipynb
+    examples/customizations.ipynb
+    examples/multi-sample-analysis.ipynb
 
 Interface
 ---------
@@ -120,3 +62,4 @@ Interface
    ~missionbio.mosaic.cnv.Cnv
    ~missionbio.mosaic.protein.Protein
    ~missionbio.mosaic.sample.Sample
+   ~missionbio.mosaic.samplegroup.SampleGroup
