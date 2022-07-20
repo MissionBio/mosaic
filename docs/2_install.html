@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Installation &#8212; Mosaic v2.0 documentation</title>
+    <title>Installation &#8212; Mosaic v2.0.4 documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -37,7 +37,7 @@
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.9d8b4a8b9bb19db25eeaddc40d639ba2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -71,7 +71,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Mosaic v2.0 documentation</h1>
+      <h1 class="site-logo" id="site-title">Mosaic v2.0.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -310,8 +310,8 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#latest-version">
-   Latest version
+  <a class="reference internal nav-link" href="#detailed-instructions">
+   Detailed Instructions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -340,8 +340,8 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#latest-version">
-   Latest version
+  <a class="reference internal nav-link" href="#detailed-instructions">
+   Detailed Instructions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -360,12 +360,46 @@
                 
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="latest-version">
-<h2>Latest version<a class="headerlink" href="#latest-version" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="detailed-instructions">
+<h2>Detailed Instructions<a class="headerlink" href="#detailed-instructions" title="Permalink to this headline">¶</a></h2>
 <p>Mosaic is available for installation through the <a class="reference external" href="https://anaconda.org/missionbio">missionbio conda channel</a>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create --name mosaic -c missionbio -c plotly -c conda-forge missionbio.mosaic
+<ol class="arabic">
+<li><dl class="simple">
+<dt>Install Anaconda</dt><dd><p>First install the appropriate version of anaconda for your device from the <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda page</a></p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Install Mosaic</dt><dd><p>Following the successful installation of Anaconda, open your console/terminal and run the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">mosaic</span> <span class="o">-</span><span class="n">c</span> <span class="n">missionbio</span> <span class="o">-</span><span class="n">c</span> <span class="n">plotly</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">missionbio</span><span class="o">.</span><span class="n">mosaic</span>
+<span class="o">&gt;</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">mosaic</span>
+<span class="o">&gt;</span> <span class="n">jupyter</span> <span class="n">notebook</span>
 </pre></div>
 </div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Open mosaic environment and jupyter notebook:</dt><dd><p>When you want to access your mosaic environment and open a jupyter notebook, always run the following
+commands in your console/terminal. Be sure to keep the console/terminal open and running the entire time
+you are using your notebook, however, you can minimize this window during use. If you are properly in
+your mosaic environment, you will notice the command prompt change from <code class="docutils literal notranslate"><span class="pre">base</span></code> to <code class="docutils literal notranslate"><span class="pre">mosaic</span></code>, please
+ensure this has happened before opening your jupyter notebook, or else the notebook will not function
+properly</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">mosaic</span>
+<span class="o">&gt;</span> <span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>Example of prompt changing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">WINDOWS</span>\<span class="n">system32</span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">mosaic</span>
+<span class="p">(</span><span class="n">mosaic</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">WINDOWS</span>\<span class="n">system32</span><span class="o">&gt;</span> <span class="n">jupyter</span> <span class="n">notebook</span>
+</pre></div>
+</div>
+<p>You may get the error “Conda command not found” when trying to go through this for the first time. If so, use the command “source ~/.bashrc”</p>
+</dd>
+</dl>
+</li>
+</ol>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>If the conda env <cite>mosaic</cite> already exists, remove it using</p>
