@@ -31,6 +31,8 @@ Vignettes
     examples/filtering.ipynb
     examples/customizations.ipynb
     examples/multi-sample-analysis.ipynb
+    examples/additional-plots-and-customizations.ipynb
+    examples/analysis-walkthrough.ipynb
 
 Interface
 ---------

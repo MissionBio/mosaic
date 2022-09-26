@@ -1,0 +1,1045 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "3e17597d",
+   "metadata": {},
+   "source": [
+    "## Additional plots and customizations"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e6c13eaf",
+   "metadata": {},
+   "source": [
+    "<b>Objective</b>\n",
+    "\n",
+    "This vignette contains a wide variety of code snippets for additional plots and plot customizations that are not currently included in our latest version of the jupyter notebook. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fbdbdc38",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Load in dependencies "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cd406321",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:38.846666Z",
+     "start_time": "2022-09-22T20:57:38.794254Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Import mosaic libraries\n",
+    "import missionbio.mosaic as ms\n",
+    "\n",
+    "# Import these to display entire dataframes\n",
+    "from IPython.display import display, HTML\n",
+    "\n",
+    "# Import graph_objects from the plotly package to display figures when saving the notebook as an HTML\n",
+    "# Import numpy for statistics\n",
+    "import plotly.graph_objects as go\n",
+    "import numpy as np\n",
+    "\n",
+    "# Import additional packages for specific visuals\n",
+    "import missionbio.mosaic.utils as mutils\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "# Import the colors\n",
+    "from missionbio.mosaic.constants import COLORS\n",
+    "import seaborn as sns"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c9ba00fe",
+   "metadata": {},
+   "source": [
+    "### Load in data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1b4ae634",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:41.212587Z",
+     "start_time": "2022-09-22T20:57:38.849236Z"
+    },
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "sample = ms.load_example_dataset(\"Multisample PBMC\", single=True)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f42f8eee",
+   "metadata": {},
+   "source": [
+    "Subset the DNA data to look for high quality variants of interest."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d59b1ba5",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:41.265188Z",
+     "start_time": "2022-09-22T20:57:41.213842Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Adjust filters if needed by overwriting dna_vars\n",
+    "dna_vars = sample.dna.filter_variants(\n",
+    "    min_dp=10,\n",
+    "    min_gq=50,\n",
+    "    vaf_ref=5,\n",
+    "    vaf_hom=95,\n",
+    "    vaf_het=40,\n",
+    "    min_prct_cells=70,\n",
+    "    min_mut_prct_cells=1,\n",
+    ")\n",
+    "\n",
+    "sample.dna = sample.dna[sample.dna.barcodes(), dna_vars]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d3616ca3",
+   "metadata": {},
+   "source": [
+    "### GQ violin plots"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "94faf366",
+   "metadata": {},
+   "source": [
+    "Plot GQ violin plots for all variants of interest to assess genotype quality. It is recommended that this is added before the GQ heatmap, so poor quality variants seen in the violin plots can be subsequently de-selected in the heatmap."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "69c1deb1",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:41.472289Z",
+     "start_time": "2022-09-22T20:57:41.266290Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "\n",
+    "GQ_flipped = np.transpose(sample.dna.layers['GQ'])\n",
+    "\n",
+    "df = pd.DataFrame(columns=sample.dna.ids())\n",
+    "for i in range(len(sample.dna.ids())):\n",
+    "    this_col = df.columns[i]\n",
+    "    df[this_col] = GQ_flipped[i,:]\n",
+    "\n",
+    "df = pd.melt(df, var_name='Variant', value_name='GQ')\n",
+    "sns.set_style('whitegrid')\n",
+    "sns.violinplot(data = df, x='Variant', y='GQ', hue='Variant', inner='quartile')\n",
+    "plt.xticks([])\n",
+    "plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)\n",
+    "sns.despine()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e75394d9",
+   "metadata": {},
+   "source": [
+    "Identify the subclones present in your sample."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a7ecd92b",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:42.475036Z",
+     "start_time": "2022-09-22T20:57:41.474507Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#Plot a heatmap of the variant allele frequenices being called across your variants of interest\n",
+    "sample.dna.heatmap(attribute='AF_MISSING')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3f33607a",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:47.625612Z",
+     "start_time": "2022-09-22T20:57:42.476150Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#Annotate the DNA variants\n",
+    "annotation = sample.dna.get_annotations()  \n",
+    "\n",
+    "# Store the annotations in the dna assay as a new column attribute\n",
+    "for col, content in annotation.items():\n",
+    "    sample.dna.add_col_attr(col, content.values)\n",
+    "    \n",
+    "# Add annotation to the id names\n",
+    "sample.dna.set_ids_from_cols([\"Gene\", \"CHROM\", \"POS\", \"REF\", \"ALT\"])\n",
+    "\n",
+    "# Annotations are now added to the variants\n",
+    "sample.dna.ids()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "36cb504e",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:49.905399Z",
+     "start_time": "2022-09-22T20:57:47.628528Z"
+    },
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "#Cluster the data to identify the subclones present\n",
+    "\n",
+    "clone_data = sample.dna.group_by_genotype(features=sample.dna.ids(), group_missing=True, min_clone_size=1, layer=\"NGT_FILTERED\", show_plot=True)\n",
+    "\n",
+    "display(HTML(clone_data.to_html()))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2f37f92e",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:49.937912Z",
+     "start_time": "2022-09-22T20:57:49.906648Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#Rename the subclones and drop the clones that are not of interest by labelling them 'FP'\n",
+    "\n",
+    "sample.dna.rename_labels(\n",
+    "  {\n",
+    "    '1': 'Clone 1', \n",
+    "    '2': 'Clone 2',    \n",
+    "    'missing': 'FP', \n",
+    "    'small': 'FP'\n",
+    "  }\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "842c32e7",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:50.691428Z",
+     "start_time": "2022-09-22T20:57:49.938954Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Remove barcodes (clones) from data based on renamed labels\n",
+    "# The reduced data set will now be called 'sample.dna2'\n",
+    "fp_barcodes = sample.dna.barcodes({\"FP\"})\n",
+    "sample.dna2 = sample.dna.drop(fp_barcodes) \n",
+    "set(sample.dna2.get_labels()) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "da7f97db",
+   "metadata": {},
+   "source": [
+    "### Stacked bar graph for multi-sample analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c7fdf829",
+   "metadata": {},
+   "source": [
+    "Plot a stacked bar graph for clone frequency within each sample, where each sample is an individual bar. Note colors can be changed, as can labels. Graph is highly customizable, but large amounts of code may deter users."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "a934864d",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:50.817670Z",
+     "start_time": "2022-09-22T20:57:50.693176Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "a = sample.dna2.row_attrs['sample_name']\n",
+    "a_list = a.tolist()\n",
+    "\n",
+    "b = sample.dna2.row_attrs['label']\n",
+    "b_list = b.tolist()\n",
+    "\n",
+    "ab = list(zip(a_list, b_list))\n",
+    "\n",
+    "counts_dic = {}\n",
+    "sample_tots = {}\n",
+    "for item in ab:\n",
+    "    s = item[0]\n",
+    "    if s not in sample_tots:\n",
+    "        sample_tots[s] = 1\n",
+    "    else:\n",
+    "        sample_tots[s] += 1\n",
+    "    if s not in counts_dic:\n",
+    "        counts_dic[s] = {}\n",
+    "    clone = item[1]\n",
+    "    if clone not in counts_dic[s]:\n",
+    "        counts_dic[s][clone] = 1\n",
+    "    else:\n",
+    "        counts_dic[s][clone] += 1\n",
+    "\n",
+    "freq_dic = {}\n",
+    "sample_names = []\n",
+    "for s in counts_dic:\n",
+    "    sample_names.append(s)\n",
+    "    s_tot = sample_tots[s]\n",
+    "    for c in counts_dic[s]:\n",
+    "        freq = float(counts_dic[s][c])/float(s_tot)\n",
+    "        if c not in freq_dic:\n",
+    "            freq_dic[c] = [freq]\n",
+    "        else:\n",
+    "            freq_dic[c].append(freq)       \n",
+    "\n",
+    "x = [i for i in range(len(sample_names))]\n",
+    "\n",
+    "#IMPORTANT NOTE: DO NOT ALTER ANYTHING ABOVE THIS COMMENT\n",
+    "\n",
+    "width = .5\n",
+    "sns.set_style('ticks')\n",
+    "#One line item per clone\n",
+    "#After first line, add all previous clone data to the 'bottom' of the next bar\n",
+    "#Insert your clone names\n",
+    "#Colors can be custom, insert preferred hex-codes\n",
+    "clone_1 = plt.bar(x, freq_dic['Clone 1'], width, color='#269FCD')\n",
+    "clone_2 = plt.bar(x, freq_dic['Clone 2'], width, bottom=freq_dic['Clone 1'], color='#9BBDF9')\n",
+    "#clone_3 = plt.bar(x, freq_dic['Clone 3'], width, bottom=np.array(freq_dic['Clone 1'])+np.array(freq_dic['Clone 2']), color='#67AAf9')\n",
+    "plt.xticks(x, sample_names, rotation=45)\n",
+    "plt.ylabel('Clone frequency per sample')\n",
+    "plt.legend((clone_1, clone_2), ('Clone 1', 'Clone 2'), bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e18ae2b9",
+   "metadata": {},
+   "source": [
+    "### Reads per amplicon"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6ebff93e",
+   "metadata": {},
+   "source": [
+    "Plot a histogram of the reads per cell across any given amplicon, and print out the mean reads per cell of that amplicon."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "07b13e2c",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:50.948878Z",
+     "start_time": "2022-09-22T20:57:50.819156Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "reads = sample.dna.get_attribute('DP', constraint='row+col')\n",
+    "amplicons = sample.dna.col_attrs['amplicon']\n",
+    "amp_average = reads.groupby(amplicons, axis=1).mean()\n",
+    "#Insert your amplicon of interest below\n",
+    "DP = amp_average['MYE_SF3B1_198266730'] \n",
+    "#Print the mean\n",
+    "print(np.mean(DP))\n",
+    "#Plot histogram\n",
+    "plt.hist(DP)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d10b2be9",
+   "metadata": {},
+   "source": [
+    "### Count barcodes with at least one mutation"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dc39850c",
+   "metadata": {},
+   "source": [
+    "Define a region of interest, and then call cell-barcodes that have a least one mutation in that region of interest. This code may be useful for gene-editing experiments where you are expecting mutations on a particular amplicon, or within a small region of the amplicon surrounding a cut-site."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "415ed213",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:51.122581Z",
+     "start_time": "2022-09-22T20:57:50.950563Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#Define an amplicon of interest\n",
+    "amp = 'MYE_SF3B1_198266730'\n",
+    "print (amp in set(sample.dna.col_attrs['amplicon'])) #sanity check\n",
+    "#Filter the data to only look at variants called from this amplicon\n",
+    "filt = sample.dna.col_attrs[\"amplicon\"] == amp\n",
+    "variants = sample.dna.ids()[filt]\n",
+    "sample.dna = sample.dna[:, variants]\n",
+    " \n",
+    "#THE FOLLOWING SECTION IS OPTIONAL\n",
+    "\n",
+    "#filtering variants by cut site\n",
+    "#e.g. cut site at chr2:60722401, range 60722481 - 60722421\n",
+    "#filt2 = sample.dna.col_attrs[\"POS\"] > 60722381\n",
+    "#variants2 = sample.dna.ids()[filt2]\n",
+    "#sample.dna = sample.dna[:, variants2]\n",
+    "#filt3 = sample.dna.col_attrs[\"POS\"] < 60722421\n",
+    "#variants3 = sample.dna.ids()[filt3]\n",
+    "#sample.dna = sample.dna[:, variants3]\n",
+    "\n",
+    "#counting barcodes with at least one mutation in region of interest(Het or Hom call)\n",
+    "#creating a dataframe with numeric genotypes\n",
+    "genotypes = sample.dna.get_attribute('NGT_FILTERED', constraint='row+col')\n",
+    "#set WT to True\n",
+    "zero_bool = (genotypes == 0)\n",
+    "#number of WT calls per each cell\n",
+    "zero_bool.sum(axis=1)\n",
+    "\n",
+    "#set missing to True\n",
+    "missing_bool = (genotypes == 3)\n",
+    "#number of Missing calls per each cell\n",
+    "missing_bool.sum(axis=1)\n",
+    "\n",
+    "#number of Het and Hom calls per barcode\n",
+    "#len(genotypes.columns) is the total number of variants\n",
+    "barcode_muts = len(genotypes.columns) - (missing_bool.sum(axis=1) + zero_bool.sum(axis=1))\n",
+    "\n",
+    "#number of barcodes with one or more mutations\n",
+    "barcode_muts_bool = (barcode_muts > 0)\n",
+    "print(barcode_muts_bool.sum())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1581efab",
+   "metadata": {},
+   "source": [
+    "### Custom cluster order"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "80670c24",
+   "metadata": {},
+   "source": [
+    "For sample.dna or sample.cnv grouped heatmaps in Mosaic notebook, this code will help you order the clones along the Y-axis in whatever order you prefer."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "ad04f4ce",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:51.308538Z",
+     "start_time": "2022-09-22T20:57:51.124524Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "#get the 'barcodes' and the labels information from the sample.dna object\n",
+    "#label is the attribute that will be used for ordering cell groups\n",
+    "#labels are stored in the 'clusters' variable\n",
+    "barcodes = sample.dna2.row_attrs['barcode']\n",
+    "clusters = sample.dna2.row_attrs['label']\n",
+    "\n",
+    "#combining barcodes and clusters into one single numpy array\n",
+    "combined = np.vstack((barcodes, clusters)).T\n",
+    "\n",
+    "#creating a pandas data frame based on the numpy array\n",
+    "df = pd.DataFrame(combined, columns = ['cell','cluster'])\n",
+    "\n",
+    "#create a list 'cell_clusters' with the desired order of the clusters\n",
+    "#In this example, clusters are labeled numerically, i.e. 1, 2, 3,...\n",
+    "#Use the labels you have previously created for the clones\n",
+    "cell_clusters = ['Clone 1', 'Clone 2']\n",
+    "\n",
+    "#recreate the 'cluster' column in the pandas data frame, but as a categorical column\n",
+    "df[\"cluster\"] = pd.Categorical(df[\"cluster\"], categories = cell_clusters)\n",
+    "#group the barcodes by cluster\n",
+    "df_sorted = df.sort_values(by = \"cluster\")\n",
+    "#change data type (back to numpy)\n",
+    "ordered_cells = df_sorted.cell.values.tolist()\n",
+    "ordered_cells = np.array(ordered_cells)\n",
+    "#call the plot again, use 'ordered_cells' to specify the order\n",
+    "sample.dna2.heatmap(attribute='AF_MISSING', bars_order = ordered_cells)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d7bb625b",
+   "metadata": {},
+   "source": [
+    "### Custom heatmap legend "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a83d11b9",
+   "metadata": {},
+   "source": [
+    "For grouped sample.dna heatmaps, after clones are identified and labeled, this helps to remove unnecessary categories from the legend, for example the ‘Missing’ category. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cfabf4da",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:51.468467Z",
+     "start_time": "2022-09-22T20:57:51.319418Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#Customize legend to show only three categories\n",
+    "#e.g. WT, HET, HOM\n",
+    "#if the data are filtered, to remove the missing genotypes, the 'Missing' category will still appear in the legend\n",
+    "fig = sample.dna2.heatmap(attribute = 'NGT_FILTERED')\n",
+    "#Define the categories you want to appear\n",
+    "fig.layout.coloraxis.colorbar.ticktext = ('WT', 'HET', 'HOM')\n",
+    "fig.layout.coloraxis.colorbar.tickvals = (0.375, 1.025, 1.675)\n",
+    "fig.layout.coloraxis.cmax = 2\n",
+    "fig.layout.coloraxis.colorscale = [[0.0, '#3b4d73'], [0.33, '#3b4d73'], [0.33, '#78a3bc'], [0.66, '#78a3bc'], [0.66, '#d7ecee'], [1.0, '#d7ecee']]\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ef044097",
+   "metadata": {},
+   "source": [
+    "### Perform CNV analysis on your data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c595f1be",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:51.515453Z",
+     "start_time": "2022-09-22T20:57:51.469535Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "reads = sample.cnv.get_attribute('read_counts', constraint='row+col')\n",
+    "reads"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e5b5bd92",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:51.623453Z",
+     "start_time": "2022-09-22T20:57:51.516824Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "working_amplicons = (reads.median() > 0).values\n",
+    "sample.cnv = sample.cnv[:, working_amplicons]\n",
+    "\n",
+    "sample.cnv2 = sample.cnv[sample.dna2.barcodes(),:]\n",
+    "\n",
+    "sample.cnv2.normalize_reads()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cf26ffd8",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:51.668287Z",
+     "start_time": "2022-09-22T20:57:51.624616Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#Normalize your amplicons to a WT/known diploid population\n",
+    "sample.cnv2.compute_ploidy(diploid_cells=sample.dna.barcodes('Clone 1'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "11adcb46",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:51.699068Z",
+     "start_time": "2022-09-22T20:57:51.669424Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "sample.cnv2.set_labels(sample.dna2.get_labels())\n",
+    "sample.cnv2.set_palette(sample.dna2.get_palette())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "01825116",
+   "metadata": {},
+   "source": [
+    "### P-value chart per gene"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f2ac1693",
+   "metadata": {},
+   "source": [
+    "For CNV statistics, this code will allow you to show the pval_cnv chart with gene name labels, instead of amplicon names. Note: if there are multiple amplicons per gene, the gene name will appear for each amplicon, and this is not an aggregate p-val across the entire gene."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "247e879c",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:56.055394Z",
+     "start_time": "2022-09-22T20:57:51.700100Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "sample.cnv2.get_gene_names()\n",
+    "\n",
+    "pval_cnv, tstat_cnv = sample.cnv2.test_signature(\"normalized_counts\")\n",
+    "pval_cnv.columns = sample.cnv2.col_attrs['gene_name']\n",
+    "pval_cnv = pval_cnv + 10 ** -50 + pval_cnv\n",
+    "tstat_cnv.columns = sample.cnv2.col_attrs['gene_name']\n",
+    "pvals_cnv = -np.log10(pval_cnv) * (tstat_cnv > 0)\n",
+    "\n",
+    "plt.figure(figsize=(20, 10))\n",
+    "fig = sns.heatmap(pvals_cnv.T, vmax=50, vmin=0)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c1724429",
+   "metadata": {},
+   "source": [
+    "### Calculate an average P-value per gene"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3bef93cc",
+   "metadata": {},
+   "source": [
+    "For CNV statistics, this code will allow you to show the average p-value per gene in a heatmap format, instead of at an amplicon level. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "aaab2483",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:56.555099Z",
+     "start_time": "2022-09-22T20:57:56.056741Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#statistics\n",
+    "pval_cnv, tstat_cnv = sample.cnv2.test_signature(\"normalized_counts\")\n",
+    "\n",
+    "#replace amplicon IDs by gene names\n",
+    "pval_cnv.columns = sample.cnv2.col_attrs['gene_name']\n",
+    "\n",
+    "#transpose the data frame\n",
+    "tpval_cnv = pval_cnv.T\n",
+    "\n",
+    "#add column header to the index\n",
+    "tpval_cnv.index.rename('gene_id', inplace=True)\n",
+    "#average the p-values by gene_id and transpose\n",
+    "ttpval_cnv = tpval_cnv.groupby('gene_id').mean().T\n",
+    "ttpval_cnv = ttpval_cnv + 10 ** -50 + ttpval_cnv\n",
+    "\n",
+    "#plot it\n",
+    "pvals_cnv = -np.log10(ttpval_cnv)\n",
+    "plt.figure(figsize=(20, 10))\n",
+    "fig = sns.heatmap(pvals_cnv.T, vmax=50, vmin=0)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "16a6667d",
+   "metadata": {},
+   "source": [
+    "### Protein read distribution tool"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "96a19519",
+   "metadata": {},
+   "source": [
+    "This code will read in your h5 file, and spit out a table of your antibodies, the raw read counts and what percentage of total counts the antibody accounts for, as well as a pie graph of antibody percentages, or a bar chart."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "f42ecc68",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:56.758728Z",
+     "start_time": "2022-09-22T20:57:56.556138Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "\n",
+    "read_counts= sample.protein.layers[\"read_counts\"]\n",
+    "ids = sample.protein.col_attrs[\"id\"].copy()\n",
+    "raw = pd.DataFrame(read_counts, columns=ids)\n",
+    "\n",
+    "total_ab = pd.DataFrame(raw.sum(axis = 0, skipna = True))\n",
+    "total_ab.columns =['Raw Count']\n",
+    "total_ab.index.name = 'Antibody'\n",
+    "total_ab.reset_index(inplace=True)\n",
+    "total_ab['percent'] = (total_ab['Raw Count'] / total_ab['Raw Count'].sum()) * 100\n",
+    "print(total_ab)\n",
+    "\n",
+    "#Pie chart\n",
+    "#fig = px.pie(total_ab, values='Raw Count',names='Antibody', title='Sum of Raw')\n",
+    "\n",
+    "#Bar chart\n",
+    "fig = px.bar(total_ab, x='Antibody', y='percent')\n",
+    "fig.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "250ff763",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:56.795034Z",
+     "start_time": "2022-09-22T20:57:56.759925Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#Normalize protein counts\n",
+    "sample.protein.normalize_reads('CLR') "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c03df101",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### Plot a joint scatterplot and histogram"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d7b8170f",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "This will create a scatterplot of any two proteins, where additional histograms of the protein expression profile will be shown on the sides of the scatterplots."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3f2674db",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:57.202246Z",
+     "start_time": "2022-09-22T20:57:56.796213Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "#Plot a joint scatterplot with histograms of two proteins of interest\n",
+    "#for more: https://seaborn.pydata.org/generated/seaborn.jointplot.html\n",
+    "\n",
+    "#create data frame with normalised protein counts (\"protein_df\")\n",
+    "protein_df = sample.protein.get_attribute('normalized_counts', constraint='row+col')\n",
+    "\n",
+    "#specify the proteins of choice using the \"x\" and \"y\" arguments\n",
+    "sns.jointplot(x = \"CD3\", y = \"CD19\", data = protein_df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3328d157",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:57.296483Z",
+     "start_time": "2022-09-22T20:57:57.203349Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "#Create a new sample object for multi-omics visualizations\n",
+    "\n",
+    "x = sample.protein.barcodes()\n",
+    "y = sample.dna2.barcodes()\n",
+    "\n",
+    "z = np.intersect1d(x, y)\n",
+    "len(z)\n",
+    "\n",
+    "# Subset protein data to include only barcodes that were included in both analytes and store in sample.protein.3 variable\n",
+    "sample.protein3 = sample.protein[z,sample.protein.ids()]\n",
+    "\n",
+    "# Subset dna data to include only barcodes that were included in both analytes and store in sample.dna.3 variable\n",
+    "sample.dna3 = sample.dna2[z,sample.dna2.ids()] \n",
+    "\n",
+    "#Update each sub-class (e.g., DNA, CNV, Protein) in order to visualize \"clean\" data only with relevant features and cells.\n",
+    "sample2 = sample\n",
+    "#sub-assays\n",
+    "sample2.dna = sample.dna3 \n",
+    "sample2.cnv = sample.cnv2\n",
+    "sample2.protein = sample.protein3 "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d5d10c96",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "### CNV signature per chromosome"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6836ae1a",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "This code is for the first heatmap plot in the multi-assay section of the Mosaic notebook (DNA cluster signature vs Analyte and Barcode). It allows you to show average ploidy per chromosome in the CNV section of the heatmap, instead of by amplicon or gene. \n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c2a054b6",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:57.789391Z",
+     "start_time": "2022-09-22T20:57:57.297615Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Calculate mean ploidy for each chromosome\n",
+    "amp_ploidy = sample.cnv.get_attribute(\"ploidy\", \"rc\")\n",
+    "chrom = \"chr\" + sample.cnv.col_attrs[\"CHROM\"]\n",
+    "chrom_ploidy = amp_ploidy.groupby(chrom, axis=1).mean()\n",
+    "\n",
+    "# Create an assay with the ploidy values\n",
+    "chrom_sample = sample[:]\n",
+    "chrom_cnv = chrom_sample.cnv[:, :]\n",
+    "chrom_cnv.select_columns([0] * chrom_ploidy.shape[1])\n",
+    "chrom_cnv.col_attrs = {\"id\": np.array(chrom_ploidy.columns)}\n",
+    "chrom_cnv.layers = {\n",
+    "    \"read_counts\": np.zeros(chrom_ploidy.shape),  # Empty data needed for the heatmap function\n",
+    "    \"normalized_counts\": chrom_ploidy.values  # The multi sample heatmap plots this layer\n",
+    "}\n",
+    "chrom_sample.cnv = chrom_cnv\n",
+    "\n",
+    "# Draw normal heatmap\n",
+    "chrom_sample.cnv.heatmap(\"normalized_counts\")\n",
+    "\n",
+    "# Draw multi-assay heatmap\n",
+    "chrom_sample.heatmap(\"dna\", \"protein\", flatten=False)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f0eb0d37",
+   "metadata": {},
+   "source": [
+    "### Save output for one clone"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9e33d9d6",
+   "metadata": {},
+   "source": [
+    "This code will output a filtered h5 file, containing only cells of the clone of interest, which can be used for further analysis or filtering. "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9c27da01",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T20:57:58.410448Z",
+     "start_time": "2022-09-22T20:57:57.790457Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#save one clone (or one sample) as a separate .h5 file\n",
+    "#row attribute 'label' stores the group (e.g. clone) information\n",
+    "#set the sampleID to match the clone that you would like to extract from the others\n",
+    "sampleID = 'Clone 2'\n",
+    "\n",
+    "#create a filter based on sampleID\n",
+    "filt = sample.dna.row_attrs[\"label\"] == sampleID\n",
+    "\n",
+    "#create a new dna layer under the same sample\n",
+    "#sample.dna2 contains only the barcodes from the selected group\n",
+    "sample.dna2 = sample.dna[filt, :]\n",
+    "\n",
+    "#create a new sample\n",
+    "sample2 = sample\n",
+    "\n",
+    "#transfer the layer sample.dna2 to the new sample\n",
+    "sample2.dna = sample.dna2\n",
+    "\n",
+    "#save sample2 to disk\n",
+    "ms.save(sample2, \"Clone2_FilteredOnly.h5\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.13"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": true
+  },
+  "varInspector": {
+   "cols": {
+    "lenName": 16,
+    "lenType": 16,
+    "lenVar": 40
+   },
+   "kernels_config": {
+    "python": {
+     "delete_cmd_postfix": "",
+     "delete_cmd_prefix": "del ",
+     "library": "var_list.py",
+     "varRefreshCmd": "print(var_dic_list())"
+    },
+    "r": {
+     "delete_cmd_postfix": ") ",
+     "delete_cmd_prefix": "rm(",
+     "library": "var_list.r",
+     "varRefreshCmd": "cat(var_dic_list()) "
+    }
+   },
+   "types_to_exclude": [
+    "module",
+    "function",
+    "builtin_function_or_method",
+    "instance",
+    "_Feature"
+   ],
+   "window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

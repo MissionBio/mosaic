@@ -1,0 +1,3376 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-22T22:39:34.649527Z",
+     "start_time": "2022-09-22T22:39:34.481917Z"
+    }
+   },
+   "source": [
+    "## Mosaic analysis walk-through"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<b>Objective</b>: This notebook contains a detailed step by step process of analyzing Tapestri runs. It is not a vignette to demonstrate how to use mosaic, but rather a guided analysis. The following cells have not been exectued but the notebook can be downloaded and run on any sample."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Setup \n",
+    "\n",
+    "<b>Topics covered</b><br>\n",
+    "1. Loading required packages and data.\n",
+    "2. Structure and contents of data objects.\n",
+    "\n",
+    "\n",
+    "<b>Load data</b><br>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:04.554380Z",
+     "start_time": "2022-09-26T20:26:04.527312Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Import mosaic libraries\n",
+    "import missionbio.mosaic as ms\n",
+    "\n",
+    "# Import these to display entire dataframes\n",
+    "from IPython.display import display, HTML\n",
+    "\n",
+    "# Import graph_objects from the plotly package to display figures when saving the notebook as an HTML\n",
+    "# Import numpy for statistics\n",
+    "import plotly.graph_objects as go\n",
+    "import numpy as np\n",
+    "\n",
+    "# Import additional packages for specific visuals\n",
+    "import missionbio.mosaic.utils as mutils\n",
+    "import matplotlib.pyplot as plt\n",
+    "\n",
+    "# Import the colors\n",
+    "from missionbio.mosaic.constants import COLORS\n",
+    "import seaborn as sns\n",
+    "\n",
+    "# Note: when exporting the notebook as an HTML, plots that use the \"go.Figure(fig)\" command are saved"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:04.583060Z",
+     "start_time": "2022-09-26T20:26:04.555790Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Check version; this notebook is designed for Mosaic 2.0 or higher\n",
+    "print(ms.__version__)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:04.610926Z",
+     "start_time": "2022-09-26T20:26:04.584658Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Any function's parameters and default values can be looked up via the 'help' function\n",
+    "# Here, the function is 'ms.load'\n",
+    "help(ms.load)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:06.852027Z",
+     "start_time": "2022-09-26T20:26:04.613013Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Specify the h5 file to be used in this analysis: h5path = '/path/to/h5/file/test.h5'\n",
+    "# If working with Windows, you may need to add an 'r' before the path: h5path = r'/path/to/h5/file/test.h5'\n",
+    "h5path = '/Users/robert_durruthy/Desktop/Mosaic notebooks/4-cell-lines-AML-multiomics.dna+protein.h5'\n",
+    "\n",
+    "# Load the data\n",
+    "# sample = ms.load(h5path, raw=False, apply_filter=True, single=True, whitelist = [])\n",
+    "\n",
+    "sample = ms.load_example_dataset(\"3 cell mix\")  # Use the above `ms.load` for custom h5 files\n",
+    "\n",
+    "# Always set raw=False; if raw=True, ALL barcodes will be loaded (rather than cell-associated barcodes)\n",
+    "# Always set apply_filter=True unless you can't detect an expected (target) variant. Additional filtering options are included in the DNA section below\n",
+    "# The single=True option loads multi-sample h5 files as a single sample object (compatible with this notebook)\n",
+    "# The whitelist option loads any variant that is in the vcf.gz file (e.g. \"chr1:179520511:C/G\"); similar to whitelist feature in Tapestri Insights v2"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "All the interactive plotting functions return a plotly figure. If the layout or the color\n",
+    "scheme is not suitable for your data type, they can be changed before creating the final figure.\n",
+    "\n",
+    "The colors for the plots are stored either in the individual traces or the layout attributes of the plotly figure.\n",
+    "\n",
+    "Mosaic also contains a list of colors that can be used to customize the plots."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:06.993397Z",
+     "start_time": "2022-09-26T20:26:06.853076Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Explore the colors\n",
+    "# Additional color palettes: https://seaborn.pydata.org/tutorial/color_palettes.html\n",
+    "# Plot the first few colors\n",
+    "sns.palplot(COLORS[:40])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.019289Z",
+     "start_time": "2022-09-26T20:26:06.994588Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sns.color_palette)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.089656Z",
+     "start_time": "2022-09-26T20:26:07.020258Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Alternatively plot another palette\n",
+    "sns.palplot(sns.color_palette(\"magma\", n_colors=20))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.117345Z",
+     "start_time": "2022-09-26T20:26:07.090665Z"
+    },
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "# Print the corresponding hex codes\n",
+    "print(sns.color_palette(\"magma\", n_colors=20).as_hex())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<b>Data Structure</b>\n",
+    "    \n",
+    "    \n",
+    " DNA, CNV, and Protein are sub-classes of the Assay class. The information is stored in four categories, and the user can modify each of those:\n",
+    "\n",
+    "    1. metadata (add_metadata / del_metadata):\n",
+    "        - dictionary containing metrics of the assay\n",
+    "\n",
+    "    2. row_attrs (add_row_attr / del_row_attr):\n",
+    "        - dictionary which contains 'barcode' as one of the keys \n",
+    "          (where the value is a list of all barcodes)\n",
+    "        - for all other keys, the values must be of the same \n",
+    "          length, i.e. match the number of barcodes\n",
+    "        - this is the attribute where 'label', 'pca', \n",
+    "          and 'umap' values are added\n",
+    "\n",
+    "    3. col_attrs (add_col_attr / del_col_attr):\n",
+    "        - dictionary which contains 'id' as one of the keys \n",
+    "          (where the value is a list of all ids)\n",
+    "        - for DNA assays, 'ids' are variants; for Protein assays, \n",
+    "          'ids' are antibodies\n",
+    "        - for all other keys, the values must be of the same\n",
+    "          length, i.e. match the number ids\n",
+    "\n",
+    "    4. layers (add_layer / del_layer):\n",
+    "        - dictionary which contains critically important assay metrics\n",
+    "        - all the values have the shape (num barcodes) x (num ids) \n",
+    "        - for DNA assays, this includes AF, GQ, DP, etc. \n",
+    "          (per cell, per variant)\n",
+    "        - for Protein assays, this includes read counts \n",
+    "          (per cell, per antibody)\n",
+    "        - this is the attribute where 'normalized_counts' will be added\n",
+    "\n",
+    " "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.167731Z",
+     "start_time": "2022-09-26T20:26:07.119114Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Summary of DNA assay \n",
+    "print(\"\\'sample.dna\\':\", sample.dna, '\\n')\n",
+    "print(\"\\'row_attrs\\':\", \"\\n\\t\", list(sample.dna.row_attrs.keys()), '\\n')\n",
+    "print(\"\\'col_attrs\\':\", \"\\n\\t\", list(sample.dna.col_attrs.keys()), '\\n')\n",
+    "print(\"\\'layers\\':\", \"\\n\\t\", list(sample.dna.layers.keys()), '\\n')\n",
+    "print(\"\\'metadata\\':\", \"\\n\")\n",
+    "for i in list(sample.dna.metadata.keys()):\n",
+    "    print(\"\\t\", i, \": \", sample.dna.metadata[i], sep=\"\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.247836Z",
+     "start_time": "2022-09-26T20:26:07.169343Z"
+    },
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "# Summary of Protein assay \n",
+    "print(\"\\'sample.protein\\':\", sample.protein, '\\n')\n",
+    "print(\"\\'row_attrs\\':\", \"\\n\\t\", list(sample.protein.row_attrs.keys()), '\\n')\n",
+    "print(\"\\'col_attrs\\':\", \"\\n\\t\", list(sample.protein.col_attrs.keys()), '\\n')\n",
+    "print(\"\\'layers\\':\", \"\\n\\t\", list(sample.protein.layers.keys()), '\\n')\n",
+    "print(\"\\'metadata\\':\", \"\\n\")\n",
+    "for i in list(sample.protein.metadata.keys()):\n",
+    "    print(\"\\t\", i, \": \", sample.protein.metadata[i], sep=\"\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.303338Z",
+     "start_time": "2022-09-26T20:26:07.249272Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# For DNA, ids are variants\n",
+    "# sample.dna.ids() is a shortcut for sample.dna.col_attrs['id']\n",
+    "sample.dna.ids()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.329876Z",
+     "start_time": "2022-09-26T20:26:07.304454Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# For Protein, ids are AOCs\n",
+    "# sample.protein.ids() is a shortcut for sample.protein.col_attrs['id']\n",
+    "sample.protein.ids()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### DNA Analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<b>Topics covered</b><br>\n",
+    "1. Standard filtering of DNA variants.\n",
+    "2. Subsetting dataset for variants of interest, including whitelisted variants.\n",
+    "3. Addition of annotations to the variants.\n",
+    "4. Manual variant selection. [OPTIONAL]\n",
+    "5. Clustering sub-clones."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Basic filtering"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "    There are many options for filtering DNA variants. \n",
+    "    Use the help() function to understand the approach listed below.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.360014Z",
+     "start_time": "2022-09-26T20:26:07.333868Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# For additional information visit: https://support.missionbio.com/hc/en-us/articles/360047303654-How-do-the-Advanced-Filters-work-\n",
+    "help(sample.dna.filter_variants)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.389890Z",
+     "start_time": "2022-09-26T20:26:07.361603Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Filter the variants, similar to the \"Advanced Filters\" in Tapestri Insights v2.2\n",
+    "\n",
+    "# One major difference: The filter \"REMOVE GENOTYPE IN CELLS WITH ALTERNATE ALLELE FREQ\" \n",
+    "# is replaced with the following 3 zygosity-specific filters: vaf_ref, vaf_hom, vaf_het\n",
+    "\n",
+    "# In general, these additional filters remove additional false-positive from the data.\n",
+    "\n",
+    "# Define dna_vars variable\n",
+    "dna_vars = sample.dna.filter_variants()\n",
+    "dna_vars"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.415745Z",
+     "start_time": "2022-09-26T20:26:07.391146Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Check the number of filtered variants. When using the default filters, the number of \n",
+    "# variants is likely smaller compared to the originally loaded variants due to the more \n",
+    "# stringent filtering criteria (e.g., vaf_ref=5, vaf_hom=95, vaf_het=35).\n",
+    "len(dna_vars)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.443148Z",
+     "start_time": "2022-09-26T20:26:07.416808Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Adjust filters if needed by overwriting dna_vars\n",
+    "dna_vars = sample.dna.filter_variants(\n",
+    "    min_dp=10,\n",
+    "    min_gq=30,\n",
+    "    vaf_ref=5,\n",
+    "    vaf_hom=95,\n",
+    "    vaf_het=35,\n",
+    "    min_prct_cells=50,\n",
+    "    min_mut_prct_cells=1,\n",
+    ")\n",
+    "\n",
+    "# List all filtered variants\n",
+    "dna_vars"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.468930Z",
+     "start_time": "2022-09-26T20:26:07.444385Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Re-check the number of filtered variants\n",
+    "len(dna_vars)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Subsetting Data for Variants of Interest"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "    First, specify variants of interest using one of the three options below:\n",
+    "        1. Use the filtered variants from the above section (dna_vars)\n",
+    "        2. Use specific variants of interest (whitelist) \n",
+    "        3. Combine 1 & 2: filtered variants plus whitelist\n",
+    "    \n",
+    "    Then, this list (final_vars) is used to reduce the larger data set to only your variants of interest."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.492617Z",
+     "start_time": "2022-09-26T20:26:07.469940Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "## Option 1: filtered variants only (no whitelist)\n",
+    "\n",
+    "final_vars=dna_vars"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.520497Z",
+     "start_time": "2022-09-26T20:26:07.493585Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "## Option 2: whitelisted variants only \n",
+    "\n",
+    "# Specify the whitelist; variants may be copy/pasted from Tapestri Insights v2.2,\n",
+    "# but ensure correct nomenclature, ie whitelist = [\"chr13:28589657:T/G\",\"chrX:39921424:G/A\"]\n",
+    "final_vars = [\"chr13:28597686:G/A\",\"chr11:32421651:T/C\",\"chr4:106158216:G/A\",\"chr4:106196829:T/G\"]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.547959Z",
+     "start_time": "2022-09-26T20:26:07.521646Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "## Option 3: filtered variants plus whitelisted variants\n",
+    "\n",
+    "# Specify the whitelist; variants may be copy/pasted from Tapestri Insights v2.2,\n",
+    "# but ensure correct nomenclature, ie whitelist = [\"chr13:28589657:T/G\",\"chrX:39921424:G/A\"]\n",
+    "target_variants = [\"chr13:28597686:G/A\",\"chr11:32421651:T/C\",\"chr4:106158216:G/A\",\"chr4:106196829:T/G\"]\n",
+    "\n",
+    "# Combine whitelisted and filtered variants\n",
+    "final_vars = list(set(list(dna_vars) + target_variants))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.574866Z",
+     "start_time": "2022-09-26T20:26:07.549472Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Check the lenght of your final list of variants\n",
+    "len(final_vars)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.602114Z",
+     "start_time": "2022-09-26T20:26:07.576260Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Dimensionality of the original sample.dna dataframe\n",
+    "# First number = number of cells (rows); second number = number of variants (columns)\n",
+    "sample.dna.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.629518Z",
+     "start_time": "2022-09-26T20:26:07.603444Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Before subsetting, verify that all the chosen variants are in the current sample.dna ids (should return True)\n",
+    "print(set(final_vars).issubset(set(sample.dna.ids())))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.680478Z",
+     "start_time": "2022-09-26T20:26:07.630756Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Subsetting sample.dna (columns) based on reduced variant list. Keeping all cells that passed filtering\n",
+    "sample.dna = sample.dna[sample.dna.barcodes(), final_vars]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.706346Z",
+     "start_time": "2022-09-26T20:26:07.681571Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Check the shape of the final filtered DNA object, i.e. (number of barcodes/cells, number of ids/variants)\n",
+    "sample.dna.shape"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Annotation Addition"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:07.732070Z",
+     "start_time": "2022-09-26T20:26:07.707508Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.dna.get_annotations)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:12.465727Z",
+     "start_time": "2022-09-26T20:26:07.733203Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Fetch annotations using varsome\n",
+    "# Note: run this on a filtered DNA sample - too many variants (e.g., 100+) are not handled correctly by the method\n",
+    "annotation = sample.dna.get_annotations()  \n",
+    "\n",
+    "# Store the annotations in the dna assay as a new column attribute\n",
+    "for col, content in annotation.items():\n",
+    "    sample.dna.add_col_attr(col, content.values)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:12.523498Z",
+     "start_time": "2022-09-26T20:26:12.468178Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Sort the values as desired and display a table of all variants (similar to Tapestri Insights)\n",
+    "ann = annotation.sort_values(by=[\"DANN\", \"Coding impact\"], ascending=False)\n",
+    "\n",
+    "display(HTML(ann.to_html()))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:13.377471Z",
+     "start_time": "2022-09-26T20:26:12.524848Z"
+    },
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "# The data can also be presented as an interactive table\n",
+    "# There are multiple pages to the table - check top right corner for page number\n",
+    "# Clicking will select a particular row and store it in table.selected_rows\n",
+    "table = ms.Table(ann)\n",
+    "table.draw()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:13.411701Z",
+     "start_time": "2022-09-26T20:26:13.378648Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Check the selected variants\n",
+    "# If desired, this list can be used to subset the data further (similar to the subsetting done above with \"final_vars\")\n",
+    "table.selected_rows"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:13.440228Z",
+     "start_time": "2022-09-26T20:26:13.412771Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Any of these column values can be added to the id names\n",
+    "sample.dna.col_attrs.keys()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:13.469416Z",
+     "start_time": "2022-09-26T20:26:13.441176Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Add annotation to the id names\n",
+    "sample.dna.set_ids_from_cols([\"Gene\", \"CHROM\", \"POS\", \"REF\", \"ALT\"])\n",
+    "\n",
+    "# Annotations are now added to the variants\n",
+    "sample.dna.ids()\n",
+    "\n",
+    "# Use sample.dna.reset_ids() to get the original ids"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Manual Variant Selection"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "    If using only whitelisted variants (e.g., target variants are already known), this section can be skipped.\n",
+    "    \n",
+    "    This section includes a variety of plots to help assess variant quality.\n",
+    "    Heatmaps are interactive. Clicking on a column selects the corresponding id,\n",
+    "    whose value is stored in the `selected_ids` attribute. Selected ids can then \n",
+    "    be removed from the data set. I.e., click on the low quality variants you wish to discard.\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:13.501604Z",
+     "start_time": "2022-09-26T20:26:13.470412Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.dna.stripplot)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:16.413202Z",
+     "start_time": "2022-09-26T20:26:13.502689Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# First diagnostic plot to evaluate variant quality\n",
+    "# The 'attribute' or 'colorby' arguments may be changed\n",
+    "# Variants with the same genotype for every cell are likley germline\n",
+    "# Variants with a HET population distributed below AF=35 are likely false positives (expect HET cells around AF=50)\n",
+    "fig = sample.dna.stripplot(attribute='AF_MISSING', colorby='GQ')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:17.024441Z",
+     "start_time": "2022-09-26T20:26:16.415153Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Second diagnostic plot: use this heatmap to (de)-select variants with little variance \n",
+    "# For example, a germline mutation with identical genotype across all cells\n",
+    "# Additionally, variants with excessive missing data can be selected for removal\n",
+    "# Variants may be selected by clicking on the heatmap (variant name changes color from black to red)\n",
+    "# Don't use \"fig =\" as the heatmap won't become responsive for variant selection\n",
+    "sample.dna.heatmap(attribute='NGT_FILTERED')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:17.061345Z",
+     "start_time": "2022-09-26T20:26:17.026733Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Array that lists all variants that were selected in the heatmap\n",
+    "sample.dna.selected_ids"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:17.093664Z",
+     "start_time": "2022-09-26T20:26:17.062527Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Subset the sample.dna variable to removing all selected variants\n",
+    "\n",
+    "if len(sample.dna.selected_ids) != 0:\n",
+    "    sample.dna = sample.dna.drop(sample.dna.selected_ids)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:17.638992Z",
+     "start_time": "2022-09-26T20:26:17.094900Z"
+    },
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "# Redraw the heatmap with GQ values to select variants that display low quality in majority of cells\n",
+    "sample.dna.heatmap(attribute='GQ')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:17.675954Z",
+     "start_time": "2022-09-26T20:26:17.640049Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Array that lists all variants that were selected in the heatmap\n",
+    "sample.dna.selected_ids"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:17.716435Z",
+     "start_time": "2022-09-26T20:26:17.685133Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Subset the sample.dna variable to removing all selected variants\n",
+    "\n",
+    "if len(sample.dna.selected_ids) != 0:\n",
+    "    sample.dna = sample.dna.drop(sample.dna.selected_ids)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:17.748746Z",
+     "start_time": "2022-09-26T20:26:17.717429Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Confirm new number of columns (variants)\n",
+    "sample.dna.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:18.324457Z",
+     "start_time": "2022-09-26T20:26:17.749978Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Redraw heatmap with undesired variants removed\n",
+    "sample.dna.heatmap(attribute='AF_MISSING')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Clustering"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "    The DNA assay class comes with three different methods of clustering:\n",
+    "    Method 1: f(x) = group_by_genotype (akin to Tapestri Insights v2.2)\n",
+    "    Method 2: PCA + UMAP + clustering (customizable)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "##### Clustering Method 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:18.370424Z",
+     "start_time": "2022-09-26T20:26:18.327441Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.dna.group_by_genotype)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:18.477088Z",
+     "start_time": "2022-09-26T20:26:18.371574Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Clustering Method #1\n",
+    "\n",
+    "# Recommended for 1-10 variants\n",
+    "# Cluster with Tapestri Insights v2.2 count-based method \n",
+    "\n",
+    "# The created table includes a 'score' row that intends to help with the identification of allelic dropout (ADO) clones\n",
+    "# Scores greater than 0.8 are typically considered artifacts (ADO) and may be labeled as such to be discarded\n",
+    "# Clones are ordered based on their size (1=largest clone, 2=second largest clone, etc.)\n",
+    "\n",
+    "clone_data = sample.dna.group_by_genotype(\n",
+    "    features=sample.dna.ids()[4:6],\n",
+    "    group_missing=True,\n",
+    "    min_clone_size=1,\n",
+    "    layer=\"NGT_FILTERED\",\n",
+    "    show_plot=False\n",
+    ")\n",
+    "\n",
+    "# Display as a static html or interactive table using ms.Table.\n",
+    "display(HTML(clone_data.to_html()))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:18.508033Z",
+     "start_time": "2022-09-26T20:26:18.478151Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.dna.heatmap)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:20.859407Z",
+     "start_time": "2022-09-26T20:26:18.509142Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot heatmap using NGT_FILTERED.\n",
+    "fig = sample.dna.heatmap(attribute='NGT_FILTERED')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:20.892701Z",
+     "start_time": "2022-09-26T20:26:20.860581Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Store the clustering in the row attributes\n",
+    "\n",
+    "sample.dna.add_row_attr(\"clustering-1\", sample.dna.get_labels())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "##### Clustering Method 2 (PCA + UMAP + Clustering)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:21.061580Z",
+     "start_time": "2022-09-26T20:26:20.894232Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# CLUSTERING METHOD #2\n",
+    "# An alternative clustering recommended for high-feature/dimensional space (e.g. 10+ variants)\n",
+    "\n",
+    "# First: run PCA on filtered data frame (all cells, chosen variants) using the AF_MISSING layer, for instance\n",
+    "# Note: AF_MISSING includes -50 values for all 0 values for which the data was filtered and is missing\n",
+    "# The number of components should equal the number of pre-filtered variants\n",
+    "sample.dna.run_pca(components=100, attribute='AF_MISSING',show_plot=True) \n",
+    "\n",
+    "# Assess 'elbow' plot and determine number of PCs where the distribution starts to plateau\n",
+    "# Note that PC1 = 0 in the plot"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:21.114148Z",
+     "start_time": "2022-09-26T20:26:21.062742Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Rerun PCA with optimal number of components based on elbow plot analysis\n",
+    "sample.dna.run_pca(components=6, attribute='AF_MISSING')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:31.059941Z",
+     "start_time": "2022-09-26T20:26:21.115621Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Run UMAP on top of the newly created PC dataframe\n",
+    "# See https://jlmelville.github.io/uwot/abparams.html for appropriate spread and min_dist values\n",
+    "sample.dna.run_umap(attribute='pca', random_state=42) #, min_dist=0.2, spread=1.5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:31.109922Z",
+     "start_time": "2022-09-26T20:26:31.061481Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Review other clustering methods\n",
+    "help(sample.dna.cluster)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:31.169403Z",
+     "start_time": "2022-09-26T20:26:31.111917Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Visualize data and cluster it using different methods\n",
+    "sample.dna.cluster(attribute='umap', method='dbscan')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:31.928270Z",
+     "start_time": "2022-09-26T20:26:31.170569Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Re-plot UMAP projection w/ alternative clustering results\n",
+    "fig = sample.dna.scatterplot(attribute='umap', colorby='label')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.516560Z",
+     "start_time": "2022-09-26T20:26:31.930371Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Plot heatmap using NGT\n",
+    "fig = sample.dna.heatmap(attribute='NGT_FILTERED')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.549313Z",
+     "start_time": "2022-09-26T20:26:33.518153Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Store this clustering in the row attributes\n",
+    "\n",
+    "sample.dna.add_row_attr(\"clustering-2\", sample.dna.get_labels())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "hidden": true
+   },
+   "source": [
+    "<b>The next few commands allow you to customize the colors of the genotypes in the heatmap.</b>"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.583370Z",
+     "start_time": "2022-09-26T20:26:33.550526Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "help(sns.color_palette)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.664510Z",
+     "start_time": "2022-09-26T20:26:33.584750Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "sns.palplot(sns.color_palette(\"viridis\", n_colors=20))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.696241Z",
+     "start_time": "2022-09-26T20:26:33.665472Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "vir20 = sns.color_palette(\"viridis\", n_colors=20).as_hex()\n",
+    "print(vir20)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.729806Z",
+     "start_time": "2022-09-26T20:26:33.697454Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "vir20[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.764879Z",
+     "start_time": "2022-09-26T20:26:33.730961Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# The DNA heatmap and scatterplot colors are stored in the layout.coloraxis.colorscale attribute\n",
+    "\n",
+    "# This value must be updated to customize the plot\n",
+    "fig.layout.coloraxis.colorscale"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.820339Z",
+     "start_time": "2022-09-26T20:26:33.766072Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Assuming these are new desired colors\n",
+    "# NGT=0 (WT) - blue\n",
+    "# NGT=1 (HET) - orange\n",
+    "# NGT=2 (HOM) - red\n",
+    "# NGT=3 (missing) - black\n",
+    "\n",
+    "# Additional information re: color palettes here: https://seaborn.pydata.org/tutorial/color_palettes.html\n",
+    "wt_col = vir20[0]\n",
+    "het_col = vir20[10]\n",
+    "hom_col = vir20[19]\n",
+    "miss_col = COLORS[19]\n",
+    "\n",
+    "sns.palplot([wt_col, het_col, hom_col, miss_col])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.886147Z",
+     "start_time": "2022-09-26T20:26:33.821552Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Update the coloraxis to make a plot with the new colors\n",
+    "new_colors = [(0 / 4, wt_col), (1 / 4, wt_col),\n",
+    "              (1 / 4, het_col), (2 / 4, het_col),\n",
+    "              (2 / 4, hom_col), (3 / 4, hom_col),\n",
+    "              (3 / 4, miss_col), (4 / 4, miss_col)]\n",
+    "\n",
+    "fig.layout.coloraxis.colorscale = new_colors\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Renaming Subclones (Labels)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.919006Z",
+     "start_time": "2022-09-26T20:26:33.887389Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Use clustering-1 for further analysis\n",
+    "\n",
+    "sample.dna.set_labels(sample.dna.row_attrs[\"clustering-1\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:33.950541Z",
+     "start_time": "2022-09-26T20:26:33.920497Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Rename clusters based on genotypes\n",
+    "# Merge clusters by giving them the same name\n",
+    "# Rename clusters identically that are to be merged into one and discarded (e.g. \"FP\" for false-positive)\n",
+    "sample.dna.rename_labels(\n",
+    "  {\n",
+    "    \"1\": \"Cell 1\",\n",
+    "    \"2\": \"Cell 2\",\n",
+    "    \"3\": \"Cell 3\",\n",
+    "    \"missing\": \"FP\",\n",
+    "    \"small\": \"FP\",\n",
+    "  }\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:34.250377Z",
+     "start_time": "2022-09-26T20:26:33.951486Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Remove barcodes (clones) from data based on renamed labels\n",
+    "# The reduced data set will now be called 'sample.dna2'\n",
+    "if \"FP\" in sample.dna.get_labels():\n",
+    "    fp_barcodes = sample.dna.barcodes({\"FP\"})\n",
+    "    sample.dna2 = sample.dna.drop(fp_barcodes) \n",
+    "else:\n",
+    "    sample.dna2 = sample.dna\n",
+    "\n",
+    "set(sample.dna2.get_labels()) "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:35.526027Z",
+     "start_time": "2022-09-26T20:26:34.251366Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Redraw heatmap\n",
+    "fig = sample.dna2.heatmap(attribute='NGT_FILTERED')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:36.791086Z",
+     "start_time": "2022-09-26T20:26:35.527185Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Redraw again with new (previously defined) color palette\n",
+    "fig = sample.dna2.heatmap(attribute='NGT_FILTERED',splitby=\"label\")\n",
+    "fig.layout.coloraxis.colorscale = new_colors\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:38.264945Z",
+     "start_time": "2022-09-26T20:26:36.792770Z"
+    },
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "# If analyzing multiple samples, re-plot heatmap with barcodes ordered based on sample\n",
+    "fig = sample.dna2.heatmap(attribute='NGT_FILTERED',splitby=\"sample_name\")\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:38.304043Z",
+     "start_time": "2022-09-26T20:26:38.266365Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Adding write_image function saves the picture in high-res\n",
+    "# See help() to change resolution or file type \n",
+    "help(fig.write_image)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:38.669415Z",
+     "start_time": "2022-09-26T20:26:38.306859Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "fig.write_image(\"heatmap_example.svg\",scale=3)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:38.706341Z",
+     "start_time": "2022-09-26T20:26:38.670840Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Evaluate new total number of cells after the above filtering\n",
+    "sample.dna2.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:38.741083Z",
+     "start_time": "2022-09-26T20:26:38.707777Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Compare to original cell number\n",
+    "sample.dna.shape"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### CNV Analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<b>Topics covered</b>\n",
+    "1. Amplicon filtering and read normalization.\n",
+    "2. Genotype-guided ploidy computation and CNV clustering.\n",
+    "3. Read-based ploidy computation and CNV clustering.\n",
+    "4. Statistical significance analysis."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
+    "heading_collapsed": true
+   },
+   "source": [
+    "#### Filtering And Normalization"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:38.797073Z",
+     "start_time": "2022-09-26T20:26:38.742265Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Filtering Amplicons\n",
+    "# This returns a table of the reads for each amplicon in each cell\n",
+    "reads = sample.cnv.get_attribute('read_counts', constraint='row+col')\n",
+    "reads"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:38.873341Z",
+     "start_time": "2022-09-26T20:26:38.798601Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Only amplicons found in more than half the cells are analyzed \n",
+    "# The other amplicons are dropped\n",
+    "# Note: optional for samples with expected biological missing data\n",
+    "working_amplicons = (reads.median() > 0).values\n",
+    "sample.cnv = sample.cnv[:, working_amplicons]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:38.940046Z",
+     "start_time": "2022-09-26T20:26:38.875883Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Additionally, we keep only valid barcodes from the DNA analysis and are storing the data\n",
+    "# in a new variable sample.cnv2 (e.g., in order to not overwrite sample.cnv)\n",
+    "sample.cnv2 = sample.cnv[sample.dna2.barcodes(),:]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:38.976628Z",
+     "start_time": "2022-09-26T20:26:38.941635Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Compare amplicon number and cell number original\n",
+    "sample.cnv.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:39.015196Z",
+     "start_time": "2022-09-26T20:26:38.978507Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Compare amplicon number and cell number\n",
+    "sample.cnv2.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:39.052495Z",
+     "start_time": "2022-09-26T20:26:39.016884Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.cnv2.normalize_reads)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:39.094019Z",
+     "start_time": "2022-09-26T20:26:39.053807Z"
+    },
+    "hidden": true
+   },
+   "outputs": [],
+   "source": [
+    "# Normalize the reads \n",
+    "sample.cnv2.normalize_reads()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Genotype-Guided Ploidy Clustering"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:39.143098Z",
+     "start_time": "2022-09-26T20:26:39.095277Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Assuming the presence of a cell population that is considered diploid across\n",
+    "# all the amplicons, we can compute the ploidy of all other cell populations (previously defined)\n",
+    "\n",
+    "sample.cnv2.compute_ploidy(diploid_cells=sample.dna.barcodes('Cell 1'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:39.179439Z",
+     "start_time": "2022-09-26T20:26:39.144618Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Assign the DNA labels to the CNV assay class\n",
+    "# We want to ensure the labels (e.g., names of cell populations) are identical across assay classes\n",
+    "sample.cnv2.set_labels(sample.dna2.get_labels())\n",
+    "sample.cnv2.set_palette(sample.dna2.get_palette())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:42.796263Z",
+     "start_time": "2022-09-26T20:26:39.180656Z"
+    },
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "# Heatmap with the features ordered by the default amplicon order\n",
+    "fig = sample.cnv2.heatmap('ploidy', features='positions')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:48.017247Z",
+     "start_time": "2022-09-26T20:26:42.798382Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Scale the figure width and plot as a static image\n",
+    "# Double click on the plot to zoom-in and improve the resolution\n",
+    "fig = sample.cnv2.heatmap('ploidy', features='positions')\n",
+    "fig.layout.width = 1600\n",
+    "mutils.static_fig(fig, figsize=(20, 20))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:49.086887Z",
+     "start_time": "2022-09-26T20:26:48.018684Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Heatmap for a subset of the chromosomes\n",
+    "fig = sample.cnv2.heatmap('ploidy', features=['7', '17', '20'])\n",
+    "\n",
+    "# Optionally, restrict the range of ploidy values based on observed/expected CNV events (commented out)\n",
+    "#fig.layout.coloraxis.cmax = 4\n",
+    "#fig.layout.coloraxis.cmin = 0\n",
+    "\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:52.552833Z",
+     "start_time": "2022-09-26T20:26:49.088408Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Heatmap with the features grouped by the genes\n",
+    "# The first time this runs, it fetches the gene names from ensembl\n",
+    "# The annotation can also be fetched using sample.cnv.get_gene_names()\n",
+    "# The plots can also be smoothed using a moving average with the convolve parameter\n",
+    "\n",
+    "fig = sample.cnv2.heatmap('ploidy', features='genes', convolve=1)\n",
+    "\n",
+    "# Optionally, restrict the range of ploidy values based on observed/expected CNV events (commented out)\n",
+    "#fig.layout.coloraxis.cmax = 4\n",
+    "#fig.layout.coloraxis.cmin = 0\n",
+    "\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:54.456373Z",
+     "start_time": "2022-09-26T20:26:52.554579Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Change the color scale to \"magma\" - other suitable options might be \"viridis\", \"plasma\", \"blues\", \"blues_r\" ...\n",
+    "fig.layout.coloraxis.colorscale = 'magma'\n",
+    "\n",
+    "# Update the separating lines to be black\n",
+    "for shape in fig.layout.shapes:\n",
+    "    shape.line.color = '#000000'\n",
+    "\n",
+    "# Optionally, restrict the range of ploidy values based on observed/expected CNV events (commented out)\n",
+    "#fig.layout.coloraxis.cmax = 4\n",
+    "#fig.layout.coloraxis.cmin = 0\n",
+    "\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:55.415464Z",
+     "start_time": "2022-09-26T20:26:54.457614Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Heatmap for a subset of the genes\n",
+    "fig = sample.cnv2.heatmap('ploidy', features=[\"ASXL1\", \"EZH2\",'TP53'])\n",
+    "fig.layout.coloraxis.colorscale = 'magma'\n",
+    "\n",
+    "# Update the separating lines to be black\n",
+    "for shape in fig.layout.shapes:\n",
+    "    shape.line.color = '#000000'\n",
+    "\n",
+    "# Optionally, restrict the range of ploidy values based on observed/expected CNV events (commented out)\n",
+    "#fig.layout.coloraxis.cmax = 2\n",
+    "#fig.layout.coloraxis.cmin = 0\n",
+    "\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:55.449840Z",
+     "start_time": "2022-09-26T20:26:55.416547Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.cnv.plot_ploidy)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:55.621745Z",
+     "start_time": "2022-09-26T20:26:55.450967Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Ploidy line plot across amplicons for all WT cells\n",
+    "# WT clone cells normalized to ploidy = 2 by default\n",
+    "sample.cnv2.plot_ploidy('Cell 1')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:55.779463Z",
+     "start_time": "2022-09-26T20:26:55.623519Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Same as above, only using different feature groupings (genes+amplicons)\n",
+    "# Red dots represent the median per gene, blue dots represent the individual amplicons in each gene\n",
+    "sample.cnv2.plot_ploidy('Cell 1', features=\"genes+amplicons\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:55.896831Z",
+     "start_time": "2022-09-26T20:26:55.781108Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Evaluate ploidy for other genotype-based defined clones by updating the code\n",
+    "sample.cnv2.plot_ploidy('Cell 2')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:56.030056Z",
+     "start_time": "2022-09-26T20:26:55.898368Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Evaluate ploidy for other genotype-based defined clones by updating the code\n",
+    "sample.cnv2.plot_ploidy('Cell 2', features=\"genes+amplicons\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Read-Based Ploidy Clustering"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:57.945651Z",
+     "start_time": "2022-09-26T20:26:56.031283Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Cluster the CNV data using the reads via PCA/UMAP\n",
+    "# Note: all cell barcodes are now used, including cells that were previously filtered out due to incomplete genotype data\n",
+    "\n",
+    "# First normalize the reads and plot a heatmap (which also adds the annotations)\n",
+    "sample.cnv.set_labels(sample.dna.get_labels())\n",
+    "sample.cnv.normalize_reads()\n",
+    "sample.cnv.heatmap(attribute='normalized_counts',  features='genes')\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:58.909565Z",
+     "start_time": "2022-09-26T20:26:57.946763Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "## OPTIONAL\n",
+    "\n",
+    "# Clustering with all amplicons can often result in low resolution of CNV events\n",
+    "# If genes or chromosomes of interest are known, you can use these features for clustering\n",
+    "amps_of_interest = np.isin(sample.cnv.col_attrs[\"gene_name\"], [\"TP53\", \"EZH2\", \"TET2\"])\n",
+    "sample.cnv = sample.cnv[:, amps_of_interest]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:59.159629Z",
+     "start_time": "2022-09-26T20:26:58.910599Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# The appropriate number of components for dimensionality reduction can be determined using the elbow plot\n",
+    "# We start with components = the number of amplicons\n",
+    "amp_number = sample.cnv.shape[1]\n",
+    "sample.cnv.run_pca(components=amp_number, attribute='normalized_counts',show_plot=True)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:26:59.213644Z",
+     "start_time": "2022-09-26T20:26:59.161133Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# After assessing the elbow plot, re-run PCA with your chosen number of PCs\n",
+    "# Too many PCA components may result in merging of clusters\n",
+    "# Too few PCA components may result in splitting of clusters\n",
+    "sample.cnv.run_pca(components=10, attribute='normalized_counts',show_plot=False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:05.503009Z",
+     "start_time": "2022-09-26T20:26:59.215257Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Run UMAP on top of the newly created PC dataframe\n",
+    "# See https://jlmelville.github.io/uwot/abparams.html for appropriate spread/min_dist values\n",
+    "sample.cnv.run_umap(attribute='pca', random_state=42) #, min_dist=0.2, spread=1.5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:18.029526Z",
+     "start_time": "2022-09-26T20:27:05.504622Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Cluster data using different methods\n",
+    "sample.cnv.cluster(attribute='umap', method='graph-community', k=400)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:18.849436Z",
+     "start_time": "2022-09-26T20:27:18.039467Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the UMAP scatterplot colored by cluster\n",
+    "fig = sample.cnv.scatterplot(attribute='umap',colorby='label')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:19.303541Z",
+     "start_time": "2022-09-26T20:27:18.851071Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# If analyzing multiple samples, color the UMAP by sample\n",
+    "fig = sample.cnv.scatterplot(attribute='umap',colorby='sample_name')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:19.336883Z",
+     "start_time": "2022-09-26T20:27:19.304659Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.cnv.heatmap)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:20.166534Z",
+     "start_time": "2022-09-26T20:27:19.338098Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the heatmap of normalized counts, stratified by cluster\n",
+    "sample.cnv.heatmap(attribute='normalized_counts')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Note, two different versions of the CNV subclass exist now:\n",
+    " - sample.cnv: contains data based on the read-based ploidy calculation \n",
+    " - sample.cnv2: contains data based on the genotype-guided ploidy calculation"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Statistics"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:20.412410Z",
+     "start_time": "2022-09-26T20:27:20.168525Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "pval_cnv, tstat_cnv = sample.cnv2.test_signature(\"normalized_counts\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:20.463927Z",
+     "start_time": "2022-09-26T20:27:20.413784Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "pval_cnv"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:20.508011Z",
+     "start_time": "2022-09-26T20:27:20.465833Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "pval_cnv = pval_cnv + 10 ** -50\n",
+    "pvals_cnv = -np.log10(pval_cnv) * (tstat_cnv > 0)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:20.900436Z",
+     "start_time": "2022-09-26T20:27:20.509500Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Colored tiles indicate strong association of a ploidy with a particular cluster\n",
+    "plt.figure(figsize=(20, 10))\n",
+    "fig = sns.heatmap(pvals_cnv.T, vmax=50, vmin=0)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Protein Analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<b>Topics covered</b>\n",
+    "\n",
+    "1. Normalization and assessment of AOC abundance\n",
+    "2. Clustering and visualization\n",
+    "3. Statistical significance analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Normalization And Data Inspection"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:20.935028Z",
+     "start_time": "2022-09-26T20:27:20.901650Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.protein.normalize_reads)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:20.969140Z",
+     "start_time": "2022-09-26T20:27:20.936430Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Normalize reads\n",
+    "# Three different methods available: CLR = Centered Log Ratio\n",
+    "sample.protein.normalize_reads('CLR') "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:21.587493Z",
+     "start_time": "2022-09-26T20:27:20.970422Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Ridge plot: shows distribution of AOC counts across all cells (bimodal = positive and negative cell populations)\n",
+    "sample.protein.ridgeplot(attribute='normalized_counts',\n",
+    "                         features=sample.protein.ids())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:22.076644Z",
+     "start_time": "2022-09-26T20:27:21.588723Z"
+    },
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "# Plotting combinations of AOCs on a biaxial scatterplot, to mimic FACS data\n",
+    "fig = sample.protein.feature_scatter(layer='normalized_counts', ids=['CD19', 'CD34'])\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:22.112659Z",
+     "start_time": "2022-09-26T20:27:22.078924Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#List all AOCs\n",
+    "sample.protein.ids()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:22.160024Z",
+     "start_time": "2022-09-26T20:27:22.113897Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Optionally, remove AOCs from the data set prior to clustering \n",
+    "# For example, those that don't display any signal in any cells\n",
+    "sample.protein = sample.protein.drop(['Mouse IgG1k'])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Clustering And Visualization"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:22.195596Z",
+     "start_time": "2022-09-26T20:27:22.161214Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.protein.run_pca)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:22.411892Z",
+     "start_time": "2022-09-26T20:27:22.197108Z"
+    },
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "# Clustering similar to \"CLUSTERING METHOD #2\" of DNA clustering using genotypes\n",
+    "# Select fewer components when analyzing custom panels with 2-20 AOCs\n",
+    "sample.protein.run_pca(attribute='normalized_counts', components=45,show_plot=True) "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:22.460062Z",
+     "start_time": "2022-09-26T20:27:22.413737Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Rerun PCA with optimal number of components based on elbow plot analysis\n",
+    "# Typically, components = 10 is appropriate for 45-plex Biolegend panel\n",
+    "sample.protein.run_pca(attribute='normalized_counts', components=10, show_plot=False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:29.959989Z",
+     "start_time": "2022-09-26T20:27:22.461835Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Now run UMAP on the chosen PCs \n",
+    "# UMAPs rely on an initial randomization which leads to different projections every time\n",
+    "# To address this, pass random_state to the run_umap method\n",
+    "# See https://jlmelville.github.io/uwot/abparams.html for appropriate spread/min_dist values\n",
+    "sample.protein.run_umap(attribute='pca', random_state=42) #, spread=, min_dist="
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:41.986618Z",
+     "start_time": "2022-09-26T20:27:29.961605Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Cluster the AOCs. Several options are available, see help info for more options\n",
+    "# Graph-community clustering: the higher the k value, the smaller the number of clusters --> adjust if necessary\n",
+    "sample.protein.cluster(attribute='umap', method='graph-community',k=400) "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:42.026332Z",
+     "start_time": "2022-09-26T20:27:41.988262Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.protein.cluster)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:42.848393Z",
+     "start_time": "2022-09-26T20:27:42.027602Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot heatmap of normalized, clustered protein data\n",
+    "fig = sample.protein.heatmap(attribute='normalized_counts')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:43.793200Z",
+     "start_time": "2022-09-26T20:27:42.849897Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# If analyzing multiple samples, order barcodes by sample and then by cluster\n",
+    "fig = sample.protein.heatmap(attribute='normalized_counts',splitby='sample_name')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:43.856720Z",
+     "start_time": "2022-09-26T20:27:43.824473Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample.protein.scatterplot)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:44.375814Z",
+     "start_time": "2022-09-26T20:27:43.857957Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot UMAP for visualization of clusters\n",
+    "fig = sample.protein.scatterplot(attribute='umap',colorby='label')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:46.378108Z",
+     "start_time": "2022-09-26T20:27:44.376960Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# UMAP colored by the expression of each AOC\n",
+    "fig = sample.protein.scatterplot(attribute='umap',\n",
+    "                           colorby='normalized_counts',\n",
+    "                           features=sample.protein.ids())\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:46.413712Z",
+     "start_time": "2022-09-26T20:27:46.379320Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Relabel clone names acccording to biology, combine clones by assigned identical names\n",
+    "# Just an example! Need to fill this in based on knowledge of the sample and markers\n",
+    "sample.protein.rename_labels(\n",
+    "    {\n",
+    "        '1': 'Cell type A', \n",
+    "        '2': 'Cell type B', \n",
+    "        '3': 'Cell type C',\n",
+    "        '4': 'Cell type D',\n",
+    "        '5': \"FP\"\n",
+    "    }\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:47.260258Z",
+     "start_time": "2022-09-26T20:27:46.414810Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Run heatmap again with new labels\n",
+    "fig = sample.protein.heatmap(attribute='normalized_counts')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:47.490243Z",
+     "start_time": "2022-09-26T20:27:47.261656Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Drop cells (barcodes) that need to be removed\n",
+    "# Instead of overwriting the sample.protein variable, we define new variable called sample.protein2\n",
+    "# Note: if you do not wish to drop any cells, this code will producs an error (ignore)\n",
+    "\n",
+    "fp_barcodes2 = sample.protein.barcodes(\"FP\")\n",
+    "sample.protein2 = sample.protein.drop(fp_barcodes2)\n",
+    "\n",
+    "set(sample.protein2.get_labels())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:47.521801Z",
+     "start_time": "2022-09-26T20:27:47.491390Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Use only if no barcodes are removed by the above-listed command\n",
+    "sample.protein2 = sample.protein"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:47.700675Z",
+     "start_time": "2022-09-26T20:27:47.523356Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Additionally, option to remove AOCs from the data \n",
+    "sample.protein2 = sample.protein2.drop(['CD3'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:47.736694Z",
+     "start_time": "2022-09-26T20:27:47.702574Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Shape of cleaned up protein data (number of cells, number of AOCs)\n",
+    "sample.protein2.shape"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:48.580158Z",
+     "start_time": "2022-09-26T20:27:47.737858Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Re-run heatmap with new filtered data\n",
+    "fig = sample.protein2.heatmap(attribute='normalized_counts')\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Statistics"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:48.644796Z",
+     "start_time": "2022-09-26T20:27:48.581481Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "pval_protein, tstat_protein = sample.protein2.test_signature(\"normalized_counts\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:48.687301Z",
+     "start_time": "2022-09-26T20:27:48.645942Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "pval_protein"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:48.721359Z",
+     "start_time": "2022-09-26T20:27:48.688745Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "pval_protein = pval_protein + 10 ** -50\n",
+    "pvals_protein = -np.log10(pval_protein) * (tstat_protein > 0)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:48.926944Z",
+     "start_time": "2022-09-26T20:27:48.722719Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Colored tiles indicate strong association of a protein with a particular cluster\n",
+    "plt.figure(figsize=(20, 10))\n",
+    "fig = sns.heatmap(pvals_protein.T, vmax=50, vmin=40)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Combined visualizations"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "<b>Topics covered</b>\n",
+    "\n",
+    "1. Defining a new sample object by combining the cleaned-up versions of the DNA, CNV and protein data\n",
+    "2. Built-in methods for combined visualizations\n",
+    "3. Additional visualizations with analyte-specific color schemes\n",
+    "4. Quantification of DNA clone and protein cluster overlaps\n",
+    "5. Export and save final data set"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Create a new sample object"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:48.966458Z",
+     "start_time": "2022-09-26T20:27:48.928502Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# First, we ensure that all individual analytes are using the same cells.\n",
+    "# Since no cells are removed during CNV analysis, we take the intersect of cells retained in the DNA and protein data.\n",
+    "# In this and the following lines of code, use the final version of each assay, \n",
+    "# which may differ from the defaults listed here (e.g. sample.dna3, sample.protein4, etc.)\n",
+    "x = sample.protein2.barcodes()\n",
+    "y = sample.dna2.barcodes()\n",
+    "\n",
+    "z = np.intersect1d(x, y)\n",
+    "len(z)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:49.142969Z",
+     "start_time": "2022-09-26T20:27:48.967444Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Subset protein data to include only barcodes that were included in both analytes and store in sample.protein.3 variable\n",
+    "sample.protein3 = sample.protein2[z,sample.protein2.ids()]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:49.333084Z",
+     "start_time": "2022-09-26T20:27:49.144082Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Subset dna data to include only barcodes that were included in both analytes and store in sample.dna.3 variable\n",
+    "sample.dna3 = sample.dna2[z,sample.dna2.ids()] "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:51.601130Z",
+     "start_time": "2022-09-26T20:27:49.334124Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "#Update each sub-class (e.g., DNA, CNV, Protein) in order to visualize \"clean\" data only with relevant features and cells.\n",
+    "sample2 = sample[:]\n",
+    "#sub-assays\n",
+    "sample2.dna = sample.dna3 \n",
+    "sample2.cnv = sample.cnv2\n",
+    "sample2.protein = sample.protein3 "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:51.641221Z",
+     "start_time": "2022-09-26T20:27:51.602891Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Check dimensionality for each subclass; the number of cells (first number) should be the same in each data set\n",
+    "print(sample2.dna.shape,\n",
+    "sample2.cnv.shape,\n",
+    "sample2.protein.shape)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Built-in visualizations for combining analytes"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:53.463947Z",
+     "start_time": "2022-09-26T20:27:51.642560Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# A heatmap presenting the data for up to three analytes\n",
+    "# Note, the default layer in the DNA subclass is NGT, not NGT_FILTERED\n",
+    "# If you wish to use NGT_FILTERED, you must first run the following line (commented out)\n",
+    "# Note that this will erase the NGT layer and replace it with NGT_FILTERED (which includes missing data)\n",
+    "#sample2.dna.layers['NGT'] = sample2.dna.layers['NGT_FILTERED']\n",
+    "\n",
+    "fig = sample2.heatmap(clusterby='dna', sortby='protein', flatten=False)\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Often the number of amplicons in the CNV data will take over the heatmap, making the plot uninterpretable. Moreover, there might be certain non-differentiating variants and antibod in the panel. These can be dropped before making the final heatmap.\n",
+    "\n",
+    "Note: when subsetting any of the analytes, the assay will \"shrink\" to contain only those features. To go back to the full data set, you must re-initialize your assay (see below)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:53.708896Z",
+     "start_time": "2022-09-26T20:27:53.465310Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Filter the CNV with amplicons only from the relevant genes\n",
+    "genes = sample2.cnv.col_attrs['gene_name'].copy()\n",
+    "relevant_ids = np.isin(genes, ['ASXL1','EZH2','TP53'])\n",
+    "\n",
+    "sample2.cnv = sample2.cnv[:, relevant_ids]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:56.986690Z",
+     "start_time": "2022-09-26T20:27:53.710582Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot again w/ customization (e.g., color code)\n",
+    "fig = sample2.heatmap(clusterby='dna', sortby='cnv',drop='protein', flatten=False)\n",
+    "\n",
+    "# Update the width of the plot [See the section on CNV heatmaps]\n",
+    "fig.layout.width = 3000\n",
+    "\n",
+    "# Change the CNV colorscale [See the section on CNV heatmaps]\n",
+    "fig.data[2].zmax = 2\n",
+    "fig.data[2].zmin = 0\n",
+    "fig.data[2].colorscale = 'magma'\n",
+    "\n",
+    "# Updating the ticktexts to show the gene names instead\n",
+    "fig.layout.xaxis3.ticktext = sample2.cnv.col_attrs['gene_name'].copy()\n",
+    "\n",
+    "# Show as a static plot\n",
+    "mutils.static_fig(fig, figsize=(20, 20))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:57.025801Z",
+     "start_time": "2022-09-26T20:27:56.988713Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# To reset the CNV data (include all filtered amplicons instead of this new subset), simply re-initialize\n",
+    "sample2.cnv = sample.cnv2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:57.453592Z",
+     "start_time": "2022-09-26T20:27:57.027320Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Alternatively, try the following combined heatmaps\n",
+    "sample2.heatmap(clusterby='dna', sortby='protein', drop='cnv', flatten=False)\n",
+    "# sample2.heatmap(clusterby='protein', sortby='dna', drop='cnv', flatten=True)\n",
+    "# sample2.heatmap(clusterby='dna', sortby='protein', flatten=False)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:57.495790Z",
+     "start_time": "2022-09-26T20:27:57.455319Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "help(sample2.clone_vs_analyte)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:27:58.753404Z",
+     "start_time": "2022-09-26T20:27:57.497638Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Visualize the CNV data stratified by clone\n",
+    "fig = sample2.clone_vs_analyte('cnv')\n",
+    "fig\n",
+    "#fig.savefig('genotype_cnv.png')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:00.601769Z",
+     "start_time": "2022-09-26T20:27:58.754783Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Visualize the protein data (violin plots) stratified by clone\n",
+    "fig = sample2.clone_vs_analyte('protein')\n",
+    "fig"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:01.582409Z",
+     "start_time": "2022-09-26T20:28:00.602913Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# To review a subset of features, first subset the assay itself \n",
+    "sample2.protein = sample2.protein[:, ['CD11b', 'CD19', 'CD38', 'CD90']]\n",
+    "sample2.clone_vs_analyte('protein')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:01.622983Z",
+     "start_time": "2022-09-26T20:28:01.583605Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# To reset the Protein data (include all AOCs instead of this new subset), simply re-initialize\n",
+    "sample2.protein = sample.protein3"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Additional visualizations"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "In addition to the built-in methods above, the analytes can be intersected by re-plotting some of the single-analyte visualizations, but coloring them by the labels of a different analyte."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:02.337833Z",
+     "start_time": "2022-09-26T20:28:01.624045Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the protein heatmap with the DNA clone labels\n",
+    "fig = sample2.protein.heatmap(attribute='normalized_counts',splitby=sample2.dna.row_attrs['label'])\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:02.830668Z",
+     "start_time": "2022-09-26T20:28:02.339468Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the protein UMAP and color with the DNA clone labels\n",
+    "protein_umap = sample2.protein.row_attrs[\"umap\"]\n",
+    "fig=sample2.dna.scatterplot(attribute=protein_umap, colorby=\"label\")\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:03.386391Z",
+     "start_time": "2022-09-26T20:28:02.831987Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the protein UMAP and color with variant layers (e.g., VAFs) for specific variants\n",
+    "protein_umap = sample2.protein.row_attrs[\"umap\"]\n",
+    "feats = sample2.dna.ids()[:3] # plot the first 3 variants\n",
+    "sample2.dna.scatterplot(attribute=protein_umap, colorby=\"AF\", features=feats)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:03.421641Z",
+     "start_time": "2022-09-26T20:28:03.388062Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the CNV UMAP with the DNA NGT color code\n",
+    "# Note, this function is only applicable in the case of defining \"CNV clusters\" using the read-based approach (not the genotype-based approach)\n",
+    "# In this example, we have the read-based clustering saved in sample.cnv\n",
+    "# Verify that this object has the umap attribute\n",
+    "\n",
+    "sample.cnv.row_attrs.keys()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:04.357299Z",
+     "start_time": "2022-09-26T20:28:03.424074Z"
+    },
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "# First, take only the barcodes retained in the dna data\n",
+    "sample.cnv = sample.cnv[sample2.dna.barcodes(),:]\n",
+    "\n",
+    "# Then, plot the umap colored by NGT_FILTERED for certain variants\n",
+    "cnv_umap = sample.cnv.row_attrs[\"umap\"]\n",
+    "feats = sample2.dna.ids()[:3] # plot the first 3 variants\n",
+    "sample2.dna.scatterplot(attribute=cnv_umap, colorby=\"NGT_FILTERED\", features=feats)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:04.388943Z",
+     "start_time": "2022-09-26T20:28:04.358478Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "sample2.protein.ids()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:04.657512Z",
+     "start_time": "2022-09-26T20:28:04.389951Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the AOC ridge plots split by DNA clone\n",
+    "sample2.protein.ridgeplot(\n",
+    "    attribute='normalized_counts',\n",
+    "    features=['CD38', 'CD45', 'CD110', 'CD19'],\n",
+    "    splitby=sample2.dna.get_labels(),\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:04.902506Z",
+     "start_time": "2022-09-26T20:28:04.658648Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the AOC ridge plots split by protein cluster\n",
+    "sample2.protein.ridgeplot(\n",
+    "    attribute='normalized_counts',\n",
+    "    features=['CD38', 'CD45', 'CD110', 'CD19'],\n",
+    "    splitby=sample2.dna.get_labels(),\n",
+    ")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:05.328438Z",
+     "start_time": "2022-09-26T20:28:04.903708Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the biaxial AOC plot split by DNA clone\n",
+    "fig = sample2.protein.feature_scatter(layer='normalized_counts', ids=['CD19', 'CD34'], colorby = sample2.dna.row_attrs['label'])\n",
+    "go.Figure(fig)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:05.360632Z",
+     "start_time": "2022-09-26T20:28:05.330100Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "sample2.dna.ids()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:07.178146Z",
+     "start_time": "2022-09-26T20:28:05.361713Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Plot the biaxial AOC plot colored by genotype (or AF_MISSING, etc.) for specific variants\n",
+    "variants = ['DNMT3A:2:25458546:C:T', 'WT1:11:32417945:T:C']\n",
+    "layer = 'NGT_FILTERED'\n",
+    "AOCs = ['CD19', 'CD34'] # only two!\n",
+    "\n",
+    "# Set the layout and size of the resulting plots (rows, columns) - may need to adjust based on number of variants\n",
+    "fig, axs = plt.subplots(1, len(variants), figsize=(30, 10))\n",
+    "\n",
+    "# Generate plots for each variant\n",
+    "counter = 0\n",
+    "for variant in variants:\n",
+    "    color_variant = sample2.dna.layers[layer][:, sample2.dna.ids() == variant]\n",
+    "    fig = sample2.protein.feature_scatter(layer='normalized_counts', ids=AOCs, colorby=color_variant, title=(\"\\t\" + variant))\n",
+    "    mutils.static_fig(fig, ax=axs[counter])\n",
+    "    counter = counter + 1\n",
+    "\n",
+    "# Show the plot\n",
+    "for i in range(0, counter):\n",
+    "    axs[i].axis('off')\n",
+    "\n",
+    "plt.tight_layout()\n",
+    "plt.show()    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Quantify overlaps between DNA clones and protein clusters"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:07.271944Z",
+     "start_time": "2022-09-26T20:28:07.179830Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Count total cells in each cluster (cell type) and stratify by clone\n",
+    "from collections import Counter\n",
+    "all_cells = sample2.protein.row_attrs['label']\n",
+    "print(\"Abundance in all clones\")\n",
+    "for i in set(all_cells):\n",
+    "    x = Counter(all_cells)[i]\n",
+    "    y = round((x/len(all_cells))*100,2)\n",
+    "    print(\"    \", i, x, \"  \",y, \"%\")\n",
+    "    \n",
+    "for i in set(sample2.dna.row_attrs['label']):\n",
+    "    names = sample2.dna.row_attrs['label']\n",
+    "    print(\"\\nAbundance in\", i)\n",
+    "    subset = [all_cells[a] for a in range(0, len(all_cells)) if names[a] == i]\n",
+    "    for j in set(subset):\n",
+    "        x = Counter(subset)[j]\n",
+    "        y = round((x/len(subset))*100,2)\n",
+    "        print(\"    \", j, x, \"  \",y, \"%\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:07.416478Z",
+     "start_time": "2022-09-26T20:28:07.272873Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# For each cell type, measure abundance of each DNA clone\n",
+    "all_cells = sample2.protein.row_attrs['label']\n",
+    "for i in set(all_cells):\n",
+    "    names = sample2.dna.row_attrs['label']\n",
+    "    print(\"\\nClonal abundance in\", i)\n",
+    "    subset = [names[a] for a in range(0, len(names)) if all_cells[a] == i]\n",
+    "    for j in set(subset):\n",
+    "        x = Counter(subset)[j]\n",
+    "        y = round((x/len(subset))*100,2)\n",
+    "        print(\"    \", j, x, \"  \",y, \"%\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:07.546216Z",
+     "start_time": "2022-09-26T20:28:07.418087Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# If analyzing multiple samples: count total cells in each cluster (cell type) and stratify by sample\n",
+    "all_cells = sample2.protein.row_attrs['label']\n",
+    "print(\"Abundance in merged data\")\n",
+    "for i in set(all_cells):\n",
+    "    x = Counter(all_cells)[i]\n",
+    "    y = round((x/len(all_cells))*100,2)\n",
+    "    print(\"    \", i, x, \"  \",y, \"%\")\n",
+    "    \n",
+    "for i in set(sample2.protein.row_attrs['sample_name']):\n",
+    "    names = sample2.protein.row_attrs['sample_name']\n",
+    "    print(\"\\nAbundance in\", i)\n",
+    "    subset = [all_cells[a] for a in range(0, len(all_cells)) if names[a] == i]\n",
+    "    for j in set(subset):\n",
+    "        x = Counter(subset)[j]\n",
+    "        y = round((x/len(subset))*100,2)\n",
+    "        print(\"    \", j, x, \"  \",y, \"%\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "#### Export and Save Data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:07.859626Z",
+     "start_time": "2022-09-26T20:28:07.547286Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Save new h5 file that includes only the final, cleaned dataset\n",
+    "ms.save(sample2, \"FilteredData.h5\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "ExecuteTime": {
+     "end_time": "2022-09-26T20:28:09.089915Z",
+     "start_time": "2022-09-26T20:28:07.860760Z"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "# Export data into csv format\n",
+    "import os\n",
+    "\n",
+    "## set directory that does NOT exist\n",
+    "folder_to_save = './h5_extract/'\n",
+    "\n",
+    "os.mkdir(folder_to_save)\n",
+    "\n",
+    "for assay in [sample2.dna, sample2.cnv, sample2.protein]:\n",
+    "    if assay is not None:\n",
+    "        os.mkdir(f'{folder_to_save}/{assay.name}')\n",
+    "        os.mkdir(f'{folder_to_save}/{assay.name}/layers')\n",
+    "        os.mkdir(f'{folder_to_save}/{assay.name}/rows')\n",
+    "\n",
+    "        for layer in assay.layers.keys():\n",
+    "            df = assay.get_attribute(layer, constraint='row+col')\n",
+    "            cols = list(df.columns.values)\n",
+    "            df.loc[:, 'label'] = assay.get_labels()\n",
+    "            df = df.loc[:, ['label'] + cols]\n",
+    "            df.to_csv(f'{folder_to_save}/{assay.name}/layers/{layer}.csv')\n",
+    "        \n",
+    "        for row in assay.row_attrs.keys():\n",
+    "            df = assay.get_attribute(row, constraint='row')\n",
+    "            cols = list(df.columns.values)\n",
+    "            df.loc[:, 'label'] = assay.get_labels()\n",
+    "            df = df.loc[:, ['label'] + cols]\n",
+    "            df.to_csv(f'{folder_to_save}/{assay.name}/rows/{row}.csv')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.13"
+  },
+  "mystnb": {
+   "execution_mode": "off"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {
+    "height": "calc(100% - 180px)",
+    "left": "10px",
+    "top": "150px",
+    "width": "286px"
+   },
+   "toc_section_display": true,
+   "toc_window_display": true
+  },
+  "varInspector": {
+   "cols": {
+    "lenName": 16,
+    "lenType": 16,
+    "lenVar": 40
+   },
+   "kernels_config": {
+    "python": {
+     "delete_cmd_postfix": "",
+     "delete_cmd_prefix": "del ",
+     "library": "var_list.py",
+     "varRefreshCmd": "print(var_dic_list())"
+    },
+    "r": {
+     "delete_cmd_postfix": ") ",
+     "delete_cmd_prefix": "rm(",
+     "library": "var_list.r",
+     "varRefreshCmd": "cat(var_dic_list()) "
+    }
+   },
+   "types_to_exclude": [
+    "module",
+    "function",
+    "builtin_function_or_method",
+    "instance",
+    "_Feature"
+   ],
+   "window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
