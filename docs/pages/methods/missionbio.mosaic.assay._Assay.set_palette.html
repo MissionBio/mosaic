@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>_Assay.set_palette &#8212; Mosaic v2.0.6 documentation</title>
+    <title>_Assay.set_palette &#8212; Mosaic v2.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -79,7 +79,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Mosaic v2.0.6 documentation</h1>
+      <h1 class="site-logo" id="site-title">Mosaic v2.1 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -329,7 +329,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/pages/methods/missionbio.mosaic.assay._Assay.set_palette.rst.txt"
+        <a href="../../_sources/pages/methods/missionbio.mosaic.assay._Assay.set_palette.rst"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -394,9 +394,11 @@ title="Print to PDF"
 <h1>_Assay.set_palette<a class="headerlink" href="#assay-set-palette" title="Permalink to this headline">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.assay._Assay.set_palette">
-<span class="sig-prename descclassname"><span class="pre">_Assay.</span></span><span class="sig-name descname"><span class="pre">set_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.set_palette" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">_Assay.</span></span><span class="sig-name descname"><span class="pre">set_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.set_palette" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the label color palette.</p>
-<p>Modifies the <cite>palette</cite> metadata of the assay.</p>
+<p>Modifies the <cite>palette</cite> metadata of the assay. If the palette is None,
+then the values are set using the COLORS constant value. If the palette is a
+dict and any label does not exist in it, then #000000 is used.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">

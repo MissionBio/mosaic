@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Protein.get_attribute &#8212; Mosaic v2.0.6 documentation</title>
+    <title>Protein.get_attribute &#8212; Mosaic v2.1 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -79,7 +79,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Mosaic v2.0.6 documentation</h1>
+      <h1 class="site-logo" id="site-title">Mosaic v2.1 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -329,7 +329,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/pages/methods/missionbio.mosaic.protein.Protein.get_attribute.rst.txt"
+        <a href="../../_sources/pages/methods/missionbio.mosaic.protein.Protein.get_attribute.rst"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -396,7 +396,7 @@ title="Print to PDF"
 <dt class="sig sig-object py" id="missionbio.mosaic.protein.Protein.get_attribute">
 <span class="sig-prename descclassname"><span class="pre">Protein.</span></span><span class="sig-name descname"><span class="pre">get_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.get_attribute" title="Permalink to this definition">#</a></dt>
 <dd><p>Retrieve any attribute in the assay</p>
-<p>Returns an np.array which could either be
+<p>Returns a pd.DataFrame which could either be
 a row attribute, column attribute, layer
 or the passed attribute itself.</p>
 <dl class="field-list simple">
@@ -410,12 +410,12 @@ the subset of features to select</p>
 <dt><strong>constraint</strong></dt><dd><dl class="simple">
 <dt>One of the following is accepted.</dt><dd><ol class="arabic simple">
 <li><dl class="simple">
-<dt>None</dt><dd><p>No contraint.</p>
+<dt>None</dt><dd><p>Contraint is auto-determined.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>‘r’ / ‘row’</dt><dd><p>The first dimension must be equal
+<dt>‘row’ / ‘r’</dt><dd><p>The first dimension must be equal
 to the number of cells.</p>
 </dd>
 </dl>
@@ -444,12 +444,12 @@ The layers have this shape.</p>
 <dd class="field-even"><dl class="simple">
 <dt>pd.DataFrame</dt><dd><p>The array of the attribute with the given name
 found in the assay layer, row attributes,
-or col attributes in that order. If a constraint
+or col attributes in that order. If a <cite>constraint</cite>
 is provided, the array is reshaped appropriately
-if possible. In case <cite>constraint</cite> is provided then
-the columns and index are named based on the
-barcodes, ids, or a range depending on where
-the given attribute is found.</p>
+if possible, otherwise the best possible <cite>constraint</cite>
+for the given input is determined. The columns and
+index are named based on the barcodes, ids, or
+sequential integers depending on the <cite>constraint</cite>.</p>
 </dd>
 </dl>
 </dd>
@@ -471,17 +471,20 @@ Eg. An assay with 100 barcodes and 10 ids has a shape
 (100, 10). When the attribute ‘barcode’ is fetched
 constrained by ‘col’ it will not raise an error,
 but rather return a 10x10 dataframe of barcodes.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">assay</span><span class="o">.</span><span class="n">shape</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">missionbio.mosaic</span> <span class="k">as</span> <span class="nn">ms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">assay</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">load_example_dataset</span><span class="p">(</span><span class="s2">&quot;3 cell mix&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dna</span><span class="p">[:</span><span class="mi">100</span><span class="p">,</span> <span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">assay</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(100, 10)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">attr</span> <span class="o">=</span> <span class="n">assay</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;barcode&#39;</span><span class="p">,</span> <span class="n">constrain</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">attr</span> <span class="o">=</span> <span class="n">assay</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;barcode&#39;</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">attr</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(10, 10)</span>
 </pre></div>
 </div>
 <p>Possible expected behavior
+&gt;&gt;&gt; assay = assay[:, :9]
 &gt;&gt;&gt; assay.shape
-(100, 11)
-&gt;&gt;&gt; attr = assay.get_attribute(‘barcode’, constrain=’col’)
+(100, 9)
+&gt;&gt;&gt; attr = assay.get_attribute(‘barcode’, constraint=’col’)
 ValueError - ‘The given attribute does not have the expected
 shape nor could be reshaped appropriately.’</p>
 </dd></dl>
