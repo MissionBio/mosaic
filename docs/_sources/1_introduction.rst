@@ -16,7 +16,7 @@ Additional resources
     5. `Mosaic Jupyter Notebook: Combined Visualization and Data Export <https://support.missionbio.com/hc/en-us/articles/7266068900503-Mosaic-Jupyter-Notebook-Combined-Visualization-and-Data-Export>`_
 - Please see the `Mission Bio Support Center <https://support.missionbio.com/hc/>`_ to read more about the Tapestri pipeline output and other topics.
 - Additional guides on the data outputted by Tapestri can be found `here <https://support.missionbio.com/hc/en-us/articles/360053187154>`_.
-- Download the latest version of our jupyter notebook `here <https://github.com/MissionBio/mosaic-jupyter>`_.
+- Download the latest version of our jupyter notebook `here <https://missionbio.github.io/mosaic/_sources/examples/analysis-walkthrough.ipynb>`_.
 
 
 Need help?
