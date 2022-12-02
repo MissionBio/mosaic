@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Dna.pathscale &#8212; Mosaic v2.1 documentation</title>
+    <title>Dna.pathscale &#8212; Mosaic v2.2 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -79,7 +79,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Mosaic v2.1 documentation</h1>
+      <h1 class="site-logo" id="site-title">Mosaic v2.2 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -395,7 +395,9 @@ title="Print to PDF"
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.dna.Dna.pathscale">
 <span class="sig-prename descclassname"><span class="pre">Dna.</span></span><span class="sig-name descname"><span class="pre">pathscale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'AF'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.pathscale" title="Permalink to this definition">#</a></dt>
-<dd><p>Scale variants based on the type of mutant.</p>
+<dd><p>Scale variants based on the type of mutant.
+This is used only to give a higher weight to
+pathogenic variants when clustering the data.</p>
 <p>Adds <cite>vaf_pathscale</cite> to the layers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

@@ -17,6 +17,7 @@ utils
 
 
   ~clipped_values
+  ~disable_logging
   ~extend_docs
   ~get_indexes
   ~static_fig

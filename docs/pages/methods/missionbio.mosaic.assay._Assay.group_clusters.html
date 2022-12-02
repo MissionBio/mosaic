@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>_Assay.group_clusters &#8212; Mosaic v2.1 documentation</title>
+    <title>_Assay.group_clusters &#8212; Mosaic v2.2 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -79,7 +79,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Mosaic v2.1 documentation</h1>
+      <h1 class="site-logo" id="site-title">Mosaic v2.2 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -394,7 +394,7 @@ title="Print to PDF"
 <h1>_Assay.group_clusters<a class="headerlink" href="#assay-group-clusters" title="Permalink to this headline">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.assay._Assay.group_clusters">
-<span class="sig-prename descclassname"><span class="pre">_Assay.</span></span><span class="sig-name descname"><span class="pre">group_clusters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.group_clusters" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">_Assay.</span></span><span class="sig-name descname"><span class="pre">group_clusters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.group_clusters" title="Permalink to this definition">#</a></dt>
 <dd><p>Relabel clusters based on expression.</p>
 <p>Takes an assay object and reorders the
 cluster labels so that the clusters are
@@ -407,7 +407,7 @@ to each other.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>layer</strong><span class="classifier">str / np.array</span></dt><dd><p>The name of the attribute from the assay object used
+<dt><strong>attribute</strong><span class="classifier">str / np.ndarray</span></dt><dd><p>The name of the attribute from the assay object used
 to hierarchically group the clusters. Uses
 <a class="reference internal" href="missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute" title="missionbio.mosaic.assay._Assay.get_attribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code></a> to retrieve the values
 constrained by <cite>row</cite></p>
