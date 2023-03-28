@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Protein.get_scaling_factor &#8212; Mosaic v2.2 documentation</title>
+    <title>Protein.get_scaling_factor &#8212; Mosaic v2.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -79,7 +79,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Mosaic v2.2 documentation</h1>
+      <h1 class="site-logo" id="site-title">Mosaic v2.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -394,11 +394,17 @@ title="Print to PDF"
 <h1>Protein.get_scaling_factor<a class="headerlink" href="#protein-get-scaling-factor" title="Permalink to this headline">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.protein.Protein.get_scaling_factor">
-<span class="sig-prename descclassname"><span class="pre">Protein.</span></span><span class="sig-name descname"><span class="pre">get_scaling_factor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.get_scaling_factor" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Protein.</span></span><span class="sig-name descname"><span class="pre">get_scaling_factor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.get_scaling_factor" title="Permalink to this definition">#</a></dt>
 <dd><p>Identifies the appropriate scaling factor for oversequenced runs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
+<dt><strong>random_state: int</strong></dt><dd><p>Used to set the random_state of Protein.get_signal_profile</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
 <dt>float</dt><dd><p>The factor to scale down the reads by.</p>
 </dd>
 <dt>list</dt><dd><p>The antibodies in which the peak amplification

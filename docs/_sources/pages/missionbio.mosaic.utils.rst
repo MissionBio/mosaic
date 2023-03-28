@@ -20,5 +20,6 @@ utils
   ~disable_logging
   ~extend_docs
   ~get_indexes
+  ~set_random_seed
   ~static_fig
 

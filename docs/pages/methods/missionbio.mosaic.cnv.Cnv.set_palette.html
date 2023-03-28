@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Cnv.set_palette &#8212; Mosaic v2.2 documentation</title>
+    <title>Cnv.set_palette &#8212; Mosaic v2.3 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -79,7 +79,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Mosaic v2.2 documentation</h1>
+      <h1 class="site-logo" id="site-title">Mosaic v2.3 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -397,8 +397,10 @@ title="Print to PDF"
 <span class="sig-prename descclassname"><span class="pre">Cnv.</span></span><span class="sig-name descname"><span class="pre">set_palette</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.set_palette" title="Permalink to this definition">#</a></dt>
 <dd><p>Set the label color palette.</p>
 <p>Modifies the <cite>palette</cite> metadata of the assay. If the palette is None,
-then the values are set using the COLORS constant value. If the palette is a
-dict and any label does not exist in it, then #000000 is used.</p>
+then the values are set using the COLORS constant value. If the <cite>palette</cite> is a
+dict and any label does not exist in it, then the color from the existing
+palette is used. If the label doesn’t exist in the existing palette
+then an arbitrary desaturated color is chosen for that label.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
