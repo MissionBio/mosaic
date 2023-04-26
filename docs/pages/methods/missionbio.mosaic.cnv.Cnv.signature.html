@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Cnv.signature &#8212; Mosaic v2.3 documentation</title>
+    <title>Cnv.signature &#8212; Mosaic v2.4 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -79,7 +79,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Mosaic v2.3 documentation</h1>
+      <h1 class="site-logo" id="site-title">Mosaic v2.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -394,20 +394,20 @@ title="Print to PDF"
 <h1>Cnv.signature<a class="headerlink" href="#cnv-signature" title="Permalink to this headline">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.cnv.Cnv.signature">
-<span class="sig-prename descclassname"><span class="pre">Cnv.</span></span><span class="sig-name descname"><span class="pre">signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'median'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.signature" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Cnv.</span></span><span class="sig-name descname"><span class="pre">signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'median'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.core.frame.DataFrame</span></span></span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.signature" title="Permalink to this definition">#</a></dt>
 <dd><p>The chosen signature for each cluster and feature.</p>
 <p>Generate feature signatures for each cluster/feature pair
 across all barcodes using the supplied assay and layer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>attribute</strong><span class="classifier">string</span></dt><dd><p>Name of the layer or row attribute to be evaluated.
+<dt><strong>attribute</strong><span class="classifier">Union[str, np.ndarray]</span></dt><dd><p>Name of the layer or row attribute to be evaluated.
 Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> constrained by <cite>row</cite>
 to retrieve the values.</p>
 </dd>
 <dt><strong>kind</strong><span class="classifier">[“median”, “mode”, “std”, “mean”]</span></dt><dd><p>The kind of signature to return</p>
 </dd>
-<dt><strong>nan_value</strong><span class="classifier">int / float</span></dt><dd><p>The value in matrix that are to be converted to NaN.
+<dt><strong>nan_value</strong><span class="classifier">Optional[float]</span></dt><dd><p>The value in matrix that are to be converted to NaN.
 NaN values are removed before calculating the signatures.</p>
 </dd>
 </dl>
@@ -430,7 +430,9 @@ are the features</p>
 <p class="rubric">Examples</p>
 <p>To remove all the missing NGT values before calculating the
 median NGT the following can be called.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s2">&quot;NGT&quot;</span><span class="p">,</span> <span class="n">nan_value</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">missionbio.mosaic</span> <span class="k">as</span> <span class="nn">ms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">load_example_dataset</span><span class="p">(</span><span class="s2">&quot;3 cell mix&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s2">&quot;NGT&quot;</span><span class="p">,</span> <span class="n">nan_value</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>To compute standard deviation of AF where DP is not 0</p>

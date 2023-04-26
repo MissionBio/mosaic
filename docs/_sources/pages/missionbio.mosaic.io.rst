@@ -19,4 +19,5 @@ io
   ~load
   ~load_example_dataset
   ~save
+  ~to_zip
 

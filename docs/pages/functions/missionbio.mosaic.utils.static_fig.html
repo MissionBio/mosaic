@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>missionbio.mosaic.utils.static_fig &#8212; Mosaic v2.3 documentation</title>
+    <title>missionbio.mosaic.utils.static_fig &#8212; Mosaic v2.4 documentation</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -79,7 +79,7 @@
       
       
       
-      <h1 class="site-logo" id="site-title">Mosaic v2.3 documentation</h1>
+      <h1 class="site-logo" id="site-title">Mosaic v2.4 documentation</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
@@ -394,12 +394,13 @@ title="Print to PDF"
 <h1>missionbio.mosaic.utils.static_fig<a class="headerlink" href="#missionbio-mosaic-utils-static-fig" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="missionbio.mosaic.utils.static_fig">
-<span class="sig-prename descclassname"><span class="pre">missionbio.mosaic.utils.</span></span><span class="sig-name descname"><span class="pre">static_fig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(7,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.utils.static_fig" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">missionbio.mosaic.utils.</span></span><span class="sig-name descname"><span class="pre">static_fig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fig</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">plotly.graph_objs._figure.Figure</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">figsize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(7,</span> <span class="pre">7)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#missionbio.mosaic.utils.static_fig" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert plotly figure to matplotlib.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>fig</strong><span class="classifier">plotly.graph_objects.Figure</span></dt><dd></dd>
+<dt><strong>fig</strong><span class="classifier">plotly.graph_objects.Figure</span></dt><dd><p>The figure to convert to a static image</p>
+</dd>
 <dt><strong>figsize</strong><span class="classifier">2-tuple</span></dt><dd><p>The size of the matplotlib figure in case
 no axis is provided.</p>
 </dd>
