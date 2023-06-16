@@ -1,0 +1,8 @@
+:orphan:
+
+\_Assay.set\_selected\_labels
+=============================
+
+.. currentmodule:: missionbio.mosaic.assay
+
+.. automethod:: _Assay.set_selected_labels

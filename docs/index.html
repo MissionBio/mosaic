@@ -1,648 +1,555 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome &#8212; Mosaic v2.4 documentation</title>
-    
+    <title>Mosaic API documentation &#8212; Mosaic v3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction" href="1_introduction.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+    <link rel="next" title="Introduction" href="pages/introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="#">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Mosaic v2.4 documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Mosaic v3.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1_introduction.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2_install.html">
-   Installation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3_getting_started.html">
-   Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4_data_structure.html">
-   Data structure
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="pages/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/data_structure.html">Data structure</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pages/vignettes.html">Vignettes</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/overview.html">Overview of mosaic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/filtering.html">Filtering barcodes and ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/cnv.html">Manual CNV analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/plot-customizations.html">Plot customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/multi-sample-analysis.html">Multisample analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/additional-plots-and-customizations.html">Additional plots and customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/index.html">
-   Code Snippets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/basics.html">
-   Basic usage of mosaic
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/cnv.html">
-   Manual CNV analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/filtering.html">
-   Filtering barcodes and ids
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/customizations.html">
-   Plot customizations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/multi-sample-analysis.html">
-   Multisample analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/additional-plots-and-customizations.html">
-   Additional plots and customizations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/analysis-walkthrough.html">
-   Mosaic analysis walk-through
-  </a>
- </li>
+</li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Modules
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.io.html">
-   io
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.utils.html">
-   utils
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="pages/missionbio.mosaic.constants.html">
-   constants
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.COLORS.html">
-     missionbio.mosaic.constants.COLORS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.PCA_LABEL.html">
-     missionbio.mosaic.constants.PCA_LABEL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.UMAP_LABEL.html">
-     missionbio.mosaic.constants.UMAP_LABEL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.SCALED_LABEL.html">
-     missionbio.mosaic.constants.SCALED_LABEL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.LABEL.html">
-     missionbio.mosaic.constants.LABEL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.READS.html">
-     missionbio.mosaic.constants.READS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.PALETTE.html">
-     missionbio.mosaic.constants.PALETTE
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.NORMALIZED_READS.html">
-     missionbio.mosaic.constants.NORMALIZED_READS
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.sample.Sample.html">Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Classes
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interactive Workflows</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.assay._Assay.html">
-   _Assay
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.dna.Dna.html">
-   Dna
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.cnv.Cnv.html">
-   Cnv
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.protein.Protein.html">
-   Protein
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html">
-   Sample
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.samplegroup.SampleGroup.html">
-   SampleGroup
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.workflows.copy_number.CopyNumber.html">CopyNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html">VariantSubcloneTable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.nsp.NSP.html">NSP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Custom Plots</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.heatmap.Heatmap.html">Heatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.lineplot.LinePlot.html">LinePlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.bargraph.BarGraph.html">BarGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.html">MultiHeatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.fishplot.TreeGraph.html">TreeGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.fishplot.Fishplot.html">Fishplot</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
 
-          
 
 
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/index.rst"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.rst</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vignettes">
-   Vignettes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interface">
-   Interface
-  </a>
-  <ul class="nav section-nav flex-column">
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Welcome</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vignettes">
-   Vignettes
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#interface">
-   Interface
-  </a>
-  <ul class="nav section-nav flex-column">
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Mosaic API documentation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-and-classes">Modules and Classes</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <section id="welcome">
-<h1>Welcome<a class="headerlink" href="#welcome" title="Permalink to this headline">#</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Documentation for v1.8.0 can be found <a class="reference external" href="https://missionbio.github.io/mosaic/v1.8.0/index.html">here</a></p>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="mosaic-api-documentation">
+<h1>Mosaic API documentation<a class="headerlink" href="#mosaic-api-documentation" title="Permalink to this headline">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">Older documentations</p>
+<p>The latest version of Mosaic is recommended for new developments. Documentation for the other
+versions are available applications and notebooks built using them:
+<a class="reference external" href="https://missionbio.github.io/mosaic/v2.4.1/index.html">v2.4.1</a>
+&amp; <a class="reference external" href="https://missionbio.github.io/mosaic/v1.8.0/index.html">v1.8.0 (unsupported)</a></p>
 </div>
-<p>Mosaic is a set of tools to analyze DNA and protein data obtained from the Mission Bio Tapestri instrument.</p>
+<p>Mosaic is a set of tools to analyze DNA and protein data obtained from the Mission Bio Tapestri instrument.
+Its designed to allow convenient handling and visualization of single-cell multiomics data to enable
+exploratory analysis.</p>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="1_introduction.html#additional-resources">Additional resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="1_introduction.html#need-help">Need help?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="2_install.html">Installation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="2_install.html#detailed-instructions">Detailed Instructions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_install.html#older-versions">Older versions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="3_getting_started.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="3_getting_started.html#loading-a-sample">Loading a sample</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_getting_started.html#merging-h5-files">Merging h5 files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3_getting_started.html#tutorials">Tutorials</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="4_data_structure.html">Data structure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="4_data_structure.html#basics">Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_data_structure.html#dna">DNA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_data_structure.html#cnv">CNV</a></li>
-<li class="toctree-l2"><a class="reference internal" href="4_data_structure.html#protein">Protein</a></li>
-</ul>
-</li>
-</ul>
 </div>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-</ul>
-<section id="vignettes">
-<span id="all-vignettes"></span><h2>Vignettes<a class="headerlink" href="#vignettes" title="Permalink to this headline">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Code Snippets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#annotate-your-variants">Annotate your variants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#multi-assay-heatmap">Multi-assay heatmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#fishplot-to-visualize-clonal-evolution">Fishplot to visualize clonal evolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/index.html#group-cells-by-a-select-number-of-dna-variants">Group cells by a select number of DNA variants</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples/basics.html">Basic usage of mosaic</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/basics.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/basics.html#data-structure">Data Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/basics.html#dna-analysis">DNA Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/basics.html#cnv-analysis">CNV Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/basics.html#protein-analysis">Protein Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/basics.html#statistical-significance">Statistical Significance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/basics.html#combined-visualizations">Combined Visualizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/basics.html#saving">Saving</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples/cnv.html">Manual CNV analysis</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/cnv.html#filtering-amplicons">Filtering amplicons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/cnv.html#normalization-and-ploidy-computation">Normalization and ploidy computation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/cnv.html#visualizations">Visualizations</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples/filtering.html">Filtering barcodes and ids</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/filtering.html#filtering-assays">Filtering assays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/filtering.html#filtering-the-entire-sample">Filtering the entire sample</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples/customizations.html">Plot customizations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/customizations.html#reproducible-umaps">Reproducible UMAPs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/customizations.html#updating-the-colors-for-the-dna-plots">Updating the colors for the DNA plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/customizations.html#cnv-heatmaps">CNV heatmaps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/customizations.html#custom-multi-assay-plot">Custom multi assay plot</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples/multi-sample-analysis.html">Multisample analysis</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/multi-sample-analysis.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/multi-sample-analysis.html#applying-functions">Applying functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/multi-sample-analysis.html#drawing-figures">Drawing figures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/multi-sample-analysis.html#multisample-plots">Multisample plots</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples/additional-plots-and-customizations.html">Additional plots and customizations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#load-in-dependencies">Load in dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#load-in-data">Load in data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#gq-violin-plots">GQ violin plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#stacked-bar-graph-for-multi-sample-analysis">Stacked bar graph for multi-sample analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#reads-per-amplicon">Reads per amplicon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#count-barcodes-with-at-least-one-mutation">Count barcodes with at least one mutation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#custom-cluster-order">Custom cluster order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#custom-heatmap-legend">Custom heatmap legend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#perform-cnv-analysis-on-your-data">Perform CNV analysis on your data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#p-value-chart-per-gene">P-value chart per gene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#calculate-an-average-p-value-per-gene">Calculate an average P-value per gene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#protein-read-distribution-tool">Protein read distribution tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#plot-a-joint-scatterplot-and-histogram">Plot a joint scatterplot and histogram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#cnv-signature-per-chromosome">CNV signature per chromosome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/additional-plots-and-customizations.html#save-output-for-one-clone">Save output for one clone</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="examples/analysis-walkthrough.html">Mosaic analysis walk-through</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples/analysis-walkthrough.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/analysis-walkthrough.html#dna-analysis">DNA Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/analysis-walkthrough.html#cnv-analysis">CNV Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/analysis-walkthrough.html#protein-analysis">Protein Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples/analysis-walkthrough.html#combined-visualizations">Combined visualizations</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
-<section id="interface">
-<h2>Interface<a class="headerlink" href="#interface" title="Permalink to this headline">#</a></h2>
-<p class="rubric">Modules</p>
+<section id="modules-and-classes">
+<h2>Modules and Classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Basic Classes</p>
 <table class="autosummary longtable table autosummary">
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.io.html#module-missionbio.mosaic.io" title="missionbio.mosaic.io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io</span></code></a></p></td>
-<td><p>Module to read and write h5 files</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.utils.html#module-missionbio.mosaic.utils" title="missionbio.mosaic.utils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils</span></code></a></p></td>
-<td><p>Utility functions</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.constants.html#module-missionbio.mosaic.constants" title="missionbio.mosaic.constants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constants</span></code></a></p></td>
-<td><p>Colors and keys for layers and attributes</p></td>
-</tr>
-</tbody>
-</table>
-<p class="rubric">Classes</p>
-<table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_Assay</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_Assay</span></code></a></p></td>
 <td><p>Abstract class for all assays</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.dna.Dna.html#missionbio.mosaic.dna.Dna" title="missionbio.mosaic.dna.Dna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dna</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.dna.Dna.html#missionbio.mosaic.dna.Dna" title="missionbio.mosaic.dna.Dna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Dna</span></code></a></p></td>
 <td><p>Container for DNA data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.cnv.Cnv.html#missionbio.mosaic.cnv.Cnv" title="missionbio.mosaic.cnv.Cnv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cnv</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.cnv.Cnv.html#missionbio.mosaic.cnv.Cnv" title="missionbio.mosaic.cnv.Cnv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cnv</span></code></a></p></td>
 <td><p>Container for CNV data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.protein.Protein.html#missionbio.mosaic.protein.Protein" title="missionbio.mosaic.protein.Protein"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Protein</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.protein.Protein.html#missionbio.mosaic.protein.Protein" title="missionbio.mosaic.protein.Protein"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Protein</span></code></a></p></td>
 <td><p>Container for Protein data</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sample</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sample</span></code></a></p></td>
 <td><p>Container for multiple assays.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup" title="missionbio.mosaic.samplegroup.SampleGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SampleGroup</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup" title="missionbio.mosaic.samplegroup.SampleGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SampleGroup</span></code></a></p></td>
 <td><p>A group of samples related to each other</p></td>
 </tr>
 </tbody>
 </table>
+<p class="rubric">Interactive Workflows</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.workflows.copy_number.CopyNumber.html#missionbio.mosaic.workflows.copy_number.CopyNumber" title="missionbio.mosaic.workflows.copy_number.CopyNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CopyNumber</span></code></a></p></td>
+<td><p>Copy Number estimation workflow.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable" title="missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VariantSubcloneTable</span></code></a></p></td>
+<td><p>To provide as much similarity to Tapestri Insights as possible.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Algorithms</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.nsp.NSP.html#missionbio.mosaic.algorithms.nsp.NSP" title="missionbio.mosaic.algorithms.nsp.NSP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NSP</span></code></a>([jitter, random_state])</p></td>
+<td><p>Noise corrected and Scaled Protein counts (NSP)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype" title="missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GroupByGenotype</span></code></a>(dna, features[, layer, ...])</p></td>
+<td><p>See <a class="reference internal" href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.group_by_genotype.html#missionbio.mosaic.dna.Dna.group_by_genotype" title="missionbio.mosaic.dna.Dna.group_by_genotype"><code class="xref py py-meth docutils literal notranslate"><span class="pre">group_by_genotype()</span></code></a> for the complete documentation</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.compass.COMPASS.html#missionbio.mosaic.algorithms.compass.COMPASS" title="missionbio.mosaic.algorithms.compass.COMPASS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COMPASS</span></code></a>(sample, somatic_variants[, ...])</p></td>
+<td><p>A wrapper to run COMPASS.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Functional Modules</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.io.html#module-missionbio.mosaic.io" title="missionbio.mosaic.io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io</span></code></a></p></td>
+<td><p>Module to read and write h5 files</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.utils.html#module-missionbio.mosaic.utils" title="missionbio.mosaic.utils"><code class="xref py py-obj docutils literal notranslate"><span class="pre">utils</span></code></a></p></td>
+<td><p>Utility functions</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.constants.html#module-missionbio.mosaic.constants" title="missionbio.mosaic.constants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">constants</span></code></a></p></td>
+<td><p>Keys used for various layers, row attributes and column attributes</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Custom Plots</p>
+<table class="autosummary longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.heatmap.Heatmap.html#missionbio.mosaic.plots.heatmap.Heatmap" title="missionbio.mosaic.plots.heatmap.Heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Heatmap</span></code></a></p></td>
+<td><p>Heatmap with options for grouping rows/cols.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.lineplot.LinePlot.html#missionbio.mosaic.plots.lineplot.LinePlot" title="missionbio.mosaic.plots.lineplot.LinePlot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LinePlot</span></code></a></p></td>
+<td><p>A line plot to visualize CNV</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.bargraph.BarGraph.html#missionbio.mosaic.plots.bargraph.BarGraph" title="missionbio.mosaic.plots.bargraph.BarGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BarGraph</span></code></a></p></td>
+<td><p>Create a horizontal bar graph with ticks and labels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.html#missionbio.mosaic.plots.multi_heatmap.MultiHeatmap" title="missionbio.mosaic.plots.multi_heatmap.MultiHeatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiHeatmap</span></code></a></p></td>
+<td><p>Multiple heatmaps with a common y-axis</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.fishplot.TreeGraph.html#missionbio.mosaic.plots.fishplot.TreeGraph" title="missionbio.mosaic.plots.fishplot.TreeGraph"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TreeGraph</span></code></a></p></td>
+<td><p>Container for creating a phylogeny tree</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.fishplot.Fishplot.html#missionbio.mosaic.plots.fishplot.Fishplot" title="missionbio.mosaic.plots.fishplot.Fishplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Fishplot</span></code></a></p></td>
+<td><p>Container for creating a fishplot</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="1_introduction.html" title="next page">
-    <div class="prev-next-info">
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="pages/introduction.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Introduction</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Saurabh Parikh<br/>
-  
-      &copy; Copyright 2021, Mission Bio.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-and-classes">Modules and Classes</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Saurabh Parikh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2021, Mission Bio.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

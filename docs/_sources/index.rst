@@ -1,62 +1,39 @@
-Welcome
-=======
+Mosaic API documentation
+========================
 
-.. note::
+.. admonition:: Older documentations
+   :class: note
 
-    Documentation for v1.8.0 can be found `here <https://missionbio.github.io/mosaic/v1.8.0/index.html>`_
+   The latest version of Mosaic is recommended for new developments. Documentation for the other
+   versions are available applications and notebooks built using them:
+   `v2.4.1 <https://missionbio.github.io/mosaic/v2.4.1/index.html>`_
+   & `v1.8.0 (unsupported) <https://missionbio.github.io/mosaic/v1.8.0/index.html>`_
+
 
 Mosaic is a set of tools to analyze DNA and protein data obtained from the Mission Bio Tapestri instrument.
+Its designed to allow convenient handling and visualization of single-cell multiomics data to enable
+exploratory analysis.
 
+.. The following are not shown on this page, but are used to generate the sidebar navigation
 .. toctree::
+    :hidden:
     :maxdepth: 2
 
-    1_introduction
-    2_install
-    3_getting_started
-    4_data_structure
+    pages/introduction
+    pages/install
+    pages/getting_started
+    pages/data_structure
+    pages/vignettes
 
-* :ref:`genindex`
+Modules and Classes
+-------------------
 
-.. _all-vignettes:
-
-Vignettes
----------
-
-.. toctree::
-    :maxdepth: 2
-
-    examples/index
-    examples/basics.ipynb
-    examples/cnv.ipynb
-    examples/filtering.ipynb
-    examples/customizations.ipynb
-    examples/multi-sample-analysis.ipynb
-    examples/additional-plots-and-customizations.ipynb
-    examples/analysis-walkthrough.ipynb
-
-Interface
----------
-
-.. rubric:: Modules
-
-.. autosummary::
-   :recursive:
-   :caption: Modules
-   :toctree: pages
-   :template: module.rst
-
-   ~missionbio.mosaic.io
-   ~missionbio.mosaic.utils
-   ~missionbio.mosaic.constants
-
-
-.. rubric:: Classes
-
+.. rubric:: Basic Classes
 .. autosummary::
    :recursive:
    :nosignatures:
-   :caption: Classes
-   :toctree: pages
+   :caption: Basic Classes
+   :toctree: autosummary_pages
    :template: class.rst
 
    ~missionbio.mosaic.assay._Assay
@@ -65,3 +42,51 @@ Interface
    ~missionbio.mosaic.protein.Protein
    ~missionbio.mosaic.sample.Sample
    ~missionbio.mosaic.samplegroup.SampleGroup
+
+.. rubric:: Interactive Workflows
+.. autosummary::
+   :recursive:
+   :nosignatures:
+   :caption: Interactive Workflows
+   :toctree: autosummary_pages
+   :template: class.rst
+
+   ~missionbio.mosaic.workflows.copy_number.CopyNumber
+   ~missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable
+
+.. rubric:: Algorithms
+.. autosummary::
+   :recursive:
+   :caption: Algorithms
+   :toctree: autosummary_pages
+   :template: class.rst
+
+   ~missionbio.mosaic.algorithms.nsp.NSP
+   ~missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype
+   ~missionbio.mosaic.algorithms.compass.COMPASS
+
+.. rubric:: Functional Modules
+.. autosummary::
+   :recursive:
+   :caption: Functional Modules
+   :toctree: autosummary_pages
+   :template: module.rst
+
+   ~missionbio.mosaic.io
+   ~missionbio.mosaic.utils
+   ~missionbio.mosaic.constants
+
+.. rubric:: Custom Plots
+.. autosummary::
+   :recursive:
+   :nosignatures:
+   :caption: Custom Plots
+   :toctree: autosummary_pages
+   :template: class.rst
+
+   ~missionbio.mosaic.plots.heatmap.Heatmap
+   ~missionbio.mosaic.plots.lineplot.LinePlot
+   ~missionbio.mosaic.plots.bargraph.BarGraph
+   ~missionbio.mosaic.plots.multi_heatmap.MultiHeatmap
+   ~missionbio.mosaic.plots.fishplot.TreeGraph
+   ~missionbio.mosaic.plots.fishplot.Fishplot

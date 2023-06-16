@@ -1,348 +1,276 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Mosaic v2.4 documentation</title>
-    
+    <title>Index &#8212; Mosaic v3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-    <div class="container-fluid" id="banner"></div>
-
     
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      
-      
-      <h1 class="site-logo" id="site-title">Mosaic v2.4 documentation</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Mosaic v3.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="1_introduction.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2_install.html">
-   Installation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3_getting_started.html">
-   Getting Started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="4_data_structure.html">
-   Data structure
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="pages/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/data_structure.html">Data structure</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="pages/vignettes.html">Vignettes</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/overview.html">Overview of mosaic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/filtering.html">Filtering barcodes and ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/cnv.html">Manual CNV analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/plot-customizations.html">Plot customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/multi-sample-analysis.html">Multisample analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/additional-plots-and-customizations.html">Additional plots and customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/index.html">
-   Code Snippets
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/basics.html">
-   Basic usage of mosaic
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/cnv.html">
-   Manual CNV analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/filtering.html">
-   Filtering barcodes and ids
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/customizations.html">
-   Plot customizations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/multi-sample-analysis.html">
-   Multisample analysis
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/additional-plots-and-customizations.html">
-   Additional plots and customizations
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="examples/analysis-walkthrough.html">
-   Mosaic analysis walk-through
-  </a>
- </li>
+</li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Modules
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.io.html">
-   io
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.utils.html">
-   utils
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="pages/missionbio.mosaic.constants.html">
-   constants
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.COLORS.html">
-     missionbio.mosaic.constants.COLORS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.PCA_LABEL.html">
-     missionbio.mosaic.constants.PCA_LABEL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.UMAP_LABEL.html">
-     missionbio.mosaic.constants.UMAP_LABEL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.SCALED_LABEL.html">
-     missionbio.mosaic.constants.SCALED_LABEL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.LABEL.html">
-     missionbio.mosaic.constants.LABEL
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.READS.html">
-     missionbio.mosaic.constants.READS
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.PALETTE.html">
-     missionbio.mosaic.constants.PALETTE
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="pages/missionbio.mosaic.constants.NORMALIZED_READS.html">
-     missionbio.mosaic.constants.NORMALIZED_READS
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.sample.Sample.html">Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Classes
- </span>
-</p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interactive Workflows</span></p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.assay._Assay.html">
-   _Assay
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.dna.Dna.html">
-   Dna
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.cnv.Cnv.html">
-   Cnv
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.protein.Protein.html">
-   Protein
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html">
-   Sample
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="pages/missionbio.mosaic.samplegroup.SampleGroup.html">
-   SampleGroup
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.workflows.copy_number.CopyNumber.html">CopyNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html">VariantSubcloneTable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.nsp.NSP.html">NSP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Custom Plots</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.heatmap.Heatmap.html">Heatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.lineplot.LinePlot.html">LinePlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.bargraph.BarGraph.html">BarGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.html">MultiHeatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.fishplot.TreeGraph.html">TreeGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.fishplot.Fishplot.html">Fishplot</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
 <button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                    </div>
-                </div>
-            </div>
-            <main id="main-content" role="main">
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
 
 <h1 id="index">Index</h1>
 
@@ -360,6 +288,7 @@ title="Fullscreen mode"
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
@@ -371,23 +300,45 @@ title="Fullscreen mode"
 <h2 id="_">_</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.__init__.html#missionbio.mosaic.assay._Assay.__init__">__init__() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.__init__.html#missionbio.mosaic.assay._Assay.__init__">__init__() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.__init__.html#missionbio.mosaic.cnv.Cnv.__init__">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.bargraph.BarGraph.__init__.html#missionbio.mosaic.plots.bargraph.BarGraph.__init__">(BarGraph method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.__init__.html#missionbio.mosaic.dna.Dna.__init__">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.__init__.html#missionbio.mosaic.cnv.Cnv.__init__">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.__init__.html#missionbio.mosaic.protein.Protein.__init__">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.__init__.html#missionbio.mosaic.algorithms.compass.COMPASS.__init__">(COMPASS method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.sample.Sample.__init__.html#missionbio.mosaic.sample.Sample.__init__">(missionbio.mosaic.sample.Sample method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.__init__.html#missionbio.mosaic.workflows.copy_number.CopyNumber.__init__">(CopyNumber method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.samplegroup.SampleGroup.__init__.html#missionbio.mosaic.samplegroup.SampleGroup.__init__">(missionbio.mosaic.samplegroup.SampleGroup method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.__init__.html#missionbio.mosaic.dna.Dna.__init__">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.fishplot.Fishplot.__init__.html#missionbio.mosaic.plots.fishplot.Fishplot.__init__">(Fishplot method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.__init__.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.__init__">(GroupByGenotype method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.__init__.html#missionbio.mosaic.plots.heatmap.Heatmap.__init__">(Heatmap method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.lineplot.LinePlot.__init__.html#missionbio.mosaic.plots.lineplot.LinePlot.__init__">(LinePlot method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.__init__.html#missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.__init__">(MultiHeatmap method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.nsp.NSP.__init__.html#missionbio.mosaic.algorithms.nsp.NSP.__init__">(NSP method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.__init__.html#missionbio.mosaic.protein.Protein.__init__">(Protein method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.__init__.html#missionbio.mosaic.sample.Sample.__init__">(Sample method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.samplegroup.SampleGroup.__init__.html#missionbio.mosaic.samplegroup.SampleGroup.__init__">(SampleGroup method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.fishplot.TreeGraph.__init__.html#missionbio.mosaic.plots.fishplot.TreeGraph.__init__">(TreeGraph method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.__init__.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.__init__">(VariantSubcloneTable method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay">_Assay (class in missionbio.mosaic.assay)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay">_Assay (class in missionbio.mosaic.assay)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -395,65 +346,85 @@ title="Fullscreen mode"
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.add_col_attr.html#missionbio.mosaic.assay._Assay.add_col_attr">add_col_attr() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.add_col_attr.html#missionbio.mosaic.assay._Assay.add_col_attr">add_col_attr() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.add_col_attr.html#missionbio.mosaic.cnv.Cnv.add_col_attr">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.add_col_attr.html#missionbio.mosaic.cnv.Cnv.add_col_attr">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.add_col_attr.html#missionbio.mosaic.dna.Dna.add_col_attr">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.add_col_attr.html#missionbio.mosaic.dna.Dna.add_col_attr">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.add_col_attr.html#missionbio.mosaic.protein.Protein.add_col_attr">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.add_col_attr.html#missionbio.mosaic.protein.Protein.add_col_attr">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.add_extension.html#missionbio.mosaic.assay._Assay.add_extension">add_extension() (missionbio.mosaic.assay._Assay class method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.add_extension.html#missionbio.mosaic.assay._Assay.add_extension">add_extension() (_Assay class method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.add_extension.html#missionbio.mosaic.cnv.Cnv.add_extension">(missionbio.mosaic.cnv.Cnv class method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.add_extension.html#missionbio.mosaic.cnv.Cnv.add_extension">(Cnv class method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.add_extension.html#missionbio.mosaic.dna.Dna.add_extension">(missionbio.mosaic.dna.Dna class method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.add_extension.html#missionbio.mosaic.dna.Dna.add_extension">(Dna class method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.add_extension.html#missionbio.mosaic.protein.Protein.add_extension">(missionbio.mosaic.protein.Protein class method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.add_extension.html#missionbio.mosaic.protein.Protein.add_extension">(Protein class method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.add_layer.html#missionbio.mosaic.assay._Assay.add_layer">add_layer() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.lineplot.LinePlot.add_hrect.html#missionbio.mosaic.plots.lineplot.LinePlot.add_hrect">add_hrect() (LinePlot method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.add_layer.html#missionbio.mosaic.assay._Assay.add_layer">add_layer() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.add_layer.html#missionbio.mosaic.cnv.Cnv.add_layer">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.add_layer.html#missionbio.mosaic.cnv.Cnv.add_layer">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.add_layer.html#missionbio.mosaic.dna.Dna.add_layer">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.add_layer.html#missionbio.mosaic.dna.Dna.add_layer">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.add_layer.html#missionbio.mosaic.protein.Protein.add_layer">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.add_layer.html#missionbio.mosaic.protein.Protein.add_layer">(Protein method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.add_metadata.html#missionbio.mosaic.assay._Assay.add_metadata">add_metadata() (_Assay method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.add_metadata.html#missionbio.mosaic.cnv.Cnv.add_metadata">(Cnv method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.add_metadata.html#missionbio.mosaic.dna.Dna.add_metadata">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.add_metadata.html#missionbio.mosaic.protein.Protein.add_metadata">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.add_metadata.html#missionbio.mosaic.assay._Assay.add_metadata">add_metadata() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.add_row_attr.html#missionbio.mosaic.assay._Assay.add_row_attr">add_row_attr() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.add_metadata.html#missionbio.mosaic.cnv.Cnv.add_metadata">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.add_row_attr.html#missionbio.mosaic.cnv.Cnv.add_row_attr">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.add_metadata.html#missionbio.mosaic.dna.Dna.add_metadata">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.add_row_attr.html#missionbio.mosaic.dna.Dna.add_row_attr">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.add_metadata.html#missionbio.mosaic.protein.Protein.add_metadata">(missionbio.mosaic.protein.Protein method)</a>
-</li>
-      </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.add_row_attr.html#missionbio.mosaic.assay._Assay.add_row_attr">add_row_attr() (missionbio.mosaic.assay._Assay method)</a>
-
-      <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.add_row_attr.html#missionbio.mosaic.cnv.Cnv.add_row_attr">(missionbio.mosaic.cnv.Cnv method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.add_row_attr.html#missionbio.mosaic.dna.Dna.add_row_attr">(missionbio.mosaic.dna.Dna method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.add_row_attr.html#missionbio.mosaic.protein.Protein.add_row_attr">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.add_row_attr.html#missionbio.mosaic.protein.Protein.add_row_attr">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.amp_uniformity.html#missionbio.mosaic.cnv.Cnv.amp_uniformity">amp_uniformity() (missionbio.mosaic.cnv.Cnv method)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.ADO_PARENTS.html#missionbio.mosaic.constants.ADO_PARENTS">ADO_PARENTS (in module missionbio.mosaic.constants)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.samplegroup.SampleGroup.apply.html#missionbio.mosaic.samplegroup.SampleGroup.apply">apply() (missionbio.mosaic.samplegroup.SampleGroup method)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.ADO_SCORE.html#missionbio.mosaic.constants.ADO_SCORE">ADO_SCORE (in module missionbio.mosaic.constants)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.sample.Sample.assay_scatter.html#missionbio.mosaic.sample.Sample.assay_scatter">assay_scatter() (missionbio.mosaic.sample.Sample method)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.ADO_SISTERS.html#missionbio.mosaic.constants.ADO_SISTERS">ADO_SISTERS (in module missionbio.mosaic.constants)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.sample.Sample.assays.html#missionbio.mosaic.sample.Sample.assays">assays() (missionbio.mosaic.sample.Sample method)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.AF_FILTERED.html#missionbio.mosaic.constants.AF_FILTERED">AF_FILTERED (in module missionbio.mosaic.constants)</a>
+</li>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.AF_MISSING.html#missionbio.mosaic.constants.AF_MISSING">AF_MISSING (in module missionbio.mosaic.constants)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.lineplot.LinePlot.all_points_trace.html#missionbio.mosaic.plots.lineplot.LinePlot.all_points_trace">all_points_trace() (LinePlot method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.amp_uniformity.html#missionbio.mosaic.cnv.Cnv.amp_uniformity">amp_uniformity() (Cnv method)</a>
+</li>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.ANNOTATED.html#missionbio.mosaic.constants.ANNOTATED">ANNOTATED (in module missionbio.mosaic.constants)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.annotation.html#missionbio.mosaic.plots.heatmap.Heatmap.annotation">annotation() (Heatmap static method)</a>
+</li>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.ANNOTATION_COLUMNS.html#missionbio.mosaic.constants.ANNOTATION_COLUMNS">ANNOTATION_COLUMNS (in module missionbio.mosaic.constants)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.samplegroup.SampleGroup.apply.html#missionbio.mosaic.samplegroup.SampleGroup.apply">apply() (SampleGroup method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.assay_scatter.html#missionbio.mosaic.sample.Sample.assay_scatter">assay_scatter() (Sample method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.assays.html#missionbio.mosaic.sample.Sample.assays">assays() (Sample method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -461,19 +432,21 @@ title="Fullscreen mode"
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.barcodes.html#missionbio.mosaic.assay._Assay.barcodes">barcodes() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.barcodes.html#missionbio.mosaic.assay._Assay.barcodes">barcodes() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.barcodes.html#missionbio.mosaic.cnv.Cnv.barcodes">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.barcodes.html#missionbio.mosaic.cnv.Cnv.barcodes">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.barcodes.html#missionbio.mosaic.dna.Dna.barcodes">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.barcodes.html#missionbio.mosaic.dna.Dna.barcodes">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.barcodes.html#missionbio.mosaic.protein.Protein.barcodes">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.barcodes.html#missionbio.mosaic.protein.Protein.barcodes">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.samplegroup.SampleGroup.barplot.html#missionbio.mosaic.samplegroup.SampleGroup.barplot">barplot() (missionbio.mosaic.samplegroup.SampleGroup method)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.plots.bargraph.BarGraph.html#missionbio.mosaic.plots.bargraph.BarGraph">BarGraph (class in missionbio.mosaic.plots.bargraph)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.samplegroup.SampleGroup.barplot.html#missionbio.mosaic.samplegroup.SampleGroup.barplot">barplot() (SampleGroup method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -481,132 +454,188 @@ title="Fullscreen mode"
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.cell_uniformity.html#missionbio.mosaic.cnv.Cnv.cell_uniformity">cell_uniformity() (missionbio.mosaic.cnv.Cnv method)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.protein.Protein.cells_per_ab.html#missionbio.mosaic.protein.Protein.cells_per_ab">cells_per_ab() (missionbio.mosaic.protein.Protein method)</a>
-</li>
-      <li><a href="pages/functions/missionbio.mosaic.utils.clipped_values.html#missionbio.mosaic.utils.clipped_values">clipped_values() (in module missionbio.mosaic.utils)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.sample.Sample.clone_vs_analyte.html#missionbio.mosaic.sample.Sample.clone_vs_analyte">clone_vs_analyte() (missionbio.mosaic.sample.Sample method)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.cluster.html#missionbio.mosaic.assay._Assay.cluster">cluster() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.callback_create_figure.html#missionbio.mosaic.workflows.copy_number.CopyNumber.callback_create_figure">callback_create_figure() (CopyNumber method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.cluster.html#missionbio.mosaic.cnv.Cnv.cluster">(missionbio.mosaic.cnv.Cnv method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.cluster.html#missionbio.mosaic.dna.Dna.cluster">(missionbio.mosaic.dna.Dna method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.cluster.html#missionbio.mosaic.protein.Protein.cluster">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.callback_create_figure.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.callback_create_figure">(VariantSubcloneTable method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.clustered_barcodes.html#missionbio.mosaic.assay._Assay.clustered_barcodes">clustered_barcodes() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.callback_filter_and_normalize.html#missionbio.mosaic.workflows.copy_number.CopyNumber.callback_filter_and_normalize">callback_filter_and_normalize() (CopyNumber method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.callback_sort_variants_table.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.callback_sort_variants_table">callback_sort_variants_table() (VariantSubcloneTable method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.callback_subclone_table_modifications.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.callback_subclone_table_modifications">callback_subclone_table_modifications() (VariantSubcloneTable method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.callback_update_feature_options.html#missionbio.mosaic.workflows.copy_number.CopyNumber.callback_update_feature_options">callback_update_feature_options() (CopyNumber method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.cell_uniformity.html#missionbio.mosaic.cnv.Cnv.cell_uniformity">cell_uniformity() (Cnv method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.cells_per_ab.html#missionbio.mosaic.protein.Protein.cells_per_ab">cells_per_ab() (Protein method)</a>
+</li>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.utils.clipped_values.html#missionbio.mosaic.utils.clipped_values">clipped_values() (in module missionbio.mosaic.utils)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.clone_vs_analyte.html#missionbio.mosaic.sample.Sample.clone_vs_analyte">clone_vs_analyte() (Sample method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.cluster.html#missionbio.mosaic.assay._Assay.cluster">cluster() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.clustered_barcodes.html#missionbio.mosaic.cnv.Cnv.clustered_barcodes">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.cluster.html#missionbio.mosaic.cnv.Cnv.cluster">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.clustered_barcodes.html#missionbio.mosaic.dna.Dna.clustered_barcodes">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.cluster.html#missionbio.mosaic.dna.Dna.cluster">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.clustered_barcodes.html#missionbio.mosaic.protein.Protein.clustered_barcodes">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.cluster.html#missionbio.mosaic.protein.Protein.cluster">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.clustered_ids.html#missionbio.mosaic.assay._Assay.clustered_ids">clustered_ids() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.clustered_barcodes.html#missionbio.mosaic.assay._Assay.clustered_barcodes">clustered_barcodes() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.clustered_ids.html#missionbio.mosaic.cnv.Cnv.clustered_ids">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.clustered_barcodes.html#missionbio.mosaic.cnv.Cnv.clustered_barcodes">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.clustered_ids.html#missionbio.mosaic.dna.Dna.clustered_ids">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.clustered_barcodes.html#missionbio.mosaic.dna.Dna.clustered_barcodes">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.clustered_ids.html#missionbio.mosaic.protein.Protein.clustered_ids">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.clustered_barcodes.html#missionbio.mosaic.protein.Protein.clustered_barcodes">(Protein method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.clustered_barcodes.html#missionbio.mosaic.sample.Sample.clustered_barcodes">(Sample method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.clustered_ids.html#missionbio.mosaic.assay._Assay.clustered_ids">clustered_ids() (_Assay method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.clustered_ids.html#missionbio.mosaic.cnv.Cnv.clustered_ids">(Cnv method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.clustered_ids.html#missionbio.mosaic.dna.Dna.clustered_ids">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.clustered_ids.html#missionbio.mosaic.protein.Protein.clustered_ids">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/missionbio.mosaic.cnv.Cnv.html#missionbio.mosaic.cnv.Cnv">Cnv (class in missionbio.mosaic.cnv)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.cnv.Cnv.html#missionbio.mosaic.cnv.Cnv">Cnv (class in missionbio.mosaic.cnv)</a>
 </li>
-      <li><a href="pages/missionbio.mosaic.constants.COLORS.html#missionbio.mosaic.constants.COLORS">COLORS (in module missionbio.mosaic.constants)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.coloraxis.html#missionbio.mosaic.plots.heatmap.Heatmap.coloraxis">coloraxis() (Heatmap method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.compute_ploidy.html#missionbio.mosaic.cnv.Cnv.compute_ploidy">compute_ploidy() (missionbio.mosaic.cnv.Cnv method)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.COLORS.html#missionbio.mosaic.constants.COLORS">COLORS (in module missionbio.mosaic.constants)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.copy.html#missionbio.mosaic.assay._Assay.copy">copy() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.common_barcodes.html#missionbio.mosaic.sample.Sample.common_barcodes">common_barcodes() (Sample method)</a>
+</li>
+      <li><a href="autosummary_pages/missionbio.mosaic.algorithms.compass.COMPASS.html#missionbio.mosaic.algorithms.compass.COMPASS">COMPASS (class in missionbio.mosaic.algorithms.compass)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.compute_ploidy.html#missionbio.mosaic.cnv.Cnv.compute_ploidy">compute_ploidy() (Cnv method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.convolve.html#missionbio.mosaic.assay._Assay.convolve">convolve() (_Assay static method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.copy.html#missionbio.mosaic.cnv.Cnv.copy">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.convolve.html#missionbio.mosaic.cnv.Cnv.convolve">(Cnv static method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.copy.html#missionbio.mosaic.dna.Dna.copy">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.convolve.html#missionbio.mosaic.dna.Dna.convolve">(Dna static method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.copy.html#missionbio.mosaic.protein.Protein.copy">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.convolve.html#missionbio.mosaic.protein.Protein.convolve">(Protein static method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.create.html#missionbio.mosaic.assay._Assay.create">create() (missionbio.mosaic.assay._Assay class method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.copy.html#missionbio.mosaic.assay._Assay.copy">copy() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.create.html#missionbio.mosaic.cnv.Cnv.create">(missionbio.mosaic.cnv.Cnv class method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.copy.html#missionbio.mosaic.cnv.Cnv.copy">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.create.html#missionbio.mosaic.dna.Dna.create">(missionbio.mosaic.dna.Dna class method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.copy.html#missionbio.mosaic.dna.Dna.copy">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.create.html#missionbio.mosaic.protein.Protein.create">(missionbio.mosaic.protein.Protein class method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.copy.html#missionbio.mosaic.protein.Protein.copy">(Protein method)</a>
 </li>
       </ul></li>
+      <li><a href="autosummary_pages/missionbio.mosaic.workflows.copy_number.CopyNumber.html#missionbio.mosaic.workflows.copy_number.CopyNumber">CopyNumber (class in missionbio.mosaic.workflows.copy_number)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.create.html#missionbio.mosaic.assay._Assay.create">create() (_Assay class method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.create.html#missionbio.mosaic.cnv.Cnv.create">(Cnv class method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.create.html#missionbio.mosaic.dna.Dna.create">(Dna class method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.create.html#missionbio.mosaic.protein.Protein.create">(Protein class method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.create_conditional_style.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.create_conditional_style">create_conditional_style() (VariantSubcloneTable static method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.del_col_attr.html#missionbio.mosaic.assay._Assay.del_col_attr">del_col_attr() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.data_lines_trace.html#missionbio.mosaic.plots.heatmap.Heatmap.data_lines_trace">data_lines_trace() (Heatmap method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.data_trace.html#missionbio.mosaic.plots.heatmap.Heatmap.data_trace">data_trace() (Heatmap method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.del_col_attr.html#missionbio.mosaic.assay._Assay.del_col_attr">del_col_attr() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.del_col_attr.html#missionbio.mosaic.cnv.Cnv.del_col_attr">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.del_col_attr.html#missionbio.mosaic.cnv.Cnv.del_col_attr">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.del_col_attr.html#missionbio.mosaic.dna.Dna.del_col_attr">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.del_col_attr.html#missionbio.mosaic.dna.Dna.del_col_attr">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.del_col_attr.html#missionbio.mosaic.protein.Protein.del_col_attr">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.del_col_attr.html#missionbio.mosaic.protein.Protein.del_col_attr">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.del_layer.html#missionbio.mosaic.assay._Assay.del_layer">del_layer() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.del_layer.html#missionbio.mosaic.assay._Assay.del_layer">del_layer() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.del_layer.html#missionbio.mosaic.cnv.Cnv.del_layer">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.del_layer.html#missionbio.mosaic.cnv.Cnv.del_layer">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.del_layer.html#missionbio.mosaic.dna.Dna.del_layer">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.del_layer.html#missionbio.mosaic.dna.Dna.del_layer">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.del_layer.html#missionbio.mosaic.protein.Protein.del_layer">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.del_layer.html#missionbio.mosaic.protein.Protein.del_layer">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.del_metadata.html#missionbio.mosaic.assay._Assay.del_metadata">del_metadata() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.del_metadata.html#missionbio.mosaic.assay._Assay.del_metadata">del_metadata() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.del_metadata.html#missionbio.mosaic.cnv.Cnv.del_metadata">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.del_metadata.html#missionbio.mosaic.cnv.Cnv.del_metadata">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.del_metadata.html#missionbio.mosaic.dna.Dna.del_metadata">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.del_metadata.html#missionbio.mosaic.dna.Dna.del_metadata">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.del_metadata.html#missionbio.mosaic.protein.Protein.del_metadata">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.del_metadata.html#missionbio.mosaic.protein.Protein.del_metadata">(Protein method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.del_row_attr.html#missionbio.mosaic.assay._Assay.del_row_attr">del_row_attr() (_Assay method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.del_row_attr.html#missionbio.mosaic.cnv.Cnv.del_row_attr">(Cnv method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.del_row_attr.html#missionbio.mosaic.dna.Dna.del_row_attr">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.del_row_attr.html#missionbio.mosaic.protein.Protein.del_row_attr">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.del_row_attr.html#missionbio.mosaic.assay._Assay.del_row_attr">del_row_attr() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.utils.disable_logging.html#missionbio.mosaic.utils.disable_logging">disable_logging() (in module missionbio.mosaic.utils)</a>
+</li>
+      <li><a href="autosummary_pages/missionbio.mosaic.dna.Dna.html#missionbio.mosaic.dna.Dna">Dna (class in missionbio.mosaic.dna)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.dna_modified.html#missionbio.mosaic.workflows.copy_number.CopyNumber.dna_modified">dna_modified() (CopyNumber method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.bargraph.BarGraph.draw.html#missionbio.mosaic.plots.bargraph.BarGraph.draw">draw() (BarGraph method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.del_row_attr.html#missionbio.mosaic.cnv.Cnv.del_row_attr">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.fishplot.Fishplot.draw.html#missionbio.mosaic.plots.fishplot.Fishplot.draw">(Fishplot method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.del_row_attr.html#missionbio.mosaic.dna.Dna.del_row_attr">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.draw.html#missionbio.mosaic.plots.heatmap.Heatmap.draw">(Heatmap method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.del_row_attr.html#missionbio.mosaic.protein.Protein.del_row_attr">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.lineplot.LinePlot.draw.html#missionbio.mosaic.plots.lineplot.LinePlot.draw">(LinePlot method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.draw.html#missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.draw">(MultiHeatmap method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.fishplot.TreeGraph.draw.html#missionbio.mosaic.plots.fishplot.TreeGraph.draw">(TreeGraph method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/functions/missionbio.mosaic.utils.disable_logging.html#missionbio.mosaic.utils.disable_logging">disable_logging() (in module missionbio.mosaic.utils)</a>
-</li>
-      <li><a href="pages/missionbio.mosaic.dna.Dna.html#missionbio.mosaic.dna.Dna">Dna (class in missionbio.mosaic.dna)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.drop.html#missionbio.mosaic.assay._Assay.drop">drop() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.drop.html#missionbio.mosaic.assay._Assay.drop">drop() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.drop.html#missionbio.mosaic.cnv.Cnv.drop">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.drop.html#missionbio.mosaic.cnv.Cnv.drop">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.drop.html#missionbio.mosaic.dna.Dna.drop">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.drop.html#missionbio.mosaic.dna.Dna.drop">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.drop.html#missionbio.mosaic.protein.Protein.drop">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.drop.html#missionbio.mosaic.protein.Protein.drop">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -615,7 +644,13 @@ title="Fullscreen mode"
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/functions/missionbio.mosaic.utils.extend_docs.html#missionbio.mosaic.utils.extend_docs">extend_docs() (in module missionbio.mosaic.utils)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.fishplot.TreeGraph.expected_fig_size.html#missionbio.mosaic.plots.fishplot.TreeGraph.expected_fig_size">expected_fig_size() (TreeGraph method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.utils.extend_docs.html#missionbio.mosaic.utils.extend_docs">extend_docs() (in module missionbio.mosaic.utils)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.extract_output.html#missionbio.mosaic.algorithms.compass.COMPASS.extract_output">extract_output() (COMPASS method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -623,31 +658,35 @@ title="Fullscreen mode"
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.feature_scatter.html#missionbio.mosaic.assay._Assay.feature_scatter">feature_scatter() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.feature_scatter.html#missionbio.mosaic.assay._Assay.feature_scatter">feature_scatter() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.feature_scatter.html#missionbio.mosaic.cnv.Cnv.feature_scatter">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.feature_scatter.html#missionbio.mosaic.cnv.Cnv.feature_scatter">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.feature_scatter.html#missionbio.mosaic.dna.Dna.feature_scatter">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.feature_scatter.html#missionbio.mosaic.dna.Dna.feature_scatter">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.feature_scatter.html#missionbio.mosaic.protein.Protein.feature_scatter">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.feature_scatter.html#missionbio.mosaic.protein.Protein.feature_scatter">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.filter_amplicons.html#missionbio.mosaic.cnv.Cnv.filter_amplicons">filter_amplicons() (missionbio.mosaic.cnv.Cnv method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.filter_amplicons.html#missionbio.mosaic.cnv.Cnv.filter_amplicons">filter_amplicons() (Cnv method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.filter_barcodes.html#missionbio.mosaic.dna.Dna.filter_barcodes">filter_barcodes() (Dna method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.filter_barcodes.html#missionbio.mosaic.dna.Dna.filter_barcodes">filter_barcodes() (missionbio.mosaic.dna.Dna method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants">filter_variants() (Dna method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants">filter_variants() (missionbio.mosaic.dna.Dna method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.filter_variants_consecutive.html#missionbio.mosaic.dna.Dna.filter_variants_consecutive">filter_variants_consecutive() (Dna method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.filter_variants_consecutive.html#missionbio.mosaic.dna.Dna.filter_variants_consecutive">filter_variants_consecutive() (missionbio.mosaic.dna.Dna method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.find_clones.html#missionbio.mosaic.dna.Dna.find_clones">find_clones() (Dna method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.find_clones.html#missionbio.mosaic.dna.Dna.find_clones">find_clones() (missionbio.mosaic.dna.Dna method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.find_relevant_variants.html#missionbio.mosaic.dna.Dna.find_relevant_variants">find_relevant_variants() (Dna method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.find_relevant_variants.html#missionbio.mosaic.dna.Dna.find_relevant_variants">find_relevant_variants() (missionbio.mosaic.dna.Dna method)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.plots.fishplot.Fishplot.html#missionbio.mosaic.plots.fishplot.Fishplot">Fishplot (class in missionbio.mosaic.plots.fishplot)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.samplegroup.SampleGroup.fishplot.html#missionbio.mosaic.samplegroup.SampleGroup.fishplot">fishplot() (missionbio.mosaic.samplegroup.SampleGroup method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.samplegroup.SampleGroup.fishplot.html#missionbio.mosaic.samplegroup.SampleGroup.fishplot">fishplot() (SampleGroup method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.format_subclone_df.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.format_subclone_df">format_subclone_df() (VariantSubcloneTable static method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -655,130 +694,162 @@ title="Fullscreen mode"
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.ga.html#missionbio.mosaic.assay._Assay.ga">ga() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.ga.html#missionbio.mosaic.assay._Assay.ga">ga() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.ga.html#missionbio.mosaic.cnv.Cnv.ga">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.ga.html#missionbio.mosaic.cnv.Cnv.ga">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.ga.html#missionbio.mosaic.dna.Dna.ga">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.ga.html#missionbio.mosaic.dna.Dna.ga">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.ga.html#missionbio.mosaic.protein.Protein.ga">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.ga.html#missionbio.mosaic.protein.Protein.ga">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.get_annotations.html#missionbio.mosaic.dna.Dna.get_annotations">get_annotations() (missionbio.mosaic.dna.Dna method)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.GENE_NAME.html#missionbio.mosaic.constants.GENE_NAME">GENE_NAME (in module missionbio.mosaic.constants)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute">get_attribute() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.get_ado_scores.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.get_ado_scores">get_ado_scores() (GroupByGenotype method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.get_annotations.html#missionbio.mosaic.dna.Dna.get_annotations">get_annotations() (Dna method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute">get_attribute() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.get_attribute.html#missionbio.mosaic.cnv.Cnv.get_attribute">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.get_attribute.html#missionbio.mosaic.cnv.Cnv.get_attribute">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.get_attribute.html#missionbio.mosaic.dna.Dna.get_attribute">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.get_attribute.html#missionbio.mosaic.dna.Dna.get_attribute">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.get_attribute.html#missionbio.mosaic.protein.Protein.get_attribute">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.get_attribute.html#missionbio.mosaic.protein.Protein.get_attribute">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.get_gene_names.html#missionbio.mosaic.cnv.Cnv.get_gene_names">get_gene_names() (missionbio.mosaic.cnv.Cnv method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.get_clones.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.get_clones">get_clones() (VariantSubcloneTable method)</a>
 </li>
-      <li><a href="pages/functions/missionbio.mosaic.utils.get_indexes.html#missionbio.mosaic.utils.get_indexes">get_indexes() (in module missionbio.mosaic.utils)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.get_gene_and_gt_names.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.get_gene_and_gt_names">get_gene_and_gt_names() (VariantSubcloneTable method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.get_labels.html#missionbio.mosaic.assay._Assay.get_labels">get_labels() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.get_gene_names.html#missionbio.mosaic.cnv.Cnv.get_gene_names">get_gene_names() (Cnv method)</a>
+</li>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.utils.get_indexes.html#missionbio.mosaic.utils.get_indexes">get_indexes() (in module missionbio.mosaic.utils)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.get_labels.html#missionbio.mosaic.assay._Assay.get_labels">get_labels() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.get_labels.html#missionbio.mosaic.cnv.Cnv.get_labels">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.get_labels.html#missionbio.mosaic.cnv.Cnv.get_labels">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.get_labels.html#missionbio.mosaic.dna.Dna.get_labels">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.get_labels.html#missionbio.mosaic.dna.Dna.get_labels">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.get_labels.html#missionbio.mosaic.protein.Protein.get_labels">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.get_labels.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.get_labels">(GroupByGenotype method)</a>
 </li>
-      </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.get_palette.html#missionbio.mosaic.assay._Assay.get_palette">get_palette() (missionbio.mosaic.assay._Assay method)</a>
-
-      <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.get_palette.html#missionbio.mosaic.cnv.Cnv.get_palette">(missionbio.mosaic.cnv.Cnv method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.get_palette.html#missionbio.mosaic.dna.Dna.get_palette">(missionbio.mosaic.dna.Dna method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.get_palette.html#missionbio.mosaic.protein.Protein.get_palette">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.get_labels.html#missionbio.mosaic.protein.Protein.get_labels">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.get_row_ids.html#missionbio.mosaic.assay._Assay.get_row_ids">get_row_ids() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.get_layout.html#missionbio.mosaic.workflows.copy_number.CopyNumber.get_layout">get_layout() (CopyNumber method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.get_row_ids.html#missionbio.mosaic.cnv.Cnv.get_row_ids">(missionbio.mosaic.cnv.Cnv method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.get_row_ids.html#missionbio.mosaic.dna.Dna.get_row_ids">(missionbio.mosaic.dna.Dna method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.get_row_ids.html#missionbio.mosaic.protein.Protein.get_row_ids">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.get_layout.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.get_layout">(VariantSubcloneTable method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.protein.Protein.get_scaling_factor.html#missionbio.mosaic.protein.Protein.get_scaling_factor">get_scaling_factor() (missionbio.mosaic.protein.Protein method)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.protein.Protein.get_signal_profile.html#missionbio.mosaic.protein.Protein.get_signal_profile">get_signal_profile() (missionbio.mosaic.protein.Protein method)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.get_variant_bulk_metrics.html#missionbio.mosaic.dna.Dna.get_variant_bulk_metrics">get_variant_bulk_metrics() (missionbio.mosaic.dna.Dna method)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.samplegroup.SampleGroup.getassays.html#missionbio.mosaic.samplegroup.SampleGroup.getassays">getassays() (missionbio.mosaic.samplegroup.SampleGroup method)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.group_by_genotype.html#missionbio.mosaic.dna.Dna.group_by_genotype">group_by_genotype() (missionbio.mosaic.dna.Dna method)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.group_clusters.html#missionbio.mosaic.assay._Assay.group_clusters">group_clusters() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.get_palette.html#missionbio.mosaic.assay._Assay.get_palette">get_palette() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.group_clusters.html#missionbio.mosaic.cnv.Cnv.group_clusters">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.get_palette.html#missionbio.mosaic.cnv.Cnv.get_palette">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.group_clusters.html#missionbio.mosaic.dna.Dna.group_clusters">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.get_palette.html#missionbio.mosaic.dna.Dna.get_palette">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.group_clusters.html#missionbio.mosaic.protein.Protein.group_clusters">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.get_palette.html#missionbio.mosaic.protein.Protein.get_palette">(Protein method)</a>
 </li>
       </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.get_row_ids.html#missionbio.mosaic.assay._Assay.get_row_ids">get_row_ids() (_Assay method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.get_row_ids.html#missionbio.mosaic.cnv.Cnv.get_row_ids">(Cnv method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.get_row_ids.html#missionbio.mosaic.dna.Dna.get_row_ids">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.get_row_ids.html#missionbio.mosaic.protein.Protein.get_row_ids">(Protein method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.get_variant_bulk_metrics.html#missionbio.mosaic.dna.Dna.get_variant_bulk_metrics">get_variant_bulk_metrics() (Dna method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.get_variants_df.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.get_variants_df">get_variants_df() (VariantSubcloneTable method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.samplegroup.SampleGroup.getassays.html#missionbio.mosaic.samplegroup.SampleGroup.getassays">getassays() (SampleGroup method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.group_by_genotype.html#missionbio.mosaic.dna.Dna.group_by_genotype">group_by_genotype() (Dna method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.group_clusters.html#missionbio.mosaic.assay._Assay.group_clusters">group_clusters() (_Assay method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.group_clusters.html#missionbio.mosaic.cnv.Cnv.group_clusters">(Cnv method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.group_clusters.html#missionbio.mosaic.dna.Dna.group_clusters">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.group_clusters.html#missionbio.mosaic.protein.Protein.group_clusters">(Protein method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype">GroupByGenotype (class in missionbio.mosaic.algorithms.group_by_genotype)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.lineplot.LinePlot.groups_median_trace.html#missionbio.mosaic.plots.lineplot.LinePlot.groups_median_trace">groups_median_trace() (LinePlot method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.samplegroup.SampleGroup.hasassay.html#missionbio.mosaic.samplegroup.SampleGroup.hasassay">hasassay() (missionbio.mosaic.samplegroup.SampleGroup method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.samplegroup.SampleGroup.hasassay.html#missionbio.mosaic.samplegroup.SampleGroup.hasassay">hasassay() (SampleGroup method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.heatmap.html#missionbio.mosaic.assay._Assay.heatmap">heatmap() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.plots.heatmap.Heatmap.html#missionbio.mosaic.plots.heatmap.Heatmap">Heatmap (class in missionbio.mosaic.plots.heatmap)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.heatmap.html#missionbio.mosaic.assay._Assay.heatmap">heatmap() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.heatmap.html#missionbio.mosaic.cnv.Cnv.heatmap">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.heatmap.html#missionbio.mosaic.cnv.Cnv.heatmap">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.heatmap.html#missionbio.mosaic.dna.Dna.heatmap">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.heatmap.html#missionbio.mosaic.dna.Dna.heatmap">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.heatmap.html#missionbio.mosaic.protein.Protein.heatmap">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.heatmap.html#missionbio.mosaic.protein.Protein.heatmap">(Protein method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.sample.Sample.heatmap.html#missionbio.mosaic.sample.Sample.heatmap">(missionbio.mosaic.sample.Sample method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.heatmap.html#missionbio.mosaic.sample.Sample.heatmap">(Sample method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.highlight_heatmap.html#missionbio.mosaic.assay._Assay.highlight_heatmap">highlight_heatmap() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.highlight_heatmap.html#missionbio.mosaic.assay._Assay.highlight_heatmap">highlight_heatmap() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.highlight_heatmap.html#missionbio.mosaic.cnv.Cnv.highlight_heatmap">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.highlight_heatmap.html#missionbio.mosaic.cnv.Cnv.highlight_heatmap">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.highlight_heatmap.html#missionbio.mosaic.dna.Dna.highlight_heatmap">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.highlight_heatmap.html#missionbio.mosaic.dna.Dna.highlight_heatmap">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.highlight_heatmap.html#missionbio.mosaic.protein.Protein.highlight_heatmap">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.highlight_heatmap.html#missionbio.mosaic.protein.Protein.highlight_heatmap">(Protein method)</a>
 </li>
       </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.human_readable_variant_name.html#missionbio.mosaic.algorithms.compass.COMPASS.human_readable_variant_name">human_readable_variant_name() (COMPASS static method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.ids.html#missionbio.mosaic.assay._Assay.ids">ids() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.ids.html#missionbio.mosaic.assay._Assay.ids">ids() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.ids.html#missionbio.mosaic.cnv.Cnv.ids">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.ids.html#missionbio.mosaic.cnv.Cnv.ids">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.ids.html#missionbio.mosaic.dna.Dna.ids">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.ids.html#missionbio.mosaic.dna.Dna.ids">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.ids.html#missionbio.mosaic.protein.Protein.ids">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.ids.html#missionbio.mosaic.protein.Protein.ids">(Protein method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.is_contiguous.html#missionbio.mosaic.plots.heatmap.Heatmap.is_contiguous">is_contiguous() (Heatmap static method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.is_port_in_use.html#missionbio.mosaic.workflows.copy_number.CopyNumber.is_port_in_use">is_port_in_use() (CopyNumber static method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.is_port_in_use.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.is_port_in_use">(VariantSubcloneTable static method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -787,13 +858,21 @@ title="Fullscreen mode"
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/missionbio.mosaic.constants.LABEL.html#missionbio.mosaic.constants.LABEL">LABEL (in module missionbio.mosaic.constants)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.LABEL.html#missionbio.mosaic.constants.LABEL">LABEL (in module missionbio.mosaic.constants)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.label_lines_trace.html#missionbio.mosaic.plots.heatmap.Heatmap.label_lines_trace">label_lines_trace() (Heatmap method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.label_trace.html#missionbio.mosaic.plots.heatmap.Heatmap.label_trace">label_trace() (Heatmap method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/functions/missionbio.mosaic.io.load.html#missionbio.mosaic.io.load">load() (in module missionbio.mosaic.io)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.plots.lineplot.LinePlot.html#missionbio.mosaic.plots.lineplot.LinePlot">LinePlot (class in missionbio.mosaic.plots.lineplot)</a>
 </li>
-      <li><a href="pages/functions/missionbio.mosaic.io.load_example_dataset.html#missionbio.mosaic.io.load_example_dataset">load_example_dataset() (in module missionbio.mosaic.io)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.lineplot.LinePlot.lines_trace.html#missionbio.mosaic.plots.lineplot.LinePlot.lines_trace">lines_trace() (LinePlot method)</a>
+</li>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.io.load.html#missionbio.mosaic.io.load">load() (in module missionbio.mosaic.io)</a>
+</li>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.io.load_example_dataset.html#missionbio.mosaic.io.load_example_dataset">load_example_dataset() (in module missionbio.mosaic.io)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -801,24 +880,24 @@ title="Fullscreen mode"
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.samplegroup.SampleGroup.merge.html#missionbio.mosaic.samplegroup.SampleGroup.merge">merge() (missionbio.mosaic.samplegroup.SampleGroup method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.samplegroup.SampleGroup.merge.html#missionbio.mosaic.samplegroup.SampleGroup.merge">merge() (SampleGroup method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.samplegroup.SampleGroup.merge_assay.html#missionbio.mosaic.samplegroup.SampleGroup.merge_assay">merge_assay() (missionbio.mosaic.samplegroup.SampleGroup method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.samplegroup.SampleGroup.merge_assay.html#missionbio.mosaic.samplegroup.SampleGroup.merge_assay">merge_assay() (SampleGroup method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.merge_similar_clusters.html#missionbio.mosaic.dna.Dna.merge_similar_clusters">merge_similar_clusters() (missionbio.mosaic.dna.Dna method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.merge_similar_clusters.html#missionbio.mosaic.dna.Dna.merge_similar_clusters">merge_similar_clusters() (Dna method)</a>
 </li>
       <li>
     missionbio.mosaic.constants
 
       <ul>
-        <li><a href="pages/missionbio.mosaic.constants.html#module-missionbio.mosaic.constants">module</a>
+        <li><a href="autosummary_pages/missionbio.mosaic.constants.html#module-missionbio.mosaic.constants">module</a>
 </li>
       </ul></li>
       <li>
     missionbio.mosaic.io
 
       <ul>
-        <li><a href="pages/missionbio.mosaic.io.html#module-missionbio.mosaic.io">module</a>
+        <li><a href="autosummary_pages/missionbio.mosaic.io.html#module-missionbio.mosaic.io">module</a>
 </li>
       </ul></li>
   </ul></td>
@@ -827,47 +906,69 @@ title="Fullscreen mode"
     missionbio.mosaic.utils
 
       <ul>
-        <li><a href="pages/missionbio.mosaic.utils.html#module-missionbio.mosaic.utils">module</a>
+        <li><a href="autosummary_pages/missionbio.mosaic.utils.html#module-missionbio.mosaic.utils">module</a>
 </li>
       </ul></li>
       <li>
     module
 
       <ul>
-        <li><a href="pages/missionbio.mosaic.constants.html#module-missionbio.mosaic.constants">missionbio.mosaic.constants</a>
+        <li><a href="autosummary_pages/missionbio.mosaic.constants.html#module-missionbio.mosaic.constants">missionbio.mosaic.constants</a>
 </li>
-        <li><a href="pages/missionbio.mosaic.io.html#module-missionbio.mosaic.io">missionbio.mosaic.io</a>
+        <li><a href="autosummary_pages/missionbio.mosaic.io.html#module-missionbio.mosaic.io">missionbio.mosaic.io</a>
 </li>
-        <li><a href="pages/missionbio.mosaic.utils.html#module-missionbio.mosaic.utils">missionbio.mosaic.utils</a>
+        <li><a href="autosummary_pages/missionbio.mosaic.utils.html#module-missionbio.mosaic.utils">missionbio.mosaic.utils</a>
 </li>
       </ul></li>
+      <li><a href="autosummary_pages/missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.html#missionbio.mosaic.plots.multi_heatmap.MultiHeatmap">MultiHeatmap (class in missionbio.mosaic.plots.multi_heatmap)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.mutated_cells.html#missionbio.mosaic.dna.Dna.mutated_cells">mutated_cells() (Dna method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.name_id_by_pos.html#missionbio.mosaic.cnv.Cnv.name_id_by_pos">name_id_by_pos() (missionbio.mosaic.cnv.Cnv method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.name_id_by_pos.html#missionbio.mosaic.cnv.Cnv.name_id_by_pos">name_id_by_pos() (Cnv method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.normalize_barcodes.html#missionbio.mosaic.assay._Assay.normalize_barcodes">normalize_barcodes() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.NGT_FILTERED.html#missionbio.mosaic.constants.NGT_FILTERED">NGT_FILTERED (in module missionbio.mosaic.constants)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.node_descriptions.html#missionbio.mosaic.algorithms.compass.COMPASS.node_descriptions">node_descriptions() (COMPASS method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.normalize_barcodes.html#missionbio.mosaic.assay._Assay.normalize_barcodes">normalize_barcodes() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.normalize_barcodes.html#missionbio.mosaic.cnv.Cnv.normalize_barcodes">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.normalize_barcodes.html#missionbio.mosaic.cnv.Cnv.normalize_barcodes">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.normalize_barcodes.html#missionbio.mosaic.dna.Dna.normalize_barcodes">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.normalize_barcodes.html#missionbio.mosaic.dna.Dna.normalize_barcodes">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.normalize_barcodes.html#missionbio.mosaic.protein.Protein.normalize_barcodes">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.normalize_barcodes.html#missionbio.mosaic.protein.Protein.normalize_barcodes">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.normalize_reads.html#missionbio.mosaic.cnv.Cnv.normalize_reads">normalize_reads() (missionbio.mosaic.cnv.Cnv method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.normalize_reads.html#missionbio.mosaic.cnv.Cnv.normalize_reads">normalize_reads() (Cnv method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.normalize_reads.html#missionbio.mosaic.protein.Protein.normalize_reads">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.normalize_reads.html#missionbio.mosaic.protein.Protein.normalize_reads">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/missionbio.mosaic.constants.NORMALIZED_READS.html#missionbio.mosaic.constants.NORMALIZED_READS">NORMALIZED_READS (in module missionbio.mosaic.constants)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.NORMALIZED_READS.html#missionbio.mosaic.constants.NORMALIZED_READS">NORMALIZED_READS (in module missionbio.mosaic.constants)</a>
+</li>
+      <li><a href="autosummary_pages/missionbio.mosaic.algorithms.nsp.NSP.html#missionbio.mosaic.algorithms.nsp.NSP">NSP (class in missionbio.mosaic.algorithms.nsp)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.ORG_BARCODE.html#missionbio.mosaic.constants.ORG_BARCODE">ORG_BARCODE (in module missionbio.mosaic.constants)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.ORIGINAL_ID.html#missionbio.mosaic.constants.ORIGINAL_ID">ORIGINAL_ID (in module missionbio.mosaic.constants)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -875,19 +976,39 @@ title="Fullscreen mode"
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/missionbio.mosaic.constants.PALETTE.html#missionbio.mosaic.constants.PALETTE">PALETTE (in module missionbio.mosaic.constants)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.PALETTE.html#missionbio.mosaic.constants.PALETTE">PALETTE (in module missionbio.mosaic.constants)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.pathscale.html#missionbio.mosaic.dna.Dna.pathscale">pathscale() (missionbio.mosaic.dna.Dna method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.parse_var_id.html#missionbio.mosaic.algorithms.compass.COMPASS.parse_var_id">parse_var_id() (COMPASS static method)</a>
 </li>
-      <li><a href="pages/missionbio.mosaic.constants.PCA_LABEL.html#missionbio.mosaic.constants.PCA_LABEL">PCA_LABEL (in module missionbio.mosaic.constants)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.pathscale.html#missionbio.mosaic.dna.Dna.pathscale">pathscale() (Dna method)</a>
 </li>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.PCA_LABEL.html#missionbio.mosaic.constants.PCA_LABEL">PCA_LABEL (in module missionbio.mosaic.constants)</a>
+</li>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.PLOIDY.html#missionbio.mosaic.constants.PLOIDY">PLOIDY (in module missionbio.mosaic.constants)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.plot.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.plot">plot() (GroupByGenotype method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.nsp.NSP.plot.html#missionbio.mosaic.algorithms.nsp.NSP.plot">(NSP method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.plot_ploidy.html#missionbio.mosaic.cnv.Cnv.plot_ploidy">plot_ploidy() (missionbio.mosaic.cnv.Cnv method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.plot_options.html#missionbio.mosaic.workflows.copy_number.CopyNumber.plot_options">plot_options() (CopyNumber method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.plot_variant_correlation.html#missionbio.mosaic.dna.Dna.plot_variant_correlation">plot_variant_correlation() (missionbio.mosaic.dna.Dna method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.plot_ploidy.html#missionbio.mosaic.cnv.Cnv.plot_ploidy">plot_ploidy() (Cnv method)</a>
 </li>
-      <li><a href="pages/missionbio.mosaic.protein.Protein.html#missionbio.mosaic.protein.Protein">Protein (class in missionbio.mosaic.protein)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.plot_tree.html#missionbio.mosaic.algorithms.compass.COMPASS.plot_tree">plot_tree() (COMPASS method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.plot_variant_correlation.html#missionbio.mosaic.dna.Dna.plot_variant_correlation">plot_variant_correlation() (Dna method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.prep_amplicon_reads.html#missionbio.mosaic.algorithms.compass.COMPASS.prep_amplicon_reads">prep_amplicon_reads() (COMPASS method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.prep_variants.html#missionbio.mosaic.algorithms.compass.COMPASS.prep_variants">prep_variants() (COMPASS method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.prepare_input.html#missionbio.mosaic.algorithms.compass.COMPASS.prepare_input">prepare_input() (COMPASS method)</a>
+</li>
+      <li><a href="autosummary_pages/missionbio.mosaic.protein.Protein.html#missionbio.mosaic.protein.Protein">Protein (class in missionbio.mosaic.protein)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -895,98 +1016,112 @@ title="Fullscreen mode"
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.sample.Sample.raw_counts.html#missionbio.mosaic.sample.Sample.raw_counts">raw_counts() (missionbio.mosaic.sample.Sample method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.raw_counts.html#missionbio.mosaic.sample.Sample.raw_counts">raw_counts() (Sample method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.sample.Sample.raw_heatmaps.html#missionbio.mosaic.sample.Sample.raw_heatmaps">raw_heatmaps() (missionbio.mosaic.sample.Sample method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.raw_heatmaps.html#missionbio.mosaic.sample.Sample.raw_heatmaps">raw_heatmaps() (Sample method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.sample.Sample.read_data.html#missionbio.mosaic.sample.Sample.read_data">read_data() (missionbio.mosaic.sample.Sample method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.read_data.html#missionbio.mosaic.sample.Sample.read_data">read_data() (Sample method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.read_distribution.html#missionbio.mosaic.assay._Assay.read_distribution">read_distribution() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.read_distribution.html#missionbio.mosaic.assay._Assay.read_distribution">read_distribution() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.read_distribution.html#missionbio.mosaic.cnv.Cnv.read_distribution">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.read_distribution.html#missionbio.mosaic.cnv.Cnv.read_distribution">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.read_distribution.html#missionbio.mosaic.dna.Dna.read_distribution">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.read_distribution.html#missionbio.mosaic.dna.Dna.read_distribution">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.read_distribution.html#missionbio.mosaic.protein.Protein.read_distribution">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.read_distribution.html#missionbio.mosaic.protein.Protein.read_distribution">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/missionbio.mosaic.constants.READS.html#missionbio.mosaic.constants.READS">READS (in module missionbio.mosaic.constants)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.READS.html#missionbio.mosaic.constants.READS">READS (in module missionbio.mosaic.constants)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.protein.Protein.reads_to_ab.html#missionbio.mosaic.protein.Protein.reads_to_ab">reads_to_ab() (missionbio.mosaic.protein.Protein method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.reads_to_ab.html#missionbio.mosaic.protein.Protein.reads_to_ab">reads_to_ab() (Protein method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.rename_labels.html#missionbio.mosaic.assay._Assay.rename_labels">rename_labels() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.rename_clones.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.rename_clones">rename_clones() (VariantSubcloneTable method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.rename_labels.html#missionbio.mosaic.assay._Assay.rename_labels">rename_labels() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.rename_labels.html#missionbio.mosaic.cnv.Cnv.rename_labels">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.rename_labels.html#missionbio.mosaic.cnv.Cnv.rename_labels">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.rename_labels.html#missionbio.mosaic.dna.Dna.rename_labels">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.rename_labels.html#missionbio.mosaic.dna.Dna.rename_labels">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.rename_labels.html#missionbio.mosaic.protein.Protein.rename_labels">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.rename_labels.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.rename_labels">(GroupByGenotype method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.rename_labels.html#missionbio.mosaic.protein.Protein.rename_labels">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.rename_sample.html#missionbio.mosaic.assay._Assay.rename_sample">rename_sample() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.rename_sample.html#missionbio.mosaic.assay._Assay.rename_sample">rename_sample() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.rename_sample.html#missionbio.mosaic.cnv.Cnv.rename_sample">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.rename_sample.html#missionbio.mosaic.cnv.Cnv.rename_sample">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.rename_sample.html#missionbio.mosaic.dna.Dna.rename_sample">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.rename_sample.html#missionbio.mosaic.dna.Dna.rename_sample">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.rename_sample.html#missionbio.mosaic.protein.Protein.rename_sample">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.rename_sample.html#missionbio.mosaic.protein.Protein.rename_sample">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.sample.Sample.reset.html#missionbio.mosaic.sample.Sample.reset">reset() (missionbio.mosaic.sample.Sample method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.reset.html#missionbio.mosaic.sample.Sample.reset">reset() (Sample method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.reset_ids.html#missionbio.mosaic.assay._Assay.reset_ids">reset_ids() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.reset_cnv_assay.html#missionbio.mosaic.workflows.copy_number.CopyNumber.reset_cnv_assay">reset_cnv_assay() (CopyNumber method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.reset_ids.html#missionbio.mosaic.assay._Assay.reset_ids">reset_ids() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.reset_ids.html#missionbio.mosaic.cnv.Cnv.reset_ids">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.reset_ids.html#missionbio.mosaic.cnv.Cnv.reset_ids">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.reset_ids.html#missionbio.mosaic.dna.Dna.reset_ids">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.reset_ids.html#missionbio.mosaic.dna.Dna.reset_ids">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.reset_ids.html#missionbio.mosaic.protein.Protein.reset_ids">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.reset_ids.html#missionbio.mosaic.protein.Protein.reset_ids">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.ridgeplot.html#missionbio.mosaic.assay._Assay.ridgeplot">ridgeplot() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.ridgeplot.html#missionbio.mosaic.assay._Assay.ridgeplot">ridgeplot() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.ridgeplot.html#missionbio.mosaic.cnv.Cnv.ridgeplot">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.ridgeplot.html#missionbio.mosaic.cnv.Cnv.ridgeplot">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.ridgeplot.html#missionbio.mosaic.dna.Dna.ridgeplot">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.ridgeplot.html#missionbio.mosaic.dna.Dna.ridgeplot">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.ridgeplot.html#missionbio.mosaic.protein.Protein.ridgeplot">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.ridgeplot.html#missionbio.mosaic.protein.Protein.ridgeplot">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.run_lda.html#missionbio.mosaic.assay._Assay.run_lda">run_lda() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.run.html#missionbio.mosaic.algorithms.compass.COMPASS.run">run() (COMPASS method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.run_lda.html#missionbio.mosaic.cnv.Cnv.run_lda">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.run.html#missionbio.mosaic.workflows.copy_number.CopyNumber.run">(CopyNumber method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.run_lda.html#missionbio.mosaic.dna.Dna.run_lda">(missionbio.mosaic.dna.Dna method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.run_lda.html#missionbio.mosaic.protein.Protein.run_lda">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.run.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.run">(VariantSubcloneTable method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.run_pca.html#missionbio.mosaic.assay._Assay.run_pca">run_pca() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.run_lda.html#missionbio.mosaic.assay._Assay.run_lda">run_lda() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.run_pca.html#missionbio.mosaic.cnv.Cnv.run_pca">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.run_lda.html#missionbio.mosaic.cnv.Cnv.run_lda">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.run_pca.html#missionbio.mosaic.dna.Dna.run_pca">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.run_lda.html#missionbio.mosaic.dna.Dna.run_lda">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.run_pca.html#missionbio.mosaic.protein.Protein.run_pca">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.run_lda.html#missionbio.mosaic.protein.Protein.run_lda">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.run_umap.html#missionbio.mosaic.assay._Assay.run_umap">run_umap() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.run_pca.html#missionbio.mosaic.assay._Assay.run_pca">run_pca() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.run_umap.html#missionbio.mosaic.cnv.Cnv.run_umap">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.run_pca.html#missionbio.mosaic.cnv.Cnv.run_pca">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.run_umap.html#missionbio.mosaic.dna.Dna.run_umap">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.run_pca.html#missionbio.mosaic.dna.Dna.run_pca">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.run_umap.html#missionbio.mosaic.protein.Protein.run_umap">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.run_pca.html#missionbio.mosaic.protein.Protein.run_pca">(Protein method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.run_umap.html#missionbio.mosaic.assay._Assay.run_umap">run_umap() (_Assay method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.run_umap.html#missionbio.mosaic.cnv.Cnv.run_umap">(Cnv method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.run_umap.html#missionbio.mosaic.dna.Dna.run_umap">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.run_umap.html#missionbio.mosaic.protein.Protein.run_umap">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -995,193 +1130,241 @@ title="Fullscreen mode"
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample">Sample (class in missionbio.mosaic.sample)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample">Sample (class in missionbio.mosaic.sample)</a>
 </li>
-      <li><a href="pages/missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup">SampleGroup (class in missionbio.mosaic.samplegroup)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup">SampleGroup (class in missionbio.mosaic.samplegroup)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.samples.html#missionbio.mosaic.assay._Assay.samples">samples() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.samples.html#missionbio.mosaic.assay._Assay.samples">samples() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.samples.html#missionbio.mosaic.cnv.Cnv.samples">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.samples.html#missionbio.mosaic.cnv.Cnv.samples">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.samples.html#missionbio.mosaic.dna.Dna.samples">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.samples.html#missionbio.mosaic.dna.Dna.samples">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.samples.html#missionbio.mosaic.protein.Protein.samples">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.samples.html#missionbio.mosaic.protein.Protein.samples">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/functions/missionbio.mosaic.io.save.html#missionbio.mosaic.io.save">save() (in module missionbio.mosaic.io)</a>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.io.save.html#missionbio.mosaic.io.save">save() (in module missionbio.mosaic.io)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.scale_data.html#missionbio.mosaic.assay._Assay.scale_data">scale_data() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.scale_data.html#missionbio.mosaic.assay._Assay.scale_data">scale_data() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.scale_data.html#missionbio.mosaic.cnv.Cnv.scale_data">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.scale_data.html#missionbio.mosaic.cnv.Cnv.scale_data">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.scale_data.html#missionbio.mosaic.dna.Dna.scale_data">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.scale_data.html#missionbio.mosaic.dna.Dna.scale_data">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.scale_data.html#missionbio.mosaic.protein.Protein.scale_data">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.scale_data.html#missionbio.mosaic.protein.Protein.scale_data">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/missionbio.mosaic.constants.SCALED_LABEL.html#missionbio.mosaic.constants.SCALED_LABEL">SCALED_LABEL (in module missionbio.mosaic.constants)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.SCALED_LABEL.html#missionbio.mosaic.constants.SCALED_LABEL">SCALED_LABEL (in module missionbio.mosaic.constants)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.scatterplot.html#missionbio.mosaic.assay._Assay.scatterplot">scatterplot() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.nsp.NSP.scaling_factor.html#missionbio.mosaic.algorithms.nsp.NSP.scaling_factor">scaling_factor() (NSP method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.scatterplot.html#missionbio.mosaic.assay._Assay.scatterplot">scatterplot() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.scatterplot.html#missionbio.mosaic.cnv.Cnv.scatterplot">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.scatterplot.html#missionbio.mosaic.cnv.Cnv.scatterplot">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.scatterplot.html#missionbio.mosaic.dna.Dna.scatterplot">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.scatterplot.html#missionbio.mosaic.dna.Dna.scatterplot">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.scatterplot.html#missionbio.mosaic.protein.Protein.scatterplot">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.scatterplot.html#missionbio.mosaic.protein.Protein.scatterplot">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.select_columns.html#missionbio.mosaic.assay._Assay.select_columns">select_columns() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.select_columns.html#missionbio.mosaic.assay._Assay.select_columns">select_columns() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.select_columns.html#missionbio.mosaic.cnv.Cnv.select_columns">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.select_columns.html#missionbio.mosaic.cnv.Cnv.select_columns">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.select_columns.html#missionbio.mosaic.dna.Dna.select_columns">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.select_columns.html#missionbio.mosaic.dna.Dna.select_columns">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.select_columns.html#missionbio.mosaic.protein.Protein.select_columns">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.select_columns.html#missionbio.mosaic.protein.Protein.select_columns">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.select_rows.html#missionbio.mosaic.assay._Assay.select_rows">select_rows() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.select_rows.html#missionbio.mosaic.assay._Assay.select_rows">select_rows() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.select_rows.html#missionbio.mosaic.cnv.Cnv.select_rows">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.select_rows.html#missionbio.mosaic.cnv.Cnv.select_rows">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.select_rows.html#missionbio.mosaic.dna.Dna.select_rows">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.select_rows.html#missionbio.mosaic.dna.Dna.select_rows">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.select_rows.html#missionbio.mosaic.protein.Protein.select_rows">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.select_rows.html#missionbio.mosaic.protein.Protein.select_rows">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.set_ids_from_cols.html#missionbio.mosaic.assay._Assay.set_ids_from_cols">set_ids_from_cols() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.selected_variants">selected_variants (VariantSubcloneTable attribute)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.set_ids_from_cols.html#missionbio.mosaic.assay._Assay.set_ids_from_cols">set_ids_from_cols() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.set_ids_from_cols.html#missionbio.mosaic.cnv.Cnv.set_ids_from_cols">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.set_ids_from_cols.html#missionbio.mosaic.cnv.Cnv.set_ids_from_cols">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.set_ids_from_cols.html#missionbio.mosaic.dna.Dna.set_ids_from_cols">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.set_ids_from_cols.html#missionbio.mosaic.dna.Dna.set_ids_from_cols">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.set_ids_from_cols.html#missionbio.mosaic.protein.Protein.set_ids_from_cols">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.set_ids_from_cols.html#missionbio.mosaic.protein.Protein.set_ids_from_cols">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.set_labels.html#missionbio.mosaic.assay._Assay.set_labels">set_labels() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.set_labels.html#missionbio.mosaic.assay._Assay.set_labels">set_labels() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.set_labels.html#missionbio.mosaic.cnv.Cnv.set_labels">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.set_labels.html#missionbio.mosaic.cnv.Cnv.set_labels">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.set_labels.html#missionbio.mosaic.dna.Dna.set_labels">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.set_labels.html#missionbio.mosaic.dna.Dna.set_labels">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.set_labels.html#missionbio.mosaic.protein.Protein.set_labels">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.set_labels.html#missionbio.mosaic.protein.Protein.set_labels">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.set_palette.html#missionbio.mosaic.assay._Assay.set_palette">set_palette() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.lineplot.LinePlot.set_layout.html#missionbio.mosaic.plots.lineplot.LinePlot.set_layout">set_layout() (LinePlot method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.set_palette.html#missionbio.mosaic.assay._Assay.set_palette">set_palette() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.set_palette.html#missionbio.mosaic.cnv.Cnv.set_palette">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.set_palette.html#missionbio.mosaic.cnv.Cnv.set_palette">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.set_palette.html#missionbio.mosaic.dna.Dna.set_palette">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.set_palette.html#missionbio.mosaic.dna.Dna.set_palette">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.set_palette.html#missionbio.mosaic.protein.Protein.set_palette">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.set_palette.html#missionbio.mosaic.protein.Protein.set_palette">(Protein method)</a>
 </li>
       </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.set_port.html#missionbio.mosaic.workflows.copy_number.CopyNumber.set_port">set_port() (CopyNumber class method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.set_port.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.set_port">(VariantSubcloneTable class method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.utils.set_random_seed.html#missionbio.mosaic.utils.set_random_seed">set_random_seed() (in module missionbio.mosaic.utils)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/functions/missionbio.mosaic.utils.set_random_seed.html#missionbio.mosaic.utils.set_random_seed">set_random_seed() (in module missionbio.mosaic.utils)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.set_selected_labels.html#missionbio.mosaic.assay._Assay.set_selected_labels">set_selected_labels() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.set_selected_labels.html#missionbio.mosaic.assay._Assay.set_selected_labels">set_selected_labels() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.set_selected_labels.html#missionbio.mosaic.cnv.Cnv.set_selected_labels">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.set_selected_labels.html#missionbio.mosaic.cnv.Cnv.set_selected_labels">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.set_selected_labels.html#missionbio.mosaic.dna.Dna.set_selected_labels">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.set_selected_labels.html#missionbio.mosaic.dna.Dna.set_selected_labels">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.set_selected_labels.html#missionbio.mosaic.protein.Protein.set_selected_labels">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.set_selected_labels.html#missionbio.mosaic.protein.Protein.set_selected_labels">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.signature.html#missionbio.mosaic.assay._Assay.signature">signature() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.set_ticks.html#missionbio.mosaic.plots.heatmap.Heatmap.set_ticks">set_ticks() (Heatmap static method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.signature.html#missionbio.mosaic.cnv.Cnv.signature">(missionbio.mosaic.cnv.Cnv method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.signature.html#missionbio.mosaic.dna.Dna.signature">(missionbio.mosaic.dna.Dna method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.signature.html#missionbio.mosaic.protein.Protein.signature">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.lineplot.LinePlot.set_ticks.html#missionbio.mosaic.plots.lineplot.LinePlot.set_ticks">(LinePlot static method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.signaturemap.html#missionbio.mosaic.assay._Assay.signaturemap">signaturemap() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.set_xticks.html#missionbio.mosaic.plots.heatmap.Heatmap.set_xticks">set_xticks() (Heatmap method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.signaturemap.html#missionbio.mosaic.cnv.Cnv.signaturemap">(missionbio.mosaic.cnv.Cnv method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.signaturemap.html#missionbio.mosaic.dna.Dna.signaturemap">(missionbio.mosaic.dna.Dna method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.signaturemap.html#missionbio.mosaic.protein.Protein.signaturemap">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.lineplot.LinePlot.set_xticks.html#missionbio.mosaic.plots.lineplot.LinePlot.set_xticks">(LinePlot method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.sort_columns.html#missionbio.mosaic.assay._Assay.sort_columns">sort_columns() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.heatmap.Heatmap.set_yticks.html#missionbio.mosaic.plots.heatmap.Heatmap.set_yticks">set_yticks() (Heatmap method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.setup_callbacks.html#missionbio.mosaic.workflows.copy_number.CopyNumber.setup_callbacks">setup_callbacks() (CopyNumber method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.sort_columns.html#missionbio.mosaic.cnv.Cnv.sort_columns">(missionbio.mosaic.cnv.Cnv method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.sort_columns.html#missionbio.mosaic.dna.Dna.sort_columns">(missionbio.mosaic.dna.Dna method)</a>
-</li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.sort_columns.html#missionbio.mosaic.protein.Protein.sort_columns">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.setup_callbacks.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.setup_callbacks">(VariantSubcloneTable method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.sort_ids.html#missionbio.mosaic.dna.Dna.sort_ids">sort_ids() (missionbio.mosaic.dna.Dna method)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.sort_rows.html#missionbio.mosaic.assay._Assay.sort_rows">sort_rows() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.signature.html#missionbio.mosaic.assay._Assay.signature">signature() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.sort_rows.html#missionbio.mosaic.cnv.Cnv.sort_rows">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.signature.html#missionbio.mosaic.cnv.Cnv.signature">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.sort_rows.html#missionbio.mosaic.dna.Dna.sort_rows">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.signature.html#missionbio.mosaic.dna.Dna.signature">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.sort_rows.html#missionbio.mosaic.protein.Protein.sort_rows">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.signature.html#missionbio.mosaic.protein.Protein.signature">(Protein method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.split.html#missionbio.mosaic.assay._Assay.split">split() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.signaturemap.html#missionbio.mosaic.assay._Assay.signaturemap">signaturemap() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.split.html#missionbio.mosaic.cnv.Cnv.split">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.signaturemap.html#missionbio.mosaic.cnv.Cnv.signaturemap">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.split.html#missionbio.mosaic.dna.Dna.split">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.signaturemap.html#missionbio.mosaic.dna.Dna.signaturemap">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.split.html#missionbio.mosaic.protein.Protein.split">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.signaturemap.html#missionbio.mosaic.protein.Protein.signaturemap">(Protein method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.sample.Sample.split.html#missionbio.mosaic.sample.Sample.split">(missionbio.mosaic.sample.Sample method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.signaturemap.html#missionbio.mosaic.sample.Sample.signaturemap">(Sample method)</a>
 </li>
       </ul></li>
-      <li><a href="pages/functions/missionbio.mosaic.utils.static_fig.html#missionbio.mosaic.utils.static_fig">static_fig() (in module missionbio.mosaic.utils)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.stripplot.html#missionbio.mosaic.assay._Assay.stripplot">stripplot() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.sort_columns.html#missionbio.mosaic.assay._Assay.sort_columns">sort_columns() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.stripplot.html#missionbio.mosaic.cnv.Cnv.stripplot">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.sort_columns.html#missionbio.mosaic.cnv.Cnv.sort_columns">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.stripplot.html#missionbio.mosaic.dna.Dna.stripplot">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.sort_columns.html#missionbio.mosaic.dna.Dna.sort_columns">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.stripplot.html#missionbio.mosaic.protein.Protein.stripplot">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.sort_columns.html#missionbio.mosaic.protein.Protein.sort_columns">(Protein method)</a>
 </li>
       </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.sort_ids.html#missionbio.mosaic.dna.Dna.sort_ids">sort_ids() (Dna method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.sort_rows.html#missionbio.mosaic.assay._Assay.sort_rows">sort_rows() (_Assay method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.sort_rows.html#missionbio.mosaic.cnv.Cnv.sort_rows">(Cnv method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.sort_rows.html#missionbio.mosaic.dna.Dna.sort_rows">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.sort_rows.html#missionbio.mosaic.protein.Protein.sort_rows">(Protein method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.split.html#missionbio.mosaic.assay._Assay.split">split() (_Assay method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.split.html#missionbio.mosaic.cnv.Cnv.split">(Cnv method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.split.html#missionbio.mosaic.dna.Dna.split">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.split.html#missionbio.mosaic.protein.Protein.split">(Protein method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.split.html#missionbio.mosaic.sample.Sample.split">(Sample method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.utils.static_fig.html#missionbio.mosaic.utils.static_fig">static_fig() (in module missionbio.mosaic.utils)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.stop.html#missionbio.mosaic.workflows.copy_number.CopyNumber.stop">stop() (CopyNumber method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.stop.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.stop">(VariantSubcloneTable method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.stripplot.html#missionbio.mosaic.assay._Assay.stripplot">stripplot() (_Assay method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.stripplot.html#missionbio.mosaic.cnv.Cnv.stripplot">(Cnv method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.stripplot.html#missionbio.mosaic.dna.Dna.stripplot">(Dna method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.stripplot.html#missionbio.mosaic.protein.Protein.stripplot">(Protein method)</a>
+</li>
+      </ul></li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.subclone_table.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.subclone_table">subclone_table() (GroupByGenotype method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.test_signature.html#missionbio.mosaic.assay._Assay.test_signature">test_signature() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.test_signature.html#missionbio.mosaic.assay._Assay.test_signature">test_signature() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.test_signature.html#missionbio.mosaic.cnv.Cnv.test_signature">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.test_signature.html#missionbio.mosaic.cnv.Cnv.test_signature">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.test_signature.html#missionbio.mosaic.dna.Dna.test_signature">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.test_signature.html#missionbio.mosaic.dna.Dna.test_signature">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.test_signature.html#missionbio.mosaic.protein.Protein.test_signature">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.test_signature.html#missionbio.mosaic.protein.Protein.test_signature">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/functions/missionbio.mosaic.io.to_zip.html#missionbio.mosaic.io.to_zip">to_zip() (in module missionbio.mosaic.io)</a>
+      <li><a href="autosummary_pages/functions/missionbio.mosaic.io.to_zip.html#missionbio.mosaic.io.to_zip">to_zip() (in module missionbio.mosaic.io)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.plots.bargraph.BarGraph.trace.html#missionbio.mosaic.plots.bargraph.BarGraph.trace">trace() (BarGraph method)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.algorithms.nsp.NSP.transform.html#missionbio.mosaic.algorithms.nsp.NSP.transform">transform() (NSP method)</a>
+</li>
+      <li><a href="autosummary_pages/missionbio.mosaic.plots.fishplot.TreeGraph.html#missionbio.mosaic.plots.fishplot.TreeGraph">TreeGraph (class in missionbio.mosaic.plots.fishplot)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1189,28 +1372,36 @@ title="Fullscreen mode"
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/missionbio.mosaic.constants.UMAP_LABEL.html#missionbio.mosaic.constants.UMAP_LABEL">UMAP_LABEL (in module missionbio.mosaic.constants)</a>
+      <li><a href="autosummary_pages/constants/missionbio.mosaic.constants.UMAP_LABEL.html#missionbio.mosaic.constants.UMAP_LABEL">UMAP_LABEL (in module missionbio.mosaic.constants)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.sample.Sample.umaps.html#missionbio.mosaic.sample.Sample.umaps">umaps() (missionbio.mosaic.sample.Sample method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.sample.Sample.umaps.html#missionbio.mosaic.sample.Sample.umaps">umaps() (Sample method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.update_coloraxis.html#missionbio.mosaic.dna.Dna.update_coloraxis">update_coloraxis() (missionbio.mosaic.dna.Dna static method)</a>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.update_coloraxis.html#missionbio.mosaic.assay._Assay.update_coloraxis">update_coloraxis() (_Assay static method)</a>
+
+      <ul>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.update_coloraxis.html#missionbio.mosaic.cnv.Cnv.update_coloraxis">(Cnv static method)</a>
 </li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.update_coloraxis.html#missionbio.mosaic.dna.Dna.update_coloraxis">(Dna static method)</a>
+</li>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.update_coloraxis.html#missionbio.mosaic.protein.Protein.update_coloraxis">(Protein static method)</a>
+</li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.violinplot.html#missionbio.mosaic.assay._Assay.violinplot">violinplot() (missionbio.mosaic.assay._Assay method)</a>
+      <li><a href="autosummary_pages/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable">VariantSubcloneTable (class in missionbio.mosaic.workflows.variant_subclone_table)</a>
+</li>
+      <li><a href="autosummary_pages/methods/missionbio.mosaic.assay._Assay.violinplot.html#missionbio.mosaic.assay._Assay.violinplot">violinplot() (_Assay method)</a>
 
       <ul>
-        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.violinplot.html#missionbio.mosaic.cnv.Cnv.violinplot">(missionbio.mosaic.cnv.Cnv method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.cnv.Cnv.violinplot.html#missionbio.mosaic.cnv.Cnv.violinplot">(Cnv method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.violinplot.html#missionbio.mosaic.dna.Dna.violinplot">(missionbio.mosaic.dna.Dna method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.dna.Dna.violinplot.html#missionbio.mosaic.dna.Dna.violinplot">(Dna method)</a>
 </li>
-        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.violinplot.html#missionbio.mosaic.protein.Protein.violinplot">(missionbio.mosaic.protein.Protein method)</a>
+        <li><a href="autosummary_pages/methods/missionbio.mosaic.protein.Protein.violinplot.html#missionbio.mosaic.protein.Protein.violinplot">(Protein method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -1218,36 +1409,73 @@ title="Fullscreen mode"
 
 
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By Saurabh Parikh<br/>
-  
-      &copy; Copyright 2021, Mission Bio.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By Saurabh Parikh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2021, Mission Bio.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

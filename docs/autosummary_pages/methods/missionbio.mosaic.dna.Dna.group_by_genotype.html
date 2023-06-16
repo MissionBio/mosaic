@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Dna.group_by_genotype &#8212; Mosaic v3.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'autosummary_pages/methods/missionbio.mosaic.dna.Dna.group_by_genotype';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">Mosaic v3.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pages/introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/data_structure.html">Data structure</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/vignettes.html">Vignettes</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/overview.html">Overview of mosaic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/filtering.html">Filtering barcodes and ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/cnv.html">Manual CNV analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/plot-customizations.html">Plot customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/multi-sample-analysis.html">Multisample analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/additional-plots-and-customizations.html">Additional plots and customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interactive Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.workflows.copy_number.CopyNumber.html">CopyNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html">VariantSubcloneTable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.nsp.NSP.html">NSP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Custom Plots</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.plots.heatmap.Heatmap.html">Heatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.plots.lineplot.LinePlot.html">LinePlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.plots.bargraph.BarGraph.html">BarGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.html">MultiHeatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.plots.fishplot.TreeGraph.html">TreeGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.plots.fishplot.Fishplot.html">Fishplot</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/autosummary_pages/methods/missionbio.mosaic.dna.Dna.group_by_genotype.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Dna.group_by_genotype</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="dna-group-by-genotype">
+<h1>Dna.group_by_genotype<a class="headerlink" href="#dna-group-by-genotype" title="Permalink to this headline">#</a></h1>
+<dl class="py method">
+<dt class="sig sig-object py" id="missionbio.mosaic.dna.Dna.group_by_genotype">
+<span class="sig-prename descclassname"><span class="pre">Dna.</span></span><span class="sig-name descname"><span class="pre">group_by_genotype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NGT'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_missing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ado_score</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_clone_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_zygosity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_kind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'collapsed'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.group_by_genotype" title="Permalink to this definition">#</a></dt>
+<dd><p>Clusters cells into clones based on the provided variants
+and returns a dataframe of per-clone and per-variant statistics.
+The identified clone labels are stored in the ‘LABEL’ layer.
+This algorithm also takes into consideration allele dropout out (ADO)
+to identify potential false positive clones.</p>
+<p><strong>Algorithm details</strong></p>
+<p>In an ADO event HET goes to WT and HOM for a given
+variant in a subset of the cells. Here, the HET clone is
+called the parent clone, the HOM and WT clones are
+the ADO clones, together called the sister clones.</p>
+<p>The parent and sister clones will be <cite>np.nan</cite> if the
+score is zero. Otherwise, it is the name of the clone
+from which the subclone was obtained due to an ADO event.</p>
+<p>The score for each subclone measures the possibility that
+it’s a flase positive subclone obtained due to an ADO
+event. The score is 0 if it unlikely to be a clone due
+to ADO and 1 if it is highly likely to be an ADO clone.</p>
+<dl class="simple">
+<dt>The score takes into account the following metrics.</dt><dd><ol class="arabic simple">
+<li><p>NGT values of the clones</p></li>
+<li><p>Relative proportions of the clones</p></li>
+<li><p>Absolute proportions of the clones (uses min_clone_size as a parameter)</p></li>
+<li><p>Mean GQ of the clones</p></li>
+<li><p>Mean DP of the clones</p></li>
+</ol>
+</dd>
+<dt>The score is calculated using four sub scores.</dt><dd><p><code class="docutils literal notranslate"><span class="pre">score</span> <span class="pre">=</span> <span class="pre">(ss</span> <span class="pre">+</span> <span class="pre">ds</span> <span class="pre">+</span> <span class="pre">gs)</span> <span class="pre">*</span> <span class="pre">ps</span></code></p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><cite>ss - sister score (0 - 0.8)</cite></dt><dd><p>It measures the proportion of the clone
+with resepect to its sister clone. This
+score is closer to 0.8 when the sister clones
+have similar proportions and exactly 0.8 when
+their proportions are within the min_clone_size.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>ds - DP score (0 - 0.1)</cite></dt><dd><p>It measures the mean DP of the clone
+with resepect to its parent clone. It is
+closer to 0.1 if the DP of the clone is
+lower than the parents’ DP.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>gs - GQ score (0 - 0.1)</cite></dt><dd><p>It measures the mean GQ of the clone
+with resepect to its parent clone. It is
+closer to 0.1 if the GQ of the clone is
+lowert than the parents’ GQ.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><cite>ps - parent score (0 - 1)</cite></dt><dd><p>It measures the proportion of the clone with
+respect to the parent clone. This score is closer
+to 1 the larger the parent is compared to the
+clone, and closer to 0 the smaller the parent
+compared to the clone.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+<dl class="field-list">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>features</strong><span class="classifier">Sequence</span></dt><dd><p>The features which are to be considered while
+allocating the groups formed by the genotype.</p>
+</dd>
+<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>Name of the layer used to count the cell types.
+Expected values are NGT or NGT_FILTERED as obtained
+from the <a class="reference internal" href="missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants" title="missionbio.mosaic.dna.Dna.filter_variants"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dna.filter_variants()</span></code></a> method.</p>
+</dd>
+<dt><strong>group_missing</strong><span class="classifier">bool</span></dt><dd><p>Whether the clusters caused due to missing values
+are merged together under one cluster named ‘Missing’.</p>
+</dd>
+<dt><strong>max_ado_score</strong><span class="classifier">float [0, 1]</span></dt><dd><p>The maximum ADO score of a clone before it is grouped
+into the “ADO” clone category.</p>
+</dd>
+<dt><strong>min_clone_size</strong><span class="classifier">float [0, 100]</span></dt><dd><p>The minimumum proportion of total cells to be present
+in the clone to count it as a separate clone.</p>
+</dd>
+<dt><strong>ignore_zygosity</strong><span class="classifier">bool</span></dt><dd><p>Whether HET and HOM are considered the same or not</p>
+</dd>
+<dt><strong>return_plot</strong><span class="classifier">bool</span></dt><dd><p>If True, a plot showing the ADO identification process
+is returned along with the ADO data.</p>
+</dd>
+<dt><strong>plot_kind</strong><span class="classifier">str</span></dt><dd><p>The clones that should be shown. It should
+be one of {“all”, “collapsed”}.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl>
+<dt>pd.DataFrame:</dt><dd><p><cite>None</cite> is returned if <cite>ignore_zygosity</cite> is True or
+<cite>group_missing</cite> is False otherwise a pandas dataframe
+is returned.</p>
+<p><strong>Columns:</strong></p>
+<ul class="simple">
+<li><p>The initial columns in the dataframe contain per-variant information.
+Each cell contains the genotype and average variant allele frequency
+for the respective clone.</p></li>
+<li><p>The next set of columns show the number of cells (and %) in each
+clone, with one column for all samples combined (<cite>Total Cell Number</cite>)
+and separate columns for each individual sample (e.g. <cite>Sample-A Cell Number</cite>).</p></li>
+<li><p>The last three columns contain data related to identifying false
+positive ADO clones. The columns are: parent clone, sister ADO
+clone(s), and a score. The indices are the subclone names.</p></li>
+</ul>
+<p><strong>Additional rows:</strong></p>
+<ul class="simple">
+<li><p>The second-to-last row shows the percentage of cells where the
+variant is missing.</p></li>
+<li><p>The last row displays statistics for small subclones (determeined
+by the <cite>min_clone_size</cite> parameter): the number and percentage of
+total cells.</p></li>
+</ul>
+</dd>
+<dt>go.Figure:</dt><dd><p>Also returns a plot if <cite>return_plot=True</cite></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Saurabh Parikh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2021, Mission Bio.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
