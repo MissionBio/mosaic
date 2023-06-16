@@ -1,7 +1,7 @@
 :orphan:
 
-VariantSubcloneTable.is\_port\_in\_use
-======================================
+missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.is\_port\_in\_use
+===========================================================================================
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

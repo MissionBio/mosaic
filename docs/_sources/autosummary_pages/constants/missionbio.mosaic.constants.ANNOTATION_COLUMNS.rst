@@ -1,7 +1,7 @@
 :orphan:
 
-ANNOTATION\_COLUMNS
-===================
+missionbio.mosaic.constants.ANNOTATION\_COLUMNS
+===============================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

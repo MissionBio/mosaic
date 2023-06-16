@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.run\_lda
-================
+missionbio.mosaic.assay.\_Assay.run\_lda
+========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

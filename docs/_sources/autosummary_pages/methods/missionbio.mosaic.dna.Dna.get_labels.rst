@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.get\_labels
-===============
+missionbio.mosaic.dna.Dna.get\_labels
+=====================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

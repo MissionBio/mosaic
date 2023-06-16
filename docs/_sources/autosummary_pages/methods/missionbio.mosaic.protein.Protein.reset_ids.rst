@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.reset\_ids
-==================
+missionbio.mosaic.protein.Protein.reset\_ids
+============================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.filter\_barcodes
-====================
+missionbio.mosaic.dna.Dna.filter\_barcodes
+==========================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

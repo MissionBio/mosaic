@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.set\_selected\_labels
-=============================
+missionbio.mosaic.assay.\_Assay.set\_selected\_labels
+=====================================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

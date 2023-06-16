@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.run\_pca
-================
+missionbio.mosaic.protein.Protein.run\_pca
+==========================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

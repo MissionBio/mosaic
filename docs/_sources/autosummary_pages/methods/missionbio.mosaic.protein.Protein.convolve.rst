@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.convolve
-================
+missionbio.mosaic.protein.Protein.convolve
+==========================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

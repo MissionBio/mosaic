@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.feature\_scatter
-========================
+missionbio.mosaic.assay.\_Assay.feature\_scatter
+================================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

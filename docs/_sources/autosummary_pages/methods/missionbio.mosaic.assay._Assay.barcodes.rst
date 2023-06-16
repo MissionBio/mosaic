@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.barcodes
-================
+missionbio.mosaic.assay.\_Assay.barcodes
+========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

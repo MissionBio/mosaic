@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.set\_ids\_from\_cols
-============================
+missionbio.mosaic.assay.\_Assay.set\_ids\_from\_cols
+====================================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

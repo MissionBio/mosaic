@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.cells\_per\_ab
-======================
+missionbio.mosaic.protein.Protein.cells\_per\_ab
+================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.del\_metadata
-=====================
+missionbio.mosaic.assay.\_Assay.del\_metadata
+=============================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

@@ -1,7 +1,7 @@
 :orphan:
 
-load\_example\_dataset
-======================
+missionbio.mosaic.io.load\_example\_dataset
+===========================================
 
 .. currentmodule:: missionbio.mosaic.io
 

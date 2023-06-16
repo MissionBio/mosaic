@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.\_\_init\_\_
-====================
+missionbio.mosaic.protein.Protein.\_\_init\_\_
+==============================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

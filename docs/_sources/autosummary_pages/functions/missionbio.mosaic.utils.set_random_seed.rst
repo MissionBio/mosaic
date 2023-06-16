@@ -1,7 +1,7 @@
 :orphan:
 
-set\_random\_seed
-=================
+missionbio.mosaic.utils.set\_random\_seed
+=========================================
 
 .. currentmodule:: missionbio.mosaic.utils
 

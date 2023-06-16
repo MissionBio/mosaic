@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.run\_umap
-=================
+missionbio.mosaic.assay.\_Assay.run\_umap
+=========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

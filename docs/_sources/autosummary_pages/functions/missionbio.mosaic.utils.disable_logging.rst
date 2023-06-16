@@ -1,7 +1,7 @@
 :orphan:
 
-disable\_logging
-================
+missionbio.mosaic.utils.disable\_logging
+========================================
 
 .. currentmodule:: missionbio.mosaic.utils
 

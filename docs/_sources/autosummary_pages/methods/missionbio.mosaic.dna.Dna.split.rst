@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.split
-=========
+missionbio.mosaic.dna.Dna.split
+===============================
 
 .. currentmodule:: missionbio.mosaic.dna
 

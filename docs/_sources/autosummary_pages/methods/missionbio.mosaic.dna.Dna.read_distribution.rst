@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.read\_distribution
-======================
+missionbio.mosaic.dna.Dna.read\_distribution
+============================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

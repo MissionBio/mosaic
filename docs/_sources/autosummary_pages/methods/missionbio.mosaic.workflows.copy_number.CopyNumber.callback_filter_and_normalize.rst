@@ -1,7 +1,7 @@
 :orphan:
 
-CopyNumber.callback\_filter\_and\_normalize
-===========================================
+missionbio.mosaic.workflows.copy\_number.CopyNumber.callback\_filter\_and\_normalize
+====================================================================================
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

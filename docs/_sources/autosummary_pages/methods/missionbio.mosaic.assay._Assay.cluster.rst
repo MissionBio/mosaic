@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.cluster
-===============
+missionbio.mosaic.assay.\_Assay.cluster
+=======================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

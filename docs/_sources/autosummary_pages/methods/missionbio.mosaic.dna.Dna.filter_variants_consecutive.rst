@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.filter\_variants\_consecutive
-=================================
+missionbio.mosaic.dna.Dna.filter\_variants\_consecutive
+=======================================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

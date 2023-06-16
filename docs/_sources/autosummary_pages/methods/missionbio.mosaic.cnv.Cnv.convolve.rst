@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.convolve
-============
+missionbio.mosaic.cnv.Cnv.convolve
+==================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Heatmap.set\_ticks
-==================
+missionbio.mosaic.plots.heatmap.Heatmap.set\_ticks
+==================================================
 
 .. currentmodule:: missionbio.mosaic.plots.heatmap
 

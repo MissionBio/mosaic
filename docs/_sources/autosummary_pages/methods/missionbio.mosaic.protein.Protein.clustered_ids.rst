@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.clustered\_ids
-======================
+missionbio.mosaic.protein.Protein.clustered\_ids
+================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

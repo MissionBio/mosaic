@@ -1,7 +1,7 @@
 :orphan:
 
-COMPASS.parse\_var\_id
-======================
+missionbio.mosaic.algorithms.compass.COMPASS.parse\_var\_id
+===========================================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

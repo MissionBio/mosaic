@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.add\_extension
-======================
+missionbio.mosaic.protein.Protein.add\_extension
+================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

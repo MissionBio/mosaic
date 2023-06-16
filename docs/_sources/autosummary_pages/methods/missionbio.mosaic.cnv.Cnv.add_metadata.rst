@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.add\_metadata
-=================
+missionbio.mosaic.cnv.Cnv.add\_metadata
+=======================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

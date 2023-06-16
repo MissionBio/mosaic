@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Dna.run_pca &#8212; Mosaic v3.0 documentation</title>
+    <title>missionbio.mosaic.dna.Dna.run_pca &#8212; Mosaic v3.0 documentation</title>
   
   
   
@@ -123,7 +123,6 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../pages/introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/data_structure.html">Data structure</a></li>
@@ -137,6 +136,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/help.html">Additional resources</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
@@ -306,7 +307,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Dna.run_pca</h1>
+    <h1>missionbio.mosaic.dna.Dna.run_pca</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -320,8 +321,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="dna-run-pca">
-<h1>Dna.run_pca<a class="headerlink" href="#dna-run-pca" title="Permalink to this headline">#</a></h1>
+  <section id="missionbio-mosaic-dna-dna-run-pca">
+<h1>missionbio.mosaic.dna.Dna.run_pca<a class="headerlink" href="#missionbio-mosaic-dna-dna-run-pca" title="Permalink to this headline">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.dna.Dna.run_pca">
 <span class="sig-prename descclassname"><span class="pre">Dna.</span></span><span class="sig-name descname"><span class="pre">run_pca</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'pca'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.run_pca" title="Permalink to this definition">#</a></dt>
@@ -331,7 +332,7 @@ document.write(`
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>attribute</strong><span class="classifier">Union[str, np.ndarray]</span></dt><dd><p>The attribute to be used for PCA. Uses
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">get_attribute()</span></code> to retrieve
 the values constrained by <cite>row</cite>.</p>
 </dd>
 <dt><strong>components</strong><span class="classifier">int</span></dt><dd><p>The number of PCA components to reduce to.</p>

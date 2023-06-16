@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.ridgeplot
-=============
+missionbio.mosaic.cnv.Cnv.ridgeplot
+===================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

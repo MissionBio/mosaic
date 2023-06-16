@@ -1,7 +1,7 @@
 :orphan:
 
-LinePlot.\_\_init\_\_
-=====================
+missionbio.mosaic.plots.lineplot.LinePlot.\_\_init\_\_
+======================================================
 
 .. currentmodule:: missionbio.mosaic.plots.lineplot
 

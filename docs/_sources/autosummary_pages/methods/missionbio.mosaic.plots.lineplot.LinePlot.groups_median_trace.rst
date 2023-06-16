@@ -1,7 +1,7 @@
 :orphan:
 
-LinePlot.groups\_median\_trace
-==============================
+missionbio.mosaic.plots.lineplot.LinePlot.groups\_median\_trace
+===============================================================
 
 .. currentmodule:: missionbio.mosaic.plots.lineplot
 

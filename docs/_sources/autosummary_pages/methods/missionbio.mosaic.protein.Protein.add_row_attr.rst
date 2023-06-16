@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.add\_row\_attr
-======================
+missionbio.mosaic.protein.Protein.add\_row\_attr
+================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

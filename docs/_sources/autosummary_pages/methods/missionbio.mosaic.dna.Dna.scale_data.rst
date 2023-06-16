@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.scale\_data
-===============
+missionbio.mosaic.dna.Dna.scale\_data
+=====================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

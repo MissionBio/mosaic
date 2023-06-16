@@ -125,7 +125,6 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_structure.html">Data structure</a></li>
@@ -139,6 +138,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Additional resources</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
@@ -324,73 +325,53 @@ document.write(`
                   
   <section id="vignettes">
 <span id="id1"></span><h1>Vignettes<a class="headerlink" href="#vignettes" title="Permalink to this headline">#</a></h1>
+<p>A collection of Jupyter notebooks demonstrating the use of the <cite>mosaic</cite> package. These
+are not meant to be representative of all the functionality of the package, but rather
+to provide a starting point for users to explore the package and its capabilities. The
+notebooks are meant to be read in the order they are listed below, as they build on
+each other.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../autosummary_pages/functions/missionbio.mosaic.io.load_example_dataset.html#missionbio.mosaic.io.load_example_dataset" title="missionbio.mosaic.io.load_example_dataset"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load_example_dataset()</span></code></a> is used in various vignettes. This
+downloads a small example dataset from the Mission Bio GitHub. It can be replaced with
+<a class="reference internal" href="../autosummary_pages/functions/missionbio.mosaic.io.load.html#missionbio.mosaic.io.load" title="missionbio.mosaic.io.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> to load a dataset from a local directory.</p>
+</div>
+<table class="colwidths-given table" id="id2">
+<caption><span class="caption-text">Notebooks</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Vignette Link</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="../notebooks/overview.html">Overview</a></p></td>
+<td><p>Overview of the package and its functionality</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="../notebooks/filtering.html">Filtering</a></p></td>
+<td><p>Filtering the data and plotting the results</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="../notebooks/cnv.html">CNV</a></p></td>
+<td><p>Plotting copy number data</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="../notebooks/plot-customizations.html">Plot customizations</a></p></td>
+<td><p>Options to customize the plots</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="../notebooks/multi-sample-analysis.html">Multi sample analysis</a></p></td>
+<td><p>Performing multi-sample analysis</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="../notebooks/additional-plots-and-customizations.html">Additional plots and code</a></p></td>
+<td><p>Additional plots not directly available in mosaic.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="../notebooks/code-snippets.html">Code snippets</a></p></td>
+<td><p>Snippets of code showcasing various features of the package</p></td>
+</tr>
+</tbody>
+</table>
 <div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/overview.html">Overview of mosaic</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html#data-structure">Data Structure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html#dna-analysis">DNA Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html#cnv-analysis">CNV Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html#protein-analysis">Protein Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html#statistical-significance">Statistical Significance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html#combined-visualizations">Combined Visualizations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html#saving">Saving</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/filtering.html">Filtering barcodes and ids</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/filtering.html#filtering-assays">Filtering assays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/filtering.html#filtering-the-entire-sample">Filtering the entire sample</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/cnv.html">Manual CNV analysis</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/cnv.html#filtering-amplicons">Filtering amplicons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/cnv.html#normalization-and-ploidy-computation">Normalization and ploidy computation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/cnv.html#visualizations">Visualizations</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/plot-customizations.html">Plot customizations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/plot-customizations.html#configuration-options">Configuration options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/plot-customizations.html#updating-the-colors-for-plots">Updating the colors for plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/plot-customizations.html#scaling-the-plots">Scaling the plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/plot-customizations.html#smoothening-the-values">Smoothening the values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/plot-customizations.html#filtering-the-data">Filtering the data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/plot-customizations.html#resetting-the-configuration">Resetting the configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/plot-customizations.html#saving-the-plots">Saving the plots</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/multi-sample-analysis.html">Multisample analysis</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/multi-sample-analysis.html#setup">Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/multi-sample-analysis.html#applying-functions">Applying functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/multi-sample-analysis.html#drawing-figures">Drawing figures</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/multi-sample-analysis.html#multisample-plots">Multisample plots</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html">Additional plots and customizations</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#load-in-dependencies">Load in dependencies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#load-in-data">Load in data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#gq-violin-plots">GQ violin plots</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#stacked-bar-graph-for-multi-sample-analysis">Stacked bar graph for multi-sample analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#reads-per-amplicon">Reads per amplicon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#count-barcodes-with-at-least-one-mutation">Count barcodes with at least one mutation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#custom-cluster-order">Custom cluster order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#custom-heatmap-legend">Custom heatmap legend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#perform-cnv-analysis-on-your-data">Perform CNV analysis on your data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#p-value-chart-per-gene">P-value chart per gene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#calculate-an-average-p-value-per-gene">Calculate an average P-value per gene</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#protein-read-distribution-tool">Protein read distribution tool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#plot-a-joint-scatterplot-and-histogram">Plot a joint scatterplot and histogram</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#cnv-signature-per-chromosome">CNV signature per chromosome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html#save-output-for-one-clone">Save output for one clone</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/code-snippets.html">Code Snippets</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/code-snippets.html#annotate-your-variants">Annotate your variants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/code-snippets.html#multi-assay-heatmap">Multi-assay heatmap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/code-snippets.html#fishplot-to-visualize-clonal-evolution">Fishplot to visualize clonal evolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/code-snippets.html#group-cells-by-a-select-number-of-dna-variants">Group cells by a select number of DNA variants</a></li>
-</ul>
-</li>
-</ul>
 </div>
 </section>
 

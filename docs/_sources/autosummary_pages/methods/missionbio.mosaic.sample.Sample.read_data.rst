@@ -1,7 +1,7 @@
 :orphan:
 
-Sample.read\_data
-=================
+missionbio.mosaic.sample.Sample.read\_data
+==========================================
 
 .. currentmodule:: missionbio.mosaic.sample
 

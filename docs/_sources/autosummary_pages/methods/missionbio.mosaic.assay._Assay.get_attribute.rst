@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.get\_attribute
-======================
+missionbio.mosaic.assay.\_Assay.get\_attribute
+==============================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

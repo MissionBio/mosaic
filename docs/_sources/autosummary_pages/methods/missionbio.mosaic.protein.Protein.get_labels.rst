@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.get\_labels
-===================
+missionbio.mosaic.protein.Protein.get\_labels
+=============================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

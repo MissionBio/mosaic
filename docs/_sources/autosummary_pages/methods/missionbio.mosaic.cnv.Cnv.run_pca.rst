@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.run\_pca
-============
+missionbio.mosaic.cnv.Cnv.run\_pca
+==================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

@@ -1,7 +1,7 @@
 :orphan:
 
-LinePlot.draw
-=============
+missionbio.mosaic.plots.lineplot.LinePlot.draw
+==============================================
 
 .. currentmodule:: missionbio.mosaic.plots.lineplot
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Heatmap.is\_contiguous
-======================
+missionbio.mosaic.plots.heatmap.Heatmap.is\_contiguous
+======================================================
 
 .. currentmodule:: missionbio.mosaic.plots.heatmap
 

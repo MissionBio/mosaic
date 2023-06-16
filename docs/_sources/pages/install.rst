@@ -1,24 +1,40 @@
 Installation
 =============
 
-Detailed Instructions
+Installer (Preferred)
 ---------------------
 
-Mosaic is available for installation through the `missionbio conda channel <https://anaconda.org/missionbio>`_.
+The installer for Mosaic can be downloaded from the `Mission Bio Portal <https://portal.missionbio.com/>`_.
+This is an interactive installer for Mac and Windows, and a shell script for Linux. It has
+all the packages in it and doesn't require an internet connection to install.
+
+Installing using conda
+----------------------
+
+Although this method is prone to errors due to updates to dependencies of mosaic causing incompatiblity,
+it is possible to install Mosaic through the `missionbio conda channel <https://anaconda.org/missionbio>`_.
 
 1. Install Anaconda
     First install the appropriate version of anaconda for your device from the `Anaconda page <https://www.anaconda.com/products/distribution>`_
 
-2. Install Mosaic
+2. Ensure that the `libmamba` solver is being used:
+    The `libmamba <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ solver is
+    a new dependency solver that is much faster than the default solver. Install it using the following:
+
+   .. code-block:: bash
+
+      > conda install -n base conda-libmamba-solver
+      > conda config --set channel_priority strict
+      > conda config --set solver libmamba
+
+3. Install Mosaic
     Following the successful installation of Anaconda, open your console/terminal and run the following commands:
 
     .. code-block::
 
-        > conda create --name mosaic -c missionbio -c plotly -c conda-forge missionbio.mosaic notebook
-        > conda activate mosaic
-        > jupyter notebook
+        > conda create --name mosaic -c missionbio -c conda-forge missionbio.mosaic
 
-3. Open mosaic environment and jupyter notebook:
+4. Open mosaic environment and jupyter notebook:
     When you want to access your mosaic environment and open a jupyter notebook, always run the following
     commands in your console/terminal. Be sure to keep the console/terminal open and running the entire time
     you are using your notebook, however, you can minimize this window during use. If you are properly in

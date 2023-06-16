@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.run\_pca
-================
+missionbio.mosaic.assay.\_Assay.run\_pca
+========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

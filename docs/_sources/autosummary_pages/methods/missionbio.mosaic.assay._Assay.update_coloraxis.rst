@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.update\_coloraxis
-=========================
+missionbio.mosaic.assay.\_Assay.update\_coloraxis
+=================================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

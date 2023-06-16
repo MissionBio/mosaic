@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.stripplot
-=================
+missionbio.mosaic.assay.\_Assay.stripplot
+=========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

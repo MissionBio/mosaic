@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.violinplot
-==================
+missionbio.mosaic.assay.\_Assay.violinplot
+==========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

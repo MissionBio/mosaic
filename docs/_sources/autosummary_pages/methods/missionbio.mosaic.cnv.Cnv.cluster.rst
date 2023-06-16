@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.cluster
-===========
+missionbio.mosaic.cnv.Cnv.cluster
+=================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

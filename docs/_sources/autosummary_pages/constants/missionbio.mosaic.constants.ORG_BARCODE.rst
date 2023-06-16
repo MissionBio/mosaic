@@ -1,7 +1,7 @@
 :orphan:
 
-ORG\_BARCODE
-============
+missionbio.mosaic.constants.ORG\_BARCODE
+========================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

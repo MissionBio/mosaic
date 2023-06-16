@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.reads\_to\_ab
-=====================
+missionbio.mosaic.protein.Protein.reads\_to\_ab
+===============================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

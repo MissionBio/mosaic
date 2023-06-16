@@ -1,7 +1,7 @@
 :orphan:
 
-Sample.common\_barcodes
-=======================
+missionbio.mosaic.sample.Sample.common\_barcodes
+================================================
 
 .. currentmodule:: missionbio.mosaic.sample
 

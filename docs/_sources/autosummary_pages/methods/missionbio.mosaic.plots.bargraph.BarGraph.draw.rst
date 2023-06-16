@@ -1,7 +1,7 @@
 :orphan:
 
-BarGraph.draw
-=============
+missionbio.mosaic.plots.bargraph.BarGraph.draw
+==============================================
 
 .. currentmodule:: missionbio.mosaic.plots.bargraph
 

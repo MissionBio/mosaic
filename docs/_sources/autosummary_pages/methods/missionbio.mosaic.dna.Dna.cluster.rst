@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.cluster
-===========
+missionbio.mosaic.dna.Dna.cluster
+=================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

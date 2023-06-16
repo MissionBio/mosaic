@@ -1,7 +1,7 @@
 :orphan:
 
-COMPASS.prep\_amplicon\_reads
-=============================
+missionbio.mosaic.algorithms.compass.COMPASS.prep\_amplicon\_reads
+==================================================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

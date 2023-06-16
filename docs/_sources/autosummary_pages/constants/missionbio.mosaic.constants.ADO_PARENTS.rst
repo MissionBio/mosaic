@@ -1,7 +1,7 @@
 :orphan:
 
-ADO\_PARENTS
-============
+missionbio.mosaic.constants.ADO\_PARENTS
+========================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

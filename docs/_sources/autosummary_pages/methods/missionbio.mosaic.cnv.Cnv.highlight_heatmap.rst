@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.highlight\_heatmap
-======================
+missionbio.mosaic.cnv.Cnv.highlight\_heatmap
+============================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

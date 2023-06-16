@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.sort\_rows
-==================
+missionbio.mosaic.assay.\_Assay.sort\_rows
+==========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

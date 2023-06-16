@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.\_\_init\_\_
-================
+missionbio.mosaic.dna.Dna.\_\_init\_\_
+======================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

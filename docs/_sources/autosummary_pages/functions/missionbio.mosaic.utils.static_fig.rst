@@ -1,7 +1,7 @@
 :orphan:
 
-static\_fig
-===========
+missionbio.mosaic.utils.static\_fig
+===================================
 
 .. currentmodule:: missionbio.mosaic.utils
 

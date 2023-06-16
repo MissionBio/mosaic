@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.drop
-========
+missionbio.mosaic.cnv.Cnv.drop
+==============================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

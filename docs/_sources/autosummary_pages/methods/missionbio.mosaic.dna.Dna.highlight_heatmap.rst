@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.highlight\_heatmap
-======================
+missionbio.mosaic.dna.Dna.highlight\_heatmap
+============================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

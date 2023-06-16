@@ -1,7 +1,7 @@
 :orphan:
 
-VariantSubcloneTable.get\_gene\_and\_gt\_names
-==============================================
+missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.get\_gene\_and\_gt\_names
+===================================================================================================
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

@@ -1,7 +1,7 @@
 :orphan:
 
-COMPASS.extract\_output
-=======================
+missionbio.mosaic.algorithms.compass.COMPASS.extract\_output
+============================================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

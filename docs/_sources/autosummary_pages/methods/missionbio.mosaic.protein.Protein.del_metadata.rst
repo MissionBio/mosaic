@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.del\_metadata
-=====================
+missionbio.mosaic.protein.Protein.del\_metadata
+===============================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

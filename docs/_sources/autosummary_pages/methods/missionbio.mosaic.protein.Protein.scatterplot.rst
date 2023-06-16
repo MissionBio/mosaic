@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.scatterplot
-===================
+missionbio.mosaic.protein.Protein.scatterplot
+=============================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

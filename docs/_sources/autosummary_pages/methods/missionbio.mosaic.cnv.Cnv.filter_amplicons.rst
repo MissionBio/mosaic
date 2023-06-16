@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.filter\_amplicons
-=====================
+missionbio.mosaic.cnv.Cnv.filter\_amplicons
+===========================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

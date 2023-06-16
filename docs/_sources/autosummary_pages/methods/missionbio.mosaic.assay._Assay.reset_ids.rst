@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.reset\_ids
-==================
+missionbio.mosaic.assay.\_Assay.reset\_ids
+==========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

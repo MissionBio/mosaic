@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.update\_coloraxis
-=====================
+missionbio.mosaic.cnv.Cnv.update\_coloraxis
+===========================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

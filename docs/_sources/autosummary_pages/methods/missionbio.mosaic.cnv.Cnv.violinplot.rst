@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.violinplot
-==============
+missionbio.mosaic.cnv.Cnv.violinplot
+====================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

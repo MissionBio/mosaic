@@ -1,7 +1,7 @@
 :orphan:
 
-LinePlot.lines\_trace
-=====================
+missionbio.mosaic.plots.lineplot.LinePlot.lines\_trace
+======================================================
 
 .. currentmodule:: missionbio.mosaic.plots.lineplot
 

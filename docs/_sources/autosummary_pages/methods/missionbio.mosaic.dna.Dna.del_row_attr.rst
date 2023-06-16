@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.del\_row\_attr
-==================
+missionbio.mosaic.dna.Dna.del\_row\_attr
+========================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.create
-==========
+missionbio.mosaic.cnv.Cnv.create
+================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Fishplot.\_\_init\_\_
-=====================
+missionbio.mosaic.plots.fishplot.Fishplot.\_\_init\_\_
+======================================================
 
 .. currentmodule:: missionbio.mosaic.plots.fishplot
 

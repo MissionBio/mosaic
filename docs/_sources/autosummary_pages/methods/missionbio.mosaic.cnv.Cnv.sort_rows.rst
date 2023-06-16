@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.sort\_rows
-==============
+missionbio.mosaic.cnv.Cnv.sort\_rows
+====================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>load &#8212; Mosaic v3.0 documentation</title>
+    <title>missionbio.mosaic.io.load &#8212; Mosaic v3.0 documentation</title>
   
   
   
@@ -123,7 +123,6 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../pages/introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/data_structure.html">Data structure</a></li>
@@ -137,6 +136,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/help.html">Additional resources</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
@@ -306,7 +307,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>load</h1>
+    <h1>missionbio.mosaic.io.load</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -320,8 +321,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="load">
-<h1>load<a class="headerlink" href="#load" title="Permalink to this headline">#</a></h1>
+  <section id="missionbio-mosaic-io-load">
+<h1>missionbio.mosaic.io.load<a class="headerlink" href="#missionbio-mosaic-io-load" title="Permalink to this headline">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="missionbio.mosaic.io.load">
 <span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_cells</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_variants</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">whitelist</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">single</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><span class="pre">missionbio.mosaic.sample.Sample</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup" title="missionbio.mosaic.samplegroup.SampleGroup"><span class="pre">missionbio.mosaic.samplegroup.SampleGroup</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#missionbio.mosaic.io.load" title="Permalink to this definition">#</a></dt>
@@ -335,18 +336,30 @@ not present are stored as <cite>None</cite>.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>filepath:</strong></dt><dd><p>The path to the .h5 multi-omics file.</p>
 </dd>
-<dt><strong>filter_cells:</strong></dt><dd><p>If True, the intersection of the cells called
-and the completeness algorithm cells are loaded.</p>
+<dt><strong>filter_cells:</strong></dt><dd><p>If <cite>True</cite>, then only the cells called by the completeness algorithm are loaded. Complete cells
+are those with greater than 80% completeness. If <cite>False</cite>, then all the cells are loaded.</p>
 </dd>
-<dt><strong>filter_variants:</strong></dt><dd><p>Whether to load only the filtered dna variants.</p>
+<dt><strong>filter_variants:</strong></dt><dd><p>If <cite>False</cite>, then all the variants are loaded. If <cite>True</cite> then only the filtered dna variants
+are loaded. The filtered DNA variants are those that pass the <a class="reference internal" href="../methods/missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants" title="missionbio.mosaic.dna.Dna.filter_variants"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_variants()</span></code></a>
+function. This list can be obtained by loading all variants by setting <cite>filter_variants=False</cite>
+and then running <a class="reference internal" href="../methods/missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants" title="missionbio.mosaic.dna.Dna.filter_variants"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_variants()</span></code></a> on it. Information about
+the default filtered variants is stored in the <cite>filtered</cite> column attribute of the
+<a class="reference internal" href="../missionbio.mosaic.dna.Dna.html#missionbio.mosaic.dna.Dna" title="missionbio.mosaic.dna.Dna"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dna</span></code></a> object.</p>
 </dd>
 <dt><strong>whitelist:</strong></dt><dd><p>The specific dna variants to load.</p>
 </dd>
-<dt><strong>raw:</strong></dt><dd><p>Whether the raw counts are to be loaded.</p>
+<dt><strong>raw:</strong></dt><dd><p>Whether the raw counts are to be loaded. This will load <cite>cnv_raw</cite> and <cite>protein_raw</cite> attributes
+of the <a class="reference internal" href="../missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> class.</p>
 </dd>
-<dt><strong>single:</strong></dt><dd><p>Whether to load as a single sample despite being
-a multi sample h5 file (Not a recommended approach).
-Only use this for debugging issues.</p>
+<dt><strong>single:</strong></dt><dd><p>Whether to load as a single sample despite being a multi sample h5 file. If <cite>False</cite>
+then a <a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup" title="missionbio.mosaic.samplegroup.SampleGroup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">SampleGroup()</span></code></a> object is returned. This
+splits each sample into a different <a class="reference internal" href="../missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> object.
+This helps with batch corrections when normalising the data, since each sample is
+treated separately. If <cite>single=True</cite> then a single <a class="reference internal" href="../missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a>
+object is returned. This makes interacting with the data easier, but care must be taken
+when normalising the data. The <a class="reference internal" href="../methods/missionbio.mosaic.samplegroup.SampleGroup.merge.html#missionbio.mosaic.samplegroup.SampleGroup.merge" title="missionbio.mosaic.samplegroup.SampleGroup.merge"><code class="xref py py-meth docutils literal notranslate"><span class="pre">merge()</span></code></a> function
+and the <a class="reference internal" href="../methods/missionbio.mosaic.sample.Sample.split.html#missionbio.mosaic.sample.Sample.split" title="missionbio.mosaic.sample.Sample.split"><code class="xref py py-meth docutils literal notranslate"><span class="pre">split()</span></code></a> function can be used to switch between
+the two object types.</p>
 </dd>
 </dl>
 </dd>

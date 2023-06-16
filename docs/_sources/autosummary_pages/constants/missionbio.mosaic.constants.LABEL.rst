@@ -1,7 +1,7 @@
 :orphan:
 
-LABEL
-=====
+missionbio.mosaic.constants.LABEL
+=================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

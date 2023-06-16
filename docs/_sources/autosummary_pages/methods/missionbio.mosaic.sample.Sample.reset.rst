@@ -1,7 +1,7 @@
 :orphan:
 
-Sample.reset
-============
+missionbio.mosaic.sample.Sample.reset
+=====================================
 
 .. currentmodule:: missionbio.mosaic.sample
 

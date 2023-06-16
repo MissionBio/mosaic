@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.drop
-============
+missionbio.mosaic.assay.\_Assay.drop
+====================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

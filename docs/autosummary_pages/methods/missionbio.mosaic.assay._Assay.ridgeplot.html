@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>_Assay.ridgeplot &#8212; Mosaic v3.0 documentation</title>
+    <title>missionbio.mosaic.assay._Assay.ridgeplot &#8212; Mosaic v3.0 documentation</title>
   
   
   
@@ -123,7 +123,6 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../pages/introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/data_structure.html">Data structure</a></li>
@@ -137,6 +136,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/help.html">Additional resources</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
@@ -306,7 +307,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>_Assay.ridgeplot</h1>
+    <h1>missionbio.mosaic.assay._Assay.ridgeplot</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -320,8 +321,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="assay-ridgeplot">
-<h1>_Assay.ridgeplot<a class="headerlink" href="#assay-ridgeplot" title="Permalink to this headline">#</a></h1>
+  <section id="missionbio-mosaic-assay-assay-ridgeplot">
+<h1>missionbio.mosaic.assay._Assay.ridgeplot<a class="headerlink" href="#missionbio-mosaic-assay-assay-ridgeplot" title="Permalink to this headline">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.assay._Assay.ridgeplot">
 <span class="sig-prename descclassname"><span class="pre">_Assay.</span></span><span class="sig-name descname"><span class="pre">ridgeplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">splitby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.assay._Assay.ridgeplot" title="Permalink to this definition">#</a></dt>
@@ -330,11 +331,11 @@ document.write(`
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>attribute</strong><span class="classifier">str / np.ndarray</span></dt><dd><p>The attribute used to plot the values on the ridgeplot.
-Uses <a class="reference internal" href="missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute" title="missionbio.mosaic.assay._Assay.get_attribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code></a> to retrieve the values.
+Uses <a class="reference internal" href="missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute" title="missionbio.mosaic.assay._Assay.get_attribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_attribute()</span></code></a> to retrieve the values.
 constrained by <cite>row</cite>.</p>
 </dd>
 <dt><strong>splitby</strong><span class="classifier">str / np.ndarray</span></dt><dd><p>The values used to split and color the ridgeplot.
-Uses <a class="reference internal" href="missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute" title="missionbio.mosaic.assay._Assay.get_attribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code></a> to retrieve
+Uses <a class="reference internal" href="missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute" title="missionbio.mosaic.assay._Assay.get_attribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_attribute()</span></code></a> to retrieve
 the values. The shape must be <cite>(#cells)</cite>.</p>
 <ol class="arabic simple">
 <li><dl class="simple">

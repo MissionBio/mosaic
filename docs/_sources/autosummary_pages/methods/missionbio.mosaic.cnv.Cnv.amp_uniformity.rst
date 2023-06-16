@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.amp\_uniformity
-===================
+missionbio.mosaic.cnv.Cnv.amp\_uniformity
+=========================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

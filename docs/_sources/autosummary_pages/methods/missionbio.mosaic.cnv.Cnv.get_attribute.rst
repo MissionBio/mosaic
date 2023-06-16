@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.get\_attribute
-==================
+missionbio.mosaic.cnv.Cnv.get\_attribute
+========================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

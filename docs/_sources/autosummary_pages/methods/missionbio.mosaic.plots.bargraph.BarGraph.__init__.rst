@@ -1,7 +1,7 @@
 :orphan:
 
-BarGraph.\_\_init\_\_
-=====================
+missionbio.mosaic.plots.bargraph.BarGraph.\_\_init\_\_
+======================================================
 
 .. currentmodule:: missionbio.mosaic.plots.bargraph
 

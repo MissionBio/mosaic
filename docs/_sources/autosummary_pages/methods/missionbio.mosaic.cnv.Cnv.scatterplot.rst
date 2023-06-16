@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.scatterplot
-===============
+missionbio.mosaic.cnv.Cnv.scatterplot
+=====================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Heatmap.data\_lines\_trace
-==========================
+missionbio.mosaic.plots.heatmap.Heatmap.data\_lines\_trace
+==========================================================
 
 .. currentmodule:: missionbio.mosaic.plots.heatmap
 

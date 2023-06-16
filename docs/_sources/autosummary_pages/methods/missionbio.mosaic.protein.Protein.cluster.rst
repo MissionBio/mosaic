@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.cluster
-===============
+missionbio.mosaic.protein.Protein.cluster
+=========================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

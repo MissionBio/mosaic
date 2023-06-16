@@ -1,7 +1,7 @@
 :orphan:
 
-GENE\_NAME
-==========
+missionbio.mosaic.constants.GENE\_NAME
+======================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

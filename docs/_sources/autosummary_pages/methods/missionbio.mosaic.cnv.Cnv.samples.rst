@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.samples
-===========
+missionbio.mosaic.cnv.Cnv.samples
+=================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

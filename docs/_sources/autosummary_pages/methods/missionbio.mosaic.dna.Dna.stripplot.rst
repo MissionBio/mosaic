@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.stripplot
-=============
+missionbio.mosaic.dna.Dna.stripplot
+===================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

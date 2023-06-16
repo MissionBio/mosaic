@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.plot\_variant\_correlation
-==============================
+missionbio.mosaic.dna.Dna.plot\_variant\_correlation
+====================================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

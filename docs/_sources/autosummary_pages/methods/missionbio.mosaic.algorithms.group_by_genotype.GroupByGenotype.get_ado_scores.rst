@@ -1,7 +1,7 @@
 :orphan:
 
-GroupByGenotype.get\_ado\_scores
-================================
+missionbio.mosaic.algorithms.group\_by\_genotype.GroupByGenotype.get\_ado\_scores
+=================================================================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.group_by_genotype
 

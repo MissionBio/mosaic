@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.run\_umap
-=============
+missionbio.mosaic.cnv.Cnv.run\_umap
+===================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

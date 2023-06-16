@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.add\_extension
-==================
+missionbio.mosaic.dna.Dna.add\_extension
+========================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

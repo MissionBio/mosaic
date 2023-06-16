@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.sort\_columns
-=====================
+missionbio.mosaic.protein.Protein.sort\_columns
+===============================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.copy
-============
+missionbio.mosaic.assay.\_Assay.copy
+====================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

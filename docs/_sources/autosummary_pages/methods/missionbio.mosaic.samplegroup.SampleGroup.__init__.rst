@@ -1,7 +1,7 @@
 :orphan:
 
-SampleGroup.\_\_init\_\_
-========================
+missionbio.mosaic.samplegroup.SampleGroup.\_\_init\_\_
+======================================================
 
 .. currentmodule:: missionbio.mosaic.samplegroup
 

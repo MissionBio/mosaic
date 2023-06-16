@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.del\_layer
-==============
+missionbio.mosaic.dna.Dna.del\_layer
+====================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

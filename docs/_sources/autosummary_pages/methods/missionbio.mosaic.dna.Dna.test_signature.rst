@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.test\_signature
-===================
+missionbio.mosaic.dna.Dna.test\_signature
+=========================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

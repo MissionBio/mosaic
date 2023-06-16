@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.get\_row\_ids
-=================
+missionbio.mosaic.dna.Dna.get\_row\_ids
+=======================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

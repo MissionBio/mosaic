@@ -1,7 +1,7 @@
 :orphan:
 
-SampleGroup.fishplot
-====================
+missionbio.mosaic.samplegroup.SampleGroup.fishplot
+==================================================
 
 .. currentmodule:: missionbio.mosaic.samplegroup
 

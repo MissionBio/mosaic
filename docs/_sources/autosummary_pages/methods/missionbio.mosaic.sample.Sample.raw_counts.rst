@@ -1,7 +1,7 @@
 :orphan:
 
-Sample.raw\_counts
-==================
+missionbio.mosaic.sample.Sample.raw\_counts
+===========================================
 
 .. currentmodule:: missionbio.mosaic.sample
 

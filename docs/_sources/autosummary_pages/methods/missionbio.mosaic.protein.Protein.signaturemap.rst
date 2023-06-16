@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.signaturemap
-====================
+missionbio.mosaic.protein.Protein.signaturemap
+==============================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

@@ -1,7 +1,7 @@
 :orphan:
 
-load
-====
+missionbio.mosaic.io.load
+=========================
 
 .. currentmodule:: missionbio.mosaic.io
 

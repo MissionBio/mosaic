@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.set\_palette
-====================
+missionbio.mosaic.assay.\_Assay.set\_palette
+============================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

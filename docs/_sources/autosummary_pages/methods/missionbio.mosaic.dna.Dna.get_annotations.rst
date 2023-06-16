@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.get\_annotations
-====================
+missionbio.mosaic.dna.Dna.get\_annotations
+==========================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

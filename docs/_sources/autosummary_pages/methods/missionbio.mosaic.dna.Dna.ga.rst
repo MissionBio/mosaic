@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.ga
-======
+missionbio.mosaic.dna.Dna.ga
+============================
 
 .. currentmodule:: missionbio.mosaic.dna
 

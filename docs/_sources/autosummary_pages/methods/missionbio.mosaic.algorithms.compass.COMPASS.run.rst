@@ -1,7 +1,7 @@
 :orphan:
 
-COMPASS.run
-===========
+missionbio.mosaic.algorithms.compass.COMPASS.run
+================================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

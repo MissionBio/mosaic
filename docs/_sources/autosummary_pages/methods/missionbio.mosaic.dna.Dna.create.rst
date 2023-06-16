@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.create
-==========
+missionbio.mosaic.dna.Dna.create
+================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

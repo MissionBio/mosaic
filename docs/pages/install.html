@@ -47,7 +47,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Getting Started" href="getting_started.html" />
-    <link rel="prev" title="Introduction" href="introduction.html" />
+    <link rel="prev" title="Mosaic API documentation" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -125,7 +125,6 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_structure.html">Data structure</a></li>
@@ -139,6 +138,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="help.html">Additional resources</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
@@ -320,7 +321,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-instructions">Detailed Instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installer-preferred">Installer (Preferred)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-using-conda">Installing using conda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#older-versions">Older versions</a></li>
 </ul>
             </nav>
@@ -335,20 +337,36 @@ document.write(`
                   
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
-<section id="detailed-instructions">
-<h2>Detailed Instructions<a class="headerlink" href="#detailed-instructions" title="Permalink to this headline">#</a></h2>
-<p>Mosaic is available for installation through the <a class="reference external" href="https://anaconda.org/missionbio">missionbio conda channel</a>.</p>
+<section id="installer-preferred">
+<h2>Installer (Preferred)<a class="headerlink" href="#installer-preferred" title="Permalink to this headline">#</a></h2>
+<p>The installer for Mosaic can be downloaded from the <a class="reference external" href="https://portal.missionbio.com/">Mission Bio Portal</a>.
+This is an interactive installer for Mac and Windows, and a shell script for Linux. It has
+all the packages in it and doesn’t require an internet connection to install.</p>
+</section>
+<section id="installing-using-conda">
+<h2>Installing using conda<a class="headerlink" href="#installing-using-conda" title="Permalink to this headline">#</a></h2>
+<p>Although this method is prone to errors due to updates to dependencies of mosaic causing incompatiblity,
+it is possible to install Mosaic through the <a class="reference external" href="https://anaconda.org/missionbio">missionbio conda channel</a>.</p>
 <ol class="arabic">
 <li><dl class="simple">
 <dt>Install Anaconda</dt><dd><p>First install the appropriate version of anaconda for your device from the <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda page</a></p>
 </dd>
 </dl>
 </li>
+<li><dl class="simple">
+<dt>Ensure that the <cite>libmamba</cite> solver is being used:</dt><dd><p>The <a class="reference external" href="https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community">libmamba</a> solver is
+a new dependency solver that is much faster than the default solver. Install it using the following:</p>
+</dd>
+</dl>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>conda-libmamba-solver
+&gt;<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span>strict
+&gt;<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>solver<span class="w"> </span>libmamba
+</pre></div>
+</div>
+</li>
 <li><dl>
 <dt>Install Mosaic</dt><dd><p>Following the successful installation of Anaconda, open your console/terminal and run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">mosaic</span> <span class="o">-</span><span class="n">c</span> <span class="n">missionbio</span> <span class="o">-</span><span class="n">c</span> <span class="n">plotly</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">missionbio</span><span class="o">.</span><span class="n">mosaic</span> <span class="n">notebook</span>
-<span class="o">&gt;</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">mosaic</span>
-<span class="o">&gt;</span> <span class="n">jupyter</span> <span class="n">notebook</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">mosaic</span> <span class="o">-</span><span class="n">c</span> <span class="n">missionbio</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">missionbio</span><span class="o">.</span><span class="n">mosaic</span>
 </pre></div>
 </div>
 </dd>
@@ -410,12 +428,12 @@ These can be installed by passing the required version number.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="introduction.html"
+       href="../index.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Introduction</p>
+        <p class="prev-next-title">Mosaic API documentation</p>
       </div>
     </a>
     <a class="right-next"
@@ -445,7 +463,8 @@ These can be installed by passing the required version number.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detailed-instructions">Detailed Instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installer-preferred">Installer (Preferred)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-using-conda">Installing using conda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#older-versions">Older versions</a></li>
 </ul>
   </nav></div>

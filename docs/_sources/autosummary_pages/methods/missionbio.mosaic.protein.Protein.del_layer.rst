@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.del\_layer
-==================
+missionbio.mosaic.protein.Protein.del\_layer
+============================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

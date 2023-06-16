@@ -1,7 +1,7 @@
 :orphan:
 
-COMPASS.prep\_variants
-======================
+missionbio.mosaic.algorithms.compass.COMPASS.prep\_variants
+===========================================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

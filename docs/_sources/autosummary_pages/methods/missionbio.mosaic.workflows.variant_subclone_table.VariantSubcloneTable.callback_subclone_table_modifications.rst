@@ -1,7 +1,7 @@
 :orphan:
 
-VariantSubcloneTable.callback\_subclone\_table\_modifications
-=============================================================
+missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.callback\_subclone\_table\_modifications
+==================================================================================================================
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

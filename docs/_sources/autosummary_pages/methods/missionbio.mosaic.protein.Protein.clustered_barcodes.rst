@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.clustered\_barcodes
-===========================
+missionbio.mosaic.protein.Protein.clustered\_barcodes
+=====================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

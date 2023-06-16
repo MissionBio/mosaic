@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.find\_relevant\_variants
-============================
+missionbio.mosaic.dna.Dna.find\_relevant\_variants
+==================================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

@@ -1,7 +1,7 @@
 :orphan:
 
-VariantSubcloneTable.\_\_init\_\_
-=================================
+missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.\_\_init\_\_
+======================================================================================
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

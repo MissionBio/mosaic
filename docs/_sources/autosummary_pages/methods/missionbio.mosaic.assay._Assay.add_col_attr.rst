@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.add\_col\_attr
-======================
+missionbio.mosaic.assay.\_Assay.add\_col\_attr
+==============================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

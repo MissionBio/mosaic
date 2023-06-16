@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.ridgeplot
-=================
+missionbio.mosaic.assay.\_Assay.ridgeplot
+=========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

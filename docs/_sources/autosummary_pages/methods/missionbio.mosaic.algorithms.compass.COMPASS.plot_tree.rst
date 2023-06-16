@@ -1,7 +1,7 @@
 :orphan:
 
-COMPASS.plot\_tree
-==================
+missionbio.mosaic.algorithms.compass.COMPASS.plot\_tree
+=======================================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

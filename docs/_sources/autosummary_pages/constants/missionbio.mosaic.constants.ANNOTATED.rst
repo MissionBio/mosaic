@@ -1,7 +1,7 @@
 :orphan:
 
-ANNOTATED
-=========
+missionbio.mosaic.constants.ANNOTATED
+=====================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

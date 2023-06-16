@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.cell\_uniformity
-====================
+missionbio.mosaic.cnv.Cnv.cell\_uniformity
+==========================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.sort\_ids
-=============
+missionbio.mosaic.dna.Dna.sort\_ids
+===================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

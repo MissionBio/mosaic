@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.clustered\_ids
-======================
+missionbio.mosaic.assay.\_Assay.clustered\_ids
+==============================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

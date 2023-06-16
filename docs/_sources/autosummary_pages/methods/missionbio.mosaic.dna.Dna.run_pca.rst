@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.run\_pca
-============
+missionbio.mosaic.dna.Dna.run\_pca
+==================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

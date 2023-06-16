@@ -1,7 +1,7 @@
 :orphan:
 
-COMPASS.prepare\_input
-======================
+missionbio.mosaic.algorithms.compass.COMPASS.prepare\_input
+===========================================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

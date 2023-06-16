@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.set\_ids\_from\_cols
-============================
+missionbio.mosaic.protein.Protein.set\_ids\_from\_cols
+======================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

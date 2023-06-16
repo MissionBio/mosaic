@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.copy
-============
+missionbio.mosaic.protein.Protein.copy
+======================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

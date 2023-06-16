@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.convolve
-============
+missionbio.mosaic.dna.Dna.convolve
+==================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

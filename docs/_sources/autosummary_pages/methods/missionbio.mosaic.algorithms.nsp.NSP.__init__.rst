@@ -1,7 +1,7 @@
 :orphan:
 
-NSP.\_\_init\_\_
-================
+missionbio.mosaic.algorithms.nsp.NSP.\_\_init\_\_
+=================================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.nsp
 

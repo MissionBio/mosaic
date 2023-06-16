@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.drop
-============
+missionbio.mosaic.protein.Protein.drop
+======================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

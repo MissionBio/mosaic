@@ -1,7 +1,7 @@
 :orphan:
 
-SampleGroup.merge\_assay
-========================
+missionbio.mosaic.samplegroup.SampleGroup.merge\_assay
+======================================================
 
 .. currentmodule:: missionbio.mosaic.samplegroup
 

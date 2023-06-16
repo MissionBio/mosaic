@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.rename\_labels
-==================
+missionbio.mosaic.dna.Dna.rename\_labels
+========================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

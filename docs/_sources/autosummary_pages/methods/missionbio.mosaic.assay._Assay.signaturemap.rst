@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.signaturemap
-====================
+missionbio.mosaic.assay.\_Assay.signaturemap
+============================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

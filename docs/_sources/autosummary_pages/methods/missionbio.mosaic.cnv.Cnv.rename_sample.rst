@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.rename\_sample
-==================
+missionbio.mosaic.cnv.Cnv.rename\_sample
+========================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

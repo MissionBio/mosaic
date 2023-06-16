@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.add\_row\_attr
-==================
+missionbio.mosaic.cnv.Cnv.add\_row\_attr
+========================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

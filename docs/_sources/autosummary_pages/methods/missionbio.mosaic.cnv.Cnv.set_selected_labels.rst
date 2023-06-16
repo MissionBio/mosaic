@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.set\_selected\_labels
-=========================
+missionbio.mosaic.cnv.Cnv.set\_selected\_labels
+===============================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

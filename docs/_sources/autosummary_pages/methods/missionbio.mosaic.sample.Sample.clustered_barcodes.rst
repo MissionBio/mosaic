@@ -1,7 +1,7 @@
 :orphan:
 
-Sample.clustered\_barcodes
-==========================
+missionbio.mosaic.sample.Sample.clustered\_barcodes
+===================================================
 
 .. currentmodule:: missionbio.mosaic.sample
 

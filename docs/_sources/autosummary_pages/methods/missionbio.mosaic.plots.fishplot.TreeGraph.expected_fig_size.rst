@@ -1,7 +1,7 @@
 :orphan:
 
-TreeGraph.expected\_fig\_size
-=============================
+missionbio.mosaic.plots.fishplot.TreeGraph.expected\_fig\_size
+==============================================================
 
 .. currentmodule:: missionbio.mosaic.plots.fishplot
 

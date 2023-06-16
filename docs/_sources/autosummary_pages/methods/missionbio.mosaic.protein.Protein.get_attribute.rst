@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.get\_attribute
-======================
+missionbio.mosaic.protein.Protein.get\_attribute
+================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

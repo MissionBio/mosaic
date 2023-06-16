@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.rename\_sample
-==================
+missionbio.mosaic.dna.Dna.rename\_sample
+========================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

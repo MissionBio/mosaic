@@ -1,7 +1,7 @@
 :orphan:
 
-CopyNumber.callback\_update\_feature\_options
-=============================================
+missionbio.mosaic.workflows.copy\_number.CopyNumber.callback\_update\_feature\_options
+======================================================================================
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Heatmap.draw
-============
+missionbio.mosaic.plots.heatmap.Heatmap.draw
+============================================
 
 .. currentmodule:: missionbio.mosaic.plots.heatmap
 

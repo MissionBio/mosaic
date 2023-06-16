@@ -1,7 +1,7 @@
 :orphan:
 
-Sample.raw\_heatmaps
-====================
+missionbio.mosaic.sample.Sample.raw\_heatmaps
+=============================================
 
 .. currentmodule:: missionbio.mosaic.sample
 

@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.split
-=============
+missionbio.mosaic.assay.\_Assay.split
+=====================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

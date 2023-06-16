@@ -1,7 +1,7 @@
 :orphan:
 
-LinePlot.set\_ticks
-===================
+missionbio.mosaic.plots.lineplot.LinePlot.set\_ticks
+====================================================
 
 .. currentmodule:: missionbio.mosaic.plots.lineplot
 

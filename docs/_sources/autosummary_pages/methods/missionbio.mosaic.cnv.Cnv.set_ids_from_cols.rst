@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.set\_ids\_from\_cols
-========================
+missionbio.mosaic.cnv.Cnv.set\_ids\_from\_cols
+==============================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

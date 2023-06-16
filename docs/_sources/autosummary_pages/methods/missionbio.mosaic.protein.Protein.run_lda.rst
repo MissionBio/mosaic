@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.run\_lda
-================
+missionbio.mosaic.protein.Protein.run\_lda
+==========================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

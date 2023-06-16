@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.set\_palette
-================
+missionbio.mosaic.dna.Dna.set\_palette
+======================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

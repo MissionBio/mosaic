@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.pathscale
-=============
+missionbio.mosaic.dna.Dna.pathscale
+===================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

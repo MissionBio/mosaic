@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.scatterplot
-===============
+missionbio.mosaic.dna.Dna.scatterplot
+=====================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

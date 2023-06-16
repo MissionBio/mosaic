@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.read\_distribution
-======================
+missionbio.mosaic.cnv.Cnv.read\_distribution
+============================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

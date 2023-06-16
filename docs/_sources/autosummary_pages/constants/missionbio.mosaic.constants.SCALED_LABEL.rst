@@ -1,7 +1,7 @@
 :orphan:
 
-SCALED\_LABEL
-=============
+missionbio.mosaic.constants.SCALED\_LABEL
+=========================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

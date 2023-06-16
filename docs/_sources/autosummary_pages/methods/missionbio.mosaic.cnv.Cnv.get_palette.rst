@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.get\_palette
-================
+missionbio.mosaic.cnv.Cnv.get\_palette
+======================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

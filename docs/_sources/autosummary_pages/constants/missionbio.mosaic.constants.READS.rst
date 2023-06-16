@@ -1,7 +1,7 @@
 :orphan:
 
-READS
-=====
+missionbio.mosaic.constants.READS
+=================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

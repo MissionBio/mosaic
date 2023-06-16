@@ -16,14 +16,14 @@ exploratory analysis.
 
 .. The following are not shown on this page, but are used to generate the sidebar navigation
 .. toctree::
-    :hidden:
-    :maxdepth: 2
+   :hidden:
+   :maxdepth: 2
 
-    pages/introduction
-    pages/install
-    pages/getting_started
-    pages/data_structure
-    pages/vignettes
+   pages/install
+   pages/getting_started
+   pages/data_structure
+   pages/vignettes
+   pages/help
 
 Modules and Classes
 -------------------

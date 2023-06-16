@@ -1,7 +1,7 @@
 :orphan:
 
-TreeGraph.\_\_init\_\_
-======================
+missionbio.mosaic.plots.fishplot.TreeGraph.\_\_init\_\_
+=======================================================
 
 .. currentmodule:: missionbio.mosaic.plots.fishplot
 

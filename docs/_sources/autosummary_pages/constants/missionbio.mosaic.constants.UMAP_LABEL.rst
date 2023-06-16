@@ -1,7 +1,7 @@
 :orphan:
 
-UMAP\_LABEL
-===========
+missionbio.mosaic.constants.UMAP\_LABEL
+=======================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

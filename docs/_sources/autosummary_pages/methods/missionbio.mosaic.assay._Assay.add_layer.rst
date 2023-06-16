@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.add\_layer
-==================
+missionbio.mosaic.assay.\_Assay.add\_layer
+==========================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

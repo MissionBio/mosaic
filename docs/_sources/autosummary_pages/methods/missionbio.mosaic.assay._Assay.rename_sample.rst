@@ -1,7 +1,7 @@
 :orphan:
 
-\_Assay.rename\_sample
-======================
+missionbio.mosaic.assay.\_Assay.rename\_sample
+==============================================
 
 .. currentmodule:: missionbio.mosaic.assay
 

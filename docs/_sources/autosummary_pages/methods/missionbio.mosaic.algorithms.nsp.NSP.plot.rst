@@ -1,7 +1,7 @@
 :orphan:
 
-NSP.plot
-========
+missionbio.mosaic.algorithms.nsp.NSP.plot
+=========================================
 
 .. currentmodule:: missionbio.mosaic.algorithms.nsp
 

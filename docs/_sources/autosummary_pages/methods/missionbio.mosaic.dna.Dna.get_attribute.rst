@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.get\_attribute
-==================
+missionbio.mosaic.dna.Dna.get\_attribute
+========================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.get\_gene\_names
-====================
+missionbio.mosaic.cnv.Cnv.get\_gene\_names
+==========================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

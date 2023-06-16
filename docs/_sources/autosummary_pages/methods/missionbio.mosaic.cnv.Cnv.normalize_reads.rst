@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.normalize\_reads
-====================
+missionbio.mosaic.cnv.Cnv.normalize\_reads
+==========================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

@@ -1,7 +1,7 @@
 :orphan:
 
-Heatmap.coloraxis
-=================
+missionbio.mosaic.plots.heatmap.Heatmap.coloraxis
+=================================================
 
 .. currentmodule:: missionbio.mosaic.plots.heatmap
 

@@ -1,7 +1,7 @@
 :orphan:
 
-COLORS
-======
+missionbio.mosaic.constants.COLORS
+==================================
 
 .. currentmodule:: missionbio.mosaic.constants
 

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Dna.group_by_genotype &#8212; Mosaic v3.0 documentation</title>
+    <title>missionbio.mosaic.dna.Dna.group_by_genotype &#8212; Mosaic v3.0 documentation</title>
   
   
   
@@ -123,7 +123,6 @@
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../pages/introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/data_structure.html">Data structure</a></li>
@@ -137,6 +136,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/help.html">Additional resources</a></li>
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
@@ -306,7 +307,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Dna.group_by_genotype</h1>
+    <h1>missionbio.mosaic.dna.Dna.group_by_genotype</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -320,8 +321,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="dna-group-by-genotype">
-<h1>Dna.group_by_genotype<a class="headerlink" href="#dna-group-by-genotype" title="Permalink to this headline">#</a></h1>
+  <section id="missionbio-mosaic-dna-dna-group-by-genotype">
+<h1>missionbio.mosaic.dna.Dna.group_by_genotype<a class="headerlink" href="#missionbio-mosaic-dna-dna-group-by-genotype" title="Permalink to this headline">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.dna.Dna.group_by_genotype">
 <span class="sig-prename descclassname"><span class="pre">Dna.</span></span><span class="sig-name descname"><span class="pre">group_by_genotype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NGT'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_missing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_ado_score</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_clone_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_zygosity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_plot</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot_kind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'collapsed'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.group_by_genotype" title="Permalink to this definition">#</a></dt>
@@ -396,9 +397,8 @@ compared to the clone.</p>
 <dt><strong>features</strong><span class="classifier">Sequence</span></dt><dd><p>The features which are to be considered while
 allocating the groups formed by the genotype.</p>
 </dd>
-<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>Name of the layer used to count the cell types.
-Expected values are NGT or NGT_FILTERED as obtained
-from the <a class="reference internal" href="missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants" title="missionbio.mosaic.dna.Dna.filter_variants"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Dna.filter_variants()</span></code></a> method.</p>
+<dt><strong>layer</strong><span class="classifier">str</span></dt><dd><p>Name of the layer used to count the cell types. Expected values are NGT or NGT_FILTERED
+as obtained from the <a class="reference internal" href="missionbio.mosaic.dna.Dna.filter_variants.html#missionbio.mosaic.dna.Dna.filter_variants" title="missionbio.mosaic.dna.Dna.filter_variants"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_variants()</span></code></a> method.</p>
 </dd>
 <dt><strong>group_missing</strong><span class="classifier">bool</span></dt><dd><p>Whether the clusters caused due to missing values
 are merged together under one cluster named ‘Missing’.</p>

@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.del\_col\_attr
-======================
+missionbio.mosaic.protein.Protein.del\_col\_attr
+================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

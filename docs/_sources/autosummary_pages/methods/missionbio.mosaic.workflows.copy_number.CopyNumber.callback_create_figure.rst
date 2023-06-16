@@ -1,7 +1,7 @@
 :orphan:
 
-CopyNumber.callback\_create\_figure
-===================================
+missionbio.mosaic.workflows.copy\_number.CopyNumber.callback\_create\_figure
+============================================================================
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

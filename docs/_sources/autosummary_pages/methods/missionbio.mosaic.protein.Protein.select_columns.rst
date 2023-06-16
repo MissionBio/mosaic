@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.select\_columns
-=======================
+missionbio.mosaic.protein.Protein.select\_columns
+=================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

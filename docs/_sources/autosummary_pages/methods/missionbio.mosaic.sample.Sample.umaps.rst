@@ -1,7 +1,7 @@
 :orphan:
 
-Sample.umaps
-============
+missionbio.mosaic.sample.Sample.umaps
+=====================================
 
 .. currentmodule:: missionbio.mosaic.sample
 

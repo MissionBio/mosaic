@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.heatmap
-===============
+missionbio.mosaic.protein.Protein.heatmap
+=========================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

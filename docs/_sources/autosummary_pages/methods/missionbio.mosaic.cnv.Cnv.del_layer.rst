@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.del\_layer
-==============
+missionbio.mosaic.cnv.Cnv.del\_layer
+====================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

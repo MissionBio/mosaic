@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.run\_umap
-=================
+missionbio.mosaic.protein.Protein.run\_umap
+===========================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

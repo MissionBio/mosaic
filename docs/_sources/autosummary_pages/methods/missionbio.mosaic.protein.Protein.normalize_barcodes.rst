@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.normalize\_barcodes
-===========================
+missionbio.mosaic.protein.Protein.normalize\_barcodes
+=====================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

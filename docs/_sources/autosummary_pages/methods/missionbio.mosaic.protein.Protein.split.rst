@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.split
-=============
+missionbio.mosaic.protein.Protein.split
+=======================================
 
 .. currentmodule:: missionbio.mosaic.protein
 

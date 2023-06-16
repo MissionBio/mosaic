@@ -1,7 +1,7 @@
 :orphan:
 
-Cnv.signature
-=============
+missionbio.mosaic.cnv.Cnv.signature
+===================================
 
 .. currentmodule:: missionbio.mosaic.cnv
 

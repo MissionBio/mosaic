@@ -1,7 +1,7 @@
 :orphan:
 
-CopyNumber.is\_port\_in\_use
-============================
+missionbio.mosaic.workflows.copy\_number.CopyNumber.is\_port\_in\_use
+=====================================================================
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

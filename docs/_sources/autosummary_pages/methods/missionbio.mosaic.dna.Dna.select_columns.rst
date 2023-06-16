@@ -1,7 +1,7 @@
 :orphan:
 
-Dna.select\_columns
-===================
+missionbio.mosaic.dna.Dna.select\_columns
+=========================================
 
 .. currentmodule:: missionbio.mosaic.dna
 

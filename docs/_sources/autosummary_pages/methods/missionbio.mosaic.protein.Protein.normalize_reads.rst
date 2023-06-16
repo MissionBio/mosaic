@@ -1,7 +1,7 @@
 :orphan:
 
-Protein.normalize\_reads
-========================
+missionbio.mosaic.protein.Protein.normalize\_reads
+==================================================
 
 .. currentmodule:: missionbio.mosaic.protein
 
