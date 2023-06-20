@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.get\_row\_ids
-=======================================
+Dna.get\_row\_ids
+=================
+
+.. rubric:: missionbio.mosaic.dna.Dna.get_row_ids
 
 .. currentmodule:: missionbio.mosaic.dna
 

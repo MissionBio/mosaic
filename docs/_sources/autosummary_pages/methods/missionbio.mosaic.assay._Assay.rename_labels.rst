@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.rename\_labels
-==============================================
+\_Assay.rename\_labels
+======================
+
+.. rubric:: missionbio.mosaic.assay._Assay.rename_labels
 
 .. currentmodule:: missionbio.mosaic.assay
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.set\_port
-===================================================================================
+VariantSubcloneTable.set\_port
+==============================
+
+.. rubric:: missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.set_port
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

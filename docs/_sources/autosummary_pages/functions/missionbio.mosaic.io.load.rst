@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.io.load
-=========================
+load
+====
+
+.. rubric:: missionbio.mosaic.io.load
 
 .. currentmodule:: missionbio.mosaic.io
 

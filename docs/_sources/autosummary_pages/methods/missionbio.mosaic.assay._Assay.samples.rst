@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.samples
-=======================================
+\_Assay.samples
+===============
+
+.. rubric:: missionbio.mosaic.assay._Assay.samples
 
 .. currentmodule:: missionbio.mosaic.assay
 

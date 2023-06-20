@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.ridgeplot
-===========================================
+Protein.ridgeplot
+=================
+
+.. rubric:: missionbio.mosaic.protein.Protein.ridgeplot
 
 .. currentmodule:: missionbio.mosaic.protein
 

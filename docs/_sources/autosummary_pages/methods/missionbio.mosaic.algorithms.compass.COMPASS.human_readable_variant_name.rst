@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.algorithms.compass.COMPASS.human\_readable\_variant\_name
-===========================================================================
+COMPASS.human\_readable\_variant\_name
+======================================
+
+.. rubric:: missionbio.mosaic.algorithms.compass.COMPASS.human_readable_variant_name
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

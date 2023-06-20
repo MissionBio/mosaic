@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.group\_by\_genotype
-=============================================
+Dna.group\_by\_genotype
+=======================
+
+.. rubric:: missionbio.mosaic.dna.Dna.group_by_genotype
 
 .. currentmodule:: missionbio.mosaic.dna
 

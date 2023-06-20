@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.utils.static\_fig
-===================================
+static\_fig
+===========
+
+.. rubric:: missionbio.mosaic.utils.static_fig
 
 .. currentmodule:: missionbio.mosaic.utils
 

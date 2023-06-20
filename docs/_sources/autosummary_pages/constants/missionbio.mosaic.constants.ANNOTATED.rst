@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.ANNOTATED
-=====================================
+ANNOTATED
+=========
+
+.. rubric:: missionbio.mosaic.constants.ANNOTATED
 
 .. currentmodule:: missionbio.mosaic.constants
 

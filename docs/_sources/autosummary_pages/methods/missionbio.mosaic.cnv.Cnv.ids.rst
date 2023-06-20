@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.ids
-=============================
+Cnv.ids
+=======
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.ids
 
 .. currentmodule:: missionbio.mosaic.cnv
 

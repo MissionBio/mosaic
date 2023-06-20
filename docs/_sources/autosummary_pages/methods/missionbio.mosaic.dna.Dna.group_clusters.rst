@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.group\_clusters
-=========================================
+Dna.group\_clusters
+===================
+
+.. rubric:: missionbio.mosaic.dna.Dna.group_clusters
 
 .. currentmodule:: missionbio.mosaic.dna
 

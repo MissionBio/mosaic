@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.heatmap
-=======================================
+\_Assay.heatmap
+===============
+
+.. rubric:: missionbio.mosaic.assay._Assay.heatmap
 
 .. currentmodule:: missionbio.mosaic.assay
 

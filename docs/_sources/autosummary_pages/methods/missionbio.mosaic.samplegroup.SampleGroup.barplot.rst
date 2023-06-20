@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.samplegroup.SampleGroup.barplot
-=================================================
+SampleGroup.barplot
+===================
+
+.. rubric:: missionbio.mosaic.samplegroup.SampleGroup.barplot
 
 .. currentmodule:: missionbio.mosaic.samplegroup
 

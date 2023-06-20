@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.sample.Sample.assay\_scatter
-==============================================
+Sample.assay\_scatter
+=====================
+
+.. rubric:: missionbio.mosaic.sample.Sample.assay_scatter
 
 .. currentmodule:: missionbio.mosaic.sample
 

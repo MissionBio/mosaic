@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.get\_labels
-=============================================
+Protein.get\_labels
+===================
+
+.. rubric:: missionbio.mosaic.protein.Protein.get_labels
 
 .. currentmodule:: missionbio.mosaic.protein
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.update\_coloraxis
-===================================================
+Protein.update\_coloraxis
+=========================
+
+.. rubric:: missionbio.mosaic.protein.Protein.update_coloraxis
 
 .. currentmodule:: missionbio.mosaic.protein
 

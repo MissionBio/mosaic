@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.plots.lineplot.LinePlot.set\_layout
-=====================================================
+LinePlot.set\_layout
+====================
+
+.. rubric:: missionbio.mosaic.plots.lineplot.LinePlot.set_layout
 
 .. currentmodule:: missionbio.mosaic.plots.lineplot
 

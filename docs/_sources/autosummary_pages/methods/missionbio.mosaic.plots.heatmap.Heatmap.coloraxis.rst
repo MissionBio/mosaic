@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.plots.heatmap.Heatmap.coloraxis
-=================================================
+Heatmap.coloraxis
+=================
+
+.. rubric:: missionbio.mosaic.plots.heatmap.Heatmap.coloraxis
 
 .. currentmodule:: missionbio.mosaic.plots.heatmap
 

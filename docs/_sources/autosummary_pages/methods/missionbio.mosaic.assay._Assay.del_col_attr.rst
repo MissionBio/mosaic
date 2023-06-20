@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.del\_col\_attr
-==============================================
+\_Assay.del\_col\_attr
+======================
+
+.. rubric:: missionbio.mosaic.assay._Assay.del_col_attr
 
 .. currentmodule:: missionbio.mosaic.assay
 

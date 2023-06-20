@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.select\_columns
-=========================================
+Cnv.select\_columns
+===================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.select_columns
 
 .. currentmodule:: missionbio.mosaic.cnv
 

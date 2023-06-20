@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.set\_selected\_labels
-===============================================
+Dna.set\_selected\_labels
+=========================
+
+.. rubric:: missionbio.mosaic.dna.Dna.set_selected_labels
 
 .. currentmodule:: missionbio.mosaic.dna
 

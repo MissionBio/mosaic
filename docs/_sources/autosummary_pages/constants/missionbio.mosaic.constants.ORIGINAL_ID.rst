@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.ORIGINAL\_ID
-========================================
+ORIGINAL\_ID
+============
+
+.. rubric:: missionbio.mosaic.constants.ORIGINAL_ID
 
 .. currentmodule:: missionbio.mosaic.constants
 

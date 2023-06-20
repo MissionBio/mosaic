@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.split
-===============================
+Dna.split
+=========
+
+.. rubric:: missionbio.mosaic.dna.Dna.split
 
 .. currentmodule:: missionbio.mosaic.dna
 

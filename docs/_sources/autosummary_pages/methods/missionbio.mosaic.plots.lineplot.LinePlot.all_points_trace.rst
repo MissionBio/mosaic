@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.plots.lineplot.LinePlot.all\_points\_trace
-============================================================
+LinePlot.all\_points\_trace
+===========================
+
+.. rubric:: missionbio.mosaic.plots.lineplot.LinePlot.all_points_trace
 
 .. currentmodule:: missionbio.mosaic.plots.lineplot
 

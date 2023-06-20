@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.GENE\_NAME
-======================================
+GENE\_NAME
+==========
+
+.. rubric:: missionbio.mosaic.constants.GENE_NAME
 
 .. currentmodule:: missionbio.mosaic.constants
 

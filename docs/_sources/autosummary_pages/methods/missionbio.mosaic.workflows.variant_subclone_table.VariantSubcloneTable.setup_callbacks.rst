@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.setup\_callbacks
-==========================================================================================
+VariantSubcloneTable.setup\_callbacks
+=====================================
+
+.. rubric:: missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.setup_callbacks
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

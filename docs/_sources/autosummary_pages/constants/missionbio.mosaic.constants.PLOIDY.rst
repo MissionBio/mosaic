@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.PLOIDY
-==================================
+PLOIDY
+======
+
+.. rubric:: missionbio.mosaic.constants.PLOIDY
 
 .. currentmodule:: missionbio.mosaic.constants
 

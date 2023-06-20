@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.get\_variant\_bulk\_metrics
-=====================================================
+Dna.get\_variant\_bulk\_metrics
+===============================
+
+.. rubric:: missionbio.mosaic.dna.Dna.get_variant_bulk_metrics
 
 .. currentmodule:: missionbio.mosaic.dna
 

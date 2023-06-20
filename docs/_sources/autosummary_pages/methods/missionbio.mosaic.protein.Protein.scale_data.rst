@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.scale\_data
-=============================================
+Protein.scale\_data
+===================
+
+.. rubric:: missionbio.mosaic.protein.Protein.scale_data
 
 .. currentmodule:: missionbio.mosaic.protein
 

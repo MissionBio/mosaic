@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.copy\_number.CopyNumber.\_\_init\_\_
-================================================================
+CopyNumber.\_\_init\_\_
+=======================
+
+.. rubric:: missionbio.mosaic.workflows.copy_number.CopyNumber.__init__
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

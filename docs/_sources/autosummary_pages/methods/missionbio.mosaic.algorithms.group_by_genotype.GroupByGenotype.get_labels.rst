@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.algorithms.group\_by\_genotype.GroupByGenotype.get\_labels
-============================================================================
+GroupByGenotype.get\_labels
+===========================
+
+.. rubric:: missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.get_labels
 
 .. currentmodule:: missionbio.mosaic.algorithms.group_by_genotype
 

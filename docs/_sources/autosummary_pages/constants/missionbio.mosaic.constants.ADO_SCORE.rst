@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.ADO\_SCORE
-======================================
+ADO\_SCORE
+==========
+
+.. rubric:: missionbio.mosaic.constants.ADO_SCORE
 
 .. currentmodule:: missionbio.mosaic.constants
 

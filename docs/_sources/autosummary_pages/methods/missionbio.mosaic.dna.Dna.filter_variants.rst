@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.filter\_variants
-==========================================
+Dna.filter\_variants
+====================
+
+.. rubric:: missionbio.mosaic.dna.Dna.filter_variants
 
 .. currentmodule:: missionbio.mosaic.dna
 

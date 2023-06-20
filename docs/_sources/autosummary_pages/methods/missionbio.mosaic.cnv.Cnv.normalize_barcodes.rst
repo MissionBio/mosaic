@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.normalize\_barcodes
-=============================================
+Cnv.normalize\_barcodes
+=======================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.normalize_barcodes
 
 .. currentmodule:: missionbio.mosaic.cnv
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.NORMALIZED\_READS
-=============================================
+NORMALIZED\_READS
+=================
+
+.. rubric:: missionbio.mosaic.constants.NORMALIZED_READS
 
 .. currentmodule:: missionbio.mosaic.constants
 

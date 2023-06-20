@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.plots.lineplot.LinePlot.add\_hrect
-====================================================
+LinePlot.add\_hrect
+===================
+
+.. rubric:: missionbio.mosaic.plots.lineplot.LinePlot.add_hrect
 
 .. currentmodule:: missionbio.mosaic.plots.lineplot
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.select\_columns
-===============================================
+\_Assay.select\_columns
+=======================
+
+.. rubric:: missionbio.mosaic.assay._Assay.select_columns
 
 .. currentmodule:: missionbio.mosaic.assay
 

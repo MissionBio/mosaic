@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.get\_row\_ids
-===============================================
+Protein.get\_row\_ids
+=====================
+
+.. rubric:: missionbio.mosaic.protein.Protein.get_row_ids
 
 .. currentmodule:: missionbio.mosaic.protein
 

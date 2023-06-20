@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.plots.lineplot.LinePlot.set\_xticks
-=====================================================
+LinePlot.set\_xticks
+====================
+
+.. rubric:: missionbio.mosaic.plots.lineplot.LinePlot.set_xticks
 
 .. currentmodule:: missionbio.mosaic.plots.lineplot
 

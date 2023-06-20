@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Heatmap &#8212; Mosaic v3.0 documentation</title>
+    <title>Heatmap &#8212; Mosaic v3.0.1 documentation</title>
   
   
   
@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -40,7 +41,9 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'autosummary_pages/missionbio.mosaic.plots.heatmap.Heatmap';</script>
@@ -49,7 +52,7 @@
     <link rel="next" title="LinePlot" href="missionbio.mosaic.plots.lineplot.LinePlot.html" />
     <link rel="prev" title="constants" href="missionbio.mosaic.constants.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -119,7 +122,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0 documentation</p>
+    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -298,7 +301,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -314,6 +319,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.plots.heatmap.Heatmap"><code class="docutils literal notranslate"><span class="pre">Heatmap</span></code></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -323,19 +336,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="heatmap">
-<h1>Heatmap<a class="headerlink" href="#heatmap" title="Permalink to this headline">#</a></h1>
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="heatmap">
+<h1>Heatmap<a class="headerlink" href="#heatmap" title="Permalink to this heading">#</a></h1>
 <p class="rubric">missionbio.mosaic.plots.heatmap.Heatmap</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="missionbio.mosaic.plots.heatmap.Heatmap">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Heatmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.core.frame.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ytick_proportions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.plots.heatmap.Heatmap" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Heatmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ytick_proportions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.plots.heatmap.Heatmap" title="Permalink to this definition">#</a></dt>
 <dd><p>Heatmap with options for grouping rows/cols.</p>
 <p>The xaxis groups (x_groups) or the grouping of columns
 is represented by appropriate tickvalues on the xaxis.
 The yaxis groups (y_groups) or the grouping of rows
 is represented by an extra column showing the color for
 each group category.</p>
-<p class="rubric">Example</p>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">missionbio.mosaic.plots.heatmap</span> <span class="kn">import</span> <span class="n">Heatmap</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -344,48 +360,45 @@ each group category.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hm</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="rubric">Methods</p>
-<p>Most of the times, only the <a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.draw.html#missionbio.mosaic.plots.heatmap.Heatmap.draw" title="missionbio.mosaic.plots.heatmap.Heatmap.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a> method is needed.
-The other methods are used internally by <a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.draw.html#missionbio.mosaic.plots.heatmap.Heatmap.draw" title="missionbio.mosaic.plots.heatmap.Heatmap.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a>.
-They can also be used to create complex custom plots as
-done in <a class="reference internal" href="missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.html#missionbio.mosaic.plots.multi_heatmap.MultiHeatmap" title="missionbio.mosaic.plots.multi_heatmap.MultiHeatmap"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiHeatmap</span></code></a>.</p>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+<p>Usually, only the <a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.draw.html#missionbio.mosaic.plots.heatmap.Heatmap.draw" title="missionbio.mosaic.plots.heatmap.Heatmap.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a> method is needed. The other methods are
+used internally by <a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.draw.html#missionbio.mosaic.plots.heatmap.Heatmap.draw" title="missionbio.mosaic.plots.heatmap.Heatmap.draw"><code class="xref py py-meth docutils literal notranslate"><span class="pre">draw()</span></code></a>. They can also be used to create complex
+custom plots as done in <a class="reference internal" href="missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.html#missionbio.mosaic.plots.multi_heatmap.MultiHeatmap" title="missionbio.mosaic.plots.multi_heatmap.MultiHeatmap"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultiHeatmap</span></code></a>.</p>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.draw.html#missionbio.mosaic.plots.heatmap.Heatmap.draw" title="missionbio.mosaic.plots.heatmap.Heatmap.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>()</p></td>
 <td><p><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
 </dl>
 </p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.label_trace.html#missionbio.mosaic.plots.heatmap.Heatmap.label_trace" title="missionbio.mosaic.plots.heatmap.Heatmap.label_trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_trace</span></code></a>([name])</p></td>
 <td><p><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
 </dl>
 </p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.data_trace.html#missionbio.mosaic.plots.heatmap.Heatmap.data_trace" title="missionbio.mosaic.plots.heatmap.Heatmap.data_trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_trace</span></code></a>([name])</p></td>
 <td><p><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
 </dl>
 </p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.label_lines_trace.html#missionbio.mosaic.plots.heatmap.Heatmap.label_lines_trace" title="missionbio.mosaic.plots.heatmap.Heatmap.label_lines_trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_lines_trace</span></code></a>([name])</p></td>
 <td><p><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
 </dl>
 </p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.data_lines_trace.html#missionbio.mosaic.plots.heatmap.Heatmap.data_lines_trace" title="missionbio.mosaic.plots.heatmap.Heatmap.data_lines_trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data_lines_trace</span></code></a>(vertical[, name])</p></td>
 <td><p><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
 </dl>
 </p></td>
@@ -407,7 +420,7 @@ done in <a class="reference internal" href="missionbio.mosaic.plots.multi_heatma
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.plots.heatmap.Heatmap.is_contiguous.html#missionbio.mosaic.plots.heatmap.Heatmap.is_contiguous" title="missionbio.mosaic.plots.heatmap.Heatmap.is_contiguous"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_contiguous</span></code></a>(labels)</p></td>
 <td><p><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p></p></dd>
 </dl>
 </p></td>
@@ -415,7 +428,7 @@ done in <a class="reference internal" href="missionbio.mosaic.plots.multi_heatma
 </tbody>
 </table>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>data</strong><span class="classifier">pd.DataFrame</span></dt><dd><p>The dataframe whose values are to be plotted. The index
 name is used for the title of the colorbar, the column
@@ -436,6 +449,7 @@ value in y_groups.</p>
 </dl>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 </section>
@@ -479,6 +493,20 @@ value in y_groups.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.plots.heatmap.Heatmap"><code class="docutils literal notranslate"><span class="pre">Heatmap</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.set\_palette
-======================================
+Cnv.set\_palette
+================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.set_palette
 
 .. currentmodule:: missionbio.mosaic.cnv
 

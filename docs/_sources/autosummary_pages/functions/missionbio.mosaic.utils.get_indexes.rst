@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.utils.get\_indexes
-====================================
+get\_indexes
+============
+
+.. rubric:: missionbio.mosaic.utils.get_indexes
 
 .. currentmodule:: missionbio.mosaic.utils
 

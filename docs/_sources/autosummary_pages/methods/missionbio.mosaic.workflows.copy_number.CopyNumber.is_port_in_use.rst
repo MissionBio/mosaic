@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.copy\_number.CopyNumber.is\_port\_in\_use
-=====================================================================
+CopyNumber.is\_port\_in\_use
+============================
+
+.. rubric:: missionbio.mosaic.workflows.copy_number.CopyNumber.is_port_in_use
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

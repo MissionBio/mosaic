@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.samplegroup.SampleGroup.hasassay
-==================================================
+SampleGroup.hasassay
+====================
+
+.. rubric:: missionbio.mosaic.samplegroup.SampleGroup.hasassay
 
 .. currentmodule:: missionbio.mosaic.samplegroup
 

@@ -25,10 +25,8 @@ exploratory analysis.
    pages/vignettes
    pages/help
 
-Modules and Classes
--------------------
-
-.. rubric:: Basic Classes
+Basic Classes
+~~~~~~~~~~~~~
 .. autosummary::
    :recursive:
    :nosignatures:
@@ -43,7 +41,8 @@ Modules and Classes
    ~missionbio.mosaic.sample.Sample
    ~missionbio.mosaic.samplegroup.SampleGroup
 
-.. rubric:: Interactive Workflows
+Interactive Workflows
+~~~~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :recursive:
    :nosignatures:
@@ -54,7 +53,8 @@ Modules and Classes
    ~missionbio.mosaic.workflows.copy_number.CopyNumber
    ~missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable
 
-.. rubric:: Algorithms
+Algorithms
+~~~~~~~~~~
 .. autosummary::
    :recursive:
    :caption: Algorithms
@@ -65,7 +65,8 @@ Modules and Classes
    ~missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype
    ~missionbio.mosaic.algorithms.compass.COMPASS
 
-.. rubric:: Functional Modules
+Functional Modules
+~~~~~~~~~~~~~~~~~~
 .. autosummary::
    :recursive:
    :caption: Functional Modules
@@ -76,7 +77,8 @@ Modules and Classes
    ~missionbio.mosaic.utils
    ~missionbio.mosaic.constants
 
-.. rubric:: Custom Plots
+Custom Plots
+~~~~~~~~~~~~
 .. autosummary::
    :recursive:
    :nosignatures:

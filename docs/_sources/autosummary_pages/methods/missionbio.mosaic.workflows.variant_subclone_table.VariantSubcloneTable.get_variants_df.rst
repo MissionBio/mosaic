@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.get\_variants\_df
-===========================================================================================
+VariantSubcloneTable.get\_variants\_df
+======================================
+
+.. rubric:: missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.get_variants_df
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.set\_ids\_from\_cols
-==============================================
+Dna.set\_ids\_from\_cols
+========================
+
+.. rubric:: missionbio.mosaic.dna.Dna.set_ids_from_cols
 
 .. currentmodule:: missionbio.mosaic.dna
 

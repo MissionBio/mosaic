@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.copy\_number.CopyNumber.reset\_cnv\_assay
-=====================================================================
+CopyNumber.reset\_cnv\_assay
+============================
+
+.. rubric:: missionbio.mosaic.workflows.copy_number.CopyNumber.reset_cnv_assay
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

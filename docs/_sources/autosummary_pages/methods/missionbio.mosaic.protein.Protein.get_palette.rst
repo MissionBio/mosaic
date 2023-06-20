@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.get\_palette
-==============================================
+Protein.get\_palette
+====================
+
+.. rubric:: missionbio.mosaic.protein.Protein.get_palette
 
 .. currentmodule:: missionbio.mosaic.protein
 

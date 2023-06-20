@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.utils.extend\_docs
-====================================
+extend\_docs
+============
+
+.. rubric:: missionbio.mosaic.utils.extend_docs
 
 .. currentmodule:: missionbio.mosaic.utils
 

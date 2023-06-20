@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.PCA\_LABEL
-======================================
+PCA\_LABEL
+==========
+
+.. rubric:: missionbio.mosaic.constants.PCA_LABEL
 
 .. currentmodule:: missionbio.mosaic.constants
 

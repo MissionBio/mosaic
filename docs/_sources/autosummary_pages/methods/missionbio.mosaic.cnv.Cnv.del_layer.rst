@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.del\_layer
-====================================
+Cnv.del\_layer
+==============
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.del_layer
 
 .. currentmodule:: missionbio.mosaic.cnv
 

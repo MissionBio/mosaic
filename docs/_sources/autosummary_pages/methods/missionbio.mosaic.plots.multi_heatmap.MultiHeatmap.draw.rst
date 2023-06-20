@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.plots.multi\_heatmap.MultiHeatmap.draw
-========================================================
+MultiHeatmap.draw
+=================
+
+.. rubric:: missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.draw
 
 .. currentmodule:: missionbio.mosaic.plots.multi_heatmap
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.cells\_per\_ab
-================================================
+Protein.cells\_per\_ab
+======================
+
+.. rubric:: missionbio.mosaic.protein.Protein.cells_per_ab
 
 .. currentmodule:: missionbio.mosaic.protein
 

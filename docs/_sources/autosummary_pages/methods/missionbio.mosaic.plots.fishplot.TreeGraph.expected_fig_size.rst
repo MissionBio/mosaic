@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.plots.fishplot.TreeGraph.expected\_fig\_size
-==============================================================
+TreeGraph.expected\_fig\_size
+=============================
+
+.. rubric:: missionbio.mosaic.plots.fishplot.TreeGraph.expected_fig_size
 
 .. currentmodule:: missionbio.mosaic.plots.fishplot
 

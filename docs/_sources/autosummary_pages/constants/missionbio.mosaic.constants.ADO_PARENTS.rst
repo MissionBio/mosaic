@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.ADO\_PARENTS
-========================================
+ADO\_PARENTS
+============
+
+.. rubric:: missionbio.mosaic.constants.ADO_PARENTS
 
 .. currentmodule:: missionbio.mosaic.constants
 

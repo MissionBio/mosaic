@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Mosaic API documentation &#8212; Mosaic v3.0 documentation</title>
+    <title>Mosaic API documentation &#8212; Mosaic v3.0.1 documentation</title>
   
   
   
@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -40,7 +41,9 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
@@ -48,7 +51,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installation" href="pages/install.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -118,7 +121,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0 documentation</p>
+    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -320,9 +323,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-and-classes">Modules and Classes</a><ul class="nav section-nav flex-column">
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-classes">Basic Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-workflows">Interactive Workflows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-modules">Functional Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-plots">Custom Plots</a></li>
 </ul>
             </nav>
         </div>
@@ -334,8 +339,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="mosaic-api-documentation">
-<h1>Mosaic API documentation<a class="headerlink" href="#mosaic-api-documentation" title="Permalink to this headline">#</a></h1>
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="mosaic-api-documentation">
+<h1>Mosaic API documentation<a class="headerlink" href="#mosaic-api-documentation" title="Permalink to this heading">#</a></h1>
 <div class="note admonition">
 <p class="admonition-title">Older documentations</p>
 <p>The latest version of Mosaic is recommended for new developments. Documentation for the other
@@ -348,14 +355,9 @@ Its designed to allow convenient handling and visualization of single-cell multi
 exploratory analysis.</p>
 <div class="toctree-wrapper compound">
 </div>
-<section id="modules-and-classes">
-<h2>Modules and Classes<a class="headerlink" href="#modules-and-classes" title="Permalink to this headline">#</a></h2>
-<p class="rubric">Basic Classes</p>
+<section id="basic-classes">
+<h2>Basic Classes<a class="headerlink" href="#basic-classes" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_Assay</span></code></a></p></td>
 <td><p>Abstract class for all assays</p></td>
@@ -377,12 +379,10 @@ exploratory analysis.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Interactive Workflows</p>
+</section>
+<section id="interactive-workflows">
+<h2>Interactive Workflows<a class="headerlink" href="#interactive-workflows" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.workflows.copy_number.CopyNumber.html#missionbio.mosaic.workflows.copy_number.CopyNumber" title="missionbio.mosaic.workflows.copy_number.CopyNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CopyNumber</span></code></a></p></td>
 <td><p>Copy Number estimation workflow.</p></td>
@@ -392,12 +392,10 @@ exploratory analysis.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Algorithms</p>
+</section>
+<section id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.algorithms.nsp.NSP.html#missionbio.mosaic.algorithms.nsp.NSP" title="missionbio.mosaic.algorithms.nsp.NSP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NSP</span></code></a>([jitter, random_state])</p></td>
 <td><p>Noise corrected and Scaled Protein counts (NSP)</p></td>
@@ -410,12 +408,10 @@ exploratory analysis.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Functional Modules</p>
+</section>
+<section id="functional-modules">
+<h2>Functional Modules<a class="headerlink" href="#functional-modules" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.io.html#module-missionbio.mosaic.io" title="missionbio.mosaic.io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io</span></code></a></p></td>
 <td><p>Module to read and write h5 files</p></td>
@@ -428,12 +424,10 @@ exploratory analysis.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Custom Plots</p>
+</section>
+<section id="custom-plots">
+<h2>Custom Plots<a class="headerlink" href="#custom-plots" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="autosummary_pages/missionbio.mosaic.plots.heatmap.Heatmap.html#missionbio.mosaic.plots.heatmap.Heatmap" title="missionbio.mosaic.plots.heatmap.Heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Heatmap</span></code></a></p></td>
 <td><p>Heatmap with options for grouping rows/cols.</p></td>
@@ -497,9 +491,11 @@ exploratory analysis.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules-and-classes">Modules and Classes</a><ul class="nav section-nav flex-column">
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-classes">Basic Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-workflows">Interactive Workflows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-modules">Functional Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-plots">Custom Plots</a></li>
 </ul>
   </nav></div>
 

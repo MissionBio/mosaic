@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.get\_palette
-======================================
+Cnv.get\_palette
+================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.get_palette
 
 .. currentmodule:: missionbio.mosaic.cnv
 

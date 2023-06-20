@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.feature\_scatter
-==================================================
+Protein.feature\_scatter
+========================
+
+.. rubric:: missionbio.mosaic.protein.Protein.feature_scatter
 
 .. currentmodule:: missionbio.mosaic.protein
 

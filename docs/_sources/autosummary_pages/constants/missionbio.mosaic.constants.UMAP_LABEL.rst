@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.UMAP\_LABEL
-=======================================
+UMAP\_LABEL
+===========
+
+.. rubric:: missionbio.mosaic.constants.UMAP_LABEL
 
 .. currentmodule:: missionbio.mosaic.constants
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.stripplot
-===========================================
+Protein.stripplot
+=================
+
+.. rubric:: missionbio.mosaic.protein.Protein.stripplot
 
 .. currentmodule:: missionbio.mosaic.protein
 

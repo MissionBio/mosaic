@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.create\_conditional\_style
-====================================================================================================
+VariantSubcloneTable.create\_conditional\_style
+===============================================
+
+.. rubric:: missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.create_conditional_style
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

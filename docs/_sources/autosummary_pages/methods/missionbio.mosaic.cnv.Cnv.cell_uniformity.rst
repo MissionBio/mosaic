@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.cell\_uniformity
-==========================================
+Cnv.cell\_uniformity
+====================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.cell_uniformity
 
 .. currentmodule:: missionbio.mosaic.cnv
 

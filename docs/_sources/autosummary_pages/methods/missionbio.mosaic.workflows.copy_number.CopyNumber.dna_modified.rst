@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.copy\_number.CopyNumber.dna\_modified
-=================================================================
+CopyNumber.dna\_modified
+========================
+
+.. rubric:: missionbio.mosaic.workflows.copy_number.CopyNumber.dna_modified
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

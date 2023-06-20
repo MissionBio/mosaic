@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.READS
-=================================
+READS
+=====
+
+.. rubric:: missionbio.mosaic.constants.READS
 
 .. currentmodule:: missionbio.mosaic.constants
 

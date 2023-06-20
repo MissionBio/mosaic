@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.read\_distribution
-====================================================
+Protein.read\_distribution
+==========================
+
+.. rubric:: missionbio.mosaic.protein.Protein.read_distribution
 
 .. currentmodule:: missionbio.mosaic.protein
 

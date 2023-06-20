@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.PALETTE
-===================================
+PALETTE
+=======
+
+.. rubric:: missionbio.mosaic.constants.PALETTE
 
 .. currentmodule:: missionbio.mosaic.constants
 

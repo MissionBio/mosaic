@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.copy\_number.CopyNumber.run
-=======================================================
+CopyNumber.run
+==============
+
+.. rubric:: missionbio.mosaic.workflows.copy_number.CopyNumber.run
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

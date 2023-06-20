@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.get\_row\_ids
-=======================================
+Cnv.get\_row\_ids
+=================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.get_row_ids
 
 .. currentmodule:: missionbio.mosaic.cnv
 

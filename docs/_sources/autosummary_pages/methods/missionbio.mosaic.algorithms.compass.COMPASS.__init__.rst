@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.algorithms.compass.COMPASS.\_\_init\_\_
-=========================================================
+COMPASS.\_\_init\_\_
+====================
+
+.. rubric:: missionbio.mosaic.algorithms.compass.COMPASS.__init__
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

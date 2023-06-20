@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.get\_palette
-============================================
+\_Assay.get\_palette
+====================
+
+.. rubric:: missionbio.mosaic.assay._Assay.get_palette
 
 .. currentmodule:: missionbio.mosaic.assay
 

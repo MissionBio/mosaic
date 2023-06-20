@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.feature\_scatter
-==========================================
+Cnv.feature\_scatter
+====================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.feature_scatter
 
 .. currentmodule:: missionbio.mosaic.cnv
 

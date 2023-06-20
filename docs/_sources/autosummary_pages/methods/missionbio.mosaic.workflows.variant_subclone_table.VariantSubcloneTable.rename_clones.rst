@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.rename\_clones
-========================================================================================
+VariantSubcloneTable.rename\_clones
+===================================
+
+.. rubric:: missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.rename_clones
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

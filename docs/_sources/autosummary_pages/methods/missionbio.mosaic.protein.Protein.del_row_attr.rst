@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.del\_row\_attr
-================================================
+Protein.del\_row\_attr
+======================
+
+.. rubric:: missionbio.mosaic.protein.Protein.del_row_attr
 
 .. currentmodule:: missionbio.mosaic.protein
 

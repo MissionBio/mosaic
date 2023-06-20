@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.rename\_labels
-================================================
+Protein.rename\_labels
+======================
+
+.. rubric:: missionbio.mosaic.protein.Protein.rename_labels
 
 .. currentmodule:: missionbio.mosaic.protein
 

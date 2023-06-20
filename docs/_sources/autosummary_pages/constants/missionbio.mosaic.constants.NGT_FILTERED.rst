@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.NGT\_FILTERED
-=========================================
+NGT\_FILTERED
+=============
+
+.. rubric:: missionbio.mosaic.constants.NGT_FILTERED
 
 .. currentmodule:: missionbio.mosaic.constants
 

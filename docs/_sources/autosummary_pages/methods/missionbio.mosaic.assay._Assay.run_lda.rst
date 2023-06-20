@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.run\_lda
-========================================
+\_Assay.run\_lda
+================
+
+.. rubric:: missionbio.mosaic.assay._Assay.run_lda
 
 .. currentmodule:: missionbio.mosaic.assay
 

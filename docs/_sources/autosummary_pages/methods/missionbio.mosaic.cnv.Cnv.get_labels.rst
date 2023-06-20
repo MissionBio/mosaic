@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.get\_labels
-=====================================
+Cnv.get\_labels
+===============
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.get_labels
 
 .. currentmodule:: missionbio.mosaic.cnv
 

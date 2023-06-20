@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.copy\_number.CopyNumber.plot\_options
-=================================================================
+CopyNumber.plot\_options
+========================
+
+.. rubric:: missionbio.mosaic.workflows.copy_number.CopyNumber.plot_options
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.utils.clipped\_values
-=======================================
+clipped\_values
+===============
+
+.. rubric:: missionbio.mosaic.utils.clipped_values
 
 .. currentmodule:: missionbio.mosaic.utils
 

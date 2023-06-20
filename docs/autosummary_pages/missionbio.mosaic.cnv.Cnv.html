@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Cnv &#8212; Mosaic v3.0 documentation</title>
+    <title>Cnv &#8212; Mosaic v3.0.1 documentation</title>
   
   
   
@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -40,7 +41,9 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'autosummary_pages/missionbio.mosaic.cnv.Cnv';</script>
@@ -49,7 +52,7 @@
     <link rel="next" title="Protein" href="missionbio.mosaic.protein.Protein.html" />
     <link rel="prev" title="Dna" href="missionbio.mosaic.dna.Dna.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -119,7 +122,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0 documentation</p>
+    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -298,7 +301,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -314,6 +319,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.cnv.Cnv"><code class="docutils literal notranslate"><span class="pre">Cnv</span></code></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -323,8 +336,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="cnv">
-<h1>Cnv<a class="headerlink" href="#cnv" title="Permalink to this headline">#</a></h1>
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="cnv">
+<h1>Cnv<a class="headerlink" href="#cnv" title="Permalink to this heading">#</a></h1>
 <p class="rubric">missionbio.mosaic.cnv.Cnv</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="missionbio.mosaic.cnv.Cnv">
@@ -332,24 +347,19 @@ document.write(`
 <dd><p>Container for CNV data.</p>
 <p>Inherits most methods from <a class="reference internal" href="missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-class docutils literal notranslate"><span class="pre">_Assay</span></code></a>.
 See that for the documentation on other methods and visualizations.</p>
-<p class="rubric">Filtering</p>
+<section id="filtering">
+<h2>Filtering<a class="headerlink" href="#filtering" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.cnv.Cnv.filter_amplicons.html#missionbio.mosaic.cnv.Cnv.filter_amplicons" title="missionbio.mosaic.cnv.Cnv.filter_amplicons"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_amplicons</span></code></a>([completeness, read_depth])</p></td>
 <td><p>Remove amplicons with missing information.</p></td>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Algorithms</p>
+</section>
+<section id="algorithms">
+<h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.cnv.Cnv.compute_ploidy.html#missionbio.mosaic.cnv.Cnv.compute_ploidy" title="missionbio.mosaic.cnv.Cnv.compute_ploidy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_ploidy</span></code></a>(diploid_cells[, ...])</p></td>
 <td><p>Computes the ploidy of the cells</p></td>
@@ -365,12 +375,10 @@ See that for the documentation on other methods and visualizations.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">CNV specific visualizations</p>
+</section>
+<section id="cnv-specific-visualizations">
+<h2>CNV specific visualizations<a class="headerlink" href="#cnv-specific-visualizations" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.cnv.Cnv.plot_ploidy.html#missionbio.mosaic.cnv.Cnv.plot_ploidy" title="missionbio.mosaic.cnv.Cnv.plot_ploidy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_ploidy</span></code></a>(cluster[, features, collapse])</p></td>
 <td><p>Plots the ploidy of the cluster</p></td>
@@ -386,20 +394,21 @@ See that for the documentation on other methods and visualizations.</p>
 </tr>
 </tbody>
 </table>
-<p class="rubric">Extended methods</p>
+</section>
+<section id="extended-methods">
+<h2>Extended methods<a class="headerlink" href="#extended-methods" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.cnv.Cnv.heatmap.html#missionbio.mosaic.cnv.Cnv.heatmap" title="missionbio.mosaic.cnv.Cnv.heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heatmap</span></code></a>(attribute[, splitby, features, ...])</p></td>
 <td><p>Extends <a class="reference internal" href="methods/missionbio.mosaic.assay._Assay.heatmap.html#missionbio.mosaic.assay._Assay.heatmap" title="missionbio.mosaic.assay._Assay.heatmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">heatmap()</span></code></a></p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.cnv.Cnv.signaturemap.html#missionbio.mosaic.cnv.Cnv.signaturemap" title="missionbio.mosaic.cnv.Cnv.signaturemap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">signaturemap</span></code></a>(attribute[, kind, nan_value, ...])</p></td>
+<td><p>Extends <a class="reference internal" href="methods/missionbio.mosaic.assay._Assay.signaturemap.html#missionbio.mosaic.assay._Assay.signaturemap" title="missionbio.mosaic.assay._Assay.signaturemap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">signaturemap()</span></code></a></p></td>
+</tr>
 </tbody>
 </table>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>args</strong><span class="classifier">list</span></dt><dd><p>To be passed to the <a class="reference internal" href="missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-class docutils literal notranslate"><span class="pre">_Assay</span></code></a> class.</p>
 </dd>
@@ -408,6 +417,7 @@ See that for the documentation on other methods and visualizations.</p>
 </dl>
 </dd>
 </dl>
+</section>
 </dd></dl>
 
 </section>
@@ -451,6 +461,20 @@ See that for the documentation on other methods and visualizations.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.cnv.Cnv"><code class="docutils literal notranslate"><span class="pre">Cnv</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

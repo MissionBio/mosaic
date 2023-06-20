@@ -99,7 +99,8 @@ Described here are common types and descriptions of data stored in each layer of
    `mutated_cells_cutoff`.
 
 
-**assay.dna.metadata**
+Metadata
+~~~~~~~~
 
 .. list-table:: Table
    :widths: 25 50
@@ -175,7 +176,8 @@ Described here are common types and descriptions of data stored in each layer of
      - The Tapestri pipeline version used.
 
 
-**assay.dna.layers**
+Layers
+~~~~~~
 
 .. list-table:: Table
   :widths: 25 50
@@ -201,7 +203,8 @@ Described here are common types and descriptions of data stored in each layer of
     - The genotype information after calling `assay.dna.filter_variants()` in each cell/barcode. 0: is wildtype, 1: one allele is alternate, 2: both alleles are alternate, 3: Missing genotype (e.g. not enough depth of coverage).
 
 
-**assay.dna.col_attrs**
+Column attributes
+~~~~~~~~~~~~~~~~~
 
 .. list-table:: Table
   :widths: 25 50
@@ -231,7 +234,8 @@ Described here are common types and descriptions of data stored in each layer of
     - The id of the variant.
 
 
-**assay.dna.row_attrs**
+Row attributes
+~~~~~~~~~~~~~~
 
 .. list-table:: Table
   :widths: 25 50
@@ -251,7 +255,8 @@ Described here are common types and descriptions of data stored in each layer of
 CNV
 ---
 
-**assay.cnv.metadata**
+Metadata
+~~~~~~~~
 
 .. list-table:: Table
    :widths: 25 50
@@ -302,7 +307,8 @@ CNV
    * - pipeline_version
      - Pipeline version used to produce the data.
 
-**assay.cnv.layers**
+Layers
+~~~~~~
 
 .. list-table:: Table
   :widths: 25 50
@@ -314,7 +320,8 @@ CNV
     - The total read counts within the amplicon
 
 
-**assay.cnv.col_attrs**
+Column attributes
+~~~~~~~~~~~~~~~~~
 
 .. list-table:: Table
   :widths: 25 50
@@ -335,7 +342,8 @@ CNV
   * - r2_counts
     - The count of R1 reads within the amplicon across all barcodes/cells.
 
-**assay.cnv.row_attrs**
+Row attributes
+~~~~~~~~~~~~~~
 
 .. list-table:: Table
   :widths: 25 50
@@ -356,7 +364,8 @@ CNV
 Protein
 -------
 
-**assay.protein.metadata**
+Metadata
+~~~~~~~~
 
 .. list-table:: Table
    :widths: 25 50
@@ -395,7 +404,8 @@ Protein
    * - pipeline_version
      - Pipeline version used to produce the data.
 
-**assay.protein.layers**
+Layers
+~~~~~~
 
 .. list-table:: Table
   :widths: 25 50
@@ -411,7 +421,8 @@ Protein
     - Z-score normalized counts. Only present after running `sample.protein.scale_data()`.
 
 
-**assay.protein.col_attrs**
+Column attributes
+~~~~~~~~~~~~~~~~~
 
 .. list-table:: Table
   :widths: 25 50
@@ -426,7 +437,8 @@ Protein
   * - antibody_sequence
     - The basepair sequenced tagged to the antibody.
 
-**assay.protein.row_attrs**
+Row attributes
+~~~~~~~~~~~~~~
 
 .. list-table:: Table
   :widths: 25 50

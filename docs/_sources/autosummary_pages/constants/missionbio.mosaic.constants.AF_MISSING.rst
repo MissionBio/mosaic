@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.AF\_MISSING
-=======================================
+AF\_MISSING
+===========
+
+.. rubric:: missionbio.mosaic.constants.AF_MISSING
 
 .. currentmodule:: missionbio.mosaic.constants
 

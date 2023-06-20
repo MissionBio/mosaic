@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.stripplot
-===================================
+Cnv.stripplot
+=============
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.stripplot
 
 .. currentmodule:: missionbio.mosaic.cnv
 

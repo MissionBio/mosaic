@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.samplegroup.SampleGroup.\_\_init\_\_
-======================================================
+SampleGroup.\_\_init\_\_
+========================
+
+.. rubric:: missionbio.mosaic.samplegroup.SampleGroup.__init__
 
 .. currentmodule:: missionbio.mosaic.samplegroup
 

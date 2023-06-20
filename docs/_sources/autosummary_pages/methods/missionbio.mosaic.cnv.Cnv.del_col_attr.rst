@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.del\_col\_attr
-========================================
+Cnv.del\_col\_attr
+==================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.del_col_attr
 
 .. currentmodule:: missionbio.mosaic.cnv
 

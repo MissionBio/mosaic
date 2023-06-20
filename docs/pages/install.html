@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Installation &#8212; Mosaic v3.0 documentation</title>
+    <title>Installation &#8212; Mosaic v3.0.1 documentation</title>
   
   
   
@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -40,7 +41,9 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'pages/install';</script>
@@ -49,7 +52,7 @@
     <link rel="next" title="Getting Started" href="getting_started.html" />
     <link rel="prev" title="Mosaic API documentation" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -119,7 +122,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0 documentation</p>
+    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -335,16 +338,38 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h1>
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h1>
 <section id="installer-preferred">
-<h2>Installer (Preferred)<a class="headerlink" href="#installer-preferred" title="Permalink to this headline">#</a></h2>
+<h2>Installer (Preferred)<a class="headerlink" href="#installer-preferred" title="Permalink to this heading">#</a></h2>
 <p>The installer for Mosaic can be downloaded from the <a class="reference external" href="https://portal.missionbio.com/">Mission Bio Portal</a>.
-This is an interactive installer for Mac and Windows, and a shell script for Linux. It has
-all the packages in it and doesn’t require an internet connection to install.</p>
+This is an interactive installer for Mac and Windows, and a shell script for Linux. With the default settings
+the installer will create a directory called <code class="docutils literal notranslate"><span class="pre">mosaic</span></code> and install the latest version of Mosaic in it. For Mac
+and Linux the installer will also make this version of Mosaic available from the command line by default. For
+Windows, <code class="docutils literal notranslate"><span class="pre">conda</span></code> is available from the command line if the option to <strong>add to PATH</strong> is selected.</p>
+<p>After the installation completes, open the terminal and run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>env<span class="w"> </span>list
+</pre></div>
+</div>
+<p>This will output a list of all the available conda environments. If the installation was successful, you
+should see a directory called <code class="docutils literal notranslate"><span class="pre">mosaic</span></code>. The <code class="docutils literal notranslate"><span class="pre">*</span></code> next to the environment name indicates the currently
+active environment. There might be other directories like <code class="docutils literal notranslate"><span class="pre">anaconda</span></code> or <code class="docutils literal notranslate"><span class="pre">miniconda</span></code> depending on
+previous installations of those packages. The output should look something like this with <code class="docutils literal notranslate"><span class="pre">name</span></code>
+replaced with your username:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">                 /Users/name/miniconda3</span>
+<span class="go">base          *  /Users/name/mosaic</span>
+</pre></div>
+</div>
+<p><strong>Only if</strong> <code class="docutils literal notranslate"><span class="pre">mosaic</span></code> is not the active environment (The <code class="docutils literal notranslate"><span class="pre">*</span></code> is next to <code class="docutils literal notranslate"><span class="pre">/Users/name/miniconda3</span></code> or
+some other environment), activate it using:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>activate<span class="w"> </span>/Users/name/mosaic/
+</pre></div>
+</div>
 </section>
 <section id="installing-using-conda">
-<h2>Installing using conda<a class="headerlink" href="#installing-using-conda" title="Permalink to this headline">#</a></h2>
+<h2>Installing using conda<a class="headerlink" href="#installing-using-conda" title="Permalink to this heading">#</a></h2>
 <p>Although this method is prone to errors due to updates to dependencies of mosaic causing incompatiblity,
 it is possible to install Mosaic through the <a class="reference external" href="https://anaconda.org/missionbio">missionbio conda channel</a>.</p>
 <ol class="arabic">
@@ -358,15 +383,15 @@ it is possible to install Mosaic through the <a class="reference external" href=
 a new dependency solver that is much faster than the default solver. Install it using the following:</p>
 </dd>
 </dl>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="w"> </span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>conda-libmamba-solver
-&gt;<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span>strict
-&gt;<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>solver<span class="w"> </span>libmamba
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>conda-libmamba-solver
+<span class="gp">$ </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span>strict
+<span class="gp">$ </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>solver<span class="w"> </span>libmamba
 </pre></div>
 </div>
 </li>
 <li><dl>
 <dt>Install Mosaic</dt><dd><p>Following the successful installation of Anaconda, open your console/terminal and run the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">mosaic</span> <span class="o">-</span><span class="n">c</span> <span class="n">missionbio</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">missionbio</span><span class="o">.</span><span class="n">mosaic</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>mosaic<span class="w"> </span>-c<span class="w"> </span>missionbio<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>missionbio.mosaic
 </pre></div>
 </div>
 </dd>
@@ -379,13 +404,13 @@ you are using your notebook, however, you can minimize this window during use. I
 your mosaic environment, you will notice the command prompt change from <code class="docutils literal notranslate"><span class="pre">base</span></code> to <code class="docutils literal notranslate"><span class="pre">mosaic</span></code>, please
 ensure this has happened before opening your jupyter notebook, or else the notebook will not function
 properly</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">mosaic</span>
-<span class="o">&gt;</span> <span class="n">jupyter</span> <span class="n">notebook</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>activate<span class="w"> </span>mosaic
+<span class="gp">$ </span>jupyter<span class="w"> </span>notebook
 </pre></div>
 </div>
 <p>Example of prompt changing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">base</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">WINDOWS</span>\<span class="n">system32</span><span class="o">&gt;</span> <span class="n">conda</span> <span class="n">activate</span> <span class="n">mosaic</span>
-<span class="p">(</span><span class="n">mosaic</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">WINDOWS</span>\<span class="n">system32</span><span class="o">&gt;</span> <span class="n">jupyter</span> <span class="n">notebook</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(base)</span> <span class="go">C:\WINDOWS\system32&gt; conda activate mosaic</span>
+<span class="gp gp-VirtualEnv">(mosaic)</span> <span class="go">C:\WINDOWS\system32&gt; jupyter notebook</span>
 </pre></div>
 </div>
 <p>You may get the error “Conda command not found” when trying to go through this for the first time. If so, use the command “source ~/.bashrc”</p>
@@ -396,20 +421,20 @@ properly</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>If the conda env <cite>mosaic</cite> already exists, remove it using</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">remove</span> <span class="o">--</span><span class="n">name</span> <span class="n">mosaic</span> <span class="o">--</span><span class="nb">all</span> <span class="o">--</span><span class="n">yes</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>remove<span class="w"> </span>--name<span class="w"> </span>mosaic<span class="w"> </span>--all<span class="w"> </span>--yes
 </pre></div>
 </div>
 </div>
 </section>
 <section id="older-versions">
-<h2>Older versions<a class="headerlink" href="#older-versions" title="Permalink to this headline">#</a></h2>
+<h2>Older versions<a class="headerlink" href="#older-versions" title="Permalink to this heading">#</a></h2>
 <p>Available older versions of mosaic can be found on the <a class="reference external" href="https://anaconda.org/missionbio/missionbio.mosaic/files">conda channel</a>.
 These can be installed by passing the required version number.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>mosaic<span class="w"> </span>-c<span class="w"> </span>missionbio<span class="w"> </span>-c<span class="w"> </span>plotly<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>missionbio.mosaic<span class="o">=</span><span class="m">1</span>.8.1<span class="w"> </span>notebook
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>mosaic<span class="w"> </span>-c<span class="w"> </span>missionbio<span class="w"> </span>-c<span class="w"> </span>plotly<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>missionbio.mosaic<span class="o">=</span><span class="m">1</span>.8.1<span class="w"> </span>notebook
 </pre></div>
 </div>
 <p>Versions tagged with a label besides <cite>main</cite> can be installed by changing the channel name</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>mosaic<span class="w"> </span>-c<span class="w"> </span>missionbio/label/unsupported<span class="w"> </span>-c<span class="w"> </span>plotly<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>missionbio.mosaic<span class="o">=</span><span class="m">1</span>.7.1<span class="w"> </span>notebook
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span>mosaic<span class="w"> </span>-c<span class="w"> </span>missionbio/label/unsupported<span class="w"> </span>-c<span class="w"> </span>plotly<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>missionbio.mosaic<span class="o">=</span><span class="m">1</span>.7.1<span class="w"> </span>notebook
 </pre></div>
 </div>
 </section>

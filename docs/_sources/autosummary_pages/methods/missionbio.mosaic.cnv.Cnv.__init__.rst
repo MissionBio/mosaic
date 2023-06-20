@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.\_\_init\_\_
-======================================
+Cnv.\_\_init\_\_
+================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.__init__
 
 .. currentmodule:: missionbio.mosaic.cnv
 

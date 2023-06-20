@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.constants.ORG\_BARCODE
-========================================
+ORG\_BARCODE
+============
+
+.. rubric:: missionbio.mosaic.constants.ORG_BARCODE
 
 .. currentmodule:: missionbio.mosaic.constants
 

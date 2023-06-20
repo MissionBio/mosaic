@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.sort\_rows
-====================================
+Dna.sort\_rows
+==============
+
+.. rubric:: missionbio.mosaic.dna.Dna.sort_rows
 
 .. currentmodule:: missionbio.mosaic.dna
 

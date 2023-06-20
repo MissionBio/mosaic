@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.set\_labels
-=============================================
+Protein.set\_labels
+===================
+
+.. rubric:: missionbio.mosaic.protein.Protein.set_labels
 
 .. currentmodule:: missionbio.mosaic.protein
 

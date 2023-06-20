@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.variant\_subclone\_table.VariantSubcloneTable.callback\_create\_figure
-==================================================================================================
+VariantSubcloneTable.callback\_create\_figure
+=============================================
+
+.. rubric:: missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.callback_create_figure
 
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 

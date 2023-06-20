@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.reset\_ids
-====================================
+Cnv.reset\_ids
+==============
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.reset_ids
 
 .. currentmodule:: missionbio.mosaic.cnv
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.add\_metadata
-===============================================
+Protein.add\_metadata
+=====================
+
+.. rubric:: missionbio.mosaic.protein.Protein.add_metadata
 
 .. currentmodule:: missionbio.mosaic.protein
 

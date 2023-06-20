@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.scale\_data
-=====================================
+Cnv.scale\_data
+===============
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.scale_data
 
 .. currentmodule:: missionbio.mosaic.cnv
 

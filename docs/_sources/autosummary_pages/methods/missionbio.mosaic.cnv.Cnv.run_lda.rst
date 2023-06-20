@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.run\_lda
-==================================
+Cnv.run\_lda
+============
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.run_lda
 
 .. currentmodule:: missionbio.mosaic.cnv
 

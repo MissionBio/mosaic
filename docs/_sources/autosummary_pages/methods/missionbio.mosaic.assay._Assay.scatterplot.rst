@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.scatterplot
-===========================================
+\_Assay.scatterplot
+===================
+
+.. rubric:: missionbio.mosaic.assay._Assay.scatterplot
 
 .. currentmodule:: missionbio.mosaic.assay
 

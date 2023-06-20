@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.add\_extension
-========================================
+Cnv.add\_extension
+==================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.add_extension
 
 .. currentmodule:: missionbio.mosaic.cnv
 

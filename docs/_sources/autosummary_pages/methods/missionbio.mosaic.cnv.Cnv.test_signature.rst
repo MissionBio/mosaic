@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.test\_signature
-=========================================
+Cnv.test\_signature
+===================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.test_signature
 
 .. currentmodule:: missionbio.mosaic.cnv
 

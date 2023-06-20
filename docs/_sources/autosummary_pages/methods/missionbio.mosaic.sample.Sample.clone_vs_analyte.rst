@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.sample.Sample.clone\_vs\_analyte
-==================================================
+Sample.clone\_vs\_analyte
+=========================
+
+.. rubric:: missionbio.mosaic.sample.Sample.clone_vs_analyte
 
 .. currentmodule:: missionbio.mosaic.sample
 

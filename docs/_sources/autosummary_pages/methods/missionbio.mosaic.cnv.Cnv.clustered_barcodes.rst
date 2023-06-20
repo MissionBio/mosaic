@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.clustered\_barcodes
-=============================================
+Cnv.clustered\_barcodes
+=======================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.clustered_barcodes
 
 .. currentmodule:: missionbio.mosaic.cnv
 

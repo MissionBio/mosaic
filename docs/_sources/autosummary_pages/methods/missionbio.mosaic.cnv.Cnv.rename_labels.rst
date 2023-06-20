@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.rename\_labels
-========================================
+Cnv.rename\_labels
+==================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.rename_labels
 
 .. currentmodule:: missionbio.mosaic.cnv
 

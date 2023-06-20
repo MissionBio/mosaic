@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>SampleGroup &#8212; Mosaic v3.0 documentation</title>
+    <title>SampleGroup &#8212; Mosaic v3.0.1 documentation</title>
   
   
   
@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -40,7 +41,9 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'autosummary_pages/missionbio.mosaic.samplegroup.SampleGroup';</script>
@@ -49,7 +52,7 @@
     <link rel="next" title="CopyNumber" href="missionbio.mosaic.workflows.copy_number.CopyNumber.html" />
     <link rel="prev" title="Sample" href="missionbio.mosaic.sample.Sample.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -119,7 +122,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0 documentation</p>
+    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -298,7 +301,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -314,6 +319,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.samplegroup.SampleGroup"><code class="docutils literal notranslate"><span class="pre">SampleGroup</span></code></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -323,12 +336,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="samplegroup">
-<h1>SampleGroup<a class="headerlink" href="#samplegroup" title="Permalink to this headline">#</a></h1>
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="samplegroup">
+<h1>SampleGroup<a class="headerlink" href="#samplegroup" title="Permalink to this heading">#</a></h1>
 <p class="rubric">missionbio.mosaic.samplegroup.SampleGroup</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="missionbio.mosaic.samplegroup.SampleGroup">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SampleGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><span class="pre">missionbio.mosaic.sample.Sample</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.samplegroup.SampleGroup" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SampleGroup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><span class="pre">Sample</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.samplegroup.SampleGroup" title="Permalink to this definition">#</a></dt>
 <dd><p>A group of samples related to each other</p>
 <dl>
 <dt>The following constraints are imposed on the samples</dt><dd><ol class="arabic simple">
@@ -346,12 +361,9 @@ document.write(`
 </pre></div>
 </div>
 <p>Checkout the multi sample analysis vignette for more details.</p>
-<p class="rubric">Methods</p>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.samplegroup.SampleGroup.hasassay.html#missionbio.mosaic.samplegroup.SampleGroup.hasassay" title="missionbio.mosaic.samplegroup.SampleGroup.hasassay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hasassay</span></code></a>(name)</p></td>
 <td><p>Checks if the assay is present in the samples</p></td>
@@ -370,12 +382,10 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p class="rubric">Multi-sample visualizations</p>
+</section>
+<section id="multi-sample-visualizations">
+<h2>Multi-sample visualizations<a class="headerlink" href="#multi-sample-visualizations" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.samplegroup.SampleGroup.barplot.html#missionbio.mosaic.samplegroup.SampleGroup.barplot" title="missionbio.mosaic.samplegroup.SampleGroup.barplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">barplot</span></code></a>([assay, sample_order, label_order, ...])</p></td>
 <td><p>Draws a bar plot of label counts for each sample</p></td>
@@ -385,18 +395,17 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p class="rubric">Errors</p>
+</section>
+<section id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
-<colgroup>
-<col style="width: 10%" />
-<col style="width: 90%" />
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">IncompatibleSamplesError</span></code></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
+</section>
 </dd></dl>
 
 </section>
@@ -440,6 +449,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.samplegroup.SampleGroup"><code class="docutils literal notranslate"><span class="pre">SampleGroup</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

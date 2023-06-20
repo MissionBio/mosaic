@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.group\_clusters
-=================================================
+Protein.group\_clusters
+=======================
+
+.. rubric:: missionbio.mosaic.protein.Protein.group_clusters
 
 .. currentmodule:: missionbio.mosaic.protein
 

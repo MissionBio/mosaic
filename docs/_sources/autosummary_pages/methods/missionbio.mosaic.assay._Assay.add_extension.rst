@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.add\_extension
-==============================================
+\_Assay.add\_extension
+======================
+
+.. rubric:: missionbio.mosaic.assay._Assay.add_extension
 
 .. currentmodule:: missionbio.mosaic.assay
 

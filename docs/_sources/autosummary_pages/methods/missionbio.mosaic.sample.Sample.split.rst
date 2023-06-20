@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.sample.Sample.split
-=====================================
+Sample.split
+============
+
+.. rubric:: missionbio.mosaic.sample.Sample.split
 
 .. currentmodule:: missionbio.mosaic.sample
 

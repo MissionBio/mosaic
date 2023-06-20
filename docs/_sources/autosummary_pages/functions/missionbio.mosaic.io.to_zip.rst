@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.io.to\_zip
-============================
+to\_zip
+=======
+
+.. rubric:: missionbio.mosaic.io.to_zip
 
 .. currentmodule:: missionbio.mosaic.io
 

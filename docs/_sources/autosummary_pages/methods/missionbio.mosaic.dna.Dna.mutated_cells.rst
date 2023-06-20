@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.mutated\_cells
-========================================
+Dna.mutated\_cells
+==================
+
+.. rubric:: missionbio.mosaic.dna.Dna.mutated_cells
 
 .. currentmodule:: missionbio.mosaic.dna
 

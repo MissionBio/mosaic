@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.split
-===============================
+Cnv.split
+=========
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.split
 
 .. currentmodule:: missionbio.mosaic.cnv
 

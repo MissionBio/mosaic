@@ -1,0 +1,7 @@
+.topic {
+    margin-top: 30px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--pst-color-border);
+}

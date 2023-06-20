@@ -5,8 +5,34 @@ Installer (Preferred)
 ---------------------
 
 The installer for Mosaic can be downloaded from the `Mission Bio Portal <https://portal.missionbio.com/>`_.
-This is an interactive installer for Mac and Windows, and a shell script for Linux. It has
-all the packages in it and doesn't require an internet connection to install.
+This is an interactive installer for Mac and Windows, and a shell script for Linux. With the default settings
+the installer will create a directory called ``mosaic`` and install the latest version of Mosaic in it. For Mac
+and Linux the installer will also make this version of Mosaic available from the command line by default. For
+Windows, ``conda`` is available from the command line if the option to **add to PATH** is selected.
+
+After the installation completes, open the terminal and run:
+
+.. code-block:: console
+
+   $ conda env list
+
+This will output a list of all the available conda environments. If the installation was successful, you
+should see a directory called ``mosaic``. The ``*`` next to the environment name indicates the currently
+active environment. There might be other directories like ``anaconda`` or ``miniconda`` depending on
+previous installations of those packages. The output should look something like this with ``name``
+replaced with your username:
+
+.. code-block:: console
+
+                    /Users/name/miniconda3
+   base          *  /Users/name/mosaic
+
+**Only if** ``mosaic`` is not the active environment (The ``*`` is next to ``/Users/name/miniconda3`` or
+some other environment), activate it using:
+
+.. code-block:: console
+
+   $ conda activate /Users/name/mosaic/
 
 Installing using conda
 ----------------------
@@ -21,18 +47,18 @@ it is possible to install Mosaic through the `missionbio conda channel <https://
     The `libmamba <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ solver is
     a new dependency solver that is much faster than the default solver. Install it using the following:
 
-   .. code-block:: bash
+   .. code-block:: console
 
-      > conda install -n base conda-libmamba-solver
-      > conda config --set channel_priority strict
-      > conda config --set solver libmamba
+      $ conda install -n base conda-libmamba-solver
+      $ conda config --set channel_priority strict
+      $ conda config --set solver libmamba
 
 3. Install Mosaic
     Following the successful installation of Anaconda, open your console/terminal and run the following commands:
 
-    .. code-block::
+    .. code-block:: console
 
-        > conda create --name mosaic -c missionbio -c conda-forge missionbio.mosaic
+       $ conda create --name mosaic -c missionbio -c conda-forge missionbio.mosaic
 
 4. Open mosaic environment and jupyter notebook:
     When you want to access your mosaic environment and open a jupyter notebook, always run the following
@@ -42,17 +68,17 @@ it is possible to install Mosaic through the `missionbio conda channel <https://
     ensure this has happened before opening your jupyter notebook, or else the notebook will not function
     properly
 
-    .. code-block::
+    .. code-block:: console
 
-        > conda activate mosaic
-        > jupyter notebook
+       $ conda activate mosaic
+       $ jupyter notebook
 
     Example of prompt changing:
 
-    .. code-block::
+    .. code-block:: console
 
-        (base) C:\WINDOWS\system32> conda activate mosaic
-        (mosaic) C:\WINDOWS\system32> jupyter notebook
+       (base) C:\WINDOWS\system32> conda activate mosaic
+       (mosaic) C:\WINDOWS\system32> jupyter notebook
 
 
     You may get the error “Conda command not found” when trying to go through this for the first time. If so, use the command “source ~/.bashrc”
@@ -62,9 +88,9 @@ it is possible to install Mosaic through the `missionbio conda channel <https://
 
     If the conda env `mosaic` already exists, remove it using
 
-    .. code-block::
+    .. code-block:: console
 
-        conda remove --name mosaic --all --yes
+       $ conda remove --name mosaic --all --yes
 
 Older versions
 --------------
@@ -72,12 +98,12 @@ Older versions
 Available older versions of mosaic can be found on the `conda channel <https://anaconda.org/missionbio/missionbio.mosaic/files>`_.
 These can be installed by passing the required version number.
 
-.. code-block:: bash
+.. code-block:: console
 
-    conda create --name mosaic -c missionbio -c plotly -c conda-forge missionbio.mosaic=1.8.1 notebook
+   $ conda create --name mosaic -c missionbio -c plotly -c conda-forge missionbio.mosaic=1.8.1 notebook
 
 Versions tagged with a label besides `main` can be installed by changing the channel name
 
-.. code-block:: bash
+.. code-block:: console
 
-    conda create --name mosaic -c missionbio/label/unsupported -c plotly -c conda-forge missionbio.mosaic=1.7.1 notebook
+   $ conda create --name mosaic -c missionbio/label/unsupported -c plotly -c conda-forge missionbio.mosaic=1.7.1 notebook

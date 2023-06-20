@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.signature
-===========================================
+Protein.signature
+=================
+
+.. rubric:: missionbio.mosaic.protein.Protein.signature
 
 .. currentmodule:: missionbio.mosaic.protein
 

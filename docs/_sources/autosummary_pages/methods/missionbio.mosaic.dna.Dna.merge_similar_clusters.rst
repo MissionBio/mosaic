@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.merge\_similar\_clusters
-==================================================
+Dna.merge\_similar\_clusters
+============================
+
+.. rubric:: missionbio.mosaic.dna.Dna.merge_similar_clusters
 
 .. currentmodule:: missionbio.mosaic.dna
 

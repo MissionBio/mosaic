@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.clustered\_ids
-========================================
+Dna.clustered\_ids
+==================
+
+.. rubric:: missionbio.mosaic.dna.Dna.clustered_ids
 
 .. currentmodule:: missionbio.mosaic.dna
 

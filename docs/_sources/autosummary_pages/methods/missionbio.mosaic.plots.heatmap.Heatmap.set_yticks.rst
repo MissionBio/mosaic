@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.plots.heatmap.Heatmap.set\_yticks
-===================================================
+Heatmap.set\_yticks
+===================
+
+.. rubric:: missionbio.mosaic.plots.heatmap.Heatmap.set_yticks
 
 .. currentmodule:: missionbio.mosaic.plots.heatmap
 

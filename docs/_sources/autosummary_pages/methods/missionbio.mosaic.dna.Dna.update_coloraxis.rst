@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.update\_coloraxis
-===========================================
+Dna.update\_coloraxis
+=====================
+
+.. rubric:: missionbio.mosaic.dna.Dna.update_coloraxis
 
 .. currentmodule:: missionbio.mosaic.dna
 

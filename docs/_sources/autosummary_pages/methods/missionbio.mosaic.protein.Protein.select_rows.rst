@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.select\_rows
-==============================================
+Protein.select\_rows
+====================
+
+.. rubric:: missionbio.mosaic.protein.Protein.select_rows
 
 .. currentmodule:: missionbio.mosaic.protein
 

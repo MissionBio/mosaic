@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.barcodes
-==========================================
+Protein.barcodes
+================
+
+.. rubric:: missionbio.mosaic.protein.Protein.barcodes
 
 .. currentmodule:: missionbio.mosaic.protein
 

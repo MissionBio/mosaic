@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>missionbio.mosaic.dna.Dna.scatterplot &#8212; Mosaic v3.0 documentation</title>
+    <title>Dna.scatterplot &#8212; Mosaic v3.0.1 documentation</title>
   
   
   
@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -40,14 +41,16 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'autosummary_pages/methods/missionbio.mosaic.dna.Dna.scatterplot';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -117,7 +120,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0 documentation</p>
+    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -296,7 +299,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -307,11 +312,19 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>missionbio.mosaic.dna.Dna.scatterplot</h1>
+    <h1>Dna.scatterplot</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.dna.Dna.scatterplot"><code class="docutils literal notranslate"><span class="pre">Dna.scatterplot()</span></code></a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -321,21 +334,26 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="missionbio-mosaic-dna-dna-scatterplot">
-<h1>missionbio.mosaic.dna.Dna.scatterplot<a class="headerlink" href="#missionbio-mosaic-dna-dna-scatterplot" title="Permalink to this headline">#</a></h1>
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="dna-scatterplot">
+<h1>Dna.scatterplot<a class="headerlink" href="#dna-scatterplot" title="Permalink to this heading">#</a></h1>
+<p class="rubric">missionbio.mosaic.dna.Dna.scatterplot</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.dna.Dna.scatterplot">
 <span class="sig-prename descclassname"><span class="pre">Dna.</span></span><span class="sig-name descname"><span class="pre">scatterplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colorby</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.scatterplot" title="Permalink to this definition">#</a></dt>
 <dd><p>Extends <a class="reference internal" href="missionbio.mosaic.assay._Assay.scatterplot.html#missionbio.mosaic.assay._Assay.scatterplot" title="missionbio.mosaic.assay._Assay.scatterplot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">scatterplot()</span></code></a></p>
 <p>Set specific colorscales for DNA.</p>
 <p>Scatter plot for all barcodes.</p>
-<p>Requires a 2-D row attribute.</p>
-<p>If <cite>colorby</cite> is None, then this plot can be used
-to create custom clusters using the plotly lasso tool.</p>
-<p>Not selecting any cell deselects all clusters, and double
-clicking refocuses all points.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">colorby</span></code> is None, then this plot can be used to create custom clusters using the plotly lasso tool.
+Not selecting any cell deselects all clusters, and double clicking refocuses all points.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>These selected clusters can be accessed through <code class="xref py py-attr docutils literal notranslate"><span class="pre">selected_bars</span></code>
+and they can be assigned to the assay using <code class="xref py py-meth docutils literal notranslate"><span class="pre">set_selected_labels()</span></code>.</p>
+</div>
 <dl class="field-list">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
 <dt><strong>attribute</strong><span class="classifier">str / np.ndarray</span></dt><dd><p>The row attribute to use as coordinates,
 This row attribute must be 2D. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_attribute()</span></code>
@@ -392,12 +410,12 @@ the name of the assay.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>fig</strong><span class="classifier">plotly.graph_objs.FigureWidget</span></dt><dd></dd>
 </dl>
 </dd>
-<dt class="field-odd">Raises</dt>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
 <dt>ValueError</dt><dd><p>Raised when the attribute is not present in the assay
 or when length of <cite>features</cite> does not match the second
@@ -431,6 +449,20 @@ dimension of <cite>colorby</cite>.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.dna.Dna.scatterplot"><code class="docutils literal notranslate"><span class="pre">Dna.scatterplot()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

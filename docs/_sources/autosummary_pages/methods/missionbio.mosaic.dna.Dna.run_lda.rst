@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.run\_lda
-==================================
+Dna.run\_lda
+============
+
+.. rubric:: missionbio.mosaic.dna.Dna.run_lda
 
 .. currentmodule:: missionbio.mosaic.dna
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.compute\_ploidy
-=========================================
+Cnv.compute\_ploidy
+===================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.compute_ploidy
 
 .. currentmodule:: missionbio.mosaic.cnv
 

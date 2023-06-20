@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.highlight\_heatmap
-====================================================
+Protein.highlight\_heatmap
+==========================
+
+.. rubric:: missionbio.mosaic.protein.Protein.highlight_heatmap
 
 .. currentmodule:: missionbio.mosaic.protein
 

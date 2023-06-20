@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.samples
-=================================
+Cnv.samples
+===========
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.samples
 
 .. currentmodule:: missionbio.mosaic.cnv
 

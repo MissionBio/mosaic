@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.add\_metadata
-=======================================
+Dna.add\_metadata
+=================
+
+.. rubric:: missionbio.mosaic.dna.Dna.add_metadata
 
 .. currentmodule:: missionbio.mosaic.dna
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.add\_metadata
-=======================================
+Cnv.add\_metadata
+=================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.add_metadata
 
 .. currentmodule:: missionbio.mosaic.cnv
 

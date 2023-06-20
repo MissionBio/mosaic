@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.assay.\_Assay.reset\_ids
-==========================================
+\_Assay.reset\_ids
+==================
+
+.. rubric:: missionbio.mosaic.assay._Assay.reset_ids
 
 .. currentmodule:: missionbio.mosaic.assay
 

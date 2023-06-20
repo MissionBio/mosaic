@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.violinplot
-============================================
+Protein.violinplot
+==================
+
+.. rubric:: missionbio.mosaic.protein.Protein.violinplot
 
 .. currentmodule:: missionbio.mosaic.protein
 

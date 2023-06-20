@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.run\_umap
-===========================================
+Protein.run\_umap
+=================
+
+.. rubric:: missionbio.mosaic.protein.Protein.run_umap
 
 .. currentmodule:: missionbio.mosaic.protein
 

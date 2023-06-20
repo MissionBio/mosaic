@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.ga
-====================================
+Protein.ga
+==========
+
+.. rubric:: missionbio.mosaic.protein.Protein.ga
 
 .. currentmodule:: missionbio.mosaic.protein
 

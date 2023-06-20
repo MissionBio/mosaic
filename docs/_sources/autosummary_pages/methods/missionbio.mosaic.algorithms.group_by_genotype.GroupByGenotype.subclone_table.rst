@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.algorithms.group\_by\_genotype.GroupByGenotype.subclone\_table
-================================================================================
+GroupByGenotype.subclone\_table
+===============================
+
+.. rubric:: missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.subclone_table
 
 .. currentmodule:: missionbio.mosaic.algorithms.group_by_genotype
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.name\_id\_by\_pos
-===========================================
+Cnv.name\_id\_by\_pos
+=====================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.name_id_by_pos
 
 .. currentmodule:: missionbio.mosaic.cnv
 

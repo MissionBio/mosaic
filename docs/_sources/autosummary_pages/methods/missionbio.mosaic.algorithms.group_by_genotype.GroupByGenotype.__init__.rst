@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.algorithms.group\_by\_genotype.GroupByGenotype.\_\_init\_\_
-=============================================================================
+GroupByGenotype.\_\_init\_\_
+============================
+
+.. rubric:: missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.__init__
 
 .. currentmodule:: missionbio.mosaic.algorithms.group_by_genotype
 

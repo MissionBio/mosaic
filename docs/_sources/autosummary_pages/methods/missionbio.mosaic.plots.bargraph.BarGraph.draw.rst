@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.plots.bargraph.BarGraph.draw
-==============================================
+BarGraph.draw
+=============
+
+.. rubric:: missionbio.mosaic.plots.bargraph.BarGraph.draw
 
 .. currentmodule:: missionbio.mosaic.plots.bargraph
 

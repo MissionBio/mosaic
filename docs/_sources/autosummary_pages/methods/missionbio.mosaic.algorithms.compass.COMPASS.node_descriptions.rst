@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.algorithms.compass.COMPASS.node\_descriptions
-===============================================================
+COMPASS.node\_descriptions
+==========================
+
+.. rubric:: missionbio.mosaic.algorithms.compass.COMPASS.node_descriptions
 
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 

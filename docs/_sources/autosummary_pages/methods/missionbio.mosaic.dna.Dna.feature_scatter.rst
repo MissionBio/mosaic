@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.dna.Dna.feature\_scatter
-==========================================
+Dna.feature\_scatter
+====================
+
+.. rubric:: missionbio.mosaic.dna.Dna.feature_scatter
 
 .. currentmodule:: missionbio.mosaic.dna
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.\_\_init\_\_
-==============================================
+Protein.\_\_init\_\_
+====================
+
+.. rubric:: missionbio.mosaic.protein.Protein.__init__
 
 .. currentmodule:: missionbio.mosaic.protein
 

@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.workflows.copy\_number.CopyNumber.get\_layout
-===============================================================
+CopyNumber.get\_layout
+======================
+
+.. rubric:: missionbio.mosaic.workflows.copy_number.CopyNumber.get_layout
 
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 

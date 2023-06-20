@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.amp\_uniformity
-=========================================
+Cnv.amp\_uniformity
+===================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.amp_uniformity
 
 .. currentmodule:: missionbio.mosaic.cnv
 

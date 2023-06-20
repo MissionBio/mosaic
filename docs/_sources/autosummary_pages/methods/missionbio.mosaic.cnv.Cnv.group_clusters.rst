@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.group\_clusters
-=========================================
+Cnv.group\_clusters
+===================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.group_clusters
 
 .. currentmodule:: missionbio.mosaic.cnv
 

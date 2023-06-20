@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.cnv.Cnv.read\_distribution
-============================================
+Cnv.read\_distribution
+======================
+
+.. rubric:: missionbio.mosaic.cnv.Cnv.read_distribution
 
 .. currentmodule:: missionbio.mosaic.cnv
 

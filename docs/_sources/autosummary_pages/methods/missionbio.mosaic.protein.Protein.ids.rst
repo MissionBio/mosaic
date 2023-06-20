@@ -1,7 +1,9 @@
 :orphan:
 
-missionbio.mosaic.protein.Protein.ids
-=====================================
+Protein.ids
+===========
+
+.. rubric:: missionbio.mosaic.protein.Protein.ids
 
 .. currentmodule:: missionbio.mosaic.protein
 
