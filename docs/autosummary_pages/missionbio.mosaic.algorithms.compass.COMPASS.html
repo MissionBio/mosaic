@@ -348,8 +348,8 @@ document.write(`
 <p>COMPASS can be found on GitHub - <a class="github reference external" href="https://github.com/cbg-ethz/COMPASS">cbg-ethz/COMPASS</a>. It must be installed and
 the command should be named <cite>PHYLOGENY</cite>. The name of the command can be modified by changing
 the <cite>command_name</cite> class variable.</p>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<section id="snippets">
+<h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this heading">#</a></h2>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">missionbio.mosaic</span> <span class="k">as</span> <span class="nn">ms</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">missionbio.mosaic.algorithms.compass</span> <span class="kn">import</span> <span class="n">COMPASS</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">load_example_dataset</span><span class="p">(</span><span class="s2">&quot;2 PBMC mix&quot;</span><span class="p">)</span>
@@ -369,15 +369,18 @@ the <cite>command_name</cite> class variable.</p>
 <a class="reference internal" href="missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable" title="missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">VariantSubcloneTable</span></code></a> workflow, then the labels can be
 compared between the two methods using the <a class="reference internal" href="methods/missionbio.mosaic.assay._Assay.crosstab.html#missionbio.mosaic.assay._Assay.crosstab" title="missionbio.mosaic.assay._Assay.crosstab"><code class="xref py py-meth docutils literal notranslate"><span class="pre">crosstab()</span></code></a> method to get a DataFrame
 and the <a class="reference internal" href="methods/missionbio.mosaic.assay._Assay.crosstabmap.html#missionbio.mosaic.assay._Assay.crosstabmap" title="missionbio.mosaic.assay._Assay.crosstabmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">crosstabmap()</span></code></a> method to plot that DataFrame as heatmap</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">group_by_genotype</span><span class="p">(</span><span class="n">compass</span><span class="o">.</span><span class="n">somatic_variants</span><span class="p">,</span> <span class="n">max_ado_score</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>  <span class="c1"># Set labels</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">crosstabmap</span><span class="p">(</span><span class="n">compass</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1"># Compare with COMPASS labels</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">compass</span><span class="o">.</span><span class="n">node_descriptions</span><span class="p">()</span>  <span class="c1"># The mapping of the node in labels_ to the genotype</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Set labels</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">group_by_genotype</span><span class="p">(</span><span class="n">compass</span><span class="o">.</span><span class="n">somatic_variants</span><span class="p">,</span> <span class="n">max_ado_score</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Compare with COMPASS labels</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">crosstabmap</span><span class="p">(</span><span class="n">compass</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># The mapping of the node in labels_ to the genotype</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">compass</span><span class="o">.</span><span class="n">node_descriptions</span><span class="p">()</span>
 <span class="gp">... </span><span class="p">{</span><span class="s1">&#39;2&#39;</span><span class="p">:</span> <span class="s1">&#39;KIT (c.2484+78T-C)&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span> <span class="s1">&#39;NPM1 (c.847-74A-G)&lt;br&gt;CNLOH: KIT, NPM1&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
-<section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.mosaic.algorithms.compass.COMPASS.somatic_variants.html#missionbio.mosaic.algorithms.compass.COMPASS.somatic_variants" title="missionbio.mosaic.algorithms.compass.COMPASS.somatic_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">somatic_variants</span></code></a></p></td>
@@ -406,8 +409,8 @@ and the <a class="reference internal" href="methods/missionbio.mosaic.assay._Ass
 </tbody>
 </table>
 </section>
-<section id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.algorithms.compass.COMPASS.run.html#missionbio.mosaic.algorithms.compass.COMPASS.run" title="missionbio.mosaic.algorithms.compass.COMPASS.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>([kwargs])</p></td>

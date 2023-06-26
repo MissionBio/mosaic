@@ -347,8 +347,8 @@ document.write(`
 <dd><p>Multiple heatmaps with a common y-axis</p>
 <p>This uses <a class="reference internal" href="missionbio.mosaic.plots.heatmap.Heatmap.html#missionbio.mosaic.plots.heatmap.Heatmap" title="missionbio.mosaic.plots.heatmap.Heatmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Heatmap()</span></code></a> to plot each heatmap.
 Each heatmap is plotted in a separate subplot and each of them has their own colorbar.</p>
-<section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<section id="snippets">
+<h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this heading">#</a></h2>
 <p>A multi-heatmap with two heatmaps and a common y-axis:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">missionbio.mosaic.plots.multi_heatmap</span> <span class="kn">import</span> <span class="n">MultiHeatmap</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -376,8 +376,8 @@ Each heatmap is plotted in a separate subplot and each of them has their own col
 &gt;&gt;&gt; fig = MultiHeatmap(datas, y_groups=[“a”, “b”], extra_columns=1, extra_column_titles=[“Bar”]).draw()
 &gt;&gt;&gt; fig.add_trace(bar.trace(), row=1, col=2)  # Add the bar graph to the empty second column</p>
 </section>
-<section id="methods">
-<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this heading">#</a></h2>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.draw.html#missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.draw" title="missionbio.mosaic.plots.multi_heatmap.MultiHeatmap.draw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">draw</span></code></a>([heatmap_columns])</p></td>
