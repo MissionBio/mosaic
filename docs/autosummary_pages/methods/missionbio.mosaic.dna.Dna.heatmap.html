@@ -139,6 +139,36 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna.html">Single Sample DNA-only notebook</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-multisample.html">Multisample DNA-only notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein.html">Single Sample DNA + Protein notebook</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein-multisample.html">Multisample DNA + Protein notebook</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/help.html">Additional resources</a></li>
 
 </ul>
@@ -385,9 +415,9 @@ datasets.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>attribute</strong><span class="classifier">str / np.ndarray</span></dt><dd><p>An attribute with the shape equal to the shape
+<dt><strong>attribute</strong><span class="classifier">str / np.ndarray / pd.DataFrame</span></dt><dd><p>An attribute with the shape equal to the shape
 of the assay. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_attribute()</span></code> to
-retrieve the values constrained by <cite>row+col</cite>.</p>
+retrieve the values constrained by <cite>row</cite>.</p>
 </dd>
 <dt><strong>splitby</strong><span class="classifier">str / np.ndarray, default LABEL</span></dt><dd><p>Whether to order the barcodes based on the given
 labels or not. Only applicable when <cite>bars_order</cite>

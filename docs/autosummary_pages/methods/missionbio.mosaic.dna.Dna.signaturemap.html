@@ -139,6 +139,36 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna.html">Single Sample DNA-only notebook</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-multisample.html">Multisample DNA-only notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein.html">Single Sample DNA + Protein notebook</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein-multisample.html">Multisample DNA + Protein notebook</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/help.html">Additional resources</a></li>
 
 </ul>
@@ -348,7 +378,7 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>attribute</strong><span class="classifier">Union[str, np.ndarray]</span></dt><dd><p>The attribute whose signature is to be plotted.
+<dt><strong>attribute</strong><span class="classifier">Union[str, np.ndarray, pd.DataFrame]</span></dt><dd><p>The attribute whose signature is to be plotted.
 This is passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">signature()</span></code> as is.</p>
 </dd>
 <dt><strong>kind</strong><span class="classifier">str - [“median”, “mode”, “std”, “mean”]</span></dt><dd><p>The kind of signature to plot.

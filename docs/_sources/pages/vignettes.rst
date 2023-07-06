@@ -3,11 +3,14 @@
 Vignettes
 ---------
 
-A collection of Jupyter notebooks demonstrating the use of the `mosaic` package. These
+For standard analysis see :ref:`curated_jupyter_notebooks`.
+
+This is a collection of Jupyter notebooks demonstrating the use of the `mosaic` package. These
 are not meant to be representative of all the functionality of the package, but rather
-to provide a starting point for users to explore the package and its capabilities. The
-notebooks are meant to be read in the order they are listed below, as they build on
-each other.
+to provide a starting point for users to explore the package and its capabilities. The notebooks
+are meant to be read in the order they are listed below, as they build on each other. The objective
+is to explain the package architecture to enable the user  to create their own custom plots
+and workflows.
 
 .. note::
 

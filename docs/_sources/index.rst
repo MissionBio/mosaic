@@ -23,6 +23,7 @@ exploratory analysis.
    pages/getting_started
    pages/data_structure
    pages/vignettes
+   pages/curated_jupyter_notebooks
    pages/help
 
 Basic Classes

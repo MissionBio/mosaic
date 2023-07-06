@@ -139,6 +139,36 @@
 <li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
 </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../pages/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna.html">Single Sample DNA-only notebook</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-multisample.html">Multisample DNA-only notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein.html">Single Sample DNA + Protein notebook</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein-multisample.html">Multisample DNA + Protein notebook</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/help.html">Additional resources</a></li>
 
 </ul>
@@ -341,7 +371,7 @@ document.write(`
 <p class="rubric">missionbio.mosaic.dna.Dna.crosstab</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.dna.Dna.crosstab">
-<span class="sig-prename descclassname"><span class="pre">Dna.</span></span><span class="sig-name descname"><span class="pre">crosstab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'label'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.crosstab" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Dna.</span></span><span class="sig-name descname"><span class="pre">crosstab</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">columns</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'label'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalize</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'all'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.crosstab" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute a simple cross-tabulation of two attributes.</p>
 <section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
@@ -354,10 +384,10 @@ document.write(`
 <dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl>
-<dt><strong>columns</strong><span class="classifier">Union[str, np.ndarray]</span></dt><dd><p>Name of the row attribute or array of values to be used as columns.
+<dt><strong>columns</strong><span class="classifier">Union[str, np.ndarray, pd.DataFrame]</span></dt><dd><p>Name of the row attribute or array of values to be used as columns.
 Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_attribute()</span></code> constrained by <cite>row</cite> to retrieve the values.</p>
 </dd>
-<dt><strong>index</strong><span class="classifier">Union[str, np.ndarray], default <a class="reference internal" href="../constants/missionbio.mosaic.constants.LABEL.html#missionbio.mosaic.constants.LABEL" title="missionbio.mosaic.constants.LABEL"><code class="xref py py-attr docutils literal notranslate"><span class="pre">LABEL</span></code></a></span></dt><dd><p>Name of the row attribute or array of values to be used as index.
+<dt><strong>index</strong><span class="classifier">Union[str, np.ndarray, pd.DataFrame], default <a class="reference internal" href="../constants/missionbio.mosaic.constants.LABEL.html#missionbio.mosaic.constants.LABEL" title="missionbio.mosaic.constants.LABEL"><code class="xref py py-attr docutils literal notranslate"><span class="pre">LABEL</span></code></a></span></dt><dd><p>Name of the row attribute or array of values to be used as index.
 Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_attribute()</span></code> constrained by <cite>row</cite> to retrieve the values.</p>
 </dd>
 <dt><strong>normalize</strong><span class="classifier">bool, {‘all’, ‘index’, ‘columns’},  default: “all”</span></dt><dd><p>Normalize by dividing all values by the sum of values.</p>
