@@ -25,6 +25,7 @@ exploratory analysis.
    pages/vignettes
    pages/curated_jupyter_notebooks
    pages/help
+   pages/changelog
 
 Basic Classes
 ~~~~~~~~~~~~~
