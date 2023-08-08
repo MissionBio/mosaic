@@ -171,6 +171,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/help.html">Additional resources</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../../pages/changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
@@ -371,16 +372,17 @@ document.write(`
 <p class="rubric">missionbio.mosaic.protein.Protein.normalize_reads</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.protein.Protein.normalize_reads">
-<span class="sig-prename descclassname"><span class="pre">Protein.</span></span><span class="sig-name descname"><span class="pre">normalize_reads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'CLR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jitter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.normalize_reads" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Protein.</span></span><span class="sig-name descname"><span class="pre">normalize_reads</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'CLR'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jitter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../missionbio.mosaic.algorithms.nsp.NSP.html#missionbio.mosaic.algorithms.nsp.NSP" title="missionbio.mosaic.algorithms.nsp.NSP"><span class="pre">NSP</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.normalize_reads" title="Permalink to this definition">#</a></dt>
 <dd><p>Normalize read counts.</p>
 <p>This adds <cite>normalized_counts</cite> to the assay layers.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>method</strong><span class="classifier">str</span></dt><dd><p>CLR, asinh, or NSP which stand for
-Centered Log Ratio, Inverse Hyperbolic
-transformation and Noise corrected and Scaled
-Protein counts respectively</p>
+<dt><strong>method</strong><span class="classifier">str</span></dt><dd><p>CLR, asinh, NSP, or ANSP which stand for Centered Log Ratio, Inverse
+Hyperbolic transformation and Noise corrected and Scaled Protein counts,
+and Approximate NSP respectively. Approximate NSP executes in constant time
+for large datasets while NSPs execution time increases linearly. But ANSP
+only uses a random subsample of the data to estimate the model parameters.</p>
 </dd>
 <dt><strong>jitter</strong><span class="classifier">float</span></dt><dd><p>The standard deviation of the jitter to be added
 to the read counts before applying the normalization.
@@ -391,12 +393,20 @@ cenetered at 0. This is only applicable for NSP and asinh</p>
 This is applicable only for NSP. If ‘None’ then the
 algorithm tries to estimate it from the read distribution.</p>
 </dd>
+<dt><strong>sample_size</strong><span class="classifier">int</span></dt><dd><p>The number of cells to use for estimating the model parameters in ANSP.</p>
+</dd>
 <dt><strong>random_state: int</strong></dt><dd><p>The random state to use for the NSP and asinh methods.</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl>
+<dt><strong>None or nsp: The</strong><span class="classifier">class:<cite>~missionbio.mosaic.algorithm.nsp.NSP</cite> object used for</span></dt><dd><p>normalization when method is <cite>NSP</cite> or <cite>ANSP</cite>. None otherwise.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
 <dt>ValueError</dt><dd><p>When one of the supported methods is not provided.</p>
 </dd>
 </dl>

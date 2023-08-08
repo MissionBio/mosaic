@@ -374,7 +374,7 @@ document.write(`
 <p class="rubric">missionbio.mosaic.algorithms.nsp.NSP</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="missionbio.mosaic.algorithms.nsp.NSP">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NSP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jitter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.algorithms.nsp.NSP" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">NSP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jitter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">inf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.mosaic.algorithms.nsp.NSP" title="Permalink to this definition">#</a></dt>
 <dd><p>Noise corrected and Scaled Protein counts (NSP)</p>
 <p>This is a novel normalization method for Tapestri protein data.
 It is based on the assumption that the background and signal
@@ -405,6 +405,9 @@ The jitter is sampled from a normal distribution
 cenetered at 0. This is only applicable for NSP and asinh</p>
 </dd>
 <dt><strong>random_state: int</strong></dt><dd><p>The random state to use for the NSP and asinh methods.</p>
+</dd>
+<dt><strong>sample_size</strong><span class="classifier">int</span></dt><dd><p>The number of cells to use to estimate the signal and background
+linear models. All cells are used when set to <cite>np.inf</cite>.</p>
 </dd>
 </dl>
 </dd>

@@ -171,6 +171,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../pages/help.html">Additional resources</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="../../pages/changelog.html">Changelog</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
 <ul class="nav bd-sidenav">
@@ -371,7 +372,7 @@ document.write(`
 <p class="rubric">missionbio.mosaic.algorithms.nsp.NSP.__init__</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.algorithms.nsp.NSP.__init__">
-<span class="sig-prename descclassname"><span class="pre">NSP.</span></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jitter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#missionbio.mosaic.algorithms.nsp.NSP.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">NSP.</span></span><span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jitter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">inf</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#missionbio.mosaic.algorithms.nsp.NSP.__init__" title="Permalink to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
@@ -381,6 +382,9 @@ The jitter is sampled from a normal distribution
 cenetered at 0. This is only applicable for NSP and asinh</p>
 </dd>
 <dt><strong>random_state: int</strong></dt><dd><p>The random state to use for the NSP and asinh methods.</p>
+</dd>
+<dt><strong>sample_size</strong><span class="classifier">int</span></dt><dd><p>The number of cells to use to estimate the signal and background
+linear models. All cells are used when set to <cite>np.inf</cite>.</p>
 </dd>
 </dl>
 </dd>
