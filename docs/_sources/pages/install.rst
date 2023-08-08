@@ -34,7 +34,7 @@ some other environment), activate it using:
 
    $ conda activate /Users/name/mosaic/
 
-Solutions to many installation failures are available in the `Anaconda installation <https://docs.anaconda.com/free/anaconda/install/>`_
+Solutions to many installation failures are available in the `Anaconda troubleshooting <https://docs.anaconda.com/free/anaconda/reference/troubleshooting/>`_
 guide. The same solutions can be applied to the Mosaic installater.
 
 Installing using conda
