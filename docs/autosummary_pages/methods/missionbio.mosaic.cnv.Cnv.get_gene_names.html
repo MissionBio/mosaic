@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Cnv.get_gene_names &#8212; Mosaic v3.0.1 documentation</title>
+    <title>Cnv.get_gene_names &#8212; Mosaic v3.1.1 documentation</title>
   
   
   
@@ -120,7 +120,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
+    <p class="title logo__title">Mosaic v3.1.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -372,7 +372,7 @@ document.write(`
 <p class="rubric">missionbio.mosaic.cnv.Cnv.get_gene_names</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.cnv.Cnv.get_gene_names">
-<span class="sig-prename descclassname"><span class="pre">Cnv.</span></span><span class="sig-name descname"><span class="pre">get_gene_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">genome</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.get_gene_names" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Cnv.</span></span><span class="sig-name descname"><span class="pre">get_gene_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_workers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">species</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'homo_sapiens'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#missionbio.mosaic.cnv.Cnv.get_gene_names" title="Permalink to this definition">#</a></dt>
 <dd><p>Fetch gene names from Ensembl for all the amplicons.</p>
 <p>The data is stored in the “gene_name” column attribute.</p>
 <div class="admonition note">
@@ -387,8 +387,10 @@ rules that allow direct connections to <a class="reference external" href="https
 <dd class="field-odd"><dl class="simple">
 <dt><strong>max_workers</strong><span class="classifier">int</span></dt><dd><p>The maximum number of parallel process to run.</p>
 </dd>
-<dt><strong>genome</strong><span class="classifier">str, optional</span></dt><dd><p>The genome version to use. If not provided, the genome version from the metadata is used.
-If the metadata does not contain <code class="docutils literal notranslate"><span class="pre">genome_version</span></code>, “hg19” is used. Example: “hg38”.</p>
+<dt><strong>species</strong><span class="classifier">str, optional</span></dt><dd><p>The species such as <cite>homo_sapiens</cite>, <cite>mus_musculus_129s1svimj</cite>. When the value is <cite>homo_sapiens</cite>,
+the assembly version is estimated from the <cite>genome_version</cite> metadata. ‘hg19’ and ‘hg38’ can also
+be passed to force a specific genome assembly. A list of all the species supported by Ensembl can
+be found at <a class="reference external" href="https://rest.ensembl.org/info/species">https://rest.ensembl.org/info/species</a> - use the <code class="docutils literal notranslate"><span class="pre">name</span></code> value of the species of interest</p>
 </dd>
 </dl>
 </dd>

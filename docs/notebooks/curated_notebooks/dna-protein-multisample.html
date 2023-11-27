@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Multisample DNA + Protein notebook &#8212; Mosaic v3.0.1 documentation</title>
+    <title>Multisample DNA + Protein notebook &#8212; Mosaic v3.1.1 documentation</title>
   
   
   
@@ -122,7 +122,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
+    <p class="title logo__title">Mosaic v3.1.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -1578,7 +1578,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Signature will create a dataframe based on the layer you want to look at and which statistical value you want to view</span>
 <span class="c1"># You can see: mean, median, mode, or std with this function</span>
 <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">group</span><span class="p">:</span>
-    <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s1">&#39;normalized_counts&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s1">&#39;normalized_counts&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1926,7 +1926,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
     <span class="k">for</span> <span class="n">variant</span> <span class="ow">in</span> <span class="n">variants</span><span class="p">:</span>
         <span class="n">color_variant</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">layers</span><span class="p">[</span><span class="n">layer</span><span class="p">][:,</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">ids</span><span class="p">()</span> <span class="o">==</span> <span class="n">variant</span><span class="p">]</span>
         <span class="n">fig</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">feature_scatter</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="s1">&#39;normalized_counts&#39;</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="n">AOCs</span><span class="p">,</span> <span class="n">colorby</span> <span class="o">=</span> <span class="n">color_variant</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">variant</span><span class="p">))</span>
-        <span class="n">mutils</span><span class="o">.</span><span class="n">static_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">counter</span><span class="p">])</span>
+        <span class="n">ms</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">static_fig</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">counter</span><span class="p">])</span>
         <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
 
     <span class="c1"># Show the plot</span>
@@ -2152,7 +2152,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Signature will create a dataframe based on the layer you want to look at and which statistical value you want to view</span>
 <span class="c1"># You can see: mean, median, mode, or std with this function</span>
 <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">group</span><span class="p">:</span>
-    <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s1">&#39;AF&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>

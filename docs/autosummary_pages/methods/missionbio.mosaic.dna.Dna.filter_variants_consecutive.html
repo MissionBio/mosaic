@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Dna.filter_variants_consecutive &#8212; Mosaic v3.0.1 documentation</title>
+    <title>Dna.filter_variants_consecutive &#8212; Mosaic v3.1.1 documentation</title>
   
   
   
@@ -120,7 +120,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
+    <p class="title logo__title">Mosaic v3.1.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -379,7 +379,7 @@ This is likely primer misalignment.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>proximity</strong><span class="classifier">list-like (int)</span></dt><dd><p>If <cite>i + 1</cite> variants are within <cite>proximity[i]</cite>,
+<dt><strong>proximity</strong><span class="classifier">list-like (int)</span></dt><dd><p>If <cite>i + 1</cite> variants are less than <cite>proximity[i]</cite> bases apart,
 then the variants are removed.</p>
 </dd>
 </dl>
@@ -392,15 +392,12 @@ that are close to each other are discarded.</p>
 </dl>
 </dd>
 </dl>
-<p class="rubric">Notes</p>
-<p>Assumes the variants are in order.</p>
 <p class="rubric">Examples</p>
-<ul class="simple">
-<li><p>If &gt;1 variants are within 25 bases of each other, remove.</p></li>
-<li><p>If &gt;2 variants are within 50 bases of each other, remove.</p></li>
-<li><p>If &gt;3 variants are within 100 bases of each other, remove.</p></li>
-<li><p>If &gt;4 variants are within 250 bases of each other, remove.</p></li>
-</ul>
+<p>for proximity = [25, 50, 100, 250]:
+- If &gt;1 variants are less than 25 bases apart, remove.
+- If &gt;2 variants are less than 50 bases apart, remove.
+- If &gt;3 variants are less than 100 bases apart, remove.
+- If &gt;4 variants are less than 250 bases apart, remove.</p>
 </dd></dl>
 
 </section>

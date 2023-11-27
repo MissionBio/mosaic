@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Protein.heatmap &#8212; Mosaic v3.0.1 documentation</title>
+    <title>Protein.heatmap &#8212; Mosaic v3.1.1 documentation</title>
   
   
   
@@ -120,7 +120,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
+    <p class="title logo__title">Mosaic v3.1.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -427,7 +427,9 @@ The shape must be equal to <cite>(#cells)</cite>.</p>
 <dt><strong>features</strong><span class="classifier">list</span></dt><dd><p>The ids that are to be shown. This also sets the
 order in which the ids are shown.</p>
 </dd>
-<dt><strong>x_groups</strong><span class="classifier">list</span></dt><dd><p>The group of each feature. Ticks for only the unique groups is shown.</p>
+<dt><strong>x_groups</strong><span class="classifier">list</span></dt><dd><p>The group of each feature. Ticks for only the unique groups is shown.
+To avoid mislabeling the ticks, <cite>features</cite> must be provided when
+<cite>x_groups</cite> is provided.</p>
 </dd>
 <dt><strong>bars_order</strong><span class="classifier">list</span></dt><dd><p>The barcodes that are to be plotted.
 The order in the plot is the same
@@ -452,10 +454,16 @@ label is returned. Only applicable when
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>Raised in the following cases.
-When convolve is below 0 or above 100.
-When the number of ids is too large to hierarchically
-cluster the cells and features is not provided.</p>
+<dt>ValueError</dt><dd><p>Raised in the following cases.</p>
+<ul class="simple">
+<li><p>When convolve is below 0 or above 100.</p></li>
+<li><dl class="simple">
+<dt>When the number of ids is too large to hierarchically</dt><dd><p>cluster the cells and features is not provided.</p>
+</dd>
+</dl>
+</li>
+<li><p><cite>x_groups</cite> is provided but <cite>features</cite> is not</p></li>
+</ul>
 </dd>
 </dl>
 </dd>

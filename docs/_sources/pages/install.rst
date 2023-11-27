@@ -34,9 +34,6 @@ some other environment), activate it using:
 
    $ conda activate /Users/name/mosaic/
 
-Solutions to many installation failures are available in the `Anaconda troubleshooting <https://docs.anaconda.com/free/anaconda/reference/troubleshooting/>`_
-guide. The same solutions can be applied to the Mosaic installater.
-
 Installing using conda
 ----------------------
 
@@ -110,3 +107,33 @@ Versions tagged with a label besides `main` can be installed by changing the cha
 .. code-block:: console
 
    $ conda create --name mosaic -c missionbio/label/unsupported -c plotly -c conda-forge missionbio.mosaic=1.7.1 notebook
+
+Troubleshooting
+---------------
+
+Error in the installer
+~~~~~~~~~~~~~~~~~~~~~~
+
+Solutions to many installation failures are available in the `Anaconda troubleshooting <https://docs.anaconda.com/free/anaconda/reference/troubleshooting/>`_
+guide. The same solutions can be applied to the Mosaic installater.
+
+Unable to update using the installer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The installer does not automatically delete the previous version of Mosaic. If the directory in which
+the new version of mosaic is being installed is not empty, the installer will not be able to install
+the new version. Delete the directory or change the installation directory and try again. The default
+installation directory is called ``mosaic`` in the home directory of the user.
+
+Failure to save images using ``fig.write_image`` on Windows 11
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Certain version of the ``python-kaliedo`` package might not be compatible with specific versions of Windows 11.
+Installing a different version of kaleido might solve the issue. To do so, activate the Mosaic environment,
+then install the ``python-kaleido`` package:
+
+.. code-block:: console
+
+   $ conda install -c conda-forge python-kaleido=0.1.0
+
+Then relaunch the jupyter server and run the notebook again.

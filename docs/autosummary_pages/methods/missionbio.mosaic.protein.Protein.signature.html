@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Protein.signature &#8212; Mosaic v3.0.1 documentation</title>
+    <title>Protein.signature &#8212; Mosaic v3.1.1 documentation</title>
   
   
   
@@ -120,7 +120,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
+    <p class="title logo__title">Mosaic v3.1.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -372,7 +372,7 @@ document.write(`
 <p class="rubric">missionbio.mosaic.protein.Protein.signature</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.mosaic.protein.Protein.signature">
-<span class="sig-prename descclassname"><span class="pre">Protein.</span></span><span class="sig-name descname"><span class="pre">signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'median'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">splitby</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'label'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.signature" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Protein.</span></span><span class="sig-name descname"><span class="pre">signature</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'median'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">splitby</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'label'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nan_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.signature" title="Permalink to this definition">#</a></dt>
 <dd><p>The chosen signature for each cluster and feature.</p>
 <p>Generate feature signatures for each cluster/feature pair
 across all barcodes using the supplied assay and layer.</p>
@@ -385,9 +385,18 @@ to retrieve the values.</p>
 </dd>
 <dt><strong>kind</strong><span class="classifier">[“median”, “mode”, “std”, “mean”]</span></dt><dd><p>The kind of signature to return</p>
 </dd>
-<dt><strong>splitby</strong><span class="classifier">Union[str, np.ndarray], default LABEL</span></dt><dd><p>The labels by which the data is split. The signature is returned for each unique
+<dt><strong>splitby</strong><span class="classifier">Union[None, str, np.ndarray], default LABEL</span></dt><dd><p>The labels by which the cells are split. The signature is returned for each unique
 label. Uses <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> to retrieve the values constrained by
-<cite>row</cite>. The shape must be equal to <cite>(#cells)</cite>.</p>
+<cite>row</cite>. The shape must be equal to <cite>(#cells)</cite>. When this is None no grouping across
+cells is performed.</p>
+</dd>
+<dt><strong>features</strong><span class="classifier">Union[None, str, np.ndarray], default None</span></dt><dd><p>The labels by which the ids are grouped. The signature is returned for each unique
+group. The signature kind (“median”, “mean”…) is first applied across the cells
+and then accross the features. <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code> constrained by <cite>col</cite> is
+used to fetch the <cite>features</cite>. The shape must be equal to <cite>(#ids)</cite> if grouping is to
+be performed. A subset of <cite>ids</cite> can also be passed to get the signature for only
+those ids, or to reorder the ids in the returned DataFrame. When this is None no
+grouping across ids is performed.</p>
 </dd>
 <dt><strong>nan_value</strong><span class="classifier">Optional[float]</span></dt><dd><p>The value in matrix that are to be converted to NaN.
 NaN values are removed before calculating the signatures.</p>
@@ -417,8 +426,29 @@ median NGT the following can be called.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s2">&quot;NGT&quot;</span><span class="p">,</span> <span class="n">nan_value</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>To compute standard deviation of AF where DP is not 0</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s2">&quot;AF_MISSING&quot;</span><span class="p">,</span> <span class="n">nan_value</span><span class="o">=-</span><span class="mi">50</span><span class="p">)</span>
+<p>To compute standard deviation of AF where DP is not 0, use the <cite>AF_MISSING</cite>
+layer which stores those values as -50.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s2">&quot;AF_MISSING&quot;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="n">nan_value</span><span class="o">=-</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To compute the median copy number for each dna cell type, the CNV assay will be used.
+Note that the <code class="docutils literal notranslate"><span class="pre">features=None</span></code> by default, therefore the values are not
+combined across the ids.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dna_labels</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">get_labels</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">cnv</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s2">&quot;ploidy&quot;</span><span class="p">,</span> <span class="n">splitby</span><span class="o">=</span><span class="n">dna_labels</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To get the median value per celltype per chromosome, the <code class="docutils literal notranslate"><span class="pre">features</span></code> argument can be passed</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">cnv</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s2">&quot;ploidy&quot;</span><span class="p">,</span> <span class="n">splitby</span><span class="o">=</span><span class="n">dna_labels</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&quot;CHROM&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is also possible to obtain the median value per chromosome but for all the
+cells by setting <code class="docutils literal notranslate"><span class="pre">splitby=None</span></code>. These values can be used to color the cells
+in scatterplots. For example, to color the cells in a UMAP by the median ploidy
+of chromosome 7, the following can be executed.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">chr_ploidy</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">cnv</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="s2">&quot;ploidy&quot;</span><span class="p">,</span> <span class="n">splitby</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="s2">&quot;CHROM&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">chr7_ploidy</span> <span class="o">=</span> <span class="n">chr_ploidy</span><span class="p">[</span><span class="s2">&quot;7&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="s2">&quot;umap&quot;</span><span class="p">,</span> <span class="n">colorby</span><span class="o">=</span><span class="n">chr7_ploidy</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>

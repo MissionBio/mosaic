@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>load &#8212; Mosaic v3.0.1 documentation</title>
+    <title>load &#8212; Mosaic v3.1.1 documentation</title>
   
   
   
@@ -120,7 +120,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
+    <p class="title logo__title">Mosaic v3.1.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -378,9 +378,9 @@ document.write(`
 <p>It directly returns a <cite>Sample</cite> object, which
 contains all the assays. Those assays that were
 not present are stored as <cite>None</cite>.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>filepath:</strong></dt><dd><p>The path to the .h5 multi-omics file.</p>
 </dd>
 <dt><strong>filter_cells:</strong></dt><dd><p>If <cite>True</cite>, then only the cells called by the completeness algorithm are loaded. Complete cells
@@ -393,7 +393,48 @@ and then running <a class="reference internal" href="../methods/missionbio.mosai
 the default filtered variants is stored in the <cite>filtered</cite> column attribute of the
 <a class="reference internal" href="../missionbio.mosaic.dna.Dna.html#missionbio.mosaic.dna.Dna" title="missionbio.mosaic.dna.Dna"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dna</span></code></a> object.</p>
 </dd>
-<dt><strong>whitelist:</strong></dt><dd><p>The specific dna variants to load.</p>
+<dt><strong>whitelist:</strong></dt><dd><p>The specific dna variants to load. The items in the whitliset can have three formats:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>Variant IDs - chr1:12345:A/C</dt><dd><p>These look for exact matches in the <cite>variants</cite></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Positions - chr1:12345</dt><dd><p>These look for all the variants at that position in <cite>variants</cite></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Regions - chr1:12345-12350</dt><dd><p>These look for all the variants in that region in <cite>variants</cite>
+Both 12345 and 12350 are included</p>
+</dd>
+</dl>
+</li>
+</ol>
+<p>The four cases for whitelist and filter_variants are:</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt>filter_variants - False, whitelist - None</dt><dd><p>Load all the variants</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>filter_variants - True, whitelist - None</dt><dd><p>Only load the variants passing as per the <cite>filtered</cite> column attribute</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>filter_variants - False, whitelist - Given</dt><dd><p>Only load the variants in the whitelist</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>filter_variants - True, whitelist - Given</dt><dd><p>Only load the variants passing as per the <cite>filtered</cite> column attribute</p>
+</dd>
+</dl>
+</li>
+</ol>
 </dd>
 <dt><strong>raw:</strong></dt><dd><p>Whether the raw counts are to be loaded. This will load <cite>cnv_raw</cite> and <cite>protein_raw</cite> attributes
 of the <a class="reference internal" href="../missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-class docutils literal notranslate"><span class="pre">Sample</span></code></a> class.</p>

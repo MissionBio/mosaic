@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Installation &#8212; Mosaic v3.0.1 documentation</title>
+    <title>Installation &#8212; Mosaic v3.1.1 documentation</title>
   
   
   
@@ -122,7 +122,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.0.1 documentation</p>
+    <p class="title logo__title">Mosaic v3.1.1 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -358,6 +358,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installer-preferred">Installer (Preferred)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-using-conda">Installing using conda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#older-versions">Older versions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-the-installer">Error in the installer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unable-to-update-using-the-installer">Unable to update using the installer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-to-save-images-using-fig-write-image-on-windows-11">Failure to save images using <code class="docutils literal notranslate"><span class="pre">fig.write_image</span></code> on Windows 11</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -398,8 +404,6 @@ some other environment), activate it using:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>activate<span class="w"> </span>/Users/name/mosaic/
 </pre></div>
 </div>
-<p>Solutions to many installation failures are available in the <a class="reference external" href="https://docs.anaconda.com/free/anaconda/reference/troubleshooting/">Anaconda troubleshooting</a>
-guide. The same solutions can be applied to the Mosaic installater.</p>
 </section>
 <section id="installing-using-conda">
 <h2>Installing using conda<a class="headerlink" href="#installing-using-conda" title="Permalink to this heading">#</a></h2>
@@ -471,6 +475,31 @@ These can be installed by passing the required version number.</p>
 </pre></div>
 </div>
 </section>
+<section id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this heading">#</a></h2>
+<section id="error-in-the-installer">
+<h3>Error in the installer<a class="headerlink" href="#error-in-the-installer" title="Permalink to this heading">#</a></h3>
+<p>Solutions to many installation failures are available in the <a class="reference external" href="https://docs.anaconda.com/free/anaconda/reference/troubleshooting/">Anaconda troubleshooting</a>
+guide. The same solutions can be applied to the Mosaic installater.</p>
+</section>
+<section id="unable-to-update-using-the-installer">
+<h3>Unable to update using the installer<a class="headerlink" href="#unable-to-update-using-the-installer" title="Permalink to this heading">#</a></h3>
+<p>The installer does not automatically delete the previous version of Mosaic. If the directory in which
+the new version of mosaic is being installed is not empty, the installer will not be able to install
+the new version. Delete the directory or change the installation directory and try again. The default
+installation directory is called <code class="docutils literal notranslate"><span class="pre">mosaic</span></code> in the home directory of the user.</p>
+</section>
+<section id="failure-to-save-images-using-fig-write-image-on-windows-11">
+<h3>Failure to save images using <code class="docutils literal notranslate"><span class="pre">fig.write_image</span></code> on Windows 11<a class="headerlink" href="#failure-to-save-images-using-fig-write-image-on-windows-11" title="Permalink to this heading">#</a></h3>
+<p>Certain version of the <code class="docutils literal notranslate"><span class="pre">python-kaliedo</span></code> package might not be compatible with specific versions of Windows 11.
+Installing a different version of kaleido might solve the issue. To do so, activate the Mosaic environment,
+then install the <code class="docutils literal notranslate"><span class="pre">python-kaleido</span></code> package:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> </span>conda-forge<span class="w"> </span>python-kaleido<span class="o">=</span><span class="m">0</span>.1.0
+</pre></div>
+</div>
+<p>Then relaunch the jupyter server and run the notebook again.</p>
+</section>
+</section>
 </section>
 
 
@@ -524,6 +553,12 @@ These can be installed by passing the required version number.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installer-preferred">Installer (Preferred)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-using-conda">Installing using conda</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#older-versions">Older versions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting">Troubleshooting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-in-the-installer">Error in the installer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unable-to-update-using-the-installer">Unable to update using the installer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-to-save-images-using-fig-write-image-on-windows-11">Failure to save images using <code class="docutils literal notranslate"><span class="pre">fig.write_image</span></code> on Windows 11</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
