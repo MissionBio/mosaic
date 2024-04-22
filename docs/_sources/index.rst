@@ -19,13 +19,13 @@ exploratory analysis.
    :hidden:
    :maxdepth: 2
 
-   pages/install
-   pages/getting_started
-   pages/data_structure
-   pages/vignettes
-   pages/curated_jupyter_notebooks
-   pages/help
-   pages/changelog
+   manual/install
+   manual/getting_started
+   manual/data_structure
+   manual/vignettes
+   manual/curated_jupyter_notebooks
+   manual/help
+   manual/changelog
 
 Basic Classes
 ~~~~~~~~~~~~~
@@ -33,7 +33,7 @@ Basic Classes
    :recursive:
    :nosignatures:
    :caption: Basic Classes
-   :toctree: autosummary_pages
+   :toctree: pages
    :template: class.rst
 
    ~missionbio.mosaic.assay._Assay
@@ -49,7 +49,7 @@ Interactive Workflows
    :recursive:
    :nosignatures:
    :caption: Interactive Workflows
-   :toctree: autosummary_pages
+   :toctree: pages
    :template: class.rst
 
    ~missionbio.mosaic.workflows.copy_number.CopyNumber
@@ -60,10 +60,10 @@ Algorithms
 .. autosummary::
    :recursive:
    :caption: Algorithms
-   :toctree: autosummary_pages
+   :toctree: pages
    :template: class.rst
 
-   ~missionbio.mosaic.algorithms.nsp.NSP
+   ~missionbio.demultiplex.protein.nsp.NSP
    ~missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype
    ~missionbio.mosaic.algorithms.compass.COMPASS
 
@@ -72,7 +72,7 @@ Functional Modules
 .. autosummary::
    :recursive:
    :caption: Functional Modules
-   :toctree: autosummary_pages
+   :toctree: pages
    :template: module.rst
 
    ~missionbio.mosaic.io
@@ -85,12 +85,12 @@ Custom Plots
    :recursive:
    :nosignatures:
    :caption: Custom Plots
-   :toctree: autosummary_pages
+   :toctree: pages
    :template: class.rst
 
-   ~missionbio.mosaic.plots.heatmap.Heatmap
-   ~missionbio.mosaic.plots.lineplot.LinePlot
-   ~missionbio.mosaic.plots.bargraph.BarGraph
-   ~missionbio.mosaic.plots.multi_heatmap.MultiHeatmap
-   ~missionbio.mosaic.plots.fishplot.TreeGraph
-   ~missionbio.mosaic.plots.fishplot.Fishplot
+   ~missionbio.plotting.heatmap.Heatmap
+   ~missionbio.plotting.lineplot.LinePlot
+   ~missionbio.plotting.bargraph.BarGraph
+   ~missionbio.plotting.multimap.MultiMap
+   ~missionbio.plotting.phylotree.PhyloTree
+   ~missionbio.plotting.fishplot.Fishplot
