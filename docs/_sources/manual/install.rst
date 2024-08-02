@@ -6,9 +6,77 @@ Installer (Preferred)
 
 The installer for Mosaic can be downloaded from the `Mission Bio Portal <https://portal.missionbio.com/>`_.
 This is an interactive installer for Mac and Windows, and a shell script for Linux. With the default settings
-the installer will create a directory called ``mosaic`` and install the latest version of Mosaic in it. For Mac
-and Linux the installer will also make this version of Mosaic available from the command line by default. For
-Windows, ``conda`` is available from the command line if the option to **add to PATH** is selected.
+the installer will create a directory called ``mosaic`` and install the latest version of Mosaic in it.
+
+Linux Installation
+~~~~~~~~~~~~~~~~~~
+
+1. Download the installer from Tapestri Portal or you can download the installer to a linux server
+   using the command below:
+
+.. code-block:: console
+
+   $ wget https://dl.missionbio.io/mosaic/mosaic-3.4-Linux-x86_64.sh
+
+2. Run the installer as shown below:
+
+.. code-block:: console
+
+   $ sh mosaic-3.4-Linux-x86_64.sh
+
+3. Follow the instructions on screen and accept the defaults. Answer “yes” to the question if you want
+   to set the mosaic environment as default else answer "no" :
+
+.. code-block:: console
+
+   Do you wish the installer to initialize mosaic by running conda init? [yes|no]
+
+
+macOS Installation
+~~~~~~~~~~~~~~~~~~
+
+If using a Mac device with Apple Silicon (M series) then ensure that Rosetta 2 is pre-installed for
+Mosaic to work. Follow the steps in this troubleshooting section (`Installing Rosetta 2 on Apple devices`_)
+to verify and install it.
+
+1. Download the MacOS installer from Tapestri Portal.
+
+2. Double click the installer. As the installer is not currently registered with Apple, you see a
+   security warning dialogue. To ignore this warning, Control-click the downloaded installer, then
+   choose ``Open`` from the menu.
+
+   .. image:: images/macos_installation_warning.png
+      :alt: macOS Installation Warning
+
+3. Follow the instructions on the wizard to complete the installation.
+
+Windows Installation
+~~~~~~~~~~~~~~~~~~~~
+
+1. Download the Windows installer from Tapestri Portal.
+
+2. Double click the installer. As the installer is not currently registered with Windows, you get a
+   security warning dialogue. Click ``More Info >> Run anyway`` to install.
+
+.. image:: images/windows_installation_warning.png
+   :alt: Windows Installation Warning
+   :width: 30 %
+
+.. image:: images/windows_installation_runanyway.png
+   :alt: Windows Installation Run Anyway
+   :width: 30 %
+
+3. Follow the instructions on the wizard to complete the installation.
+
+.. note::
+
+   Choose the option ``add to PATH`` for ease of use.
+
+Working with Mosaic Software
+----------------------------
+
+For Mac and Linux the installer will also make this version of Mosaic available from the command line by
+default. For Windows, ``conda`` is available from the command line if the option to **add to PATH** is selected.
 
 After the installation completes, open the terminal and run:
 
@@ -137,3 +205,24 @@ then install the ``python-kaleido`` package:
    $ conda install -c conda-forge python-kaleido=0.1.0
 
 Then relaunch the jupyter server and run the notebook again.
+
+Installing Rosetta 2 on Apple devices
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _rosetta2_installation:
+
+To check if the device has Rosetta 2 installed run the command below:
+
+.. code-block:: console
+
+    $ /usr/bin/pgrep -q oahd && echo Yes || echo No
+
+
+If the answer is “Yes” then proceed with Mosaic installation. If the the answer is “No” then first
+install Rosetta 2 using the command:
+
+.. code-block:: console
+
+    $ softwareupdate --install-rosetta
+
+Follow the instructions and once installation is successful, continue with Mosaic installation.
