@@ -8,3 +8,7 @@ Heatmap.set\_yticks
 .. currentmodule:: missionbio.plotting.heatmap
 
 .. automethod:: Heatmap.set_yticks
+
+----
+
+< Class :doc:`../missionbio.plotting.heatmap.Heatmap`

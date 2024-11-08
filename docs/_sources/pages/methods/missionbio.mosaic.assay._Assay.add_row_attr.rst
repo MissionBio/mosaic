@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.add_row_attr
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

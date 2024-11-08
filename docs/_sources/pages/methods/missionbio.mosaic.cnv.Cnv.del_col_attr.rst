@@ -8,3 +8,7 @@ Cnv.del\_col\_attr
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.del_col_attr
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

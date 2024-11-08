@@ -8,3 +8,7 @@ SampleGroup.apply
 .. currentmodule:: missionbio.mosaic.samplegroup
 
 .. automethod:: SampleGroup.apply
+
+----
+
+< Class :doc:`../missionbio.mosaic.samplegroup.SampleGroup`

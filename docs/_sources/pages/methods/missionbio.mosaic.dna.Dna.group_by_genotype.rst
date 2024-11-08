@@ -8,3 +8,7 @@ Dna.group\_by\_genotype
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.group_by_genotype
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

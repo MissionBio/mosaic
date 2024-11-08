@@ -8,3 +8,7 @@ Heatmap.is\_contiguous
 .. currentmodule:: missionbio.plotting.heatmap
 
 .. automethod:: Heatmap.is_contiguous
+
+----
+
+< Class :doc:`../missionbio.plotting.heatmap.Heatmap`

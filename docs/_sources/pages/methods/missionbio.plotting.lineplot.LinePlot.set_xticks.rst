@@ -8,3 +8,7 @@ LinePlot.set\_xticks
 .. currentmodule:: missionbio.plotting.lineplot
 
 .. automethod:: LinePlot.set_xticks
+
+----
+
+< Class :doc:`../missionbio.plotting.lineplot.LinePlot`

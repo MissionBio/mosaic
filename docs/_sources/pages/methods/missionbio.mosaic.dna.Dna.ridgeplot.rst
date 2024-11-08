@@ -8,3 +8,7 @@ Dna.ridgeplot
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.ridgeplot
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

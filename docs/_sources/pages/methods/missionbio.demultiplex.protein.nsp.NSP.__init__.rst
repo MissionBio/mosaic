@@ -8,3 +8,7 @@ NSP.\_\_init\_\_
 .. currentmodule:: missionbio.demultiplex.protein.nsp
 
 .. automethod:: NSP.__init__
+
+----
+
+< Class :doc:`../missionbio.demultiplex.protein.nsp.NSP`

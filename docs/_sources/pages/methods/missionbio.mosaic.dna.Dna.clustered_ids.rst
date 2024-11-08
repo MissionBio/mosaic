@@ -8,3 +8,7 @@ Dna.clustered\_ids
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.clustered_ids
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

@@ -8,3 +8,7 @@ Heatmap.label\_trace
 .. currentmodule:: missionbio.plotting.heatmap
 
 .. automethod:: Heatmap.label_trace
+
+----
+
+< Class :doc:`../missionbio.plotting.heatmap.Heatmap`

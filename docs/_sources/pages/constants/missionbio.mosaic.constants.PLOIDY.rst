@@ -8,3 +8,7 @@ PLOIDY
 .. currentmodule:: missionbio.mosaic.constants
 
 .. autodata:: PLOIDY
+
+----
+
+< Module :doc:`../missionbio.mosaic.constants`

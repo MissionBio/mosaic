@@ -8,3 +8,7 @@ disable\_logging
 .. currentmodule:: missionbio.mosaic.utils
 
 .. autofunction:: disable_logging
+
+----
+
+< Module :doc:`../missionbio.mosaic.utils`

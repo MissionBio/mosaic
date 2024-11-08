@@ -8,3 +8,7 @@ Cnv.crosstab
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.crosstab
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

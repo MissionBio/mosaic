@@ -8,3 +8,7 @@ BarGraph.\_\_init\_\_
 .. currentmodule:: missionbio.plotting.bargraph
 
 .. automethod:: BarGraph.__init__
+
+----
+
+< Class :doc:`../missionbio.plotting.bargraph.BarGraph`

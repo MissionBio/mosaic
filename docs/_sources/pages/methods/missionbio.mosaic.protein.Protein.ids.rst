@@ -8,3 +8,7 @@ Protein.ids
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.ids
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

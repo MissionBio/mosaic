@@ -8,3 +8,7 @@ clipped\_values
 .. currentmodule:: missionbio.mosaic.utils
 
 .. autofunction:: clipped_values
+
+----
+
+< Module :doc:`../missionbio.mosaic.utils`

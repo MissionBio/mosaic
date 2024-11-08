@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.del_metadata
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

@@ -8,3 +8,7 @@ Dna.read\_distribution
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.read_distribution
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

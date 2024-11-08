@@ -8,3 +8,7 @@ PCA\_LABEL
 .. currentmodule:: missionbio.mosaic.constants
 
 .. autodata:: PCA_LABEL
+
+----
+
+< Module :doc:`../missionbio.mosaic.constants`

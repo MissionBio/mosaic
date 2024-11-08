@@ -8,3 +8,7 @@ Protein.select\_columns
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.select_columns
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

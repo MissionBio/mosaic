@@ -8,3 +8,7 @@ Protein.\_\_init\_\_
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.__init__
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

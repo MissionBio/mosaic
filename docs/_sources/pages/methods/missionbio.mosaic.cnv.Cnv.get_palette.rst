@@ -8,3 +8,7 @@ Cnv.get\_palette
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.get_palette
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

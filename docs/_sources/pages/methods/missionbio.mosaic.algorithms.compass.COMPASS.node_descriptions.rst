@@ -8,3 +8,7 @@ COMPASS.node\_descriptions
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 
 .. automethod:: COMPASS.node_descriptions
+
+----
+
+< Class :doc:`../missionbio.mosaic.algorithms.compass.COMPASS`

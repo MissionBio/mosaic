@@ -8,3 +8,7 @@ Protein.feature\_scatter
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.feature_scatter
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

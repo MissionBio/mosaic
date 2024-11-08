@@ -8,3 +8,7 @@ Cnv.amp\_uniformity
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.amp_uniformity
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

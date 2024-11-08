@@ -8,3 +8,7 @@ Dna.hierarchical\_cluster
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.hierarchical_cluster
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

@@ -8,3 +8,7 @@ ORG\_BARCODE
 .. currentmodule:: missionbio.mosaic.constants
 
 .. autodata:: ORG_BARCODE
+
+----
+
+< Module :doc:`../missionbio.mosaic.constants`

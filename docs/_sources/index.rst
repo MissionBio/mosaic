@@ -94,3 +94,29 @@ Custom Plots
    ~missionbio.plotting.multimap.MultiMap
    ~missionbio.plotting.phylotree.PhyloTree
    ~missionbio.plotting.fishplot.Fishplot
+
+DNA Assignment
+~~~~~~~~~~~~~~
+.. autosummary::
+   :recursive:
+   :nosignatures:
+   :caption: DNA assignment
+   :toctree: pages
+   :template: class_all_attrs.rst
+
+   ~missionbio.demultiplex.dna.truth.Truth
+   ~missionbio.demultiplex.dna.likelihood.LikelihoodMethod
+   ~missionbio.mosaic.algorithms.dna_assignment.DnaAssignment
+
+Protein Assignment
+~~~~~~~~~~~~~~~~~~
+.. autosummary::
+   :recursive:
+   :nosignatures:
+   :caption: Protein assignment
+   :toctree: pages
+   :template: class_all_attrs.rst
+
+   ~missionbio.demultiplex.protein.truth.Truth
+   ~missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod
+   ~missionbio.demultiplex.protein.pace.probability.ProbabilityMethod

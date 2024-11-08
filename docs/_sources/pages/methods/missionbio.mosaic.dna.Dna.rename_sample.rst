@@ -8,3 +8,7 @@ Dna.rename\_sample
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.rename_sample
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

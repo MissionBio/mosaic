@@ -8,3 +8,7 @@ MultiMap.\_\_init\_\_
 .. currentmodule:: missionbio.plotting.multimap
 
 .. automethod:: MultiMap.__init__
+
+----
+
+< Class :doc:`../missionbio.plotting.multimap.MultiMap`

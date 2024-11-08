@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.set_labels
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

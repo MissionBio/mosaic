@@ -8,3 +8,7 @@ SampleGroup.hasassay
 .. currentmodule:: missionbio.mosaic.samplegroup
 
 .. automethod:: SampleGroup.hasassay
+
+----
+
+< Class :doc:`../missionbio.mosaic.samplegroup.SampleGroup`

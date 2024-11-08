@@ -8,3 +8,7 @@ COMPASS.\_\_init\_\_
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 
 .. automethod:: COMPASS.__init__
+
+----
+
+< Class :doc:`../missionbio.mosaic.algorithms.compass.COMPASS`

@@ -8,3 +8,7 @@ Protein.normalize\_barcodes
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.normalize_barcodes
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

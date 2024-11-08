@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.update_coloraxis
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

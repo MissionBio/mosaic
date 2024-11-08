@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.feature_scatter
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

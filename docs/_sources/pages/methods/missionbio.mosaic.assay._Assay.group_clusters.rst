@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.group_clusters
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

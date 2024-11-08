@@ -8,3 +8,7 @@ Dna.run\_pca
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.run_pca
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

@@ -8,3 +8,7 @@ Fishplot.\_\_init\_\_
 .. currentmodule:: missionbio.plotting.fishplot
 
 .. automethod:: Fishplot.__init__
+
+----
+
+< Class :doc:`../missionbio.plotting.fishplot.Fishplot`

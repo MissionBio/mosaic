@@ -8,3 +8,7 @@ Heatmap.data\_lines\_trace
 .. currentmodule:: missionbio.plotting.heatmap
 
 .. automethod:: Heatmap.data_lines_trace
+
+----
+
+< Class :doc:`../missionbio.plotting.heatmap.Heatmap`

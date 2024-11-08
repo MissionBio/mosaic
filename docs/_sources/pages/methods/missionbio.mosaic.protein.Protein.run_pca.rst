@@ -8,3 +8,7 @@ Protein.run\_pca
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.run_pca
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

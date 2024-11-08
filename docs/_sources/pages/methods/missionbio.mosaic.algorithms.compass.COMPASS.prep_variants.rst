@@ -8,3 +8,7 @@ COMPASS.prep\_variants
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 
 .. automethod:: COMPASS.prep_variants
+
+----
+
+< Class :doc:`../missionbio.mosaic.algorithms.compass.COMPASS`

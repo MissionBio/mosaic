@@ -8,3 +8,7 @@ Protein.hierarchical\_cluster
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.hierarchical_cluster
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

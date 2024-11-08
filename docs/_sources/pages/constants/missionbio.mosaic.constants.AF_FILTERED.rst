@@ -8,3 +8,7 @@ AF\_FILTERED
 .. currentmodule:: missionbio.mosaic.constants
 
 .. autodata:: AF_FILTERED
+
+----
+
+< Module :doc:`../missionbio.mosaic.constants`

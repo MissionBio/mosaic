@@ -8,3 +8,7 @@ VariantSubcloneTable.filter\_variants\_table
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 
 .. automethod:: VariantSubcloneTable.filter_variants_table
+
+----
+
+< Class :doc:`../missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable`

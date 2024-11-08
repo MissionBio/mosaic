@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.normalize_barcodes
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

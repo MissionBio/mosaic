@@ -8,3 +8,7 @@ Cnv.hierarchical\_cluster
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.hierarchical_cluster
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

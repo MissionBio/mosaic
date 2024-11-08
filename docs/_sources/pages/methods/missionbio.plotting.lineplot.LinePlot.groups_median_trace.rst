@@ -8,3 +8,7 @@ LinePlot.groups\_median\_trace
 .. currentmodule:: missionbio.plotting.lineplot
 
 .. automethod:: LinePlot.groups_median_trace
+
+----
+
+< Class :doc:`../missionbio.plotting.lineplot.LinePlot`

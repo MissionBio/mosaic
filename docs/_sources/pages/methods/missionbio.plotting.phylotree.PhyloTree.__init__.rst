@@ -8,3 +8,7 @@ PhyloTree.\_\_init\_\_
 .. currentmodule:: missionbio.plotting.phylotree
 
 .. automethod:: PhyloTree.__init__
+
+----
+
+< Class :doc:`../missionbio.plotting.phylotree.PhyloTree`

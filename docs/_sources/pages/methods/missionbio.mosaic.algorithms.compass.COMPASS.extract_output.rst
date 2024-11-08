@@ -8,3 +8,7 @@ COMPASS.extract\_output
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 
 .. automethod:: COMPASS.extract_output
+
+----
+
+< Class :doc:`../missionbio.mosaic.algorithms.compass.COMPASS`

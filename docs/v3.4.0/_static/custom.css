@@ -1,0 +1,33 @@
+h2 {
+    border-bottom: 2px solid var(--pst-color-border);
+    padding-bottom: 0.1rem
+}
+
+html {
+    --pst-font-size-h1: 2.00rem;
+    --pst-font-size-h2: 1.50rem;
+    --pst-font-size-h3: 1.40rem;
+    --pst-font-size-h4: 1.25rem;
+    --pst-font-size-h5: 1.15rem;
+    --pst-font-size-h6: 1.10rem;
+}
+
+/* Make the background of the article white in color*/
+.bd-container__inner {
+    background-color: white;
+}
+
+/*Make the background of the left sidebar grey in color*/
+.bd-container, .bd-sidebar-primary {
+    background-color: #fafbfc;
+}
+
+/*Add a container with white background to the right of the sidebar*/
+.background-cover {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc((100% - 88rem) / 2);
+    height: calc(100%);
+    background: white;
+}

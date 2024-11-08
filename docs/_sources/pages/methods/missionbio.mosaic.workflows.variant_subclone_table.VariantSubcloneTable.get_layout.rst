@@ -8,3 +8,7 @@ VariantSubcloneTable.get\_layout
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 
 .. automethod:: VariantSubcloneTable.get_layout
+
+----
+
+< Class :doc:`../missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable`

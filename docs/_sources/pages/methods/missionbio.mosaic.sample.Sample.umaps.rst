@@ -8,3 +8,7 @@ Sample.umaps
 .. currentmodule:: missionbio.mosaic.sample
 
 .. automethod:: Sample.umaps
+
+----
+
+< Class :doc:`../missionbio.mosaic.sample.Sample`

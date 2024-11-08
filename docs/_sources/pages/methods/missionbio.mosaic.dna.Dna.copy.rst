@@ -8,3 +8,7 @@ Dna.copy
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.copy
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

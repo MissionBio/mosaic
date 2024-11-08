@@ -8,3 +8,7 @@ LinePlot.lines\_trace
 .. currentmodule:: missionbio.plotting.lineplot
 
 .. automethod:: LinePlot.lines_trace
+
+----
+
+< Class :doc:`../missionbio.plotting.lineplot.LinePlot`

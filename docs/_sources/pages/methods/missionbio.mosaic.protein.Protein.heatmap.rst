@@ -8,3 +8,7 @@ Protein.heatmap
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.heatmap
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

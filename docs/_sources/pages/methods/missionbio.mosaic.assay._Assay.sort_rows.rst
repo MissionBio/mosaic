@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.sort_rows
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

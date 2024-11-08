@@ -8,3 +8,7 @@ Protein.ga
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.ga
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

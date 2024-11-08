@@ -8,3 +8,7 @@ Cnv.rename\_sample
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.rename_sample
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

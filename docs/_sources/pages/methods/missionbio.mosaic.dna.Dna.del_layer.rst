@@ -8,3 +8,7 @@ Dna.del\_layer
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.del_layer
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

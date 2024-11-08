@@ -8,3 +8,7 @@ Dna.split
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.split
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

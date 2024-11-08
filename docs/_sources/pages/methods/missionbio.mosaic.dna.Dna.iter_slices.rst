@@ -8,3 +8,7 @@ Dna.iter\_slices
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.iter_slices
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

@@ -8,3 +8,7 @@ Protein.stripplot
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.stripplot
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

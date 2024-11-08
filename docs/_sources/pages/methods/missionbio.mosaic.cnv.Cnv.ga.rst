@@ -8,3 +8,7 @@ Cnv.ga
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.ga
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

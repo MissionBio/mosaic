@@ -8,3 +8,7 @@ Protein.add\_extension
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.add_extension
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

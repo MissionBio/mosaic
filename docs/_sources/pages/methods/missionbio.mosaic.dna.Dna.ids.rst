@@ -8,3 +8,7 @@ Dna.ids
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.ids
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

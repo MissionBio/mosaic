@@ -8,3 +8,7 @@ Dna.feature\_scatter
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.feature_scatter
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

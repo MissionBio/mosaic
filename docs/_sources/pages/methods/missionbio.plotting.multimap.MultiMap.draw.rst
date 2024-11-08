@@ -8,3 +8,7 @@ MultiMap.draw
 .. currentmodule:: missionbio.plotting.multimap
 
 .. automethod:: MultiMap.draw
+
+----
+
+< Class :doc:`../missionbio.plotting.multimap.MultiMap`

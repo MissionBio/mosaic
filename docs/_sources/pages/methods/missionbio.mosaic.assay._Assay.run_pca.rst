@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.run_pca
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

@@ -8,3 +8,7 @@ Heatmap.set\_ticks
 .. currentmodule:: missionbio.plotting.heatmap
 
 .. automethod:: Heatmap.set_ticks
+
+----
+
+< Class :doc:`../missionbio.plotting.heatmap.Heatmap`

@@ -8,3 +8,7 @@ Cnv.positions
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.positions
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

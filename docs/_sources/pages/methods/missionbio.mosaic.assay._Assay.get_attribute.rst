@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.get_attribute
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

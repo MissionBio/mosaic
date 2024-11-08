@@ -8,3 +8,7 @@ Cnv.test\_signature
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.test_signature
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

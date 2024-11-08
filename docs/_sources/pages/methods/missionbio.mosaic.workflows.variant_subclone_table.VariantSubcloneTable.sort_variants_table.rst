@@ -8,3 +8,7 @@ VariantSubcloneTable.sort\_variants\_table
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 
 .. automethod:: VariantSubcloneTable.sort_variants_table
+
+----
+
+< Class :doc:`../missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable`

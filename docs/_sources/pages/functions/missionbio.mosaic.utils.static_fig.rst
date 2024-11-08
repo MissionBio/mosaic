@@ -8,3 +8,7 @@ static\_fig
 .. currentmodule:: missionbio.mosaic.utils
 
 .. autofunction:: static_fig
+
+----
+
+< Module :doc:`../missionbio.mosaic.utils`

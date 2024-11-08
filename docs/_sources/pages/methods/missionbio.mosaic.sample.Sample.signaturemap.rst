@@ -8,3 +8,7 @@ Sample.signaturemap
 .. currentmodule:: missionbio.mosaic.sample
 
 .. automethod:: Sample.signaturemap
+
+----
+
+< Class :doc:`../missionbio.mosaic.sample.Sample`

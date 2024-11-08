@@ -8,3 +8,7 @@ Protein.barcodes
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.barcodes
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

@@ -8,3 +8,7 @@ Dna.find\_clones
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.find_clones
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

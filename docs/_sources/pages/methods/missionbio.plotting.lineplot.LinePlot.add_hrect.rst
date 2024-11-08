@@ -8,3 +8,7 @@ LinePlot.add\_hrect
 .. currentmodule:: missionbio.plotting.lineplot
 
 .. automethod:: LinePlot.add_hrect
+
+----
+
+< Class :doc:`../missionbio.plotting.lineplot.LinePlot`

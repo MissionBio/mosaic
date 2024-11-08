@@ -8,3 +8,7 @@ Cnv.group\_clusters
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.group_clusters
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

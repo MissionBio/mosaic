@@ -8,3 +8,7 @@ Protein.add\_metadata
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.add_metadata
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

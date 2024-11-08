@@ -8,3 +8,7 @@ GroupByGenotype.subclone\_table
 .. currentmodule:: missionbio.mosaic.algorithms.group_by_genotype
 
 .. automethod:: GroupByGenotype.subclone_table
+
+----
+
+< Class :doc:`../missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype`

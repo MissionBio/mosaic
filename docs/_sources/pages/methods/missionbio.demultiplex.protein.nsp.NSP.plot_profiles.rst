@@ -8,3 +8,7 @@ NSP.plot\_profiles
 .. currentmodule:: missionbio.demultiplex.protein.nsp
 
 .. automethod:: NSP.plot_profiles
+
+----
+
+< Class :doc:`../missionbio.demultiplex.protein.nsp.NSP`

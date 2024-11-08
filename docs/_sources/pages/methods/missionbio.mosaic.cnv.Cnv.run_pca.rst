@@ -8,3 +8,7 @@ Cnv.run\_pca
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.run_pca
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

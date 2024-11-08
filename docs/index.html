@@ -9,25 +9,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Mosaic API documentation &#8212; Mosaic v3.4 documentation</title>
+    <title>Mosaic API documentation &#8212; Mosaic v3.7 documentation</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
@@ -35,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -60,28 +60,23 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -103,12 +98,22 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,7 +138,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.4 documentation</p>
+    <p class="title logo__title">Mosaic v3.7 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -142,7 +147,7 @@
 <li class="toctree-l1"><a class="reference internal" href="manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/data_structure.html">Data structure</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="manual/vignettes.html">Vignettes</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/overview.html">Overview of mosaic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/filtering.html">Filtering barcodes and ids</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/cnv.html">Manual CNV analysis</a></li>
@@ -151,8 +156,8 @@
 <li class="toctree-l2"><a class="reference internal" href="notebooks/additional-plots-and-customizations.html">Additional plots and customizations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/code-snippets.html">Code Snippets</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="manual/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manual/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/curated_notebooks/dna.html">Single Sample DNA-only notebook</a></li>
 
 
@@ -181,7 +186,7 @@
 
 
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/help.html">Additional resources</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="manual/changelog.html">Changelog</a></li>
@@ -221,6 +226,18 @@
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.plotting.phylotree.PhyloTree.html">PhyloTree</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.plotting.fishplot.Fishplot.html">Fishplot</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DNA assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.demultiplex.dna.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.algorithms.dna_assignment.DnaAssignment.html">DnaAssignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Protein assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.demultiplex.protein.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.html">ProbabilityMethod</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -235,7 +252,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -244,7 +261,7 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
@@ -373,6 +390,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-modules">Functional Modules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-plots">Custom Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-assignment">DNA Assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-assignment">Protein Assignment</a></li>
 </ul>
             </nav>
         </div>
@@ -382,7 +401,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
     <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
     <div class="background-cover" id="background-cover"></div>
@@ -402,7 +421,7 @@ exploratory analysis.</p>
 </div>
 <section id="basic-classes">
 <h2>Basic Classes<a class="headerlink" href="#basic-classes" title="Permalink to this heading">#</a></h2>
-<table class="autosummary longtable table autosummary">
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.assay._Assay.html#missionbio.mosaic.assay._Assay" title="missionbio.mosaic.assay._Assay"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_Assay</span></code></a></p></td>
 <td><p>Abstract class for all assays</p></td>
@@ -424,10 +443,11 @@ exploratory analysis.</p>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="interactive-workflows">
 <h2>Interactive Workflows<a class="headerlink" href="#interactive-workflows" title="Permalink to this heading">#</a></h2>
-<table class="autosummary longtable table autosummary">
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.workflows.copy_number.CopyNumber.html#missionbio.mosaic.workflows.copy_number.CopyNumber" title="missionbio.mosaic.workflows.copy_number.CopyNumber"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CopyNumber</span></code></a></p></td>
 <td><p>Copy Number estimation workflow.</p></td>
@@ -437,12 +457,13 @@ exploratory analysis.</p>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="algorithms">
 <h2>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this heading">#</a></h2>
-<table class="autosummary longtable table autosummary">
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.demultiplex.protein.nsp.NSP.html#missionbio.demultiplex.protein.nsp.NSP" title="missionbio.demultiplex.protein.nsp.NSP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NSP</span></code></a>([jitter, random_state, sample_size])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.demultiplex.protein.nsp.NSP.html#missionbio.demultiplex.protein.nsp.NSP" title="missionbio.demultiplex.protein.nsp.NSP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NSP</span></code></a>([jitter, random_state, sample_size, ...])</p></td>
 <td><p>Noise corrected and Scaled Protein counts (NSP)</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype" title="missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GroupByGenotype</span></code></a>(dna, features[, layer, ...])</p></td>
@@ -453,10 +474,11 @@ exploratory analysis.</p>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="functional-modules">
 <h2>Functional Modules<a class="headerlink" href="#functional-modules" title="Permalink to this heading">#</a></h2>
-<table class="autosummary longtable table autosummary">
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.io.html#module-missionbio.mosaic.io" title="missionbio.mosaic.io"><code class="xref py py-obj docutils literal notranslate"><span class="pre">io</span></code></a></p></td>
 <td><p>Module to read and write h5 files</p></td>
@@ -469,10 +491,11 @@ exploratory analysis.</p>
 </tr>
 </tbody>
 </table>
+</div>
 </section>
 <section id="custom-plots">
 <h2>Custom Plots<a class="headerlink" href="#custom-plots" title="Permalink to this heading">#</a></h2>
-<table class="autosummary longtable table autosummary">
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.plotting.heatmap.Heatmap.html#missionbio.plotting.heatmap.Heatmap" title="missionbio.plotting.heatmap.Heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Heatmap</span></code></a></p></td>
 <td><p>Heatmap with options for grouping rows/cols.</p></td>
@@ -494,6 +517,41 @@ exploratory analysis.</p>
 </tr>
 </tbody>
 </table>
+</div>
+</section>
+<section id="dna-assignment">
+<h2>DNA Assignment<a class="headerlink" href="#dna-assignment" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.demultiplex.dna.truth.Truth.html#missionbio.demultiplex.dna.truth.Truth" title="missionbio.demultiplex.dna.truth.Truth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Truth</span></code></a></p></td>
+<td><p>Truth data for GT demultiplexing</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LikelihoodMethod</span></code></a></p></td>
+<td><p>A likelihood-based demultiplexing method for DNA data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.algorithms.dna_assignment.DnaAssignment.html#missionbio.mosaic.algorithms.dna_assignment.DnaAssignment" title="missionbio.mosaic.algorithms.dna_assignment.DnaAssignment"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DnaAssignment</span></code></a></p></td>
+<td><p>A wrapper for the missionbio.demultiplex module.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="protein-assignment">
+<h2>Protein Assignment<a class="headerlink" href="#protein-assignment" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.demultiplex.protein.truth.Truth.html#missionbio.demultiplex.protein.truth.Truth" title="missionbio.demultiplex.protein.truth.Truth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Truth</span></code></a></p></td>
+<td><p>A phylogenetic tree of cell types.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.html#missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod" title="missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LikelihoodMethod</span></code></a></p></td>
+<td><p>A PACE method to categorize the cells into the most likely category based on the given truth.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProbabilityMethod</span></code></a></p></td>
+<td><p>A PACE method to categorize the cells into the mot probable category based on the given truth.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </section>
 </section>
 
@@ -505,7 +563,7 @@ exploratory analysis.</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="right-next"
@@ -526,6 +584,7 @@ exploratory analysis.</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
@@ -537,6 +596,8 @@ exploratory analysis.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithms">Algorithms</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-modules">Functional Modules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-plots">Custom Plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-assignment">DNA Assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-assignment">Protein Assignment</a></li>
 </ul>
   </nav></div>
 
@@ -585,8 +646,8 @@ By Saurabh Parikh
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
 
   <footer class="bd-footer">
   </footer>

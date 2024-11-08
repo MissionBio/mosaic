@@ -8,3 +8,7 @@ Protein.normalize\_reads
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.normalize_reads
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

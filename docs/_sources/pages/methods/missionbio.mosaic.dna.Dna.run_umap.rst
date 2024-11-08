@@ -8,3 +8,7 @@ Dna.run\_umap
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.run_umap
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

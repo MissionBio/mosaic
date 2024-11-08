@@ -8,3 +8,7 @@ Sample.heatmap
 .. currentmodule:: missionbio.mosaic.sample
 
 .. automethod:: Sample.heatmap
+
+----
+
+< Class :doc:`../missionbio.mosaic.sample.Sample`

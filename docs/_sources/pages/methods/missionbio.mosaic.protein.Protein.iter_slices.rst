@@ -8,3 +8,7 @@ Protein.iter\_slices
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.iter_slices
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

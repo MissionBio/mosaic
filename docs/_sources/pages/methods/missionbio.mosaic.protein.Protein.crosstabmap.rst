@@ -8,3 +8,7 @@ Protein.crosstabmap
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.crosstabmap
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

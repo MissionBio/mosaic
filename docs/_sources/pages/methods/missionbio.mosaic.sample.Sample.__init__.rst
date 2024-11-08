@@ -8,3 +8,7 @@ Sample.\_\_init\_\_
 .. currentmodule:: missionbio.mosaic.sample
 
 .. automethod:: Sample.__init__
+
+----
+
+< Class :doc:`../missionbio.mosaic.sample.Sample`

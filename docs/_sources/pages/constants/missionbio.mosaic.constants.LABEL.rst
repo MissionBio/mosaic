@@ -8,3 +8,7 @@ LABEL
 .. currentmodule:: missionbio.mosaic.constants
 
 .. autodata:: LABEL
+
+----
+
+< Module :doc:`../missionbio.mosaic.constants`

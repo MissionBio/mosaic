@@ -8,3 +8,7 @@ Protein.test\_signature
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.test_signature
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

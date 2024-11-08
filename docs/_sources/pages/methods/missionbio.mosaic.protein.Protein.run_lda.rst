@@ -8,3 +8,7 @@ Protein.run\_lda
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.run_lda
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

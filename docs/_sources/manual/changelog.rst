@@ -4,6 +4,49 @@ Changelog
 
 .. py:currentmodule:: missionbio.mosaic
 
+v3.6.0
+------
+**Release date**: 2024-08-05
+
+Added
+~~~~~
+
+* :meth:`~dna.Dna.filter_somatic_variants()` for automatic filtering of pathogenic somatic variants.
+* :meth:`dna.Dna.assign_from_truth` to label the cells for a known set of clones.
+* :meth:`protein.Protein.cluster_and_label` to find all protein clusters and label them based on the provided truth. This function can be used to novel cell types.
+* :meth:`protein.Protein.label_sticky_cells` to mark cells which are likely to be sticky.
+* :meth:`protein.Protein.assign_from_truth` label the cells for a known set of cell types. By default, it labels the PBMC subtypes.
+* :meth:`protein.Protein.truth` to convert cluster signatures to a truth that can be used for :meth:`~protein.Protein.assign_from_truth`
+* Ability to pass an external control to :meth:`~cnv.Cnv.compute_ploidy`
+* :meth:`~protein.Protein.read_depth_dependence` - a plot to quickly visualize the need and effectiveness of NSP normalization.
+* Option to load a subset of the assays in the h5 file.
+* No error is raised when h5 files with unknown assays are loaded.
+* Raise an error when the number of variants to annotate is more than 1,000. This is a safeguard to prevent incorrect API calls.
+* Varsome annotations are stored locally and will not be fetched again unless the local file is deleted.
+* ``copy`` parameter to :meth:`~assay._Assay.get_attribute` to return a view of the data instead of a copy.
+* Option to pass ``order`` of labels to :meth:`~assay._Assay.ridgeplot`.
+* ADO score is formatted more conveniently in the :class:`workflows.variant_subclone_table.VariantSubcloneTable` workflow. If it's 0, then it's shown as "-" and if <0.05 then it's shown as "~0.0".
+* Ability to rename a sample using :meth:`~sample.Sample.rename`.
+
+
+Changed
+~~~~~~~
+
+* :attr:`sample.Sample.name` is a now a property, and cannot be set. It returns a value according to the current ``sample_name`` metadata.
+* :attr:`assay._Assay.title` is a now a property, and cannot be set. It returns a value according to the current `sample_name` metadata.
+* Behavior of ``default_label`` in :meth:`assay._Assay.set_labels`. When ``default_label`` is ``None``, only the labels of the provided barcodes are updated.
+* ``normalized_counts`` in :meth:`~cnv.Cnv.compute_ploidy` is no longer used. The ``read_counts`` layer is used directly.
+* ``ANNOTATION_COLUMNS`` constant was moved to  ``missionbio.annotation.constants``
+* Use ``pynndescent`` instead of ``scikit-learn`` to speed up nearest neighbors calculation during graph-community clustering. Results will not be backwards compatible.
+
+Fixed
+~~~~~
+
+* Ordering of the barcodes in the heatmap when a subset of the variants are used.
+* Fetching of CNV amplicon gene names for regions where ensembl returns an incomplete response.
+* Allow custom grouping of amplicons for :meth:`cnv.CNV.heatmap` by passing amplicons to ``features`` and ``x_groups`` values.
+
+
 v3.4.0
 ------
 **Release date**: 2024-04-01

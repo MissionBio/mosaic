@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.highlight_heatmap
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

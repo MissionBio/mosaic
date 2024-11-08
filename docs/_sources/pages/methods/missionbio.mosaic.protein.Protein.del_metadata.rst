@@ -8,3 +8,7 @@ Protein.del\_metadata
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.del_metadata
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

@@ -8,3 +8,7 @@ Dna.reset\_ids
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.reset_ids
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

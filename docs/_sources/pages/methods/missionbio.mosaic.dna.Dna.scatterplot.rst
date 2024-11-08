@@ -8,3 +8,7 @@ Dna.scatterplot
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.scatterplot
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

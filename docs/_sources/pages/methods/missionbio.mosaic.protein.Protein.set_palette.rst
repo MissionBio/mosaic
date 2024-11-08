@@ -8,3 +8,7 @@ Protein.set\_palette
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.set_palette
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`

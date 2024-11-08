@@ -8,3 +8,7 @@ Heatmap.annotation
 .. currentmodule:: missionbio.plotting.heatmap
 
 .. automethod:: Heatmap.annotation
+
+----
+
+< Class :doc:`../missionbio.plotting.heatmap.Heatmap`

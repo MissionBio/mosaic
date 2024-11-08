@@ -8,3 +8,7 @@ Heatmap.\_\_init\_\_
 .. currentmodule:: missionbio.plotting.heatmap
 
 .. automethod:: Heatmap.__init__
+
+----
+
+< Class :doc:`../missionbio.plotting.heatmap.Heatmap`

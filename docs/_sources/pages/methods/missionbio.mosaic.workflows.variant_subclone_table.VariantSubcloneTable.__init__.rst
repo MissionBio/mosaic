@@ -8,3 +8,7 @@ VariantSubcloneTable.\_\_init\_\_
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 
 .. automethod:: VariantSubcloneTable.__init__
+
+----
+
+< Class :doc:`../missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable`

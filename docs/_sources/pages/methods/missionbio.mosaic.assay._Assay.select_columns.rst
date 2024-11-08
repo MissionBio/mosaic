@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.select_columns
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

@@ -8,3 +8,7 @@ Dna.filter\_variants\_consecutive
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.filter_variants_consecutive
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

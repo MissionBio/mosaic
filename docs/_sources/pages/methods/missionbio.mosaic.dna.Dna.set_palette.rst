@@ -8,3 +8,7 @@ Dna.set\_palette
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.set_palette
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

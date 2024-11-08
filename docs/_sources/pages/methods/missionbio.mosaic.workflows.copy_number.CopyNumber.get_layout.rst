@@ -8,3 +8,7 @@ CopyNumber.get\_layout
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 
 .. automethod:: CopyNumber.get_layout
+
+----
+
+< Class :doc:`../missionbio.mosaic.workflows.copy_number.CopyNumber`

@@ -8,3 +8,7 @@ CopyNumber.plot\_options
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 
 .. automethod:: CopyNumber.plot_options
+
+----
+
+< Class :doc:`../missionbio.mosaic.workflows.copy_number.CopyNumber`

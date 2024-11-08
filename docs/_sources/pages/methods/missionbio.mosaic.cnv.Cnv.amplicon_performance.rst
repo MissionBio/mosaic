@@ -8,3 +8,7 @@ Cnv.amplicon\_performance
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.amplicon_performance
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

@@ -8,3 +8,7 @@ Cnv.select\_columns
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.select_columns
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

@@ -8,3 +8,7 @@ LinePlot.\_\_init\_\_
 .. currentmodule:: missionbio.plotting.lineplot
 
 .. automethod:: LinePlot.__init__
+
+----
+
+< Class :doc:`../missionbio.plotting.lineplot.LinePlot`

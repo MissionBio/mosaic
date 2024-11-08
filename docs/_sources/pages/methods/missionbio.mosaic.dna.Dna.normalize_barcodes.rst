@@ -8,3 +8,7 @@ Dna.normalize\_barcodes
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.normalize_barcodes
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

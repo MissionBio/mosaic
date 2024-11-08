@@ -8,3 +8,7 @@ NORMALIZED\_READS
 .. currentmodule:: missionbio.mosaic.constants
 
 .. autodata:: NORMALIZED_READS
+
+----
+
+< Module :doc:`../missionbio.mosaic.constants`

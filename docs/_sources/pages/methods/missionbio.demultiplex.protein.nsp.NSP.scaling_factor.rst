@@ -8,3 +8,7 @@ NSP.scaling\_factor
 .. currentmodule:: missionbio.demultiplex.protein.nsp
 
 .. automethod:: NSP.scaling_factor
+
+----
+
+< Class :doc:`../missionbio.demultiplex.protein.nsp.NSP`

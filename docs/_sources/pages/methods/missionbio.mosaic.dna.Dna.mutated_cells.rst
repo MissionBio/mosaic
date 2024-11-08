@@ -8,3 +8,7 @@ Dna.mutated\_cells
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.mutated_cells
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.iter_slices
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

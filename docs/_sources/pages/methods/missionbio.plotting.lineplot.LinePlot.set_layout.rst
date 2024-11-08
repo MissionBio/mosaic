@@ -8,3 +8,7 @@ LinePlot.set\_layout
 .. currentmodule:: missionbio.plotting.lineplot
 
 .. automethod:: LinePlot.set_layout
+
+----
+
+< Class :doc:`../missionbio.plotting.lineplot.LinePlot`

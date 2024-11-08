@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.test_signature
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

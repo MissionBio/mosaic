@@ -8,3 +8,7 @@
 .. currentmodule:: missionbio.mosaic.assay
 
 .. automethod:: _Assay.rename_sample
+
+----
+
+< Class :doc:`../missionbio.mosaic.assay._Assay`

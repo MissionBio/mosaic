@@ -8,3 +8,7 @@ LinePlot.draw
 .. currentmodule:: missionbio.plotting.lineplot
 
 .. automethod:: LinePlot.draw
+
+----
+
+< Class :doc:`../missionbio.plotting.lineplot.LinePlot`

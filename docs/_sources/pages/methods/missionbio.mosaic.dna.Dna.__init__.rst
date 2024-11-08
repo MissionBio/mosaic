@@ -8,3 +8,7 @@ Dna.\_\_init\_\_
 .. currentmodule:: missionbio.mosaic.dna
 
 .. automethod:: Dna.__init__
+
+----
+
+< Class :doc:`../missionbio.mosaic.dna.Dna`

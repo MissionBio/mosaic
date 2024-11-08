@@ -8,3 +8,7 @@ Cnv.heatmap
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.heatmap
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

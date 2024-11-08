@@ -8,3 +8,7 @@ BarGraph.draw
 .. currentmodule:: missionbio.plotting.bargraph
 
 .. automethod:: BarGraph.draw
+
+----
+
+< Class :doc:`../missionbio.plotting.bargraph.BarGraph`

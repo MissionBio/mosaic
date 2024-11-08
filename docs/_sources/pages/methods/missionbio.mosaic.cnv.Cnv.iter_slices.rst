@@ -8,3 +8,7 @@ Cnv.iter\_slices
 .. currentmodule:: missionbio.mosaic.cnv
 
 .. automethod:: Cnv.iter_slices
+
+----
+
+< Class :doc:`../missionbio.mosaic.cnv.Cnv`

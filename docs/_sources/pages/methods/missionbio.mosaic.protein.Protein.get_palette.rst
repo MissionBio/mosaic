@@ -8,3 +8,7 @@ Protein.get\_palette
 .. currentmodule:: missionbio.mosaic.protein
 
 .. automethod:: Protein.get_palette
+
+----
+
+< Class :doc:`../missionbio.mosaic.protein.Protein`
