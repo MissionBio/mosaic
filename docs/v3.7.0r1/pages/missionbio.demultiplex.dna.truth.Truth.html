@@ -1,0 +1,1201 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Truth &#8212; Mosaic v3.7 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/missionbio.demultiplex.dna.truth.Truth';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LikelihoodMethod" href="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html" />
+    <link rel="prev" title="Fishplot" href="missionbio.plotting.fishplot.Fishplot.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Mosaic v3.7 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../manual/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html">Overview of mosaic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/filtering.html">Filtering barcodes and ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/cnv.html">Manual CNV analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/plot-customizations.html">Plot customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/multi-sample-analysis.html">Multisample analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html">Additional plots and customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/code-snippets.html">Code Snippets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/dna.html">Single Sample DNA-only notebook</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/dna-multisample.html">Multisample DNA-only notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/dna-protein.html">Single Sample DNA + Protein notebook</a></li>
+
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/dna-protein-multisample.html">Multisample DNA + Protein notebook</a></li>
+
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/help.html">Additional resources</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../manual/changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.sample.Sample.html">Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interactive Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.workflows.copy_number.CopyNumber.html">CopyNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html">VariantSubcloneTable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Custom Plots</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.heatmap.Heatmap.html">Heatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.lineplot.LinePlot.html">LinePlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.bargraph.BarGraph.html">BarGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.multimap.MultiMap.html">MultiMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.phylotree.PhyloTree.html">PhyloTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.fishplot.Fishplot.html">Fishplot</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DNA assignment</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.dna_assignment.DnaAssignment.html">DnaAssignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Protein assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.html">ProbabilityMethod</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/pages/missionbio.demultiplex.dna.truth.Truth.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Truth</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.dna.truth.Truth"><code class="docutils literal notranslate"><span class="pre">Truth</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="truth">
+<h1>Truth<a class="headerlink" href="#truth" title="Permalink to this heading">#</a></h1>
+<p class="rubric">missionbio.demultiplex.dna.truth.Truth</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="missionbio.demultiplex.dna.truth.Truth">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Truth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.demultiplex.dna.truth.Truth" title="Permalink to this definition">#</a></dt>
+<dd><p>Truth data for GT demultiplexing</p>
+<p>The truth data is a dataframe with the NGT for each cell and variant</p>
+</dd></dl>
+
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.__init__.html#missionbio.demultiplex.dna.truth.Truth.__init__" title="missionbio.demultiplex.dna.truth.Truth.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.abs.html#missionbio.demultiplex.dna.truth.Truth.abs" title="missionbio.demultiplex.dna.truth.Truth.abs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">abs</span></code></a></p></td>
+<td><p>Return a Series/DataFrame with absolute numeric value of each element.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.add.html#missionbio.demultiplex.dna.truth.Truth.add" title="missionbio.demultiplex.dna.truth.Truth.add"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add</span></code></a></p></td>
+<td><p>Get Addition of dataframe and other, element-wise (binary operator <cite>add</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.add_doublets.html#missionbio.demultiplex.dna.truth.Truth.add_doublets" title="missionbio.demultiplex.dna.truth.Truth.add_doublets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_doublets</span></code></a></p></td>
+<td><p>Create truth for doublets.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.add_prefix.html#missionbio.demultiplex.dna.truth.Truth.add_prefix" title="missionbio.demultiplex.dna.truth.Truth.add_prefix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_prefix</span></code></a></p></td>
+<td><p>Prefix labels with string <cite>prefix</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.add_suffix.html#missionbio.demultiplex.dna.truth.Truth.add_suffix" title="missionbio.demultiplex.dna.truth.Truth.add_suffix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_suffix</span></code></a></p></td>
+<td><p>Suffix labels with string <cite>suffix</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.agg.html#missionbio.demultiplex.dna.truth.Truth.agg" title="missionbio.demultiplex.dna.truth.Truth.agg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">agg</span></code></a></p></td>
+<td><p>Aggregate using one or more operations over the specified axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.aggregate.html#missionbio.demultiplex.dna.truth.Truth.aggregate" title="missionbio.demultiplex.dna.truth.Truth.aggregate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">aggregate</span></code></a></p></td>
+<td><p>Aggregate using one or more operations over the specified axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.align.html#missionbio.demultiplex.dna.truth.Truth.align" title="missionbio.demultiplex.dna.truth.Truth.align"><code class="xref py py-obj docutils literal notranslate"><span class="pre">align</span></code></a></p></td>
+<td><p>Align two objects on their axes with the specified join method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.all.html#missionbio.demultiplex.dna.truth.Truth.all" title="missionbio.demultiplex.dna.truth.Truth.all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all</span></code></a></p></td>
+<td><p>Return whether all elements are True, potentially over an axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.any.html#missionbio.demultiplex.dna.truth.Truth.any" title="missionbio.demultiplex.dna.truth.Truth.any"><code class="xref py py-obj docutils literal notranslate"><span class="pre">any</span></code></a></p></td>
+<td><p>Return whether any element is True, potentially over an axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.append.html#missionbio.demultiplex.dna.truth.Truth.append" title="missionbio.demultiplex.dna.truth.Truth.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append</span></code></a></p></td>
+<td><p>Append rows of <cite>other</cite> to the end of caller, returning a new object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.apply.html#missionbio.demultiplex.dna.truth.Truth.apply" title="missionbio.demultiplex.dna.truth.Truth.apply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">apply</span></code></a></p></td>
+<td><p>Apply a function along an axis of the DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.applymap.html#missionbio.demultiplex.dna.truth.Truth.applymap" title="missionbio.demultiplex.dna.truth.Truth.applymap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">applymap</span></code></a></p></td>
+<td><p>Apply a function to a Dataframe elementwise.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.as_input_file.html#missionbio.demultiplex.dna.truth.Truth.as_input_file" title="missionbio.demultiplex.dna.truth.Truth.as_input_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">as_input_file</span></code></a></p></td>
+<td><p>Convert the truth to the input file format used by pipelines</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.asfreq.html#missionbio.demultiplex.dna.truth.Truth.asfreq" title="missionbio.demultiplex.dna.truth.Truth.asfreq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asfreq</span></code></a></p></td>
+<td><p>Convert time series to specified frequency.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.asof.html#missionbio.demultiplex.dna.truth.Truth.asof" title="missionbio.demultiplex.dna.truth.Truth.asof"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asof</span></code></a></p></td>
+<td><p>Return the last row(s) without any NaNs before <cite>where</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.assign.html#missionbio.demultiplex.dna.truth.Truth.assign" title="missionbio.demultiplex.dna.truth.Truth.assign"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assign</span></code></a></p></td>
+<td><p>Assign new columns to a DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.astype.html#missionbio.demultiplex.dna.truth.Truth.astype" title="missionbio.demultiplex.dna.truth.Truth.astype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">astype</span></code></a></p></td>
+<td><p>Cast a pandas object to a specified dtype <code class="docutils literal notranslate"><span class="pre">dtype</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.at_time.html#missionbio.demultiplex.dna.truth.Truth.at_time" title="missionbio.demultiplex.dna.truth.Truth.at_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">at_time</span></code></a></p></td>
+<td><p>Select values at particular time of day (e.g., 9:30AM).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.backfill.html#missionbio.demultiplex.dna.truth.Truth.backfill" title="missionbio.demultiplex.dna.truth.Truth.backfill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backfill</span></code></a></p></td>
+<td><p>Synonym for <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.fillna()</span></code> with <code class="docutils literal notranslate"><span class="pre">method='bfill'</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.between_time.html#missionbio.demultiplex.dna.truth.Truth.between_time" title="missionbio.demultiplex.dna.truth.Truth.between_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">between_time</span></code></a></p></td>
+<td><p>Select values between particular times of the day (e.g., 9:00-9:30 AM).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.bfill.html#missionbio.demultiplex.dna.truth.Truth.bfill" title="missionbio.demultiplex.dna.truth.Truth.bfill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bfill</span></code></a></p></td>
+<td><p>Synonym for <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.fillna()</span></code> with <code class="docutils literal notranslate"><span class="pre">method='bfill'</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.bool.html#missionbio.demultiplex.dna.truth.Truth.bool" title="missionbio.demultiplex.dna.truth.Truth.bool"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a></p></td>
+<td><p>Return the bool of a single element Series or DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.boxplot.html#missionbio.demultiplex.dna.truth.Truth.boxplot" title="missionbio.demultiplex.dna.truth.Truth.boxplot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">boxplot</span></code></a></p></td>
+<td><p>Make a box plot from DataFrame columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.clip.html#missionbio.demultiplex.dna.truth.Truth.clip" title="missionbio.demultiplex.dna.truth.Truth.clip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clip</span></code></a></p></td>
+<td><p>Trim values at input threshold(s).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.combine.html#missionbio.demultiplex.dna.truth.Truth.combine" title="missionbio.demultiplex.dna.truth.Truth.combine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine</span></code></a></p></td>
+<td><p>Perform column-wise combine with another DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.combine_first.html#missionbio.demultiplex.dna.truth.Truth.combine_first" title="missionbio.demultiplex.dna.truth.Truth.combine_first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">combine_first</span></code></a></p></td>
+<td><p>Update null elements with value in the same location in <cite>other</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.compare.html#missionbio.demultiplex.dna.truth.Truth.compare" title="missionbio.demultiplex.dna.truth.Truth.compare"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compare</span></code></a></p></td>
+<td><p>Compare to another DataFrame and show the differences.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.convert_dtypes.html#missionbio.demultiplex.dna.truth.Truth.convert_dtypes" title="missionbio.demultiplex.dna.truth.Truth.convert_dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convert_dtypes</span></code></a></p></td>
+<td><p>Convert columns to best possible dtypes using dtypes supporting <code class="docutils literal notranslate"><span class="pre">pd.NA</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.copy.html#missionbio.demultiplex.dna.truth.Truth.copy" title="missionbio.demultiplex.dna.truth.Truth.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a></p></td>
+<td><p>Make a copy of this object's indices and data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.corr.html#missionbio.demultiplex.dna.truth.Truth.corr" title="missionbio.demultiplex.dna.truth.Truth.corr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">corr</span></code></a></p></td>
+<td><p>Compute pairwise correlation of columns, excluding NA/null values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.corrwith.html#missionbio.demultiplex.dna.truth.Truth.corrwith" title="missionbio.demultiplex.dna.truth.Truth.corrwith"><code class="xref py py-obj docutils literal notranslate"><span class="pre">corrwith</span></code></a></p></td>
+<td><p>Compute pairwise correlation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.count.html#missionbio.demultiplex.dna.truth.Truth.count" title="missionbio.demultiplex.dna.truth.Truth.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">count</span></code></a></p></td>
+<td><p>Count non-NA cells for each column or row.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.cov.html#missionbio.demultiplex.dna.truth.Truth.cov" title="missionbio.demultiplex.dna.truth.Truth.cov"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cov</span></code></a></p></td>
+<td><p>Compute pairwise covariance of columns, excluding NA/null values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.cummax.html#missionbio.demultiplex.dna.truth.Truth.cummax" title="missionbio.demultiplex.dna.truth.Truth.cummax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cummax</span></code></a></p></td>
+<td><p>Return cumulative maximum over a DataFrame or Series axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.cummin.html#missionbio.demultiplex.dna.truth.Truth.cummin" title="missionbio.demultiplex.dna.truth.Truth.cummin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cummin</span></code></a></p></td>
+<td><p>Return cumulative minimum over a DataFrame or Series axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.cumprod.html#missionbio.demultiplex.dna.truth.Truth.cumprod" title="missionbio.demultiplex.dna.truth.Truth.cumprod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cumprod</span></code></a></p></td>
+<td><p>Return cumulative product over a DataFrame or Series axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.cumsum.html#missionbio.demultiplex.dna.truth.Truth.cumsum" title="missionbio.demultiplex.dna.truth.Truth.cumsum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cumsum</span></code></a></p></td>
+<td><p>Return cumulative sum over a DataFrame or Series axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.describe.html#missionbio.demultiplex.dna.truth.Truth.describe" title="missionbio.demultiplex.dna.truth.Truth.describe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">describe</span></code></a></p></td>
+<td><p>Generate descriptive statistics.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.diff.html#missionbio.demultiplex.dna.truth.Truth.diff" title="missionbio.demultiplex.dna.truth.Truth.diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diff</span></code></a></p></td>
+<td><p>First discrete difference of element.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.div.html#missionbio.demultiplex.dna.truth.Truth.div" title="missionbio.demultiplex.dna.truth.Truth.div"><code class="xref py py-obj docutils literal notranslate"><span class="pre">div</span></code></a></p></td>
+<td><p>Get Floating division of dataframe and other, element-wise (binary operator <cite>truediv</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.divide.html#missionbio.demultiplex.dna.truth.Truth.divide" title="missionbio.demultiplex.dna.truth.Truth.divide"><code class="xref py py-obj docutils literal notranslate"><span class="pre">divide</span></code></a></p></td>
+<td><p>Get Floating division of dataframe and other, element-wise (binary operator <cite>truediv</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.dot.html#missionbio.demultiplex.dna.truth.Truth.dot" title="missionbio.demultiplex.dna.truth.Truth.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a></p></td>
+<td><p>Compute the matrix multiplication between the DataFrame and other.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.drop.html#missionbio.demultiplex.dna.truth.Truth.drop" title="missionbio.demultiplex.dna.truth.Truth.drop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop</span></code></a></p></td>
+<td><p>Drop specified labels from rows or columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.drop_duplicates.html#missionbio.demultiplex.dna.truth.Truth.drop_duplicates" title="missionbio.demultiplex.dna.truth.Truth.drop_duplicates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">drop_duplicates</span></code></a></p></td>
+<td><p>Return DataFrame with duplicate rows removed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.droplevel.html#missionbio.demultiplex.dna.truth.Truth.droplevel" title="missionbio.demultiplex.dna.truth.Truth.droplevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">droplevel</span></code></a></p></td>
+<td><p>Return Series/DataFrame with requested index / column level(s) removed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.dropna.html#missionbio.demultiplex.dna.truth.Truth.dropna" title="missionbio.demultiplex.dna.truth.Truth.dropna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropna</span></code></a></p></td>
+<td><p>Remove missing values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.duplicated.html#missionbio.demultiplex.dna.truth.Truth.duplicated" title="missionbio.demultiplex.dna.truth.Truth.duplicated"><code class="xref py py-obj docutils literal notranslate"><span class="pre">duplicated</span></code></a></p></td>
+<td><p>Return boolean Series denoting duplicate rows.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.eq.html#missionbio.demultiplex.dna.truth.Truth.eq" title="missionbio.demultiplex.dna.truth.Truth.eq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eq</span></code></a></p></td>
+<td><p>Get Equal to of dataframe and other, element-wise (binary operator <cite>eq</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.equals.html#missionbio.demultiplex.dna.truth.Truth.equals" title="missionbio.demultiplex.dna.truth.Truth.equals"><code class="xref py py-obj docutils literal notranslate"><span class="pre">equals</span></code></a></p></td>
+<td><p>Test whether two objects contain the same elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.eval.html#missionbio.demultiplex.dna.truth.Truth.eval" title="missionbio.demultiplex.dna.truth.Truth.eval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eval</span></code></a></p></td>
+<td><p>Evaluate a string describing operations on DataFrame columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.ewm.html#missionbio.demultiplex.dna.truth.Truth.ewm" title="missionbio.demultiplex.dna.truth.Truth.ewm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ewm</span></code></a></p></td>
+<td><p>Provide exponentially weighted (EW) calculations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.expanding.html#missionbio.demultiplex.dna.truth.Truth.expanding" title="missionbio.demultiplex.dna.truth.Truth.expanding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expanding</span></code></a></p></td>
+<td><p>Provide expanding window calculations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.explode.html#missionbio.demultiplex.dna.truth.Truth.explode" title="missionbio.demultiplex.dna.truth.Truth.explode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">explode</span></code></a></p></td>
+<td><p>Transform each element of a list-like to a row, replicating index values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.ffill.html#missionbio.demultiplex.dna.truth.Truth.ffill" title="missionbio.demultiplex.dna.truth.Truth.ffill"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ffill</span></code></a></p></td>
+<td><p>Synonym for <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.fillna()</span></code> with <code class="docutils literal notranslate"><span class="pre">method='ffill'</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.fillna.html#missionbio.demultiplex.dna.truth.Truth.fillna" title="missionbio.demultiplex.dna.truth.Truth.fillna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fillna</span></code></a></p></td>
+<td><p>Fill NA/NaN values using the specified method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.filter.html#missionbio.demultiplex.dna.truth.Truth.filter" title="missionbio.demultiplex.dna.truth.Truth.filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter</span></code></a></p></td>
+<td><p>Subset the dataframe rows or columns according to the specified index labels.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.filter_variants.html#missionbio.demultiplex.dna.truth.Truth.filter_variants" title="missionbio.demultiplex.dna.truth.Truth.filter_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_variants</span></code></a></p></td>
+<td><p>Remove poor quality variants</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.first.html#missionbio.demultiplex.dna.truth.Truth.first" title="missionbio.demultiplex.dna.truth.Truth.first"><code class="xref py py-obj docutils literal notranslate"><span class="pre">first</span></code></a></p></td>
+<td><p>Select initial periods of time series data based on a date offset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.first_valid_index.html#missionbio.demultiplex.dna.truth.Truth.first_valid_index" title="missionbio.demultiplex.dna.truth.Truth.first_valid_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">first_valid_index</span></code></a></p></td>
+<td><p>Return index for first non-NA value or None, if no non-NA value is found.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.floordiv.html#missionbio.demultiplex.dna.truth.Truth.floordiv" title="missionbio.demultiplex.dna.truth.Truth.floordiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floordiv</span></code></a></p></td>
+<td><p>Get Integer division of dataframe and other, element-wise (binary operator <cite>floordiv</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.from_dict.html#missionbio.demultiplex.dna.truth.Truth.from_dict" title="missionbio.demultiplex.dna.truth.Truth.from_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_dict</span></code></a></p></td>
+<td><p>Construct DataFrame from dict of array-like or dicts.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.from_records.html#missionbio.demultiplex.dna.truth.Truth.from_records" title="missionbio.demultiplex.dna.truth.Truth.from_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_records</span></code></a></p></td>
+<td><p>Convert structured or record ndarray to DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.ge.html#missionbio.demultiplex.dna.truth.Truth.ge" title="missionbio.demultiplex.dna.truth.Truth.ge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ge</span></code></a></p></td>
+<td><p>Get Greater than or equal to of dataframe and other, element-wise (binary operator <cite>ge</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.get.html#missionbio.demultiplex.dna.truth.Truth.get" title="missionbio.demultiplex.dna.truth.Truth.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a></p></td>
+<td><p>Get item from object for given key (ex: DataFrame column).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.groupby.html#missionbio.demultiplex.dna.truth.Truth.groupby" title="missionbio.demultiplex.dna.truth.Truth.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a></p></td>
+<td><p>Group DataFrame using a mapper or by a Series of columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.gt.html#missionbio.demultiplex.dna.truth.Truth.gt" title="missionbio.demultiplex.dna.truth.Truth.gt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gt</span></code></a></p></td>
+<td><p>Get Greater than of dataframe and other, element-wise (binary operator <cite>gt</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.head.html#missionbio.demultiplex.dna.truth.Truth.head" title="missionbio.demultiplex.dna.truth.Truth.head"><code class="xref py py-obj docutils literal notranslate"><span class="pre">head</span></code></a></p></td>
+<td><p>Return the first <cite>n</cite> rows.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.hist.html#missionbio.demultiplex.dna.truth.Truth.hist" title="missionbio.demultiplex.dna.truth.Truth.hist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hist</span></code></a></p></td>
+<td><p>Make a histogram of the DataFrame's columns.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.idxmax.html#missionbio.demultiplex.dna.truth.Truth.idxmax" title="missionbio.demultiplex.dna.truth.Truth.idxmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">idxmax</span></code></a></p></td>
+<td><p>Return index of first occurrence of maximum over requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.idxmin.html#missionbio.demultiplex.dna.truth.Truth.idxmin" title="missionbio.demultiplex.dna.truth.Truth.idxmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">idxmin</span></code></a></p></td>
+<td><p>Return index of first occurrence of minimum over requested axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.infer_objects.html#missionbio.demultiplex.dna.truth.Truth.infer_objects" title="missionbio.demultiplex.dna.truth.Truth.infer_objects"><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_objects</span></code></a></p></td>
+<td><p>Attempt to infer better dtypes for object columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.info.html#missionbio.demultiplex.dna.truth.Truth.info" title="missionbio.demultiplex.dna.truth.Truth.info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">info</span></code></a></p></td>
+<td><p>Print a concise summary of a DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.insert.html#missionbio.demultiplex.dna.truth.Truth.insert" title="missionbio.demultiplex.dna.truth.Truth.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a></p></td>
+<td><p>Insert column into DataFrame at specified location.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.interpolate.html#missionbio.demultiplex.dna.truth.Truth.interpolate" title="missionbio.demultiplex.dna.truth.Truth.interpolate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">interpolate</span></code></a></p></td>
+<td><p>Fill NaN values using an interpolation method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.isetitem.html#missionbio.demultiplex.dna.truth.Truth.isetitem" title="missionbio.demultiplex.dna.truth.Truth.isetitem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isetitem</span></code></a></p></td>
+<td><p>Set the given value in the column with position 'loc'.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.isin.html#missionbio.demultiplex.dna.truth.Truth.isin" title="missionbio.demultiplex.dna.truth.Truth.isin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isin</span></code></a></p></td>
+<td><p>Whether each element in the DataFrame is contained in values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.isna.html#missionbio.demultiplex.dna.truth.Truth.isna" title="missionbio.demultiplex.dna.truth.Truth.isna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isna</span></code></a></p></td>
+<td><p>Detect missing values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.isnull.html#missionbio.demultiplex.dna.truth.Truth.isnull" title="missionbio.demultiplex.dna.truth.Truth.isnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnull</span></code></a></p></td>
+<td><p>DataFrame.isnull is an alias for DataFrame.isna.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.items.html#missionbio.demultiplex.dna.truth.Truth.items" title="missionbio.demultiplex.dna.truth.Truth.items"><code class="xref py py-obj docutils literal notranslate"><span class="pre">items</span></code></a></p></td>
+<td><p>Iterate over (column name, Series) pairs.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.iteritems.html#missionbio.demultiplex.dna.truth.Truth.iteritems" title="missionbio.demultiplex.dna.truth.Truth.iteritems"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iteritems</span></code></a></p></td>
+<td><p>Iterate over (column name, Series) pairs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.iterrows.html#missionbio.demultiplex.dna.truth.Truth.iterrows" title="missionbio.demultiplex.dna.truth.Truth.iterrows"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iterrows</span></code></a></p></td>
+<td><p>Iterate over DataFrame rows as (index, Series) pairs.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.itertuples.html#missionbio.demultiplex.dna.truth.Truth.itertuples" title="missionbio.demultiplex.dna.truth.Truth.itertuples"><code class="xref py py-obj docutils literal notranslate"><span class="pre">itertuples</span></code></a></p></td>
+<td><p>Iterate over DataFrame rows as namedtuples.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.join.html#missionbio.demultiplex.dna.truth.Truth.join" title="missionbio.demultiplex.dna.truth.Truth.join"><code class="xref py py-obj docutils literal notranslate"><span class="pre">join</span></code></a></p></td>
+<td><p>Join columns of another DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.keep_diff_variants.html#missionbio.demultiplex.dna.truth.Truth.keep_diff_variants" title="missionbio.demultiplex.dna.truth.Truth.keep_diff_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keep_diff_variants</span></code></a></p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame of truth</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.keys.html#missionbio.demultiplex.dna.truth.Truth.keys" title="missionbio.demultiplex.dna.truth.Truth.keys"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></a></p></td>
+<td><p>Get the 'info axis' (see Indexing for more).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.kurt.html#missionbio.demultiplex.dna.truth.Truth.kurt" title="missionbio.demultiplex.dna.truth.Truth.kurt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kurt</span></code></a></p></td>
+<td><p>Return unbiased kurtosis over requested axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.kurtosis.html#missionbio.demultiplex.dna.truth.Truth.kurtosis" title="missionbio.demultiplex.dna.truth.Truth.kurtosis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">kurtosis</span></code></a></p></td>
+<td><p>Return unbiased kurtosis over requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.last.html#missionbio.demultiplex.dna.truth.Truth.last" title="missionbio.demultiplex.dna.truth.Truth.last"><code class="xref py py-obj docutils literal notranslate"><span class="pre">last</span></code></a></p></td>
+<td><p>Select final periods of time series data based on a date offset.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.last_valid_index.html#missionbio.demultiplex.dna.truth.Truth.last_valid_index" title="missionbio.demultiplex.dna.truth.Truth.last_valid_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">last_valid_index</span></code></a></p></td>
+<td><p>Return index for last non-NA value or None, if no non-NA value is found.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.le.html#missionbio.demultiplex.dna.truth.Truth.le" title="missionbio.demultiplex.dna.truth.Truth.le"><code class="xref py py-obj docutils literal notranslate"><span class="pre">le</span></code></a></p></td>
+<td><p>Get Less than or equal to of dataframe and other, element-wise (binary operator <cite>le</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.lookup.html#missionbio.demultiplex.dna.truth.Truth.lookup" title="missionbio.demultiplex.dna.truth.Truth.lookup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lookup</span></code></a></p></td>
+<td><p>Label-based &quot;fancy indexing&quot; function for DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.lt.html#missionbio.demultiplex.dna.truth.Truth.lt" title="missionbio.demultiplex.dna.truth.Truth.lt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lt</span></code></a></p></td>
+<td><p>Get Less than of dataframe and other, element-wise (binary operator <cite>lt</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.mad.html#missionbio.demultiplex.dna.truth.Truth.mad" title="missionbio.demultiplex.dna.truth.Truth.mad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mad</span></code></a></p></td>
+<td><p>Return the mean absolute deviation of the values over the requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.mask.html#missionbio.demultiplex.dna.truth.Truth.mask" title="missionbio.demultiplex.dna.truth.Truth.mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mask</span></code></a></p></td>
+<td><p>Replace values where the condition is True.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.max.html#missionbio.demultiplex.dna.truth.Truth.max" title="missionbio.demultiplex.dna.truth.Truth.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a></p></td>
+<td><p>Return the maximum of the values over the requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.mean.html#missionbio.demultiplex.dna.truth.Truth.mean" title="missionbio.demultiplex.dna.truth.Truth.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a></p></td>
+<td><p>Return the mean of the values over the requested axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.median.html#missionbio.demultiplex.dna.truth.Truth.median" title="missionbio.demultiplex.dna.truth.Truth.median"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code></a></p></td>
+<td><p>Return the median of the values over the requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.melt.html#missionbio.demultiplex.dna.truth.Truth.melt" title="missionbio.demultiplex.dna.truth.Truth.melt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">melt</span></code></a></p></td>
+<td><p>Unpivot a DataFrame from wide to long format, optionally leaving identifiers set.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.memory_usage.html#missionbio.demultiplex.dna.truth.Truth.memory_usage" title="missionbio.demultiplex.dna.truth.Truth.memory_usage"><code class="xref py py-obj docutils literal notranslate"><span class="pre">memory_usage</span></code></a></p></td>
+<td><p>Return the memory usage of each column in bytes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.merge.html#missionbio.demultiplex.dna.truth.Truth.merge" title="missionbio.demultiplex.dna.truth.Truth.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a></p></td>
+<td><p>Merge DataFrame or named Series objects with a database-style join.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.min.html#missionbio.demultiplex.dna.truth.Truth.min" title="missionbio.demultiplex.dna.truth.Truth.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a></p></td>
+<td><p>Return the minimum of the values over the requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.mod.html#missionbio.demultiplex.dna.truth.Truth.mod" title="missionbio.demultiplex.dna.truth.Truth.mod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mod</span></code></a></p></td>
+<td><p>Get Modulo of dataframe and other, element-wise (binary operator <cite>mod</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.mode.html#missionbio.demultiplex.dna.truth.Truth.mode" title="missionbio.demultiplex.dna.truth.Truth.mode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mode</span></code></a></p></td>
+<td><p>Get the mode(s) of each element along the selected axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.mul.html#missionbio.demultiplex.dna.truth.Truth.mul" title="missionbio.demultiplex.dna.truth.Truth.mul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mul</span></code></a></p></td>
+<td><p>Get Multiplication of dataframe and other, element-wise (binary operator <cite>mul</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.multiply.html#missionbio.demultiplex.dna.truth.Truth.multiply" title="missionbio.demultiplex.dna.truth.Truth.multiply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multiply</span></code></a></p></td>
+<td><p>Get Multiplication of dataframe and other, element-wise (binary operator <cite>mul</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.ne.html#missionbio.demultiplex.dna.truth.Truth.ne" title="missionbio.demultiplex.dna.truth.Truth.ne"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ne</span></code></a></p></td>
+<td><p>Get Not equal to of dataframe and other, element-wise (binary operator <cite>ne</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.nlargest.html#missionbio.demultiplex.dna.truth.Truth.nlargest" title="missionbio.demultiplex.dna.truth.Truth.nlargest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nlargest</span></code></a></p></td>
+<td><p>Return the first <cite>n</cite> rows ordered by <cite>columns</cite> in descending order.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.notna.html#missionbio.demultiplex.dna.truth.Truth.notna" title="missionbio.demultiplex.dna.truth.Truth.notna"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notna</span></code></a></p></td>
+<td><p>Detect existing (non-missing) values.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.notnull.html#missionbio.demultiplex.dna.truth.Truth.notnull" title="missionbio.demultiplex.dna.truth.Truth.notnull"><code class="xref py py-obj docutils literal notranslate"><span class="pre">notnull</span></code></a></p></td>
+<td><p>DataFrame.notnull is an alias for DataFrame.notna.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.nsmallest.html#missionbio.demultiplex.dna.truth.Truth.nsmallest" title="missionbio.demultiplex.dna.truth.Truth.nsmallest"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nsmallest</span></code></a></p></td>
+<td><p>Return the first <cite>n</cite> rows ordered by <cite>columns</cite> in ascending order.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.nunique.html#missionbio.demultiplex.dna.truth.Truth.nunique" title="missionbio.demultiplex.dna.truth.Truth.nunique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nunique</span></code></a></p></td>
+<td><p>Count number of distinct elements in specified axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.pad.html#missionbio.demultiplex.dna.truth.Truth.pad" title="missionbio.demultiplex.dna.truth.Truth.pad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pad</span></code></a></p></td>
+<td><p>Synonym for <code class="xref py py-meth docutils literal notranslate"><span class="pre">DataFrame.fillna()</span></code> with <code class="docutils literal notranslate"><span class="pre">method='ffill'</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.pct_change.html#missionbio.demultiplex.dna.truth.Truth.pct_change" title="missionbio.demultiplex.dna.truth.Truth.pct_change"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pct_change</span></code></a></p></td>
+<td><p>Percentage change between the current and a prior element.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.pipe.html#missionbio.demultiplex.dna.truth.Truth.pipe" title="missionbio.demultiplex.dna.truth.Truth.pipe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pipe</span></code></a></p></td>
+<td><p>Apply chainable functions that expect Series or DataFrames.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.pivot.html#missionbio.demultiplex.dna.truth.Truth.pivot" title="missionbio.demultiplex.dna.truth.Truth.pivot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pivot</span></code></a></p></td>
+<td><p>Return reshaped DataFrame organized by given index / column values.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.pivot_table.html#missionbio.demultiplex.dna.truth.Truth.pivot_table" title="missionbio.demultiplex.dna.truth.Truth.pivot_table"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pivot_table</span></code></a></p></td>
+<td><p>Create a spreadsheet-style pivot table as a DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.pop.html#missionbio.demultiplex.dna.truth.Truth.pop" title="missionbio.demultiplex.dna.truth.Truth.pop"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pop</span></code></a></p></td>
+<td><p>Return item and drop from frame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.pow.html#missionbio.demultiplex.dna.truth.Truth.pow" title="missionbio.demultiplex.dna.truth.Truth.pow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pow</span></code></a></p></td>
+<td><p>Get Exponential power of dataframe and other, element-wise (binary operator <cite>pow</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.prod.html#missionbio.demultiplex.dna.truth.Truth.prod" title="missionbio.demultiplex.dna.truth.Truth.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a></p></td>
+<td><p>Return the product of the values over the requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.product.html#missionbio.demultiplex.dna.truth.Truth.product" title="missionbio.demultiplex.dna.truth.Truth.product"><code class="xref py py-obj docutils literal notranslate"><span class="pre">product</span></code></a></p></td>
+<td><p>Return the product of the values over the requested axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.quantile.html#missionbio.demultiplex.dna.truth.Truth.quantile" title="missionbio.demultiplex.dna.truth.Truth.quantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quantile</span></code></a></p></td>
+<td><p>Return values at the given quantile over requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.query.html#missionbio.demultiplex.dna.truth.Truth.query" title="missionbio.demultiplex.dna.truth.Truth.query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">query</span></code></a></p></td>
+<td><p>Query the columns of a DataFrame with a boolean expression.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.radd.html#missionbio.demultiplex.dna.truth.Truth.radd" title="missionbio.demultiplex.dna.truth.Truth.radd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radd</span></code></a></p></td>
+<td><p>Get Addition of dataframe and other, element-wise (binary operator <cite>radd</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rank.html#missionbio.demultiplex.dna.truth.Truth.rank" title="missionbio.demultiplex.dna.truth.Truth.rank"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rank</span></code></a></p></td>
+<td><p>Compute numerical data ranks (1 through n) along axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rdiv.html#missionbio.demultiplex.dna.truth.Truth.rdiv" title="missionbio.demultiplex.dna.truth.Truth.rdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rdiv</span></code></a></p></td>
+<td><p>Get Floating division of dataframe and other, element-wise (binary operator <cite>rtruediv</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.read_csv.html#missionbio.demultiplex.dna.truth.Truth.read_csv" title="missionbio.demultiplex.dna.truth.Truth.read_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_csv</span></code></a></p></td>
+<td><p>Load dna truth from a csv file</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.reindex.html#missionbio.demultiplex.dna.truth.Truth.reindex" title="missionbio.demultiplex.dna.truth.Truth.reindex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex</span></code></a></p></td>
+<td><p>Conform Series/DataFrame to new index with optional filling logic.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.reindex_like.html#missionbio.demultiplex.dna.truth.Truth.reindex_like" title="missionbio.demultiplex.dna.truth.Truth.reindex_like"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reindex_like</span></code></a></p></td>
+<td><p>Return an object with matching indices as other object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.remove_correlated_variants.html#missionbio.demultiplex.dna.truth.Truth.remove_correlated_variants" title="missionbio.demultiplex.dna.truth.Truth.remove_correlated_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_correlated_variants</span></code></a></p></td>
+<td><p>Remove correlated variants on the same amplicon</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.remove_filtered_variants.html#missionbio.demultiplex.dna.truth.Truth.remove_filtered_variants" title="missionbio.demultiplex.dna.truth.Truth.remove_filtered_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_filtered_variants</span></code></a></p></td>
+<td><p>Removes poor quality variants</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.remove_non_snp_variants.html#missionbio.demultiplex.dna.truth.Truth.remove_non_snp_variants" title="missionbio.demultiplex.dna.truth.Truth.remove_non_snp_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_non_snp_variants</span></code></a></p></td>
+<td><p>Removes indels and spanning deletions from the assignment</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rename.html#missionbio.demultiplex.dna.truth.Truth.rename" title="missionbio.demultiplex.dna.truth.Truth.rename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename</span></code></a></p></td>
+<td><p>Alter axes labels.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rename_axis.html#missionbio.demultiplex.dna.truth.Truth.rename_axis" title="missionbio.demultiplex.dna.truth.Truth.rename_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rename_axis</span></code></a></p></td>
+<td><p>Set the name of the axis for the index or columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.reorder_levels.html#missionbio.demultiplex.dna.truth.Truth.reorder_levels" title="missionbio.demultiplex.dna.truth.Truth.reorder_levels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reorder_levels</span></code></a></p></td>
+<td><p>Rearrange index levels using input order.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.replace.html#missionbio.demultiplex.dna.truth.Truth.replace" title="missionbio.demultiplex.dna.truth.Truth.replace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace</span></code></a></p></td>
+<td><p>Replace values given in <cite>to_replace</cite> with <cite>value</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.resample.html#missionbio.demultiplex.dna.truth.Truth.resample" title="missionbio.demultiplex.dna.truth.Truth.resample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">resample</span></code></a></p></td>
+<td><p>Resample time-series data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.reset_index.html#missionbio.demultiplex.dna.truth.Truth.reset_index" title="missionbio.demultiplex.dna.truth.Truth.reset_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_index</span></code></a></p></td>
+<td><p>Reset the index, or a level of it.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rfloordiv.html#missionbio.demultiplex.dna.truth.Truth.rfloordiv" title="missionbio.demultiplex.dna.truth.Truth.rfloordiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfloordiv</span></code></a></p></td>
+<td><p>Get Integer division of dataframe and other, element-wise (binary operator <cite>rfloordiv</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rmod.html#missionbio.demultiplex.dna.truth.Truth.rmod" title="missionbio.demultiplex.dna.truth.Truth.rmod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmod</span></code></a></p></td>
+<td><p>Get Modulo of dataframe and other, element-wise (binary operator <cite>rmod</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rmul.html#missionbio.demultiplex.dna.truth.Truth.rmul" title="missionbio.demultiplex.dna.truth.Truth.rmul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rmul</span></code></a></p></td>
+<td><p>Get Multiplication of dataframe and other, element-wise (binary operator <cite>rmul</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rolling.html#missionbio.demultiplex.dna.truth.Truth.rolling" title="missionbio.demultiplex.dna.truth.Truth.rolling"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rolling</span></code></a></p></td>
+<td><p>Provide rolling window calculations.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.round.html#missionbio.demultiplex.dna.truth.Truth.round" title="missionbio.demultiplex.dna.truth.Truth.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a></p></td>
+<td><p>Round a DataFrame to a variable number of decimal places.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rpow.html#missionbio.demultiplex.dna.truth.Truth.rpow" title="missionbio.demultiplex.dna.truth.Truth.rpow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rpow</span></code></a></p></td>
+<td><p>Get Exponential power of dataframe and other, element-wise (binary operator <cite>rpow</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rsub.html#missionbio.demultiplex.dna.truth.Truth.rsub" title="missionbio.demultiplex.dna.truth.Truth.rsub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rsub</span></code></a></p></td>
+<td><p>Get Subtraction of dataframe and other, element-wise (binary operator <cite>rsub</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.rtruediv.html#missionbio.demultiplex.dna.truth.Truth.rtruediv" title="missionbio.demultiplex.dna.truth.Truth.rtruediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rtruediv</span></code></a></p></td>
+<td><p>Get Floating division of dataframe and other, element-wise (binary operator <cite>rtruediv</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.sample.html#missionbio.demultiplex.dna.truth.Truth.sample" title="missionbio.demultiplex.dna.truth.Truth.sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample</span></code></a></p></td>
+<td><p>Return a random sample of items from an axis of object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.select_dtypes.html#missionbio.demultiplex.dna.truth.Truth.select_dtypes" title="missionbio.demultiplex.dna.truth.Truth.select_dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_dtypes</span></code></a></p></td>
+<td><p>Return a subset of the DataFrame's columns based on the column dtypes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.sem.html#missionbio.demultiplex.dna.truth.Truth.sem" title="missionbio.demultiplex.dna.truth.Truth.sem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sem</span></code></a></p></td>
+<td><p>Return unbiased standard error of the mean over requested axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.set_axis.html#missionbio.demultiplex.dna.truth.Truth.set_axis" title="missionbio.demultiplex.dna.truth.Truth.set_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_axis</span></code></a></p></td>
+<td><p>Assign desired index to given axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.set_flags.html#missionbio.demultiplex.dna.truth.Truth.set_flags" title="missionbio.demultiplex.dna.truth.Truth.set_flags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_flags</span></code></a></p></td>
+<td><p>Return a new object with updated flags.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.set_index.html#missionbio.demultiplex.dna.truth.Truth.set_index" title="missionbio.demultiplex.dna.truth.Truth.set_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_index</span></code></a></p></td>
+<td><p>Set the DataFrame index using existing columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.shift.html#missionbio.demultiplex.dna.truth.Truth.shift" title="missionbio.demultiplex.dna.truth.Truth.shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shift</span></code></a></p></td>
+<td><p>Shift index by desired number of periods with an optional time <cite>freq</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.skew.html#missionbio.demultiplex.dna.truth.Truth.skew" title="missionbio.demultiplex.dna.truth.Truth.skew"><code class="xref py py-obj docutils literal notranslate"><span class="pre">skew</span></code></a></p></td>
+<td><p>Return unbiased skew over requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.slice_shift.html#missionbio.demultiplex.dna.truth.Truth.slice_shift" title="missionbio.demultiplex.dna.truth.Truth.slice_shift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_shift</span></code></a></p></td>
+<td><p>Equivalent to <cite>shift</cite> without copying data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.sort_index.html#missionbio.demultiplex.dna.truth.Truth.sort_index" title="missionbio.demultiplex.dna.truth.Truth.sort_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_index</span></code></a></p></td>
+<td><p>Sort object by labels (along an axis).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.sort_values.html#missionbio.demultiplex.dna.truth.Truth.sort_values" title="missionbio.demultiplex.dna.truth.Truth.sort_values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort_values</span></code></a></p></td>
+<td><p>Sort by the values along either axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.squeeze.html#missionbio.demultiplex.dna.truth.Truth.squeeze" title="missionbio.demultiplex.dna.truth.Truth.squeeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">squeeze</span></code></a></p></td>
+<td><p>Squeeze 1 dimensional axis objects into scalars.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.stack.html#missionbio.demultiplex.dna.truth.Truth.stack" title="missionbio.demultiplex.dna.truth.Truth.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a></p></td>
+<td><p>Stack the prescribed level(s) from columns to index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.std.html#missionbio.demultiplex.dna.truth.Truth.std" title="missionbio.demultiplex.dna.truth.Truth.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a></p></td>
+<td><p>Return sample standard deviation over requested axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.sub.html#missionbio.demultiplex.dna.truth.Truth.sub" title="missionbio.demultiplex.dna.truth.Truth.sub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sub</span></code></a></p></td>
+<td><p>Get Subtraction of dataframe and other, element-wise (binary operator <cite>sub</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.subtract.html#missionbio.demultiplex.dna.truth.Truth.subtract" title="missionbio.demultiplex.dna.truth.Truth.subtract"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subtract</span></code></a></p></td>
+<td><p>Get Subtraction of dataframe and other, element-wise (binary operator <cite>sub</cite>).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.sum.html#missionbio.demultiplex.dna.truth.Truth.sum" title="missionbio.demultiplex.dna.truth.Truth.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a></p></td>
+<td><p>Return the sum of the values over the requested axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.swapaxes.html#missionbio.demultiplex.dna.truth.Truth.swapaxes" title="missionbio.demultiplex.dna.truth.Truth.swapaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swapaxes</span></code></a></p></td>
+<td><p>Interchange axes and swap values axes appropriately.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.swaplevel.html#missionbio.demultiplex.dna.truth.Truth.swaplevel" title="missionbio.demultiplex.dna.truth.Truth.swaplevel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swaplevel</span></code></a></p></td>
+<td><p>Swap levels i and j in a <code class="xref py py-class docutils literal notranslate"><span class="pre">MultiIndex</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.tail.html#missionbio.demultiplex.dna.truth.Truth.tail" title="missionbio.demultiplex.dna.truth.Truth.tail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tail</span></code></a></p></td>
+<td><p>Return the last <cite>n</cite> rows.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.take.html#missionbio.demultiplex.dna.truth.Truth.take" title="missionbio.demultiplex.dna.truth.Truth.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a></p></td>
+<td><p>Return the elements in the given <em>positional</em> indices along an axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_clipboard.html#missionbio.demultiplex.dna.truth.Truth.to_clipboard" title="missionbio.demultiplex.dna.truth.Truth.to_clipboard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_clipboard</span></code></a></p></td>
+<td><p>Copy object to the system clipboard.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_csv.html#missionbio.demultiplex.dna.truth.Truth.to_csv" title="missionbio.demultiplex.dna.truth.Truth.to_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_csv</span></code></a></p></td>
+<td><p>Write object to a comma-separated values (csv) file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_dict.html#missionbio.demultiplex.dna.truth.Truth.to_dict" title="missionbio.demultiplex.dna.truth.Truth.to_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_dict</span></code></a></p></td>
+<td><p>Convert the DataFrame to a dictionary.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_excel.html#missionbio.demultiplex.dna.truth.Truth.to_excel" title="missionbio.demultiplex.dna.truth.Truth.to_excel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_excel</span></code></a></p></td>
+<td><p>Write object to an Excel sheet.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_feather.html#missionbio.demultiplex.dna.truth.Truth.to_feather" title="missionbio.demultiplex.dna.truth.Truth.to_feather"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_feather</span></code></a></p></td>
+<td><p>Write a DataFrame to the binary Feather format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_gbq.html#missionbio.demultiplex.dna.truth.Truth.to_gbq" title="missionbio.demultiplex.dna.truth.Truth.to_gbq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_gbq</span></code></a></p></td>
+<td><p>Write a DataFrame to a Google BigQuery table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_hdf.html#missionbio.demultiplex.dna.truth.Truth.to_hdf" title="missionbio.demultiplex.dna.truth.Truth.to_hdf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_hdf</span></code></a></p></td>
+<td><p>Write the contained data to an HDF5 file using HDFStore.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_html.html#missionbio.demultiplex.dna.truth.Truth.to_html" title="missionbio.demultiplex.dna.truth.Truth.to_html"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_html</span></code></a></p></td>
+<td><p>Render a DataFrame as an HTML table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_json.html#missionbio.demultiplex.dna.truth.Truth.to_json" title="missionbio.demultiplex.dna.truth.Truth.to_json"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_json</span></code></a></p></td>
+<td><p>Convert the object to a JSON string.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_latex.html#missionbio.demultiplex.dna.truth.Truth.to_latex" title="missionbio.demultiplex.dna.truth.Truth.to_latex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_latex</span></code></a></p></td>
+<td><p>Render object to a LaTeX tabular, longtable, or nested table.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_markdown.html#missionbio.demultiplex.dna.truth.Truth.to_markdown" title="missionbio.demultiplex.dna.truth.Truth.to_markdown"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_markdown</span></code></a></p></td>
+<td><p>Print DataFrame in Markdown-friendly format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_numpy.html#missionbio.demultiplex.dna.truth.Truth.to_numpy" title="missionbio.demultiplex.dna.truth.Truth.to_numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_numpy</span></code></a></p></td>
+<td><p>Convert the DataFrame to a NumPy array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_orc.html#missionbio.demultiplex.dna.truth.Truth.to_orc" title="missionbio.demultiplex.dna.truth.Truth.to_orc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_orc</span></code></a></p></td>
+<td><p>Write a DataFrame to the ORC format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_parquet.html#missionbio.demultiplex.dna.truth.Truth.to_parquet" title="missionbio.demultiplex.dna.truth.Truth.to_parquet"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_parquet</span></code></a></p></td>
+<td><p>Write a DataFrame to the binary parquet format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_period.html#missionbio.demultiplex.dna.truth.Truth.to_period" title="missionbio.demultiplex.dna.truth.Truth.to_period"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_period</span></code></a></p></td>
+<td><p>Convert DataFrame from DatetimeIndex to PeriodIndex.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_pickle.html#missionbio.demultiplex.dna.truth.Truth.to_pickle" title="missionbio.demultiplex.dna.truth.Truth.to_pickle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pickle</span></code></a></p></td>
+<td><p>Pickle (serialize) object to file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_records.html#missionbio.demultiplex.dna.truth.Truth.to_records" title="missionbio.demultiplex.dna.truth.Truth.to_records"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_records</span></code></a></p></td>
+<td><p>Convert DataFrame to a NumPy record array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_sql.html#missionbio.demultiplex.dna.truth.Truth.to_sql" title="missionbio.demultiplex.dna.truth.Truth.to_sql"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_sql</span></code></a></p></td>
+<td><p>Write records stored in a DataFrame to a SQL database.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_stata.html#missionbio.demultiplex.dna.truth.Truth.to_stata" title="missionbio.demultiplex.dna.truth.Truth.to_stata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_stata</span></code></a></p></td>
+<td><p>Export DataFrame object to Stata dta format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_string.html#missionbio.demultiplex.dna.truth.Truth.to_string" title="missionbio.demultiplex.dna.truth.Truth.to_string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_string</span></code></a></p></td>
+<td><p>Render a DataFrame to a console-friendly tabular output.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_timestamp.html#missionbio.demultiplex.dna.truth.Truth.to_timestamp" title="missionbio.demultiplex.dna.truth.Truth.to_timestamp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_timestamp</span></code></a></p></td>
+<td><p>Cast to DatetimeIndex of timestamps, at <em>beginning</em> of period.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_xarray.html#missionbio.demultiplex.dna.truth.Truth.to_xarray" title="missionbio.demultiplex.dna.truth.Truth.to_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xarray</span></code></a></p></td>
+<td><p>Return an xarray object from the pandas object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.to_xml.html#missionbio.demultiplex.dna.truth.Truth.to_xml" title="missionbio.demultiplex.dna.truth.Truth.to_xml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_xml</span></code></a></p></td>
+<td><p>Render a DataFrame to an XML document.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.transform.html#missionbio.demultiplex.dna.truth.Truth.transform" title="missionbio.demultiplex.dna.truth.Truth.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a></p></td>
+<td><p>Call <code class="docutils literal notranslate"><span class="pre">func</span></code> on self producing a DataFrame with the same axis shape as self.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.transpose.html#missionbio.demultiplex.dna.truth.Truth.transpose" title="missionbio.demultiplex.dna.truth.Truth.transpose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transpose</span></code></a></p></td>
+<td><p>Transpose index and columns.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.truediv.html#missionbio.demultiplex.dna.truth.Truth.truediv" title="missionbio.demultiplex.dna.truth.Truth.truediv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truediv</span></code></a></p></td>
+<td><p>Get Floating division of dataframe and other, element-wise (binary operator <cite>truediv</cite>).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.truncate.html#missionbio.demultiplex.dna.truth.Truth.truncate" title="missionbio.demultiplex.dna.truth.Truth.truncate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">truncate</span></code></a></p></td>
+<td><p>Truncate a Series or DataFrame before and after some index value.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.tshift.html#missionbio.demultiplex.dna.truth.Truth.tshift" title="missionbio.demultiplex.dna.truth.Truth.tshift"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tshift</span></code></a></p></td>
+<td><p>Shift the time index, using the index's frequency if available.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.tz_convert.html#missionbio.demultiplex.dna.truth.Truth.tz_convert" title="missionbio.demultiplex.dna.truth.Truth.tz_convert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tz_convert</span></code></a></p></td>
+<td><p>Convert tz-aware axis to target time zone.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.tz_localize.html#missionbio.demultiplex.dna.truth.Truth.tz_localize" title="missionbio.demultiplex.dna.truth.Truth.tz_localize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tz_localize</span></code></a></p></td>
+<td><p>Localize tz-naive index of a Series or DataFrame to target time zone.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.unstack.html#missionbio.demultiplex.dna.truth.Truth.unstack" title="missionbio.demultiplex.dna.truth.Truth.unstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unstack</span></code></a></p></td>
+<td><p>Pivot a level of the (necessarily hierarchical) index labels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.update.html#missionbio.demultiplex.dna.truth.Truth.update" title="missionbio.demultiplex.dna.truth.Truth.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a></p></td>
+<td><p>Modify in place using non-NA values from another DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.value_counts.html#missionbio.demultiplex.dna.truth.Truth.value_counts" title="missionbio.demultiplex.dna.truth.Truth.value_counts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value_counts</span></code></a></p></td>
+<td><p>Return a Series containing counts of unique rows in the DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.var.html#missionbio.demultiplex.dna.truth.Truth.var" title="missionbio.demultiplex.dna.truth.Truth.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a></p></td>
+<td><p>Return unbiased variance over requested axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.where.html#missionbio.demultiplex.dna.truth.Truth.where" title="missionbio.demultiplex.dna.truth.Truth.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a></p></td>
+<td><p>Replace values where the condition is False.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.xs.html#missionbio.demultiplex.dna.truth.Truth.xs" title="missionbio.demultiplex.dna.truth.Truth.xs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xs</span></code></a></p></td>
+<td><p>Return cross-section from the Series/DataFrame.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.T.html#missionbio.demultiplex.dna.truth.Truth.T" title="missionbio.demultiplex.dna.truth.Truth.T"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.at.html#missionbio.demultiplex.dna.truth.Truth.at" title="missionbio.demultiplex.dna.truth.Truth.at"><code class="xref py py-obj docutils literal notranslate"><span class="pre">at</span></code></a></p></td>
+<td><p>Access a single value for a row/column label pair.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.attrs.html#missionbio.demultiplex.dna.truth.Truth.attrs" title="missionbio.demultiplex.dna.truth.Truth.attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">attrs</span></code></a></p></td>
+<td><p>Dictionary of global attributes of this dataset.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.axes.html#missionbio.demultiplex.dna.truth.Truth.axes" title="missionbio.demultiplex.dna.truth.Truth.axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">axes</span></code></a></p></td>
+<td><p>Return a list representing the axes of the DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.columns.html#missionbio.demultiplex.dna.truth.Truth.columns" title="missionbio.demultiplex.dna.truth.Truth.columns"><code class="xref py py-obj docutils literal notranslate"><span class="pre">columns</span></code></a></p></td>
+<td><p>The column labels of the DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.dtypes.html#missionbio.demultiplex.dna.truth.Truth.dtypes" title="missionbio.demultiplex.dna.truth.Truth.dtypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtypes</span></code></a></p></td>
+<td><p>Return the dtypes in the DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.empty.html#missionbio.demultiplex.dna.truth.Truth.empty" title="missionbio.demultiplex.dna.truth.Truth.empty"><code class="xref py py-obj docutils literal notranslate"><span class="pre">empty</span></code></a></p></td>
+<td><p>Indicator whether Series/DataFrame is empty.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.flags.html#missionbio.demultiplex.dna.truth.Truth.flags" title="missionbio.demultiplex.dna.truth.Truth.flags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flags</span></code></a></p></td>
+<td><p>Get the properties associated with this pandas object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.iat.html#missionbio.demultiplex.dna.truth.Truth.iat" title="missionbio.demultiplex.dna.truth.Truth.iat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iat</span></code></a></p></td>
+<td><p>Access a single value for a row/column pair by integer position.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.iloc.html#missionbio.demultiplex.dna.truth.Truth.iloc" title="missionbio.demultiplex.dna.truth.Truth.iloc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iloc</span></code></a></p></td>
+<td><p>Purely integer-location based indexing for selection by position.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.index.html#missionbio.demultiplex.dna.truth.Truth.index" title="missionbio.demultiplex.dna.truth.Truth.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a></p></td>
+<td><p>The index (row labels) of the DataFrame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.loc.html#missionbio.demultiplex.dna.truth.Truth.loc" title="missionbio.demultiplex.dna.truth.Truth.loc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loc</span></code></a></p></td>
+<td><p>Access a group of rows and columns by label(s) or a boolean array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.ndim.html#missionbio.demultiplex.dna.truth.Truth.ndim" title="missionbio.demultiplex.dna.truth.Truth.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a></p></td>
+<td><p>Return an int representing the number of axes / array dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.shape.html#missionbio.demultiplex.dna.truth.Truth.shape" title="missionbio.demultiplex.dna.truth.Truth.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a></p></td>
+<td><p>Return a tuple representing the dimensionality of the DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.size.html#missionbio.demultiplex.dna.truth.Truth.size" title="missionbio.demultiplex.dna.truth.Truth.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a></p></td>
+<td><p>Return an int representing the number of elements in this object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.style.html#missionbio.demultiplex.dna.truth.Truth.style" title="missionbio.demultiplex.dna.truth.Truth.style"><code class="xref py py-obj docutils literal notranslate"><span class="pre">style</span></code></a></p></td>
+<td><p>Returns a Styler object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.truth.Truth.values.html#missionbio.demultiplex.dna.truth.Truth.values" title="missionbio.demultiplex.dna.truth.Truth.values"><code class="xref py py-obj docutils literal notranslate"><span class="pre">values</span></code></a></p></td>
+<td><p>Return a Numpy representation of the DataFrame.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="missionbio.plotting.fishplot.Fishplot.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Fishplot</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">LikelihoodMethod</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.dna.truth.Truth"><code class="docutils literal notranslate"><span class="pre">Truth</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Saurabh Parikh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, Mission Bio.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

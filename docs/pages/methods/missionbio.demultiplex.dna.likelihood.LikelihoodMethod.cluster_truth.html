@@ -157,7 +157,21 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../manual/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna.html">Single Sample DNA-only notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna.html">Single Sample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-multisample.html">Multisample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein.html">Single Sample DNA + Protein</a></li>
 
 
 
@@ -165,18 +179,7 @@
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-multisample.html">Multisample DNA-only notebook</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein.html">Single Sample DNA + Protein notebook</a></li>
-
-
-
-
-
-
-
-
-<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein-multisample.html">Multisample DNA + Protein notebook</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein-multisample.html">Multisample DNA + Protein</a></li>
 
 
 
@@ -403,7 +406,7 @@ document.write(`
 <p class="rubric">missionbio.demultiplex.dna.likelihood.LikelihoodMethod.cluster_truth</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.cluster_truth">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">LikelihoodMethod.</span></span><span class="sig-name descname"><span class="pre">cluster_truth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Assay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../missionbio.demultiplex.dna.truth.Truth.html#missionbio.demultiplex.dna.truth.Truth" title="missionbio.demultiplex.dna.truth.Truth"><span class="pre">Truth</span></a></span></span><a class="headerlink" href="#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.cluster_truth" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">LikelihoodMethod.</span></span><span class="sig-name descname"><span class="pre">cluster_truth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Assay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">genome</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../missionbio.demultiplex.dna.truth.Truth.html#missionbio.demultiplex.dna.truth.Truth" title="missionbio.demultiplex.dna.truth.Truth"><span class="pre">Truth</span></a></span></span><a class="headerlink" href="#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.cluster_truth" title="Permalink to this definition">#</a></dt>
 <dd><p>Variants that could be different across samples</p>
 <p>This method assumes that the DNA assay has already been assigned labels and these
 are stored in the DEMUX_SAMPLE row attribute.</p>
@@ -414,6 +417,8 @@ are stored in the DEMUX_SAMPLE row attribute.</p>
 All variants passing filters will be used to generate the truth.</p></li>
 <li><p><strong>labels</strong> – The labels assigned to the cells. The truth will be created for
 each unique value in the labels excluding MIXED and AMBIGUOUS.</p></li>
+<li><p><strong>genome</strong> – The genome version used to fetch annotations e.g. “hg19”, “hg38”. If None, the
+“genome_version” metadata of the dna assay is used.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>

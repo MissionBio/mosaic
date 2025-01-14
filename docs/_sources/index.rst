@@ -5,9 +5,12 @@ Mosaic API documentation
    :class: note
 
    The latest version of Mosaic is recommended for new developments. Documentation for the other
-   versions are available applications and notebooks built using them:
-   `v2.4.1 <https://missionbio.github.io/mosaic/v2.4.1/index.html>`_
-   & `v1.8.0 (unsupported) <https://missionbio.github.io/mosaic/v1.8.0/index.html>`_
+   versions are available for applications and notebooks built using them:
+   `v3.7.0r1 (first documentation revision of v3.7.0) <https://missionbio.github.io/mosaic/v3.7.0r1/index.html>`_
+   , `v3.4.0 <https://missionbio.github.io/mosaic/v3.4.0/index.html>`_
+   , `v3.1.1 <https://missionbio.github.io/mosaic/v3.1.1/index.html>`_
+   , `v2.4.1 <https://missionbio.github.io/mosaic/v2.4.1/index.html>`_
+   , `v1.8.0 <https://missionbio.github.io/mosaic/v1.8.0/index.html>`_
 
 
 Mosaic is a set of tools to analyze DNA and protein data obtained from the Mission Bio Tapestri instrument.
