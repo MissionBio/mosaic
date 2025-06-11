@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Mosaic v3.7 documentation</title>
+    <title>Index &#8212; Mosaic v3.12.2 documentation</title>
   
   
   
@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -128,6 +128,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="index.html">
   
@@ -136,7 +138,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.7 documentation</p>
+    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -145,6 +147,7 @@
 <li class="toctree-l1"><a class="reference internal" href="manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual/cohort.html">Cohort Analysis Pipeline</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/overview.html">Overview of mosaic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/filtering.html">Filtering barcodes and ids</a></li>
@@ -299,10 +302,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -310,7 +313,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -460,6 +463,16 @@ document.write(`
       </ul></li>
       <li><a href="pages/methods/missionbio.plotting.lineplot.LinePlot.add_hrect.html#missionbio.plotting.lineplot.LinePlot.add_hrect">add_hrect() (LinePlot method)</a>
 </li>
+      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.add_info.html#missionbio.mosaic.assay._Assay.add_info">add_info() (_Assay method)</a>
+
+      <ul>
+        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.add_info.html#missionbio.mosaic.cnv.Cnv.add_info">(Cnv method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.add_info.html#missionbio.mosaic.dna.Dna.add_info">(Dna method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.add_info.html#missionbio.mosaic.protein.Protein.add_info">(Protein method)</a>
+</li>
+      </ul></li>
       <li><a href="pages/methods/missionbio.mosaic.assay._Assay.add_layer.html#missionbio.mosaic.assay._Assay.add_layer">add_layer() (_Assay method)</a>
 
       <ul>
@@ -512,25 +525,31 @@ document.write(`
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.agg.html#missionbio.demultiplex.dna.truth.Truth.agg">agg() (Truth method)</a>
 </li>
-      <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.aggregate.html#missionbio.demultiplex.dna.truth.Truth.aggregate">aggregate() (Truth method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.aggregate.html#missionbio.demultiplex.dna.truth.Truth.aggregate">aggregate() (Truth method)</a>
+</li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.align.html#missionbio.demultiplex.dna.truth.Truth.align">align() (Truth method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.all.html#missionbio.demultiplex.dna.truth.Truth.all">all() (Truth method)</a>
 </li>
       <li><a href="pages/methods/missionbio.plotting.lineplot.LinePlot.all_points_trace.html#missionbio.plotting.lineplot.LinePlot.all_points_trace">all_points_trace() (LinePlot method)</a>
 </li>
+      <li><a href="pages/attributes/missionbio.plotting.fishplot.Fishplot.allclones.html#missionbio.plotting.fishplot.Fishplot.allclones">allclones (Fishplot attribute)</a>
+
+      <ul>
+        <li><a href="pages/attributes/missionbio.plotting.phylotree.PhyloTree.allclones.html#missionbio.plotting.phylotree.PhyloTree.allclones">(PhyloTree attribute)</a>
+</li>
+      </ul></li>
       <li><a href="pages/attributes/missionbio.mosaic.algorithms.compass.COMPASS.AMBIGUOUS.html#missionbio.mosaic.algorithms.compass.COMPASS.AMBIGUOUS">AMBIGUOUS (COMPASS attribute)</a>
 </li>
       <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.amp_uniformity.html#missionbio.mosaic.cnv.Cnv.amp_uniformity">amp_uniformity() (Cnv method)</a>
 </li>
       <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.amplicon_performance.html#missionbio.mosaic.cnv.Cnv.amplicon_performance">amplicon_performance() (Cnv method)</a>
 </li>
-      <li><a href="pages/constants/missionbio.mosaic.constants.ANNOTATED.html#missionbio.mosaic.constants.ANNOTATED">ANNOTATED (in module missionbio.mosaic.constants)</a>
-</li>
       <li><a href="pages/methods/missionbio.plotting.heatmap.Heatmap.annotation.html#missionbio.plotting.heatmap.Heatmap.annotation">annotation() (Heatmap static method)</a>
+</li>
+      <li><a href="pages/constants/missionbio.mosaic.constants.ANNOTATIONS.html#missionbio.mosaic.constants.ANNOTATIONS">ANNOTATIONS (in module missionbio.mosaic.constants)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.any.html#missionbio.demultiplex.dna.truth.Truth.any">any() (Truth method)</a>
 </li>
@@ -686,6 +705,12 @@ document.write(`
       </ul></li>
       <li><a href="pages/functions/missionbio.mosaic.utils.clipped_values.html#missionbio.mosaic.utils.clipped_values">clipped_values() (in module missionbio.mosaic.utils)</a>
 </li>
+      <li><a href="pages/methods/missionbio.plotting.fishplot.Fishplot.clone.html#missionbio.plotting.fishplot.Fishplot.clone">clone() (Fishplot method)</a>
+
+      <ul>
+        <li><a href="pages/methods/missionbio.plotting.phylotree.PhyloTree.clone.html#missionbio.plotting.phylotree.PhyloTree.clone">(PhyloTree method)</a>
+</li>
+      </ul></li>
       <li><a href="pages/methods/missionbio.mosaic.sample.Sample.clone_vs_analyte.html#missionbio.mosaic.sample.Sample.clone_vs_analyte">clone_vs_analyte() (Sample method)</a>
 </li>
       <li><a href="pages/attributes/missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.CLUSTER.html#missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.CLUSTER">CLUSTER (LikelihoodMethod attribute)</a>
@@ -748,10 +773,10 @@ document.write(`
         <li><a href="pages/attributes/missionbio.mosaic.protein.Protein.col_attrs.html#missionbio.mosaic.protein.Protein.col_attrs">(Protein attribute)</a>
 </li>
       </ul></li>
-      <li><a href="pages/methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.collapse_doublets_to_mixed.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.collapse_doublets_to_mixed">collapse_doublets_to_mixed() (LikelihoodMethod static method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="pages/methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.collapse_doublets_to_mixed.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.collapse_doublets_to_mixed">collapse_doublets_to_mixed() (LikelihoodMethod static method)</a>
+</li>
       <li><a href="pages/methods/missionbio.mosaic.algorithms.dna_assignment.DnaAssignment.collapse_labels.html#missionbio.mosaic.algorithms.dna_assignment.DnaAssignment.collapse_labels">collapse_labels() (DnaAssignment class method)</a>
 </li>
       <li><a href="pages/attributes/missionbio.demultiplex.protein.truth.Truth.COLOR.html#missionbio.demultiplex.protein.truth.Truth.COLOR">COLOR (Truth attribute)</a>
@@ -866,10 +891,26 @@ document.write(`
 </li>
       <li><a href="pages/attributes/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.DBSNP.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.DBSNP">DBSNP (VariantSubcloneTable attribute)</a>
 </li>
+      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.deduplicate_barcodes.html#missionbio.mosaic.assay._Assay.deduplicate_barcodes">deduplicate_barcodes() (_Assay method)</a>
+
+      <ul>
+        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.deduplicate_barcodes.html#missionbio.mosaic.cnv.Cnv.deduplicate_barcodes">(Cnv method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.deduplicate_barcodes.html#missionbio.mosaic.dna.Dna.deduplicate_barcodes">(Dna method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.deduplicate_barcodes.html#missionbio.mosaic.protein.Protein.deduplicate_barcodes">(Protein method)</a>
+</li>
+      </ul></li>
       <li><a href="pages/methods/missionbio.demultiplex.protein.truth.Truth.del_ab.html#missionbio.demultiplex.protein.truth.Truth.del_ab">del_ab() (Truth method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.protein.truth.Truth.del_cell.html#missionbio.demultiplex.protein.truth.Truth.del_cell">del_cell() (Truth method)</a>
 </li>
+      <li><a href="pages/methods/missionbio.plotting.fishplot.Fishplot.del_clone.html#missionbio.plotting.fishplot.Fishplot.del_clone">del_clone() (Fishplot method)</a>
+
+      <ul>
+        <li><a href="pages/methods/missionbio.plotting.phylotree.PhyloTree.del_clone.html#missionbio.plotting.phylotree.PhyloTree.del_clone">(PhyloTree method)</a>
+</li>
+      </ul></li>
       <li><a href="pages/methods/missionbio.mosaic.assay._Assay.del_col_attr.html#missionbio.mosaic.assay._Assay.del_col_attr">del_col_attr() (_Assay method)</a>
 
       <ul>
@@ -878,6 +919,16 @@ document.write(`
         <li><a href="pages/methods/missionbio.mosaic.dna.Dna.del_col_attr.html#missionbio.mosaic.dna.Dna.del_col_attr">(Dna method)</a>
 </li>
         <li><a href="pages/methods/missionbio.mosaic.protein.Protein.del_col_attr.html#missionbio.mosaic.protein.Protein.del_col_attr">(Protein method)</a>
+</li>
+      </ul></li>
+      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.del_info.html#missionbio.mosaic.assay._Assay.del_info">del_info() (_Assay method)</a>
+
+      <ul>
+        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.del_info.html#missionbio.mosaic.cnv.Cnv.del_info">(Cnv method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.del_info.html#missionbio.mosaic.dna.Dna.del_info">(Dna method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.del_info.html#missionbio.mosaic.protein.Protein.del_info">(Protein method)</a>
 </li>
       </ul></li>
       <li><a href="pages/methods/missionbio.mosaic.assay._Assay.del_layer.html#missionbio.mosaic.assay._Assay.del_layer">del_layer() (_Assay method)</a>
@@ -900,6 +951,8 @@ document.write(`
         <li><a href="pages/methods/missionbio.mosaic.protein.Protein.del_metadata.html#missionbio.mosaic.protein.Protein.del_metadata">(Protein method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.mosaic.assay._Assay.del_row_attr.html#missionbio.mosaic.assay._Assay.del_row_attr">del_row_attr() (_Assay method)</a>
 
       <ul>
@@ -912,8 +965,6 @@ document.write(`
       </ul></li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.describe.html#missionbio.demultiplex.dna.truth.Truth.describe">describe() (Truth method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.diff.html#missionbio.demultiplex.dna.truth.Truth.diff">diff() (Truth method)</a>
 </li>
       <li><a href="pages/functions/missionbio.mosaic.utils.disable_logging.html#missionbio.mosaic.utils.disable_logging">disable_logging() (in module missionbio.mosaic.utils)</a>
@@ -1042,10 +1093,10 @@ document.write(`
       </ul></li>
       <li><a href="pages/methods/missionbio.mosaic.dna.Dna.filter_variants_consecutive.html#missionbio.mosaic.dna.Dna.filter_variants_consecutive">filter_variants_consecutive() (Dna method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.filter_variants_table.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.filter_variants_table">filter_variants_table() (VariantSubcloneTable method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.mosaic.dna.Dna.find_clones.html#missionbio.mosaic.dna.Dna.find_clones">find_clones() (Dna method)</a>
 </li>
       <li><a href="pages/methods/missionbio.mosaic.dna.Dna.find_relevant_variants.html#missionbio.mosaic.dna.Dna.find_relevant_variants">find_relevant_variants() (Dna method)</a>
@@ -1062,12 +1113,18 @@ document.write(`
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.floordiv.html#missionbio.demultiplex.dna.truth.Truth.floordiv">floordiv() (Truth method)</a>
 </li>
-      <li><a href="pages/attributes/missionbio.plotting.phylotree.PhyloTree.FONT_ASPECT.html#missionbio.plotting.phylotree.PhyloTree.FONT_ASPECT">FONT_ASPECT (PhyloTree attribute)</a>
-</li>
-      <li><a href="pages/attributes/missionbio.plotting.phylotree.PhyloTree.FONT_LINESPACE.html#missionbio.plotting.phylotree.PhyloTree.FONT_LINESPACE">FONT_LINESPACE (PhyloTree attribute)</a>
-</li>
       <li><a href="pages/methods/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.format_subclone_df.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.format_subclone_df">format_subclone_df() (VariantSubcloneTable method)</a>
 </li>
+      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.from_assay.html#missionbio.mosaic.assay._Assay.from_assay">from_assay() (_Assay class method)</a>
+
+      <ul>
+        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.from_assay.html#missionbio.mosaic.cnv.Cnv.from_assay">(Cnv class method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.from_assay.html#missionbio.mosaic.dna.Dna.from_assay">(Dna class method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.from_assay.html#missionbio.mosaic.protein.Protein.from_assay">(Protein class method)</a>
+</li>
+      </ul></li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.from_dict.html#missionbio.demultiplex.dna.truth.Truth.from_dict">from_dict() (Truth class method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.from_records.html#missionbio.demultiplex.dna.truth.Truth.from_records">from_records() (Truth class method)</a>
@@ -1094,11 +1151,19 @@ document.write(`
 </li>
       <li><a href="pages/constants/missionbio.mosaic.constants.GENE_NAME.html#missionbio.mosaic.constants.GENE_NAME">GENE_NAME (in module missionbio.mosaic.constants)</a>
 </li>
+      <li><a href="pages/attributes/missionbio.mosaic.cnv.Cnv.genome.html#missionbio.mosaic.cnv.Cnv.genome">genome (Cnv attribute)</a>
+
+      <ul>
+        <li><a href="pages/attributes/missionbio.mosaic.dna.Dna.genome.html#missionbio.mosaic.dna.Dna.genome">(Dna attribute)</a>
+</li>
+      </ul></li>
       <li><a href="pages/attributes/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.GENOTYPED_CELLS.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.GENOTYPED_CELLS">GENOTYPED_CELLS (VariantSubcloneTable attribute)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.get.html#missionbio.demultiplex.dna.truth.Truth.get">get() (Truth method)</a>, <a href="pages/methods/missionbio.demultiplex.protein.truth.Truth.get.html#missionbio.demultiplex.protein.truth.Truth.get">[1]</a>
 </li>
       <li><a href="pages/methods/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.get_ado_scores.html#missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.get_ado_scores">get_ado_scores() (GroupByGenotype method)</a>
+</li>
+      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.get_annotated_ids.html#missionbio.mosaic.dna.Dna.get_annotated_ids">get_annotated_ids() (Dna method)</a>
 </li>
       <li><a href="pages/methods/missionbio.mosaic.dna.Dna.get_annotations.html#missionbio.mosaic.dna.Dna.get_annotations">get_annotations() (Dna method)</a>
 </li>
@@ -1122,6 +1187,16 @@ document.write(`
 </li>
       <li><a href="pages/functions/missionbio.mosaic.utils.get_indexes.html#missionbio.mosaic.utils.get_indexes">get_indexes() (in module missionbio.mosaic.utils)</a>
 </li>
+      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.get_info.html#missionbio.mosaic.assay._Assay.get_info">get_info() (_Assay method)</a>
+
+      <ul>
+        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.get_info.html#missionbio.mosaic.cnv.Cnv.get_info">(Cnv method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.get_info.html#missionbio.mosaic.dna.Dna.get_info">(Dna method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.get_info.html#missionbio.mosaic.protein.Protein.get_info">(Protein method)</a>
+</li>
+      </ul></li>
       <li><a href="pages/methods/missionbio.mosaic.assay._Assay.get_labels.html#missionbio.mosaic.assay._Assay.get_labels">get_labels() (_Assay method)</a>
 
       <ul>
@@ -1204,6 +1279,16 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.demultiplex.protein.truth.Truth.has_cell.html#missionbio.demultiplex.protein.truth.Truth.has_cell">has_cell() (Truth method)</a>
 </li>
+      <li><a href="pages/methods/missionbio.mosaic.assay._Assay.has_info.html#missionbio.mosaic.assay._Assay.has_info">has_info() (_Assay method)</a>
+
+      <ul>
+        <li><a href="pages/methods/missionbio.mosaic.cnv.Cnv.has_info.html#missionbio.mosaic.cnv.Cnv.has_info">(Cnv method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.dna.Dna.has_info.html#missionbio.mosaic.dna.Dna.has_info">(Dna method)</a>
+</li>
+        <li><a href="pages/methods/missionbio.mosaic.protein.Protein.has_info.html#missionbio.mosaic.protein.Protein.has_info">(Protein method)</a>
+</li>
+      </ul></li>
       <li><a href="pages/methods/missionbio.mosaic.samplegroup.SampleGroup.hasassay.html#missionbio.mosaic.samplegroup.SampleGroup.hasassay">hasassay() (SampleGroup method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.head.html#missionbio.demultiplex.dna.truth.Truth.head">head() (Truth method)</a>
@@ -1222,6 +1307,8 @@ document.write(`
         <li><a href="pages/methods/missionbio.mosaic.sample.Sample.heatmap.html#missionbio.mosaic.sample.Sample.heatmap">(Sample method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.mosaic.assay._Assay.hierarchical_cluster.html#missionbio.mosaic.assay._Assay.hierarchical_cluster">hierarchical_cluster() (_Assay class method)</a>
 
       <ul>
@@ -1232,8 +1319,6 @@ document.write(`
         <li><a href="pages/methods/missionbio.mosaic.protein.Protein.hierarchical_cluster.html#missionbio.mosaic.protein.Protein.hierarchical_cluster">(Protein class method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.mosaic.assay._Assay.highlight_heatmap.html#missionbio.mosaic.assay._Assay.highlight_heatmap">highlight_heatmap() (_Assay method)</a>
 
       <ul>
@@ -1249,8 +1334,6 @@ document.write(`
       <li><a href="pages/attributes/missionbio.plotting.heatmap.Heatmap.HLINE_DATA_TRACE.html#missionbio.plotting.heatmap.Heatmap.HLINE_DATA_TRACE">HLINE_DATA_TRACE (Heatmap attribute)</a>
 </li>
       <li><a href="pages/attributes/missionbio.plotting.heatmap.Heatmap.HLINE_LABEL_TRACE.html#missionbio.plotting.heatmap.Heatmap.HLINE_LABEL_TRACE">HLINE_LABEL_TRACE (Heatmap attribute)</a>
-</li>
-      <li><a href="pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.human_readable_variant_name.html#missionbio.mosaic.algorithms.compass.COMPASS.human_readable_variant_name">human_readable_variant_name() (COMPASS static method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1280,18 +1363,28 @@ document.write(`
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.infer_objects.html#missionbio.demultiplex.dna.truth.Truth.infer_objects">infer_objects() (Truth method)</a>
 </li>
+      <li><a href="pages/attributes/missionbio.mosaic.assay._Assay.info.html#missionbio.mosaic.assay._Assay.info">info (_Assay attribute)</a>
+
+      <ul>
+        <li><a href="pages/attributes/missionbio.mosaic.cnv.Cnv.info.html#missionbio.mosaic.cnv.Cnv.info">(Cnv attribute)</a>
+</li>
+        <li><a href="pages/attributes/missionbio.mosaic.dna.Dna.info.html#missionbio.mosaic.dna.Dna.info">(Dna attribute)</a>
+</li>
+        <li><a href="pages/attributes/missionbio.mosaic.protein.Protein.info.html#missionbio.mosaic.protein.Protein.info">(Protein attribute)</a>
+</li>
+      </ul></li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.info.html#missionbio.demultiplex.dna.truth.Truth.info">info() (Truth method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.insert.html#missionbio.demultiplex.dna.truth.Truth.insert">insert() (Truth method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.interpolate.html#missionbio.demultiplex.dna.truth.Truth.interpolate">interpolate() (Truth method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.plotting.heatmap.Heatmap.is_contiguous.html#missionbio.plotting.heatmap.Heatmap.is_contiguous">is_contiguous() (Heatmap static method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.protein.truth.Truth.is_panel_compatible.html#missionbio.demultiplex.protein.truth.Truth.is_panel_compatible">is_panel_compatible() (Truth class method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.mosaic.workflows.copy_number.CopyNumber.is_port_in_use.html#missionbio.mosaic.workflows.copy_number.CopyNumber.is_port_in_use">is_port_in_use() (CopyNumber static method)</a>
 
       <ul>
@@ -1576,6 +1669,8 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.node_descriptions.html#missionbio.mosaic.algorithms.compass.COMPASS.node_descriptions">node_descriptions() (COMPASS method)</a>
 </li>
+      <li><a href="pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.node_fractions.html#missionbio.mosaic.algorithms.compass.COMPASS.node_fractions">node_fractions() (COMPASS method)</a>
+</li>
       <li><a href="pages/attributes/missionbio.mosaic.algorithms.compass.COMPASS.node_genotypes_.html#missionbio.mosaic.algorithms.compass.COMPASS.node_genotypes_">node_genotypes_ (COMPASS attribute)</a>
 </li>
       <li><a href="pages/attributes/missionbio.mosaic.algorithms.compass.COMPASS.nodes_.html#missionbio.mosaic.algorithms.compass.COMPASS.nodes_">nodes_ (COMPASS attribute)</a>
@@ -1613,10 +1708,6 @@ document.write(`
 
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="pages/constants/missionbio.mosaic.constants.ORG_BARCODE.html#missionbio.mosaic.constants.ORG_BARCODE">ORG_BARCODE (in module missionbio.mosaic.constants)</a>
-</li>
-  </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/constants/missionbio.mosaic.constants.ORIGINAL_ID.html#missionbio.mosaic.constants.ORIGINAL_ID">ORIGINAL_ID (in module missionbio.mosaic.constants)</a>
 </li>
@@ -1763,6 +1854,8 @@ document.write(`
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.reindex.html#missionbio.demultiplex.dna.truth.Truth.reindex">reindex() (Truth method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.reindex_like.html#missionbio.demultiplex.dna.truth.Truth.reindex_like">reindex_like() (Truth method)</a>
+</li>
+      <li><a href="pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.relabel.html#missionbio.mosaic.algorithms.compass.COMPASS.relabel">relabel() (COMPASS method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.remove_correlated_variants.html#missionbio.demultiplex.dna.truth.Truth.remove_correlated_variants">remove_correlated_variants() (Truth method)</a>
 </li>
@@ -1914,6 +2007,16 @@ document.write(`
 </li>
       <li><a href="pages/missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup">SampleGroup (class in missionbio.mosaic.samplegroup)</a>
 </li>
+      <li><a href="pages/attributes/missionbio.mosaic.assay._Assay.sampleinfo.html#missionbio.mosaic.assay._Assay.sampleinfo">sampleinfo (_Assay attribute)</a>
+
+      <ul>
+        <li><a href="pages/attributes/missionbio.mosaic.cnv.Cnv.sampleinfo.html#missionbio.mosaic.cnv.Cnv.sampleinfo">(Cnv attribute)</a>
+</li>
+        <li><a href="pages/attributes/missionbio.mosaic.dna.Dna.sampleinfo.html#missionbio.mosaic.dna.Dna.sampleinfo">(Dna attribute)</a>
+</li>
+        <li><a href="pages/attributes/missionbio.mosaic.protein.Protein.sampleinfo.html#missionbio.mosaic.protein.Protein.sampleinfo">(Protein attribute)</a>
+</li>
+      </ul></li>
       <li><a href="pages/methods/missionbio.mosaic.assay._Assay.samples.html#missionbio.mosaic.assay._Assay.samples">samples() (_Assay method)</a>
 
       <ul>
@@ -1996,6 +2099,8 @@ document.write(`
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.sem.html#missionbio.demultiplex.dna.truth.Truth.sem">sem() (Truth method)</a>
 </li>
+      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.set_annotated_ids.html#missionbio.mosaic.dna.Dna.set_annotated_ids">set_annotated_ids() (Dna method)</a>
+</li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.set_axis.html#missionbio.demultiplex.dna.truth.Truth.set_axis">set_axis() (Truth method)</a>
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.protein.truth.Truth.set_color.html#missionbio.demultiplex.protein.truth.Truth.set_color">set_color() (Truth method)</a>
@@ -2054,14 +2159,14 @@ document.write(`
         <li><a href="pages/methods/missionbio.mosaic.protein.Protein.set_selected_labels.html#missionbio.mosaic.protein.Protein.set_selected_labels">(Protein method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.plotting.heatmap.Heatmap.set_ticks.html#missionbio.plotting.heatmap.Heatmap.set_ticks">set_ticks() (Heatmap static method)</a>
 
       <ul>
         <li><a href="pages/methods/missionbio.plotting.lineplot.LinePlot.set_ticks.html#missionbio.plotting.lineplot.LinePlot.set_ticks">(LinePlot static method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pages/methods/missionbio.plotting.heatmap.Heatmap.set_xticks.html#missionbio.plotting.heatmap.Heatmap.set_xticks">set_xticks() (Heatmap method)</a>
 
       <ul>
@@ -2120,7 +2225,11 @@ document.write(`
 </li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.skew.html#missionbio.demultiplex.dna.truth.Truth.skew">skew() (Truth method)</a>
 </li>
+      <li><a href="pages/constants/missionbio.mosaic.constants.SLASH.html#missionbio.mosaic.constants.SLASH">SLASH (in module missionbio.mosaic.constants)</a>
+</li>
       <li><a href="pages/methods/missionbio.demultiplex.dna.truth.Truth.slice_shift.html#missionbio.demultiplex.dna.truth.Truth.slice_shift">slice_shift() (Truth method)</a>
+</li>
+      <li><a href="pages/methods/missionbio.mosaic.dna.Dna.snps.html#missionbio.mosaic.dna.Dna.snps">snps() (Dna method)</a>
 </li>
       <li><a href="pages/attributes/missionbio.mosaic.algorithms.compass.COMPASS.somatic_variants.html#missionbio.mosaic.algorithms.compass.COMPASS.somatic_variants">somatic_variants (COMPASS attribute)</a>
 </li>
@@ -2485,8 +2594,8 @@ By Saurabh Parikh
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Changelog &#8212; Mosaic v3.7 documentation</title>
+    <title>Changelog &#8212; Mosaic v3.12.2 documentation</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
@@ -35,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -129,6 +129,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -137,7 +139,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.7 documentation</p>
+    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -146,6 +148,7 @@
 <li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cohort.html">Cohort Analysis Pipeline</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html">Overview of mosaic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/filtering.html">Filtering barcodes and ids</a></li>
@@ -348,10 +351,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -359,7 +362,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -387,41 +390,46 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-6-0">v3.6.0</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-12-0">v3.12.0</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#added">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changed">Changed</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed">Fixed</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-4-0">v3.4.0</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-7-0">v3.7.0</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changed">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Fixed</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-4-0">v3.4.0</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Fixed</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-1-1">v3.1.1</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Fixed</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-1-0">v3.1.0</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Fixed</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updated">Updated</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-0-1">v3.0.1</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Fixed</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-0-0">v3.0.0</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Fixed</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removed">Removed</a></li>
 </ul>
 </li>
@@ -440,11 +448,79 @@ document.write(`
     <div class="background-cover" id="background-cover"></div>
     <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this heading">#</a></h1>
-<section id="v3-6-0">
-<h2>v3.6.0<a class="headerlink" href="#v3-6-0" title="Permalink to this heading">#</a></h2>
-<p><strong>Release date</strong>: 2024-08-05</p>
+<section id="v3-12-0">
+<h2>v3.12.0<a class="headerlink" href="#v3-12-0" title="Permalink to this heading">#</a></h2>
+<p><strong>Release date</strong>: 2025-21-04</p>
 <section id="added">
 <h3>Added<a class="headerlink" href="#added" title="Permalink to this heading">#</a></h3>
+<p>A new attribute for all assays: <code class="docutils literal notranslate"><span class="pre">info</span></code>. This can be used to store arbitrary information of various types including pandas dataframes and dictionaries.
+Unlike row attributes, column attributes, and layers, it is not confined to any shape. For example, the signature of the clones generated for only
+the somatic variants would have fewer columns than ids and fewer rows than cells in the assay. Compass stores a lot information in it’s variables,
+until now there was no easy way of saving it in the h5. These are dataframes with shapes that do not align with that of the assay. These values can
+now be stored in the assay <code class="docutils literal notranslate"><span class="pre">info</span></code> as follows:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">add_info</span><span class="p">(</span><span class="s2">&quot;somatic_signature&quot;</span><span class="p">,</span> <span class="n">compass</span><span class="o">.</span><span class="n">node_genotypes_</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">add_info</span><span class="p">(</span><span class="s2">&quot;assignment_probability&quot;</span><span class="p">,</span> <span class="n">compass</span><span class="o">.</span><span class="n">probability_</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The assays also now store their palette in the info as a dictionary. <a class="reference internal" href="../pages/attributes/missionbio.mosaic.assay._Assay.sampleinfo.html#missionbio.mosaic.assay._Assay.sampleinfo" title="missionbio.mosaic.assay._Assay.sampleinfo"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sampleinfo()</span></code></a> is a shortcut for accessing info for single sample assays.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">sampleinfo</span><span class="p">[</span><span class="s2">&quot;palette&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The functions for handling info are <a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.has_info.html#missionbio.mosaic.assay._Assay.has_info" title="missionbio.mosaic.assay._Assay.has_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">has_info()</span></code></a>, <a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.add_info.html#missionbio.mosaic.assay._Assay.add_info" title="missionbio.mosaic.assay._Assay.add_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_info()</span></code></a>, and <a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.del_info.html#missionbio.mosaic.assay._Assay.del_info" title="missionbio.mosaic.assay._Assay.del_info"><code class="xref py py-meth docutils literal notranslate"><span class="pre">del_info()</span></code></a></p>
+<p><strong>Updates to COMPASS</strong></p>
+<ul class="simple">
+<li><p>Update to the latest version of <a class="reference external" href="https://github.com/MissionBio/compass/tree/e3e0169bbe52555b751752699cb22399c1b70763">COMPASS</a></p></li>
+<li><p>Add option to rename compass clones with a new probability value using <a class="reference internal" href="../pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.relabel.html#missionbio.mosaic.algorithms.compass.COMPASS.relabel" title="missionbio.mosaic.algorithms.compass.COMPASS.relabel"><code class="xref py py-meth docutils literal notranslate"><span class="pre">relabel()</span></code></a>.</p></li>
+<li><p>Allow passing prefixes for file names to <a class="reference internal" href="../pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.run.html#missionbio.mosaic.algorithms.compass.COMPASS.run" title="missionbio.mosaic.algorithms.compass.COMPASS.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a></p></li>
+<li><p>Added option to get fractions of each clone using <a class="reference internal" href="../pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.node_fractions.html#missionbio.mosaic.algorithms.compass.COMPASS.node_fractions" title="missionbio.mosaic.algorithms.compass.COMPASS.node_fractions"><code class="xref py py-meth docutils literal notranslate"><span class="pre">node_fractions()</span></code></a></p></li>
+<li><p>Allow passing directories to <a class="reference internal" href="../pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.run.html#missionbio.mosaic.algorithms.compass.COMPASS.run" title="missionbio.mosaic.algorithms.compass.COMPASS.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a></p></li>
+<li><p>COMPASS can call LOH clones without calling CNV using the <code class="docutils literal notranslate"><span class="pre">cnv</span></code> parameter in <a class="reference internal" href="../pages/methods/missionbio.mosaic.algorithms.compass.COMPASS.run.html#missionbio.mosaic.algorithms.compass.COMPASS.run" title="missionbio.mosaic.algorithms.compass.COMPASS.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a>.</p></li>
+</ul>
+<p><strong>Plotting updates</strong></p>
+<ul class="simple">
+<li><p>Cytoband information added to the CNV ploidy <a class="reference internal" href="../pages/methods/missionbio.mosaic.cnv.Cnv.signaturemap.html#missionbio.mosaic.cnv.Cnv.signaturemap" title="missionbio.mosaic.cnv.Cnv.signaturemap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">signaturemap()</span></code></a> and <a class="reference internal" href="../pages/methods/missionbio.mosaic.cnv.Cnv.plot_ploidy.html#missionbio.mosaic.cnv.Cnv.plot_ploidy" title="missionbio.mosaic.cnv.Cnv.plot_ploidy"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plot_ploidy()</span></code></a> figures. These are also shown in the CopyNumber workflow.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ticks</span></code> option to <a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.heatmap.html#missionbio.mosaic.assay._Assay.heatmap" title="missionbio.mosaic.assay._Assay.heatmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">heatmap()</span></code></a> to disable plotting of ticks for assay with large number of ids.</p></li>
+<li><p>The scatterplot size modifies depending on the length of the labels to ensure that the plotting area is constant.</p></li>
+</ul>
+<p><strong>Updates to CNV</strong></p>
+<ul class="simple">
+<li><p>Locally stored gene name annotations are used instead of pulling them from Ensembl when running <a class="reference internal" href="../pages/methods/missionbio.mosaic.cnv.Cnv.get_gene_names.html#missionbio.mosaic.cnv.Cnv.get_gene_names" title="missionbio.mosaic.cnv.Cnv.get_gene_names"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_gene_names()</span></code></a>.</p></li>
+<li><p>When using <a class="reference internal" href="../pages/methods/missionbio.mosaic.cnv.Cnv.get_gene_names.html#missionbio.mosaic.cnv.Cnv.get_gene_names" title="missionbio.mosaic.cnv.Cnv.get_gene_names"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_gene_names()</span></code></a>, the gene name will always be the best match for the amplicon instead of mutliple values separated by a <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.cnv.Cnv.get_gene_names.html#missionbio.mosaic.cnv.Cnv.get_gene_names" title="missionbio.mosaic.cnv.Cnv.get_gene_names"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_gene_names()</span></code></a> returns the gene names while also adding it to the column attributes.</p></li>
+</ul>
+<p><strong>Updates to DNA</strong></p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.dna.Dna.get_annotated_ids.html#missionbio.mosaic.dna.Dna.get_annotated_ids" title="missionbio.mosaic.dna.Dna.get_annotated_ids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_annotated_ids()</span></code></a> returns a list of human-readable names for all the variants in the assay.</p></li>
+<li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.dna.Dna.set_annotated_ids.html#missionbio.mosaic.dna.Dna.set_annotated_ids" title="missionbio.mosaic.dna.Dna.set_annotated_ids"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_annotated_ids()</span></code></a> updates the ids to be human-readable names.</p></li>
+<li><p><a class="reference internal" href="../pages/attributes/missionbio.mosaic.dna.Dna.genome.html#missionbio.mosaic.dna.Dna.genome" title="missionbio.mosaic.dna.Dna.genome"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dna.Dna.genome()</span></code></a> to easily access the <cite>genome_version</cite> metadata value.</p></li>
+<li><p>Store annotations in the DNA assay <cite>info</cite> instead of the column attributes to ease their access.</p></li>
+<li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.dna.Dna.snps.html#missionbio.mosaic.dna.Dna.snps" title="missionbio.mosaic.dna.Dna.snps"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dna.Dna.snps()</span></code></a> to quickly get the ids that are SNPs.</p></li>
+</ul>
+<p><strong>Functionality updates</strong></p>
+<ul class="simple">
+<li><p>Option to disable matching of ids in <a class="reference internal" href="../pages/missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup" title="missionbio.mosaic.samplegroup.SampleGroup"><code class="xref py py-class docutils literal notranslate"><span class="pre">SampleGroup</span></code></a> using the <code class="docutils literal notranslate"><span class="pre">match_ids</span></code> parameter.</p></li>
+<li><p>Ability to load h5 files with only raw counts.</p></li>
+<li><p><cite>whitelist=[]</cite> is treated just like <cite>whitelist=None</cite> in <a class="reference internal" href="../pages/functions/missionbio.mosaic.io.load.html#missionbio.mosaic.io.load" title="missionbio.mosaic.io.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a></p></li>
+<li><p>Deduplication of barcodes is done using integers instead of sample names and no warning is raised when deduplication of barcodes is performed.
+It can be manually performed using <a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.deduplicate_barcodes.html#missionbio.mosaic.assay._Assay.deduplicate_barcodes" title="missionbio.mosaic.assay._Assay.deduplicate_barcodes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">deduplicate_barcodes()</span></code></a> and inverted using <a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.normalize_barcodes.html#missionbio.mosaic.assay._Assay.normalize_barcodes" title="missionbio.mosaic.assay._Assay.normalize_barcodes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">normalize_barcodes()</span></code></a>.</p></li>
+<li><p>Store the palette in the <cite>info</cite> instead of the metadata of the assay, making saved h5 files valid in format even with the stored palette.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">sample.Sample.vdj</span></code> to easily access the VDJ assay in the h5 file.</p></li>
+</ul>
+</section>
+<section id="fixed">
+<h3>Fixed<a class="headerlink" href="#fixed" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>ADO score shown in the figure is the same as the ADO score shown in the table in the <a class="reference internal" href="../pages/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html#missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable" title="missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable"><code class="xref py py-class docutils literal notranslate"><span class="pre">VariantSubcloneTable</span></code></a> workflow</p></li>
+<li><p>Use the correct genome version from the dna assay in <a class="reference internal" href="../pages/missionbio.mosaic.algorithms.compass.COMPASS.html#missionbio.mosaic.algorithms.compass.COMPASS" title="missionbio.mosaic.algorithms.compass.COMPASS"><code class="xref py py-class docutils literal notranslate"><span class="pre">COMPASS</span></code></a></p></li>
+<li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.dna.Dna.get_annotations.html#missionbio.mosaic.dna.Dna.get_annotations" title="missionbio.mosaic.dna.Dna.get_annotations"><code class="xref py py-class docutils literal notranslate"><span class="pre">get_annotations</span></code></a> raises an appropriate error when the genome version is not supported.</p></li>
+</ul>
+</section>
+</section>
+<section id="v3-7-0">
+<h2>v3.7.0<a class="headerlink" href="#v3-7-0" title="Permalink to this heading">#</a></h2>
+<p><strong>Release date</strong>: 2024-08-05</p>
+<section id="id1">
+<h3>Added<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.dna.Dna.filter_somatic_variants.html#missionbio.mosaic.dna.Dna.filter_somatic_variants" title="missionbio.mosaic.dna.Dna.filter_somatic_variants"><code class="xref py py-meth docutils literal notranslate"><span class="pre">filter_somatic_variants()</span></code></a> for automatic filtering of pathogenic somatic variants.</p></li>
 <li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.dna.Dna.assign_from_truth.html#missionbio.mosaic.dna.Dna.assign_from_truth" title="missionbio.mosaic.dna.Dna.assign_from_truth"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dna.Dna.assign_from_truth()</span></code></a> to label the cells for a known set of clones.</p></li>
@@ -475,8 +551,8 @@ document.write(`
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">pynndescent</span></code> instead of <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> to speed up nearest neighbors calculation during graph-community clustering. Results will not be backwards compatible.</p></li>
 </ul>
 </section>
-<section id="fixed">
-<h3>Fixed<a class="headerlink" href="#fixed" title="Permalink to this heading">#</a></h3>
+<section id="id2">
+<h3>Fixed<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Ordering of the barcodes in the heatmap when a subset of the variants are used.</p></li>
 <li><p>Fetching of CNV amplicon gene names for regions where ensembl returns an incomplete response.</p></li>
@@ -487,8 +563,8 @@ document.write(`
 <section id="v3-4-0">
 <h2>v3.4.0<a class="headerlink" href="#v3-4-0" title="Permalink to this heading">#</a></h2>
 <p><strong>Release date</strong>: 2024-04-01</p>
-<section id="id1">
-<h3>Added<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="id3">
+<h3>Added<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Support to pass <code class="docutils literal notranslate"><span class="pre">x_groups</span></code> to <a class="reference internal" href="../pages/methods/missionbio.mosaic.sample.Sample.signaturemap.html#missionbio.mosaic.sample.Sample.signaturemap" title="missionbio.mosaic.sample.Sample.signaturemap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">signaturemap()</span></code></a> and <a class="reference internal" href="../pages/methods/missionbio.mosaic.sample.Sample.heatmap.html#missionbio.mosaic.sample.Sample.heatmap" title="missionbio.mosaic.sample.Sample.heatmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">heatmap()</span></code></a>.</p></li>
 <li><p>Support to pass variant filters to <a class="reference internal" href="../pages/functions/missionbio.mosaic.io.load.html#missionbio.mosaic.io.load" title="missionbio.mosaic.io.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a>.</p></li>
@@ -502,8 +578,8 @@ document.write(`
 <li><p>An appropriate error is raised when the annotation API is not available.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h3>Changed<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3>Changed<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Increased the vertical spacing between the graph and the fishplot from 0 to 0.1.</p></li>
 <li><p>The plotting functions in <code class="docutils literal notranslate"><span class="pre">missionbio.mosaic.plotting</span></code> were moved to <code class="docutils literal notranslate"><span class="pre">missionbio.plotting</span></code></p></li>
@@ -512,8 +588,8 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">scikit-learn&gt;1.3.1</span></code> is installed by default which results in slightly different NSP calls due to changes to its Gaussian mixture model.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h3>Fixed<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>Fixed<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Load the whitelist variants correctly when <code class="docutils literal notranslate"><span class="pre">filter_variants=True</span></code> is passed to <a class="reference internal" href="../pages/functions/missionbio.mosaic.io.load.html#missionbio.mosaic.io.load" title="missionbio.mosaic.io.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a>.</p></li>
 <li><p>Nill values of DANN score are shown as empty cells instead of <code class="docutils literal notranslate"><span class="pre">º</span></code>.</p></li>
@@ -530,21 +606,21 @@ document.write(`
 <section id="v3-1-1">
 <h2>v3.1.1<a class="headerlink" href="#v3-1-1" title="Permalink to this heading">#</a></h2>
 <p><strong>Release date</strong>: 2023-09-25</p>
-<section id="id4">
-<h3>Added<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3>Added<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Relaxed missionbio.h5 requirement to &gt;=4.13.0,&lt;6</p></li>
 </ul>
 </section>
-<section id="id5">
-<h3>Changed<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="id7">
+<h3>Changed<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Disable autouploading of tagged packages to anaconda.</p></li>
 <li><p>Removed check for h5 file compatibility with H5Reader.</p></li>
 </ul>
 </section>
-<section id="id6">
-<h3>Fixed<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3>Fixed<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">whitelist</span></code> option in <a class="reference internal" href="../pages/functions/missionbio.mosaic.io.load.html#missionbio.mosaic.io.load" title="missionbio.mosaic.io.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">load()</span></code></a> correctly loads exact matches of variants.</p></li>
 </ul>
@@ -553,8 +629,8 @@ document.write(`
 <section id="v3-1-0">
 <h2>v3.1.0<a class="headerlink" href="#v3-1-0" title="Permalink to this heading">#</a></h2>
 <p><strong>Release date</strong>: 2023-09-13</p>
-<section id="id7">
-<h3>Added<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<section id="id9">
+<h3>Added<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The order of the names in the legend matches the order of the traces in the ridgeplot.</p></li>
 <li><p>Option to pass any sequence type to <a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.get_attribute.html#missionbio.mosaic.assay._Assay.get_attribute" title="missionbio.mosaic.assay._Assay.get_attribute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_attribute()</span></code></a> besides np.ndarray. This includes list, tuple, and range.</p></li>
@@ -569,14 +645,14 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">TreeGraph</span></code> now supports html tags like <code class="docutils literal notranslate"><span class="pre">&lt;br&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;b&gt;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code> in the descriptions.</p></li>
 </ul>
 </section>
-<section id="id8">
-<h3>Changed<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<section id="id10">
+<h3>Changed<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Use latest python 3.8 in installer instead of 3.8.0</p></li>
 </ul>
 </section>
-<section id="id9">
-<h3>Fixed<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<section id="id11">
+<h3>Fixed<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The title of <a class="reference internal" href="../pages/methods/missionbio.mosaic.sample.Sample.clone_vs_analyte.html#missionbio.mosaic.sample.Sample.clone_vs_analyte" title="missionbio.mosaic.sample.Sample.clone_vs_analyte"><code class="xref py py-meth docutils literal notranslate"><span class="pre">clone_vs_analyte()</span></code></a> plot does not overlap with the DNA heatmap.</p></li>
 <li><p>The x-axis label order for CNV in the <a class="reference internal" href="../pages/methods/missionbio.mosaic.sample.Sample.clone_vs_analyte.html#missionbio.mosaic.sample.Sample.clone_vs_analyte" title="missionbio.mosaic.sample.Sample.clone_vs_analyte"><code class="xref py py-meth docutils literal notranslate"><span class="pre">clone_vs_analyte()</span></code></a> plot matches the order of the points in the data shown.</p></li>
@@ -600,22 +676,22 @@ document.write(`
 <section id="v3-0-1">
 <h2>v3.0.1<a class="headerlink" href="#v3-0-1" title="Permalink to this heading">#</a></h2>
 <p><strong>Release date</strong>: 2023-06-20</p>
-<section id="id11">
-<h3>Added<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<section id="id13">
+<h3>Added<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.crosstab.html#missionbio.mosaic.assay._Assay.crosstab" title="missionbio.mosaic.assay._Assay.crosstab"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assay._Assay.crosstab()</span></code></a> to wrap <code class="docutils literal notranslate"><span class="pre">pandas.crosstab</span></code> for ease of use with mosaic.</p></li>
 <li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.crosstabmap.html#missionbio.mosaic.assay._Assay.crosstabmap" title="missionbio.mosaic.assay._Assay.crosstabmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assay._Assay.crosstabmap()</span></code></a> to create heatmaps of the output of <a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.crosstab.html#missionbio.mosaic.assay._Assay.crosstab" title="missionbio.mosaic.assay._Assay.crosstab"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assay._Assay.crosstab()</span></code></a>.</p></li>
 <li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.hierarchical_cluster.html#missionbio.mosaic.assay._Assay.hierarchical_cluster" title="missionbio.mosaic.assay._Assay.hierarchical_cluster"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assay._Assay.hierarchical_cluster()</span></code></a> to get the hierarchical clustering order of the rows of a DataFrame.</p></li>
 </ul>
 </section>
-<section id="id12">
-<h3>Changed<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<section id="id14">
+<h3>Changed<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Updated matplotlib dependency from <code class="docutils literal notranslate"><span class="pre">&lt;=3.2.2</span></code> to <code class="docutils literal notranslate"><span class="pre">&gt;=3.4.0</span></code></p></li>
 </ul>
 </section>
-<section id="id13">
-<h3>Fixed<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<section id="id15">
+<h3>Fixed<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.assay._Assay.heatmap.html#missionbio.mosaic.assay._Assay.heatmap" title="missionbio.mosaic.assay._Assay.heatmap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">assay._Assay.heatmap()</span></code></a> subclustering performed when <cite>convolve=0</cite>. It was disabled by default.</p></li>
 <li><p>Custom <code class="docutils literal notranslate"><span class="pre">typography.css</span></code> used in workflows is included in the package data</p></li>
@@ -626,8 +702,8 @@ document.write(`
 <section id="v3-0-0">
 <h2>v3.0.0<a class="headerlink" href="#v3-0-0" title="Permalink to this heading">#</a></h2>
 <p><strong>Release date</strong>: 2023-06-16</p>
-<section id="id14">
-<h3>Added<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<section id="id16">
+<h3>Added<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>A wrapper for COMPASS.</p></li>
 <li><p>New variant filters that account for missing data.</p></li>
@@ -669,8 +745,8 @@ document.write(`
 <li><p><a class="reference internal" href="../pages/methods/missionbio.mosaic.dna.Dna.mutated_cells.html#missionbio.mosaic.dna.Dna.mutated_cells" title="missionbio.mosaic.dna.Dna.mutated_cells"><code class="xref py py-meth docutils literal notranslate"><span class="pre">dna.Dna.mutated_cells()</span></code></a> to get the number of cells with at least 1 mutation in each given clone. This is used in <a class="reference internal" href="../pages/methods/missionbio.mosaic.sample.Sample.signaturemap.html#missionbio.mosaic.sample.Sample.signaturemap" title="missionbio.mosaic.sample.Sample.signaturemap"><code class="xref py py-meth docutils literal notranslate"><span class="pre">sample.Sample.signaturemap()</span></code></a>.</p></li>
 </ul>
 </section>
-<section id="id15">
-<h3>Changed<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<section id="id17">
+<h3>Changed<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">apply_filter</span></code> changed to <code class="docutils literal notranslate"><span class="pre">filter_variants</span></code> in <a class="reference internal" href="../pages/functions/missionbio.mosaic.io.load.html#missionbio.mosaic.io.load" title="missionbio.mosaic.io.load"><code class="xref py py-meth docutils literal notranslate"><span class="pre">io.load()</span></code></a></p></li>
 <li><p>SubcloneTree and SubcloneTreeGraph classes are renamed to Tree and TreeGraph respectively.</p></li>
@@ -686,8 +762,8 @@ document.write(`
 </li>
 </ul>
 </section>
-<section id="id16">
-<h3>Fixed<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<section id="id18">
+<h3>Fixed<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Get indexes maintains the order as per <code class="docutils literal notranslate"><span class="pre">find_list</span></code> when there are duplicates in the <code class="docutils literal notranslate"><span class="pre">find_list</span></code> and <code class="docutils literal notranslate"><span class="pre">order_using_find_list</span></code> is True.</p></li>
 <li><p>DANN score in the variants subclone table is shown correctly for saved h5 files.</p></li>
@@ -756,41 +832,46 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-6-0">v3.6.0</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-12-0">v3.12.0</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#added">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changed">Changed</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed">Fixed</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-4-0">v3.4.0</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-7-0">v3.7.0</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#changed">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Fixed</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-4-0">v3.4.0</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Fixed</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-1-1">v3.1.1</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Fixed</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-1-0">v3.1.0</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Fixed</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updated">Updated</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-0-1">v3.0.1</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Fixed</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#v3-0-0">v3.0.0</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Added</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Changed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Fixed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Added</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Changed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Fixed</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removed">Removed</a></li>
 </ul>
 </li>
@@ -842,8 +923,8 @@ By Saurabh Parikh
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

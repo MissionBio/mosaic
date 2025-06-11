@@ -1,0 +1,909 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Truth.resample &#8212; Mosaic v3.7 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/methods/missionbio.demultiplex.dna.truth.Truth.resample';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Mosaic v3.7 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../manual/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/overview.html">Overview of mosaic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/filtering.html">Filtering barcodes and ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/cnv.html">Manual CNV analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/plot-customizations.html">Plot customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/multi-sample-analysis.html">Multisample analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/additional-plots-and-customizations.html">Additional plots and customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../manual/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna.html">Single Sample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-multisample.html">Multisample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein.html">Single Sample DNA + Protein</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein-multisample.html">Multisample DNA + Protein</a></li>
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/help.html">Additional resources</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../manual/changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interactive Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.workflows.copy_number.CopyNumber.html">CopyNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html">VariantSubcloneTable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Custom Plots</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.heatmap.Heatmap.html">Heatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.lineplot.LinePlot.html">LinePlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.bargraph.BarGraph.html">BarGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.multimap.MultiMap.html">MultiMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.phylotree.PhyloTree.html">PhyloTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.fishplot.Fishplot.html">Fishplot</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DNA assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.dna.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.dna_assignment.DnaAssignment.html">DnaAssignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Protein assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.html">ProbabilityMethod</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/pages/methods/missionbio.demultiplex.dna.truth.Truth.resample.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Truth.resample</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.dna.truth.Truth.resample"><code class="docutils literal notranslate"><span class="pre">Truth.resample()</span></code></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="truth-resample">
+<h1>Truth.resample<a class="headerlink" href="#truth-resample" title="Permalink to this heading">#</a></h1>
+<p class="rubric">missionbio.demultiplex.dna.truth.Truth.resample</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="missionbio.demultiplex.dna.truth.Truth.resample">
+<span class="sig-prename descclassname"><span class="pre">Truth.</span></span><span class="sig-name descname"><span class="pre">resample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Axis</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">closed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convention</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'start'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loffset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Level</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Level</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">TimestampConvertibleTypes</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'start_day'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TimedeltaConvertibleTypes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_keys</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">lib.NoDefault</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">_NoDefault.no_default</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Resampler</span></span></span><a class="headerlink" href="#missionbio.demultiplex.dna.truth.Truth.resample" title="Permalink to this definition">#</a></dt>
+<dd><p>Resample time-series data.</p>
+<p>Convenience method for frequency conversion and resampling of time series.
+The object must have a datetime-like index (<cite>DatetimeIndex</cite>, <cite>PeriodIndex</cite>,
+or <cite>TimedeltaIndex</cite>), or the caller must pass the label of a datetime-like
+series/index to the <code class="docutils literal notranslate"><span class="pre">on</span></code>/<code class="docutils literal notranslate"><span class="pre">level</span></code> keyword parameter.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>rule</strong><span class="classifier">DateOffset, Timedelta or str</span></dt><dd><p>The offset string or object representing target conversion.</p>
+</dd>
+<dt><strong>axis</strong><span class="classifier">{0 or ‘index’, 1 or ‘columns’}, default 0</span></dt><dd><p>Which axis to use for up- or down-sampling. For <cite>Series</cite> this parameter
+is unused and defaults to 0. Must be
+<cite>DatetimeIndex</cite>, <cite>TimedeltaIndex</cite> or <cite>PeriodIndex</cite>.</p>
+</dd>
+<dt><strong>closed</strong><span class="classifier">{‘right’, ‘left’}, default None</span></dt><dd><p>Which side of bin interval is closed. The default is ‘left’
+for all frequency offsets except for ‘M’, ‘A’, ‘Q’, ‘BM’,
+‘BA’, ‘BQ’, and ‘W’ which all have a default of ‘right’.</p>
+</dd>
+<dt><strong>label</strong><span class="classifier">{‘right’, ‘left’}, default None</span></dt><dd><p>Which bin edge label to label bucket with. The default is ‘left’
+for all frequency offsets except for ‘M’, ‘A’, ‘Q’, ‘BM’,
+‘BA’, ‘BQ’, and ‘W’ which all have a default of ‘right’.</p>
+</dd>
+<dt><strong>convention</strong><span class="classifier">{‘start’, ‘end’, ‘s’, ‘e’}, default ‘start’</span></dt><dd><p>For <cite>PeriodIndex</cite> only, controls whether to use the start or
+end of <cite>rule</cite>.</p>
+</dd>
+<dt><strong>kind</strong><span class="classifier">{‘timestamp’, ‘period’}, optional, default None</span></dt><dd><p>Pass ‘timestamp’ to convert the resulting index to a
+<cite>DateTimeIndex</cite> or ‘period’ to convert it to a <cite>PeriodIndex</cite>.
+By default the input representation is retained.</p>
+</dd>
+<dt><strong>loffset</strong><span class="classifier">timedelta, default None</span></dt><dd><p>Adjust the resampled time labels.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.0: </span>You should add the loffset to the <cite>df.index</cite> after the resample.
+See below.</p>
+</div>
+</dd>
+<dt><strong>base</strong><span class="classifier">int, default 0</span></dt><dd><p>For frequencies that evenly subdivide 1 day, the “origin” of the
+aggregated intervals. For example, for ‘5min’ frequency, base could
+range from 0 through 4. Defaults to 0.</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 1.1.0: </span>The new arguments that you should use are ‘offset’ or ‘origin’.</p>
+</div>
+</dd>
+<dt><strong>on</strong><span class="classifier">str, optional</span></dt><dd><p>For a DataFrame, column to use instead of index for resampling.
+Column must be datetime-like.</p>
+</dd>
+<dt><strong>level</strong><span class="classifier">str or int, optional</span></dt><dd><p>For a MultiIndex, level (name or number) to use for
+resampling. <cite>level</cite> must be datetime-like.</p>
+</dd>
+<dt><strong>origin</strong><span class="classifier">Timestamp or str, default ‘start_day’</span></dt><dd><p>The timestamp on which to adjust the grouping. The timezone of origin
+must match the timezone of the index.
+If string, must be one of the following:</p>
+<ul class="simple">
+<li><p>‘epoch’: <cite>origin</cite> is 1970-01-01</p></li>
+<li><p>‘start’: <cite>origin</cite> is the first value of the timeseries</p></li>
+<li><p>‘start_day’: <cite>origin</cite> is the first day at midnight of the timeseries</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+<ul class="simple">
+<li><p>‘end’: <cite>origin</cite> is the last value of the timeseries</p></li>
+<li><p>‘end_day’: <cite>origin</cite> is the ceiling midnight of the last day</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.3.0.</span></p>
+</div>
+</dd>
+<dt><strong>offset</strong><span class="classifier">Timedelta or str, default is None</span></dt><dd><p>An offset timedelta added to the origin.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.0.</span></p>
+</div>
+</dd>
+<dt><strong>group_keys</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to include the group keys in the result index when using
+<code class="docutils literal notranslate"><span class="pre">.apply()</span></code> on the resampled object. Not specifying <code class="docutils literal notranslate"><span class="pre">group_keys</span></code>
+will retain values-dependent behavior from pandas 1.4
+and earlier (see <span class="xref std std-ref">pandas 1.5.0 Release notes</span>
+for examples). In a future version of pandas, the behavior will
+default to the same as specifying <code class="docutils literal notranslate"><span class="pre">group_keys=False</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.5.0.</span></p>
+</div>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>pandas.core.Resampler</dt><dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Resampler</span></code> object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">Series.resample</span></code></dt><dd><p>Resample a Series.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">DataFrame.resample</span></code></dt><dd><p>Resample a DataFrame.</p>
+</dd>
+<dt><a class="reference internal" href="missionbio.demultiplex.dna.truth.Truth.groupby.html#missionbio.demultiplex.dna.truth.Truth.groupby" title="missionbio.demultiplex.dna.truth.Truth.groupby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">groupby</span></code></a></dt><dd><p>Group DataFrame by mapping, function, label, or list of labels.</p>
+</dd>
+<dt><a class="reference internal" href="missionbio.demultiplex.dna.truth.Truth.asfreq.html#missionbio.demultiplex.dna.truth.Truth.asfreq" title="missionbio.demultiplex.dna.truth.Truth.asfreq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asfreq</span></code></a></dt><dd><p>Reindex a DataFrame with the given frequency without grouping.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>See the <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#resampling">user guide</a>
+for more.</p>
+<p>To learn more about the offset strings, please see <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#dateoffset-objects">this link</a>.</p>
+<p class="rubric">Examples</p>
+<p>Start by creating a series with 9 one minute timestamps.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2000&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;T&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">series</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">series</span>
+<span class="go">2000-01-01 00:00:00    0</span>
+<span class="go">2000-01-01 00:01:00    1</span>
+<span class="go">2000-01-01 00:02:00    2</span>
+<span class="go">2000-01-01 00:03:00    3</span>
+<span class="go">2000-01-01 00:04:00    4</span>
+<span class="go">2000-01-01 00:05:00    5</span>
+<span class="go">2000-01-01 00:06:00    6</span>
+<span class="go">2000-01-01 00:07:00    7</span>
+<span class="go">2000-01-01 00:08:00    8</span>
+<span class="go">Freq: T, dtype: int64</span>
+</pre></div>
+</div>
+<p>Downsample the series into 3 minute bins and sum the values
+of the timestamps falling into a bin.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;3T&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-01-01 00:00:00     3</span>
+<span class="go">2000-01-01 00:03:00    12</span>
+<span class="go">2000-01-01 00:06:00    21</span>
+<span class="go">Freq: 3T, dtype: int64</span>
+</pre></div>
+</div>
+<p>Downsample the series into 3 minute bins as above, but label each
+bin using the right edge instead of the left. Please note that the
+value in the bucket used as the label is not included in the bucket,
+which it labels. For example, in the original series the
+bucket <code class="docutils literal notranslate"><span class="pre">2000-01-01</span> <span class="pre">00:03:00</span></code> contains the value 3, but the summed
+value in the resampled bucket with the label <code class="docutils literal notranslate"><span class="pre">2000-01-01</span> <span class="pre">00:03:00</span></code>
+does not include 3 (if it did, the summed value would be 6, not 3).
+To include this value close the right side of the bin interval as
+illustrated in the example below this one.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;3T&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-01-01 00:03:00     3</span>
+<span class="go">2000-01-01 00:06:00    12</span>
+<span class="go">2000-01-01 00:09:00    21</span>
+<span class="go">Freq: 3T, dtype: int64</span>
+</pre></div>
+</div>
+<p>Downsample the series into 3 minute bins as above, but close the right
+side of the bin interval.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;3T&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">closed</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-01-01 00:00:00     0</span>
+<span class="go">2000-01-01 00:03:00     6</span>
+<span class="go">2000-01-01 00:06:00    15</span>
+<span class="go">2000-01-01 00:09:00    15</span>
+<span class="go">Freq: 3T, dtype: int64</span>
+</pre></div>
+</div>
+<p>Upsample the series into 30 second bins.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;30S&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">asfreq</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>   <span class="c1"># Select first 5 rows</span>
+<span class="go">2000-01-01 00:00:00   0.0</span>
+<span class="go">2000-01-01 00:00:30   NaN</span>
+<span class="go">2000-01-01 00:01:00   1.0</span>
+<span class="go">2000-01-01 00:01:30   NaN</span>
+<span class="go">2000-01-01 00:02:00   2.0</span>
+<span class="go">Freq: 30S, dtype: float64</span>
+</pre></div>
+</div>
+<p>Upsample the series into 30 second bins and fill the <code class="docutils literal notranslate"><span class="pre">NaN</span></code>
+values using the <code class="docutils literal notranslate"><span class="pre">ffill</span></code> method.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;30S&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="go">2000-01-01 00:00:00    0</span>
+<span class="go">2000-01-01 00:00:30    0</span>
+<span class="go">2000-01-01 00:01:00    1</span>
+<span class="go">2000-01-01 00:01:30    1</span>
+<span class="go">2000-01-01 00:02:00    2</span>
+<span class="go">Freq: 30S, dtype: int64</span>
+</pre></div>
+</div>
+<p>Upsample the series into 30 second bins and fill the
+<code class="docutils literal notranslate"><span class="pre">NaN</span></code> values using the <code class="docutils literal notranslate"><span class="pre">bfill</span></code> method.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;30S&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">bfill</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="go">2000-01-01 00:00:00    0</span>
+<span class="go">2000-01-01 00:00:30    1</span>
+<span class="go">2000-01-01 00:01:00    1</span>
+<span class="go">2000-01-01 00:01:30    2</span>
+<span class="go">2000-01-01 00:02:00    2</span>
+<span class="go">Freq: 30S, dtype: int64</span>
+</pre></div>
+</div>
+<p>Pass a custom function via <code class="docutils literal notranslate"><span class="pre">apply</span></code></p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">custom_resampler</span><span class="p">(</span><span class="n">arraylike</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arraylike</span><span class="p">)</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">series</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;3T&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">custom_resampler</span><span class="p">)</span>
+<span class="go">2000-01-01 00:00:00     8</span>
+<span class="go">2000-01-01 00:03:00    17</span>
+<span class="go">2000-01-01 00:06:00    26</span>
+<span class="go">Freq: 3T, dtype: int64</span>
+</pre></div>
+</div>
+<p>For a Series with a PeriodIndex, the keyword <cite>convention</cite> can be
+used to control whether to use the start or end of <cite>rule</cite>.</p>
+<p>Resample a year by quarter using ‘start’ <cite>convention</cite>. Values are
+assigned to the first quarter of the period.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">period_range</span><span class="p">(</span><span class="s1">&#39;2012-01-01&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                            <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                            <span class="n">periods</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">2012    1</span>
+<span class="go">2013    2</span>
+<span class="go">Freq: A-DEC, dtype: int64</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span> <span class="n">convention</span><span class="o">=</span><span class="s1">&#39;start&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">asfreq</span><span class="p">()</span>
+<span class="go">2012Q1    1.0</span>
+<span class="go">2012Q2    NaN</span>
+<span class="go">2012Q3    NaN</span>
+<span class="go">2012Q4    NaN</span>
+<span class="go">2013Q1    2.0</span>
+<span class="go">2013Q2    NaN</span>
+<span class="go">2013Q3    NaN</span>
+<span class="go">2013Q4    NaN</span>
+<span class="go">Freq: Q-DEC, dtype: float64</span>
+</pre></div>
+</div>
+<p>Resample quarters by month using ‘end’ <cite>convention</cite>. Values are
+assigned to the last month of the period.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">period_range</span><span class="p">(</span><span class="s1">&#39;2018-01-01&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                                  <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;Q&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                                  <span class="n">periods</span><span class="o">=</span><span class="mi">4</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span>
+<span class="go">2018Q1    1</span>
+<span class="go">2018Q2    2</span>
+<span class="go">2018Q3    3</span>
+<span class="go">2018Q4    4</span>
+<span class="go">Freq: Q-DEC, dtype: int64</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="n">convention</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">asfreq</span><span class="p">()</span>
+<span class="go">2018-03    1.0</span>
+<span class="go">2018-04    NaN</span>
+<span class="go">2018-05    NaN</span>
+<span class="go">2018-06    2.0</span>
+<span class="go">2018-07    NaN</span>
+<span class="go">2018-08    NaN</span>
+<span class="go">2018-09    3.0</span>
+<span class="go">2018-10    NaN</span>
+<span class="go">2018-11    NaN</span>
+<span class="go">2018-12    4.0</span>
+<span class="go">Freq: M, dtype: float64</span>
+</pre></div>
+</div>
+<p>For DataFrame objects, the keyword <cite>on</cite> can be used to specify the
+column instead of the index for resampling.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
+<span class="gp">... </span>     <span class="s1">&#39;volume&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;week_starting&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;01/01/2018&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                    <span class="n">periods</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span>
+<span class="gp">... </span>                                    <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;W&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span>
+<span class="go">   price  volume week_starting</span>
+<span class="go">0     10      50    2018-01-07</span>
+<span class="go">1     11      60    2018-01-14</span>
+<span class="go">2      9      40    2018-01-21</span>
+<span class="go">3     13     100    2018-01-28</span>
+<span class="go">4     14      50    2018-02-04</span>
+<span class="go">5     18     100    2018-02-11</span>
+<span class="go">6     17      40    2018-02-18</span>
+<span class="go">7     19      50    2018-02-25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;week_starting&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="go">               price  volume</span>
+<span class="go">week_starting</span>
+<span class="go">2018-01-31     10.75    62.5</span>
+<span class="go">2018-02-28     17.00    60.0</span>
+</pre></div>
+</div>
+<p>For a DataFrame with MultiIndex, the keyword <cite>level</cite> can be used to
+specify on which level the resampling needs to take place.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">days</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;1/1/2000&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;price&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">19</span><span class="p">],</span>
+<span class="gp">... </span>      <span class="s1">&#39;volume&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">d2</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">(</span>
+<span class="gp">... </span>        <span class="p">[</span><span class="n">days</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;morning&#39;</span><span class="p">,</span> <span class="s1">&#39;afternoon&#39;</span><span class="p">]]</span>
+<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span>
+<span class="go">                      price  volume</span>
+<span class="go">2000-01-01 morning       10      50</span>
+<span class="go">           afternoon     11      60</span>
+<span class="go">2000-01-02 morning        9      40</span>
+<span class="go">           afternoon     13     100</span>
+<span class="go">2000-01-03 morning       14      50</span>
+<span class="go">           afternoon     18     100</span>
+<span class="go">2000-01-04 morning       17      40</span>
+<span class="go">           afternoon     19      50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df2</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">            price  volume</span>
+<span class="go">2000-01-01     21     110</span>
+<span class="go">2000-01-02     22     140</span>
+<span class="go">2000-01-03     32     150</span>
+<span class="go">2000-01-04     36      90</span>
+</pre></div>
+</div>
+<p>If you want to adjust the start of the bins based on a fixed timestamp:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;2000-10-01 23:30:00&#39;</span><span class="p">,</span> <span class="s1">&#39;2000-10-02 00:30:00&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;7min&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rng</span><span class="p">))</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span>
+<span class="go">2000-10-01 23:30:00     0</span>
+<span class="go">2000-10-01 23:37:00     3</span>
+<span class="go">2000-10-01 23:44:00     6</span>
+<span class="go">2000-10-01 23:51:00     9</span>
+<span class="go">2000-10-01 23:58:00    12</span>
+<span class="go">2000-10-02 00:05:00    15</span>
+<span class="go">2000-10-02 00:12:00    18</span>
+<span class="go">2000-10-02 00:19:00    21</span>
+<span class="go">2000-10-02 00:26:00    24</span>
+<span class="go">Freq: 7T, dtype: int64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;17min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:14:00     0</span>
+<span class="go">2000-10-01 23:31:00     9</span>
+<span class="go">2000-10-01 23:48:00    21</span>
+<span class="go">2000-10-02 00:05:00    54</span>
+<span class="go">2000-10-02 00:22:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;17min&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;epoch&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:18:00     0</span>
+<span class="go">2000-10-01 23:35:00    18</span>
+<span class="go">2000-10-01 23:52:00    27</span>
+<span class="go">2000-10-02 00:09:00    39</span>
+<span class="go">2000-10-02 00:26:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;17min&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;2000-01-01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:24:00     3</span>
+<span class="go">2000-10-01 23:41:00    15</span>
+<span class="go">2000-10-01 23:58:00    45</span>
+<span class="go">2000-10-02 00:15:00    45</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<p>If you want to adjust the start of the bins with an <cite>offset</cite> Timedelta, the two
+following lines are equivalent:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;17min&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;start&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:30:00     9</span>
+<span class="go">2000-10-01 23:47:00    21</span>
+<span class="go">2000-10-02 00:04:00    54</span>
+<span class="go">2000-10-02 00:21:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;17min&#39;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="s1">&#39;23h30min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:30:00     9</span>
+<span class="go">2000-10-01 23:47:00    21</span>
+<span class="go">2000-10-02 00:04:00    54</span>
+<span class="go">2000-10-02 00:21:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<p>If you want to take the largest Timestamp as the end of the bins:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;17min&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:35:00     0</span>
+<span class="go">2000-10-01 23:52:00    18</span>
+<span class="go">2000-10-02 00:09:00    27</span>
+<span class="go">2000-10-02 00:26:00    63</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<p>In contrast with the <cite>start_day</cite>, you can use <cite>end_day</cite> to take the ceiling
+midnight of the largest Timestamp as the end of the bins and drop the bins
+not containing data:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;17min&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;end_day&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:38:00     3</span>
+<span class="go">2000-10-01 23:55:00    15</span>
+<span class="go">2000-10-02 00:12:00    45</span>
+<span class="go">2000-10-02 00:29:00    45</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<p>To replace the use of the deprecated <cite>base</cite> argument, you can now use <cite>offset</cite>,
+in this example it is equivalent to have <cite>base=2</cite>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;17min&#39;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="s1">&#39;2min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="go">2000-10-01 23:16:00     0</span>
+<span class="go">2000-10-01 23:33:00     9</span>
+<span class="go">2000-10-01 23:50:00    36</span>
+<span class="go">2000-10-02 00:07:00    39</span>
+<span class="go">2000-10-02 00:24:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+<p>To replace the use of the deprecated <cite>loffset</cite> argument:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pandas.tseries.frequencies</span> <span class="kn">import</span> <span class="n">to_offset</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loffset</span> <span class="o">=</span> <span class="s1">&#39;19min&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts_out</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;17min&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts_out</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">ts_out</span><span class="o">.</span><span class="n">index</span> <span class="o">+</span> <span class="n">to_offset</span><span class="p">(</span><span class="n">loffset</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts_out</span>
+<span class="go">2000-10-01 23:33:00     0</span>
+<span class="go">2000-10-01 23:50:00     9</span>
+<span class="go">2000-10-02 00:07:00    21</span>
+<span class="go">2000-10-02 00:24:00    54</span>
+<span class="go">2000-10-02 00:41:00    24</span>
+<span class="go">Freq: 17T, dtype: int64</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<hr class="docutils" />
+<p>&lt; Class <a class="reference internal" href="../missionbio.demultiplex.dna.truth.Truth.html"><span class="doc">Truth</span></a></p>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.dna.truth.Truth.resample"><code class="docutils literal notranslate"><span class="pre">Truth.resample()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Saurabh Parikh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, Mission Bio.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

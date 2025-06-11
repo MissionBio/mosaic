@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>LikelihoodMethod &#8212; Mosaic v3.7 documentation</title>
+    <title>LikelihoodMethod &#8212; Mosaic v3.12.2 documentation</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
@@ -35,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -129,6 +129,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -137,7 +139,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.7 documentation</p>
+    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -146,6 +148,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/cohort.html">Cohort Analysis Pipeline</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html">Overview of mosaic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/filtering.html">Filtering barcodes and ids</a></li>
@@ -348,10 +351,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -359,7 +362,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -388,8 +391,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.dna.likelihood.LikelihoodMethod"><code class="docutils literal notranslate"><span class="pre">LikelihoodMethod</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 </ul>
             </nav>
         </div>
@@ -430,57 +431,6 @@ this value will reduce the miscalling in incomplete cells.</p></li>
 </dl>
 </dd></dl>
 
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.__init__.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.__init__" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a></p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">param truth<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The truth used to label the cells. It must be filtered to all the relevant</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.af_to_col_index.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.af_to_col_index" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.af_to_col_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">af_to_col_index</span></code></a></p></td>
-<td><p>Convert the AF values to the col indices in the <cite>likelihoods</cite> DataFrame.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.af_to_row_index.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.af_to_row_index" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.af_to_row_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">af_to_row_index</span></code></a></p></td>
-<td><p>Convert the AF values to the row indices in the <cite>likelihoods</cite> DataFrame.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.cluster_truth.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.cluster_truth" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.cluster_truth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cluster_truth</span></code></a></p></td>
-<td><p>Variants that could be different across samples</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.collapse_doublets_to_mixed.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.collapse_doublets_to_mixed" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.collapse_doublets_to_mixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">collapse_doublets_to_mixed</span></code></a></p></td>
-<td><p>Convert all doublet labels to MIXED</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.get_fraction_match.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.get_fraction_match" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.get_fraction_match"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_fraction_match</span></code></a></p></td>
-<td><p>Get the fraction of matches between the truth and the observed data.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.label_cells.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.label_cells" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.label_cells"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_cells</span></code></a></p></td>
-<td><p>Run the demultiplexing</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.likelihoods.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.likelihoods" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.likelihoods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">likelihoods</span></code></a></p></td>
-<td><p>Genrating a probability distribution</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.sim_af.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.sim_af" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.sim_af"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sim_af</span></code></a></p></td>
-<td><p>Simulate allele frequencies for the cells based on the profiles</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.NO_ADO_HET_DISTRIBUTION.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.NO_ADO_HET_DISTRIBUTION" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.NO_ADO_HET_DISTRIBUTION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NO_ADO_HET_DISTRIBUTION</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 </section>
 
 
@@ -529,8 +479,6 @@ this value will reduce the miscalling in incomplete cells.</p></li>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.dna.likelihood.LikelihoodMethod"><code class="docutils literal notranslate"><span class="pre">LikelihoodMethod</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 </ul>
   </nav></div>
 
@@ -579,8 +527,8 @@ By Saurabh Parikh
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

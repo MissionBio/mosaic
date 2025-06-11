@@ -97,6 +97,16 @@ attributes:
        Dictionary containing the values for each barcode and feature combination measured in the assay
        (e.g. `read_counts`, `genotype`, etc.). All the values have the shape (number barcodes) x (number features).
 
+   5. info (:meth:`~missionbio.mosaic.assay._Assay.has_info` / :meth:`~missionbio.mosaic.assay._Assay.add_info` / :meth:`~missionbio.mosaic.assay._Assay.del_info`)
+
+        This can be used to store arbitrary information of various types including dictionaries and pandas dataframes. Unlike row attributes, column
+        attributes, and layers, it is not confined by any shape. The assays also now store their palette in the info as a dictionary.
+        info is a dictionary of dictionaries. To access the info for any one of the samples in the assay use `assay.info[<sample_name>]`.
+        :meth:`~assay._Assay.sampleinfo` is a shortcut for accessing info for single sample assays.
+
+        >>> sample.dna[sample.dna.samples().pop()]["palette"]  # Accessing the palette dictionary
+        >>> sample.dna.sampleinfo["palette"]  # Shorthand to access the info for single sample assays
+
 DNA
 ---
 Described here are common types and descriptions of data stored in each layer of the DNA assay.

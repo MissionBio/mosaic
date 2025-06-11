@@ -1,0 +1,140 @@
+Traceback (most recent call last):
+  File "/Users/casp/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/casp/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/casp/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/casp/miniconda3/envs/missionbio.mosaic/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/Users/casp/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/casp/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/casp/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Save one clone (or one sample) as a separate .h5 file
+# row attribute 'label' stores the group (e.g. clone) information
+# set the `clone` to match the clone that you would like to extract from the others
+clone = 'Clone 2'
+
+# create a new sample with a subset of the cells
+sub_sample = sample[sample.dna.barcodes(clone)]
+
+#save sample2 to disk
+ms.save(sub_sample, "Clone2_Filtered.h5", mode="w")
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+File [0;32m~/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/pandas/compat/_optional.py:141[0m, in [0;36mimport_optional_dependency[0;34m(name, extra, errors, min_version)[0m
+[1;32m    140[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 141[0m     module [38;5;241m=[39m [43mimportlib[49m[38;5;241;43m.[39;49m[43mimport_module[49m[43m([49m[43mname[49m[43m)[49m
+[1;32m    142[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+
+File [0;32m~/miniconda3/envs/missionbio.mosaic/lib/python3.10/importlib/__init__.py:126[0m, in [0;36mimport_module[0;34m(name, package)[0m
+[1;32m    125[0m         level [38;5;241m+[39m[38;5;241m=[39m [38;5;241m1[39m
+[0;32m--> 126[0m [38;5;28;01mreturn[39;00m [43m_bootstrap[49m[38;5;241;43m.[39;49m[43m_gcd_import[49m[43m([49m[43mname[49m[43m[[49m[43mlevel[49m[43m:[49m[43m][49m[43m,[49m[43m [49m[43mpackage[49m[43m,[49m[43m [49m[43mlevel[49m[43m)[49m
+
+File [0;32m<frozen importlib._bootstrap>:1050[0m, in [0;36m_gcd_import[0;34m(name, package, level)[0m
+
+File [0;32m<frozen importlib._bootstrap>:1027[0m, in [0;36m_find_and_load[0;34m(name, import_)[0m
+
+File [0;32m<frozen importlib._bootstrap>:1004[0m, in [0;36m_find_and_load_unlocked[0;34m(name, import_)[0m
+
+[0;31mModuleNotFoundError[0m: No module named 'tables'
+
+During handling of the above exception, another exception occurred:
+
+[0;31mImportError[0m                               Traceback (most recent call last)
+Cell [0;32mIn[27], line 10[0m
+[1;32m      7[0m sub_sample [38;5;241m=[39m sample[sample[38;5;241m.[39mdna[38;5;241m.[39mbarcodes(clone)]
+[1;32m      9[0m [38;5;66;03m#save sample2 to disk[39;00m
+[0;32m---> 10[0m [43mms[49m[38;5;241;43m.[39;49m[43msave[49m[43m([49m[43msub_sample[49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mClone2_Filtered.h5[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[43mmode[49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mw[39;49m[38;5;124;43m"[39;49m[43m)[49m
+
+File [0;32m~/Documents/code/mosaic/src/missionbio/mosaic/io.py:293[0m, in [0;36msave[0;34m(sample, path, raw, mode)[0m
+[1;32m    291[0m [38;5;28;01mwith[39;00m H5Writer(path, mode[38;5;241m=[39mmode) [38;5;28;01mas[39;00m writer:
+[1;32m    292[0m     [38;5;28;01mfor[39;00m assay [38;5;129;01min[39;00m sample[38;5;241m.[39massays():
+[0;32m--> 293[0m         [43mwriter[49m[38;5;241;43m.[39;49m[43mwrite[49m[43m([49m[43massay[49m[43m)[49m
+[1;32m    295[0m     [38;5;28;01mif[39;00m raw:
+[1;32m    296[0m         [38;5;28;01mfor[39;00m raw_count [38;5;129;01min[39;00m sample[38;5;241m.[39mraw_counts():
+
+File [0;32m~/Documents/code/h5/src/missionbio/h5/data/writer.py:94[0m, in [0;36mH5Writer.write[0;34m(self, assay)[0m
+[1;32m     92[0m     assay[38;5;241m.[39mcopy_to(group)
+[1;32m     93[0m [38;5;28;01melse[39;00m:
+[0;32m---> 94[0m     [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m__write_assay[49m[43m([49m[43mgroup[49m[43m,[49m[43m [49m[43massay[49m[43m)[49m
+
+File [0;32m~/Documents/code/h5/src/missionbio/h5/data/writer.py:135[0m, in [0;36mH5Writer.__write_assay[0;34m(self, parent_group, assay)[0m
+[1;32m    132[0m     [38;5;28;01mfor[39;00m key, value [38;5;129;01min[39;00m data[38;5;241m.[39mitems():
+[1;32m    133[0m         [38;5;28mself[39m[38;5;241m.[39m__write_value(group, key, value)
+[0;32m--> 135[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mwrite_info[49m[43m([49m[43massay[49m[38;5;241;43m.[39;49m[43mname[49m[43m,[49m[43m [49m[43massay[49m[38;5;241;43m.[39;49m[43minfo[49m[43m,[49m[43m [49m[43mparent_group[49m[38;5;241;43m.[39;49m[43mname[49m[38;5;241;43m.[39;49m[43msplit[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43m/[39;49m[38;5;124;43m"[39;49m[43m)[49m[43m[[49m[38;5;241;43m-[39;49m[38;5;241;43m1[39;49m[43m][49m[43m)[49m
+
+File [0;32m~/Documents/code/h5/src/missionbio/h5/data/writer.py:171[0m, in [0;36mH5Writer.write_info[0;34m(self, assay_name, info, assay_type)[0m
+[1;32m    169[0m     [38;5;28;01mdel[39;00m info_group[name]
+[1;32m    170[0m data_group [38;5;241m=[39m info_group[38;5;241m.[39mrequire_group(name)
+[0;32m--> 171[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m__encode_info[49m[43m([49m[43mdata_group[49m[43m,[49m[43m [49m[43mvalue[49m[43m)[49m
+
+File [0;32m~/Documents/code/h5/src/missionbio/h5/data/writer.py:184[0m, in [0;36mH5Writer.__encode_info[0;34m(self, data_group, value)[0m
+[1;32m    182[0m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(value, pd[38;5;241m.[39mDataFrame):
+[1;32m    183[0m     typ [38;5;241m=[39m InfoType[38;5;241m.[39mDATAFRAME
+[0;32m--> 184[0m     [43mvalue[49m[38;5;241;43m.[39;49m[43mto_hdf[49m[43m([49m
+[1;32m    185[0m [43m        [49m[38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m__file[49m[38;5;241;43m.[39;49m[43mfilename[49m[43m,[49m
+[1;32m    186[0m [43m        [49m[43mkey[49m[38;5;241;43m=[39;49m[38;5;124;43mf[39;49m[38;5;124;43m"[39;49m[38;5;132;43;01m{[39;49;00m[43mdata_group[49m[38;5;241;43m.[39;49m[43mname[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m/[39;49m[38;5;132;43;01m{[39;49;00m[43mINFO_DATA[49m[38;5;132;43;01m}[39;49;00m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m    187[0m [43m        [49m[38;5;28;43mformat[39;49m[38;5;241;43m=[39;49m[38;5;124;43m"[39;49m[38;5;124;43mfixed[39;49m[38;5;124;43m"[39;49m[43m [49m[38;5;28;43;01mif[39;49;00m[43m [49m[43mvalue[49m[38;5;241;43m.[39;49m[43mempty[49m[43m [49m[38;5;28;43;01melse[39;49;00m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mtable[39;49m[38;5;124;43m"[39;49m[43m,[49m
+[1;32m    188[0m [43m        [49m[43mcomplevel[49m[38;5;241;43m=[39;49m[38;5;241;43m2[39;49m[43m,[49m
+[1;32m    189[0m [43m    [49m[43m)[49m
+[1;32m    190[0m [38;5;28;01melse[39;00m:
+[1;32m    191[0m     typ [38;5;241m=[39m InfoType[38;5;241m.[39mDATASET
+
+File [0;32m~/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/pandas/core/generic.py:2799[0m, in [0;36mNDFrame.to_hdf[0;34m(self, path_or_buf, key, mode, complevel, complib, append, format, index, min_itemsize, nan_rep, dropna, data_columns, errors, encoding)[0m
+[1;32m   2795[0m [38;5;28;01mfrom[39;00m[38;5;250m [39m[38;5;21;01mpandas[39;00m[38;5;21;01m.[39;00m[38;5;21;01mio[39;00m[38;5;250m [39m[38;5;28;01mimport[39;00m pytables
+[1;32m   2797[0m [38;5;66;03m# Argument 3 to "to_hdf" has incompatible type "NDFrame"; expected[39;00m
+[1;32m   2798[0m [38;5;66;03m# "Union[DataFrame, Series]" [arg-type][39;00m
+[0;32m-> 2799[0m [43mpytables[49m[38;5;241;43m.[39;49m[43mto_hdf[49m[43m([49m
+[1;32m   2800[0m [43m    [49m[43mpath_or_buf[49m[43m,[49m
+[1;32m   2801[0m [43m    [49m[43mkey[49m[43m,[49m
+[1;32m   2802[0m [43m    [49m[38;5;28;43mself[39;49m[43m,[49m[43m  [49m[38;5;66;43;03m# type: ignore[arg-type][39;49;00m
+[1;32m   2803[0m [43m    [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m
+[1;32m   2804[0m [43m    [49m[43mcomplevel[49m[38;5;241;43m=[39;49m[43mcomplevel[49m[43m,[49m
+[1;32m   2805[0m [43m    [49m[43mcomplib[49m[38;5;241;43m=[39;49m[43mcomplib[49m[43m,[49m
+[1;32m   2806[0m [43m    [49m[43mappend[49m[38;5;241;43m=[39;49m[43mappend[49m[43m,[49m
+[1;32m   2807[0m [43m    [49m[38;5;28;43mformat[39;49m[38;5;241;43m=[39;49m[38;5;28;43mformat[39;49m[43m,[49m
+[1;32m   2808[0m [43m    [49m[43mindex[49m[38;5;241;43m=[39;49m[43mindex[49m[43m,[49m
+[1;32m   2809[0m [43m    [49m[43mmin_itemsize[49m[38;5;241;43m=[39;49m[43mmin_itemsize[49m[43m,[49m
+[1;32m   2810[0m [43m    [49m[43mnan_rep[49m[38;5;241;43m=[39;49m[43mnan_rep[49m[43m,[49m
+[1;32m   2811[0m [43m    [49m[43mdropna[49m[38;5;241;43m=[39;49m[43mdropna[49m[43m,[49m
+[1;32m   2812[0m [43m    [49m[43mdata_columns[49m[38;5;241;43m=[39;49m[43mdata_columns[49m[43m,[49m
+[1;32m   2813[0m [43m    [49m[43merrors[49m[38;5;241;43m=[39;49m[43merrors[49m[43m,[49m
+[1;32m   2814[0m [43m    [49m[43mencoding[49m[38;5;241;43m=[39;49m[43mencoding[49m[43m,[49m
+[1;32m   2815[0m [43m[49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/pandas/io/pytables.py:298[0m, in [0;36mto_hdf[0;34m(path_or_buf, key, value, mode, complevel, complib, append, format, index, min_itemsize, nan_rep, dropna, data_columns, errors, encoding)[0m
+[1;32m    296[0m path_or_buf [38;5;241m=[39m stringify_path(path_or_buf)
+[1;32m    297[0m [38;5;28;01mif[39;00m [38;5;28misinstance[39m(path_or_buf, [38;5;28mstr[39m):
+[0;32m--> 298[0m     [38;5;28;01mwith[39;00m [43mHDFStore[49m[43m([49m
+[1;32m    299[0m [43m        [49m[43mpath_or_buf[49m[43m,[49m[43m [49m[43mmode[49m[38;5;241;43m=[39;49m[43mmode[49m[43m,[49m[43m [49m[43mcomplevel[49m[38;5;241;43m=[39;49m[43mcomplevel[49m[43m,[49m[43m [49m[43mcomplib[49m[38;5;241;43m=[39;49m[43mcomplib[49m
+[1;32m    300[0m [43m    [49m[43m)[49m [38;5;28;01mas[39;00m store:
+[1;32m    301[0m         f(store)
+[1;32m    302[0m [38;5;28;01melse[39;00m:
+
+File [0;32m~/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/pandas/io/pytables.py:559[0m, in [0;36mHDFStore.__init__[0;34m(self, path, mode, complevel, complib, fletcher32, **kwargs)[0m
+[1;32m    556[0m [38;5;28;01mif[39;00m [38;5;124m"[39m[38;5;124mformat[39m[38;5;124m"[39m [38;5;129;01min[39;00m kwargs:
+[1;32m    557[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m([38;5;124m"[39m[38;5;124mformat is not a defined argument for HDFStore[39m[38;5;124m"[39m)
+[0;32m--> 559[0m tables [38;5;241m=[39m [43mimport_optional_dependency[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mtables[39;49m[38;5;124;43m"[39;49m[43m)[49m
+[1;32m    561[0m [38;5;28;01mif[39;00m complib [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m complib [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m tables[38;5;241m.[39mfilters[38;5;241m.[39mall_complibs:
+[1;32m    562[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    563[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mcomplib only supports [39m[38;5;132;01m{[39;00mtables[38;5;241m.[39mfilters[38;5;241m.[39mall_complibs[38;5;132;01m}[39;00m[38;5;124m compression.[39m[38;5;124m"[39m
+[1;32m    564[0m     )
+
+File [0;32m~/miniconda3/envs/missionbio.mosaic/lib/python3.10/site-packages/pandas/compat/_optional.py:144[0m, in [0;36mimport_optional_dependency[0;34m(name, extra, errors, min_version)[0m
+[1;32m    142[0m [38;5;28;01mexcept[39;00m [38;5;167;01mImportError[39;00m:
+[1;32m    143[0m     [38;5;28;01mif[39;00m errors [38;5;241m==[39m [38;5;124m"[39m[38;5;124mraise[39m[38;5;124m"[39m:
+[0;32m--> 144[0m         [38;5;28;01mraise[39;00m [38;5;167;01mImportError[39;00m(msg)
+[1;32m    145[0m     [38;5;28;01melse[39;00m:
+[1;32m    146[0m         [38;5;28;01mreturn[39;00m [38;5;28;01mNone[39;00m
+
+[0;31mImportError[0m: Missing optional dependency 'pytables'.  Use pip or conda to install pytables.
+

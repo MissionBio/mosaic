@@ -4,7 +4,76 @@ Changelog
 
 .. py:currentmodule:: missionbio.mosaic
 
-v3.6.0
+v3.12.0
+-------
+**Release date**: 2025-21-04
+
+
+Added
+~~~~~
+
+A new attribute for all assays: ``info``. This can be used to store arbitrary information of various types including pandas dataframes and dictionaries.
+Unlike row attributes, column attributes, and layers, it is not confined to any shape. For example, the signature of the clones generated for only
+the somatic variants would have fewer columns than ids and fewer rows than cells in the assay. Compass stores a lot information in it's variables,
+until now there was no easy way of saving it in the h5. These are dataframes with shapes that do not align with that of the assay. These values can
+now be stored in the assay ``info`` as follows:
+
+>>> sample.dna.add_info("somatic_signature", compass.node_genotypes_)
+>>> sample.dna.add_info("assignment_probability", compass.probability_)
+
+The assays also now store their palette in the info as a dictionary. :meth:`~assay._Assay.sampleinfo` is a shortcut for accessing info for single sample assays.
+
+>>> sample.dna.sampleinfo["palette"]
+
+The functions for handling info are :meth:`~assay._Assay.has_info`, :meth:`~assay._Assay.add_info`, and :meth:`~assay._Assay.del_info`
+
+**Updates to COMPASS**
+
+* Update to the latest version of `COMPASS <https://github.com/MissionBio/compass/tree/e3e0169bbe52555b751752699cb22399c1b70763>`_
+* Add option to rename compass clones with a new probability value using :meth:`~algorithms.compass.COMPASS.relabel`.
+* Allow passing prefixes for file names to :meth:`~algorithms.compass.COMPASS.run`
+* Added option to get fractions of each clone using :meth:`~algorithms.compass.COMPASS.node_fractions`
+* Allow passing directories to :meth:`~algorithms.compass.COMPASS.run`
+* COMPASS can call LOH clones without calling CNV using the ``cnv`` parameter in :meth:`~algorithms.compass.COMPASS.run`.
+
+**Plotting updates**
+
+* Cytoband information added to the CNV ploidy :meth:`~cnv.Cnv.signaturemap` and :meth:`~cnv.Cnv.plot_ploidy` figures. These are also shown in the CopyNumber workflow.
+* ``ticks`` option to :meth:`~assay._Assay.heatmap` to disable plotting of ticks for assay with large number of ids.
+* The scatterplot size modifies depending on the length of the labels to ensure that the plotting area is constant.
+
+**Updates to CNV**
+
+* Locally stored gene name annotations are used instead of pulling them from Ensembl when running :meth:`~cnv.Cnv.get_gene_names`.
+* When using :meth:`~cnv.Cnv.get_gene_names`, the gene name will always be the best match for the amplicon instead of mutliple values separated by a ``/``
+* :meth:`~cnv.Cnv.get_gene_names` returns the gene names while also adding it to the column attributes.
+
+**Updates to DNA**
+
+* :meth:`~dna.Dna.get_annotated_ids` returns a list of human-readable names for all the variants in the assay.
+* :meth:`~dna.Dna.set_annotated_ids` updates the ids to be human-readable names.
+* :meth:`dna.Dna.genome` to easily access the `genome_version` metadata value.
+* Store annotations in the DNA assay `info` instead of the column attributes to ease their access.
+* :meth:`dna.Dna.snps` to quickly get the ids that are SNPs.
+
+**Functionality updates**
+
+* Option to disable matching of ids in :class:`~samplegroup.SampleGroup` using the ``match_ids`` parameter.
+* Ability to load h5 files with only raw counts.
+* `whitelist=[]` is treated just like `whitelist=None` in :meth:`~io.load`
+* Deduplication of barcodes is done using integers instead of sample names and no warning is raised when deduplication of barcodes is performed.
+  It can be manually performed using :meth:`~assay._Assay.deduplicate_barcodes` and inverted using :meth:`~assay._Assay.normalize_barcodes`.
+* Store the palette in the `info` instead of the metadata of the assay, making saved h5 files valid in format even with the stored palette.
+* :attr:`sample.Sample.vdj` to easily access the VDJ assay in the h5 file.
+
+Fixed
+~~~~~
+* ADO score shown in the figure is the same as the ADO score shown in the table in the :class:`~workflows.variant_subclone_table.VariantSubcloneTable` workflow
+* Use the correct genome version from the dna assay in :class:`~algorithms.compass.COMPASS`
+* :class:`~dna.Dna.get_annotations` raises an appropriate error when the genome version is not supported.
+
+
+v3.7.0
 ------
 **Release date**: 2024-08-05
 

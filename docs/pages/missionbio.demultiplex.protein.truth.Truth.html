@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Truth &#8212; Mosaic v3.7 documentation</title>
+    <title>Truth &#8212; Mosaic v3.12.2 documentation</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
@@ -35,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -129,6 +129,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -137,7 +139,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.7 documentation</p>
+    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -146,6 +148,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/cohort.html">Cohort Analysis Pipeline</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html">Overview of mosaic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/filtering.html">Filtering barcodes and ids</a></li>
@@ -348,10 +351,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -359,7 +362,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -388,8 +391,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.protein.truth.Truth"><code class="docutils literal notranslate"><span class="pre">Truth</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 </ul>
             </nav>
         </div>
@@ -420,124 +421,6 @@ document.write(`
 </dl>
 </dd></dl>
 
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.__init__.html#missionbio.demultiplex.protein.truth.Truth.__init__" title="missionbio.demultiplex.protein.truth.Truth.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a></p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">param celltypes<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A list of cell types.</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.add_ab.html#missionbio.demultiplex.protein.truth.Truth.add_ab" title="missionbio.demultiplex.protein.truth.Truth.add_ab"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_ab</span></code></a></p></td>
-<td><p>Add an antibody to a cell type and all its descendants</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.add_cell.html#missionbio.demultiplex.protein.truth.Truth.add_cell" title="missionbio.demultiplex.protein.truth.Truth.add_cell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_cell</span></code></a></p></td>
-<td><p>Add a celltype to the truth.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.add_doublets.html#missionbio.demultiplex.protein.truth.Truth.add_doublets" title="missionbio.demultiplex.protein.truth.Truth.add_doublets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_doublets</span></code></a></p></td>
-<td><p>Adds doublets to the truth.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.assert_valid.html#missionbio.demultiplex.protein.truth.Truth.assert_valid" title="missionbio.demultiplex.protein.truth.Truth.assert_valid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assert_valid</span></code></a></p></td>
-<td><p>Assert that the truth is valid.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.builtin.html#missionbio.demultiplex.protein.truth.Truth.builtin" title="missionbio.demultiplex.protein.truth.Truth.builtin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">builtin</span></code></a></p></td>
-<td><p>The default truth for PBMCs.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.cellnames.html#missionbio.demultiplex.protein.truth.Truth.cellnames" title="missionbio.demultiplex.protein.truth.Truth.cellnames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cellnames</span></code></a></p></td>
-<td><p>Returns a list of cell type names.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.complete.html#missionbio.demultiplex.protein.truth.Truth.complete" title="missionbio.demultiplex.protein.truth.Truth.complete"><code class="xref py py-obj docutils literal notranslate"><span class="pre">complete</span></code></a></p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>True, when all the celltypes contain the expression of</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.copy.html#missionbio.demultiplex.protein.truth.Truth.copy" title="missionbio.demultiplex.protein.truth.Truth.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a></p></td>
-<td><p>Returns a deep copy of the truth.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.del_ab.html#missionbio.demultiplex.protein.truth.Truth.del_ab" title="missionbio.demultiplex.protein.truth.Truth.del_ab"><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_ab</span></code></a></p></td>
-<td><p>Delete an antibody from the truth.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.del_cell.html#missionbio.demultiplex.protein.truth.Truth.del_cell" title="missionbio.demultiplex.protein.truth.Truth.del_cell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">del_cell</span></code></a></p></td>
-<td><p>Delete a clone from the truth.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.get.html#missionbio.demultiplex.protein.truth.Truth.get" title="missionbio.demultiplex.protein.truth.Truth.get"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get</span></code></a></p></td>
-<td><p>Returns the cell type with the specified name.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.has_cell.html#missionbio.demultiplex.protein.truth.Truth.has_cell" title="missionbio.demultiplex.protein.truth.Truth.has_cell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_cell</span></code></a></p></td>
-<td><p>Checks if the truth has a cell type with the specified name.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.is_panel_compatible.html#missionbio.demultiplex.protein.truth.Truth.is_panel_compatible" title="missionbio.demultiplex.protein.truth.Truth.is_panel_compatible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_panel_compatible</span></code></a></p></td>
-<td><p>Checks if the panel can be read using <cite>read_panel</cite> and is compatible with hashing.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.isolate.html#missionbio.demultiplex.protein.truth.Truth.isolate" title="missionbio.demultiplex.protein.truth.Truth.isolate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isolate</span></code></a></p></td>
-<td><p>Isolate the truth to only contain the given cell and its descendants.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.palette.html#missionbio.demultiplex.protein.truth.Truth.palette" title="missionbio.demultiplex.protein.truth.Truth.palette"><code class="xref py py-obj docutils literal notranslate"><span class="pre">palette</span></code></a></p></td>
-<td><p>Get the palette of the truth.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.plot.html#missionbio.demultiplex.protein.truth.Truth.plot" title="missionbio.demultiplex.protein.truth.Truth.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a></p></td>
-<td><p>Plot the truth as a tree.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.read_panel.html#missionbio.demultiplex.protein.truth.Truth.read_panel" title="missionbio.demultiplex.protein.truth.Truth.read_panel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_panel</span></code></a></p></td>
-<td><p>Reads the truth from a csv panel file.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.read_yaml.html#missionbio.demultiplex.protein.truth.Truth.read_yaml" title="missionbio.demultiplex.protein.truth.Truth.read_yaml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_yaml</span></code></a></p></td>
-<td><p>Reads a truth from a YAML file.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.set_color.html#missionbio.demultiplex.protein.truth.Truth.set_color" title="missionbio.demultiplex.protein.truth.Truth.set_color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_color</span></code></a></p></td>
-<td><p>Set the color of a cell type.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.signature.html#missionbio.demultiplex.protein.truth.Truth.signature" title="missionbio.demultiplex.protein.truth.Truth.signature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">signature</span></code></a></p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A signature matrix of the truth. 1 for ab+, 0 for ab-,</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.to_yaml.html#missionbio.demultiplex.protein.truth.Truth.to_yaml" title="missionbio.demultiplex.protein.truth.Truth.to_yaml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_yaml</span></code></a></p></td>
-<td><p>Writes the truth to a YAML file.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.truth.Truth.trim.html#missionbio.demultiplex.protein.truth.Truth.trim" title="missionbio.demultiplex.protein.truth.Truth.trim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trim</span></code></a></p></td>
-<td><p>Trim the truth to remove the given cell and all its descendants.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.protein.truth.Truth.COLOR.html#missionbio.demultiplex.protein.truth.Truth.COLOR" title="missionbio.demultiplex.protein.truth.Truth.COLOR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COLOR</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.protein.truth.Truth.EXPRESSION.html#missionbio.demultiplex.protein.truth.Truth.EXPRESSION" title="missionbio.demultiplex.protein.truth.Truth.EXPRESSION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EXPRESSION</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.protein.truth.Truth.PARENT.html#missionbio.demultiplex.protein.truth.Truth.PARENT" title="missionbio.demultiplex.protein.truth.Truth.PARENT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PARENT</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.protein.truth.Truth.PROFILES.html#missionbio.demultiplex.protein.truth.Truth.PROFILES" title="missionbio.demultiplex.protein.truth.Truth.PROFILES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PROFILES</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.protein.truth.Truth.SOURCE.html#missionbio.demultiplex.protein.truth.Truth.SOURCE" title="missionbio.demultiplex.protein.truth.Truth.SOURCE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SOURCE</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.protein.truth.Truth.VERSION.html#missionbio.demultiplex.protein.truth.Truth.VERSION" title="missionbio.demultiplex.protein.truth.Truth.VERSION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VERSION</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 </section>
 
 
@@ -586,8 +469,6 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.protein.truth.Truth"><code class="docutils literal notranslate"><span class="pre">Truth</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 </ul>
   </nav></div>
 
@@ -636,8 +517,8 @@ By Saurabh Parikh
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

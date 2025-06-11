@@ -126,7 +126,7 @@ it is possible to install Mosaic through the `missionbio conda channel <https://
 
     .. code-block:: console
 
-       $ conda create --name mosaic -c missionbio -c conda-forge missionbio.mosaic
+       $ conda create --name mosaic -c missionbio -c conda-forge "missionbio.tertiary" "python-kaleido=0.1.0"
 
 4. Open mosaic environment and jupyter notebook:
     When you want to access your mosaic environment and open a jupyter notebook, always run the following
@@ -202,7 +202,7 @@ then install the ``python-kaleido`` package:
 
 .. code-block:: console
 
-   $ conda install -c conda-forge python-kaleido=0.1.0
+   $ conda install -c conda-forge "python-kaleido=0.1.0"
 
 Then relaunch the jupyter server and run the notebook again.
 

@@ -1,0 +1,622 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Protein.assign_from_truth &#8212; Mosaic v3.7 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"chtml": {"displayAlign": "left"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/methods/missionbio.mosaic.protein.Protein.assign_from_truth';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Mosaic v3.7 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../manual/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/overview.html">Overview of mosaic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/filtering.html">Filtering barcodes and ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/cnv.html">Manual CNV analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/plot-customizations.html">Plot customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/multi-sample-analysis.html">Multisample analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/additional-plots-and-customizations.html">Additional plots and customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/code-snippets.html">Code Snippets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../manual/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna.html">Single Sample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-multisample.html">Multisample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein.html">Single Sample DNA + Protein</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/dna-protein-multisample.html">Multisample DNA + Protein</a></li>
+
+
+
+
+
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/help.html">Additional resources</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../manual/changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interactive Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.workflows.copy_number.CopyNumber.html">CopyNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html">VariantSubcloneTable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Custom Plots</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.heatmap.Heatmap.html">Heatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.lineplot.LinePlot.html">LinePlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.bargraph.BarGraph.html">BarGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.multimap.MultiMap.html">MultiMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.phylotree.PhyloTree.html">PhyloTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.plotting.fishplot.Fishplot.html">Fishplot</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DNA assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.dna.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.dna_assignment.DnaAssignment.html">DnaAssignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Protein assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.html">ProbabilityMethod</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/pages/methods/missionbio.mosaic.protein.Protein.assign_from_truth.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Protein.assign_from_truth</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.protein.Protein.assign_from_truth"><code class="docutils literal notranslate"><span class="pre">Protein.assign_from_truth()</span></code></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="protein-assign-from-truth">
+<h1>Protein.assign_from_truth<a class="headerlink" href="#protein-assign-from-truth" title="Permalink to this heading">#</a></h1>
+<p class="rubric">missionbio.mosaic.protein.Protein.assign_from_truth</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="missionbio.mosaic.protein.Protein.assign_from_truth">
+<span class="sig-prename descclassname"><span class="pre">Protein.</span></span><span class="sig-name descname"><span class="pre">assign_from_truth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">truth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../missionbio.demultiplex.protein.truth.Truth.html#missionbio.demultiplex.protein.truth.Truth" title="missionbio.demultiplex.protein.truth.Truth"><span class="pre">Truth</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">merge</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'mixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_prob_diff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_adjusted_mixing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_distance_for_doublet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sticky_antibodies</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">('IgG1',</span> <span class="pre">'IgG2a',</span> <span class="pre">'IgG2b')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod"><span class="pre">ProbabilityMethod</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.html#missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod" title="missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod"><span class="pre">LikelihoodMethod</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.assign_from_truth" title="Permalink to this definition">#</a></dt>
+<dd><p>Label each cell with the most likely cell type from the truth.</p>
+<p>The accuracy of the assignment is subject to the accuracy of the NSP normalization.
+If the scaling factor is not estimated correctly the assignment will have a large
+number of unassigned cells. In such cases, try to estimate the scaling factor using
+the <a class="reference internal" href="missionbio.mosaic.protein.Protein.read_depth_dependence.html#missionbio.mosaic.protein.Protein.read_depth_dependence" title="missionbio.mosaic.protein.Protein.read_depth_dependence"><code class="xref py py-meth docutils literal notranslate"><span class="pre">read_depth_dependence()</span></code></a> method of the
+isotype control.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl>
+<dt><strong>truth:</strong></dt><dd><p>A Truth object or a path to a YAML file containing the truth. If None, the
+<a class="reference internal" href="missionbio.demultiplex.protein.truth.Truth.builtin.html#missionbio.demultiplex.protein.truth.Truth.builtin" title="missionbio.demultiplex.protein.truth.Truth.builtin"><code class="xref py py-meth docutils literal notranslate"><span class="pre">builtin()</span></code></a> truth for PBMCs is used. It
+can be visualised using the <a class="reference internal" href="missionbio.demultiplex.protein.truth.Truth.plot.html#missionbio.demultiplex.protein.truth.Truth.plot" title="missionbio.demultiplex.protein.truth.Truth.plot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">plot()</span></code></a>
+function on the truth object.</p>
+</dd>
+<dt><strong>merge:</strong></dt><dd><p>How to merge cell types with multiple clusters</p>
+<dl class="simple">
+<dt>“none”: Keep all clusters. The doublets are identified by the</dt><dd><p>“:” in the cluster name</p>
+</dd>
+<dt>“mixed”: Merge all doublet clusters into a single “Mixed” cluster</dt><dd><p>e.g. “T cell:B cell” and “T cell:Monocytes” are merged into “Mixed”</p>
+</dd>
+<dt>“labeled”: Merge clusters with multiple cell types into a single</dt><dd><p>cluster. e.g. T cell-1, T cell-2 are merged into T-cell</p>
+</dd>
+<dt>“all”: Merge all “Unassigned” clusters into a single cluster</dt><dd><p>e.g. Unassigned-1, Unassigned-2 are merged into “Unassigned”</p>
+</dd>
+</dl>
+</dd>
+<dt><strong>min_prob_diff:</strong></dt><dd><p>Minimum difference in probability between the most likely and second most likely cell
+type for a cell to be assigned to a single cell type. This is also used for the
+assignment of doublet clusters. Here the probability refers to the probability of the
+cluster being a particular cell type given the normalized read counts. See the example.</p>
+</dd>
+<dt><strong>max_adjusted_mixing:</strong></dt><dd><p>Maximum adjusted mixing rate for a cluster with a mixed signature to be labelled as
+“Mixed”. If the adjusted mixing rate is higher, the doublet is assigned to the
+“Mixed Like” cluster.</p>
+</dd>
+<dt><strong>min_distance_for_doublet:</strong></dt><dd><p>The minimum number of antibodies that must be different between two clones for their
+doublet to be considered. Increase this if too many mixed cells are observed.</p>
+</dd>
+<dt><strong>sticky_antibodies:</strong></dt><dd><p>Antibodies that should be used to identify sticky cells</p>
+</dd>
+<dt><strong>method: {None, “probability”, “likelihood”}</strong></dt><dd><p>Method to use for the assignment. If None, the method is chosen based on the truth.
+If the truth has missing antibodies, the method is set to “probability”, otherwise
+it is set to “likelihood”. “probability” works best when a few antibodies and cell
+types are present in the sample. This method can call ‘Unassigned’ clones for
+anything that does not match the Truth. “likelihood” works only when the same
+antibodies are present in the truth for all cell types. This method classifies the
+cells into one of the Truth celltypes. It cannot call ‘Unassigned’ clones.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>PACE object:</dt><dd><p>It stores the labels for the cells with the most likely cell type from the truth.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="missionbio.mosaic.protein.Protein.cluster_and_label.html#missionbio.mosaic.protein.Protein.cluster_and_label" title="missionbio.mosaic.protein.Protein.cluster_and_label"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cluster_and_label()</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>This modifies the <cite>LABEL</cite> attribute of the assay.</p>
+<p class="rubric">Examples</p>
+<p>Let there be three cell types in the truth structured as follows:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>            Root
+             |
+       +-----+-----+
+       |           |
+    T-cell      B-cell
+(CD3+, CD19-)
+      |
+  CD4+ T-cell
+</pre></div>
+</div>
+<p>We are interested in finding the probability of a cell belonging to each of these cell
+types. NSP normalizes the reads such that the average signal is at 1 and the average
+noise (background) is at 0. The probability of a cell being a particular cell type is
+calculated using the NSP normalized read counts clipped at 0 and 1. The likelihood model
+is a beta distribution with the likelihood of signal equal to the likelihood of noise at
+NSP = 0.5. Using the Bayes theorem, the probability of a cell being a particular cell type
+given the normalized read counts (<cite>Data</cite> in the equations below) is calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[P(T cell | Data) = \frac{P(Data | T cell) * P(T cell)}{P(Data)}\]</div>
+<div class="math notranslate nohighlight">
+\[P(T cell | Data) = \frac{P(Data | T cell) * P(T cell)}
+{P(Data | T cell) * P(T cell) + P(Data | Not T cell) * P(Not T cell)}\]</div>
+<p>Since the prior is not known, we assume that <span class="math notranslate nohighlight">\(P(T cell) = P(Not T cell)\)</span>. therefore,</p>
+<div class="math notranslate nohighlight">
+\[P(T cell | Data) = \frac{P(Data | T cell)}{P(Data | T cell) + P(Data | Not T cell)}\]</div>
+<p>A cell will be a T cell when it expresses all the antibodies as per the truth.</p>
+<div class="math notranslate nohighlight">
+\[P(Data | T cell) = L(CD3+ and C19-) = L(CD3+) * L(CD19-)\]</div>
+<p>A cell is not a T cell if it expresses any one or more of the antibodies incorrectly.</p>
+<div class="math notranslate nohighlight">
+\[P(Data | Not T cell) = L(CD3- or C19+) = L(CD3+ and CD19+) +
+L(CD3- and CD19-) + L(CD3- and CD19+)\]</div>
+<p>If the cell is truly a T cell, then L(CD3- &amp; CD19+) can be ignored because it will be much
+smaller than the first two terms. If the cell is not a T cell, then P(Data | T cell) will
+be much smaller compared to one of the first two terms in P(Data | Not T cell), and again
+L(CD3- &amp; CD19+) can be ignored as the probability will be close to zero even without
+including this term. Therefore, the probability of a cell not being a T cell can
+be approximated as the sum of the probabilities of the cell not correctly expressing any one
+of the antibodies. This approximation is used to avoid computing the exponentially
+increasing number of terms that will be present as the number antibodies increase.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Basedon on this formulation, <span class="math notranslate nohighlight">\(P(T cell) + P(B cell) + P(CD4+ T cell)\)</span> does not have
+to add up to 1.</p>
+</div>
+<p>If <span class="math notranslate nohighlight">\(P(T cell) = 0.99\)</span>, <span class="math notranslate nohighlight">\(P(B cell) = 0.1\)</span>, and <span class="math notranslate nohighlight">\(P(CD4+ T cell) = 0.1\)</span>
+For <code class="docutils literal notranslate"><span class="pre">min_prob_diff=0.8</span></code>, the cell will be assigned to <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">cell</span></code>, since
+<code class="docutils literal notranslate"><span class="pre">P(T</span> <span class="pre">cell)</span> <span class="pre">-</span> <span class="pre">P(B</span> <span class="pre">cell)</span> <span class="pre">=</span> <span class="pre">0.89</span> <span class="pre">&gt;</span> <span class="pre">0.8</span></code> For <code class="docutils literal notranslate"><span class="pre">min_prob_diff=0.05</span></code>, the cell will be assigned
+to <code class="docutils literal notranslate"><span class="pre">CD4+</span> <span class="pre">T</span> <span class="pre">cell</span></code>. This happens because the assignment is performed from the root to the
+leaves. The cell is first assigned to <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">cell</span></code> and then to <code class="docutils literal notranslate"><span class="pre">CD4+</span> <span class="pre">T</span> <span class="pre">cell</span></code>. Because all
+<code class="docutils literal notranslate"><span class="pre">CD4+</span> <span class="pre">T</span> <span class="pre">cells</span></code> are also <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">cells</span></code>, the probability of <code class="docutils literal notranslate"><span class="pre">CD4+</span> <span class="pre">T</span> <span class="pre">cell</span></code> is higher than
+<code class="docutils literal notranslate"><span class="pre">B</span> <span class="pre">cell</span></code>, but since the <code class="docutils literal notranslate"><span class="pre">min_prob_diff</span></code> is <cite>0.05</cite> which is lower than
+<code class="docutils literal notranslate"><span class="pre">P(CD4+</span> <span class="pre">T</span> <span class="pre">cell)</span></code>, the cell is assigned to <code class="docutils literal notranslate"><span class="pre">CD4+</span> <span class="pre">T</span> <span class="pre">cell</span></code>. If there was also
+<code class="docutils literal notranslate"><span class="pre">CD8+</span> <span class="pre">T</span> <span class="pre">cell</span></code> in the tree, <code class="docutils literal notranslate"><span class="pre">min_prob_diff</span></code> would have been compared to
+<code class="docutils literal notranslate"><span class="pre">P(CD4+</span> <span class="pre">T</span> <span class="pre">cell)</span> <span class="pre">-</span> <span class="pre">P(CD8+</span> <span class="pre">T</span> <span class="pre">cell)</span></code>.</p>
+</dd></dl>
+
+<hr class="docutils" />
+<p>&lt; Class <a class="reference internal" href="../missionbio.mosaic.protein.Protein.html"><span class="doc">Protein</span></a></p>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.protein.Protein.assign_from_truth"><code class="docutils literal notranslate"><span class="pre">Protein.assign_from_truth()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Saurabh Parikh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021, Mission Bio.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

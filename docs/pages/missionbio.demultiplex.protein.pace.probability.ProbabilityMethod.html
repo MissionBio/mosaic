@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>ProbabilityMethod &#8212; Mosaic v3.7 documentation</title>
+    <title>ProbabilityMethod &#8212; Mosaic v3.12.2 documentation</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
@@ -35,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -130,6 +130,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -138,7 +140,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.7 documentation</p>
+    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -147,6 +149,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/cohort.html">Cohort Analysis Pipeline</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html">Overview of mosaic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/filtering.html">Filtering barcodes and ids</a></li>
@@ -349,10 +352,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -360,7 +363,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -389,8 +392,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod"><code class="docutils literal notranslate"><span class="pre">ProbabilityMethod</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 </ul>
             </nav>
         </div>
@@ -483,71 +484,6 @@ there was also <code class="docutils literal notranslate"><span class="pre">CD8+
 to <code class="docutils literal notranslate"><span class="pre">P(CD4+</span> <span class="pre">T</span> <span class="pre">cell)</span> <span class="pre">-</span> <span class="pre">P(CD8+</span> <span class="pre">T</span> <span class="pre">cell)</span></code>.</p>
 </dd></dl>
 
-<section id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.__init__.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.__init__" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a></p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">param protein<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The protein assay</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.assignment_probabilities.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.assignment_probabilities" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.assignment_probabilities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">assignment_probabilities</span></code></a></p></td>
-<td><p>Compute the probability of each cell type for each row in the expression matrix</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.classify_mixed_clusters.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.classify_mixed_clusters" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.classify_mixed_clusters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">classify_mixed_clusters</span></code></a></p></td>
-<td><p>Assigns the doublets as &quot;Mixed&quot; if they have an adjusted mixing rate lower than the max_adjusted_mixing or &quot;Mixed like&quot; for higher adjusted mixing rates.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.clipped_normalized_reads.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.clipped_normalized_reads" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.clipped_normalized_reads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clipped_normalized_reads</span></code></a></p></td>
-<td><p>Clip the NSP counts to the range [0, 1]</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.clipped_signature.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.clipped_signature" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.clipped_signature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">clipped_signature</span></code></a></p></td>
-<td><p>The mean NSP values rounded to 0 or 1</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.cluster_truth.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.cluster_truth" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.cluster_truth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cluster_truth</span></code></a></p></td>
-<td><p>The truth that defines the clusters in the protein assay</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.get_normalized_reads.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.get_normalized_reads" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.get_normalized_reads"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_normalized_reads</span></code></a></p></td>
-<td><p><dl class="field-list simple">
-<dt class="field-odd">returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The normalized counts in the protein assay as a dataframe</p>
-</dd>
-</dl>
-</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.label_cells.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.label_cells" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.label_cells"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_cells</span></code></a></p></td>
-<td><p>Adds the <cite>LABEL</cite> row attribute based on the probabilistic method of assignment</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.label_sticky_cells.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.label_sticky_cells" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.label_sticky_cells"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_sticky_cells</span></code></a></p></td>
-<td><p>Assigns the &quot;Sticky&quot; labels to the cells</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.likelihoods.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.likelihoods" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.likelihoods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">likelihoods</span></code></a></p></td>
-<td><p>Create the probability density function of the likelihood of each expression type.</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.log_likelihood.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.log_likelihood" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.log_likelihood"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_likelihood</span></code></a></p></td>
-<td><p>Calculate the log-likelihood of the data.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.palette.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.palette" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.palette"><code class="xref py py-obj docutils literal notranslate"><span class="pre">palette</span></code></a></p></td>
-<td><p>Create a palette for the cell types by giving each sub-celltype a unique color</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="attributes">
-<h2>Attributes<a class="headerlink" href="#attributes" title="Permalink to this heading">#</a></h2>
-<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.CLUSTER.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.CLUSTER" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.CLUSTER"><code class="xref py py-obj docutils literal notranslate"><span class="pre">CLUSTER</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
 </section>
 
 
@@ -587,8 +523,6 @@ to <code class="docutils literal notranslate"><span class="pre">P(CD4+</span> <s
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod"><code class="docutils literal notranslate"><span class="pre">ProbabilityMethod</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a></li>
 </ul>
   </nav></div>
 
@@ -637,8 +571,8 @@ By Saurabh Parikh
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

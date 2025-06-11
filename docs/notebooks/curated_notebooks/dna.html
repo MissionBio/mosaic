@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Single Sample DNA-only &#8212; Mosaic v3.7 documentation</title>
+    <title>Single Sample DNA-only &#8212; Mosaic v3.12.2 documentation</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
@@ -35,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -129,6 +129,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../../index.html">
   
@@ -137,7 +139,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.7 documentation</p>
+    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -146,6 +148,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/cohort.html">Cohort Analysis Pipeline</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview of mosaic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../filtering.html">Filtering barcodes and ids</a></li>
@@ -348,10 +351,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -359,7 +362,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -459,27 +462,27 @@ All available methods and options - documented <a class="reference external" hre
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import mosaic libraries</span>
-<span class="kn">import</span> <span class="nn">missionbio.mosaic</span> <span class="k">as</span> <span class="nn">ms</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">missionbio.mosaic</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ms</span>
 
 <span class="c1"># Import these to display entire dataframes</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 
 <span class="c1"># Import graph_objects from the plotly package to display figures when saving the notebook as an HTML</span>
-<span class="kn">import</span> <span class="nn">plotly</span> <span class="k">as</span> <span class="nn">px</span>
-<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">px</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
 
 <span class="c1"># Import additional packages for specific visuals</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">plotly.offline</span> <span class="k">as</span> <span class="nn">pyo</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.offline</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pyo</span>
 <span class="n">pyo</span><span class="o">.</span><span class="n">init_notebook_mode</span><span class="p">()</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">missionbio.plotting.multimap</span> <span class="kn">import</span> <span class="n">MultiMap</span>
-<span class="kn">from</span> <span class="nn">missionbio.plotting.heatmap</span> <span class="kn">import</span> <span class="n">Heatmap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.plotting.multimap</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultiMap</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.plotting.heatmap</span><span class="w"> </span><span class="kn">import</span> <span class="n">Heatmap</span>
 
 <span class="c1"># Import COMPASS for imputation</span>
-<span class="kn">from</span> <span class="nn">missionbio.mosaic.algorithms.compass</span> <span class="kn">import</span> <span class="n">COMPASS</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.mosaic.algorithms.compass</span><span class="w"> </span><span class="kn">import</span> <span class="n">COMPASS</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="c1"># Note: when exporting the notebook as an HTML, plots that use the &quot;go.Figure(fig)&quot; command are saved</span>
 </pre></div>
@@ -489,7 +492,7 @@ All available methods and options - documented <a class="reference external" hre
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code is optional, but will make the notebook cells/figures display across the entire width of the browser</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">HTML</span>
 <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&lt;style&gt;.container { width:100% !important; }&lt;/style&gt;&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -497,7 +500,7 @@ All available methods and options - documented <a class="reference external" hre
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check version; this notebook is designed for Mosaic v3.7 or higher</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check version; this notebook is designed for Mosaic v3.12.1 or higher</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ms</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -526,7 +529,7 @@ All available methods and options - documented <a class="reference external" hre
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the h5 file to be used in this analysis: h5path = &#39;/path/to/h5/file/test.h5&#39;</span>
 <span class="c1"># If working with Windows, an &#39;r&#39; may need to be added before the path: h5path = r&#39;/path/to/h5/file/test.h5&#39;</span>
-<span class="n">h5path</span> <span class="o">=</span> <span class="s1">&#39;/Users/botero/Desktop/Sample data/4-cell-lines-AML-multiomics/4-cell-lines-AML-multiomics.dna+protein.h5&#39;</span>
+<span class="n">h5path</span> <span class="o">=</span> <span class="s1">&#39;/Users/casp/Documents/analysis/2pbmcmix.h5&#39;</span>
 
 <span class="c1"># Load the data</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">h5path</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">filter_variants</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">single</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">whitelist</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">filter_cells</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -580,7 +583,7 @@ length, i.e. match the number ids</p></li>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">layers</span><span class="se">\&#39;</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&#39;</span><span class="s2">metadata</span><span class="se">\&#39;</span><span class="s2">:&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">cnv</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">metadata</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -663,7 +666,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </div>
 </div>
-<p><b>Note:</b> Variants that are whitelisted during sample loading may be removed at this step, but can be added back in below. Whitelisted variants can be added to the list of final variants, or used exclusively in the code below.</p>
+<p><b>Note</b>: Variants that are whitelisted during sample loading may be removed at this step, but can be added back in below. Whitelisted variants can be added to the list of final variants, or used exclusively in the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure correct nomenclature, ie whitelist = [&quot;chr13:28589657:T/G&quot;,&quot;chrX:39921424:G/A&quot;]</span>
@@ -736,7 +739,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fetch annotations using varsome</span>
 <span class="c1"># Note: run this on a filtered DNA sample - too many variants (e.g., 100+) are not handled correctly by the method</span>
-<span class="n">ann</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">get_annotations</span><span class="p">()</span>  
+<span class="n">ann</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">get_annotations</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -790,10 +793,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add annotation to the id names</span>
-<span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">set_ids_from_cols</span><span class="p">([</span><span class="s1">&#39;annotated Gene&#39;</span><span class="p">,</span> <span class="s1">&#39;id&#39;</span><span class="p">])</span>
-
-<span class="c1"># Another example:</span>
-<span class="c1"># sample.dna.set_ids_from_cols([&#39;annotated Gene&#39;, &#39;CHROM&#39;, &#39;POS&#39;, &#39;REF&#39;, &#39;ALT&#39;])</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">set_annotated_ids</span><span class="p">(</span><span class="n">add_clinvar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Annotations are now added to the variants</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">ids</span><span class="p">()</span>
@@ -855,7 +855,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Manually generate a phylogeny tree of the subclones in your sample</span>
-<span class="kn">from</span> <span class="nn">missionbio.plotting.phylotree</span> <span class="kn">import</span> <span class="n">PhyloTree</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.plotting.phylotree</span><span class="w"> </span><span class="kn">import</span> <span class="n">PhyloTree</span>
 
 <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">]</span>
 <span class="n">parents</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">]</span>
@@ -1085,7 +1085,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save new h5 file that includes only the final, cleaned dataset</span>
-<span class="n">ms</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s1">&#39;FilteredData.h5&#39;</span><span class="p">)</span>
+<span class="n">ms</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="s1">&#39;FilteredData.h5&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1210,7 +1210,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export compass data into 2 output files</span>
 <span class="c1"># compass_input_regions.csv and compass_input_variants.csv</span>
 <span class="c1"># These can be used with COMPASS outside of Mosaic</span>
-<span class="n">compass</span> <span class="o">=</span> <span class="n">COMPASS</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">filter_somatic_variants</span><span class="p">())</span>
+
 <span class="n">compass</span><span class="o">.</span><span class="n">prepare_input</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;./compass_input&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1403,8 +1403,8 @@ By Saurabh Parikh
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -6,6 +6,7 @@ Mosaic API documentation
 
    The latest version of Mosaic is recommended for new developments. Documentation for the other
    versions are available for applications and notebooks built using them:
+   `v3.7.0r2 <https://missionbio.github.io/mosaic/v3.7.0r2/index.html>`_,
    `v3.7.0r1 (first documentation revision of v3.7.0) <https://missionbio.github.io/mosaic/v3.7.0r1/index.html>`_
    , `v3.4.0 <https://missionbio.github.io/mosaic/v3.4.0/index.html>`_
    , `v3.1.1 <https://missionbio.github.io/mosaic/v3.1.1/index.html>`_
@@ -25,6 +26,7 @@ exploratory analysis.
    manual/install
    manual/getting_started
    manual/data_structure
+   manual/cohort
    manual/vignettes
    manual/curated_jupyter_notebooks
    manual/help
@@ -105,7 +107,7 @@ DNA Assignment
    :nosignatures:
    :caption: DNA assignment
    :toctree: pages
-   :template: class_all_attrs.rst
+   :template: class.rst
 
    ~missionbio.demultiplex.dna.truth.Truth
    ~missionbio.demultiplex.dna.likelihood.LikelihoodMethod
@@ -118,7 +120,7 @@ Protein Assignment
    :nosignatures:
    :caption: Protein assignment
    :toctree: pages
-   :template: class_all_attrs.rst
+   :template: class.rst
 
    ~missionbio.demultiplex.protein.truth.Truth
    ~missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod

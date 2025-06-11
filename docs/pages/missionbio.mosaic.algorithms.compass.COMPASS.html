@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>COMPASS &#8212; Mosaic v3.7 documentation</title>
+    <title>COMPASS &#8212; Mosaic v3.12.2 documentation</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
@@ -35,9 +35,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
-  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -129,6 +129,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../index.html">
   
@@ -137,7 +139,7 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.7 documentation</p>
+    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -146,6 +148,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/cohort.html">Cohort Analysis Pipeline</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html">Overview of mosaic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/filtering.html">Filtering barcodes and ids</a></li>
@@ -348,10 +351,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -359,7 +362,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -413,8 +416,8 @@ the command should be named <cite>PHYLOGENY</cite>. The name of the command can 
 the <cite>command_name</cite> class variable.</p>
 <section id="snippets">
 <h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this heading">#</a></h2>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">missionbio.mosaic</span> <span class="k">as</span> <span class="nn">ms</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">missionbio.mosaic.algorithms.compass</span> <span class="kn">import</span> <span class="n">COMPASS</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">missionbio.mosaic</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.mosaic.algorithms.compass</span><span class="w"> </span><span class="kn">import</span> <span class="n">COMPASS</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">load_example_dataset</span><span class="p">(</span><span class="s2">&quot;2 PBMC mix&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">compass</span> <span class="o">=</span> <span class="n">COMPASS</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">somatic_variants</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;chr4:55599436:T/C&quot;</span><span class="p">,</span> <span class="s2">&quot;chr5:170837457:A/G&quot;</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">compass</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -478,7 +481,7 @@ and the <a class="reference internal" href="methods/missionbio.mosaic.assay._Ass
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.algorithms.compass.COMPASS.run.html#missionbio.mosaic.algorithms.compass.COMPASS.run" title="missionbio.mosaic.algorithms.compass.COMPASS.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>([kwargs])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.algorithms.compass.COMPASS.run.html#missionbio.mosaic.algorithms.compass.COMPASS.run" title="missionbio.mosaic.algorithms.compass.COMPASS.run"><code class="xref py py-obj docutils literal notranslate"><span class="pre">run</span></code></a>([path, prefix, cnv, kwargs])</p></td>
 <td><p>Process the sample using COMPASS.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.algorithms.compass.COMPASS.plot_tree.html#missionbio.mosaic.algorithms.compass.COMPASS.plot_tree" title="missionbio.mosaic.algorithms.compass.COMPASS.plot_tree"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_tree</span></code></a>()</p></td>
@@ -486,6 +489,9 @@ and the <a class="reference internal" href="methods/missionbio.mosaic.assay._Ass
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.mosaic.algorithms.compass.COMPASS.node_descriptions.html#missionbio.mosaic.algorithms.compass.COMPASS.node_descriptions" title="missionbio.mosaic.algorithms.compass.COMPASS.node_descriptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">node_descriptions</span></code></a>([percent])</p></td>
 <td><p>Generate the description for each node</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.mosaic.algorithms.compass.COMPASS.relabel.html#missionbio.mosaic.algorithms.compass.COMPASS.relabel" title="missionbio.mosaic.algorithms.compass.COMPASS.relabel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">relabel</span></code></a>(min_prob_diff)</p></td>
+<td><p>Label the nodes using the given <cite>min_prob_diff</cite></p></td>
 </tr>
 </tbody>
 </table>
@@ -605,8 +611,8 @@ By Saurabh Parikh
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
