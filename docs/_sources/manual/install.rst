@@ -16,13 +16,13 @@ Linux Installation
 
 .. code-block:: console
 
-   $ wget https://dl.missionbio.io/mosaic/mosaic-3.4-Linux-x86_64.sh
+   $ wget https://dl.missionbio.io/mosaic/mosaic-v3.12.2-Linux-x86_64.sh
 
 2. Run the installer as shown below:
 
 .. code-block:: console
 
-   $ sh mosaic-3.4-Linux-x86_64.sh
+   $ sh mosaic-v3.12.2-Linux-x86_64.sh
 
 3. Follow the instructions on screen and accept the defaults. Answer “yes” to the question if you want
    to set the mosaic environment as default else answer "no" :
