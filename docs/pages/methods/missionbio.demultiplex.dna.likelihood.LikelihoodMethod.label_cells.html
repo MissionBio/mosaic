@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>LikelihoodMethod.label_cells &#8212; Mosaic v3.12.2 documentation</title>
+    <title>LikelihoodMethod.label_cells &#8212; Mosaic v3.17.0 documentation</title>
   
   
   
@@ -139,12 +139,13 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
+    <p class="title logo__title">Mosaic v3.17.0 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../manual/license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/data_structure.html">Data structure</a></li>
@@ -190,6 +191,7 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/ge-protein.html">Single sample GE+Protein</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/help.html">Additional resources</a></li>
@@ -202,6 +204,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.ge.Ge.html">Ge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
@@ -215,6 +218,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.phylogeny.sparc.SPARC.html">SPARC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
 <ul class="nav bd-sidenav">
@@ -409,7 +413,7 @@ document.write(`
 <p class="rubric">missionbio.demultiplex.dna.likelihood.LikelihoodMethod.label_cells</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.label_cells">
-<span class="sig-prename descclassname"><span class="pre">LikelihoodMethod.</span></span><span class="sig-name descname"><span class="pre">label_cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Assay</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">af</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_ado</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_fraction_genotyped</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_fraction_match</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.7</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.label_cells" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">LikelihoodMethod.</span></span><span class="sig-name descname"><span class="pre">label_cells</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dna</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Assay</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">af</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clone_weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_ado</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_fraction_genotyped</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_fraction_match</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.7</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mixing_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#missionbio.demultiplex.dna.likelihood.LikelihoodMethod.label_cells" title="Permalink to this definition">#</a></dt>
 <dd><p>Run the demultiplexing</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -417,8 +421,17 @@ document.write(`
 <li><p><strong>dna</strong> – DNA assay object. Either <cite>af</cite> and <cite>dp</cite> or <cite>dna</cite> must be provided.</p></li>
 <li><p><strong>af</strong> – The allele frequency of the variants. If not provided, it will be obtained from dna</p></li>
 <li><p><strong>dp</strong> – The depth of the variants. If not provided, it will be obtained from dna</p></li>
-<li><p><strong>filter_ado</strong> – Whether to filter cells that have more than 50%
-of the variants with possible ADO</p></li>
+<li><p><strong>clone_weights</strong> – Whether to weigh the samples based on their estimated proportions in the
+data. This is useful when the samples are not expected to be in equal proportions
+and the number of variants is low. If True, ADO cells are more accurately assigned
+to their HET clones, and mixed cells are unlikely to be larger than their parents.
+Only set this to False when strict likelihood based assignment is required and
+doublets are not added to the truth. If an array is provided, it must be of the
+same length as the number of samples in the truth and sum to 1. These values will
+be used as the prior probabilities for the samples instead of estimating them from
+the data.</p></li>
+<li><p><strong>filter_ado</strong> – Whether to mark cells that have more than 50% of the variants
+with possible ADO as Ambiguous.</p></li>
 <li><p><strong>min_fraction_genotyped</strong> – The minimum fraction of variants genotyped in a cell. The
 variants that are included in the computation of this fraction are the ones which
 are present in both the DNA and the truth data. These variants must also be
@@ -430,6 +443,10 @@ other mismatches are weighted at 1. The fraction of the sum of the weights to th
 number of genotyped variants is the fraction mismatched. The inverse of that is
 the fraction matched, which should be greater than this value. It is not recommended
 to have this lower than 0.65 or greater than 0.85</p></li>
+<li><p><strong>mixing_rate</strong> – The expected rate of doublets in the data. This is used to set the prior
+probabilities for the samples. The prior for singlets is set to <cite>(1 - mixing_rate)</cite>
+and the prior for doublets is set to <cite>mixing_rate</cite>. Doublets are assumed to be
+labels in the truth that contain a colon (“:”).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -439,8 +456,11 @@ to have this lower than 0.65 or greater than 0.85</p></li>
 </dd></dl>
 
 <hr class="docutils" />
-<p>&lt; Class <a class="reference internal" href="../missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html"><span class="doc">LikelihoodMethod</span></a></p>
-</section>
+<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+   <p><svg class="svg-inline--fa fa-angle-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+     <path fill="currentColor" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
+   </svg></p><p><a class="reference internal" href="../missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html#missionbio.demultiplex.dna.likelihood.LikelihoodMethod" title="missionbio.demultiplex.dna.likelihood.LikelihoodMethod"><code class="xref py py-class docutils literal notranslate"><span class="pre">LikelihoodMethod</span></code></a></p>
+</div></section>
 
 
                 </article>
@@ -494,7 +514,7 @@ By Saurabh Parikh
 
   <p class="copyright">
     
-      © Copyright 2021, Mission Bio.
+      © Copyright 2026, Mission Bio.
       <br/>
     
   </p>

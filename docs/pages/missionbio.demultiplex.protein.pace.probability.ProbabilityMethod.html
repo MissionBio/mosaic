@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>ProbabilityMethod &#8212; Mosaic v3.12.2 documentation</title>
+    <title>ProbabilityMethod &#8212; Mosaic v3.17.0 documentation</title>
   
   
   
@@ -140,12 +140,13 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
+    <p class="title logo__title">Mosaic v3.17.0 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../manual/license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/data_structure.html">Data structure</a></li>
@@ -191,6 +192,7 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/ge-protein.html">Single sample GE+Protein</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/help.html">Additional resources</a></li>
@@ -203,6 +205,7 @@
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.dna.Dna.html">Dna</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.ge.Ge.html">Ge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.sample.Sample.html">Sample</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
@@ -216,6 +219,7 @@
 <li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.phylogeny.sparc.SPARC.html">SPARC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
 <ul class="nav bd-sidenav">
@@ -412,18 +416,32 @@ document.write(`
 <dt class="sig sig-object py" id="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ProbabilityMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protein</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Assay</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="missionbio.demultiplex.protein.truth.Truth.html#missionbio.demultiplex.protein.truth.Truth" title="missionbio.demultiplex.protein.truth.Truth"><span class="pre">Truth</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_prob_diff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod" title="Permalink to this definition">#</a></dt>
 <dd><p>A PACE method to categorize the cells into the mot probable category based on the given truth.</p>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.label_cells.html#missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.label_cells" title="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.label_cells"><code class="xref py py-obj docutils literal notranslate"><span class="pre">label_cells</span></code></a>()</p></td>
+<td><p>Adds the <cite>LABEL</cite> row attribute based on the probabilistic method of assignment</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>protein</strong> – The protein assay</p></li>
-<li><p><strong>truth</strong> – A Truth object</p></li>
-<li><p><strong>min_prob_diff</strong> – Minimum difference in probability between the most likely and second most
+<dt class="field-odd">param protein<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The protein assay</p>
+</dd>
+<dt class="field-even">param truth<span class="colon">:</span></dt>
+<dd class="field-even"><p>A Truth object</p>
+</dd>
+<dt class="field-odd">param min_prob_diff<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Minimum difference in probability between the most likely and second most
 likely cell type for a cell to be assigned to a single cell type. This is also used
 for the assignment of doublet clusters. Here the probability refers to the
 probability of the cluster being a particular cell type given the normalized read
-counts. See the example.</p></li>
-<li><p><strong>kwargs</strong> – Other parameters passed to PACEModel</p></li>
-</ul>
+counts. See the example.</p>
+</dd>
+<dt class="field-even">param kwargs<span class="colon">:</span></dt>
+<dd class="field-even"><p>Other parameters passed to PACEModel</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
@@ -482,6 +500,7 @@ root to the leaves. The cell is first assigned to <code class="docutils literal 
 which is lower than <code class="docutils literal notranslate"><span class="pre">P(CD4+</span> <span class="pre">T</span> <span class="pre">cell)</span></code>, the cell is assigned to <code class="docutils literal notranslate"><span class="pre">CD4+</span> <span class="pre">T</span> <span class="pre">cell</span></code>. If
 there was also <code class="docutils literal notranslate"><span class="pre">CD8+</span> <span class="pre">T</span> <span class="pre">cell</span></code> in the tree, <code class="docutils literal notranslate"><span class="pre">min_prob_diff</span></code> would have been compared
 to <code class="docutils literal notranslate"><span class="pre">P(CD4+</span> <span class="pre">T</span> <span class="pre">cell)</span> <span class="pre">-</span> <span class="pre">P(CD8+</span> <span class="pre">T</span> <span class="pre">cell)</span></code>.</p>
+</section>
 </dd></dl>
 
 </section>
@@ -547,7 +566,7 @@ By Saurabh Parikh
 
   <p class="copyright">
     
-      © Copyright 2021, Mission Bio.
+      © Copyright 2026, Mission Bio.
       <br/>
     
   </p>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Truth &#8212; Mosaic v3.12.2 documentation</title>
+    <title>Truth &#8212; Mosaic v3.17.0 documentation</title>
   
   
   
@@ -139,12 +139,13 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
+    <p class="title logo__title">Mosaic v3.17.0 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../manual/license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/data_structure.html">Data structure</a></li>
@@ -190,6 +191,7 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/ge-protein.html">Single sample GE+Protein</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../manual/help.html">Additional resources</a></li>
@@ -202,6 +204,7 @@
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.dna.Dna.html">Dna</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.ge.Ge.html">Ge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.sample.Sample.html">Sample</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
@@ -215,6 +218,7 @@
 <li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.phylogeny.sparc.SPARC.html">SPARC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
 <ul class="nav bd-sidenav">
@@ -412,6 +416,51 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Truth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.demultiplex.dna.truth.Truth" title="Permalink to this definition">#</a></dt>
 <dd><p>Truth data for GT demultiplexing</p>
 <p>The truth data is a dataframe with the NGT for each cell and variant</p>
+<section id="input-and-output">
+<h2>Input and Output<a class="headerlink" href="#input-and-output" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.read_csv.html#missionbio.demultiplex.dna.truth.Truth.read_csv" title="missionbio.demultiplex.dna.truth.Truth.read_csv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_csv</span></code></a>(csv_file)</p></td>
+<td><p>Load dna truth from a csv file</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.as_input_file.html#missionbio.demultiplex.dna.truth.Truth.as_input_file" title="missionbio.demultiplex.dna.truth.Truth.as_input_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">as_input_file</span></code></a>()</p></td>
+<td><p>Convert the truth to the input file format used by pipelines</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.add_doublets.html#missionbio.demultiplex.dna.truth.Truth.add_doublets" title="missionbio.demultiplex.dna.truth.Truth.add_doublets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_doublets</span></code></a>()</p></td>
+<td><p>Create truth for doublets.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="filtering">
+<h2>Filtering<a class="headerlink" href="#filtering" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.keep_diff_variants.html#missionbio.demultiplex.dna.truth.Truth.keep_diff_variants" title="missionbio.demultiplex.dna.truth.Truth.keep_diff_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">keep_diff_variants</span></code></a>()</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame of truth</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.remove_non_snp_variants.html#missionbio.demultiplex.dna.truth.Truth.remove_non_snp_variants" title="missionbio.demultiplex.dna.truth.Truth.remove_non_snp_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_non_snp_variants</span></code></a>()</p></td>
+<td><p>Removes indels and spanning deletions from the assignment</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.remove_filtered_variants.html#missionbio.demultiplex.dna.truth.Truth.remove_filtered_variants" title="missionbio.demultiplex.dna.truth.Truth.remove_filtered_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_filtered_variants</span></code></a>(dna)</p></td>
+<td><p>Removes poor quality variants</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.remove_correlated_variants.html#missionbio.demultiplex.dna.truth.Truth.remove_correlated_variants" title="missionbio.demultiplex.dna.truth.Truth.remove_correlated_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_correlated_variants</span></code></a>(dna)</p></td>
+<td><p>Remove correlated variants on the same amplicon</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.dna.truth.Truth.filter_variants.html#missionbio.demultiplex.dna.truth.Truth.filter_variants" title="missionbio.demultiplex.dna.truth.Truth.filter_variants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filter_variants</span></code></a>(dna)</p></td>
+<td><p>Remove poor quality variants</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 </dd></dl>
 
 </section>
@@ -486,7 +535,7 @@ By Saurabh Parikh
 
   <p class="copyright">
     
-      © Copyright 2021, Mission Bio.
+      © Copyright 2026, Mission Bio.
       <br/>
     
   </p>

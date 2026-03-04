@@ -1,3 +1,5 @@
+﻿:orphan:
+
 ProbabilityMethod
 =================
 
@@ -6,3 +8,4 @@ ProbabilityMethod
 .. currentmodule:: missionbio.demultiplex.protein.pace.probability
 
 .. autoclass:: ProbabilityMethod
+

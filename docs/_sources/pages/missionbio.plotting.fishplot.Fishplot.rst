@@ -1,3 +1,5 @@
+﻿:orphan:
+
 Fishplot
 ========
 
@@ -6,3 +8,4 @@ Fishplot
 .. currentmodule:: missionbio.plotting.fishplot
 
 .. autoclass:: Fishplot
+

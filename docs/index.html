@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Mosaic API documentation &#8212; Mosaic v3.12.2 documentation</title>
+    <title>Mosaic API documentation &#8212; Mosaic v3.17.0 documentation</title>
   
   
   
@@ -50,7 +50,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Installation" href="manual/install.html" />
+    <link rel="next" title="License" href="manual/license.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -140,12 +140,13 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
+    <p class="title logo__title">Mosaic v3.17.0 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="manual/license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/data_structure.html">Data structure</a></li>
@@ -191,6 +192,7 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="notebooks/curated_notebooks/ge-protein.html">Single sample GE+Protein</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="manual/help.html">Additional resources</a></li>
@@ -203,6 +205,7 @@
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.dna.Dna.html">Dna</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.ge.Ge.html">Ge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html">Sample</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
@@ -216,6 +219,7 @@
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pages/missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/missionbio.demultiplex.phylogeny.sparc.SPARC.html">SPARC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
 <ul class="nav bd-sidenav">
@@ -417,8 +421,8 @@ document.write(`
 <p class="admonition-title">Older documentations</p>
 <p>The latest version of Mosaic is recommended for new developments. Documentation for the other
 versions are available for applications and notebooks built using them:
-<a class="reference external" href="https://missionbio.github.io/mosaic/v3.7.0r2/index.html">v3.7.0r2</a>,
-<a class="reference external" href="https://missionbio.github.io/mosaic/v3.7.0r1/index.html">v3.7.0r1 (first documentation revision of v3.7.0)</a>
+<a class="reference external" href="https://missionbio.github.io/mosaic/v3.12.2/index.html">v3.12.2</a>
+, <a class="reference external" href="https://missionbio.github.io/mosaic/v3.7.0r2/index.html">v3.7.0</a>
 , <a class="reference external" href="https://missionbio.github.io/mosaic/v3.4.0/index.html">v3.4.0</a>
 , <a class="reference external" href="https://missionbio.github.io/mosaic/v3.1.1/index.html">v3.1.1</a>
 , <a class="reference external" href="https://missionbio.github.io/mosaic/v2.4.1/index.html">v2.4.1</a>
@@ -445,10 +449,13 @@ exploratory analysis.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.protein.Protein.html#missionbio.mosaic.protein.Protein" title="missionbio.mosaic.protein.Protein"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Protein</span></code></a></p></td>
 <td><p>Container for Protein data</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sample</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.ge.Ge.html#missionbio.mosaic.ge.Ge" title="missionbio.mosaic.ge.Ge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ge</span></code></a></p></td>
+<td><p>Container for GE data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.sample.Sample.html#missionbio.mosaic.sample.Sample" title="missionbio.mosaic.sample.Sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Sample</span></code></a></p></td>
 <td><p>Container for multiple assays.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup" title="missionbio.mosaic.samplegroup.SampleGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SampleGroup</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.samplegroup.SampleGroup.html#missionbio.mosaic.samplegroup.SampleGroup" title="missionbio.mosaic.samplegroup.SampleGroup"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SampleGroup</span></code></a></p></td>
 <td><p>A group of samples related to each other</p></td>
 </tr>
 </tbody>
@@ -481,6 +488,9 @@ exploratory analysis.</p>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="pages/missionbio.mosaic.algorithms.compass.COMPASS.html#missionbio.mosaic.algorithms.compass.COMPASS" title="missionbio.mosaic.algorithms.compass.COMPASS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COMPASS</span></code></a>(sample, somatic_variants[, ...])</p></td>
 <td><p>A wrapper to run COMPASS.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="pages/missionbio.demultiplex.phylogeny.sparc.SPARC.html#missionbio.demultiplex.phylogeny.sparc.SPARC" title="missionbio.demultiplex.phylogeny.sparc.SPARC"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPARC</span></code></a>([ado_score, adjusted_mixing, ...])</p></td>
+<td><p>SPARC: Single-cell Phylogeny And Reconstruction of Clones</p></td>
 </tr>
 </tbody>
 </table>
@@ -577,11 +587,11 @@ exploratory analysis.</p>
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="manual/install.html"
+       href="manual/license.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installation</p>
+        <p class="prev-next-title">License</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -632,7 +642,7 @@ By Saurabh Parikh
 
   <p class="copyright">
     
-      © Copyright 2021, Mission Bio.
+      © Copyright 2026, Mission Bio.
       <br/>
     
   </p>

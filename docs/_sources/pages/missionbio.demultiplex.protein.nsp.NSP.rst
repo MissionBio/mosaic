@@ -1,3 +1,5 @@
+﻿:orphan:
+
 NSP
 ===
 
@@ -6,3 +8,4 @@ NSP
 .. currentmodule:: missionbio.demultiplex.protein.nsp
 
 .. autoclass:: NSP
+

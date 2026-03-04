@@ -1,3 +1,5 @@
+﻿:orphan:
+
 LikelihoodMethod
 ================
 
@@ -6,3 +8,4 @@ LikelihoodMethod
 .. currentmodule:: missionbio.demultiplex.dna.likelihood
 
 .. autoclass:: LikelihoodMethod
+

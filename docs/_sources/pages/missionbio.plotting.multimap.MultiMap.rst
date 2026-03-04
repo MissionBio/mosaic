@@ -1,3 +1,5 @@
+﻿:orphan:
+
 MultiMap
 ========
 
@@ -6,3 +8,4 @@ MultiMap
 .. currentmodule:: missionbio.plotting.multimap
 
 .. autoclass:: MultiMap
+

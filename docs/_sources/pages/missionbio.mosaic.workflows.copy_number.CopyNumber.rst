@@ -1,3 +1,5 @@
+﻿:orphan:
+
 CopyNumber
 ==========
 
@@ -6,3 +8,4 @@ CopyNumber
 .. currentmodule:: missionbio.mosaic.workflows.copy_number
 
 .. autoclass:: CopyNumber
+

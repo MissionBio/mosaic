@@ -1,0 +1,869 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>SPARC &#8212; Mosaic v3.17.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pages/missionbio.demultiplex.phylogeny.sparc.SPARC';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="io" href="missionbio.mosaic.io.html" />
+    <link rel="prev" title="COMPASS" href="missionbio.mosaic.algorithms.compass.COMPASS.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Mosaic v3.17.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../manual/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/cohort.html">Cohort Analysis Pipeline</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/overview.html">Overview of mosaic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/filtering.html">Filtering barcodes and ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/cnv.html">Manual CNV analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/plot-customizations.html">Plot customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/multi-sample-analysis.html">Multisample analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/additional-plots-and-customizations.html">Additional plots and customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/code-snippets.html">Code Snippets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../manual/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/dna.html">Single Sample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/dna-multisample.html">Multisample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/dna-protein.html">Single Sample DNA + Protein</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/dna-protein-multisample.html">Multisample DNA + Protein</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/curated_notebooks/ge-protein.html">Single sample GE+Protein</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/help.html">Additional resources</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../manual/changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.ge.Ge.html">Ge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.sample.Sample.html">Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interactive Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.workflows.copy_number.CopyNumber.html">CopyNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html">VariantSubcloneTable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SPARC</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Custom Plots</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.heatmap.Heatmap.html">Heatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.lineplot.LinePlot.html">LinePlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.bargraph.BarGraph.html">BarGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.multimap.MultiMap.html">MultiMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.phylotree.PhyloTree.html">PhyloTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.plotting.fishplot.Fishplot.html">Fishplot</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DNA assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.dna.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.mosaic.algorithms.dna_assignment.DnaAssignment.html">DnaAssignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Protein assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.html">ProbabilityMethod</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/pages/missionbio.demultiplex.phylogeny.sparc.SPARC.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>SPARC</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.phylogeny.sparc.SPARC"><code class="docutils literal notranslate"><span class="pre">SPARC</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phylogeny-estimation-for-a-single-mutation-type">Phylogeny estimation for a single mutation type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-clone-estimation">Initial clone estimation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somatic-variant-clone-estimation">Somatic variant clone estimation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loh-event-identification-and-clone-calling">LoH event identification and clone calling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-clustering">CNV clustering</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-errors-in-the-variants">Modeling errors in the variants</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-construction">Tree construction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-tree-refinement">Iterative tree refinement</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-phylogenies">Combining phylogenies</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="sparc">
+<h1>SPARC<a class="headerlink" href="#sparc" title="Permalink to this heading">#</a></h1>
+<p class="rubric">missionbio.demultiplex.phylogeny.sparc.SPARC</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="missionbio.demultiplex.phylogeny.sparc.SPARC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SPARC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ado_score</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adjusted_mixing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_snv_clone_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_snv_clone_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_loh_clone_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_loh_clone_count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_loh_group_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_cnv_depth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_cnv_completeness</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_copy_gain_cells</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">150</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_excess_correlated_freq</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#missionbio.demultiplex.phylogeny.sparc.SPARC" title="Permalink to this definition">#</a></dt>
+<dd><p>SPARC: Single-cell Phylogeny And Reconstruction of Clones</p>
+<p>A tool to infer the evolutionary history and clonal structure of a population, integrating
+information from SNVs, Loss of Heterozygosity (LoH), and Copy Number Variations (CNVs).</p>
+<section id="snippets">
+<h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this heading">#</a></h2>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">missionbio.mosaic</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ms</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.demultiplex.phylogeny.sparc</span><span class="w"> </span><span class="kn">import</span> <span class="n">SPARC</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">load_example_dataset</span><span class="p">(</span><span class="s2">&quot;2 PBMC mix&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sparc</span> <span class="o">=</span> <span class="n">SPARC</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">sparc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="p">,</span> <span class="n">variants</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;chr4:55599436:T/C&quot;</span><span class="p">,</span> <span class="s2">&quot;chr5:170837457:A/G&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The somatic variants must be present in the Dna assay and formatted as <code class="docutils literal notranslate"><span class="pre">chrom:pos:ref/alt</span></code></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">result</span></code> contains the inferred phylogenetic tree and clone assignments.:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ordered_result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">serialize_clones</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">set_labels</span><span class="p">(</span><span class="n">ordered_result</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">ordered_result</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># Draws the phylogenetic tree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Debugging the inference process can be done by inspecting the other attributes of the
+<a class="reference internal" href="missionbio.demultiplex.phylogeny.state.SPARCResult.html#missionbio.demultiplex.phylogeny.state.SPARCResult" title="missionbio.demultiplex.phylogeny.state.SPARCResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">SPARCResult</span></code></a> object.</p>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.phylogeny.sparc.SPARC.dropped_variants_.html#missionbio.demultiplex.phylogeny.sparc.SPARC.dropped_variants_" title="missionbio.demultiplex.phylogeny.sparc.SPARC.dropped_variants_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dropped_variants_</span></code></a></p></td>
+<td><p>Variants dropped due to low quality</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="attributes/missionbio.demultiplex.phylogeny.sparc.SPARC.variant_params_.html#missionbio.demultiplex.phylogeny.sparc.SPARC.variant_params_" title="missionbio.demultiplex.phylogeny.sparc.SPARC.variant_params_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">variant_params_</span></code></a></p></td>
+<td><p>Estimated ADO and error rates params</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.phylogeny.sparc.SPARC.predict.html#missionbio.demultiplex.phylogeny.sparc.SPARC.predict" title="missionbio.demultiplex.phylogeny.sparc.SPARC.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(dna[, cnv, variants, cnamps, ...])</p></td>
+<td><p>Predict the phylogenetic tree structure from a DNA assay and a list of variants.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.phylogeny.sparc.SPARC.model_cnv.html#missionbio.demultiplex.phylogeny.sparc.SPARC.model_cnv" title="missionbio.demultiplex.phylogeny.sparc.SPARC.model_cnv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_cnv</span></code></a>(cnv[, mod_cn])</p></td>
+<td><p>Fits the model to the CNV assay (or assays for multiple controls)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.phylogeny.sparc.SPARC.search_path.html#missionbio.demultiplex.phylogeny.sparc.SPARC.search_path" title="missionbio.demultiplex.phylogeny.sparc.SPARC.search_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_path</span></code></a>(profile)</p></td>
+<td><p>The path from the root to the given profile</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="methods/missionbio.demultiplex.phylogeny.sparc.SPARC.search_path_drops.html#missionbio.demultiplex.phylogeny.sparc.SPARC.search_path_drops" title="missionbio.demultiplex.phylogeny.sparc.SPARC.search_path_drops"><code class="xref py py-obj docutils literal notranslate"><span class="pre">search_path_drops</span></code></a>(profile)</p></td>
+<td><p>The clones dropped at each step while trimming the initial tree to the final tree</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">param ado_score<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Minimum ADO score to consider a clone valid.</p>
+</dd>
+<dt class="field-even">param adjusted_mixing<span class="colon">:</span></dt>
+<dd class="field-even"><p>The maximum adjusted mixing rate to consider when looking for doublets.</p>
+</dd>
+<dt class="field-odd">param branch_size<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Controls the number of clones dropped in a given cycle. The run time
+is proportional to (branch_size ^ 3)</p>
+</dd>
+<dt class="field-even">param min_snv_clone_size<span class="colon">:</span></dt>
+<dd class="field-even"><p>Minimum clone size as a fraction of the total for SNV clones to
+be considered. For rare variants, this limit might be ignored. It does not
+guarantee that all SNV clones will be larger than this value.</p>
+</dd>
+<dt class="field-odd">param min_snv_clone_count<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Minimum number of cells in a clone for the SNV clone to be
+considered. For rare variants, this limit might be ignored. It does not guarantee
+that all SNV clones will be larger than this value.</p>
+</dd>
+<dt class="field-even">param min_loh_clone_size<span class="colon">:</span></dt>
+<dd class="field-even"><p>Minimum clone size as a fraction of the total for LoHFinder. It does
+not guarantee that all LoH clones will be larger than this value.</p>
+</dd>
+<dt class="field-odd">param min_loh_clone_count<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Minimum number of cells in a clone for LoHFinder. It does not
+guarantee that all LoH clones will be larger than this value.</p>
+</dd>
+<dt class="field-even">param min_loh_group_size<span class="colon">:</span></dt>
+<dd class="field-even"><p>Minimum number of variants in a LoH variant group for it to
+be considered. Passed directly to LoHFinder.</p>
+</dd>
+<dt class="field-odd">param min_cnv_depth<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Minimum reads in each cell-amplicon for the completeness check</p>
+</dd>
+<dt class="field-even">param min_cnv_completeness<span class="colon">:</span></dt>
+<dd class="field-even"><p>Minimum fraction of amplicons in a given cell with sufficient
+depth to be considered for amplicon modeling and copy gain prediction.</p>
+</dd>
+<dt class="field-odd">param min_copy_gain_cells<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The minimum number complete cells in a clone to consider it for
+copy gain clone identification</p>
+</dd>
+<dt class="field-even">param min_excess_correlated_freq<span class="colon">:</span></dt>
+<dd class="field-even"><p>Minimum percentage of cells whose correlation is not due
+to random chance as per the chi2 expected frequencies. It is used to filter somatic
+variants that are not correlated with the CNV labels.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>SPARC (Single-cell Phylogeny And Reconstruction of Clones) is a computational method for inferring
+phylogenetic relationships from single-cell DNA sequencing data. The algorithm integrates somatic
+mutations, genome-wide loss of heterozygosity (LoH), and copy number variations (CNVs) in a single
+phylogeny.</p>
+<p>SPARC identifies clusters of cells (clones) given a set of mutations and then creates a phylogeny
+with those clones. Mutations are categorized into three types:</p>
+<ol class="arabic simple">
+<li><p><strong>Somatic variants</strong>: Single nucleotide variants and small insertions and deletions.</p></li>
+<li><p><strong>LoH variants</strong>: Groups of variants on neighbouring amplicons that have a correlated change from
+heterozygous to homozygous state.</p></li>
+<li><p><strong>CNVs</strong>: Group of consecutive amplicons showing distinct copy number changes supported by allele
+frequency (AF) changes.</p></li>
+</ol>
+<p>Each mutation type is processed separately to create individual phylogenies, which are then combined
+to construct a single phylogeny which contains all the mutation types.</p>
+</section>
+<section id="phylogeny-estimation-for-a-single-mutation-type">
+<h2>Phylogeny estimation for a single mutation type<a class="headerlink" href="#phylogeny-estimation-for-a-single-mutation-type" title="Permalink to this heading">#</a></h2>
+<p>The phylogeny estimation for each mutation type follows a three-step process:</p>
+<ol class="arabic simple">
+<li><p><strong>Variant selection and clone calling</strong>: Identify informative variants for phylogeny construction
+and cluster cells into an initial set of clones.</p></li>
+<li><p><strong>Tree construction</strong>: Build an initial phylogenetic tree for the identified clones using a
+distance-based method.</p></li>
+<li><p><strong>Iterative tree refinement</strong>: Refine the tree to ensure consistency with biological assumptions</p></li>
+</ol>
+<section id="initial-clone-estimation">
+<h3>Initial clone estimation<a class="headerlink" href="#initial-clone-estimation" title="Permalink to this heading">#</a></h3>
+<hr style="border: 1px solid grey; margin: -10px 0 20px 0;"><p>Somatic variants are currently expected as an input to SPARC. LoH and CNV events are identified by SPARC
+on the amplicons marked as genome-wide CNV ampicons. Each mutation type is processed separately to
+obtain an initial set of clones. It assumed that this initial set is an extensive list of all
+possible clones in the sample. They are refined later using phylogenetic constraints.</p>
+<figure class="align-default" id="id1">
+<img alt="Clones called by SPARC" src="../_images/clone_estimation.jpg" />
+<figcaption>
+<p><span class="caption-text">Initial set of clones called for each mutation type</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="somatic-variant-clone-estimation">
+<h4>Somatic variant clone estimation<a class="headerlink" href="#somatic-variant-clone-estimation" title="Permalink to this heading">#</a></h4>
+<p>For each somatic variant there are at most three possible signatures - wildtype, heterozygous, and
+homozygous. The ADO score is applied on each variant separately to find the possible signatures
+for it. The variants are then sorted based on the product of their mutation rate and genotyping
+rate. Cells are clustered iteratively into clones based on the possible signatures of each variant.
+Clones that are too small or dropped in this step.</p>
+<p>During this iterative clustering step, some variants might have too much missing data causing clones
+found until that point to be dropped resulting in all mutated cells from a better genotyped variant
+to be marked as ambiguous. Since the presence of such variants leads to loss of information from
+other variants, these variants are currently dropped by SPARC when creating the phylogeny.</p>
+</section>
+<section id="loh-event-identification-and-clone-calling">
+<h4>LoH event identification and clone calling<a class="headerlink" href="#loh-event-identification-and-clone-calling" title="Permalink to this heading">#</a></h4>
+<p>LoH events are those where a cell loses one of the two alleles at a heterozygous locus. These events
+and their clones are identified using the following process:</p>
+<ol class="arabic simple">
+<li><p><strong>Candidate Selection</strong>: Variants are first selected as candidates if they have a sufficient
+number of cells in each of the three genotype states (WT, HET, HOM).</p></li>
+<li><p><strong>Correlation Analysis</strong>: To identify variants that are part of the same large-scale LoH event
+(e.g., affecting a whole chromosome arm), the correlation between candidate variants using two
+complementary methods is used:</p>
+<ul class="simple">
+<li><p><strong>Chi-squared (χ²) Test</strong>: A contingency table is created for pairs of variants based on
+their NGT calls. A χ² test of independence is performed and variants with low p-values are
+considered correlated. This correlation matrix is partitioned to find groups of correlated
+variants. This test is sensitive and ends up finding variants correlated in very small
+populations of cells.</p></li>
+<li><p><strong>Pearson Correlation</strong>: The NGT calls are used to compute the Pearson correlation
+coefficient between pairs of variants. The correlation matrix is partitioned to find groups
+of correlated variants. This test ends up finding larger groups of variants, but may miss
+events in small populations of cells.</p></li>
+</ul>
+</li>
+<li><p><strong>Grouping</strong>: Groups of correlated variants found by the two tests are then combined to create
+one set of LoH variant groups. Each group is treated as a single likely-LoH event.</p></li>
+<li><p><strong>Phasing and Validation</strong>: For each group of likely-LoH variants, clusters cells to identify a
+HET clone and one or two HOM clones. A group is considered a valid LoH event if the number of
+cells in the topmost (or top two) phased HOM clone are significantly more than all other phased
+HOM clones found. Two HOM clones may be found if both alleles are lost in different populations
+of cells.</p></li>
+</ol>
+<p>Similar to the somatic variant clustering, the variants groups are sorted based on the number of
+variants in the group and the cells are clustered iteratively to find an extensive set of clones.</p>
+</section>
+<section id="cnv-clustering">
+<h4>CNV clustering<a class="headerlink" href="#cnv-clustering" title="Permalink to this heading">#</a></h4>
+<p>Every amplicon is modeled using a read depth dependent negative binomial distribution, which
+captures the expected reads and deviation in read counts for a cell with a given read depth. Then,
+CNV events are identified by clustering cells based on their AF corrected ploidy smoothed across
+neigbouring genome-wide amplicons. These clusters are iteratively merged based on similarity until
+no more merges are possible. CNV events are defined as groups of contiguous amplicons with the same
+copy number supported by AF changes in a clone with respect to other clones.</p>
+</section>
+<section id="modeling-errors-in-the-variants">
+<h4>Modeling errors in the variants<a class="headerlink" href="#modeling-errors-in-the-variants" title="Permalink to this heading">#</a></h4>
+<p>For somatciv variants and LoH variants the AF distribution of each variant is fit against an
+expected distribution that models various error rates (Sequencing / PCR based), Allelic dropout
+(ADO) rates, and population frequencies to estimate the ADO and error rate for each variant
+separately.</p>
+</section>
+</section>
+<section id="tree-construction">
+<h3>Tree construction<a class="headerlink" href="#tree-construction" title="Permalink to this heading">#</a></h3>
+<hr style="border: 1px solid grey; margin: -10px 0 20px 0;"><p>Once the initial set of clones are found for each mutation type, an initial phylogenetic tree is
+constructed using a distance-based method. This results in a tree that adheres to the maximum
+parsimony principle, however it may contain biologically implausible pathways.</p>
+<figure class="align-default" id="id2">
+<img alt="Initial tree created by SPARC" src="../_images/tree_construction.jpg" />
+<figcaption>
+<p><span class="caption-text">The tree constructed using all the initial clones for each mutation type</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A distance matrix between all clones (and a hypothetical wildtype root) is computed. The distance
+between two clones is the sum of their differing genotypes. For LoH variants, the heterozygous state
+(NGT=1) is treated as the wildtype state, so the hypothetical wildtype root clone has NGT=1 for LoH
+variants, NGT=0 for somatic variants, and CN=2 for CNV amplicons. The distance d(i,j) between two
+clones i and j is defined as:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>d(i,j) = Σₖ |NGTᵢₖ - NGTⱼₖ| + Σₗ |CNᵢₗ - CNⱼₗ|
+</pre></div>
+</div>
+<p>Where NGT is in (0, 1, 2) and copy numbers CN in (0, 1, 2, 3) across variants k and amplicons l.</p>
+<p>The initial tree contains just the hypothetical wildtype root clone. The tree is then built
+iteratively as follows:</p>
+<ol class="arabic simple">
+<li><p>Set the clone with the least distance to any clone in the current tree as a child of that clone.</p></li>
+<li><p>If more than two pairs of clones have the same distance, weigh the assignment based on the clone
+sizes - larger clones are given a higher weight i.e. they are more likely to be closer to the
+root of the tree, and therefore parents of smaller clones. This also ensures that larger clones
+accumulate in one branch of the tree. Due to this probabilistic assignment, there may be multiple
+possible trees for a given set of clones (Note: inifite sites assumption not yet applied).</p></li>
+<li><p>Repeat until all clones are added to the tree.</p></li>
+</ol>
+</section>
+<section id="iterative-tree-refinement">
+<h3>Iterative tree refinement<a class="headerlink" href="#iterative-tree-refinement" title="Permalink to this heading">#</a></h3>
+<hr style="border: 1px solid grey; margin: -10px 0 20px 0;"><p>The initial tree may contain evolutionary pathways that are biologically implausible, such as the
+re-emergence of a lost mutation. SPARC refines the tree through an iterative trimming process to
+find a tree that adheres to phylogenetic constraints while also maximizing the likelihood of the
+cells belonging to the clones in the tree.</p>
+<figure class="align-default" id="id3">
+<img alt="Per mutation trees created by SPARC" src="../_images/tree_refinement.jpg" />
+<figcaption>
+<p><span class="caption-text">A refined tree after trimming invalid clones separately for each mutation type</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The following assumptions are made during the trimming process:</p>
+<ol class="arabic simple">
+<li><p>Phylogenetic constraints:</p>
+<ul class="simple">
+<li><p>Somatic variants follow the infinite sites assumption, but can have an LoH event. This results
+in trees where the mutation event occurs only once and can be lost at most once.</p></li>
+<li><p>LoH and CNV events can occur multiple times independently in different branches of the tree,
+but the same branch cannot have both a gain and a loss of the same event.</p></li>
+</ul>
+</li>
+<li><p>Smaller clones are more likely to be erroneous.</p></li>
+</ol>
+<p>If any set of clones are found that do not follow the phylogenetic constraints, then those clones
+are marked as invalid. Some clones may be invalid, but dropping them would result in one of the
+mutations to be dropped as well. Such clones are marked as immune clones. All invalid clones that
+are not immuned are dropped from the tree probabilistically. The probability of dropping a clone is
+inversely proportional to its size - smaller clones are more likely to be dropped.</p>
+<p>For each tree up to 10 new trees are searched by dropping different sets of invalid, non-immune
+clones. Of the (upto) 100 new trees searched, the top 10 trees are selected based on a composite
+score defined underneath. The top 10 trees are then evaluated for incompatibilities again and the
+process is repeated until the top trees are always the same i.e. trimming does not improve the score</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Score = (proportion × assignment_likelihood) / (mutations * density)
+</pre></div>
+</div>
+<p>where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">proportion</span></code>: Agreement between observed and expected genotype frequencies. Favors trees that
+explain a larger fraction of the cells. Observed frequencies are computed based on assignment of
+cells to the clones in the tree. The expected frequencies are based on the NGT distribution of
+each variant separately.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">assignment_likelihood</span></code>: Statistical confidence in cell-to-clone assignments. Favors trees where
+cells can be assigned to clones with high confidence.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mutations</span></code>: Total number of unique mutations - Penalizes trees with repeated mutations.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">density</span></code>: Mutation density (mutations per clone) - Penalizes clones with multiple co-occurring
+mutations.</p></li>
+</ul>
+<p>This scoring scheme balances tree complexity against explanatory power, favoring parsimonious trees
+with high assignment confidence.</p>
+<p>If the topmost tree is valid, then that is the final tree returned by SPARC. If any invalid clone
+is still found then they are be dropped even if they are immuned. This may cause some mutations to
+be dropped from the tree - but this is quite rare in practice.</p>
+</section>
+</section>
+<section id="combining-phylogenies">
+<h2>Combining phylogenies<a class="headerlink" href="#combining-phylogenies" title="Permalink to this heading">#</a></h2>
+<p>Each mutation type (Somatic variants, LoH, CNV) results in a separate phylogeny. These phylogenies
+are combined by simply crosstabulating the clones from each tree to create a combined set of clones.
+During the combination of clones, special considerations are given to the wildtype clone so as to
+not lose cells that may be wildtype due to the noisy nature of the combination process.</p>
+<figure class="align-default" id="id4">
+<img alt="Combined tree created by SPARC" src="../_images/combined_phylogeny.jpg" />
+<figcaption>
+<p><span class="caption-text">Tree obtained by combining the final clones from each mutation type</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The combined set of clones undergo the same iterative process of tree refinement to ensure that the
+final tree adheres to the phylogenetic constraints and maximizes the likelihood of cell assignments.</p>
+<figure class="align-default" id="id5">
+<img alt="Final tree created by SPARC" src="../_images/final_phylogeny.jpg" />
+<figcaption>
+<p><span class="caption-text">The final tree created by SPARC after combining all mutation types</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="missionbio.mosaic.algorithms.compass.COMPASS.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">COMPASS</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="missionbio.mosaic.io.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">io</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.demultiplex.phylogeny.sparc.SPARC"><code class="docutils literal notranslate"><span class="pre">SPARC</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phylogeny-estimation-for-a-single-mutation-type">Phylogeny estimation for a single mutation type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-clone-estimation">Initial clone estimation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#somatic-variant-clone-estimation">Somatic variant clone estimation</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#loh-event-identification-and-clone-calling">LoH event identification and clone calling</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-clustering">CNV clustering</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-errors-in-the-variants">Modeling errors in the variants</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tree-construction">Tree construction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-tree-refinement">Iterative tree refinement</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-phylogenies">Combining phylogenies</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Saurabh Parikh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Mission Bio.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

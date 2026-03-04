@@ -6,8 +6,8 @@ Mosaic API documentation
 
    The latest version of Mosaic is recommended for new developments. Documentation for the other
    versions are available for applications and notebooks built using them:
-   `v3.7.0r2 <https://missionbio.github.io/mosaic/v3.7.0r2/index.html>`_,
-   `v3.7.0r1 (first documentation revision of v3.7.0) <https://missionbio.github.io/mosaic/v3.7.0r1/index.html>`_
+   `v3.12.2 <https://missionbio.github.io/mosaic/v3.12.2/index.html>`_
+   , `v3.7.0 <https://missionbio.github.io/mosaic/v3.7.0r2/index.html>`_
    , `v3.4.0 <https://missionbio.github.io/mosaic/v3.4.0/index.html>`_
    , `v3.1.1 <https://missionbio.github.io/mosaic/v3.1.1/index.html>`_
    , `v2.4.1 <https://missionbio.github.io/mosaic/v2.4.1/index.html>`_
@@ -23,6 +23,7 @@ exploratory analysis.
    :hidden:
    :maxdepth: 2
 
+   manual/license
    manual/install
    manual/getting_started
    manual/data_structure
@@ -45,6 +46,7 @@ Basic Classes
    ~missionbio.mosaic.dna.Dna
    ~missionbio.mosaic.cnv.Cnv
    ~missionbio.mosaic.protein.Protein
+   ~missionbio.mosaic.ge.Ge
    ~missionbio.mosaic.sample.Sample
    ~missionbio.mosaic.samplegroup.SampleGroup
 
@@ -71,6 +73,7 @@ Algorithms
    ~missionbio.demultiplex.protein.nsp.NSP
    ~missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype
    ~missionbio.mosaic.algorithms.compass.COMPASS
+   ~missionbio.demultiplex.phylogeny.sparc.SPARC
 
 Functional Modules
 ~~~~~~~~~~~~~~~~~~

@@ -1,3 +1,5 @@
+﻿:orphan:
+
 Truth
 =====
 
@@ -6,3 +8,4 @@ Truth
 .. currentmodule:: missionbio.demultiplex.dna.truth
 
 .. autoclass:: Truth
+

@@ -1,3 +1,5 @@
+﻿:orphan:
+
 PhyloTree
 =========
 
@@ -6,3 +8,4 @@ PhyloTree
 .. currentmodule:: missionbio.plotting.phylotree
 
 .. autoclass:: PhyloTree
+

@@ -1,3 +1,5 @@
+﻿:orphan:
+
 DnaAssignment
 =============
 
@@ -6,3 +8,4 @@ DnaAssignment
 .. currentmodule:: missionbio.mosaic.algorithms.dna_assignment
 
 .. autoclass:: DnaAssignment
+

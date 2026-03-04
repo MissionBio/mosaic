@@ -4,6 +4,36 @@ Changelog
 
 .. py:currentmodule:: missionbio.mosaic
 
+v3.17.0
+-------
+**Release date**: 2026-04-03
+
+
+Added
+~~~~~
+
+* Added support for reading Tapestri GE pipeline created GE assays.
+* RNA assay with methods for normalization, clustering, plotting
+* Add a ``file`` attribute to :class:`~sample.Sample` which stores the path of the h5 file
+* Add ``gi`` as synonym for :meth:`~assay._Assay.get_info`
+* Speed up whitelist variant search and loading of entire h5 files.
+* Option to set the label order in :meth:`~assay._Assay.clustered_barcodes`
+* Add leiden clustering option in :meth:`~assay._Assay.cluster`
+
+Fixed
+~~~~~
+
+* Merging assays respects palette from all assays instead of just the first one
+* Platte keys with slashes are encoded to ensure that they can be properly written in the assay info.
+* Unsupported genomes do not raise an error when running ``VariantSubcloneTable`` and ``COMPASS``
+
+Changed
+~~~~~~~
+
+* Pin umap-learn to avoid mismatch with scikit-learn versions
+* Minimum python version from 3.8 to 3.10
+
+
 v3.12.0
 -------
 **Release date**: 2025-21-04

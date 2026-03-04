@@ -1,3 +1,5 @@
+﻿:orphan:
+
 BarGraph
 ========
 
@@ -6,3 +8,4 @@ BarGraph
 .. currentmodule:: missionbio.plotting.bargraph
 
 .. autoclass:: BarGraph
+

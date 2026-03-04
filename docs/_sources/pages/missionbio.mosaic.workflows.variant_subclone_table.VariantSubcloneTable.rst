@@ -1,3 +1,5 @@
+﻿:orphan:
+
 VariantSubcloneTable
 ====================
 
@@ -6,3 +8,4 @@ VariantSubcloneTable
 .. currentmodule:: missionbio.mosaic.workflows.variant_subclone_table
 
 .. autoclass:: VariantSubcloneTable
+

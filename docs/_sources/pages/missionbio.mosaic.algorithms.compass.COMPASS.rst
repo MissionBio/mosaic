@@ -1,3 +1,5 @@
+﻿:orphan:
+
 COMPASS
 =======
 
@@ -6,3 +8,4 @@ COMPASS
 .. currentmodule:: missionbio.mosaic.algorithms.compass
 
 .. autoclass:: COMPASS
+

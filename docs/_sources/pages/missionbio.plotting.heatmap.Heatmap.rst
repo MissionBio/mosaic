@@ -1,3 +1,5 @@
+﻿:orphan:
+
 Heatmap
 =======
 
@@ -6,3 +8,4 @@ Heatmap
 .. currentmodule:: missionbio.plotting.heatmap
 
 .. autoclass:: Heatmap
+

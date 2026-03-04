@@ -1,3 +1,5 @@
+﻿:orphan:
+
 LinePlot
 ========
 
@@ -6,3 +8,4 @@ LinePlot
 .. currentmodule:: missionbio.plotting.lineplot
 
 .. autoclass:: LinePlot
+

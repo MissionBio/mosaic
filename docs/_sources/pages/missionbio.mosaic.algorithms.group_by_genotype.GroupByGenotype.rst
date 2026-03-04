@@ -1,3 +1,5 @@
+﻿:orphan:
+
 GroupByGenotype
 ===============
 
@@ -6,3 +8,4 @@ GroupByGenotype
 .. currentmodule:: missionbio.mosaic.algorithms.group_by_genotype
 
 .. autoclass:: GroupByGenotype
+

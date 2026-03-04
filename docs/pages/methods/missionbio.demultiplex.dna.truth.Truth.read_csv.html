@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Truth.read_csv &#8212; Mosaic v3.12.2 documentation</title>
+    <title>Truth.read_csv &#8212; Mosaic v3.17.0 documentation</title>
   
   
   
@@ -139,12 +139,13 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
+    <p class="title logo__title">Mosaic v3.17.0 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../manual/license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/data_structure.html">Data structure</a></li>
@@ -190,6 +191,7 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/ge-protein.html">Single sample GE+Protein</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/help.html">Additional resources</a></li>
@@ -202,6 +204,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.ge.Ge.html">Ge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
@@ -215,6 +218,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.phylogeny.sparc.SPARC.html">SPARC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
 <ul class="nav bd-sidenav">
@@ -411,50 +415,50 @@ document.write(`
 <dt class="sig sig-object py" id="missionbio.demultiplex.dna.truth.Truth.read_csv">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Truth.</span></span><span class="sig-name descname"><span class="pre">read_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">csv_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../missionbio.demultiplex.dna.truth.Truth.html#missionbio.demultiplex.dna.truth.Truth" title="missionbio.demultiplex.dna.truth.Truth"><span class="pre">Truth</span></a></span></span><a class="headerlink" href="#missionbio.demultiplex.dna.truth.Truth.read_csv" title="Permalink to this definition">#</a></dt>
 <dd><p>Load dna truth from a csv file</p>
-<p>Csv file should contain the following columns:
-- chromosome:</p>
-<blockquote>
-<div><p>The chromosome the variant is on. Must include the “chr” prefix.</p>
-</div></blockquote>
+<p>The CSV file should contain the following columns:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>variant_id:</dt><dd><p>It contains the name of the variant in the <code class="docutils literal notranslate"><span class="pre">chromosome:position:ref_allele/alt_allele</span></code>
+format.</p>
 <ul>
+<li><dl class="simple">
+<dt>chromosome:</dt><dd><p>The chromosome the variant is on. Must include the “chr” prefix.</p>
+</dd>
+</dl>
+</li>
 <li><dl class="simple">
 <dt>position:</dt><dd><p>The position of the variant in 1-based coordinates.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>ref_allele:</dt><dd><dl class="simple">
-<dt>The reference allele of the variant. Special notes:</dt><dd><dl class="simple">
-<dt>Insertions: must be the base pair in the reference genome</dt><dd><p>just before where the insertion starts.</p>
-</dd>
-<dt>Deletions: must start with the base pair in the reference allele</dt><dd><p>just before where the deletion starts.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt>alt_allele:</dt><dd><dl>
-<dt>The alternate allele of the variant. Special notes:</dt><dd><p>Insertions: must start with the reference allele.
-Deletions: must be the base pair in the reference genome</p>
-<blockquote>
-<div><p>just before where the deletion starts.</p>
-</div></blockquote>
-</dd>
-</dl>
+<dt>ref_allele:</dt><dd><p>The reference allele of the variant. Special notes:</p>
+<ul>
+<li><p>For insertions it must be the base pair in the reference genome
+just before where the insertion starts.</p></li>
+<li><p>For deletions it must start with the base pair in the reference allele
+just before where the deletion starts.</p></li>
+</ul>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>genotype:</dt><dd><dl class="simple">
-<dt>The expected genotype of the variant. Acceptable values:</dt><dd><p>0 - wildtype
-1 - heterozygous
-2 - homozygous
-3 - missing</p>
+<dt>alt_allele:</dt><dd><p>The alternate allele of the variant. Special notes:</p>
+<ul>
+<li><p>For insertions it must start with the reference allele.</p></li>
+<li><p>For deletions it must be the base pair in the reference genome
+just before where the deletion starts.</p></li>
+</ul>
 </dd>
 </dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>genotype:</dt><dd><p>The expected genotype of the variant. Acceptable values are
+<code class="docutils literal notranslate"><span class="pre">0</span></code> (wildtype), <code class="docutils literal notranslate"><span class="pre">1</span></code> (heterozygous), <code class="docutils literal notranslate"><span class="pre">2</span></code> (homozygous), and <code class="docutils literal notranslate"><span class="pre">3</span></code> (missing)</p>
 </dd>
 </dl>
 </li>
@@ -470,9 +474,11 @@ Deletions: must be the base pair in the reference genome</p>
 </li>
 </ul>
 <p class="rubric">Example</p>
-<p>chromosome,position,ref_allele,alt_allele,genotype,type,sample_id
-chr1,115256669,G,A,0,germline,SampleA
-chr1,115256669,G,A,2,germline,SampleA</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">variant_id</span><span class="p">,</span><span class="n">genotype</span><span class="p">,</span><span class="nb">type</span><span class="p">,</span><span class="n">sample_id</span>
+<span class="n">chr1</span><span class="p">:</span><span class="mi">115256669</span><span class="p">:</span><span class="n">G</span><span class="o">/</span><span class="n">A</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">germline</span><span class="p">,</span><span class="n">SampleA</span>
+<span class="n">chr1</span><span class="p">:</span><span class="mi">115256669</span><span class="p">:</span><span class="n">G</span><span class="o">/</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">germline</span><span class="p">,</span><span class="n">SampleA</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>csv_file</strong> – The csv file with the truth data</p>
@@ -487,8 +493,11 @@ Value represents expected VAF in 0-100 range. Unknown/missing values are -50.</p
 </dd></dl>
 
 <hr class="docutils" />
-<p>&lt; Class <a class="reference internal" href="../missionbio.demultiplex.dna.truth.Truth.html"><span class="doc">Truth</span></a></p>
-</section>
+<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+   <p><svg class="svg-inline--fa fa-angle-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+     <path fill="currentColor" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
+   </svg></p><p><a class="reference internal" href="../missionbio.demultiplex.dna.truth.Truth.html#missionbio.demultiplex.dna.truth.Truth" title="missionbio.demultiplex.dna.truth.Truth"><code class="xref py py-class docutils literal notranslate"><span class="pre">Truth</span></code></a></p>
+</div></section>
 
 
                 </article>
@@ -542,7 +551,7 @@ By Saurabh Parikh
 
   <p class="copyright">
     
-      © Copyright 2021, Mission Bio.
+      © Copyright 2026, Mission Bio.
       <br/>
     
   </p>

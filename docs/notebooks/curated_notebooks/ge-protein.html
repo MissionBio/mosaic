@@ -1,0 +1,903 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Single sample GE+Protein &#8212; Mosaic v3.17.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/curated_notebooks/ge-protein';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Additional resources" href="../../manual/help.html" />
+    <link rel="prev" title="Multisample DNA + Protein" href="dna-protein-multisample.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Mosaic v3.17.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../manual/license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/data_structure.html">Data structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/cohort.html">Cohort Analysis Pipeline</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../manual/vignettes.html">Vignettes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">Overview of mosaic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../filtering.html">Filtering barcodes and ids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cnv.html">Manual CNV analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../plot-customizations.html">Plot customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../multi-sample-analysis.html">Multisample analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../additional-plots-and-customizations.html">Additional plots and customizations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code-snippets.html">Code Snippets</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../manual/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dna.html">Single Sample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="dna-multisample.html">Multisample DNA-only</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="dna-protein.html">Single Sample DNA + Protein</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="dna-protein-multisample.html">Multisample DNA + Protein</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Single sample GE+Protein</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/help.html">Additional resources</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../../manual/changelog.html">Changelog</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Basic Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.assay._Assay.html">_Assay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.dna.Dna.html">Dna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.ge.Ge.html">Ge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.sample.Sample.html">Sample</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interactive Workflows</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.workflows.copy_number.CopyNumber.html">CopyNumber</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html">VariantSubcloneTable</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Algorithms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.demultiplex.phylogeny.sparc.SPARC.html">SPARC</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.io.html">io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.utils.html">utils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.constants.html">constants</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Custom Plots</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.plotting.heatmap.Heatmap.html">Heatmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.plotting.lineplot.LinePlot.html">LinePlot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.plotting.bargraph.BarGraph.html">BarGraph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.plotting.multimap.MultiMap.html">MultiMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.plotting.phylotree.PhyloTree.html">PhyloTree</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.plotting.fishplot.Fishplot.html">Fishplot</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DNA assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.demultiplex.dna.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.demultiplex.dna.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.mosaic.algorithms.dna_assignment.DnaAssignment.html">DnaAssignment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Protein assignment</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.demultiplex.protein.truth.Truth.html">Truth</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.demultiplex.protein.pace.likelihood.LikelihoodMethod.html">LikelihoodMethod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../pages/missionbio.demultiplex.protein.pace.probability.ProbabilityMethod.html">ProbabilityMethod</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/curated_notebooks/ge-protein.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Single sample GE+Protein</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-add-missing-panel-information-to-h5-files-generated-with-v1-2">Step-0: Add missing panel information to h5 files generated with v1.2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#this-step-is-not-needed-for-h5-files-generated-by-ge-pipeline-v1-2-1-onwards">This step is not needed for h5 files generated by GE pipeline v1.2.1 onwards</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-the-necessary-libraries">Step-1: Load the necessary libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-load-the-sample-h5-file">Step-2: Load the sample H5 file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-protein-data-analysis">Step-3: Protein data analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-generating-ge-tables-used-for-downstream-plots">Step-4: Generating GE tables used for downstream plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-browsing-ge-tables-and-data">Step-5: Browsing GE tables and data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-variants-table">1. All variants table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifications-list-table-per-target">2. Modifications list table (per target)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-add-protein-cell-types-to-ge-tables">Step-6: Add protein cell types to GE tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-edit-status-table">1. Final edit status table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#target-modifications-table">2. Target modifications table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-make-some-ge-protein-plots">Step-7: Make some GE+Protein plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-umap-plot-colored-by-on-target-ge-editing-status">1. Protein UMAP plot colored by on-target GE editing status</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-expression-violin-plot-split-by-on-target-ge-editing-status">2. Protein expression violin plot split by on-target GE editing status</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+    <!--Add a white cover to hide the .bd-container grey on the right side of the page.-->
+    <div class="background-cover" id="background-cover"></div>
+    <section id="single-sample-ge-protein">
+<h1>Single sample GE+Protein<a class="headerlink" href="#single-sample-ge-protein" title="Permalink to this heading">#</a></h1>
+<section id="step-0-add-missing-panel-information-to-h5-files-generated-with-v1-2">
+<h2>Step-0: Add missing panel information to h5 files generated with v1.2<a class="headerlink" href="#step-0-add-missing-panel-information-to-h5-files-generated-with-v1-2" title="Permalink to this heading">#</a></h2>
+<p>Note: h5 generated by GE pipeline v1.1.1 or earlier will not work</p>
+<section id="this-step-is-not-needed-for-h5-files-generated-by-ge-pipeline-v1-2-1-onwards">
+<h3>This step is not needed for h5 files generated by GE pipeline v1.2.1 onwards<a class="headerlink" href="#this-step-is-not-needed-for-h5-files-generated-by-ge-pipeline-v1-2-1-onwards" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.h5.data.reader</span><span class="w"> </span><span class="kn">import</span> <span class="n">H5Reader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.h5.data.writer</span><span class="w"> </span><span class="kn">import</span> <span class="n">H5Writer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h5_path</span> <span class="o">=</span> <span class="s1">&#39;Path to the h5 from v1.2 pipeline&#39;</span>
+
+
+<span class="c1">## These are path to panel files which are within the GE panel ZIP file</span>
+<span class="c1">## Extract the ZIP file and specify path to each file here</span>
+<span class="n">panel_design_summary_path</span> <span class="o">=</span> <span class="s1">&#39;Path to designSummary.tab panel file&#39;</span>
+<span class="n">panel_submitted_path</span> <span class="o">=</span> <span class="s1">&#39;Path to submitted panel file&#39;</span>
+<span class="n">panel_target_groups_path</span> <span class="o">=</span> <span class="s1">&#39;Path to target_groups.csv panel file&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">design_summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">panel_design_summary_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">submitted_bed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">panel_submitted_path</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;chrom&quot;</span><span class="p">,</span> <span class="s2">&quot;start&quot;</span><span class="p">,</span> <span class="s2">&quot;stop&quot;</span><span class="p">,</span> <span class="s2">&quot;target_name&quot;</span><span class="p">,],)</span>
+<span class="n">target_groups</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">panel_target_groups_path</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">H5Reader</span><span class="p">(</span><span class="n">h5_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">reader</span><span class="p">:</span>
+    <span class="n">all_assays</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">assays</span><span class="p">()</span>
+    <span class="n">all_samples</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">samples</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">H5Writer</span><span class="p">(</span><span class="n">h5_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s2">&quot;ge_dna_variants&quot;</span> <span class="ow">in</span> <span class="n">all_assays</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">all_samples</span><span class="p">:</span>
+            <span class="n">info</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">sample</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;design_summary&quot;</span><span class="p">:</span> <span class="n">design_summary</span><span class="p">,</span>
+                    <span class="s2">&quot;submitted_bed&quot;</span><span class="p">:</span> <span class="n">submitted_bed</span><span class="p">,</span>
+                    <span class="s2">&quot;target_groups&quot;</span><span class="p">:</span> <span class="n">target_groups</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="n">writer</span><span class="o">.</span><span class="n">write_info</span><span class="p">(</span><span class="s2">&quot;ge_dna_variants&quot;</span><span class="p">,</span> <span class="n">info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="step-1-load-the-necessary-libraries">
+<h2>Step-1: Load the necessary libraries<a class="headerlink" href="#step-1-load-the-necessary-libraries" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">missionbio.mosaic.io</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mio</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2-load-the-sample-h5-file">
+<h2>Step-2: Load the sample H5 file<a class="headerlink" href="#step-2-load-the-sample-h5-file" title="Permalink to this heading">#</a></h2>
+<p>The example dataset can be downloaded from https://github.com/MissionBio/mosaic-jupyter/blob/master/exampleH5/edited-t-cells.h5</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">mio</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;/Users/user_name/Documents/edited-t-cells.h5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3-protein-data-analysis">
+<h2>Step-3: Protein data analysis<a class="headerlink" href="#step-3-protein-data-analysis" title="Permalink to this heading">#</a></h2>
+<p>This is showing a standard protein analysis workflow including the following steps:</p>
+<ul class="simple">
+<li><p>Normalizing protein reads</p></li>
+<li><p>Prinicple Component analysis on the normalized read counts</p></li>
+<li><p>Running UMAP on chosen PCs</p></li>
+<li><p>Clustering the protein data using the UMAP dimensions</p></li>
+<li><p>Visualizing the normalized read counts for the identified clusters (as a heatmap)</p></li>
+<li><p>Renaming the clusters to more meaningful names (this step is not added for this example data)</p></li>
+</ul>
+<p>For the latest protein analysis methods refer to the notebook <a class="reference external" href="https://missionbio.github.io/mosaic/notebooks/curated_notebooks/dna-protein.html#protein-analysis">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">normalize_reads</span><span class="p">(</span><span class="s1">&#39;NSP&#39;</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">run_pca</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="s1">&#39;normalized_counts&#39;</span><span class="p">,</span> <span class="n">components</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">show_plot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">run_umap</span><span class="p">(</span><span class="s1">&#39;normalized_counts&#39;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">cluster</span><span class="p">(</span><span class="s1">&#39;umap&#39;</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;graph-community&#39;</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="s1">&#39;normalized_counts&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample.protein.rename_labels({</span>
+<span class="c1">#     &quot;1&quot;: &quot;Cell-type1&quot;,</span>
+<span class="c1">#     &quot;2&quot;: &quot;Cell-type2&quot;,</span>
+<span class="c1">#     &quot;3&quot;: &quot;Cell-type3&quot;,</span>
+<span class="c1">#     &quot;4&quot;: &quot;Cell-type4&quot;,</span>
+<span class="c1">#     &quot;5&quot;: &quot;Cell-type5&quot;,</span>
+<span class="c1"># })</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-4-generating-ge-tables-used-for-downstream-plots">
+<h2>Step-4: Generating GE tables used for downstream plots<a class="headerlink" href="#step-4-generating-ge-tables-used-for-downstream-plots" title="Permalink to this heading">#</a></h2>
+<p>The GE workflow starts with filtering low quality variants followed by identifying the edit status for each target in each cell. Variant filtering is done using 3 different filters:</p>
+<ul class="simple">
+<li><p>min_gq: Remove variants which have genotyping quality or GQ (as calculated by GATK) lower than this threshold. Default value for this filter is 30.</p></li>
+<li><p>min_dp: Remove variants which have read depth or DP (as calculated by GATK) lower than this threshold. Default value for this filter is 10 reads.</p></li>
+<li><p>min_af: Remove variants which have Allele frequency or AF (as calculated by GATK) lower than this threshold. Default value for this filter is 10%.</p></li>
+</ul>
+<p>The next command generates the edit_status dataframe for GE data which contains the targets as columns and cells as rows with the value for each combination being the edit status of the target in the particular cell.</p>
+<p>More details on the function can be found in the function’s docstring (shown below)</p>
+<p>For more information on the layers, column attributes and row attributes of the GE assay please refer to the GE DNA variants section of <a class="reference external" href="https://support.missionbio.com/hc/en-us/articles/17897566284567-Genome-Editing-GE-h5-File#h_01HBFXKRWV28KA727A7VS62NR8">this article</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>sample.ge.get_final_edit_status
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">filter_variants</span><span class="p">(</span>
+    <span class="n">min_gq</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">min_dp</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">min_af</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">edit_status</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">get_final_edit_status</span><span class="p">(</span><span class="n">edit_mode</span><span class="o">=</span><span class="s1">&#39;indel&#39;</span><span class="p">)</span>
+<span class="n">edit_status</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at the edit status distribution for a target</span>
+
+<span class="n">edit_status</span><span class="p">[</span><span class="s1">&#39;TCRA_ONTARGET&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write out the edit_status to a CSV file</span>
+
+<span class="c1"># Uncomment the following line to write out the edit_status matrix to a CSV file in the current working directory</span>
+
+<span class="c1"># edit_status.to_csv(f&quot;{sample.name}_edit_status.csv&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-5-browsing-ge-tables-and-data">
+<h2>Step-5: Browsing GE tables and data<a class="headerlink" href="#step-5-browsing-ge-tables-and-data" title="Permalink to this heading">#</a></h2>
+<section id="all-variants-table">
+<h3>1. All variants table<a class="headerlink" href="#all-variants-table" title="Permalink to this heading">#</a></h3>
+<p>Details on the data contained within this table can be found in the function’s documentation.</p>
+<p>This table is generated for a specific edit mode, which can be one of three possible values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">indel</span></code> : Only INDEL variants are consdiered as edits and shown in the table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">snv</span></code> : Only SNV variants are considered as edits and shown in the table</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indel_snv</span></code> : Both INDEL and SNV variants are considered as edits and shown in the table</p></li>
+</ul>
+<p>The resulting table contains information for all targets in the panel, it can be subset to information for a particular target by filtering on the column <code class="docutils literal notranslate"><span class="pre">target</span></code> which contains the target names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>sample.ge.get_all_variants_table
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_vars_table</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">get_all_variants_table</span><span class="p">(</span><span class="n">edit_mode</span><span class="o">=</span><span class="s1">&#39;indel&#39;</span><span class="p">)</span>
+
+<span class="n">all_vars_table</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write the all variants table to a file</span>
+
+<span class="c1"># Uncomment the following line to write out the all_vairants_table (containing information for all targets) to a CSV file</span>
+
+<span class="c1"># all_vars_table.to_csv(f&quot;{sample.name}_all_variants.csv&quot;)</span>
+
+<span class="c1"># Uncomment the following for-loop to write out 1 all_variants CSV file per target to the current working directory</span>
+
+<span class="c1"># for target, mini_df in all_vars_table.groupby(&#39;target&#39;):</span>
+<span class="c1">#     mini_df.to_csv(f&quot;{sample.name}_{target}_all_variants.csv&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modifications-list-table-per-target">
+<h3>2. Modifications list table (per target)<a class="headerlink" href="#modifications-list-table-per-target" title="Permalink to this heading">#</a></h3>
+<p>Details on the data contained within this table can be found in the function’s documentation (shown below).</p>
+<p>This table is generated for a specific target and contains detailed information about the INDELs present in that target.</p>
+<p>This table can be used to identify which variants are present on allele-1 vs allele-2 for a particular cell barcode.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">?</span>sample.ge.get_target_modifications
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sample</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">get_target_modifications</span><span class="p">(</span><span class="s1">&#39;TCRA_ONTARGET&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a file for each target in the panel</span>
+
+<span class="n">all_targets_in_panel</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">panel</span><span class="o">.</span><span class="n">targets</span><span class="p">[</span><span class="s1">&#39;target_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">target_name</span> <span class="ow">in</span> <span class="n">all_targets_in_panel</span><span class="p">:</span>
+    <span class="n">target_df</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">get_target_modifications</span><span class="p">(</span><span class="n">target_name</span><span class="p">)</span>
+
+    <span class="c1">## Uncomment the following line to write out a CSV file for each target to the current working directory</span>
+    
+    <span class="c1"># target_df.to_csv(f&#39;{sample.name}_{target_name}_modifications.csv&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="step-6-add-protein-cell-types-to-ge-tables">
+<h2>Step-6: Add protein cell types to GE tables<a class="headerlink" href="#step-6-add-protein-cell-types-to-ge-tables" title="Permalink to this heading">#</a></h2>
+<section id="final-edit-status-table">
+<h3>1. Final edit status table<a class="headerlink" href="#final-edit-status-table" title="Permalink to this heading">#</a></h3>
+<p>These statements add the column <code class="docutils literal notranslate"><span class="pre">protein_label</span></code> to the <code class="docutils literal notranslate"><span class="pre">edit_status</span></code> dataframe. These labels are the same as what was set in Step-1 for protein analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edit_status</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">get_final_edit_status</span><span class="p">(</span><span class="n">edit_mode</span><span class="o">=</span><span class="s1">&#39;indel&#39;</span><span class="p">)</span>
+
+<span class="n">edit_status</span><span class="p">[</span><span class="s1">&#39;protein_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">barcodes</span><span class="p">(),</span> <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">get_labels</span><span class="p">()))</span>
+
+<span class="n">edit_status</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="target-modifications-table">
+<h3>2. Target modifications table<a class="headerlink" href="#target-modifications-table" title="Permalink to this heading">#</a></h3>
+<p>These statements add the column <code class="docutils literal notranslate"><span class="pre">protein_label</span></code> to the <code class="docutils literal notranslate"><span class="pre">target_modifications</span></code> dataframe. These labels are the same as what was set in Step-1 for protein analysis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_modifications</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">ge</span><span class="o">.</span><span class="n">get_target_modifications</span><span class="p">(</span><span class="s1">&#39;TCRA_ONTARGET&#39;</span><span class="p">)</span>
+
+<span class="n">target_modifications</span><span class="p">[</span><span class="s1">&#39;protein_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">barcodes</span><span class="p">(),</span> <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">get_labels</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="step-7-make-some-ge-protein-plots">
+<h2>Step-7: Make some GE+Protein plots<a class="headerlink" href="#step-7-make-some-ge-protein-plots" title="Permalink to this heading">#</a></h2>
+<section id="protein-umap-plot-colored-by-on-target-ge-editing-status">
+<h3>1. Protein UMAP plot colored by on-target GE editing status<a class="headerlink" href="#protein-umap-plot-colored-by-on-target-ge-editing-status" title="Permalink to this heading">#</a></h3>
+<p>There are 2 plots shown below, the first shows the protein UMAP values colored by different antibodies showing the expression per UMAP cluster.</p>
+<p>The second plot shows the same UMAP clusters but colored by the GE target editing statuses.</p>
+<p>Both of these plots have attribute called “features” which can be used to control which antibodies or GE targets are shown in the respecitve plots.</p>
+<p>This plot is useful to identify the different protein populations using the first UMAP plot (showing Ab-expression) and then seeing if any of these cell-types/clusters have a bias towards gene editing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="s1">&#39;umap&#39;</span><span class="p">,</span>
+    <span class="n">colorby</span><span class="o">=</span><span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;normalized_counts&#39;</span><span class="p">),</span>
+    <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;CD3&#39;</span><span class="p">,</span> <span class="s1">&#39;CD4&#39;</span><span class="p">,</span> <span class="s1">&#39;CD8&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="s1">&#39;umap&#39;</span><span class="p">,</span> 
+   <span class="n">colorby</span><span class="o">=</span><span class="n">edit_status</span><span class="p">,</span> 
+   <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TCRA_ONTARGET&#39;</span><span class="p">,</span> <span class="s1">&#39;PDCD1_ONTARGET&#39;</span><span class="p">,</span> <span class="s1">&#39;TCRB_ONTARGET-1&#39;</span><span class="p">,</span> <span class="s1">&#39;TCRB_ONTARGET-2&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="protein-expression-violin-plot-split-by-on-target-ge-editing-status">
+<h3>2. Protein expression violin plot split by on-target GE editing status<a class="headerlink" href="#protein-expression-violin-plot-split-by-on-target-ge-editing-status" title="Permalink to this heading">#</a></h3>
+<p>This plot shows the expression of multiple antibodies simultaneously but splits the cells by the different GE editing statuses of a target. This is useful to compare different editing categories of a target and see if any of the protein’s expressions shows a correlation with the editing of the target.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">target_to_plot</span> <span class="o">=</span> <span class="s1">&#39;TCRA_ONTARGET&#39;</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">violinplot</span><span class="p">(</span>
+    <span class="s1">&#39;normalized_counts&#39;</span><span class="p">,</span>
+    <span class="n">splitby</span><span class="o">=</span><span class="n">edit_status</span><span class="p">[</span><span class="n">target_to_plot</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;CD3&#39;</span><span class="p">,</span> <span class="s1">&#39;CD4&#39;</span><span class="p">,</span> <span class="s1">&#39;CD8&#39;</span><span class="p">],</span>
+    <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39; - </span><span class="si">{</span><span class="n">target_to_plot</span><span class="si">}</span><span class="s1">&#39;</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">1000</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dna-protein-multisample.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Multisample DNA + Protein</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../manual/help.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Additional resources</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-0-add-missing-panel-information-to-h5-files-generated-with-v1-2">Step-0: Add missing panel information to h5 files generated with v1.2</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#this-step-is-not-needed-for-h5-files-generated-by-ge-pipeline-v1-2-1-onwards">This step is not needed for h5 files generated by GE pipeline v1.2.1 onwards</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-load-the-necessary-libraries">Step-1: Load the necessary libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-load-the-sample-h5-file">Step-2: Load the sample H5 file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-protein-data-analysis">Step-3: Protein data analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-generating-ge-tables-used-for-downstream-plots">Step-4: Generating GE tables used for downstream plots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-browsing-ge-tables-and-data">Step-5: Browsing GE tables and data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-variants-table">1. All variants table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modifications-list-table-per-target">2. Modifications list table (per target)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-add-protein-cell-types-to-ge-tables">Step-6: Add protein cell types to GE tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#final-edit-status-table">1. Final edit status table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#target-modifications-table">2. Target modifications table</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-make-some-ge-protein-plots">Step-7: Make some GE+Protein plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-umap-plot-colored-by-on-target-ge-editing-status">1. Protein UMAP plot colored by on-target GE editing status</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-expression-violin-plot-split-by-on-target-ge-editing-status">2. Protein expression violin plot split by on-target GE editing status</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Saurabh Parikh
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Mission Bio.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

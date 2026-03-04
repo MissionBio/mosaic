@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Protein.get_attribute &#8212; Mosaic v3.12.2 documentation</title>
+    <title>Protein.get_attribute &#8212; Mosaic v3.17.0 documentation</title>
   
   
   
@@ -139,12 +139,13 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
+    <p class="title logo__title">Mosaic v3.17.0 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../manual/license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/data_structure.html">Data structure</a></li>
@@ -190,6 +191,7 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/ge-protein.html">Single sample GE+Protein</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/help.html">Additional resources</a></li>
@@ -202,6 +204,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.ge.Ge.html">Ge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
@@ -215,6 +218,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.phylogeny.sparc.SPARC.html">SPARC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
 <ul class="nav bd-sidenav">
@@ -411,107 +415,100 @@ document.write(`
 <dt class="sig sig-object py" id="missionbio.mosaic.protein.Protein.get_attribute">
 <span class="sig-prename descclassname"><span class="pre">Protein.</span></span><span class="sig-name descname"><span class="pre">get_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attribute</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">constraint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Sequence</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#missionbio.mosaic.protein.Protein.get_attribute" title="Permalink to this definition">#</a></dt>
 <dd><p>Retrieve any attribute in the assay</p>
-<p>Returns a pd.DataFrame which could either be
-a row attribute, column attribute, layer
-or the passed attribute itself.</p>
+<p>Returns a pd.DataFrame which could either be a row attribute, column attribute,
+layer or the passed attribute itself.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>attribute:</strong></dt><dd><p>The attribute to be searched for in the assay. If it is a DataFrame, a copy of the
-DataFrame is returned with only the columns corresponding to the <code class="docutils literal notranslate"><span class="pre">features</span></code>.</p>
-</dd>
-<dt><strong>features:</strong></dt><dd><p>In case the attribute is a layer or col, then
-the subset of features to select</p>
-</dd>
-<dt><strong>constraint:</strong></dt><dd><dl class="simple">
-<dt>One of the following is accepted.</dt><dd><ol class="arabic simple">
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attribute</strong> – The attribute to be searched for in the assay. If it is a DataFrame, a copy of the
+DataFrame is returned with only the columns corresponding to the <code class="docutils literal notranslate"><span class="pre">features</span></code>.</p></li>
+<li><p><strong>features</strong> – In case the attribute is a layer or col, then the subset of features to select</p></li>
+<li><p><strong>constraint</strong> – <p>One of the following is accepted.</p>
+<blockquote>
+<div><ol class="arabic simple">
 <li><dl class="simple">
 <dt>None</dt><dd><p>Contraint is auto-determined.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>‘row’ / ‘r’</dt><dd><p>The first dimension must be equal
+<dt>’row’ / ‘r’</dt><dd><p>The first dimension must be equal
 to the number of cells.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>‘col’ / ‘c’</dt><dd><p>The second dimension must be equal
+<dt>’col’ / ‘c’</dt><dd><p>The second dimension must be equal
 to the number of ids or the number of
 features given in the input.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>‘row+col’ / ‘rc’</dt><dd><p>The dimension must be exactly
+<dt>’row+col’ / ‘rc’</dt><dd><p>The dimension must be exactly
 (number of cells, number of ids).
 The layers have this shape.</p>
 </dd>
 </dl>
 </li>
 </ol>
-</dd>
-</dl>
-</dd>
-<dt><strong>copy: bool</strong></dt><dd><p>Whether to return a copy of the attribute or not. Default is <cite>True</cite>.
+</div></blockquote>
+</p></li>
+<li><p><strong>copy</strong> – bool
+Whether to return a copy of the attribute or not. Default is <cite>True</cite>.
 Note that modifying the values of the dataframe will lead to modifications
-in the assay as well if <code class="docutils literal notranslate"><span class="pre">copy</span></code> is <cite>False</cite>.</p>
-</dd>
-</dl>
+in the assay as well if <code class="docutils literal notranslate"><span class="pre">copy</span></code> is <cite>False</cite>.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt>pd.DataFrame</dt><dd><p>The array of the attribute with the given name
-found in the assay layer, row attributes,
-or col attributes in that order. If a <cite>constraint</cite>
-is provided, the array is reshaped appropriately
-if possible, otherwise the best possible <cite>constraint</cite>
-for the given input is determined. The columns and
-index are named based on the barcodes, ids, or
-sequential integers depending on the <cite>constraint</cite>.</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>pd.DataFrame</dt><dd><p>The array of the attribute with the given name found in the assay layer, row
+attributes, or col attributes in that order. If a <cite>constraint</cite> is provided, the
+array is reshaped appropriately if possible, otherwise the best possible
+<cite>constraint</cite> for the given input is determined. The columns and index are named
+based on the barcodes, ids, or sequential integers depending on the <cite>constraint</cite>.</p>
 </dd>
 </dl>
+</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><dl class="simple">
-<dt>ValueError</dt><dd><p>When the attribute is not found or
-when the constraint is not satisfied.</p>
-</dd>
-<dt>TypeError</dt><dd><p>When the attribute is neither a str
-not an np.ndarray</p>
-</dd>
-</dl>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – When the attribute is not found or when the constraint is not satisfied.</p></li>
+<li><p><strong>TypeError</strong> – When the attribute is neither a str nor a numpy array</p></li>
+</ul>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>In case the constraint can reshape the array
-into the expected shape then no error will be raised.
-Eg. An assay with 100 barcodes and 10 ids has a shape
-(100, 10). When the attribute ‘barcode’ is fetched
-constrained by ‘col’ it will not raise an error,
-but rather return a 10x10 dataframe of barcodes.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">missionbio.mosaic</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ms</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">assay</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">load_example_dataset</span><span class="p">(</span><span class="s2">&quot;3 cell mix&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">dna</span><span class="p">[:</span><span class="mi">100</span><span class="p">,</span> <span class="p">:</span><span class="mi">10</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">assay</span><span class="o">.</span><span class="n">shape</span>
+<p>In case the constraint can reshape the array into the expected shape then no error will
+be raised. E.g. An assay with 100 barcodes and 10 ids has a shape (100, 10). When the
+attribute ‘barcode’ is fetched constrained by ‘col’ it will not raise an error, but
+rather return a 10x10 dataframe of barcodes.</p>
+<p>Unexpected edge cases</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">assay</span><span class="p">:</span> <span class="n">Assay</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">assay</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="go">(100, 10)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">attr</span> <span class="o">=</span> <span class="n">assay</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;barcode&#39;</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">attr</span><span class="o">.</span><span class="n">shape</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">attr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="go">(10, 10)</span>
 </pre></div>
 </div>
-<p>Possible expected behavior
-&gt;&gt;&gt; assay = assay[:, :9]
-&gt;&gt;&gt; assay.shape
-(100, 9)
-&gt;&gt;&gt; attr = assay.get_attribute(‘barcode’, constraint=’col’)
-ValueError - ‘The given attribute does not have the expected
-shape nor could be reshaped appropriately.’</p>
+<p>Possible expected behavior</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">assay</span> <span class="o">=</span> <span class="n">assay</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">9</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">assay</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="go">(100, 9)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">attr</span> <span class="o">=</span> <span class="n">assay</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s1">&#39;barcode&#39;</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">)</span>
+<span class="go">ValueError - &#39;The given attribute does not have the expected</span>
+<span class="go">shape nor could be reshaped appropriately.&#39;</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <hr class="docutils" />
-<p>&lt; Class <a class="reference internal" href="../missionbio.mosaic.protein.Protein.html"><span class="doc">Protein</span></a></p>
-</section>
+<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+   <p><svg class="svg-inline--fa fa-angle-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+     <path fill="currentColor" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
+   </svg></p><p><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html#missionbio.mosaic.protein.Protein" title="missionbio.mosaic.protein.Protein"><code class="xref py py-class docutils literal notranslate"><span class="pre">Protein</span></code></a></p>
+</div></section>
 
 
                 </article>
@@ -565,7 +562,7 @@ By Saurabh Parikh
 
   <p class="copyright">
     
-      © Copyright 2021, Mission Bio.
+      © Copyright 2026, Mission Bio.
       <br/>
     
   </p>

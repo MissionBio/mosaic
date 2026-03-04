@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Dna.AttributeType &#8212; Mosaic v3.12.2 documentation</title>
+    <title>Dna.AttributeType &#8212; Mosaic v3.17.0 documentation</title>
   
   
   
@@ -139,12 +139,13 @@
   
   
   
-    <p class="title logo__title">Mosaic v3.12.2 documentation</p>
+    <p class="title logo__title">Mosaic v3.17.0 documentation</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../manual/license.html">License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/install.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/data_structure.html">Data structure</a></li>
@@ -190,6 +191,7 @@
 
 
 
+<li class="toctree-l2"><a class="reference internal" href="../../notebooks/curated_notebooks/ge-protein.html">Single sample GE+Protein</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/help.html">Additional resources</a></li>
@@ -202,6 +204,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html">Dna</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.protein.Protein.html">Protein</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.ge.Ge.html">Ge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.sample.Sample.html">Sample</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
@@ -215,6 +218,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.protein.nsp.NSP.html">NSP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.group_by_genotype.GroupByGenotype.html">GroupByGenotype</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../missionbio.mosaic.algorithms.compass.COMPASS.html">COMPASS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../missionbio.demultiplex.phylogeny.sparc.SPARC.html">SPARC</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functional Modules</span></p>
 <ul class="nav bd-sidenav">
@@ -367,9 +371,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -385,14 +387,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.dna.Dna.AttributeType"><code class="docutils literal notranslate"><span class="pre">Dna.AttributeType</span></code></a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -407,16 +401,12 @@ document.write(`
     <section id="dna-attributetype">
 <h1>Dna.AttributeType<a class="headerlink" href="#dna-attributetype" title="Permalink to this heading">#</a></h1>
 <p class="rubric">missionbio.mosaic.dna.Dna.AttributeType</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="missionbio.mosaic.dna.Dna.AttributeType">
-<span class="sig-prename descclassname"><span class="pre">Dna.</span></span><span class="sig-name descname"><span class="pre">AttributeType</span></span><a class="headerlink" href="#missionbio.mosaic.dna.Dna.AttributeType" title="Permalink to this definition">#</a></dt>
-<dd><p>Type for attribute that can be passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">_Assay.get_attribute()</span></code></p>
-<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>]</p>
-</dd></dl>
-
-<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>]
-.. autoattribute:: Dna.AttributeType</p>
-</section>
+<hr class="docutils" />
+<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+   <p><svg class="svg-inline--fa fa-angle-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg="">
+     <path fill="currentColor" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path>
+   </svg></p><p><a class="reference internal" href="../missionbio.mosaic.dna.Dna.html#missionbio.mosaic.dna.Dna" title="missionbio.mosaic.dna.Dna"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dna</span></code></a></p>
+</div></section>
 
 
                 </article>
@@ -435,21 +425,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#missionbio.mosaic.dna.Dna.AttributeType"><code class="docutils literal notranslate"><span class="pre">Dna.AttributeType</span></code></a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
@@ -470,7 +445,7 @@ By Saurabh Parikh
 
   <p class="copyright">
     
-      © Copyright 2021, Mission Bio.
+      © Copyright 2026, Mission Bio.
       <br/>
     
   </p>

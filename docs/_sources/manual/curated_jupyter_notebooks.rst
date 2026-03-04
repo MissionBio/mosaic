@@ -28,11 +28,14 @@ advanced analysis, please refer to the :ref:`vignettes` section of the documenta
      - DNA and Protein analysis.
    * - `Multisample DNA+Protein`_
      - Multisample DNA and Protein analysis. The samples must be related to each other.
+   * - `GE+Protein`_
+     - GE and Protein analysis.
 
 .. _DNA: ../notebooks/curated_notebooks/dna.html
 .. _Multisample DNA: ../notebooks/curated_notebooks/dna-multisample.html
 .. _DNA+Protein: ../notebooks/curated_notebooks/dna-protein.html
 .. _Multisample DNA+Protein: ../notebooks/curated_notebooks/dna-protein-multisample.html
+.. _GE+Protein: ../notebooks/curated_notebooks/ge-protein.html
 
 .. toctree::
    :hidden:
@@ -42,3 +45,4 @@ advanced analysis, please refer to the :ref:`vignettes` section of the documenta
    ../notebooks/curated_notebooks/dna-multisample
    ../notebooks/curated_notebooks/dna-protein
    ../notebooks/curated_notebooks/dna-protein-multisample
+   ../notebooks/curated_notebooks/ge-protein
