@@ -226,3 +226,24 @@ install Rosetta 2 using the command:
     $ softwareupdate --install-rosetta
 
 Follow the instructions and once installation is successful, continue with Mosaic installation.
+
+Installing Mosaic on MacOS Tahoe
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+MacOS installer provides the user with 2 options to install the software:
+
+1. Install for me only
+
+2. Install on a specific device
+
+Since the release of MacOS Tahoe, the "Install on a specific disk" option is currently
+non-functional because the folder selection button is unresponsive.
+
+.. note::
+
+   If a previous version of mosaic is installed, the existing ``/Users/<user_home>/mosaic`` folder
+   must be deleted before proceeding with the new installation.
+
+To successfully install mosaic, users must select the "Install for me only" option and proceed
+with the default settings. This will install the software in the default location:
+``/Users/<user_home>/mosaic``.
