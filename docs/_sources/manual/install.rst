@@ -238,6 +238,7 @@ MacOS installer provides the user with 2 options to install the software:
 
    .. image:: images/macos_tahoe_selection.png
       :alt: MacOS Tahoe Installation Selection Options
+      :width: 50%
 
 Since the release of MacOS Tahoe, the "Install on a specific disk" option is currently
 non-functional because the folder selection button is unresponsive.
