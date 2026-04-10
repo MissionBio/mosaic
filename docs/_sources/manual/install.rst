@@ -58,13 +58,13 @@ Windows Installation
 2. Double click the installer. As the installer is not currently registered with Windows, you get a
    security warning dialogue. Click ``More Info >> Run anyway`` to install.
 
-.. image:: images/windows_installation_warning.png
-   :alt: Windows Installation Warning
-   :width: 30 %
+   .. image:: images/windows_installation_warning.png
+      :alt: Windows Installation Warning
+      :width: 30 %
 
-.. image:: images/windows_installation_runanyway.png
-   :alt: Windows Installation Run Anyway
-   :width: 30 %
+   .. image:: images/windows_installation_runanyway.png
+      :alt: Windows Installation Run Anyway
+      :width: 30 %
 
 3. Follow the instructions on the wizard to complete the installation.
 
@@ -115,11 +115,11 @@ it is possible to install Mosaic through the `missionbio conda channel <https://
     The `libmamba <https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community>`_ solver is
     a new dependency solver that is much faster than the default solver. Install it using the following:
 
-   .. code-block:: console
+    .. code-block:: console
 
-      $ conda install -n base conda-libmamba-solver
-      $ conda config --set channel_priority strict
-      $ conda config --set solver libmamba
+       $ conda install -n base conda-libmamba-solver
+       $ conda config --set channel_priority strict
+       $ conda config --set solver libmamba
 
 3. Install Mosaic
     Following the successful installation of Anaconda, open your console/terminal and run the following commands:
@@ -235,6 +235,9 @@ MacOS installer provides the user with 2 options to install the software:
 1. Install for me only
 
 2. Install on a specific device
+
+   .. image:: images/macos_tahoe_selection.png
+      :alt: MacOS Tahoe Installation Selection Options
 
 Since the release of MacOS Tahoe, the "Install on a specific disk" option is currently
 non-functional because the folder selection button is unresponsive.

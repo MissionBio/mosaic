@@ -205,6 +205,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../pages/missionbio.mosaic.cnv.Cnv.html">Cnv</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pages/missionbio.mosaic.protein.Protein.html">Protein</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pages/missionbio.mosaic.ge.Ge.html">Ge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pages/missionbio.mosaic.rna.Rna.html">Rna</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pages/missionbio.mosaic.sample.Sample.html">Sample</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../pages/missionbio.mosaic.samplegroup.SampleGroup.html">SampleGroup</a></li>
 </ul>
@@ -471,14 +472,13 @@ choose <code class="docutils literal notranslate"><span class="pre">Open</span><
 </section>
 <section id="windows-installation">
 <h3>Windows Installation<a class="headerlink" href="#windows-installation" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Download the Windows installer from Tapestri Portal.</p></li>
 <li><p>Double click the installer. As the installer is not currently registered with Windows, you get a
-security warning dialogue. Click <code class="docutils literal notranslate"><span class="pre">More</span> <span class="pre">Info</span> <span class="pre">&gt;&gt;</span> <span class="pre">Run</span> <span class="pre">anyway</span></code> to install.</p></li>
-</ol>
+security warning dialogue. Click <code class="docutils literal notranslate"><span class="pre">More</span> <span class="pre">Info</span> <span class="pre">&gt;&gt;</span> <span class="pre">Run</span> <span class="pre">anyway</span></code> to install.</p>
 <a class="reference internal image-reference" href="../_images/windows_installation_warning.png"><img alt="Windows Installation Warning" src="../_images/windows_installation_warning.png" style="width: 30%;" /></a>
 <a class="reference internal image-reference" href="../_images/windows_installation_runanyway.png"><img alt="Windows Installation Run Anyway" src="../_images/windows_installation_runanyway.png" style="width: 30%;" /></a>
-<ol class="arabic simple" start="3">
+</li>
 <li><p>Follow the instructions on the wizard to complete the installation.</p></li>
 </ol>
 <div class="admonition note">
@@ -520,16 +520,16 @@ it is possible to install Mosaic through the <a class="reference external" href=
 </dd>
 </dl>
 </li>
-<li><dl class="simple">
+<li><dl>
 <dt>Ensure that the <cite>libmamba</cite> solver is being used:</dt><dd><p>The <a class="reference external" href="https://www.anaconda.com/blog/a-faster-conda-for-a-growing-community">libmamba</a> solver is
 a new dependency solver that is much faster than the default solver. Install it using the following:</p>
-</dd>
-</dl>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>conda<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>base<span class="w"> </span>conda-libmamba-solver
 <span class="gp">$ </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>channel_priority<span class="w"> </span>strict
 <span class="gp">$ </span>conda<span class="w"> </span>config<span class="w"> </span>--set<span class="w"> </span>solver<span class="w"> </span>libmamba
 </pre></div>
 </div>
+</dd>
+</dl>
 </li>
 <li><dl>
 <dt>Install Mosaic</dt><dd><p>Following the successful installation of Anaconda, open your console/terminal and run the following commands:</p>
@@ -620,9 +620,11 @@ install Rosetta 2 using the command:</p>
 <section id="installing-mosaic-on-macos-tahoe">
 <h3>Installing Mosaic on MacOS Tahoe<a class="headerlink" href="#installing-mosaic-on-macos-tahoe" title="Permalink to this heading">#</a></h3>
 <p>MacOS installer provides the user with 2 options to install the software:</p>
-<ol class="arabic simple">
+<ol class="arabic">
 <li><p>Install for me only</p></li>
-<li><p>Install on a specific device</p></li>
+<li><p>Install on a specific device</p>
+<img alt="MacOS Tahoe Installation Selection Options" src="../_images/macos_tahoe_selection.png" />
+</li>
 </ol>
 <p>Since the release of MacOS Tahoe, the “Install on a specific disk” option is currently
 non-functional because the folder selection button is unresponsive.</p>

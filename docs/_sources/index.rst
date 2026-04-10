@@ -47,6 +47,7 @@ Basic Classes
    ~missionbio.mosaic.cnv.Cnv
    ~missionbio.mosaic.protein.Protein
    ~missionbio.mosaic.ge.Ge
+   ~missionbio.mosaic.rna.Rna
    ~missionbio.mosaic.sample.Sample
    ~missionbio.mosaic.samplegroup.SampleGroup
 
