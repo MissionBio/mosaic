@@ -410,6 +410,12 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-phylogenies">Combining phylogenies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-compass">Comparison with COMPASS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genome-wide-cnv-support">Genome-wide CNV support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparc-is-30x-faster">SPARC is 30x faster</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-phylogenies">Comparison of phylogenies</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -751,6 +757,111 @@ final tree adheres to the phylogenetic constraints and maximizes the likelihood 
 </figcaption>
 </figure>
 </section>
+<section id="comparison-with-compass">
+<h2>Comparison with COMPASS<a class="headerlink" href="#comparison-with-compass" title="Permalink to this heading">#</a></h2>
+<p>The following table summarizes the key differences between SPARC and COMPASS:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<colgroup>
+<col style="width: 28.0%" />
+<col style="width: 36.0%" />
+<col style="width: 36.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Aspect</p></th>
+<th class="head"><p>SPARC</p></th>
+<th class="head"><p>COMPASS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Clone calling modes</p></td>
+<td><p>SNV, gwLoH, and gwCNV</p></td>
+<td><p>SNV and focal CNV</p></td>
+</tr>
+<tr class="row-odd"><td><p>Performance</p></td>
+<td><p>Runtime depends on complexity of the phylogeny</p></td>
+<td><p>Slower; runtime scales with cells and variants</p></td>
+</tr>
+<tr class="row-even"><td><p>Method</p></td>
+<td><p>Clustering followed by distance-based tree construction and refinement</p></td>
+<td><p>MCMC sampling of trees to maximize the cell assignment likelihood</p></td>
+</tr>
+<tr class="row-odd"><td><p>Focal CNV clones</p></td>
+<td><p>Not yet supported</p></td>
+<td><p>Supported, but off by default in mosaic</p></td>
+</tr>
+<tr class="row-even"><td><p>Per variant error rates</p></td>
+<td><p>Each variant is modeled separately</p></td>
+<td><p>Has one error rate for SNV and one for INDELs</p></td>
+</tr>
+<tr class="row-odd"><td><p>Per variant ADO rates</p></td>
+<td><p>Modeled</p></td>
+<td><p>Modeled</p></td>
+</tr>
+<tr class="row-even"><td><p>Doublet assignment</p></td>
+<td><p>Supported</p></td>
+<td><p>Supported</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="genome-wide-cnv-support">
+<h3>Genome-wide CNV support<a class="headerlink" href="#genome-wide-cnv-support" title="Permalink to this heading">#</a></h3>
+<p>COMPASS requires grouping amplicons into “regions” with common CNVs. This assumption might be
+acceptable when grouping amplicons by genes, for which COMPASS was designed, but it does not work
+for genome-wide CNV because we do not know a priori the regions which have the same copy number.
+SPARC has a separate module for genome-wide CNV clustering that does not require grouping amplicons
+into regions.</p>
+</section>
+<section id="sparc-is-30x-faster">
+<h3>SPARC is 30x faster<a class="headerlink" href="#sparc-is-30x-faster" title="Permalink to this heading">#</a></h3>
+<p>The runtime of SPARC is dependent on the complexity of the phylogeny instead of the number of cells
+or variants. It searches through a larger set of possible phylogenies if the dataset is complex,
+unlike COMPASS which always runs a fixed number of iterations. This makes SPARC suitable for
+increased complexity in SNV+CNV analyses.</p>
+<p>Additionally, the runtime of COMPASS increases linearly with the number of cells and the number of
+variants. Genome-wide CNV clustering usually involves hundreds of variants, which will cause COMPASS
+to run for hours for some samples, if its methods were repurposed for gwCNV.</p>
+<figure class="align-default" id="id6">
+<img alt="Runtime comparison between SPARC and COMPASS" src="../_images/sparc_compass_runtime_comparison.png" />
+<figcaption>
+<p><span class="caption-text">Runtime comparison between SPARC and COMPASS</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="comparison-of-phylogenies">
+<h3>Comparison of phylogenies<a class="headerlink" href="#comparison-of-phylogenies" title="Permalink to this heading">#</a></h3>
+<p>The phylogenies obtained by SPARC and COMPASS are generally similar. However both methods have
+slightly different models and there could be subtle differences in the phylogeny. These are mostly
+explained by differences in the weights given to ADO rate, error rate, and dispersion of VAF. There
+are mainly two types of differences observed.</p>
+<ol class="arabic">
+<li><p><strong>Empty clones</strong>: COMPASS sometimes has clones with no cells assigned to them. This is because
+COMPASS looks for trees that maximize the likelihood of cells belonging to clones in the tree.
+This method does not ensure that all clones in the tree are supported by at least one cell. SPARC
+first clusters the cells, and then creates the tree. Therefore it’s guranteed that every clone in
+the tree has at least one cell assigned to it.</p>
+<figure class="align-default" id="id7">
+<img alt="Wildtype clones found by COMPASS but not SPARC" src="../_images/phylogeny_comparison_empty_clones.png" />
+<figcaption>
+<p><span class="caption-text">Wildtype clones called by COMPASS have no cells assigned to them</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+<li><p><strong>Order and merging of clones</strong>: Sometimes one method merges two clones that are separate in the
+other. This is due to differences in the weights given to ADO and error rates. If the model
+predicts that the differences between the clones are likely due to ADO, then it would merge two
+clones. If the model predicts that the some HET calls are likely to due to errors then those
+calls would be considered WT and that could change the order of the clones.</p>
+<figure class="align-default" id="id8">
+<img alt="Difference in order of clones between SPARC and COMPASS" src="../_images/phylogeny_comparison_order.png" />
+<figcaption>
+<p><span class="caption-text">Difference in order of clones between SPARC and COMPASS</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</li>
+</ol>
+</section>
+</section>
 </section>
 
 
@@ -813,6 +924,12 @@ final tree adheres to the phylogenetic constraints and maximizes the likelihood 
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combining-phylogenies">Combining phylogenies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-compass">Comparison with COMPASS</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#genome-wide-cnv-support">Genome-wide CNV support</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparc-is-30x-faster">SPARC is 30x faster</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-of-phylogenies">Comparison of phylogenies</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

@@ -231,3 +231,93 @@ final tree adheres to the phylogenetic constraints and maximizes the likelihood 
    :alt: Final tree created by SPARC
 
    The final tree created by SPARC after combining all mutation types
+
+Comparison with COMPASS
+-----------------------
+
+The following table summarizes the key differences between SPARC and COMPASS:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 28 36 36
+
+   * - Aspect
+     - SPARC
+     - COMPASS
+   * - Clone calling modes
+     - SNV, gwLoH, and gwCNV
+     - SNV and focal CNV
+   * - Performance
+     - Runtime depends on complexity of the phylogeny
+     - Slower; runtime scales with cells and variants
+   * - Method
+     - Clustering followed by distance-based tree construction and refinement
+     - MCMC sampling of trees to maximize the cell assignment likelihood
+   * - Focal CNV clones
+     - Not yet supported
+     - Supported, but off by default in mosaic
+   * - Per variant error rates
+     - Each variant is modeled separately
+     - Has one error rate for SNV and one for INDELs
+   * - Per variant ADO rates
+     - Modeled
+     - Modeled
+   * - Doublet assignment
+     - Supported
+     - Supported
+
+Genome-wide CNV support
+~~~~~~~~~~~~~~~~~~~~~~~
+
+COMPASS requires grouping amplicons into "regions" with common CNVs. This assumption might be
+acceptable when grouping amplicons by genes, for which COMPASS was designed, but it does not work
+for genome-wide CNV because we do not know a priori the regions which have the same copy number.
+SPARC has a separate module for genome-wide CNV clustering that does not require grouping amplicons
+into regions.
+
+SPARC is 30x faster
+~~~~~~~~~~~~~~~~~~~
+
+The runtime of SPARC is dependent on the complexity of the phylogeny instead of the number of cells
+or variants. It searches through a larger set of possible phylogenies if the dataset is complex,
+unlike COMPASS which always runs a fixed number of iterations. This makes SPARC suitable for
+increased complexity in SNV+CNV analyses.
+
+Additionally, the runtime of COMPASS increases linearly with the number of cells and the number of
+variants. Genome-wide CNV clustering usually involves hundreds of variants, which will cause COMPASS
+to run for hours for some samples, if its methods were repurposed for gwCNV.
+
+.. figure:: /manual/images/sparc/sparc_compass_runtime_comparison.png
+   :alt: Runtime comparison between SPARC and COMPASS
+
+   Runtime comparison between SPARC and COMPASS
+
+Comparison of phylogenies
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The phylogenies obtained by SPARC and COMPASS are generally similar. However both methods have
+slightly different models and there could be subtle differences in the phylogeny. These are mostly
+explained by differences in the weights given to ADO rate, error rate, and dispersion of VAF. There
+are mainly two types of differences observed.
+
+1. **Empty clones**: COMPASS sometimes has clones with no cells assigned to them. This is because
+   COMPASS looks for trees that maximize the likelihood of cells belonging to clones in the tree.
+   This method does not ensure that all clones in the tree are supported by at least one cell. SPARC
+   first clusters the cells, and then creates the tree. Therefore it's guranteed that every clone in
+   the tree has at least one cell assigned to it.
+
+   .. figure:: /manual/images/sparc/phylogeny_comparison_empty_clones.png
+      :alt: Wildtype clones found by COMPASS but not SPARC
+
+      Wildtype clones called by COMPASS have no cells assigned to them
+
+2. **Order and merging of clones**: Sometimes one method merges two clones that are separate in the
+   other. This is due to differences in the weights given to ADO and error rates. If the model
+   predicts that the differences between the clones are likely due to ADO, then it would merge two
+   clones. If the model predicts that the some HET calls are likely to due to errors then those
+   calls would be considered WT and that could change the order of the clones.
+
+   .. figure:: /manual/images/sparc/phylogeny_comparison_order.png
+      :alt: Difference in order of clones between SPARC and COMPASS
+
+      Difference in order of clones between SPARC and COMPASS
