@@ -235,7 +235,7 @@ final tree adheres to the phylogenetic constraints and maximizes the likelihood 
 Comparison with COMPASS
 -----------------------
 
-The following table summarizes the key differences between SPARC and COMPASS:
+The following table summarizes the key differences between SPARC and COMPASS
 
 .. list-table::
    :header-rows: 1
@@ -318,6 +318,6 @@ are mainly two types of differences observed.
    calls would be considered WT and that could change the order of the clones.
 
    .. figure:: /manual/images/sparc/phylogeny_comparison_order.png
-      :alt: Difference in order of clones between SPARC and COMPASS
+      :alt: Merging of clones in one of the methods
 
-      Difference in order of clones between SPARC and COMPASS
+      Merging of clones in one of the methods
