@@ -31,7 +31,7 @@ advanced analysis, please refer to the :ref:`vignettes` section of the documenta
    * - `GE+Protein`_
      - GE and Protein analysis.
    * - `DNA+RNA`_
-     - DNA and Protein analysis.
+     - DNA and RNA analysis.
    * - `Clonal insights snippets`_
      - Analysis of the clonal insights h5 file.
 
