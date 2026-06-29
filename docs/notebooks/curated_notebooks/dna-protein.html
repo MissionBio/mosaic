@@ -162,36 +162,12 @@
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../manual/curated_jupyter_notebooks.html">Curated Jupyter Notebooks</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="dna.html">Single Sample DNA-only</a></li>
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="dna-multisample.html">Multisample DNA-only</a></li>
-
-
-
-
-
-
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Single Sample DNA + Protein</a></li>
-
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="dna-protein-multisample.html">Multisample DNA + Protein</a></li>
-
-
-
-
-
-
-
 <li class="toctree-l2"><a class="reference internal" href="ge-protein.html">Single sample GE+Protein</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dna-rna.html">Single Sample DNA + RNA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clonal-insights.html">Clonal Insights snippets</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../../manual/help.html">Additional resources</a></li>
@@ -395,41 +371,44 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Single Sample DNA + Protein</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-loading-the-data-b"><b> Loading the data </b></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-data-structure-b"><b>Data Structure</b></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dependencies">Load dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data Structure</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-analysis">DNA Analysis</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-filtering">Basic filtering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-addition">Annotation Addition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variant-selection-and-subclone-identification">Variant selection and Subclone identification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjusting-subclone-colors-or-heatmap-colors">Adjusting subclone colors or heatmap colors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-analysis">DNA Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-filtering">Basic filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1">Method 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2">Method 2</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-analysis">CNV Analysis</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-workflow">CNV workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-addition">Annotation Addition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variant-selection-and-subclone-identification">Variant selection and Subclone identification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjusting-subclone-colors-or-heatmap-colors">Adjusting subclone colors or heatmap colors</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-analysis">Protein Analysis</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-and-data-inspection">Normalization And Data Inspection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-and-visualization">Clustering And Visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-analysis">CNV Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-workflow">CNV workflow</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-visualizations">Combined Visualizations</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantify-overlaps-between-dna-clones-and-protein-clusters">Quantify overlaps between DNA clones and Protein clusters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-analysis">Protein Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-and-data-inspection">Normalization And Data Inspection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-and-visualization">Clustering And Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#export-and-save-data">Export and Save Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compass-imputation">Compass imputation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-assignment">Protein assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-visualizations">Combined Visualizations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantify-overlaps-between-dna-clones-and-protein-clusters">Quantify overlaps between DNA clones and Protein clusters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-and-save-data">Export and Save Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparc-imputation">SPARC imputation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-assignment">Protein assignment</a></li>
 </ul>
 </li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -444,7 +423,7 @@ document.write(`
     <div class="background-cover" id="background-cover"></div>
     <section id="single-sample-dna-protein">
 <h1>Single Sample DNA + Protein<a class="headerlink" href="#single-sample-dna-protein" title="Permalink to this heading">#</a></h1>
-<p><b>This notebook is set up to work with single-sample h5 files, generated with v2 or v3 chemistry. This notebook will only work with Mosaic versions 3.7 and higher.</b></p>
+<p><b>This notebook is set up to work with single-sample h5 files, generated with v2 or v3 chemistry. This notebook will only work with Mosaic versions 3.17 and higher.</b></p>
 <p><b>Objective</b>: To showcase the minimum number of steps required for tertiary analysis of DNA (single-cell genotyping and CNV) and Protein analytes and explore different ways of visualizing the data.<br></p>
 <p><b>Major questions answered:</b></p>
 <ol class="arabic simple">
@@ -466,19 +445,22 @@ document.write(`
 </ol>
 <p><b>Not shown:</b>
 All available methods and options - documented <a class="reference external" href="https://missionbio.github.io/mosaic/index.html">here</a><br></p>
-</section>
 <section id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h1>
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <p><b>Topics covered</b><br></p>
 <ol class="arabic simple">
-<li><p>Loading required packages.</p></li>
-<li><p>Loading in data.</p></li>
+<li><p>Load dependencies</p></li>
+<li><p>Load data</p></li>
 </ol>
-<p><b>Load data</b><br>
-<b>Note:</b> importing dependencies can sometimes take a couple of minutes.</p>
+<section id="load-dependencies">
+<h3>Load dependencies<a class="headerlink" href="#load-dependencies" title="Permalink to this heading">#</a></h3>
+<p><b>NOTE:</b> importing dependencies can sometimes take a couple of minutes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import mosaic libraries</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+
+<span class="c1"># Import mosaic libraries</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">missionbio.mosaic</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ms</span>
 
 <span class="c1"># Import these to display entire dataframes</span>
@@ -497,13 +479,6 @@ All available methods and options - documented <a class="reference external" hre
 <span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.plotting.multimap</span><span class="w"> </span><span class="kn">import</span> <span class="n">MultiMap</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.plotting.heatmap</span><span class="w"> </span><span class="kn">import</span> <span class="n">Heatmap</span>
 
-<span class="c1"># Import COMPASS for imputation</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.mosaic.algorithms.compass</span><span class="w"> </span><span class="kn">import</span> <span class="n">COMPASS</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-
-<span class="c1"># Import for protein assignment</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.demultiplex.protein.truth</span><span class="w"> </span><span class="kn">import</span> <span class="n">Truth</span>
-
 <span class="c1"># Note: when exporting the notebook as an HTML, plots that use the &quot;go.Figure(fig)&quot; command are saved</span>
 </pre></div>
 </div>
@@ -520,7 +495,7 @@ All available methods and options - documented <a class="reference external" hre
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check version; this notebook is designed for Mosaic v3.12.1 or higher</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check version; this notebook is designed for Mosaic v3.17 or higher</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ms</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -535,21 +510,22 @@ All available methods and options - documented <a class="reference external" hre
 </div>
 </div>
 </div>
-<section id="b-loading-the-data-b">
-<h2><b> Loading the data </b><a class="headerlink" href="#b-loading-the-data-b" title="Permalink to this heading">#</a></h2>
-<p>In the ms.load statement, there are several arguments:</p>
+</section>
+<section id="load-the-data">
+<h3>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this heading">#</a></h3>
+<p>In the <code class="docutils literal notranslate"><span class="pre">ms.load</span></code> statement, there are several arguments:</p>
 <ul class="simple">
 <li><p><b> raw </b>: always set raw=False; if raw=True, ALL barcodes will be loaded (rather than cell-associated barcodes)</p></li>
 <li><p><b> filter_variants </b>: always set filter_variants=True unless an expected (target) variant cannot be found. Additional filtering options are included in the DNA section below. <b> NOTE </b>: if loading using filter_variants=False, the whitelist may need to set to None or removed from the command, otherwise it may not load variants in</p></li>
 <li><p><b> single </b>: always set single=False for multisample/merged h5 files</p></li>
-<li><p><b> whitelist </b>: The whitelist option loads any variant that is in the vcf.gz file (e.g. “chr1:179520511:C/G”). The whitelist argument takes many variant formats, they are detailed <a class="reference external" href="https://missionbio.github.io/mosaic/pages/functions/missionbio.mosaic.io.load.html">here</a>.</p></li>
-<li><p><b> filter_cells </b>: Always set filter_cells=False; if filter_cells=True, only cells called by the completelyness algorithm are loaded</p></li>
+<li><p><b> whitelist </b>: The whitelist option loads any variant that is in the vcf.gz file (e.g. “chr1:179520511:C/G”). The whitelist argument takes many variant formats, they are detailed <a class="reference external" href="https://missionbio.github.io/mosaic/pages/functions/missionbio.mosaic.io.load.html">here</a></p></li>
+<li><p><b> filter_cells </b>: Always set filter_cells=False; if filter_cells=True, only cells called by the completeness algorithm are loaded</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Specify the h5 file to be used in this analysis: h5path = &#39;/path/to/h5/file/test.h5&#39;</span>
 <span class="c1"># If working with Windows, an &#39;r&#39; may need to be added before the path: h5path = r&#39;/path/to/h5/file/test.h5&#39;</span>
-<span class="n">h5path</span> <span class="o">=</span> <span class="s1">&#39;/Users/casp/Documents/analysis/2pbmcmix.h5&#39;</span>
+<span class="n">h5path</span> <span class="o">=</span> <span class="s1">&#39;/Users/botero/Desktop/Sample data/4-cell-lines-AML-multiomics/4-cell-lines-AML-multiomics.dna+protein.h5&#39;</span>
 
 <span class="c1"># Load the data</span>
 <span class="n">sample</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">h5path</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">filter_variants</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">single</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">whitelist</span> <span class="o">=</span> <span class="p">[],</span> <span class="n">filter_cells</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
@@ -558,8 +534,8 @@ All available methods and options - documented <a class="reference external" hre
 </div>
 </div>
 </section>
-<section id="b-data-structure-b">
-<h2><b>Data Structure</b><a class="headerlink" href="#b-data-structure-b" title="Permalink to this heading">#</a></h2>
+<section id="data-structure">
+<h3>Data Structure<a class="headerlink" href="#data-structure" title="Permalink to this heading">#</a></h3>
 <p>DNA, CNV, and Protein are sub-classes of the Assay class. The information is stored in four categories, and the user can modify each of those:</p>
 <p><b>1. metadata (add_metadata / del_metadata):</b></p>
 <ul class="simple">
@@ -571,10 +547,10 @@ All available methods and options - documented <a class="reference external" hre
 <li><p>all the matrices have the shape (num barcodes) x (num ids)</p></li>
 <li><p>for DNA assays, this includes AF, GQ, DP, etc.
 (per cell, per variant)</p></li>
-<li><p>for Protein assays, this includes read counts
-(per cell, per antibody)</p></li>
 <li><p>for CNV assays, this includes read counts
 (per cell, per amplicon)</p></li>
+<li><p>for Protein assays, this includes read counts
+(per cell, per antibody)</p></li>
 </ul>
 <p><b>3. row_attrs (add_row_attr / del_row_attr):</b></p>
 <ul class="simple">
@@ -589,8 +565,8 @@ and ‘umap’ values are added</p></li>
 <ul class="simple">
 <li><p>dictionary containing ‘id’ as one of the keys
 (where the value is a list of all ids)</p></li>
-<li><p>for DNA assays, ‘ids’ are variants; for Protein assays,
-‘ids’ are antibodies; for CNV assays, ‘ids’ are amplicons</p></li>
+<li><p>for DNA assays, ‘ids’ are variants; for CNV assays, ‘ids’ are amplicons;
+for Protein assays, ‘ids’ are antibodies;</p></li>
 <li><p>for all other keys, the values must be of the same
 length, i.e. match the number ids</p></li>
 </ul>
@@ -666,26 +642,37 @@ length, i.e. match the number ids</p></li>
 </section>
 </section>
 <section id="dna-analysis">
-<h1>DNA Analysis<a class="headerlink" href="#dna-analysis" title="Permalink to this heading">#</a></h1>
+<h2>DNA Analysis<a class="headerlink" href="#dna-analysis" title="Permalink to this heading">#</a></h2>
 <p><b>Topics covered</b><br></p>
 <ol class="arabic simple">
-<li><p>Standard filtering of DNA variants.</p></li>
-<li><p>Subsetting dataset for variants of interest, including whitelisted variants.</p></li>
-<li><p>Addition of annotations to the variants.</p></li>
+<li><p>Filtering of DNA variants</p></li>
+<li><p>Subsetting dataset for variants of interest, including whitelisted variants</p></li>
+<li><p>Addition of annotations to the variants</p></li>
 <li><p>Manual variant selection and clone identification</p></li>
 <li><p>Visualizations and customization options</p></li>
 </ol>
 <section id="basic-filtering">
-<h2>Basic filtering<a class="headerlink" href="#basic-filtering" title="Permalink to this heading">#</a></h2>
+<h3>Basic filtering<a class="headerlink" href="#basic-filtering" title="Permalink to this heading">#</a></h3>
+<p>For filtering DNA variants, there are two methods: <br>
+<B> Method 1:</b> Utilize the function <code class="docutils literal notranslate"><span class="pre">sample.dna.filter_somatic_variants</span></code>. This function automatically filters variants, eliminating germline and non-pathogenic variants from the data. More about the function can be seen <a class="reference external" href="https://missionbio.github.io/mosaic/pages/methods/missionbio.mosaic.dna.Dna.filter_somatic_variants.html#missionbio.mosaic.dna.Dna.filter_somatic_variants">here</a>. This method is used by many of our tertiary analysis pipelines, such as Clonal Insights. <br>
+<b> Method 2:</b> Manually filter the variants using <code class="docutils literal notranslate"><span class="pre">sample.dna.filter_variants</span></code> function. This method allows for more flexibility with filters, but retains all germline and non-pathogenic variants in the data.</p>
 <p>There are many options for filtering DNA variants.
 Use the <code class="docutils literal notranslate"><span class="pre">help()</span></code> function to understand the approach listed below.</p>
+<section id="method-1">
+<h4>Method 1<a class="headerlink" href="#method-1" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">filter_variants</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filter germline and nonpathogenic variants</span>
+<span class="n">dna_vars</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">filter_somatic_variants</span><span class="p">()</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">dna</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="p">[:,</span> <span class="n">dna_vars</span><span class="p">]</span>
+<span class="n">dna_vars</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">filter_variants</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="method-2">
+<h4>Method 2<a class="headerlink" href="#method-2" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adjust filters if needed by overwriting dna_vars</span>
@@ -694,22 +681,21 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
     <span class="n">min_gq</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
     <span class="n">vaf_ref</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">vaf_hom</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span>
-    <span class="n">vaf_het</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">vaf_het</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
     <span class="n">min_prct_cells</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
     <span class="n">min_mut_prct_cells</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">iterations</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># Check the number of filtered variants. When using the default filters, the number of </span>
 <span class="c1"># variants is likely smaller compared to the originally loaded variants due to the more </span>
-<span class="c1"># stringent filtering criteria (e.g., vaf_ref=5, vaf_hom=95, vaf_het=30).</span>
+<span class="c1"># stringent filtering criteria (e.g., vaf_ref=5, vaf_hom=95, vaf_het=20).</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of variants:&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna_vars</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">dna_vars</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><b>Note</b>: Variants that are whitelisted during sample loading may be removed at this step, but can be added back in below. Whitelisted variants can be added to the list of final variants, or used exclusively in the code below.</p>
+<p><b>NOTE:</b> Variants that are whitelisted during sample loading may be removed at this step, but can be added back in below. Whitelisted variants can be added to the list of final variants, or used exclusively in the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ensure correct nomenclature, ie whitelist = [&quot;chr13:28589657:T/G&quot;,&quot;chrX:39921424:G/A&quot;]</span>
@@ -723,13 +709,8 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 
 <span class="c1"># To use only white_list variants:</span>
 <span class="c1"># final_vars = white_list</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check the length of the final list of variants</span>
+
+<span class="c1"># Check the length of the final list of variants</span>
 <span class="nb">len</span><span class="p">(</span><span class="n">final_vars</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -752,6 +733,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </div>
 </div>
+<p><b>NOTE:</b> If this returns False, the data will not subset properly. Please resolve before moving forward.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Subsetting sample.dna (columns) based on reduced variant list.</span>
@@ -769,8 +751,9 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </div>
 </section>
+</section>
 <section id="annotation-addition">
-<h2>Annotation Addition<a class="headerlink" href="#annotation-addition" title="Permalink to this heading">#</a></h2>
+<h3>Annotation Addition<a class="headerlink" href="#annotation-addition" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">get_annotations</span><span class="p">)</span>
@@ -789,7 +772,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </section>
 <section id="variant-selection-and-subclone-identification">
-<h2>Variant selection and Subclone identification<a class="headerlink" href="#variant-selection-and-subclone-identification" title="Permalink to this heading">#</a></h2>
+<h3>Variant selection and Subclone identification<a class="headerlink" href="#variant-selection-and-subclone-identification" title="Permalink to this heading">#</a></h3>
 <p>In this section of the notebook, all variants remaining in the dataset will populate in a variant table. This table is interactive, variants can be selected, and rows can be sorted by ascending/descending values. The variant name can be clicked on and will navigate to the variant’s varsome page in the default browser.</p>
 <ol class="arabic simple">
 <li><p>Variants selected in this table will populate in a subclone table below.</p></li>
@@ -799,6 +782,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <li><p><b> Min clone size: </b> The Min Clone Size can also be adjusted, but by default is set to 1. Any clones that represent less than 1% of the sample will be moved into the “Small Subclones” column.</p></li>
 <li><p>Cells with missing genotype information across any of the selected variants will be moved into the “Missing GT” column.</p></li>
 </ol>
+<p>More on this workflow can be found <a class="reference external" href="https://missionbio.github.io/mosaic/pages/missionbio.mosaic.workflows.variant_subclone_table.VariantSubcloneTable.html">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the variant table workflow to select variants and begin clone identification</span>
@@ -815,20 +799,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Subsample the variants to only the variants selected from the workflow</span>
 <span class="n">variants</span> <span class="o">=</span> <span class="n">wfv</span><span class="o">.</span><span class="n">selected_variants</span>
-<span class="n">sample</span><span class="o">.</span><span class="n">dna</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="p">[:,</span> <span class="n">variants</span><span class="p">]</span>
-
-<span class="c1"># Save the full set of cells to a new variable that can be called on later</span>
-<span class="c1"># Do this before renaming the variants</span>
-<span class="n">full_sample</span> <span class="o">=</span> <span class="n">sample</span><span class="p">[:]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rename the variants</span>
-<span class="c1"># Any of these column values can be added to the id names</span>
-<span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">col_attrs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">dna</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="p">[:,</span><span class="n">variants</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -836,7 +807,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add annotation to the id names</span>
-<span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">set_annotated_ids</span><span class="p">(</span><span class="n">add_clinvar</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">set_annotated_ids</span><span class="p">(</span><span class="n">add_clinvar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="c1"># Annotations are now added to the variants</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">ids</span><span class="p">()</span>
@@ -871,40 +842,9 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If subclones need to be renamed outside of the workflow</span>
-<span class="c1"># The following code can be used:</span>
-<span class="c1"># NOTE: all clones need to be listed for this function to work</span>
-<span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">rename_labels</span><span class="p">(</span>
-  <span class="p">{</span>
-    <span class="s1">&#39;current_subclone_name&#39;</span><span class="p">:</span> <span class="s1">&#39;new_subclone_name&#39;</span><span class="p">,</span> 
-    <span class="s1">&#39;WT&#39;</span><span class="p">:</span> <span class="s1">&#39;Wild Type&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;3&#39;</span><span class="p">:</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;4&#39;</span><span class="p">:</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span>      
-  <span class="p">}</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Redraw heatmap</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="s1">&#39;NGT_FILTERED&#39;</span><span class="p">)</span>
 <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Manually generate a phylogeny tree of the subclones in your sample</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.plotting.phylotree</span><span class="w"> </span><span class="kn">import</span> <span class="n">PhyloTree</span>
-
-<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">]</span>
-<span class="n">parents</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">]</span>
-<span class="n">descriptions</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;WT&quot;</span><span class="p">,</span> <span class="s2">&quot;KIT HET&quot;</span><span class="p">,</span> <span class="s2">&quot;KIT HET&lt;br&gt;TP53 HET&quot;</span><span class="p">,</span> <span class="s2">&quot;KIT LOH&quot;</span><span class="p">]</span>
-<span class="n">graph</span> <span class="o">=</span> <span class="n">PhyloTree</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">parents</span><span class="p">,</span> <span class="n">descriptions</span><span class="p">)</span>
-<span class="n">graph</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="s2">&quot;#000000&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="s2">&quot;crimson&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span> <span class="s2">&quot;skyblue&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -919,7 +859,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </section>
 <section id="adjusting-subclone-colors-or-heatmap-colors">
-<h2>Adjusting subclone colors or heatmap colors<a class="headerlink" href="#adjusting-subclone-colors-or-heatmap-colors" title="Permalink to this heading">#</a></h2>
+<h3>Adjusting subclone colors or heatmap colors<a class="headerlink" href="#adjusting-subclone-colors-or-heatmap-colors" title="Permalink to this heading">#</a></h3>
 <p>To change the color palette used for the subclones, use <code class="docutils literal notranslate"><span class="pre">set_palette</span></code>. For this provide a list of ALL subclone names, pointing to the hexcode/color to change that subclone to. Note: this function also works with the protein and CNV assays. See below for an example of this.</p>
 <p>To change the color palette used for any of the assays/layers, use <code class="docutils literal notranslate"><span class="pre">ms.Config.Colorscale</span></code>. Then list the assay and layer, and assign the plotly colorscale to use for those graphics. Visualize all available colorscales by using <code class="docutils literal notranslate"><span class="pre">plotly.colors.sequential.swatches_continuous().show()</span></code>. To reset all color palettes back to their defaults, use <code class="docutils literal notranslate"><span class="pre">ms.Config.Colorscle.reset()</span></code>.</p>
 <div class="cell docutils container">
@@ -951,22 +891,22 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </section>
 </section>
 <section id="cnv-analysis">
-<h1>CNV Analysis<a class="headerlink" href="#cnv-analysis" title="Permalink to this heading">#</a></h1>
+<h2>CNV Analysis<a class="headerlink" href="#cnv-analysis" title="Permalink to this heading">#</a></h2>
 <p><b>Topics covered</b></p>
 <ol class="arabic simple">
-<li><p>Amplicon and cell filtering and ploidy estimation.</p></li>
-<li><p>Visualization of ploidy across subclones present.</p></li>
+<li><p>Amplicon and cell filtering and ploidy estimation</p></li>
+<li><p>Visualization of ploidy across subclones present</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get gene names for amplicons</span>
-<span class="n">sample</span><span class="o">.</span><span class="n">cnv</span><span class="o">.</span><span class="n">get_gene_names</span><span class="p">()</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">cnv</span><span class="o">.</span><span class="n">get_gene_names</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 </div>
 <section id="cnv-workflow">
-<h2>CNV workflow<a class="headerlink" href="#cnv-workflow" title="Permalink to this heading">#</a></h2>
+<h3>CNV workflow<a class="headerlink" href="#cnv-workflow" title="Permalink to this heading">#</a></h3>
 <p>This workflow will normalize all reads and filter amplicons/cells based on the settings set at the beginning of the workflow: <br></p>
 <ol class="arabic simple">
 <li><p><b> Amplicon completeness: </b> refers to the minimum percentage of cells that must have reads greater than or equal to the minimum read depth set. By default this is set to 50. <br></p></li>
@@ -974,13 +914,14 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <li><p><b>Mean cell read depth: </b> refers the minimum mean read depth for a cell to be included in the analysis, otherwise the cell will be removed. By default this is set to 40.<br></p></li>
 <li><p><b>Diploid clone in DNA: </b> refers to which subclone is used as the true diploid population. All ploidy estimates will be calculated in relation to this diploid population. We recommend setting this to the ‘WT’ population or earliest clone present. <br></p></li>
 </ol>
-<p><b> Note: </b> If large copy number events are expected, Amplicon Completeness and Amplicon Read Depth may need to be reduced.</p>
+<p><b> NOTE: </b> If large copy number events are expected, Amplicon Completeness and Amplicon Read Depth may need to be reduced.</p>
 <p>Once the above filters are set, the visualizations can be changed. <br></p>
 <ol class="arabic simple">
-<li><p><b> Plot:</b> Can be changed from Heatmap positions, to Heatmap genes, Line-plot positions, Line-plot genes <br></p></li>
+<li><p><b> Plot:</b> Can be changed from Heatmap positions, to Heatmap genes, Line-plot positions, Line-plot genes. <br></p></li>
 <li><p><b> Clone for line plot:</b> If one of the line-plot visualizations is selected, only one clone can be shown at a time. This determines which one is plotted. <br></p></li>
 <li><p><b> X-axis features: </b> To plot a subset of the data (chromosomes or genes), select which chromosomes/genes should be plotted with this function. Chromosomes can be selected for ‘positions’ type plots, and Genes can be selected for ‘genes’ type plots.</p></li>
 </ol>
+<p>More on this workflow can be found <a class="reference external" href="https://missionbio.github.io/mosaic/pages/missionbio.mosaic.workflows.copy_number.CopyNumber.html">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># CNV workflow to filter, normalize and estimate ploidy</span>
@@ -1042,7 +983,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </section>
 </section>
 <section id="protein-analysis">
-<h1>Protein Analysis<a class="headerlink" href="#protein-analysis" title="Permalink to this heading">#</a></h1>
+<h2>Protein Analysis<a class="headerlink" href="#protein-analysis" title="Permalink to this heading">#</a></h2>
 <p><b>Topics covered</b></p>
 <ol class="arabic simple">
 <li><p>Normalization and assessment of AOC abundance</p></li>
@@ -1050,7 +991,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 <li><p>Statistical significance analysis</p></li>
 </ol>
 <section id="normalization-and-data-inspection">
-<h2>Normalization And Data Inspection<a class="headerlink" href="#normalization-and-data-inspection" title="Permalink to this heading">#</a></h2>
+<h3>Normalization And Data Inspection<a class="headerlink" href="#normalization-and-data-inspection" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">normalize_reads</span><span class="p">)</span>
@@ -1127,7 +1068,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </section>
 <section id="clustering-and-visualization">
-<h2>Clustering And Visualization<a class="headerlink" href="#clustering-and-visualization" title="Permalink to this heading">#</a></h2>
+<h3>Clustering And Visualization<a class="headerlink" href="#clustering-and-visualization" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">run_pca</span><span class="p">)</span>
@@ -1335,7 +1276,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </section>
 <section id="statistics">
-<h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this heading">#</a></h2>
+<h3>Statistics<a class="headerlink" href="#statistics" title="Permalink to this heading">#</a></h3>
 <p>This will run a t-test on the protein clusters defined above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1371,7 +1312,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </section>
 </section>
 <section id="combined-visualizations">
-<h1>Combined Visualizations<a class="headerlink" href="#combined-visualizations" title="Permalink to this heading">#</a></h1>
+<h2>Combined Visualizations<a class="headerlink" href="#combined-visualizations" title="Permalink to this heading">#</a></h2>
 <p>In this section the dateset will be subset to only retain barcodes with remaining DNA, CNV and Protein data. Then this data can be plotted together using <code class="docutils literal notranslate"><span class="pre">sample.heatmap()</span></code>, <code class="docutils literal notranslate"><span class="pre">sample.signaturemap()</span></code>, <code class="docutils literal notranslate"><span class="pre">sample.clone_vs_analyte()</span></code> and other functions.</p>
 <p>Overlaps in the dataset across different assays can be further quantified and visualized, using <code class="docutils literal notranslate"><span class="pre">sample.crosstabmap()</span></code>.</p>
 <div class="cell docutils container">
@@ -1577,7 +1518,7 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </div>
 <section id="quantify-overlaps-between-dna-clones-and-protein-clusters">
-<h2>Quantify overlaps between DNA clones and Protein clusters<a class="headerlink" href="#quantify-overlaps-between-dna-clones-and-protein-clusters" title="Permalink to this heading">#</a></h2>
+<h3>Quantify overlaps between DNA clones and Protein clusters<a class="headerlink" href="#quantify-overlaps-between-dna-clones-and-protein-clusters" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use crosstab() to calculate the overlap between DNA subclones and Protein Clusters</span>
@@ -1597,29 +1538,11 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will generate the dataframe</span>
-<span class="c1"># What percentage of each Subclone is defined by each Protein cluster</span>
-<span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">get_labels</span><span class="p">(),</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will generate the heatmap of the dataframe generated above</span>
-<span class="c1"># What percentage of each Subclone is defined by each Protein cluster</span>
-<span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">crosstabmap</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">get_labels</span><span class="p">(),</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 </section>
 <section id="export-and-save-data">
-<h1>Export and Save Data<a class="headerlink" href="#export-and-save-data" title="Permalink to this heading">#</a></h1>
-<p>In this section the data can export a filtered .h5 file, which will contain all new labels/layers, and contain only the filtered barcodes/cells remaining. All data can be exported (row attributes, column attributes and layers) for every assay (DNA and CNV) into easily parsable .csv tables.</p>
+<h2>Export and Save Data<a class="headerlink" href="#export-and-save-data" title="Permalink to this heading">#</a></h2>
+<p>In this section the data can export a filtered .h5 file, which will contain all new labels/layers, and contain only the filtered barcodes/cells remaining. All data can be exported (row attributes, column attributes and layers) for every assay (DNA, CNV, and Protein) into easily parsable .csv tables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save new h5 file that includes only the final, cleaned dataset</span>
@@ -1638,28 +1561,43 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 </section>
 <section id="appendix">
-<h1>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h1>
-<section id="compass-imputation">
-<h2>Compass imputation<a class="headerlink" href="#compass-imputation" title="Permalink to this heading">#</a></h2>
+<h2>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">#</a></h2>
+<section id="sparc-imputation">
+<h3>SPARC imputation<a class="headerlink" href="#sparc-imputation" title="Permalink to this heading">#</a></h3>
 <p><b> This section of the notebook is OPTIONAL<b></p>
-<p>Compass can be used to impute the genotypes of cells with some missing data. It can also be used to infer the phylogeny of all subclones present in the sample. If a cell cannot be unambiguously classified, Compass will label these cells as Mixed or Ambiguous.<b> Compass can take ~1-10 minutes to run depending on the size of the data.</p>
-<p>The Compass publication can be found <a class="reference external" href="https://www.nature.com/articles/s41467-023-40378-8">here</a><br></p>
-<p><b>Note:</b> Compass can give different subclone composition than the variant subclone workflow.</p>
+<p>SPARC (Single-cell Phylogeny And Reconstruction of Clones) is a Mission Bio developed tool to  infer the evolutionary history and clonal structure of a population, integrating information from SNVs, Loss of Heterozygosity (LoH), and Copy Number Variations (CNVs).</p>
+<p>More about this tool can be found <a class="reference external" href="https://missionbio.github.io/mosaic/pages/missionbio.demultiplex.phylogeny.sparc.SPARC.html">here</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use compass to assume the subclone architecture and phylogeny</span>
-<span class="c1"># Depending on the size and complexity of the data, this step can take ~1-10 minutes</span>
-<span class="c1"># Use full_sample instead of sample to include all previously removed cells and use the unannotated variant names</span>
-<span class="n">compass</span> <span class="o">=</span> <span class="n">COMPASS</span><span class="p">(</span><span class="n">full_sample</span><span class="p">,</span> <span class="n">somatic_variants</span><span class="o">=</span><span class="n">variants</span><span class="p">)</span>
-<span class="n">compass</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import SPARC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.demultiplex.phylogeny.sparc</span><span class="w"> </span><span class="kn">import</span> <span class="n">SPARC</span>
+
+<span class="c1"># Reset variant ids in the DNA assay </span>
+<span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">reset_ids</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The phylogentic tree prediction by COMPASS</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">compass</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the set of variants you want SPARC to run off of</span>
+<span class="c1"># Varaints must be in the format: chromosome:position:ref/alt, Ex: &quot;chr4:55599436:T/C&quot;</span>
+<span class="c1"># If you want to use all variants identified from the VariantSubcloneWorkflow you can use the list &quot;variants&quot;, Ex: vars = variants</span>
+
+<span class="nb">vars</span> <span class="o">=</span> <span class="n">variants</span>
+<span class="c1"># vars = []</span>
+<span class="n">sparc</span> <span class="o">=</span> <span class="n">SPARC</span><span class="p">()</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">sparc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="p">,</span> <span class="n">variants</span><span class="o">=</span><span class="nb">vars</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Order the results and produce a phylogeny tree</span>
+<span class="n">ordered_result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">serialize_clones</span><span class="p">()</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">set_labels</span><span class="p">(</span><span class="n">ordered_result</span><span class="o">.</span><span class="n">labels</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">ordered_result</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>  <span class="c1"># Draws the phylogenetic tree</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1667,100 +1605,20 @@ Use the <code class="docutils literal notranslate"><span class="pre">help()</spa
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make the compass_labels the node descriptions</span>
-<span class="c1"># These are the new subclone labels</span>
-<span class="n">labs</span> <span class="o">=</span> <span class="n">compass</span><span class="o">.</span><span class="n">labels_</span>  <span class="c1"># Stores the labels</span>
-<span class="n">desc</span> <span class="o">=</span> <span class="n">compass</span><span class="o">.</span><span class="n">node_descriptions</span><span class="p">()</span>  <span class="c1"># Stores the dict mapping the label to the description</span>
-<span class="n">compass_labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">desc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">lab</span><span class="p">,</span> <span class="n">lab</span><span class="p">)</span> <span class="k">for</span> <span class="n">lab</span> <span class="ow">in</span> <span class="n">labs</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store the compass labels as a row_attr</span>
-<span class="n">full_sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">add_row_attr</span><span class="p">(</span><span class="s1">&#39;compass_labels&#39;</span><span class="p">,</span> <span class="n">compass_labels</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store the index positions of the COMPASS ids for the heatmap</span>
-<span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">full_sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">ids</span><span class="p">(),</span> <span class="n">compass</span><span class="o">.</span><span class="n">somatic_variants</span><span class="p">)</span>
-
-<span class="c1"># Visualize the assignment using the variants passed to COMPASS</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">full_sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="s1">&#39;NGT&#39;</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">full_sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">ids</span><span class="p">()[</span><span class="n">idx</span><span class="p">],</span> <span class="n">splitby</span><span class="o">=</span><span class="s1">&#39;compass_labels&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a new heatmap with new DNA subclone labels</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">attribute</span><span class="o">=</span><span class="s1">&#39;NGT_FILTERED&#39;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a DNA heatmap to see both the variant workflow subclone labels and the compass assigned labels</span>
-<span class="c1"># Parameters</span>
-<span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;NGT&#39;</span>
-<span class="n">assay</span> <span class="o">=</span> <span class="n">full_sample</span><span class="o">.</span><span class="n">dna</span>
-<span class="n">lab_row1</span> <span class="o">=</span> <span class="s2">&quot;label&quot;</span>
-<span class="n">lab_row2</span> <span class="o">=</span> <span class="s2">&quot;compass_labels&quot;</span>
-<span class="n">lab2_title</span> <span class="o">=</span> <span class="s2">&quot;Compass&quot;</span>
-
-<span class="c1"># Graphing</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">assay</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;row+col&quot;</span><span class="p">)</span>
-<span class="n">ids</span> <span class="o">=</span> <span class="n">assay</span><span class="o">.</span><span class="n">clustered_ids</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">assay</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="n">lab_row1</span><span class="p">),</span> <span class="n">assay</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="n">lab_row2</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">:</span> <span class="s2">&quot;2&quot;</span><span class="p">})],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">bars</span> <span class="o">=</span> <span class="n">assay</span><span class="o">.</span><span class="n">clustered_barcodes</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">splitby</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bars</span><span class="p">,</span> <span class="n">ids</span><span class="p">]</span>
-<span class="n">labs1</span> <span class="o">=</span> <span class="n">assay</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="n">lab_row1</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bars</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-<span class="n">labs2</span> <span class="o">=</span> <span class="n">assay</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="n">lab_row2</span><span class="p">,</span> <span class="n">constraint</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bars</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">MultiMap</span><span class="p">([</span><span class="n">data</span><span class="p">],</span> <span class="n">labs1</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="n">attribute</span><span class="p">],</span> <span class="n">extra_column_titles</span><span class="o">=</span><span class="p">[</span><span class="n">lab2_title</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">Heatmap</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">labs2</span><span class="p">)</span><span class="o">.</span><span class="n">label_trace</span><span class="p">(),</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">layout</span><span class="o">.</span><span class="n">xaxis2</span><span class="o">.</span><span class="n">tickvals</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="n">fig</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will return a dataframe </span>
-<span class="c1"># Showing the overlap of variant workflow clones and compass identified clones</span>
-<span class="n">full_sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">compass_labels</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This will plot a heatmap of the crosstab dataframe</span>
-<span class="n">full_sample</span><span class="o">.</span><span class="n">dna</span><span class="o">.</span><span class="n">crosstabmap</span><span class="p">(</span><span class="n">compass_labels</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><b> Export data to use in COMPASS </b></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export compass data into 2 output files</span>
-<span class="c1"># compass_input_regions.csv and compass_input_variants.csv</span>
-<span class="c1"># These can be used with COMPASS outside of Mosaic</span>
-
-<span class="n">compass</span><span class="o">.</span><span class="n">prepare_input</span><span class="p">(</span><span class="n">prefix</span><span class="o">=</span><span class="s2">&quot;./compass_input&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="protein-assignment">
-<h2>Protein assignment<a class="headerlink" href="#protein-assignment" title="Permalink to this heading">#</a></h2>
+<h3>Protein assignment<a class="headerlink" href="#protein-assignment" title="Permalink to this heading">#</a></h3>
 <p><b> This section of the notebook is OPTIONAL<b></p>
 <p>This portion of the notebook utilizes known truth about different cell types based on protein expression, to cluster cells into the defined cell types. The known truth built into the tool is based on our catalog Total Seq-D Heme protein panel, which contains 45 AOCs. The truth was defined from data on the <a class="reference external" href="https://github.com/obophenotype/cell-ontology">cell ontology</a> database and the <a class="reference external" href="https://www.ebi.ac.uk/ols4">European Bioinformatics Institute Website</a> and works best for PBMCs. Other cell-types may benefit from custom truths.</p>
 <p>More information about the algorithm can be found <a class="reference external" href="https://missionbio.github.io/mosaic/pages/methods/missionbio.mosaic.protein.Protein.assign_from_truth.html#missionbio.mosaic.protein.Protein.assign_from_truth">here</a>.</p>
-<p><b> Note:</b> For protein normalization above, either NSP or ANSP need to be used. CLR or asinh are not supported.</p>
+<p><b> NOTE:</b> For protein normalization above, either NSP or ANSP need to be used. CLR or asinh are not supported.</p>
 <p>The cluster label can be one of the following:</p>
 <ol class="arabic simple">
 <li><p>Sticky - these are positive for any of the IgG markers (defined using the <code class="docutils literal notranslate"><span class="pre">sticky_antibodies</span></code> parameter).</p></li>
@@ -1772,7 +1630,10 @@ compared to their singlet proportions. (see <code class="docutils literal notran
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize the structure of the built-in truth</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import for protein assignment</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">missionbio.demultiplex.protein.truth</span><span class="w"> </span><span class="kn">import</span> <span class="n">Truth</span>
+
+<span class="c1"># Visualize the structure of the built-in truth</span>
 <span class="c1"># The names that are underlines are links to the source of truth</span>
 <span class="n">truth</span> <span class="o">=</span> <span class="n">Truth</span><span class="o">.</span><span class="n">builtin</span><span class="p">()</span>
 <span class="n">truth</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
@@ -1837,8 +1698,8 @@ compared to their singlet proportions. (see <code class="docutils literal notran
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To use clustering performed earler on</span>
-<span class="n">sample_truth</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">truth</span><span class="p">()</span>
-<span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">assign_from_truth</span><span class="p">(</span><span class="n">sample_truth</span><span class="p">)</span>
+<span class="n">truth</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">truth</span><span class="p">()</span>
+<span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">assign_from_truth</span><span class="p">(</span><span class="n">truth</span><span class="p">)</span>
 <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="s2">&quot;normalized_counts&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1904,10 +1765,10 @@ compared to their singlet proportions. (see <code class="docutils literal notran
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set a yaml as the truth to be used in clustering</span>
-<span class="n">new_truth</span> <span class="o">=</span> <span class="n">Truth</span><span class="o">.</span><span class="n">read_yaml</span><span class="p">(</span><span class="s2">&quot;./my-truth-file.yaml&quot;</span><span class="p">)</span>
+<span class="n">new_truth</span> <span class="o">=</span> <span class="n">Truth</span><span class="o">.</span><span class="n">read_yaml</span><span class="p">(</span><span class="s2">&quot;./my-truth-file.yaml&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="c1"># Run the cluster_and_label with the truth argument pointing to the yaml truth</span>
 <span class="n">pace</span> <span class="o">=</span> <span class="n">sample</span><span class="o">.</span><span class="n">protein</span><span class="o">.</span><span class="n">cluster_and_label</span><span class="p">(</span>
-    <span class="n">truth</span><span class="o">=</span><span class="n">new_truth</span><span class="p">,</span>
+    <span class="n">truth</span><span class="o">=</span><span class="n">new_truth</span>
     <span class="n">max_adjusted_mixing</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>  <span class="c1"># This parameter controls which mixed clusters would be labelled &quot;Mixed Like&quot;</span>
     <span class="n">min_distance_for_doublet</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>  <span class="c1"># Increase this if too many mixed cells are observed.</span>
     <span class="n">cluster</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># If True, graph-community clustering is run, otherwise the existing cluster labels are used</span>
@@ -1916,6 +1777,7 @@ compared to their singlet proportions. (see <code class="docutils literal notran
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 
@@ -1964,41 +1826,44 @@ compared to their singlet proportions. (see <code class="docutils literal notran
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Single Sample DNA + Protein</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-loading-the-data-b"><b> Loading the data </b></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-data-structure-b"><b>Data Structure</b></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dependencies">Load dependencies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-structure">Data Structure</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-analysis">DNA Analysis</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-filtering">Basic filtering</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-addition">Annotation Addition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variant-selection-and-subclone-identification">Variant selection and Subclone identification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adjusting-subclone-colors-or-heatmap-colors">Adjusting subclone colors or heatmap colors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dna-analysis">DNA Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-filtering">Basic filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1">Method 1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2">Method 2</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-analysis">CNV Analysis</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-workflow">CNV workflow</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#annotation-addition">Annotation Addition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variant-selection-and-subclone-identification">Variant selection and Subclone identification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adjusting-subclone-colors-or-heatmap-colors">Adjusting subclone colors or heatmap colors</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-analysis">Protein Analysis</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-and-data-inspection">Normalization And Data Inspection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-and-visualization">Clustering And Visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-analysis">CNV Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cnv-workflow">CNV workflow</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-visualizations">Combined Visualizations</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quantify-overlaps-between-dna-clones-and-protein-clusters">Quantify overlaps between DNA clones and Protein clusters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-analysis">Protein Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalization-and-data-inspection">Normalization And Data Inspection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clustering-and-visualization">Clustering And Visualization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistics">Statistics</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#export-and-save-data">Export and Save Data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compass-imputation">Compass imputation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-assignment">Protein assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combined-visualizations">Combined Visualizations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quantify-overlaps-between-dna-clones-and-protein-clusters">Quantify overlaps between DNA clones and Protein clusters</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#export-and-save-data">Export and Save Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparc-imputation">SPARC imputation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#protein-assignment">Protein assignment</a></li>
 </ul>
 </li>
 </ul>
-
   </nav></div>
 
 </div></div>

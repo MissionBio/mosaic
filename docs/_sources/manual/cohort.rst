@@ -200,3 +200,23 @@ If the pipeline encounters an error, it will log the issue and terminate. Common
 - Incorrect configuration parameters.
 
 Refer to the error message in the last line of the log file to identify the issue.
+
+Modifying the Cohort Map
+------------------------
+
+The cohort map can be recreated from the processed h5 files using the following code snippet. It
+can be used to reorder the samples, rename the headers, or to change the colors in the returned
+figure.
+
+.. code-block:: python
+
+   from pathlib import Path
+   import missionbio.mosaic as ms
+   from missionbio.tertiary.plots.summarymap import CohortMap
+
+   output_folder = "/cohort/output/folder/with/h5/files"
+   h5s = list(Path(output_folder).glob("*.h5"))
+   samples = [ms.load(h5, filter_variants=False) for h5 in h5s]
+   cm = CohortMap(samples)  # use the `names` parameter to update the patient names
+   fig = cm.draw()  # Modify this figure to update the colors
+   fig.show()

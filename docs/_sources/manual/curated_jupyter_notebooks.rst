@@ -30,12 +30,18 @@ advanced analysis, please refer to the :ref:`vignettes` section of the documenta
      - Multisample DNA and Protein analysis. The samples must be related to each other.
    * - `GE+Protein`_
      - GE and Protein analysis.
+   * - `DNA+RNA`_
+     - DNA and Protein analysis.
+   * - `Clonal insights snippets`_
+     - Analysis of the clonal insights h5 file.
 
 .. _DNA: ../notebooks/curated_notebooks/dna.html
 .. _Multisample DNA: ../notebooks/curated_notebooks/dna-multisample.html
 .. _DNA+Protein: ../notebooks/curated_notebooks/dna-protein.html
 .. _Multisample DNA+Protein: ../notebooks/curated_notebooks/dna-protein-multisample.html
 .. _GE+Protein: ../notebooks/curated_notebooks/ge-protein.html
+.. _DNA+RNA: ../notebooks/curated_notebooks/dna-rna.html
+.. _Clonal insights snippets: ../notebooks/curated_notebooks/clonal-insights.html
 
 .. toctree::
    :hidden:
@@ -46,3 +52,5 @@ advanced analysis, please refer to the :ref:`vignettes` section of the documenta
    ../notebooks/curated_notebooks/dna-protein
    ../notebooks/curated_notebooks/dna-protein-multisample
    ../notebooks/curated_notebooks/ge-protein
+   ../notebooks/curated_notebooks/dna-rna
+   ../notebooks/curated_notebooks/clonal-insights
